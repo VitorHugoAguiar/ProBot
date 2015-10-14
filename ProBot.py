@@ -90,16 +90,16 @@ def MPU6050_Values():
 	accY=mpu.readACCy()
 	
 	AccXangle = (math.atan2(accY,accZ)+PI)*RAD_TO_DEG		# Calculation of the angle in X axis
-	AccXangle+=-180							# Correction of angle (depends on the position of the sensor)
+	AccXangle-=180							# Correction of angle (depends on the position of the sensor)
 	
 	return (GYRx, AccXangle)
 
 
 PC.set_baud(Sabertooth.addr,Sabertooth.baud)
 sleep(3)								# Wait to stabilize the communication
-PC.stopAndReset()							# Initialize at zero
 MPU6050_Values()							# Make a reading from the MPU6050 to get in the while () condition from the calibration
-MPU6050_Calibration()							# Calibration routine
+while MPU6050_Calibration():						# Calibration routine
+	PC.stopAndReset()						# Initialize at zero
 GPIO.output(GreenLED, GPIO.HIGH)					# Led state to green
 sleep(1.5)														 
 
