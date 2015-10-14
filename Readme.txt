@@ -6,3 +6,5 @@ To find it's angle it uses the MPU6050 IC that uses an I2C connection with all t
 To control all that data, we use a Beaglebone Black rev C with Linux environment. 
 
 It is used several PID's to control the speed and angle of the robot.
+
+The end
