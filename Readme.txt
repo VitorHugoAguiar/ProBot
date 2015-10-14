@@ -1,9 +1,8 @@
-Self Balancing Robot
+Self Balancing Robot with BeagleBone Black
 
-This robot has almost 1,50m high, uses sabertooth controller with packetized serial protocol to control two EMG49 motors.
-To find it's angle it uses the MPU6050 IC that uses an I2C connection with all the data from an accelerometer and a gyroscope.
 
-To control all that data, we use a Beaglebone Black rev C with Linux environment. 
+Our objective is to build a protest robot with 1,50m high with the BeagleBone Black. For that, we are using packetized serial 
+protocol to comunicate with the Sabertooth Controller. The Sabertooth controls the two EMG49 motors.To find it's angle it uses 
+the MPU6050 that uses an I2C connection with all the data from an accelerometer and a gyroscope.
 
-It is used several PID's to control the speed and angle of the robot.
 
