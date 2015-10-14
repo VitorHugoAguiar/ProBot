@@ -97,9 +97,11 @@ def MPU6050_Values():
 
 PC.set_baud(Sabertooth.addr,Sabertooth.baud)
 sleep(3)								# Wait to stabilize the communication
+
+PC.stopAndReset()						# Keep at zero the motors
 MPU6050_Values()							# Make a reading from the MPU6050 to get in the while () condition from the calibration
-while MPU6050_Calibration():						# Calibration routine
-	PC.stopAndReset()						# Keep at zero the motors
+MPU6050_Calibration()						# Calibration routine
+
 GPIO.output(GreenLED, GPIO.HIGH)					# Led state to green
 sleep(1.5)														 
 
