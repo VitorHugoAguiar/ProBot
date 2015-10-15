@@ -12,18 +12,6 @@ encoder2 = eQEP("/sys/devices/ocp.3/48304000.epwmss/48304180.eqep", eQEP.MODE_AB
 encoder1.set_period(100000000)
 encoder2.set_period(100000000)
 
-# Global variables
-global PI
-global wheelPositionError
-global integrated_wheelPositionError
-global errorVelocity
-global integrated_errorVelocity
-global errorAngle
-global last_errorAngle
-global integrated_errorAngle
-global wheelPosition
-global LastwheelPosition
-
 
 PI = 3.14159265358979323846							# PI value
 wheelPositionError=0								# Initialization of all variables
