@@ -3,19 +3,6 @@
 # Python Standard Library Imports
 import time
 
-# Global variables
-global x_angle
-global x_bias
-global P_00
-global P_01
-global P_10
-global P_11
-global dt
-global y
-global S
-global K_0 
-global K_1
-
 # Variables initialization
 x_angle = 0
 x_bias = 0
