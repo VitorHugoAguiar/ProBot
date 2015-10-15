@@ -27,7 +27,7 @@ class BatteryValue():
 		BatteryVoltageVolt=float (BatteryVoltageVal*1.8)		# ADC voltage measured
 		BatteryRealValue=float (7.2292*BatteryVoltageVolt)		# Real Voltage
 
-		if BatteryRealValue<10.5:											# Define Red region, under 10,5V
+		if BatteryRealValue<10.5:					# Define Red region, under 10,5V
 			GPIO.output(GreenBattery, GPIO.LOW)
 			GPIO.output(YellowBattery, GPIO.LOW)
 			GPIO.output(RedBattery, GPIO.HIGH)
@@ -37,7 +37,7 @@ class BatteryValue():
 			GPIO.output(YellowBattery, GPIO.HIGH)
 			GPIO.output(RedBattery, GPIO.LOW)	
 	
-		if BatteryRealValue>12:												# Define the green region, over 12V
+		if BatteryRealValue>12:						# Define the green region, over 12V
 			GPIO.output(GreenBattery, GPIO.HIGH)
 			GPIO.output(YellowBattery, GPIO.LOW)
 			GPIO.output(RedBattery, GPIO.LOW)
