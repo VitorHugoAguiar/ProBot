@@ -3,6 +3,7 @@
 # Python Standard Library Imports
 import time
 
+# Kalman filter for the accelerometer and gyroscope data
 class KalmanFilter():
 	
 	Q_angle=0.001
@@ -24,8 +25,8 @@ class KalmanFilter():
 	
 	def KalmanCalculate (self,newAngle, newRate, looptime):
 
-		b= time.time()
-		self.dt=b-looptime
+		b= time.time()									# Time stamp
+		self.dt=b-looptime								# Loop time for Kalman prediction
 	
 		self.x_angle+= self.dt * (newRate - self.x_bias)
 		self.P_00 +=  - self.dt * (self.P_10 + self.P_01) + self.Q_angle * self.dt
