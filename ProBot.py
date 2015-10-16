@@ -63,8 +63,6 @@ def MPU6050_Calibration():
 	
 def MPU6050_Values():
 	
-	global AccXangle
-	global GYRx
 	PI = 3.14159265358979323846
 	RAD_TO_DEG = 57.29578						# Convertion rate, Rad to Deg
  
