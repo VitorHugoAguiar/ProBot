@@ -592,8 +592,8 @@ class MPU6050:
         
     def initialize(self):
         self.setClockSource(self.MPU6050_CLOCK_PLL_XGYRO)
-        self.setFullScaleGyroRange(self.MPU6050_GYRO_FS_250)
-        self.setFullScaleAccelRange(self.MPU6050_ACCEL_FS_2)   
+        self.setFullScaleGyroRange(self.MPU6050_GYRO_FS_2000)
+        self.setFullScaleAccelRange(self.MPU6050_ACCEL_FS_16)   
         self.setSleepEnabled(False)
     ###################
     def readACCx(self):
