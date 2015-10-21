@@ -17,8 +17,8 @@ class PacketizedCommunication():
 	
 	
 	# Baudrate and address for sabertooth controller
-	baud=19200
-	addr=128
+	baud = 19200
+	addr = 128
 
 	# Define serial connection
 	ser = serial.Serial('/dev/ttyO1',baud, timeout=0.5)
@@ -33,22 +33,22 @@ class PacketizedCommunication():
 		self.packet = self.make_packet(address, self.commands['baud'], self.baudcodes[baudrate])	# Packet format
 		self.ser.write(self.packet)									# Write packet in the serial
 
-	def drive(self,address, motor, speed):									# Drive function for both motors with the commands defined above
-		if motor==1:
+	def drive(self, address, motor, speed):									# Drive function for both motors with the commands defined above
+		if motor == 1:
 			command = 0
-		elif motor==2:
+		elif motor == 2:
 			command = 4
 		else:
 			return false
-		if speed<0:											# Values must be always positive and direction is given by the command +1
+		if speed < 0:											# Values must be always positive and direction is given by the command +1
 			command = command + 1
 			speed = -speed
-		if speed >127:											# Since all values are positive we only compare with 127
+		if speed > 127:											# Since all values are positive we only compare with 127
 			speed = 127
 		self.packet = self.make_packet(address, command, speed)
 		self.ser.write(self.packet)
 		
-	def make_packet(self,address,command,data):								# Packet struct
+	def make_packet(self, address, command, data):								# Packet struct
 		return struct.pack('BBBB', address, command, data, (127&(address+command+data)))
 
 	def stopAndReset(self):											# Stop and Reset function to begin or end
