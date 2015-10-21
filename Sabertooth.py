@@ -15,7 +15,6 @@ class PacketizedCommunication():
 	commands = {'motor1fwd':0,'motor1bwd':1,'vmin':2,'vmax':3,'motor2fwd':4,'motor2bwd':5,'motor1drive':6,'motor2drive':7,'timeout':14,'baud':15}
 	baudcodes = {2400:1, 9600:2, 19200:3, 38400:4}
 	
-	
 	# Baudrate and address for sabertooth controller
 	baud = 19200
 	addr = 128
