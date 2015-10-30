@@ -40,8 +40,8 @@ class PIDControllers():
 			
 		wheelPosition1 = -encoder1.poll_position()				# Get position from the first encoder
 		wheelPosition2 = encoder2.poll_position()					# Get position from the second encoder
-		wheelPosition1_m = (float(wheelPosition1)) / float(980 * self.PI * 0.2032)	# Calculate the travelled distance for first encoder
-		wheelPosition2_m = (float(wheelPosition2)) / float(980 * self.PI * 0.2032)	# Calculated the travelled distance for second encoder	
+		wheelPosition1_m = float(wheelPosition1 * self.PI * 0.000207346938776)	# Calculate the travelled distance for first encoder
+		wheelPosition2_m = float(wheelPosition2 * self.PI * 0.000207346938776)	# Calculated the travelled distance for second encoder	
 	
 		wheelPosition = float(wheelPosition1_m + wheelPosition2_m)/2		# Average travelled distance from the robot
 	
