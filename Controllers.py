@@ -24,7 +24,7 @@ class PIDControllers():
 	KpAngle = 7.000
 	KiAngle = 5.000
 	KdAngle = 9.000
-		
+	 # Build a constructor	
 	def __init__(self, LastwheelPosition = 0, errorVelocity = 0, integrated_errorVelocity = 0, errorAngle = 0, integrated_errorAngle = 0, last_errorAngle = 0):
 		
 		self.LastwheelPosition = LastwheelPosition										
