@@ -2,15 +2,17 @@
 
 # Python Standard Library Imports
 from time import sleep
-from math import atan, atan2, sqrt
+from math import atan, atan2, sqrt,pi
 import smbus
-bus = smbus.SMBus(1)
+bus = smbus.SMBus(1)	
 
 # External Imports
 pass
 
 # Custom Imports
 from pycomms import*
+
+
 
 class MPU6050:
     # Register map based on Jeff Rowberg <jeff@rowberg.net> source code at
@@ -595,7 +597,7 @@ class MPU6050:
         self.setFullScaleGyroRange(self.MPU6050_GYRO_FS_2000)
         self.setFullScaleAccelRange(self.MPU6050_ACCEL_FS_16)   
         self.setSleepEnabled(False)
-    ###################
+    
     def readACCx(self):
         accX_l = bus.read_byte_data(self.MPU6050_DEFAULT_ADDRESS, self.MPU6050_RA_ACCEL_XOUT_L)
         accX_h = bus.read_byte_data(self.MPU6050_DEFAULT_ADDRESS, self.MPU6050_RA_ACCEL_XOUT_H)
@@ -637,7 +639,19 @@ class MPU6050:
         GYRz = (gyrZ_l | gyrZ_h <<8)
 
         return GYRz  if GYRz < 32768 else GYRz - 65536
-    ###################
+					
+    
+    def MPU6050Values(self):
+		RAD_TO_DEG = 57.29578	
+		GYRx = self.readGYRx() 
+		accY=self.readACCy()
+		accZ=self.readACCz()
+	
+		AccXangle = ((atan2(accY,accZ)+pi)*RAD_TO_DEG)-180														# Calculation of the angle in X axis
+	
+		return AccXangle,GYRx
+	
+   
     def testConnection(self):
         return self.getDeviceID() == 0x34
     
