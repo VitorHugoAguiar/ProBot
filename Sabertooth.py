@@ -29,7 +29,7 @@ class PacketizedCommunication():
 	ser.flush()
 
 	def set_baud(self,address, baudrate):
-		self.packet = self.make_packet(address, self.commands['baud'], self.baudcodes[baudrate])	# Packet format
+		self.packet = self.make_packet(address, self.commands['baud'], self.baudcodes[baudrate])		# Packet format
 		self.ser.write(self.packet)												# Write packet in the serial
 
 	def drive(self, address, motor, speed):										# Drive function for both motors with the commands defined above
@@ -47,7 +47,7 @@ class PacketizedCommunication():
 		self.packet = self.make_packet(address, command, speed)
 		self.ser.write(self.packet)
 		
-	def make_packet(self, address, command, data):								# Packet struct
+	def make_packet(self, address, command, data):									# Packet struct
 		return struct.pack('BBBB', address, command, data, (127&(address+command+data)))
 
 	def stopAndReset(self):														# Stop and Reset function to begin or end
