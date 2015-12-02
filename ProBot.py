@@ -34,9 +34,13 @@ GPIO.setup(GreenLED, GPIO.OUT)
 # MPU6050 initialization
 mpu = mpu6050.MPU6050()
 mpu.initialize()
-#Test connection 
-if mpu.getDeviceID() != 52:
+#Testing connection 
+if mpu.testConnection()==False:
 	GPIO.output(RedLED, GPIO.HIGH)
+	GPIO.output(GreenLED, GPIO.LOW)  
+else:
+	GPIO.output(RedLED, GPIO.LOW)
+	GPIO.output(GreenLED, GPIO.HIGH)
 
 #Initialization of classes from the others files
 PC = Sabertooth.PacketizedCommunication()
