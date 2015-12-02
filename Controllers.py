@@ -1,80 +1,238 @@
 #!/usr/bin/python
 
 # Python Standard Library Imports
-from eqep import eQEP
 import math
-
-# Instantiate an instance of the driver for encoder of the motor 1
-encoder1 = eQEP("/sys/devices/ocp.3/48302000.epwmss/48302180.eqep", eQEP.MODE_ABSOLUTE)
-# Instantiate an instance of the driver for encoder of the motor 2
-encoder2 = eQEP("/sys/devices/ocp.3/48304000.epwmss/48304180.eqep", eQEP.MODE_ABSOLUTE)
-
-# Set the polling period of the encoder's to 0.1 seconds, or 100,000,000 nanoseconds
-encoder1.set_period(100000000)
-encoder2.set_period(100000000)
 
 # PID functions
 class PIDControllers():
-	
-	# Velocity PI values
-	KpVelocity = 2.000
-	KiVelocity = 0.500
 
-	# Angle PID values
-	KpAngle = 7.000
-	KiAngle = 5.000
-	KdAngle = 9.000
-	 # Build a constructor	
-	def __init__(self, LastwheelPosition = 0, errorVelocity = 0, integrated_errorVelocity = 0, errorAngle = 0, integrated_errorAngle = 0, last_errorAngle = 0):
+	# Build a constructor	
+	def __init__(self, error = 0, integrated_error = 0, integrated_error_f = [0, 0, 0], last_error_f=[0, 0, 0], last_error = 0, KpP_tenths=0, KpP1_tenths=0, KpP_hundredths=0,KpP_thousandths=0, KiP_tenths=0, KiP1_tenths=0, KiP_hundredths=0, KiP_thousandths=0, KdP_tenths=0, KdP1_tenths=0, KdP_hundredths=0, KdP_thousandths=0, KpA_tenths=0, KpA1_tenths=0,KpA_hundredths=0, KpA_thousandths=0, KiA_tenths=0, KiA1_tenths=0,KiA_hundredths=0, KiA_thousandths=0, KdA_tenths=0, KdA1_tenths=0,KdA_hundredths=0, KdA_thousandths=0,     KpV_tenths=0, KpV_hundredths=0, KpV_thousandths=0, KiV_tenths=0, KiV_hundredths=0, KiV_thousandths=0, KdV_tenths=0, KdV_hundredths=0, KdV_thousandths=0):
+									
+		self.error = error
+		self.integrated_error = integrated_error
+		self.last_error = last_error
+		self.integrated_error_f = integrated_error_f
+		self.last_error_f = last_error_f
 		
-		self.LastwheelPosition = LastwheelPosition										
-		self.errorVelocity = errorVelocity
-		self.integrated_errorVelocity = integrated_errorVelocity
-		self.errorAngle = errorAngle
-		self.integrated_errorAngle = integrated_errorAngle
-		self.last_errorAngle = last_errorAngle
+		# We are using the a midi controller (Evolution UC33) to tune the controllers
+		# So, we can ajust tenths, hundredths, thousandths for each parameter of the Position, Velocity and Angle controller
 		
+		# Position controller
+		self.KpP_tenths=KpP_tenths
+		self.KpP1_tenths=KpP1_tenths
+		self.KpP_hundredths=KpP_hundredths
+		self.KpP_thousandths=KpP_thousandths
+
+		self.KiP_tenths=KiP_tenths
+		self.KiP1_tenths=KiP_tenths
+		self.KiP_hundredths=KiP_hundredths
+		self.KiP_thousandths=KiP_thousandths
+
+		self.KdP_tenths=KdP_tenths
+		self.KdP1_tenths=KdP_tenths
+		self.KdP_hundredths=KdP_hundredths
+		self.KdP_thousandths=KdP_thousandths
+
+		# Velocity controller
+		self.KpA_tenths=KpA_tenths
+		self.KpA1_tenths=KpA_tenths
+		self.KpA_hundredths=KpA_hundredths
+		self.KpA_thousandths=KpA_thousandths
+
+		self.KiA_tenths=KiA_tenths
+		self.KiA1_tenths=KiA_tenths
+		self.KiA_hundredths=KiA_hundredths
+		self.KiA_thousandths=KiA_thousandths
+
+		self.KdA_tenths=KdA_tenths
+		self.KdA1_tenths=KdA_tenths
+		self.KdA_hundredths=KdA_hundredths
+		self.KdA_thousandths=KdA_thousandths
+
+		# Angle controller
+		self.KpV_tenths=KpV_tenths
+		self.KpV_hundredths=KpV_hundredths
+		self.KpV_thousandths=KpV_thousandths
+
+		self.KiV_tenths=KiV_tenths
+		self.KiV_hundredths=KiV_hundredths
+		self.KiV_thousandths=KiV_thousandths
+
+		self.KdV_tenths=KdV_tenths
+		self.KdV_hundredths=KdV_hundredths
+		self.KdV_thousandths=KdV_thousandths
+	
+	def standardPID(self, reference, measured, type, id, value):
+		self.error = float(reference - measured)
 		
-	def PiVelocity(self, PiVelocityRef):
+		# For each id (pontenciometer), we atribute a diferent parameter
+		
+		# Position controller
+		# Kp from Position controller
+ 		if (id == 25 or id==1):
+			if id==25:			
+				self.KpP_tenths=float(value*0.1)
+			if id==1:			
+				self.KpP1_tenths=float(value*0.1)
+		if (id == 17):
+			self.KpP_hundredths=float(value*0.01)
+		if (id == 9):
+			self.KpP_thousandths=float(value*0.001)
+
+		# Ki from Position controller
+		if (id == 26 or id==2):
+			if id==26:			
+				self.KiP_tenths=float(value*0.1)
+			if id==2:			
+				self.KiP1_tenths=float(value*0.1)
+		if (id == 18):
+			self.KiP_hundredths=float(value*0.01)
+		if (id == 10):
+			self.KiP_thousandths=float(value*0.001)
+
+		# Kd from Position controller
+		if (id == 27 or id==3):
+			if id==27:
+				self.KdP_tenths=float(value*0.1)
+			if id==3:
+				self.KdP1_tenths=float(value*0.1)
+		if (id == 19):
+			self.KdP_hundredths=float(value*0.01)
+		if (id == 11):
+			self.KdP_thousandths=float(value*0.001)
+
+
+		# Velocity controller
+		# Kp from Velocity controller
+		if (id == 28 or id==4):
+			if id==28:
+				self.KpA_tenths=float(value*0.1)
+			if id==4:
+				self.KpA1_tenths=float(value*0.1)
+		if (id == 20):
+			self.KpA_hundredths=float(value*0.01)
+		if (id == 12):
+			self.KpA_thousandths=float(value*0.001)
+
+		# Ki from Velocity controller
+		if (id == 29 or id==5):
+			if id==29:
+				self.KiA_tenths=float(value*0.1)
+			if id==5:
+				self.KiA1_tenths=float(value*0.1)
+		if (id == 21):
+			self.KiA_hundredths=float(value*0.01)
+		if (id == 13):
+			self.KiA_thousandths=float(value*0.001)
+
+		# Kd from Velocity controller
+		if (id == 30 or id==6):
+			if id==30:
+				self.KdA_tenths=float(value*0.1)
+			if id==6:
+				self.KdA1_tenths=float(value*0.1)
+		if (id == 22):
+			self.KdA_hundredths=float(value*0.01)
+		if (id == 14):
+			self.KdA_thousandths=float(value*0.001)
+
+		
+
+		# Angle controller
+		# Kp from Angle controller
+		if (id == 31):				
+			self.KpV_tenths=float(value*0.1)
+		if (id == 23):
+			self.KpV_hundredths=float(value*0.01)
+		if (id == 15):
+			self.KpV_thousandths=float(value*0.001)
+
+		# Ki from Angle controller
+		if (id == 32):
+			self.KiV_tenths=float(value*0.1)
+		if (id == 24):
+			self.KiV_hundredths=float(value*0.01)
+		if (id == 16):
+			self.KiV_thousandths=float(value*0.001)
+
+		# Kd from Angle controller
+		if (id == 7 ):
+			self.KdV_tenths=float(value*0.1)
+		if (id == 8):
+			self.KdV_hundredths=float(value*0.01)
+		if (id == 33):
+			self.KdV_thousandths=float(value*0.001)		
+		
+		# Here we choose the controller
+		if (type == 0):																			# Type 0 - Position 			
+			Kp = float(self.KpP_tenths-self.KpP1_tenths+self.KpP_hundredths+self.KpP_thousandths)		
+			Ki = float(self.KiP_tenths-self.KiP1_tenths+self.KiP_hundredths+self.KiP_thousandths)
+			Kd = float(self.KdP_tenths-self.KdP1_tenths+self.KdP_hundredths+self.KdP_thousandths)
+			limit = 200000										
+			#self.integrated_error = self.integrated_error_f[0]
+			#self.last_error = self.last_error_f[0]
 			
-		wheelPosition1 = -encoder1.poll_position()				# Get position from the first encoder
-		wheelPosition2 = encoder2.poll_position()					# Get position from the second encoder
-		wheelPosition1_m = float(wheelPosition1 * math.pi * 0.000207346938776)	# Calculate the travelled distance for first encoder
-		wheelPosition2_m = float(wheelPosition2 * math.pi * 0.000207346938776)	# Calculated the travelled distance for second encoder	
-	
-		wheelPosition = float(wheelPosition1_m + wheelPosition2_m)/2		# Average travelled distance from the robot
-	
-		wheelVelocity = wheelPosition - self.LastwheelPosition			# Wheel velocity (we are sampling at 100ms the encoders)
-	
-		self.LastwheelPosition = wheelPosition					# Keep the position for next cycle
-	
-		self.errorVelocity = float(PiVelocityRef) - float(wheelVelocity)		# Error for requested velocity
-		pTermVelocity = self.KpVelocity * float(self.errorVelocity)			# Proportional term of the error
-		self.integrated_errorVelocity += float(self.errorVelocity)		# Integral error
-		iTermVelocity = self.KiVelocity * float(self.integrated_errorVelocity)	# Integral term of the error
-		PiAngleRef = float(pTermVelocity) + float(iTermVelocity)			# Velocity PID result
-	
-		return -PiAngleRef
-	
-	def PidAngle(self, x_angle, PiAngleRef):
-
-		self.errorAngle = float(PiAngleRef) - float(x_angle)			# Error for requested angle
-		pTermAngle = self.KpAngle * float(self.errorAngle)			# Proportional term of the error
-		self.integrated_errorAngle += float(self.errorAngle)			# Integral error
-		if self.integrated_errorAngle < -35:					# Integral limits
-			self.integrated_errorAngle = -35
-		if self.integrated_errorAngle > 35:
-			self.integrated_errorAngle = 35
-	
-		iTermAngle = self.KiAngle * float(self.integrated_errorAngle)			# Integral term of the error
-		dTermAngle = self.KdAngle * (self.errorAngle - self.last_errorAngle)		# Derivative term of the error
-		self.last_errorAngle = self.errorAngle						# Keep actual value
-		PidMotorRef = float(pTermAngle) + float(iTermAngle) + float(dTermAngle)	# Angle PID result
-	
-		if PidMotorRef < -127:								# Limits for motor reference
-			PidMotorRef = -127
+			
+		elif (type == 1):																		# Type 1 - Velocity
+			Kp = float(self.KpV_tenths+self.KpV_hundredths+self.KpV_thousandths)		
+			Ki = float(self.KiV_tenths+self.KiV_hundredths+self.KiV_thousandths)
+			Kd = float(self.KdV_tenths+self.KdV_hundredths+self.KdV_thousandths)
+			limit = 200000
+			self.integrated_error = self.integrated_error_f[1]
+			self.last_error = self.last_error_f[1]
+			
+		 	
+		elif (type == 2):																		# Type 2 - Angle
+			Kp = float(self.KpA_tenths-self.KpA1_tenths+self.KpA_hundredths+self.KpA_thousandths)
+			Ki = float(self.KiA_tenths-self.KiA1_tenths+self.KiA_hundredths+self.KiA_thousandths)
+			Kd = float(self.KdA_tenths-self.KdA1_tenths+self.KdA_hundredths+self.KdA_thousandths)
+			limit = 35
+			self.integrated_error = self.integrated_error_f[2]
+			self.last_error = self.last_error_f[2]
+			
+		else:
+			pass
 		
-		if PidMotorRef > 127:
-			PidMotorRef = 127
-	
-		return PidMotorRef
+		pTerm = float(Kp * self.error)
+		self.integrated_error += float(self.error) 
+		
+		if (self.integrated_error < -limit):													# Integral limits
+			self.integrated_error = -limit
+		elif (self.integrated_error > limit):
+			self.integrated_error = limit
+		else:
+			pass
+		
+		iTerm = float(Ki * self.integrated_error)
+		dTerm = float(Kd * (self.error - self.last_error))
+		self.last_error = self.error
+		PID_result = float(pTerm + iTerm + dTerm)
+		
+		if (type == 0):
+			
+			self.integrated_error_f[0] = self.integrated_error
+			self.last_error_f[0] = self.last_error
+			return PID_result
+			
+		elif (type == 1):
+			
+			self.integrated_error_f[1] = self.integrated_error
+			self.last_error_f[1] = self.last_error
+			return -PID_result
+		
+		elif(type == 2):
+			
+			self.integrated_error_f[2] = self.integrated_error
+			self.last_error_f[2] = self.last_error
+			
+			if (PID_result < -127):																# Limits for motor reference
+				PID_result = -127
+			if (PID_result > 127):
+				PID_result = 127
+			return PID_result
+		
+		else:
+			pass
+
+			
