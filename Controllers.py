@@ -2,6 +2,7 @@
 
 # Python Standard Library Imports
 from eqep import eQEP
+import math
 
 # Instantiate an instance of the driver for encoder of the motor 1
 encoder1 = eQEP("/sys/devices/ocp.3/48302000.epwmss/48302180.eqep", eQEP.MODE_ABSOLUTE)
@@ -14,8 +15,6 @@ encoder2.set_period(100000000)
 
 # PID functions
 class PIDControllers():
-
-	PI = 3.14159265
 	
 	# Velocity PI values
 	KpVelocity = 2.000
@@ -25,7 +24,7 @@ class PIDControllers():
 	KpAngle = 7.000
 	KiAngle = 5.000
 	KdAngle = 9.000
-		
+	 # Build a constructor	
 	def __init__(self, LastwheelPosition = 0, errorVelocity = 0, integrated_errorVelocity = 0, errorAngle = 0, integrated_errorAngle = 0, last_errorAngle = 0):
 		
 		self.LastwheelPosition = LastwheelPosition										
@@ -40,8 +39,8 @@ class PIDControllers():
 			
 		wheelPosition1 = -encoder1.poll_position()				# Get position from the first encoder
 		wheelPosition2 = encoder2.poll_position()					# Get position from the second encoder
-		wheelPosition1_m = (float(wheelPosition1)) / float(980 * self.PI * 0.2032)	# Calculate the travelled distance for first encoder
-		wheelPosition2_m = (float(wheelPosition2)) / float(980 * self.PI * 0.2032)	# Calculated the travelled distance for second encoder	
+		wheelPosition1_m = float(wheelPosition1 * math.pi * 0.000207346938776)	# Calculate the travelled distance for first encoder
+		wheelPosition2_m = float(wheelPosition2 * math.pi * 0.000207346938776)	# Calculated the travelled distance for second encoder	
 	
 		wheelPosition = float(wheelPosition1_m + wheelPosition2_m)/2		# Average travelled distance from the robot
 	
