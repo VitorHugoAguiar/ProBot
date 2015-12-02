@@ -51,7 +51,7 @@ class BatteryVoltage():
 		
 	def BatteryVoltageMotors(self):
 		BatteryVoltageVal2 = ADC.read(AnalogPin2)*1.8
-		BatteryRealValue2 = float((-15.02*BatteryVoltageVal2)+27.04)				# Real voltage from the motors batteries
+		BatteryRealValue2 = float((-15.02*BatteryVoltageVal2)+27.04)					# Real voltage from the motors batteries
 
 		if BatteryRealValue2 < 18:													# Define Red region, under 18V	
 			GPIO.output(GreenBattery2, GPIO.LOW)
