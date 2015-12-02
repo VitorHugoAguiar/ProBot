@@ -4,17 +4,22 @@
 import Adafruit_BBIO.UART as UART
 from Adafruit_I2C import Adafruit_I2C
 import Adafruit_BBIO.GPIO as GPIO
-import serial
-import struct
+from time import sleep
 import time
 import math
-from time import sleep
-import datetime
+import sys
+import csv
+import zmq
 import mpu6050
 import Sabertooth
 import Kalman
 import BatteryMonitor
 import Controllers
+import Encoders
+import SocketCommunication
+import DataFile
+
+RAD_TO_DEG = 57.29578							
 
 # Start the UART1
 UART.setup("UART1")
@@ -38,82 +43,100 @@ if mpu.getDeviceID() != 52:
 #Initialization of classes from the others files
 PC = Sabertooth.PacketizedCommunication()
 KF = Kalman.KalmanFilter()
-Battery = BatteryMonitor.BatteryValue()
+Battery = BatteryMonitor.BatteryVoltage()
 PID = Controllers.PIDControllers()
-
-# Calibration of the values from the sensor MPU6050 (vertical position)
-def MPU6050_Calibration():
-	
-	numReadings = 100						# Number of readings for calibration
-	ax_total = 0
-	GYRx_total = 0
-
-	while (AccXangle < -1 or AccXangle > 1):			# Keep angle between these values
-		MPU6050_Values()					# Call function to get the values
-	
-	for i in range(0, numReadings):
-		ax_total = AccXangle + ax_total
-		GYRx_total = GYRx + GYRx_total
-	
-	ax_average = float(ax_total) / numReadings			# Average accelerometer value
-	GYRx_average = float(GYRx_total) / numReadings			# Average gyroscope value
-	
-	return ax_average, GYRx_average					# Returns the offset
-	
-	
-def MPU6050_Values():
-	
-	PI = 3.14159265358979323846
-	RAD_TO_DEG = 57.29578						# Convertion rate, Rad to Deg
- 
-	GYRx=mpu.readGYRx()						# Reading of variables of interest
-	accZ=mpu.readACCz()
-	accY=mpu.readACCy()
-	
-	AccXangle = (math.atan2(accY, accZ) + PI) * RAD_TO_DEG		# Calculation of the angle in X axis
-	AccXangle -= 180						# Correction of angle (depends on the position of the sensor)
-	
-	return AccXangle,GYRx
+Enc=Encoders.EncodersReadings()
+Data=DataFile.DataClass()
+Pub_Sub=SocketCommunication.publisher_and_subscriber()
 
 
+#Starting the main program
+wheelPositionRef=0
+
+GPIO.output(RedLED, GPIO.HIGH)	
 PC.set_baud(PC.addr,PC.baud)
-sleep(3)								# Wait to stabilize the communication
-
+sleep(3)									# Wait to stabilize the communication
+																			
 PC.stopAndReset()
 
-AccAndGyr = MPU6050_Values()						# Make a reading from the MPU6050 to get in the while () condition from the calibration
-AccXangle = AccAndGyr[0]
-GYRx = AccAndGyr[1]				
+GPIO.output(GreenLED, GPIO.HIGH)
 
-AccAndGyrAverage = MPU6050_Calibration()				# Calibration routine												
-ax_average = AccAndGyrAverage[0]
-GYRx_average = AccAndGyrAverage[1]
+AccXangleAverage=0.43432634994				# Calibration of the MPU6050
+GYRxAverage=-65
 
-GPIO.output(GreenLED, GPIO.HIGH)					# Led state to green
-sleep(1.5)
+GPIO.output(RedLED, GPIO.LOW)
+sleep(1.5)	
 
-PiVelocityRef = 0.000	
-
+	
 while True:
-	LoopTime = time.time()						# Start the time stamp for the loop
-	
-	if Battery.BatteryVoltage() < 10.5:				# Case low battery, stop robot
-		PC.stopAndReset()
-	else:
-		#Read of the MPU6050 values
-		AccAndGyr = MPU6050_Values()				# Make a reading from the MPU6050 to get in the while () condition from the calibration
-		AccXangle = AccAndGyr[0]
-		GYRx = AccAndGyr[1]	
-	
-		#Calculate the new x angle with the ofset of the Calibration 
-		ax_raw = AccXangle - ax_average				# Calculate the values from MPU6050 to send to the Kalman filter
-		GYRx_raw = GYRx - GYRx_average
+	try:
+		LoopTime=time.time()
 		
-		x_angle = KF.KalmanCalculate(ax_raw, GYRx_raw, LoopTime)	# Get filtered value in function of acceleration, angle and looptime
+		# Verification of the voltage from the Beaglebone and motors batteries
+		Battery.BatteryVoltageBeaglebone()	
+		Battery.BatteryVoltageMotors()
 	
-	
-		PiAngleRef = PID.PiVelocity(PiVelocityRef)		# Calculate AngleRef based on velocity
-		PidMotorRef = PID.PidAngle(x_angle, PiAngleRef)		# Calculate MotorRef based on the angle	
-	
-		PC.drive(PC.addr, 1, int(PidMotorRef))			# Value sent to motors
+		#Read of the MPU6050 values
+		AccAndGyr = mpu.MPU6050Values()	
+		AccXangle = AccAndGyr[0]
+		GYRx = AccAndGyr[1]
+		
+		#Calculate the new x angle with the ofset of the calibration from the MPU6050 
+		ax_raw = AccXangle - AccXangleAverage		
+		GYRx_raw = GYRx - GYRxAverage
+		# After the readings, we use the Kalman filter to eliminate the variations from the readings		
+		kalAngleX = KF.KalmanCalculate(ax_raw,GYRx_raw, LoopTime)
+		
+		# Readings from the encoders
+		Encoders=Enc.EncodersValues()
+		wheelVelocity=Encoders[0]
+		wheelPositionPosition=Encoders[1]
+
+		# We use zmq to publisher and subscribe some values to/from a server (PC)
+		# Initialition of the subscriber on the BeagleBone. With that, we can receive the values for the compensators from the midi controler on the server (PC)
+		subscriber=Pub_Sub.subscriber()
+		# Just some code to decode the message from the server
+		if subscriber==None:
+			pass
+		
+		else:
+			for x in range(0, len(subscriber)):
+				
+				if(subscriber[x]==" "):	
+					if x==1:					
+						id= subscriber[x-1]
+						if len(subscriber)==5:
+							value=subscriber[len(subscriber)-3]+ "" +subscriber[len(subscriber)-2]+ "" +subscriber[len(subscriber)-1]
+						if len(subscriber)==4:
+							value=subscriber[len(subscriber)-2]+ "" +subscriber[len(subscriber)-1]
+						if len(subscriber)==3:
+							value=subscriber[len(subscriber)-1]	
+										
+					else:	
+						id=subscriber[x-2]+""+subscriber[x-1]
+						if len(subscriber)==6:
+							value=subscriber[len(subscriber)-3]+ "" +subscriber[len(subscriber)-2]+ "" +subscriber[len(subscriber)-1]
+						if len(subscriber)==5:
+							value=subscriber[len(subscriber)-2]+ "" +subscriber[len(subscriber)-1]
+						if len(subscriber)==4:
+							value=subscriber[len(subscriber)-1] 
+				
+		# With the values from the server, we can calculate the outputs from the controllers			
+		PidVelocityRef= PID.standardPID(wheelPositionRef,wheelPositionPosition, 0 , int(id), int(value))			
+		#PidAngleRef= PID.standardPID(PidVelocityRef,wheelVelocity, 1, int(id), int(value))
+		PidMotorRef = PID.standardPID(PidVelocityRef,kalAngleX, 2, int(id), int(value))
+												
+		# Setting the Beaglebone as publisher to send some variables to the server
+		publisher=Pub_Sub.publisher(PidMotorRef, kalAngleX)
+			
+		# Sending the values to the Sabertooth that is connected to the motors	
+		PC.drive(PC.addr, 1, int(PidMotorRef))
+															
 		PC.drive(PC.addr, 2, int(PidMotorRef))
+		
+	except:
+		PC.stopAndReset()
+		print "\n\nPROGRAM STOPPED!!!\n"
+		sys.exit(0)
+		raise
+		
