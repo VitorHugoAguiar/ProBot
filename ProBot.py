@@ -61,7 +61,7 @@ PC.stopAndReset()
 
 GPIO.output(GreenLED, GPIO.HIGH)
 
-AccXangleAverage=0.43432634994				# Calibration of the MPU6050
+AccXangleAverage=0.43432634994							# Calibration of the MPU6050
 GYRxAverage=-65
 
 GPIO.output(RedLED, GPIO.LOW)
