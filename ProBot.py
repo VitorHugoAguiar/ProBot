@@ -18,7 +18,7 @@ import Controllers
 import Encoders
 import SocketCommunication
 import DataFile
-						
+
 # Start the UART1
 UART.setup("UART1")
 
@@ -40,8 +40,8 @@ if mpu.testConnection()==False:
 	GPIO.output(GreenLED, GPIO.LOW)  
 else:
 	GPIO.output(RedLED, GPIO.LOW)
-	GPIO.output(GreenLED, GPIO.HIGH)
-
+	GPIO.output(GreenLED, GPIO.HIGH) 
+ 
 #Initialization of classes from the others files
 PC = Sabertooth.PacketizedCommunication()
 KF = Kalman.KalmanFilter()
