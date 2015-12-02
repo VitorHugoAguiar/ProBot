@@ -18,9 +18,7 @@ import Controllers
 import Encoders
 import SocketCommunication
 import DataFile
-
-RAD_TO_DEG = 57.29578							
-
+						
 # Start the UART1
 UART.setup("UART1")
 
@@ -52,7 +50,8 @@ Pub_Sub=SocketCommunication.publisher_and_subscriber()
 
 #Starting the main program
 wheelPositionRef=0
-
+id=0
+value=0
 GPIO.output(RedLED, GPIO.HIGH)	
 PC.set_baud(PC.addr,PC.baud)
 sleep(3)									# Wait to stabilize the communication
