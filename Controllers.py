@@ -15,7 +15,7 @@ class PIDControllers():
 		self.integrated_error_f = integrated_error_f
 		self.last_error_f = last_error_f
 		
-		# We are using the a midi controller (Evolution UC33) to tune the controllers
+		# We are using a midi controller (Evolution UC33) to tune the controllers
 		# So, we can ajust tenths, hundredths, thousandths for each parameter of the Position, Velocity and Angle controller
 		
 		# Position controller
