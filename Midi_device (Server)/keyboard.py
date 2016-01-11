@@ -2,6 +2,7 @@ import pygame
 import ZMQCommunication
 import LowPassFilter
 
+# Initialization of classes from local files
 Pub=ZMQCommunication.Publisher()
 LPF=LowPassFilter.LowPassFilter()
 
@@ -10,6 +11,7 @@ pygame.display.set_mode((200, 200))
 clock = pygame.time.Clock() 
 
 
+# Readings from the keyboard arrows, that are smoothed by the LowPass filter
 class KeyBoard():
 	def __init__(self, FilteredValuesFR=0, FilteredValuesLR=0,lock = 0, maxValFR=0, maxValLR=0):
 		self.FilteredValuesFR=FilteredValuesFR
@@ -59,7 +61,6 @@ class KeyBoard():
             				self.FilteredValuesLR=LPF.lowPassFilterLR(self.maxValLR)   
             				self.lock[3] = False;
 
-    			#print (self.FilteredValuesFR, self.FilteredValuesLR)
     			Publisher=Pub.publisher('keyboard', self.FilteredValuesFR, self.FilteredValuesLR)
     			clock.tick(20)
 
