@@ -1,8 +1,6 @@
 #!/usr/bin/python
 
-# Python Standard Library Imports
-
-
+# Constants used in the algorithm
 class Constants():
     def __init__(self):
         self.AccXangleAverage = -0.43432634994							# Calibration of the MPU6050
@@ -41,6 +39,6 @@ class Constants():
         self.GreenBatteryMotors = "P8_18"
         self.RedBatteryMotors = "P8_14"
         self.AnalogPinMotors = "P9_40"
-        self.tenths=0.1
+        self.tenths = 0.1
         self.hundredths=0.01
         self.thousandths=0.001
