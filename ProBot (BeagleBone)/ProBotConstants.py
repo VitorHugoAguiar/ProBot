@@ -3,7 +3,7 @@
 # Constants used in the algorithm
 class Constants():
     def __init__(self):
-        self.AccXangleAverage = -0.43432634994							# Calibration of the MPU6050
+        self.AccXangleAverage = -0.43432634994							
         self.GYRxAverage = -65
         self.RedLED = "P8_13"
         self.GreenLED = "P9_27"
