@@ -1,0 +1,68 @@
+import matplotlib.pylab as plt
+import matplotlib
+import time
+
+
+matplotlib.use('TkAgg')
+
+fig = plt.figure()
+ax1 = fig.add_subplot(1, 1, 1)
+ax2 = fig.add_subplot(1, 1, 1)
+
+class MatPlot():
+
+	def UpdateValues(self, reference, reference1):
+		ax1.cla()
+		ax1.set_title('Joystick (Forward and Reverse)')
+		ax1.set_xlabel('Time (s)')
+		ax1.set_ylabel('Joystick Values')
+		plt.show(False)  # Set to false so that the code doesn't stop here
+
+		cur_time = time.time()
+		ax1.hold(True)
+		ax2.hold(True)
+
+
+		x, y, y2 = [], [], []
+		times = [time.time() - cur_time]  # Create blank array to hold time values
+		y.append(0)
+		y2.append(0)
+		line1, = ax1.plot(times, y, '.-', alpha=0.8, color="gray", markerfacecolor="red")
+		line2, = ax2.plot(times, y2, '.-', alpha=0.8, color="gray", markerfacecolor="green")
+	
+		fig.show()
+	
+        
+		background = fig.canvas.copy_from_bbox(ax1.bbox)  # cache the background
+		background2 = fig.canvas.copy_from_bbox(ax2.bbox)  # cache the background	
+		
+		
+			
+		times.append(time.time() - cur_time)
+		y.append(reference)
+		y2.append(reference1)
+		if len(times) > 100:
+			del y[0]
+			del y2[0]
+			del times[0]
+
+		xmin, xmax, ymin, ymax = [min(times), max(times), -1.1,1.1]
+
+          	# feed the new data to the plot and set the axis limits again
+		line1.set_xdata(times)
+		line1.set_ydata(y)
+		line2.set_xdata(times)
+		line2.set_ydata(y2)
+		
+		plt.axis([xmin, xmax, ymin, ymax])
+
+		fig.canvas.restore_region(background)    # restore background		
+		fig.canvas.restore_region(background2)    # restore background				
+		ax1.draw_artist(line1)                   # redraw just the points
+		ax2.draw_artist(line2) 		
+		fig.canvas.blit(ax1.bbox)                # fill in the axes rectangle
+		fig.canvas.blit(ax2.bbox)                # fill in the axes rectangle
+		fig.canvas.flush_events()
+
+	#UpdateValuesGraph()
+	
