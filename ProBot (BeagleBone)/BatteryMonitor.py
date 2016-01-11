@@ -28,7 +28,7 @@ class BatteryVoltage():
             BatteryVoltageVal = ADC.read(voltageVar[0])                                         # Real Voltage from BeagleBone battery
             BatteryRealValue = float((voltageVar[1]*BatteryVoltageVal)+voltageVar[2])           # Real voltage from the Motors battery
 
-            if BatteryRealValue < voltageVar[3]:					        # Define Red region for the batteries
+            if BatteryRealValue < voltageVar[3]:					        # Definition of the Red region for the batteries
                 GPIO.output(voltageVar[4], GPIO.LOW)
                 GPIO.output(voltageVar[5], GPIO.HIGH)
             else:
