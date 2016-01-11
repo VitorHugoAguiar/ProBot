@@ -2,9 +2,11 @@ import pygame
 import ZMQCommunication
 import LowPassFilter
 
+# Initialization of classes from local files
 Pub=ZMQCommunication.Publisher()
 LPF=LowPassFilter.LowPassFilter()
 
+# Initialization of the pygame 
 pygame.init()
 pygame.joystick.init()
 # Used to manage how fast the screen updates
@@ -15,7 +17,6 @@ class Joystick():
 		self.done=False
 
 	def mainRoutine(self):
-
 		# -------- Main Program Loop -----------
 		while self.done==False:
     		# EVENT PROCESSING STEP
@@ -26,10 +27,8 @@ class Joystick():
     			for i in range(1):
         			joystick = pygame.joystick.Joystick(0)
         			joystick.init()
-    
-        			# Get the name from the OS for the controller/joystick
-        			name = joystick.get_name()
-
+   				
+   				# Potenciometers
         			axis1 = joystick.get_axis( 1 )
         			axis2 = joystick.get_axis( 2 )
 
@@ -45,7 +44,6 @@ class Joystick():
         			clock.tick(20)
 		pygame.quit ()
 
-		
 	def main(self):
 		Joystick.mainRoutine()
 
