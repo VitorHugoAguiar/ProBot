@@ -25,7 +25,7 @@ class PIDControllers():
 	
     def standardPID(self, reference, measured, id, value, type):
         self.error = float(reference - measured)
-	
+	# Updating the local variables with the values from th UC33 
 	idInt=int(id)	
 	self.Matrix[idInt]=value	
 	self.KpP_UC33=(0.1*self.Matrix[25]+0.01*self.Matrix[17]+0.001*self.Matrix[9]-0.1*self.Matrix[1])
@@ -38,14 +38,15 @@ class PIDControllers():
 	self.KiA_UC33=(0.1*self.Matrix[32]+0.01*self.Matrix[24]+0.001*self.Matrix[16]-0.1*self.Matrix[8])
 	self.KdA_UC33=(0.1*self.Matrix[33])
 	
-	
+	# Loading the variables for the controllers
         typeController = {'Position': [Pconst.KpP+self.KpP_UC33, Pconst.KiP+self.KiP_UC33, Pconst.KdP+self.KdP_UC33, Pconst.limitP, Pconst.integrated_error_P, Pconst.last_error_P], 'Velocity': [Pconst.KpV+self.KpV_UC33, Pconst.KiV+self.KiV_UC33, Pconst.KdV+self.KdV_UC33, Pconst.limitV, Pconst.integrated_error_VA, Pconst.last_error_VA], 'Angle': [Pconst.KpA+self.KpA_UC33, Pconst.KiA+self.KiA_UC33, Pconst.KdA+self.KdA_UC33, Pconst.limitA, Pconst.integrated_error_VA, Pconst.last_error_VA]}
-        
         controllerVar=typeController[type]
-
+	
+	# Code for the controllers PID
         pTerm = float(controllerVar[0] * self.error)
         controllerVar[4] += float(self.error)
-
+	
+	# Limiting the integrated error, avoiding windup
         controllerVar[4] = max(-controllerVar[3], min(controllerVar[4], controllerVar[3]))
 
         iTerm = float(controllerVar[1] * controllerVar[4])
@@ -53,7 +54,8 @@ class PIDControllers():
         controllerVar[5] = self.error
 	
         PID_result = float(pTerm + iTerm + dTerm)
-		
+	
+	# Updating the integrated error	and the last error for the next loop
         if(type is 'Position'):
             Pconst.integrated_error_P = controllerVar[4]
             Pconst.last_error_P= controllerVar[5]
@@ -65,6 +67,6 @@ class PIDControllers():
         if(type is 'Angle'):
             Pconst.integrated_error_VA = controllerVar[4]
             Pconst.last_error_VA= controllerVar[5]	
-            PID_result = max(-127, min(PID_result, 127))
+            PID_result = max(-127, min(PID_result, 127))					# Limiting the output for the motors (-127, 127)
 		
         return PID_result

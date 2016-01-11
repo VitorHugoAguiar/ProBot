@@ -1,10 +1,11 @@
 #!/usr/bin/python
 
-# Python Standard Library Imports
+# Python Standart Library Imports
 import Adafruit_BBIO.ADC as ADC
 import Adafruit_BBIO.GPIO as GPIO
 import ProBotConstants
 
+# Initialization of classes from local files
 Pconst = ProBotConstants.Constants()
 
 # Start the ADC
@@ -20,14 +21,14 @@ GPIO.setup(Pconst.RedBatteryMotors, GPIO.OUT)
 # Battery measurement
 class BatteryVoltage():
         def VoltageValue(self, type):
+            # Readings from the BeagleBone and Motors batteries
             options = {'BeagleBone': [Pconst.AnalogPinBeagle, Pconst.mBeagle, Pconst.bBeagle, Pconst.MinRedBeagle, Pconst.GreenBatteryBeagle, Pconst.RedBatteryBeagle], 'Motors': [Pconst.AnalogPinMotors, Pconst.mMotors, Pconst.bMotors, Pconst.MinRedMotors, Pconst.GreenBatteryMotors, Pconst.RedBatteryMotors]}
-
             voltageVar = options[type]		
 
-            BatteryVoltageVal = ADC.read(voltageVar[0])
-            BatteryRealValue = float((voltageVar[1]*BatteryVoltageVal)+voltageVar[2])   # Real voltage from the BeagleBone battery
+            BatteryVoltageVal = ADC.read(voltageVar[0])                                         # Real Voltage from BeagleBone battery
+            BatteryRealValue = float((voltageVar[1]*BatteryVoltageVal)+voltageVar[2])           # Real voltage from the Motors battery
 
-            if BatteryRealValue < voltageVar[3]:					    # Define Red region, under 10,5V
+            if BatteryRealValue < voltageVar[3]:					        # Definition of the Red region for the batteries
                 GPIO.output(voltageVar[4], GPIO.LOW)
                 GPIO.output(voltageVar[5], GPIO.HIGH)
             else:
