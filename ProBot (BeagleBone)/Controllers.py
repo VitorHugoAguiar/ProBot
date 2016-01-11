@@ -67,6 +67,6 @@ class PIDControllers():
         if(type is 'Angle'):
             Pconst.integrated_error_VA = controllerVar[4]
             Pconst.last_error_VA= controllerVar[5]	
-            PID_result = max(-127, min(PID_result, 127))
+            PID_result = max(-127, min(PID_result, 127))					# Limiting the output for the motors (-127, 127)
 		
         return PID_result
