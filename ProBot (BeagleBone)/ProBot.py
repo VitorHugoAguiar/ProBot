@@ -37,18 +37,11 @@ GPIO.setup(Pconst.GreenLED, GPIO.OUT)
 
 
 class ProBot():
-    def __init__(self, wheelPositionRef=0, VelocityRef=0, TurnMotorRight=0, TurnMotorLeft=0, topic=0, ForwardReverse=0, LeftRight=0, midi_device=0, subscriberSplit2=0, subscriberSplit3=0, id=0, value=0):
-        # Starting the main program
-        self.wheelPositionRef = wheelPositionRef
+    def __init__(self, wheelPositionRef=0, VelocityRef=0, TurnMotorRight=0, TurnMotorLeft=0, id=0, value=0):
+	self.wheelPositionRef = wheelPositionRef
         self.VelocityRef = VelocityRef
         self.TurnMotorRight = TurnMotorRight
         self.TurnMotorLeft = TurnMotorLeft
-        self.topic =  topic
-        self.ForwardReverse = ForwardReverse
-        self.LeftRight = LeftRight
-        self.midi_device=midi_device
-        self.subscriberSplit2=subscriberSplit2
-        self.subscriberSplit3=subscriberSplit3
 	self.id=id
 	self.value=value
 
@@ -64,10 +57,11 @@ class ProBot():
             GPIO.output(Pconst.GreenLED, GPIO.HIGH)
 
     def SabertoothCommunication_initialization(self):
+    	# Starting the communication with Sabertooth
         GPIO.output(Pconst.RedLED, GPIO.HIGH)
         PC.set_baud(PC.addr, PC.baud)
         time.sleep(3)									# Wait to stabilize the communication
-																	
+        
         PC.stopAndReset()
 
         GPIO.output(Pconst.GreenLED, GPIO.HIGH)
@@ -75,28 +69,28 @@ class ProBot():
         time.sleep(1.5)
 
     def Midi_device(self):
+    	# Readings from the midi devices (Joystick, keyboard and UC33 )
         subscriber = Pub_Sub.subscriber()
         if subscriber is None:
             subscriber = 0
         else:	             
-            self.midi_device, self.subscriberSplit2, self.subscriberSplit3  = subscriber.split()
+            midi_device, subscriberSplit2, subscriberSplit3  = subscriber.split()
 	    
-            if self.midi_device=='UC33':
-                self.id=float(decimal.Decimal(self.subscriberSplit2))
-                self.value=float(decimal.Decimal(self.subscriberSplit3))
+            if midi_device=='UC33':
+                self.id=float(decimal.Decimal(subscriberSplit2))
+                self.value=float(decimal.Decimal(subscriberSplit3))
                 return self.id, self.value
 
-            if self.midi_device=='keyboard' or self.midi_device=='joystick':
-                self.ForwardReverse = float(decimal.Decimal(self.subscriberSplit2))
-                self.LeftRight = float(decimal.Decimal(self.subscriberSplit3))
-                self.VelocityRef = float(self.ForwardReverse*1.3)
-                self.TurnMotorRight = -float(self.LeftRight*40)
-                self.TurnMotorLeft = float(self.LeftRight*40)
+            if midi_device=='keyboard' or midi_device=='joystick':
+                ForwardReverse = float(decimal.Decimal(subscriberSplit2))
+                LeftRight = float(decimal.Decimal(subscriberSplit3))
+                self.VelocityRef = float(ForwardReverse*1.3)
+                self.TurnMotorRight = -float(LeftRight*40)
+                self.TurnMotorLeft = float(LeftRight*40)
                 return  self.VelocityRef,  self.TurnMotorRight, self.TurnMotorLeft
 
-
-					
     def mainRoutine(self):
+    	# Starting the main program
         while True:		
             try:
                 LoopTime = time.time()
@@ -120,10 +114,11 @@ class ProBot():
                 Encoders = Enc.EncodersValues()
                 wheelVelocity = Encoders[0]
                 wheelPosition = Encoders[1]
-
+		
+		# Readings from the midi devices
                 Midi_device = ProBot.Midi_device()
 		
-                # With the values from the server, we can calculate the outputs from the controllers			
+                # With the values from the midi devices, we can calculate the outputs from the controllers			
                 PidVelocityRef = PID.standardPID(self.wheelPositionRef, wheelPosition, self.id, self.value, 'Position')			
                 PidAngleRef = PID.standardPID(self.VelocityRef, wheelVelocity, self.id, self.value, 'Velocity')
                 PidMotorRef = PID.standardPID(PidAngleRef, kalAngleX, self.id, self.value, 'Angle')	
