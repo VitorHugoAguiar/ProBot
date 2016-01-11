@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# Python Library Imports
+# Python Standart Library Imports
 import Adafruit_BBIO.ADC as ADC
 import Adafruit_BBIO.GPIO as GPIO
 import ProBotConstants
