@@ -2,7 +2,7 @@
 import sys
 import zmq
 
-# First, connect our subscriber socket
+# Connection to  our subscriber socket
 context = zmq.Context()
 subscriber = context.socket(zmq.SUB)
 subscriber.connect('tcp://176.58.125.166:5560')
