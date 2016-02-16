@@ -12,14 +12,10 @@ Pub_Sub = ZMQCommunication.publisher_and_subscriber()
 
 class BroadcastClientProtocol(WebSocketClientProtocol):
 
-
     def onMessage(self, payload, isBinary):
         direction=payload.decode('utf8')
         print direction
         publisher = Pub_Sub.publisher(direction)
-
-
-
 
 if __name__ == '__main__':
 
