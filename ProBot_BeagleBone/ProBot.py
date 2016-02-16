@@ -63,7 +63,7 @@ class ProBot():
     	# Starting the communication with Sabertooth
         GPIO.output(Pconst.RedLED, GPIO.HIGH)
         PC.set_baud(PC.addr, PC.baud)
-        time.sleep(3)									# Wait to stabilize the communication
+        time.sleep(3)						# Wait to stabilize the communication
 
         PC.stopAndReset()
 
