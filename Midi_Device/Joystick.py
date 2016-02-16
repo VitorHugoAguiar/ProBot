@@ -9,7 +9,6 @@ LPF=LowPassFilter.LowPassFilter()
 # Initialization of the pygame 
 pygame.init()
 pygame.joystick.init()
-# Used to manage how fast the screen updates
 clock = pygame.time.Clock() 
 
 class Joystick():
