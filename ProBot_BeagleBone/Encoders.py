@@ -9,7 +9,7 @@ encoder1 = eqep.eQEP("/sys/devices/ocp.3/48300000.epwmss/48300180.eqep", eqep.eQ
 # Instantiate an instance of the driver for encoder of the motor 2
 encoder2 = eqep.eQEP("/sys/devices/ocp.3/48304000.epwmss/48304180.eqep", eqep.eQEP.MODE_ABSOLUTE)
 
-# Set the polling period of the encoder's to 0.1 seconds, or 100,000,000 nanoseconds
+# Polling period of the encoder's
 encoder1.set_period(20000000)
 encoder2.set_period(20000000)
 
