@@ -7,7 +7,6 @@ def main():
         # Socket facing clients
         frontend = context.socket(zmq.SUB)
         frontend.bind("tcp://*:5559")
-
         frontend.setsockopt(zmq.SUBSCRIBE, "")
 
         # Socket facing services
@@ -26,5 +25,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
