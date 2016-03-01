@@ -16,4 +16,4 @@ The system can be controlled remotely through wifi, using a cellphone hotspot co
 
 
 
-![alt tag](https://cloud.githubusercontent.com/assets/15111231/12036213/d9721ffa-ae3b-11e5-899e-e24c620e9729.jpg)
+![alt tag](IMG_4484.png)
