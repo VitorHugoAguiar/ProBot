@@ -40,4 +40,6 @@ How to configure the ProBot BeagleBone:
 	
 14 - Change the ip in the ProBot/SocketCommunication.py file to the BeagleBone ip's.
 
-15 - Run ProBot/ProBot.py
+15 - Run:
+	
+	python ProBot.py
