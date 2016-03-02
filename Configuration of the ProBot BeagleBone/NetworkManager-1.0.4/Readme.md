@@ -14,25 +14,25 @@ Execute the following commands:
   
   * cd NetworkManager-1.0.4
 
-  ./configure --prefix=/usr        \
+  * ./configure --prefix=/usr        \
         
-        --sysconfdir=/etc    \
+    * --sysconfdir=/etc    \
         
-        --localstatedir=/var \
+    *--localstatedir=/var \
         
-        --with-nmtui         \
+    *--with-nmtui         \
        
-        --disable-ppp        \
+    *--disable-ppp        \
        
-        --with-systemdsystemunitdir=no \
+    *--with-systemdsystemunitdir=no \
         
-        --docdir=/usr/share/doc/network-manager-1.0.10
+    *--docdir=/usr/share/doc/network-manager-1.0.10
 
-    make
+  *make
     
-    make check
+  *make check
     
-    make install
+  *make install
     
 
 5 - Copy the network-manager file to /etc/init.d and the NetworkManager.conf to /etc/NetworkManager
