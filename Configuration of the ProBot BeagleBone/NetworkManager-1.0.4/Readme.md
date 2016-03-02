@@ -10,31 +10,31 @@ Execute the following commands:
 3 - Copy NetworManager-1.0.4.tar.xz to BeagleBone
 
 4 - Execute the following commands:
-  * tar xf NetworkManager-1.0.4.tar.xz
+  tar xf NetworkManager-1.0.4.tar.xz
   
-  * cd NetworkManager-1.0.4
+  cd NetworkManager-1.0.4
 
-  * ./configure 
+  ./configure 
   
     --prefix=/usr \
 
     --sysconfdir=/etc    \
-    
+  
     --localstatedir=/var \
-        
-    *--with-nmtui         \
-       
-    *--disable-ppp        \
-       
-    *--with-systemdsystemunitdir=no \
-        
-    *--docdir=/usr/share/doc/network-manager-1.0.10
+  
+    --with-nmtui         \
 
-  *make
+    --disable-ppp        \
+
+    --with-systemdsystemunitdir=no \
+        
+    --docdir=/usr/share/doc/network-manager-1.0.10
+
+  make
     
-  *make check
+  make check
     
-  *make install
+  make install
     
 
 5 - Copy the network-manager file to /etc/init.d and the NetworkManager.conf to /etc/NetworkManager
