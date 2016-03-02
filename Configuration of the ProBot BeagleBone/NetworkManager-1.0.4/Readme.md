@@ -13,8 +13,7 @@ Execute the following commands:
 4 - Execute the following commands:
 
     tar xf NetworkManager-1.0.4.tar.xz
-  
-  cd NetworkManager-1.0.4
+    cd NetworkManager-1.0.4
 
   ./configure 
   
