@@ -14,35 +14,20 @@ Execute the following commands:
 
     tar xf NetworkManager-1.0.4.tar.xz
     cd NetworkManager-1.0.4
-
-  ./configure 
-  
-    --prefix=/usr \
-
-    --sysconfdir=/etc    \
-  
-    --localstatedir=/var \
-  
-    --with-nmtui         \
-
-    --disable-ppp        \
-
-    --with-systemdsystemunitdir=no \
-        
-    --docdir=/usr/share/doc/network-manager-1.0.10
-
-  make
+    ./configure --prefix=/usr\
+        --sysconfdir=/etc    \
+        --localstatedir=/var \
+        --with-nmtui         \
+        --disable-ppp        \
+        --with-systemdsystemunitdir=no \
+        --docdir=/usr/share/doc/network-manager-1.0.10
+    make
+    make check
+    make install
     
-  make check
-    
-  make install
-    
-
 5 - Copy the network-manager file to /etc/init.d and the NetworkManager.conf to /etc/NetworkManager
-
-  cp NetWorkManager-1.0.4/network-manager /etc/init.d
-  
-  cp NetWorkManager-1.0.4/NetworkManager.conf /etc/NetworkManager
+    cp NetWorkManager-1.0.4/network-manager /etc/init.d
+    cp NetWorkManager-1.0.4/NetworkManager.conf /etc/NetworkManager
 
 6 - Start the Network Manager service
 
