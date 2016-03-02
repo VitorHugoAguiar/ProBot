@@ -17,6 +17,7 @@ How to configure the ProBot BeagleBone:
 8 - Install zmq and smbus with: "apt-get install python-zmq python-smbus"
 
 9 - Install the encoders from beaglebot running the following command: 
+
 	"cp beaglebot/encoders/dts/dtbo/bone_eqep0-00A0.dtbo /lib/firmware"
 
 10 - Use the same command for the others encoders files
@@ -26,6 +27,7 @@ How to configure the ProBot BeagleBone:
 12 - Copy the folder "ProBot_BeagleBone" to the BeagleBone
 
 13 - Type "crontab -e" and write:
+
 	@reboot sh /root/ProBot/EnableEncoders.sh
 	
 	@reboot python /root/ProBot/forward_device1.py
