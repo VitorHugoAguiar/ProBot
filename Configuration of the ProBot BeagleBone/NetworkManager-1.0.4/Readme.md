@@ -20,25 +20,26 @@ Execute the following commands:
         --with-nmtui         \
         --disable-ppp        \
         --with-systemdsystemunitdir=no \
-        --docdir=/usr/share/doc/network-manager-1.0.10
+        --docdir=/usr/share/doc/network-manager-1.0.4
     make
     make check
     make install
     
 5 - Copy the network-manager file to /etc/init.d and the NetworkManager.conf to /etc/NetworkManager
+
     cp NetWorkManager-1.0.4/network-manager /etc/init.d
     cp NetWorkManager-1.0.4/NetworkManager.conf /etc/NetworkManager
 
 6 - Start the Network Manager service
 
-  service network-manager start
+    service network-manager start
 
 7 - Enable Network Manager on boot with:
 
-  update-rc.d network-manager defaults
+    update-rc.d network-manager defaults
 
 8 - Restart BeagleBone
 
 9 - Check if Network Manager is working running:
 
-  nmtui
+    nmtui
