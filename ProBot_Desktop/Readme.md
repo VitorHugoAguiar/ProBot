@@ -5,6 +5,6 @@ Install the following libraries:
 
 Run:
 
-    python3 Midi_device
+    python3 Midi_device.py
 
 and choose the midi device that you want to use to control ProBot.
