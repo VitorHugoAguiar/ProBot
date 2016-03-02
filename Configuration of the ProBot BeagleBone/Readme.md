@@ -25,8 +25,11 @@ How to configure the ProBot BeagleBone:
 12 - Copy the folder "ProBot_BeagleBone" to the BeagleBone
 
 13 - Type "crontab -e" and write:
+
 	@reboot sh /root/ProBot/EnableEncoders.sh
+	
 	@reboot python /root/ProBot/forward_device1.py
+	
 	@reboot sleep 20 && python /root/ProBot/WebClient.py ws://(ip of the server)
 	
 14 - Change the ip in the ProBot/SocketCommunication.py file to the BeagleBone ip's.
