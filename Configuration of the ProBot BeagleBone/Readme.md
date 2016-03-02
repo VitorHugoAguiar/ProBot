@@ -22,7 +22,7 @@ How to configure the ProBot BeagleBone:
 
 9 - Install the encoders from beaglebot running the following command: 
 
-	cp beaglebot/encoders/dts/dtbo/bone_eqep0-00A0.dtbo /lib/firmware
+	cp encoders/bone_eqep0-00A0.dtbo /lib/firmware
 
 10 - Use the same command for the others encoders files
 
