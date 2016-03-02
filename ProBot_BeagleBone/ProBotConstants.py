@@ -3,12 +3,12 @@
 # Constants used in the algorithm
 class Constants():
     def __init__(self):
-        self.AccXangleAverage = 0.2
+        self.AccXangleAverage = -2.3
         self.GYRxAverage = -65
         self.RedLED = "P8_13"
         self.GreenLED = "P9_27"
-        self.KpP = 0.011
-        self.KiP = 0.009
+        self.KpP = 0
+        self.KiP = 0
         self.KdP = 0
         self.KpV = 10
         self.KiV = 0.3
