@@ -2,7 +2,9 @@ How to configure the ProBot BeagleBone:
 
 1 - Install debian image
 
-2 - Run apt-get update
+2 - Run 
+	
+	apt-get update
 
 3 - Disable HDMI on the /boot/uEnv.txt
 
