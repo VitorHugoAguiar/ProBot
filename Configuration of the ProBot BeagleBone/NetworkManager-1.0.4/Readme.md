@@ -15,9 +15,9 @@ Execute the following commands:
   * cd NetworkManager-1.0.4
 
   * ./configure 
-    *--prefix=/usr \
-    *--sysconfdir=/etc    \
-    *--localstatedir=/var \
+    --prefix=/usr \
+    --sysconfdir=/etc    \
+    --localstatedir=/var \
         
     *--with-nmtui         \
        
