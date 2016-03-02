@@ -2,7 +2,7 @@ To control the ProBot with a Webpage, run:
 
     python ProBot_Server/WebPage/WebServer.py 
 
-Do not forget to change the ip to the server ip on the WebServer.py 
+Do not forget to change the ip to the server ip on the WebServer.py file.
 
 If we want to control the ProBot with some Midi device, like a joystick, just run instead:
 
