@@ -10,27 +10,25 @@ How to configure the ProBot BeagleBone:
 
 4 - Install network-manager 1.0.4 (follow the instructions that are within the folder NetworkManager-1.0.4)
 
-5 - Configure WiFi with the command "nmtui" and put a static ip on the BeagleBone
+5 - Install Xenomai and make the latency test
 
-6 - Reboot and check the internet connection ("ping 8.8.8.8") and the BeagleBone ip's
+    http://syrianspock.github.io/embedded-linux/2015/08/03/xenomai-installation-on-a-beaglebone-black.html
 
-7 - Run Xenomai and make the latency test
-
-8 - Install zmq and smbus with:
+6 - Install zmq and smbus with:
     
     apt-get install python-zmq python-smbus
 
-9 - Install the encoders from beaglebot running the following command: 
+7 - Install the encoders running the following command: 
 
-	cp encoders/bone_eqep0-00A0.dtbo /lib/firmware
+	cp ProBot/ProBot_BeagleBone/Configuration of the ProBot BeagleBone/encoders/bone_eqep0-00A0.dtbo /lib/firmware
 
-10 - Use the same command for the others encoders files
+8 - Use the same command for the others encoders files
 
-11 - Install crossbar (follow the instructions that are within the folder Crossbar)
+9 - Install crossbar (follow the instructions that are within the folder Crossbar)
 
-12 - Copy the folder "ProBot_BeagleBone" to the BeagleBone
+10 - Copy the folder "ProBot_BeagleBone" to the BeagleBone
 
-13 - Type "crontab -e" and write:
+11 - Type "crontab -e" and write:
 
 	@reboot sh /root/ProBot_BeagleBone/EnableEncoders.sh
 	
@@ -38,8 +36,6 @@ How to configure the ProBot BeagleBone:
 	
 	@reboot sleep 20 && python /root/ProBot_BeagleBone/WebClient.py ws://(ip of the server)
 	
-14 - Change the ip in the ProBot_BeagleBone/SocketCommunication.py file to the BeagleBone ip's.
-
-15 - Run:
+12 - Run:
 	
 	python ProBot_BeagleBone/ProBot.py

@@ -8,7 +8,7 @@ Execute the following commands:
 
     apt-get autoremove connman
 
-3 - Copy NetworManager-1.0.4.tar.xz to BeagleBone
+3 - Copy NetworManager-1.0.4.tar.xz, NetworkManager.conf and network-manager to BeagleBone
 
 4 - Execute the following commands:
 
@@ -27,19 +27,16 @@ Execute the following commands:
     
 5 - Copy the network-manager file to /etc/init.d and the NetworkManager.conf to /etc/NetworkManager
 
-    cp NetWorkManager-1.0.4/network-manager /etc/init.d
-    cp NetWorkManager-1.0.4/NetworkManager.conf /etc/NetworkManager
+    cp network-manager /etc/init.d
+    cp NetworkManager.conf /etc/NetworkManager
 
-6 - Start the Network Manager service
 
-    service network-manager start
-
-7 - Enable Network Manager on boot with:
+6 - Enable Network Manager on boot with:
 
     update-rc.d network-manager defaults
 
-8 - Restart BeagleBone
+7 - Restart BeagleBone
 
-9 - Check if Network Manager is working running:
+8 - Check if Network Manager is working running:
 
     nmtui
