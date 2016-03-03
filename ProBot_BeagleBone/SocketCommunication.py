@@ -13,14 +13,14 @@ poller.register(subscriber, zmq.POLLIN)
 # Connection to our publisher socket
 contextP = zmq.Context()
 publisher = contextP.socket(zmq.PUB)
-publisher.connect("tcp://192.168.1.120:5579")
+publisher.connect("tcp://localhost:5579")
 publisher.sndhwm = 1100000
 
 
 class publisher_and_subscriber():
     def userChoice(self, userChoice):
         if userChoice==1:
-            subscriber.connect('tcp://192.168.1.120:5580')
+            subscriber.connect('tcp://localhost:5580')
         if userChoice==2:
             subscriber.connect('tcp://139.162.157.96:5560')
 
