@@ -30,16 +30,13 @@ Execute the following commands:
     cp network-manager /etc/init.d
     cp NetworkManager.conf /etc/NetworkManager
 
-6 - Start the Network Manager service
 
-    service network-manager start
-
-7 - Enable Network Manager on boot with:
+6 - Enable Network Manager on boot with:
 
     update-rc.d network-manager defaults
 
-8 - Restart BeagleBone
+7 - Restart BeagleBone
 
-9 - Check if Network Manager is working running:
+8 - Check if Network Manager is working running:
 
     nmtui
