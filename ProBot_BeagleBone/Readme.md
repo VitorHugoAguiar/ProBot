@@ -16,7 +16,7 @@ How to configure the ProBot BeagleBone:
 
 6 - Install zmq and smbus with:
     
-    apt-get install python-zmq python-smbus
+    apt-get -y install python-zmq python-smbus
 
 7 - Install the encoders running the following command: 
 
