@@ -36,5 +36,6 @@ How to configure the ProBot BeagleBone:
 	@reboot sleep 20 && python /root/ProBot/ProBot_BeagleBone/WebClient.py ws://(ip of the server):9000
 	
 12 - Run:
+
 	cd ProBot/ProBot_BeagleBone
 	python ProBot.py
