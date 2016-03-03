@@ -12,15 +12,15 @@ How to configure the ProBot BeagleBone:
 
 5 - Install Xenomai and make the latency test
 
-    (http://syrianspock.github.io/embedded-linux/2015/08/03/xenomai-installation-on-a-beaglebone-black.html)
+    http://syrianspock.github.io/embedded-linux/2015/08/03/xenomai-installation-on-a-beaglebone-black.html
 
 6 - Install zmq and smbus with:
     
     apt-get install python-zmq python-smbus
 
-7 - Install the encoders from beaglebot running the following command: 
+7 - Install the encoders running the following command: 
 
-	cp encoders/bone_eqep0-00A0.dtbo /lib/firmware
+	cp ProBot/ProBot_BeagleBone/Configuration of the ProBot BeagleBone/encoders/bone_eqep0-00A0.dtbo /lib/firmware
 
 8 - Use the same command for the others encoders files
 
