@@ -10,7 +10,7 @@ How to configure the ProBot BeagleBone:
 
 4 - Install network-manager 1.0.4 (follow the instructions that are within the folder NetworkManager-1.0.4)
 
-5 - Install Xenomai [from here] http://syrianspock.github.io/embedded-linux/2015/08/03/xenomai-installation-on-a-beaglebone-black.html and make the latency test
+5 - Install Xenomai [from here] (http://syrianspock.github.io/embedded-linux/2015/08/03/xenomai-installation-on-a-beaglebone-black.html) and make the latency test
 
     
 
