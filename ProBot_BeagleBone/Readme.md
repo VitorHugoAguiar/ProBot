@@ -27,16 +27,14 @@ How to configure the ProBot BeagleBone:
 
 9 - Install crossbar (follow the instructions that are within the folder Crossbar)
 
-10 - Copy the folder "ProBot_BeagleBone" to the BeagleBone
-
 11 - Type "crontab -e" and write:
 
-	@reboot sh /root/ProBot_BeagleBone/EnableEncoders.sh
+	@reboot sh /root/ProBot/ProBot_BeagleBone/EnableEncoders.sh
 	
-	@reboot python /root/ProBot_BeagleBone/forward_device1.py
+	@reboot python /root/ProBot/ProBot_BeagleBone/forward_device1.py
 	
-	@reboot sleep 20 && python /root/ProBot_BeagleBone/WebClient.py ws://(ip of the server)
+	@reboot sleep 20 && python /root/ProBot/ProBot_BeagleBone/WebClient.py ws://(ip of the server)
 	
 12 - Run:
-	
-	python ProBot_BeagleBone/ProBot.py
+	cd ProBot/ProBot_BeagleBone
+	python ProBot.py
