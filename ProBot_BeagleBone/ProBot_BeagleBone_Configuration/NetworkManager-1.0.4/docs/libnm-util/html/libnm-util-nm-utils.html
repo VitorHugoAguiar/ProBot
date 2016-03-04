@@ -1,0 +1,2503 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>nm-utils: libnm-util Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm-util Reference Manual">
+<link rel="up" href="ch01.html" title="libnm-util API Reference">
+<link rel="prev" href="NMSettingVPN.html" title="NMSettingVPN">
+<link rel="next" href="libnm-util-NetworkManager.html" title="NetworkManager">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libnm-util-nm-utils.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#libnm-util-nm-utils.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="NMSettingVPN.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libnm-util-NetworkManager.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libnm-util-nm-utils"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libnm-util-nm-utils.top_of_page"></a>nm-utils</span></h2>
+<p>nm-utils — Utility functions</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libnm-util-nm-utils.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-init" title="nm_utils_init ()">nm_utils_init</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-deinit" title="nm_utils_deinit ()">nm_utils_deinit</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-is-empty-ssid" title="nm_utils_is_empty_ssid ()">nm_utils_is_empty_ssid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-escape-ssid" title="nm_utils_escape_ssid ()">nm_utils_escape_ssid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-same-ssid" title="nm_utils_same_ssid ()">nm_utils_same_ssid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-ssid-to-utf8" title="nm_utils_ssid_to_utf8 ()">nm_utils_ssid_to_utf8</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GHashTable</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-gvalue-hash-dup" title="nm_utils_gvalue_hash_dup ()">nm_utils_gvalue_hash_dup</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-slist-free" title="nm_utils_slist_free ()">nm_utils_slist_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-security-valid" title="nm_utils_security_valid ()">nm_utils_security_valid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-ap-mode-security-valid" title="nm_utils_ap_mode_security_valid ()">nm_utils_ap_mode_security_valid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-wep-key-valid" title="nm_utils_wep_key_valid ()">nm_utils_wep_key_valid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-wpa-psk-valid" title="nm_utils_wpa_psk_valid ()">nm_utils_wpa_psk_valid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GSList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-ip4-addresses-from-gvalue" title="nm_utils_ip4_addresses_from_gvalue ()">nm_utils_ip4_addresses_from_gvalue</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-ip4-addresses-to-gvalue" title="nm_utils_ip4_addresses_to_gvalue ()">nm_utils_ip4_addresses_to_gvalue</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GSList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-ip4-routes-from-gvalue" title="nm_utils_ip4_routes_from_gvalue ()">nm_utils_ip4_routes_from_gvalue</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-ip4-routes-to-gvalue" title="nm_utils_ip4_routes_to_gvalue ()">nm_utils_ip4_routes_to_gvalue</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-ip4-netmask-to-prefix" title="nm_utils_ip4_netmask_to_prefix ()">nm_utils_ip4_netmask_to_prefix</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-ip4-prefix-to-netmask" title="nm_utils_ip4_prefix_to_netmask ()">nm_utils_ip4_prefix_to_netmask</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-ip4-get-default-prefix" title="nm_utils_ip4_get_default_prefix ()">nm_utils_ip4_get_default_prefix</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GSList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-ip6-addresses-from-gvalue" title="nm_utils_ip6_addresses_from_gvalue ()">nm_utils_ip6_addresses_from_gvalue</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-ip6-addresses-to-gvalue" title="nm_utils_ip6_addresses_to_gvalue ()">nm_utils_ip6_addresses_to_gvalue</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GSList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-ip6-routes-from-gvalue" title="nm_utils_ip6_routes_from_gvalue ()">nm_utils_ip6_routes_from_gvalue</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-ip6-routes-to-gvalue" title="nm_utils_ip6_routes_to_gvalue ()">nm_utils_ip6_routes_to_gvalue</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GSList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-ip6-dns-from-gvalue" title="nm_utils_ip6_dns_from_gvalue ()">nm_utils_ip6_dns_from_gvalue</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-ip6-dns-to-gvalue" title="nm_utils_ip6_dns_to_gvalue ()">nm_utils_ip6_dns_to_gvalue</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-uuid-generate" title="nm_utils_uuid_generate ()">nm_utils_uuid_generate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-uuid-generate-from-string" title="nm_utils_uuid_generate_from_string ()">nm_utils_uuid_generate_from_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GByteArray</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-rsa-key-encrypt" title="nm_utils_rsa_key_encrypt ()">nm_utils_rsa_key_encrypt</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GByteArray</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-rsa-key-encrypt-aes" title="nm_utils_rsa_key_encrypt_aes ()">nm_utils_rsa_key_encrypt_aes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-file-is-pkcs12" title="nm_utils_file_is_pkcs12 ()">nm_utils_file_is_pkcs12</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="libnm-util-nm-utils.html#NMUtilsFileSearchInPathsPredicate" title="NMUtilsFileSearchInPathsPredicate ()">*NMUtilsFileSearchInPathsPredicate</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-file-search-in-paths" title="nm_utils_file_search_in_paths ()">nm_utils_file_search_in_paths</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-wifi-freq-to-channel" title="nm_utils_wifi_freq_to_channel ()">nm_utils_wifi_freq_to_channel</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-wifi-channel-to-freq" title="nm_utils_wifi_channel_to_freq ()">nm_utils_wifi_channel_to_freq</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-wifi-find-next-channel" title="nm_utils_wifi_find_next_channel ()">nm_utils_wifi_find_next_channel</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-wifi-is-channel-valid" title="nm_utils_wifi_is_channel_valid ()">nm_utils_wifi_is_channel_valid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-hwaddr-len" title="nm_utils_hwaddr_len ()">nm_utils_hwaddr_len</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-hwaddr-type" title="nm_utils_hwaddr_type ()">nm_utils_hwaddr_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-hwaddr-ntoa" title="nm_utils_hwaddr_ntoa ()">nm_utils_hwaddr_ntoa</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GByteArray</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-hwaddr-atoba" title="nm_utils_hwaddr_atoba ()">nm_utils_hwaddr_atoba</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint8</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-hwaddr-aton" title="nm_utils_hwaddr_aton ()">nm_utils_hwaddr_aton</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-hwaddr-ntoa-len" title="nm_utils_hwaddr_ntoa_len ()">nm_utils_hwaddr_ntoa_len</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint8</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-hwaddr-aton-len" title="nm_utils_hwaddr_aton_len ()">nm_utils_hwaddr_aton_len</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-hwaddr-valid" title="nm_utils_hwaddr_valid ()">nm_utils_hwaddr_valid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-bin2hexstr" title="nm_utils_bin2hexstr ()">nm_utils_bin2hexstr</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-hex2byte" title="nm_utils_hex2byte ()">nm_utils_hex2byte</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-hexstr2bin" title="nm_utils_hexstr2bin ()">nm_utils_hexstr2bin</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-iface-valid-name" title="nm_utils_iface_valid_name ()">nm_utils_iface_valid_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-is-uuid" title="nm_utils_is_uuid ()">nm_utils_is_uuid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-inet4-ntop" title="nm_utils_inet4_ntop ()">nm_utils_inet4_ntop</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-inet6-ntop" title="nm_utils_inet6_ntop ()">nm_utils_inet6_ntop</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-check-virtual-device-compatibility" title="nm_utils_check_virtual_device_compatibility ()">nm_utils_check_virtual_device_compatibility</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libnm-util-nm-utils.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-util-nm-utils.html#NMUtilsSecurityType" title="enum NMUtilsSecurityType">NMUtilsSecurityType</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-nm-utils.html#NM-UTILS-HWADDR-LEN-MAX:CAPS" title="NM_UTILS_HWADDR_LEN_MAX">NM_UTILS_HWADDR_LEN_MAX</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-nm-utils.html#NM-UTILS-INET-ADDRSTRLEN:CAPS" title="NM_UTILS_INET_ADDRSTRLEN">NM_UTILS_INET_ADDRSTRLEN</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libnm-util-nm-utils.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Enumeration-and-Flag-Types.html">GEnum</a>
+    <span class="lineart">╰──</span> NMUtilsSecurityType
+</pre>
+</div>
+<div class="refsect1">
+<a name="libnm-util-nm-utils.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;nm-utils.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="libnm-util-nm-utils.description"></a><h2>Description</h2>
+<p>A collection of utility functions for working with SSIDs, IP addresses, Wi-Fi
+access points and devices, among other things.</p>
+</div>
+<div class="refsect1">
+<a name="libnm-util-nm-utils.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="nm-utils-init"></a><h3>nm_utils_init ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_utils_init (<em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Initializes libnm-util; should be called when starting any program that
+uses libnm-util.  This function can be called more than once.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.2.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the initialization was successful, <code class="literal">FALSE</code> on failure.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-deinit"></a><h3>nm_utils_deinit ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_utils_deinit (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>No-op. Although this function still exists for ABI compatibility reasons, it
+does not have any effect, and does not ever need to be called.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-is-empty-ssid"></a><h3>nm_utils_is_empty_ssid ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_utils_is_empty_ssid (<em class="parameter"><code>const <span class="type">guint8</span> *ssid</code></em>,
+                        <em class="parameter"><code><span class="type">int</span> len</code></em>);</pre>
+<p>Different manufacturers use different mechanisms for not broadcasting the
+AP's SSID.  This function attempts to detect blank/empty SSIDs using a
+number of known SSID-cloaking methods.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>ssid</p></td>
+<td class="parameter_description"><p>pointer to a buffer containing the SSID data</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>len</p></td>
+<td class="parameter_description"><p>length of the SSID data in <em class="parameter"><code>ssid</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.4.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the SSID is "empty", <code class="literal">FALSE</code> if it is not</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-escape-ssid"></a><h3>nm_utils_escape_ssid ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_utils_escape_ssid (<em class="parameter"><code>const <span class="type">guint8</span> *ssid</code></em>,
+                      <em class="parameter"><code><span class="type">guint32</span> len</code></em>);</pre>
+<p>This function does a quick printable character conversion of the SSID, simply
+replacing embedded NULLs and non-printable characters with the hexadecimal
+representation of that character.  Intended for debugging only, should not
+be used for display of SSIDs.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>ssid</p></td>
+<td class="parameter_description"><p>pointer to a buffer containing the SSID data</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>len</p></td>
+<td class="parameter_description"><p>length of the SSID data in <em class="parameter"><code>ssid</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.5.6"></a><h4>Returns</h4>
+<p> pointer to the escaped SSID, which uses an internal static buffer
+and will be overwritten by subsequent calls to this function</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-same-ssid"></a><h3>nm_utils_same_ssid ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_utils_same_ssid (<em class="parameter"><code>const <span class="type">GByteArray</span> *ssid1</code></em>,
+                    <em class="parameter"><code>const <span class="type">GByteArray</span> *ssid2</code></em>,
+                    <em class="parameter"><code><span class="type">gboolean</span> ignore_trailing_null</code></em>);</pre>
+<p>Earlier versions of the Linux kernel added a NULL byte to the end of the
+SSID to enable easy printing of the SSID on the console or in a terminal,
+but this behavior was problematic (SSIDs are simply byte arrays, not strings)
+and thus was changed.  This function compensates for that behavior at the
+cost of some compatibility with odd SSIDs that may legitimately have trailing
+NULLs, even though that is functionally pointless.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>ssid1</p></td>
+<td class="parameter_description"><p>first SSID data to compare</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ssid2</p></td>
+<td class="parameter_description"><p>second SSID data to compare</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ignore_trailing_null</p></td>
+<td class="parameter_description"><p><code class="literal">TRUE</code> to ignore one trailing NULL byte</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.6.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the SSIDs are the same, <code class="literal">FALSE</code> if they are not</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-ssid-to-utf8"></a><h3>nm_utils_ssid_to_utf8 ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+nm_utils_ssid_to_utf8 (<em class="parameter"><code>const <span class="type">GByteArray</span> *ssid</code></em>);</pre>
+<p>Wi-Fi SSIDs are byte arrays, they are _not_ strings.  Thus, an SSID may
+contain embedded NULLs and other unprintable characters.  Often it is
+useful to print the SSID out for debugging purposes, but that should be the
+_only_ use of this function.  Do not use this function for any persistent
+storage of the SSID, since the printable SSID returned from this function
+cannot be converted back into the real SSID of the access point.</p>
+<p>This function does almost everything humanly possible to convert the input
+into a printable UTF-8 string, using roughly the following procedure:</p>
+<p>1) if the input data is already UTF-8 safe, no conversion is performed
+2) attempts to get the current system language from the LANG environment
+   variable, and depending on the language, uses a table of alternative
+   encodings to try.  For example, if LANG=hu_HU, the table may first try
+   the ISO-8859-2 encoding, and if that fails, try the Windows-1250 encoding.
+   If all fallback encodings fail, replaces non-UTF-8 characters with '?'.
+3) If the system language was unable to be determined, falls back to the
+   ISO-8859-1 encoding, then to the Windows-1251 encoding.
+4) If step 3 fails, replaces non-UTF-8 characters with '?'.</p>
+<p>Again, this function should be used for debugging and display purposes
+_only_.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.7.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>ssid</p></td>
+<td class="parameter_description"><p>a byte array containing the SSID data</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.7.9"></a><h4>Returns</h4>
+<p> an allocated string containing a UTF-8
+representation of the SSID, which must be freed by the caller using <code class="function">g_free()</code>.
+Returns <code class="literal">NULL</code> on errors. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-gvalue-hash-dup"></a><h3>nm_utils_gvalue_hash_dup ()</h3>
+<pre class="programlisting"><span class="returnvalue">GHashTable</span> *
+nm_utils_gvalue_hash_dup (<em class="parameter"><code><span class="type">GHashTable</span> *hash</code></em>);</pre>
+<p>Utility function to duplicate a hash table of <span class="type">GValues</span>.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>hash</p></td>
+<td class="parameter_description"><p>a <span class="type">GHashTable</span> mapping string:GValue</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.8.6"></a><h4>Returns</h4>
+<p> a newly allocated duplicated <span class="type">GHashTable</span>, caller must free the
+returned hash with <code class="function">g_hash_table_unref()</code> or <code class="function">g_hash_table_destroy()</code>. </p>
+<p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 GObject.Value]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-slist-free"></a><h3>nm_utils_slist_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_utils_slist_free (<em class="parameter"><code><span class="type">GSList</span> *list</code></em>,
+                     <em class="parameter"><code><span class="type">GDestroyNotify</span> elem_destroy_fn</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">nm_utils_slist_free</code> is deprecated and should not be used in newly-written code.</p>
+<p>use <code class="function">g_slist_free_full()</code>.</p>
+</div>
+<p>Utility function to free a <span class="type">GSList</span>.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="id-1.2.30.8.9.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p>a <span class="type">GSList</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>elem_destroy_fn</p></td>
+<td class="parameter_description"><p>user function called for each element in <em class="parameter"><code>list</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-security-valid"></a><h3>nm_utils_security_valid ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_utils_security_valid (<em class="parameter"><code><a class="link" href="libnm-util-nm-utils.html#NMUtilsSecurityType" title="enum NMUtilsSecurityType"><span class="type">NMUtilsSecurityType</span></a> type</code></em>,
+                         <em class="parameter"><code><a class="link" href="libnm-util-NetworkManager.html#NMDeviceWifiCapabilities" title="enum NMDeviceWifiCapabilities"><span class="type">NMDeviceWifiCapabilities</span></a> wifi_caps</code></em>,
+                         <em class="parameter"><code><span class="type">gboolean</span> have_ap</code></em>,
+                         <em class="parameter"><code><span class="type">gboolean</span> adhoc</code></em>,
+                         <em class="parameter"><code><a class="link" href="libnm-util-NetworkManager.html#NM80211ApFlags" title="enum NM80211ApFlags"><span class="type">NM80211ApFlags</span></a> ap_flags</code></em>,
+                         <em class="parameter"><code><a class="link" href="libnm-util-NetworkManager.html#NM80211ApSecurityFlags" title="enum NM80211ApSecurityFlags"><span class="type">NM80211ApSecurityFlags</span></a> ap_wpa</code></em>,
+                         <em class="parameter"><code><a class="link" href="libnm-util-NetworkManager.html#NM80211ApSecurityFlags" title="enum NM80211ApSecurityFlags"><span class="type">NM80211ApSecurityFlags</span></a> ap_rsn</code></em>);</pre>
+<p>Given a set of device capabilities, and a desired security type to check
+against, determines whether the combination of device, desired security
+type, and AP capabilities intersect.</p>
+<p>NOTE: this function cannot handle checking security for AP/Hotspot mode;
+use <a class="link" href="libnm-util-nm-utils.html#nm-utils-ap-mode-security-valid" title="nm_utils_ap_mode_security_valid ()"><code class="function">nm_utils_ap_mode_security_valid()</code></a> instead.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.10.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the security type to check AP flags and device capabilties against,
+e.g. <a class="link" href="libnm-util-nm-utils.html#NMU-SEC-STATIC-WEP:CAPS"><span class="type">NMU_SEC_STATIC_WEP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>wifi_caps</p></td>
+<td class="parameter_description"><p>bitfield of the capabilities of the specific Wi-Fi device, e.g.
+<a class="link" href="libnm-util-NetworkManager.html#NM-WIFI-DEVICE-CAP-CIPHER-WEP40:CAPS"><span class="type">NM_WIFI_DEVICE_CAP_CIPHER_WEP40</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>have_ap</p></td>
+<td class="parameter_description"><p>whether the <em class="parameter"><code>ap_flags</code></em>
+, <em class="parameter"><code>ap_wpa</code></em>
+, and <em class="parameter"><code>ap_rsn</code></em>
+arguments are valid</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>adhoc</p></td>
+<td class="parameter_description"><p>whether the capabilities being tested are from an Ad-Hoc AP (IBSS)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ap_flags</p></td>
+<td class="parameter_description"><p>bitfield of AP capabilities, e.g. <a class="link" href="libnm-util-NetworkManager.html#NM-802-11-AP-FLAGS-PRIVACY:CAPS"><span class="type">NM_802_11_AP_FLAGS_PRIVACY</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ap_wpa</p></td>
+<td class="parameter_description"><p>bitfield of AP capabilties derived from the AP's WPA beacon,
+e.g. (<a class="link" href="libnm-util-NetworkManager.html#NM-802-11-AP-SEC-PAIR-TKIP:CAPS"><span class="type">NM_802_11_AP_SEC_PAIR_TKIP</span></a> | <a class="link" href="libnm-util-NetworkManager.html#NM-802-11-AP-SEC-KEY-MGMT-PSK:CAPS"><span class="type">NM_802_11_AP_SEC_KEY_MGMT_PSK</span></a>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ap_rsn</p></td>
+<td class="parameter_description"><p>bitfield of AP capabilties derived from the AP's RSN/WPA2 beacon,
+e.g. (<a class="link" href="libnm-util-NetworkManager.html#NM-802-11-AP-SEC-PAIR-CCMP:CAPS"><span class="type">NM_802_11_AP_SEC_PAIR_CCMP</span></a> | <a class="link" href="libnm-util-NetworkManager.html#NM-802-11-AP-SEC-PAIR-TKIP:CAPS"><span class="type">NM_802_11_AP_SEC_PAIR_TKIP</span></a>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.10.7"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the device capabilities and AP capabilties intersect and are
+compatible with the desired <em class="parameter"><code>type</code></em>
+, <code class="literal">FALSE</code> if they are not</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-ap-mode-security-valid"></a><h3>nm_utils_ap_mode_security_valid ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_utils_ap_mode_security_valid (<em class="parameter"><code><a class="link" href="libnm-util-nm-utils.html#NMUtilsSecurityType" title="enum NMUtilsSecurityType"><span class="type">NMUtilsSecurityType</span></a> type</code></em>,
+                                 <em class="parameter"><code><a class="link" href="libnm-util-NetworkManager.html#NMDeviceWifiCapabilities" title="enum NMDeviceWifiCapabilities"><span class="type">NMDeviceWifiCapabilities</span></a> wifi_caps</code></em>);</pre>
+<p>Given a set of device capabilities, and a desired security type to check
+against, determines whether the combination of device capabilities and
+desired security type are valid for AP/Hotspot connections.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the security type to check device capabilties against,
+e.g. <a class="link" href="libnm-util-nm-utils.html#NMU-SEC-STATIC-WEP:CAPS"><span class="type">NMU_SEC_STATIC_WEP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>wifi_caps</p></td>
+<td class="parameter_description"><p>bitfield of the capabilities of the specific Wi-Fi device, e.g.
+<a class="link" href="libnm-util-NetworkManager.html#NM-WIFI-DEVICE-CAP-CIPHER-WEP40:CAPS"><span class="type">NM_WIFI_DEVICE_CAP_CIPHER_WEP40</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.11.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the device capabilities are compatible with the desired
+<em class="parameter"><code>type</code></em>
+, <code class="literal">FALSE</code> if they are not.</p>
+</div>
+<p class="since">Since: 0.9.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-wep-key-valid"></a><h3>nm_utils_wep_key_valid ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_utils_wep_key_valid (<em class="parameter"><code>const <span class="type">char</span> *key</code></em>,
+                        <em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html#NMWepKeyType" title="enum NMWepKeyType"><span class="type">NMWepKeyType</span></a> wep_type</code></em>);</pre>
+<p>Checks if <em class="parameter"><code>key</code></em>
+ is a valid WEP key</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>a string that might be a WEP key</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>wep_type</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html#NMWepKeyType" title="enum NMWepKeyType"><span class="type">NMWepKeyType</span></a> type of the WEP key</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.12.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if <em class="parameter"><code>key</code></em>
+is a WEP key, <code class="literal">FALSE</code> if not</p>
+</div>
+<p class="since">Since: 0.9.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-wpa-psk-valid"></a><h3>nm_utils_wpa_psk_valid ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_utils_wpa_psk_valid (<em class="parameter"><code>const <span class="type">char</span> *psk</code></em>);</pre>
+<p>Checks if <em class="parameter"><code>psk</code></em>
+ is a valid WPA PSK</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.13.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>psk</p></td>
+<td class="parameter_description"><p>a string that might be a WPA PSK</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.13.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if <em class="parameter"><code>psk</code></em>
+is a WPA PSK, <code class="literal">FALSE</code> if not</p>
+</div>
+<p class="since">Since: 0.9.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-ip4-addresses-from-gvalue"></a><h3>nm_utils_ip4_addresses_from_gvalue ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSList</span> *
+nm_utils_ip4_addresses_from_gvalue (<em class="parameter"><code>const <span class="type">GValue</span> *value</code></em>);</pre>
+<p>Utility function to convert a <span class="type">GPtrArray</span> of <span class="type">GArrays</span> of <span class="type">guint32s</span> representing
+a list of NetworkManager IPv4 addresses (which is a tuple of address, gateway,
+and prefix) into a <span class="type">GSList</span> of <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> objects.  The specific format of
+this serialization is not guaranteed to be stable and the <span class="type">GArray</span> may be
+extended in the future.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.14.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p><span class="type">GValue</span> containing a <span class="type">GPtrArray</span> of <span class="type">GArrays</span> of <span class="type">guint32s</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.14.6"></a><h4>Returns</h4>
+<p> a newly allocated <span class="type">GSList</span> of <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> objects. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> NMIP4Address]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-ip4-addresses-to-gvalue"></a><h3>nm_utils_ip4_addresses_to_gvalue ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_utils_ip4_addresses_to_gvalue (<em class="parameter"><code><span class="type">GSList</span> *list</code></em>,
+                                  <em class="parameter"><code><span class="type">GValue</span> *value</code></em>);</pre>
+<p>Utility function to convert a <span class="type">GSList</span> of <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> objects into a
+<span class="type">GPtrArray</span> of <span class="type">GArrays</span> of <span class="type">guint32s</span> representing a list of NetworkManager IPv4
+addresses (which is a tuple of address, gateway, and prefix).   The specific
+format of this serialization is not guaranteed to be stable and may be
+extended in the future.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.15.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p> a list of <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> objects. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> NMIP4Address]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a pointer to a <span class="type">GValue</span> into which to place the converted addresses,
+which should be unset by the caller (when no longer needed) with
+<code class="function">g_value_unset()</code>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-ip4-routes-from-gvalue"></a><h3>nm_utils_ip4_routes_from_gvalue ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSList</span> *
+nm_utils_ip4_routes_from_gvalue (<em class="parameter"><code>const <span class="type">GValue</span> *value</code></em>);</pre>
+<p>Utility function to convert a <span class="type">GPtrArray</span> of <span class="type">GArrays</span> of <span class="type">guint32s</span> representing
+a list of NetworkManager IPv4 routes (which is a tuple of route, next hop,
+prefix, and metric) into a <span class="type">GSList</span> of <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> objects.  The specific
+format of this serialization is not guaranteed to be stable and may be
+extended in the future.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.16.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p><span class="type">GValue</span> containing a <span class="type">GPtrArray</span> of <span class="type">GArrays</span> of <span class="type">guint32s</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.16.6"></a><h4>Returns</h4>
+<p> a newly allocated <span class="type">GSList</span> of <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> objects. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> NMIP4Route]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-ip4-routes-to-gvalue"></a><h3>nm_utils_ip4_routes_to_gvalue ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_utils_ip4_routes_to_gvalue (<em class="parameter"><code><span class="type">GSList</span> *list</code></em>,
+                               <em class="parameter"><code><span class="type">GValue</span> *value</code></em>);</pre>
+<p>Utility function to convert a <span class="type">GSList</span> of <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> objects into a
+<span class="type">GPtrArray</span> of <span class="type">GArrays</span> of <span class="type">guint32s</span> representing a list of NetworkManager IPv4
+routes (which is a tuple of route, next hop, prefix, and metric).   The
+specific format of this serialization is not guaranteed to be stable and may
+be extended in the future.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.17.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p> a list of <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> objects. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> NMIP4Route]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a pointer to a <span class="type">GValue</span> into which to place the converted routes,
+which should be unset by the caller (when no longer needed) with
+<code class="function">g_value_unset()</code>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-ip4-netmask-to-prefix"></a><h3>nm_utils_ip4_netmask_to_prefix ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_utils_ip4_netmask_to_prefix (<em class="parameter"><code><span class="type">guint32</span> netmask</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.30.8.18.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>netmask</p></td>
+<td class="parameter_description"><p>an IPv4 netmask in network byte order</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.18.5"></a><h4>Returns</h4>
+<p> the CIDR prefix represented by the netmask</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-ip4-prefix-to-netmask"></a><h3>nm_utils_ip4_prefix_to_netmask ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_utils_ip4_prefix_to_netmask (<em class="parameter"><code><span class="type">guint32</span> prefix</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.30.8.19.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>prefix</p></td>
+<td class="parameter_description"><p>a CIDR prefix</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.19.5"></a><h4>Returns</h4>
+<p> the netmask represented by the prefix, in network byte order</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-ip4-get-default-prefix"></a><h3>nm_utils_ip4_get_default_prefix ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_utils_ip4_get_default_prefix (<em class="parameter"><code><span class="type">guint32</span> ip</code></em>);</pre>
+<p>When the Internet was originally set up, various ranges of IP addresses were
+segmented into three network classes: A, B, and C.  This function will return
+a prefix that is associated with the IP address specified defining where it
+falls in the predefined classes.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.20.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>ip</p></td>
+<td class="parameter_description"><p>an IPv4 address (in network byte order)</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.20.6"></a><h4>Returns</h4>
+<p> the default class prefix for the given IP</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-ip6-addresses-from-gvalue"></a><h3>nm_utils_ip6_addresses_from_gvalue ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSList</span> *
+nm_utils_ip6_addresses_from_gvalue (<em class="parameter"><code>const <span class="type">GValue</span> *value</code></em>);</pre>
+<p>Utility function to convert a <span class="type">GPtrArray</span> of <span class="type">GValueArrays</span> of (<span class="type">GArray</span> of guchars) and <span class="type">guint32</span>
+representing a list of NetworkManager IPv6 addresses (which is a tuple of address,
+prefix, and gateway), into a <span class="type">GSList</span> of <a class="link" href="NMSettingIP6Config.html#NMIP6Address"><span class="type">NMIP6Address</span></a> objects.  The specific format of
+this serialization is not guaranteed to be stable and the <span class="type">GValueArray</span> may be
+extended in the future.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.21.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>gvalue containing a GPtrArray of GValueArrays of (GArray of guchars) and <span class="type">guint32</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.21.6"></a><h4>Returns</h4>
+<p> a newly allocated <span class="type">GSList</span> of <a class="link" href="NMSettingIP6Config.html#NMIP6Address"><span class="type">NMIP6Address</span></a> objects. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> NMIP6Address]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-ip6-addresses-to-gvalue"></a><h3>nm_utils_ip6_addresses_to_gvalue ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_utils_ip6_addresses_to_gvalue (<em class="parameter"><code><span class="type">GSList</span> *list</code></em>,
+                                  <em class="parameter"><code><span class="type">GValue</span> *value</code></em>);</pre>
+<p>Utility function to convert a <span class="type">GSList</span> of <a class="link" href="NMSettingIP6Config.html#NMIP6Address"><span class="type">NMIP6Address</span></a> objects into a
+<span class="type">GPtrArray</span> of <span class="type">GValueArrays</span> representing a list of NetworkManager IPv6 addresses
+(which is a tuple of address, prefix, and gateway). The specific format of
+this serialization is not guaranteed to be stable and may be extended in the
+future.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.22.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p> a list of <a class="link" href="NMSettingIP6Config.html#NMIP6Address"><span class="type">NMIP6Address</span></a> objects. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> NMIP6Address]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a pointer to a <span class="type">GValue</span> into which to place the converted addresses,
+which should be unset by the caller (when no longer needed) with
+<code class="function">g_value_unset()</code>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-ip6-routes-from-gvalue"></a><h3>nm_utils_ip6_routes_from_gvalue ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSList</span> *
+nm_utils_ip6_routes_from_gvalue (<em class="parameter"><code>const <span class="type">GValue</span> *value</code></em>);</pre>
+<p>Utility function <span class="type">GPtrArray</span> of <span class="type">GValueArrays</span> of (<span class="type">GArray</span> of <span class="type">guchars</span>), <span class="type">guint32</span>,
+(<span class="type">GArray</span> of <span class="type">guchars</span>), and <span class="type">guint32</span> representing a list of NetworkManager IPv6
+routes (which is a tuple of destination, prefix, next hop, and metric)
+into a <span class="type">GSList</span> of <a class="link" href="NMSettingIP6Config.html#NMIP6Route"><span class="type">NMIP6Route</span></a> objects.  The specific format of this serialization
+is not guaranteed to be stable and may be extended in the future.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.23.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p><span class="type">GValue</span> containing a <span class="type">GPtrArray</span> of <span class="type">GValueArrays</span> of (<span class="type">GArray</span> of <span class="type">guchars</span>), <span class="type">guint32</span>,
+(<span class="type">GArray</span> of <span class="type">guchars</span>), and <span class="type">guint32</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.23.6"></a><h4>Returns</h4>
+<p> a newly allocated <span class="type">GSList</span> of <a class="link" href="NMSettingIP6Config.html#NMIP6Route"><span class="type">NMIP6Route</span></a> objects. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> NMIP6Route]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-ip6-routes-to-gvalue"></a><h3>nm_utils_ip6_routes_to_gvalue ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_utils_ip6_routes_to_gvalue (<em class="parameter"><code><span class="type">GSList</span> *list</code></em>,
+                               <em class="parameter"><code><span class="type">GValue</span> *value</code></em>);</pre>
+<p>Utility function to convert a <span class="type">GSList</span> of <a class="link" href="NMSettingIP6Config.html#NMIP6Route"><span class="type">NMIP6Route</span></a> objects into a <span class="type">GPtrArray</span> of
+<span class="type">GValueArrays</span> of (<span class="type">GArray</span> of <span class="type">guchars</span>), <span class="type">guint32</span>, (<span class="type">GArray</span> of <span class="type">guchars</span>), and <span class="type">guint32</span>
+representing a list of NetworkManager IPv6 routes (which is a tuple of destination,
+prefix, next hop, and metric).  The specific format of this serialization is not
+guaranteed to be stable and may be extended in the future.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.24.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p> a list of <a class="link" href="NMSettingIP6Config.html#NMIP6Route"><span class="type">NMIP6Route</span></a> objects. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> NMIP6Route]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a pointer to a <span class="type">GValue</span> into which to place the converted routes,
+which should be unset by the caller (when no longer needed) with
+<code class="function">g_value_unset()</code>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-ip6-dns-from-gvalue"></a><h3>nm_utils_ip6_dns_from_gvalue ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSList</span> *
+nm_utils_ip6_dns_from_gvalue (<em class="parameter"><code>const <span class="type">GValue</span> *value</code></em>);</pre>
+<p>Converts a <span class="type">GValue</span> containing a <span class="type">GPtrArray</span> of IP6 DNS, represented as
+<span class="type">GByteArrays</span> into a <span class="type">GSList</span> of <code class="literal"><span class="type">struct in6_addr</span></code>s.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="id-1.2.30.8.25.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <span class="type">GValue</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.25.7"></a><h4>Returns</h4>
+<p> a <span class="type">GSList</span> of IP6 addresses.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-ip6-dns-to-gvalue"></a><h3>nm_utils_ip6_dns_to_gvalue ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_utils_ip6_dns_to_gvalue (<em class="parameter"><code><span class="type">GSList</span> *list</code></em>,
+                            <em class="parameter"><code><span class="type">GValue</span> *value</code></em>);</pre>
+<p>Utility function to convert a <span class="type">GSList</span> of <code class="literal"><span class="type">struct
+in6_addr</span></code> structs into a <span class="type">GPtrArray</span> of <span class="type">GByteArrays</span>
+representing each server's IPv6 addresses in network byte order.
+The specific format of this serialization is not guaranteed to be
+stable and may be extended in the future.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="id-1.2.30.8.26.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p>a list of <a class="link" href="NMSettingIP6Config.html#NMIP6Route"><span class="type">NMIP6Route</span></a> objects</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a pointer to a <span class="type">GValue</span> into which to place the converted DNS server
+addresses, which should be unset by the caller (when no longer needed) with
+<code class="function">g_value_unset()</code>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-uuid-generate"></a><h3>nm_utils_uuid_generate ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+nm_utils_uuid_generate (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.30.8.27.4"></a><h4>Returns</h4>
+<p> a newly allocated UUID suitable for use as the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a>
+object's <a class="link" href="NMSettingConnection.html#NMSettingConnection--id" title="The “id” property"><span class="type">“id”</span></a>: property.  Should be freed with <code class="function">g_free()</code></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-uuid-generate-from-string"></a><h3>nm_utils_uuid_generate_from_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+nm_utils_uuid_generate_from_string (<em class="parameter"><code>const <span class="type">char</span> *s</code></em>);</pre>
+<p>For a given <em class="parameter"><code>s</code></em>
+, this function will always return the same UUID.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.28.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>s</p></td>
+<td class="parameter_description"><p>a string to use as the seed for the UUID</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.28.6"></a><h4>Returns</h4>
+<p> a newly allocated UUID suitable for use as the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a>
+object's <a class="link" href="NMSettingConnection.html#NMSettingConnection--id" title="The “id” property"><span class="type">“id”</span></a>: property</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-rsa-key-encrypt"></a><h3>nm_utils_rsa_key_encrypt ()</h3>
+<pre class="programlisting"><span class="returnvalue">GByteArray</span> *
+nm_utils_rsa_key_encrypt (<em class="parameter"><code>const <span class="type">GByteArray</span> *data</code></em>,
+                          <em class="parameter"><code>const <span class="type">char</span> *in_password</code></em>,
+                          <em class="parameter"><code><span class="type">char</span> **out_password</code></em>,
+                          <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Encrypts the given RSA private key data with the given password (or generates
+a password if no password was given) and converts the data to PEM format
+suitable for writing to a file. It uses Triple DES cipher for the encryption.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.29.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>RSA private key data to be encrypted</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>in_password</p></td>
+<td class="parameter_description"><p> existing password to use, if any. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_password</p></td>
+<td class="parameter_description"><p> if <em class="parameter"><code>in_password</code></em>
+was <code class="literal">NULL</code>, a random password will be generated
+and returned in this argument. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>detailed error information on return, if an error occurred</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.29.6"></a><h4>Returns</h4>
+<p> on success, PEM-formatted data suitable for writing to a PEM-formatted
+certificate/private key file. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-rsa-key-encrypt-aes"></a><h3>nm_utils_rsa_key_encrypt_aes ()</h3>
+<pre class="programlisting"><span class="returnvalue">GByteArray</span> *
+nm_utils_rsa_key_encrypt_aes (<em class="parameter"><code>const <span class="type">GByteArray</span> *data</code></em>,
+                              <em class="parameter"><code>const <span class="type">char</span> *in_password</code></em>,
+                              <em class="parameter"><code><span class="type">char</span> **out_password</code></em>,
+                              <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Encrypts the given RSA private key data with the given password (or generates
+a password if no password was given) and converts the data to PEM format
+suitable for writing to a file.  It uses AES cipher for the encryption.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.30.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>RSA private key data to be encrypted</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>in_password</p></td>
+<td class="parameter_description"><p> existing password to use, if any. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_password</p></td>
+<td class="parameter_description"><p> if <em class="parameter"><code>in_password</code></em>
+was <code class="literal">NULL</code>, a random password will be generated
+and returned in this argument. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>detailed error information on return, if an error occurred</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.30.6"></a><h4>Returns</h4>
+<p> on success, PEM-formatted data suitable for writing to a PEM-formatted
+certificate/private key file. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-file-is-pkcs12"></a><h3>nm_utils_file_is_pkcs12 ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_utils_file_is_pkcs12 (<em class="parameter"><code>const <span class="type">char</span> *filename</code></em>);</pre>
+<p>Utility function to find out if the <em class="parameter"><code>filename</code></em>
+ is in PKCS#12 format.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.31.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>filename</p></td>
+<td class="parameter_description"><p>name of the file to test</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.31.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the file is PKCS#12, <code class="literal">FALSE</code> if it is not</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMUtilsFileSearchInPathsPredicate"></a><h3>NMUtilsFileSearchInPathsPredicate ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+<span class="c_punctuation">(</span>*NMUtilsFileSearchInPathsPredicate<span class="c_punctuation">)</span> (<em class="parameter"><code>const <span class="type">char</span> *filename</code></em>,
+                                      <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-file-search-in-paths"></a><h3>nm_utils_file_search_in_paths ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_utils_file_search_in_paths (<em class="parameter"><code>const <span class="type">char</span> *progname</code></em>,
+                               <em class="parameter"><code>const <span class="type">char</span> *try_first</code></em>,
+                               <em class="parameter"><code>const <span class="type">char</span> *const *paths</code></em>,
+                               <em class="parameter"><code><span class="type">GFileTest</span> file_test_flags</code></em>,
+                               <em class="parameter"><code><a class="link" href="libnm-util-nm-utils.html#NMUtilsFileSearchInPathsPredicate" title="NMUtilsFileSearchInPathsPredicate ()"><span class="type">NMUtilsFileSearchInPathsPredicate</span></a> predicate</code></em>,
+                               <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                               <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Searches for a <em class="parameter"><code>progname</code></em>
+ file in a list of search <em class="parameter"><code>paths</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.33.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>progname</p></td>
+<td class="parameter_description"><p>the helper program name, like "iptables"
+Must be a non-empty string, without path separator (/).</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>try_first</p></td>
+<td class="parameter_description"><p> a custom path to try first before searching.
+It is silently ignored if it is empty or not an absolute path. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>paths</p></td>
+<td class="parameter_description"><p> a <code class="literal">NULL</code> terminated list of search paths.
+Can be empty or <code class="literal">NULL</code>, in which case only <em class="parameter"><code>try_first</code></em>
+is checked. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>file_test_flags</p></td>
+<td class="parameter_description"><p>the flags passed to <code class="function">g_file_test()</code> when searching
+for <em class="parameter"><code>progname</code></em>
+. Set it to 0 to skip the <code class="function">g_file_test()</code>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>predicate</p></td>
+<td class="parameter_description"><p> if given, pass the file name to this function
+for additional checks. This check is performed after the check for
+<em class="parameter"><code>file_test_flags</code></em>
+. You cannot omit both <em class="parameter"><code>file_test_flags</code></em>
+and <em class="parameter"><code>predicate</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid only during the call to the method."><span class="acronym">scope call</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p> (allow-none): user data for <em class="parameter"><code>predicate</code></em>
+function. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p> on failure, set a "not found" error <code class="literal">G_IO_ERROR</code> <code class="literal">G_IO_ERROR_NOT_FOUND</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.33.6"></a><h4>Returns</h4>
+<p> the full path to the helper, if found, or <code class="literal">NULL</code> if not found.
+The returned string is not owned by the caller, but later
+invocations of the function might overwrite it. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-wifi-freq-to-channel"></a><h3>nm_utils_wifi_freq_to_channel ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_utils_wifi_freq_to_channel (<em class="parameter"><code><span class="type">guint32</span> freq</code></em>);</pre>
+<p>Utility function to translate a Wi-Fi frequency to its corresponding channel.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.34.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>freq</p></td>
+<td class="parameter_description"><p>frequency</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.34.6"></a><h4>Returns</h4>
+<p> the channel represented by the frequency or 0</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-wifi-channel-to-freq"></a><h3>nm_utils_wifi_channel_to_freq ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_utils_wifi_channel_to_freq (<em class="parameter"><code><span class="type">guint32</span> channel</code></em>,
+                               <em class="parameter"><code>const <span class="type">char</span> *band</code></em>);</pre>
+<p>Utility function to translate a Wi-Fi channel to its corresponding frequency.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.35.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>channel</p></td>
+<td class="parameter_description"><p>channel</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>band</p></td>
+<td class="parameter_description"><p>frequency band for wireless ("a" or "bg")</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.35.6"></a><h4>Returns</h4>
+<p> the frequency represented by the channel of the band,
+or -1 when the freq is invalid, or 0 when the band
+is invalid</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-wifi-find-next-channel"></a><h3>nm_utils_wifi_find_next_channel ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_utils_wifi_find_next_channel (<em class="parameter"><code><span class="type">guint32</span> channel</code></em>,
+                                 <em class="parameter"><code><span class="type">int</span> direction</code></em>,
+                                 <em class="parameter"><code><span class="type">char</span> *band</code></em>);</pre>
+<p>Utility function to find out next/previous Wi-Fi channel for a channel.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.36.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>channel</p></td>
+<td class="parameter_description"><p>current channel</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>direction</p></td>
+<td class="parameter_description"><p>whether going downward (0 or less) or upward (1 or more)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>band</p></td>
+<td class="parameter_description"><p>frequency band for wireless ("a" or "bg")</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.36.6"></a><h4>Returns</h4>
+<p> the next channel in the specified direction or 0</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-wifi-is-channel-valid"></a><h3>nm_utils_wifi_is_channel_valid ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_utils_wifi_is_channel_valid (<em class="parameter"><code><span class="type">guint32</span> channel</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *band</code></em>);</pre>
+<p>Utility function to verify Wi-Fi channel validity.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.37.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>channel</p></td>
+<td class="parameter_description"><p>channel</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>band</p></td>
+<td class="parameter_description"><p>frequency band for wireless ("a" or "bg")</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.37.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> or <code class="literal">FALSE</code></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-hwaddr-len"></a><h3>nm_utils_hwaddr_len ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+nm_utils_hwaddr_len (<em class="parameter"><code><span class="type">int</span> type</code></em>);</pre>
+<p>Returns the length in octets of a hardware address of type <em class="parameter"><code>type</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.38.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the type of address; either <code class="literal">ARPHRD_ETHER</code> or
+<code class="literal">ARPHRD_INFINIBAND</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.38.6"></a><h4>Returns</h4>
+<p> the positive length, or -1 if the type is unknown/unsupported.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-hwaddr-type"></a><h3>nm_utils_hwaddr_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+nm_utils_hwaddr_type (<em class="parameter"><code><span class="type">int</span> len</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">nm_utils_hwaddr_type</code> is deprecated and should not be used in newly-written code.</p>
+<p>This could not be extended to cover other types, since
+there is not a one-to-one mapping between types and lengths. This
+was mostly only used to get a type to pass to
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-hwaddr-ntoa" title="nm_utils_hwaddr_ntoa ()"><code class="function">nm_utils_hwaddr_ntoa()</code></a> or <a class="link" href="libnm-util-nm-utils.html#nm-utils-hwaddr-aton" title="nm_utils_hwaddr_aton ()"><code class="function">nm_utils_hwaddr_aton()</code></a> when you only had
+a length; but you can just use <a class="link" href="libnm-util-nm-utils.html#nm-utils-hwaddr-ntoa-len" title="nm_utils_hwaddr_ntoa_len ()"><code class="function">nm_utils_hwaddr_ntoa_len()</code></a> or
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-hwaddr-aton-len" title="nm_utils_hwaddr_aton_len ()"><code class="function">nm_utils_hwaddr_aton_len()</code></a> now instead.</p>
+</div>
+<p>Returns the type (either <code class="literal">ARPHRD_ETHER</code> or
+<code class="literal">ARPHRD_INFINIBAND</code>) of the raw address given its length.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.39.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>len</p></td>
+<td class="parameter_description"><p>the length of hardware address in bytes</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.39.7"></a><h4>Returns</h4>
+<p> the type, either <code class="literal">ARPHRD_ETHER</code> or
+<code class="literal">ARPHRD_INFINIBAND</code>.  If the length is unexpected, return -1
+(unsupported type/length).</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-hwaddr-ntoa"></a><h3>nm_utils_hwaddr_ntoa ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+nm_utils_hwaddr_ntoa (<em class="parameter"><code><span class="type">gconstpointer</span> addr</code></em>,
+                      <em class="parameter"><code><span class="type">int</span> type</code></em>);</pre>
+<p>Converts <em class="parameter"><code>addr</code></em>
+ to textual form.</p>
+<p>See also <a class="link" href="libnm-util-nm-utils.html#nm-utils-hwaddr-ntoa-len" title="nm_utils_hwaddr_ntoa_len ()"><code class="function">nm_utils_hwaddr_ntoa_len()</code></a>, which takes a length instead of
+a type.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.40.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>addr</p></td>
+<td class="parameter_description"><p>a binary hardware address</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the type of address; either <code class="literal">ARPHRD_ETHER</code> or
+<code class="literal">ARPHRD_INFINIBAND</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.40.7"></a><h4>Returns</h4>
+<p> the textual form of <em class="parameter"><code>addr</code></em>
+. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-hwaddr-atoba"></a><h3>nm_utils_hwaddr_atoba ()</h3>
+<pre class="programlisting"><span class="returnvalue">GByteArray</span> *
+nm_utils_hwaddr_atoba (<em class="parameter"><code>const <span class="type">char</span> *asc</code></em>,
+                       <em class="parameter"><code><span class="type">int</span> type</code></em>);</pre>
+<p>Parses <em class="parameter"><code>asc</code></em>
+ and converts it to binary form in a <span class="type">GByteArray</span>. See
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-hwaddr-aton" title="nm_utils_hwaddr_aton ()"><code class="function">nm_utils_hwaddr_aton()</code></a> if you don't want a <span class="type">GByteArray</span>.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.41.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>asc</p></td>
+<td class="parameter_description"><p>the ASCII representation of a hardware address</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the type of address; either <code class="literal">ARPHRD_ETHER</code> or
+<code class="literal">ARPHRD_INFINIBAND</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.41.6"></a><h4>Returns</h4>
+<p> a new <span class="type">GByteArray</span>, or <code class="literal">NULL</code> if <em class="parameter"><code>asc</code></em>
+couldn't
+be parsed. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-hwaddr-aton"></a><h3>nm_utils_hwaddr_aton ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint8</span> *
+nm_utils_hwaddr_aton (<em class="parameter"><code>const <span class="type">char</span> *asc</code></em>,
+                      <em class="parameter"><code><span class="type">int</span> type</code></em>,
+                      <em class="parameter"><code><span class="type">gpointer</span> buffer</code></em>);</pre>
+<p>Parses <em class="parameter"><code>asc</code></em>
+ and converts it to binary form in <em class="parameter"><code>buffer</code></em>
+. See
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-hwaddr-atoba" title="nm_utils_hwaddr_atoba ()"><code class="function">nm_utils_hwaddr_atoba()</code></a> if you'd rather have the result in a
+<span class="type">GByteArray</span>.</p>
+<p>See also <a class="link" href="libnm-util-nm-utils.html#nm-utils-hwaddr-aton-len" title="nm_utils_hwaddr_aton_len ()"><code class="function">nm_utils_hwaddr_aton_len()</code></a>, which takes an output length
+instead of a type.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.42.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>asc</p></td>
+<td class="parameter_description"><p>the ASCII representation of a hardware address</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the type of address; either <code class="literal">ARPHRD_ETHER</code> or
+<code class="literal">ARPHRD_INFINIBAND</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>buffer</p></td>
+<td class="parameter_description"><p>buffer to store the result into</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.42.7"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>buffer</code></em>
+, or <code class="literal">NULL</code> if <em class="parameter"><code>asc</code></em>
+couldn't be parsed</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-hwaddr-ntoa-len"></a><h3>nm_utils_hwaddr_ntoa_len ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+nm_utils_hwaddr_ntoa_len (<em class="parameter"><code><span class="type">gconstpointer</span> addr</code></em>,
+                          <em class="parameter"><code><span class="type">gsize</span> length</code></em>);</pre>
+<p>Converts <em class="parameter"><code>addr</code></em>
+ to textual form.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.43.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>addr</p></td>
+<td class="parameter_description"><p>a binary hardware address</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>length</p></td>
+<td class="parameter_description"><p>the length of <em class="parameter"><code>addr</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.43.6"></a><h4>Returns</h4>
+<p> the textual form of <em class="parameter"><code>addr</code></em>
+. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-hwaddr-aton-len"></a><h3>nm_utils_hwaddr_aton_len ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint8</span> *
+nm_utils_hwaddr_aton_len (<em class="parameter"><code>const <span class="type">char</span> *asc</code></em>,
+                          <em class="parameter"><code><span class="type">gpointer</span> buffer</code></em>,
+                          <em class="parameter"><code><span class="type">gsize</span> length</code></em>);</pre>
+<p>Parses <em class="parameter"><code>asc</code></em>
+ and converts it to binary form in <em class="parameter"><code>buffer</code></em>
+.
+Bytes in <em class="parameter"><code>asc</code></em>
+ can be sepatared by colons (:), or hyphens (-), but not mixed.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.44.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>asc</p></td>
+<td class="parameter_description"><p>the ASCII representation of a hardware address</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>buffer</p></td>
+<td class="parameter_description"><p>buffer to store the result into</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>length</p></td>
+<td class="parameter_description"><p>the expected length in bytes of the result and
+the size of the buffer in bytes.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.44.6"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>buffer</code></em>
+, or <code class="literal">NULL</code> if <em class="parameter"><code>asc</code></em>
+couldn't be parsed
+or would be shorter or longer than <em class="parameter"><code>length</code></em>
+.</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-hwaddr-valid"></a><h3>nm_utils_hwaddr_valid ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_utils_hwaddr_valid (<em class="parameter"><code>const <span class="type">char</span> *asc</code></em>);</pre>
+<p>Parses <em class="parameter"><code>asc</code></em>
+ to see if it is a valid hardware address of some type.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.45.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>asc</p></td>
+<td class="parameter_description"><p>the ASCII representation of a hardware address</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.45.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if <em class="parameter"><code>asc</code></em>
+appears to be a valid hardware address
+of some type, <code class="literal">FALSE</code> if not.</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-bin2hexstr"></a><h3>nm_utils_bin2hexstr ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+nm_utils_bin2hexstr (<em class="parameter"><code>const <span class="type">char</span> *bytes</code></em>,
+                     <em class="parameter"><code><span class="type">int</span> len</code></em>,
+                     <em class="parameter"><code><span class="type">int</span> final_len</code></em>);</pre>
+<p>Converts a byte-array <em class="parameter"><code>bytes</code></em>
+ into a hexadecimal string.
+If <em class="parameter"><code>final_len</code></em>
+ is greater than -1, the returned string is terminated at
+that index (returned_string[final_len] == '\0'),</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.46.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>bytes</p></td>
+<td class="parameter_description"><p>an array of bytes</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>len</p></td>
+<td class="parameter_description"><p>the length of the <em class="parameter"><code>bytes</code></em>
+array</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>final_len</p></td>
+<td class="parameter_description"><p>an index where to cut off the returned string, or -1</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.46.6"></a><h4>Returns</h4>
+<p> the textual form of <em class="parameter"><code>bytes</code></em>
+. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-hex2byte"></a><h3>nm_utils_hex2byte ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+nm_utils_hex2byte (<em class="parameter"><code>const <span class="type">char</span> *hex</code></em>);</pre>
+<p>Converts a hex string (2 characters) into its byte representation.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.47.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>hex</p></td>
+<td class="parameter_description"><p>a string representing a hex byte</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.47.6"></a><h4>Returns</h4>
+<p> a byte, or -1 if <em class="parameter"><code>hex</code></em>
+doesn't represent a hex byte</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-hexstr2bin"></a><h3>nm_utils_hexstr2bin ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+nm_utils_hexstr2bin (<em class="parameter"><code>const <span class="type">char</span> *hex</code></em>,
+                     <em class="parameter"><code><span class="type">size_t</span> len</code></em>);</pre>
+<p>Converts a hexadecimal string <em class="parameter"><code>hex</code></em>
+ into a byte-array. The returned array
+length is <em class="parameter"><code>len</code></em>
+/2.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.48.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>hex</p></td>
+<td class="parameter_description"><p>an hex string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>len</p></td>
+<td class="parameter_description"><p>the length of the <em class="parameter"><code>hex</code></em>
+string (it has to be even)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.48.6"></a><h4>Returns</h4>
+<p> a array of bytes, or <code class="literal">NULL</code> on error. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-iface-valid-name"></a><h3>nm_utils_iface_valid_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_utils_iface_valid_name (<em class="parameter"><code>const <span class="type">char</span> *name</code></em>);</pre>
+<p>This function is a 1:1 copy of the kernel's interface validation
+function in net/core/dev.c.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.49.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>Name of interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.49.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if interface name is valid, otherwise <code class="literal">FALSE</code> is returned.</p>
+</div>
+<p class="since">Since: 0.9.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-is-uuid"></a><h3>nm_utils_is_uuid ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_utils_is_uuid (<em class="parameter"><code>const <span class="type">char</span> *str</code></em>);</pre>
+<p>Checks if <em class="parameter"><code>str</code></em>
+ is a UUID</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.50.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>a string that might be a UUID</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.50.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if <em class="parameter"><code>str</code></em>
+is a UUID, <code class="literal">FALSE</code> if not</p>
+</div>
+<p class="since">Since: 0.9.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-inet4-ntop"></a><h3>nm_utils_inet4_ntop ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_utils_inet4_ntop (<em class="parameter"><code><span class="type">in_addr_t</span> inaddr</code></em>,
+                     <em class="parameter"><code><span class="type">char</span> *dst</code></em>);</pre>
+<p>Wrapper for inet_ntop.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="id-1.2.30.8.51.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>inaddr</p></td>
+<td class="parameter_description"><p>the address that should be converted to string.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dst</p></td>
+<td class="parameter_description"><p>the destination buffer, it must contain at least
+<code class="literal">INET_ADDRSTRLEN</code> or <a class="link" href="libnm-util-nm-utils.html#NM-UTILS-INET-ADDRSTRLEN:CAPS" title="NM_UTILS_INET_ADDRSTRLEN"><code class="literal">NM_UTILS_INET_ADDRSTRLEN</code></a>
+characters. If set to <code class="literal">NULL</code>, it will return a pointer to an internal, static
+buffer (shared with <a class="link" href="libnm-util-nm-utils.html#nm-utils-inet6-ntop" title="nm_utils_inet6_ntop ()"><code class="function">nm_utils_inet6_ntop()</code></a>).  Beware, that the internal
+buffer will be overwritten with ever new call of <a class="link" href="libnm-util-nm-utils.html#nm-utils-inet4-ntop" title="nm_utils_inet4_ntop ()"><code class="function">nm_utils_inet4_ntop()</code></a> or
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-inet6-ntop" title="nm_utils_inet6_ntop ()"><code class="function">nm_utils_inet6_ntop()</code></a> that does not provied it's own <em class="parameter"><code>dst</code></em>
+buffer. Also,
+using the internal buffer is not thread safe. When in doubt, pass your own
+<em class="parameter"><code>dst</code></em>
+buffer to avoid these issues.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.51.7"></a><h4>Returns</h4>
+<p> the input buffer <em class="parameter"><code>dst</code></em>
+, or a pointer to an
+internal, static buffer. This function cannot fail.</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-inet6-ntop"></a><h3>nm_utils_inet6_ntop ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_utils_inet6_ntop (<em class="parameter"><code>const <span class="type">struct in6_addr</span> *in6addr</code></em>,
+                     <em class="parameter"><code><span class="type">char</span> *dst</code></em>);</pre>
+<p>Wrapper for inet_ntop.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="id-1.2.30.8.52.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>in6addr</p></td>
+<td class="parameter_description"><p>the address that should be converted to string.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dst</p></td>
+<td class="parameter_description"><p>the destination buffer, it must contain at least
+<code class="literal">INET6_ADDRSTRLEN</code> or <a class="link" href="libnm-util-nm-utils.html#NM-UTILS-INET-ADDRSTRLEN:CAPS" title="NM_UTILS_INET_ADDRSTRLEN"><code class="literal">NM_UTILS_INET_ADDRSTRLEN</code></a>
+characters. If set to <code class="literal">NULL</code>, it will return a pointer to an internal, static
+buffer (shared with <a class="link" href="libnm-util-nm-utils.html#nm-utils-inet4-ntop" title="nm_utils_inet4_ntop ()"><code class="function">nm_utils_inet4_ntop()</code></a>).  Beware, that the internal
+buffer will be overwritten with ever new call of <a class="link" href="libnm-util-nm-utils.html#nm-utils-inet4-ntop" title="nm_utils_inet4_ntop ()"><code class="function">nm_utils_inet4_ntop()</code></a> or
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-inet6-ntop" title="nm_utils_inet6_ntop ()"><code class="function">nm_utils_inet6_ntop()</code></a> that does not provied it's own <em class="parameter"><code>dst</code></em>
+buffer. Also,
+using the internal buffer is not thread safe. When in doubt, pass your own
+<em class="parameter"><code>dst</code></em>
+buffer to avoid these issues.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.52.7"></a><h4>Returns</h4>
+<p> the input buffer <em class="parameter"><code>dst</code></em>
+, or a pointer to an
+internal, static buffer. <code class="literal">NULL</code> is not allowed as <em class="parameter"><code>in6addr</code></em>
+,
+otherwise, this function cannot fail.</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-utils-check-virtual-device-compatibility"></a><h3>nm_utils_check_virtual_device_compatibility ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_utils_check_virtual_device_compatibility
+                               (<em class="parameter"><code><span class="type">GType</span> virtual_type</code></em>,
+                                <em class="parameter"><code><span class="type">GType</span> other_type</code></em>);</pre>
+<p>Determines if a connection of type <em class="parameter"><code>virtual_type</code></em>
+ can (in the
+general case) work with connections of type <em class="parameter"><code>other_type</code></em>
+.</p>
+<p>If <em class="parameter"><code>virtual_type</code></em>
+ is <code class="literal">NM_TYPE_SETTING_VLAN</code>, then this checks if
+<em class="parameter"><code>other_type</code></em>
+ is a valid type for the parent of a VLAN.</p>
+<p>If <em class="parameter"><code>virtual_type</code></em>
+ is a "master" type (eg, <code class="literal">NM_TYPE_SETTING_BRIDGE</code>),
+then this checks if <em class="parameter"><code>other_type</code></em>
+ is a valid type for a slave of that
+master.</p>
+<p>Note that even if this returns <code class="literal">TRUE</code> it is not guaranteed that
+<span class="emphasis"><em>every</em></span> connection of type <em class="parameter"><code>other_type</code></em>
+ is
+compatible with <em class="parameter"><code>virtual_type</code></em>
+; it may depend on the exact
+configuration of the two connections, or on the capabilities of an
+underlying device driver.</p>
+<div class="refsect3">
+<a name="id-1.2.30.8.53.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>virtual_type</p></td>
+<td class="parameter_description"><p>a virtual connection type</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>other_type</p></td>
+<td class="parameter_description"><p>a connection type to test against <em class="parameter"><code>virtual_type</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.30.8.53.9"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> or <code class="literal">FALSE</code></p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="libnm-util-nm-utils.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NMUtilsSecurityType"></a><h3>enum NMUtilsSecurityType</h3>
+<p>Describes generic security mechanisms that 802.11 access points may offer.
+Used with <a class="link" href="libnm-util-nm-utils.html#nm-utils-security-valid" title="nm_utils_security_valid ()"><code class="function">nm_utils_security_valid()</code></a> for checking whether a given access
+point is compatible with a network device.</p>
+<div class="refsect3">
+<a name="id-1.2.30.9.2.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NMU-SEC-INVALID:CAPS"></a>NMU_SEC_INVALID</p></td>
+<td class="enum_member_description">
+<p>unknown or invalid security, placeholder and not used</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NMU-SEC-NONE:CAPS"></a>NMU_SEC_NONE</p></td>
+<td class="enum_member_description">
+<p>unencrypted and open</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NMU-SEC-STATIC-WEP:CAPS"></a>NMU_SEC_STATIC_WEP</p></td>
+<td class="enum_member_description">
+<p>static WEP keys are used for encryption</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NMU-SEC-LEAP:CAPS"></a>NMU_SEC_LEAP</p></td>
+<td class="enum_member_description">
+<p>Cisco LEAP is used for authentication and for generating the
+dynamic WEP keys automatically</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NMU-SEC-DYNAMIC-WEP:CAPS"></a>NMU_SEC_DYNAMIC_WEP</p></td>
+<td class="enum_member_description">
+<p>standard 802.1x is used for authentication and
+generating the dynamic WEP keys automatically</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NMU-SEC-WPA-PSK:CAPS"></a>NMU_SEC_WPA_PSK</p></td>
+<td class="enum_member_description">
+<p>WPA1 is used with Pre-Shared Keys (PSK)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NMU-SEC-WPA-ENTERPRISE:CAPS"></a>NMU_SEC_WPA_ENTERPRISE</p></td>
+<td class="enum_member_description">
+<p>WPA1 is used with 802.1x authentication</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NMU-SEC-WPA2-PSK:CAPS"></a>NMU_SEC_WPA2_PSK</p></td>
+<td class="enum_member_description">
+<p>WPA2/RSN is used with Pre-Shared Keys (PSK)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NMU-SEC-WPA2-ENTERPRISE:CAPS"></a>NMU_SEC_WPA2_ENTERPRISE</p></td>
+<td class="enum_member_description">
+<p>WPA2 is used with 802.1x authentication</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-UTILS-HWADDR-LEN-MAX:CAPS"></a><h3>NM_UTILS_HWADDR_LEN_MAX</h3>
+<pre class="programlisting">#define NM_UTILS_HWADDR_LEN_MAX 20 /* INFINIBAND_ALEN */
+</pre>
+<p>The maximum length of hardware addresses handled by NetworkManager itself,
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-hwaddr-len" title="nm_utils_hwaddr_len ()"><code class="function">nm_utils_hwaddr_len()</code></a>, and <a class="link" href="libnm-util-nm-utils.html#nm-utils-hwaddr-aton" title="nm_utils_hwaddr_aton ()"><code class="function">nm_utils_hwaddr_aton()</code></a>.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-UTILS-INET-ADDRSTRLEN:CAPS"></a><h3>NM_UTILS_INET_ADDRSTRLEN</h3>
+<pre class="programlisting">#define NM_UTILS_INET_ADDRSTRLEN     INET6_ADDRSTRLEN
+</pre>
+<p>Defines the minimal length for a char buffer that is suitable as <em class="parameter"><code>dst</code></em>
+ argument
+for both <a class="link" href="libnm-util-nm-utils.html#nm-utils-inet4-ntop" title="nm_utils_inet4_ntop ()"><code class="function">nm_utils_inet4_ntop()</code></a> and <a class="link" href="libnm-util-nm-utils.html#nm-utils-inet6-ntop" title="nm_utils_inet6_ntop ()"><code class="function">nm_utils_inet6_ntop()</code></a>.</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

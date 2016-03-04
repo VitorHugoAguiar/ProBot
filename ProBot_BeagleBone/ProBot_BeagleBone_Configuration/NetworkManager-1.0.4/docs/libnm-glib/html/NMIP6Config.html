@@ -1,0 +1,572 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NMIP6Config: libnm-glib Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm-glib Reference Manual">
+<link rel="up" href="ch02.html" title="libnm-glib API Reference">
+<link rel="prev" href="NMIP4Config.html" title="NMIP4Config">
+<link rel="next" href="NMDHCP4Config.html" title="NMDHCP4Config">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#NMIP6Config.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#NMIP6Config.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#NMIP6Config.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="NMIP4Config.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="NMDHCP4Config.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="NMIP6Config"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="NMIP6Config.top_of_page"></a>NMIP6Config</span></h2>
+<p>NMIP6Config</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="NMIP6Config.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GObject</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMIP6Config.html#nm-ip6-config-new" title="nm_ip6_config_new ()">nm_ip6_config_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMIP6Config.html#nm-ip6-config-get-gateway" title="nm_ip6_config_get_gateway ()">nm_ip6_config_get_gateway</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">GSList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMIP6Config.html#nm-ip6-config-get-addresses" title="nm_ip6_config_get_addresses ()">nm_ip6_config_get_addresses</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">GSList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMIP6Config.html#nm-ip6-config-get-routes" title="nm_ip6_config_get_routes ()">nm_ip6_config_get_routes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMIP6Config.html#nm-ip6-config-get-num-nameservers" title="nm_ip6_config_get_num_nameservers ()">nm_ip6_config_get_num_nameservers</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const struct <span class="returnvalue">in6_addr</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMIP6Config.html#nm-ip6-config-get-nameserver" title="nm_ip6_config_get_nameserver ()">nm_ip6_config_get_nameserver</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">GSList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMIP6Config.html#nm-ip6-config-get-nameservers" title="nm_ip6_config_get_nameservers ()">nm_ip6_config_get_nameservers</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">GPtrArray</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMIP6Config.html#nm-ip6-config-get-domains" title="nm_ip6_config_get_domains ()">nm_ip6_config_get_domains</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">GPtrArray</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMIP6Config.html#nm-ip6-config-get-searches" title="nm_ip6_config_get_searches ()">nm_ip6_config_get_searches</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMIP6Config.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<span class="type">NMIP6AddressObjectArray</span> *</td>
+<td class="property_name"><a class="link" href="NMIP6Config.html#NMIP6Config--addresses" title="The “addresses” property">addresses</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">NMStringArray</span> *</td>
+<td class="property_name"><a class="link" href="NMIP6Config.html#NMIP6Config--domains" title="The “domains” property">domains</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMIP6Config.html#NMIP6Config--gateway" title="The “gateway” property">gateway</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">NMIP6AddressArray</span> *</td>
+<td class="property_name"><a class="link" href="NMIP6Config.html#NMIP6Config--nameservers" title="The “nameservers” property">nameservers</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">NMIP6RouteObjectArray</span> *</td>
+<td class="property_name"><a class="link" href="NMIP6Config.html#NMIP6Config--routes" title="The “routes” property">routes</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">NMStringArray</span> *</td>
+<td class="property_name"><a class="link" href="NMIP6Config.html#NMIP6Config--searches" title="The “searches” property">searches</a></td>
+<td class="property_flags">Read</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMIP6Config.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMIP6Config.html#NM-IP6-CONFIG-GATEWAY:CAPS" title="NM_IP6_CONFIG_GATEWAY">NM_IP6_CONFIG_GATEWAY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMIP6Config.html#NM-IP6-CONFIG-ADDRESSES:CAPS" title="NM_IP6_CONFIG_ADDRESSES">NM_IP6_CONFIG_ADDRESSES</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMIP6Config.html#NM-IP6-CONFIG-ROUTES:CAPS" title="NM_IP6_CONFIG_ROUTES">NM_IP6_CONFIG_ROUTES</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMIP6Config.html#NM-IP6-CONFIG-NAMESERVERS:CAPS" title="NM_IP6_CONFIG_NAMESERVERS">NM_IP6_CONFIG_NAMESERVERS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMIP6Config.html#NM-IP6-CONFIG-DOMAINS:CAPS" title="NM_IP6_CONFIG_DOMAINS">NM_IP6_CONFIG_DOMAINS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMIP6Config.html#NM-IP6-CONFIG-SEARCHES:CAPS" title="NM_IP6_CONFIG_SEARCHES">NM_IP6_CONFIG_SEARCHES</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMIP6Config.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> <a class="link" href="NMObject.html" title="NMObject">NMObject</a>
+        <span class="lineart">╰──</span> NMIP6Config
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMIP6Config.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="NMIP6Config.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="nm-ip6-config-new"></a><h3>nm_ip6_config_new ()</h3>
+<pre class="programlisting"><span class="returnvalue">GObject</span> *
+nm_ip6_config_new (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/dbus-glib/dbus-glib-DBusGConnection.html#DBusGConnection"><span class="type">DBusGConnection</span></a> *connection</code></em>,
+                   <em class="parameter"><code>const <span class="type">char</span> *object_path</code></em>);</pre>
+<p>Creates a new <a class="link" href="NMIP6Config.html" title="NMIP6Config"><span class="type">NMIP6Config</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.3.21.8.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a href="/usr/share/gtk-doc/html/dbus-glib/dbus-glib-DBusGConnection.html#DBusGConnection"><span class="type">DBusGConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>object_path</p></td>
+<td class="parameter_description"><p>the DBus object path of the device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.8.2.6"></a><h4>Returns</h4>
+<p> a new IP6 configuration. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip6-config-get-gateway"></a><h3>nm_ip6_config_get_gateway ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_ip6_config_get_gateway (<em class="parameter"><code><a class="link" href="NMIP6Config.html" title="NMIP6Config"><span class="type">NMIP6Config</span></a> *config</code></em>);</pre>
+<p>Gets the IP6 gateway.</p>
+<div class="refsect3">
+<a name="id-1.3.21.8.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>config</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMIP6Config.html" title="NMIP6Config"><span class="type">NMIP6Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.8.3.6"></a><h4>Returns</h4>
+<p> the IPv6 gateway of the configuration.</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip6-config-get-addresses"></a><h3>nm_ip6_config_get_addresses ()</h3>
+<pre class="programlisting">const <span class="returnvalue">GSList</span> *
+nm_ip6_config_get_addresses (<em class="parameter"><code><a class="link" href="NMIP6Config.html" title="NMIP6Config"><span class="type">NMIP6Config</span></a> *config</code></em>);</pre>
+<p>Gets the IP6 addresses (containing the address, prefix, and gateway).</p>
+<div class="refsect3">
+<a name="id-1.3.21.8.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>config</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMIP6Config.html" title="NMIP6Config"><span class="type">NMIP6Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.8.4.6"></a><h4>Returns</h4>
+<p> the <span class="type">GSList</span> containing
+<a href="https://developer.gnome.org/libnm-util/0.9/NMSettingIP6Config.html#NMIP6Address"><span class="type">NMIP6Address</span></a>es. This is the internal copy used by the configuration
+and must not be modified. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> NMIP6Address]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip6-config-get-routes"></a><h3>nm_ip6_config_get_routes ()</h3>
+<pre class="programlisting">const <span class="returnvalue">GSList</span> *
+nm_ip6_config_get_routes (<em class="parameter"><code><a class="link" href="NMIP6Config.html" title="NMIP6Config"><span class="type">NMIP6Config</span></a> *config</code></em>);</pre>
+<p>Gets the routes.</p>
+<div class="refsect3">
+<a name="id-1.3.21.8.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>config</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMIP6Config.html" title="NMIP6Config"><span class="type">NMIP6Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.8.5.6"></a><h4>Returns</h4>
+<p> the <span class="type">GSList</span> containing
+<a href="https://developer.gnome.org/libnm-util/0.9/NMSettingIP6Config.html#NMIP6Route"><span class="type">NMIP6Routes</span></a>. This is the internal copy used by the configuration,
+and must not be modified. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> NMIP6Route]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip6-config-get-num-nameservers"></a><h3>nm_ip6_config_get_num_nameservers ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_ip6_config_get_num_nameservers (<em class="parameter"><code><a class="link" href="NMIP6Config.html" title="NMIP6Config"><span class="type">NMIP6Config</span></a> *config</code></em>);</pre>
+<p>Gets the number of the domain name servers in the configuration.</p>
+<div class="refsect3">
+<a name="id-1.3.21.8.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>config</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMIP6Config.html" title="NMIP6Config"><span class="type">NMIP6Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.8.6.6"></a><h4>Returns</h4>
+<p> the number of domain name servers</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip6-config-get-nameserver"></a><h3>nm_ip6_config_get_nameserver ()</h3>
+<pre class="programlisting">const struct <span class="returnvalue">in6_addr</span> *
+nm_ip6_config_get_nameserver (<em class="parameter"><code><a class="link" href="NMIP6Config.html" title="NMIP6Config"><span class="type">NMIP6Config</span></a> *config</code></em>,
+                              <em class="parameter"><code><span class="type">guint32</span> idx</code></em>);</pre>
+<p>Gets the domain name server at index <em class="parameter"><code>idx</code></em>
+ in the configuration.</p>
+<div class="refsect3">
+<a name="id-1.3.21.8.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>config</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMIP6Config.html" title="NMIP6Config"><span class="type">NMIP6Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>idx</p></td>
+<td class="parameter_description"><p>index of the nameserver to return</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.8.7.6"></a><h4>Returns</h4>
+<p>         the IPv6 address of domain name server at index <em class="parameter"><code>iidx</code></em>
+. </p>
+<p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> fixed-size=16][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> guint8][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip6-config-get-nameservers"></a><h3>nm_ip6_config_get_nameservers ()</h3>
+<pre class="programlisting">const <span class="returnvalue">GSList</span> *
+nm_ip6_config_get_nameservers (<em class="parameter"><code><a class="link" href="NMIP6Config.html" title="NMIP6Config"><span class="type">NMIP6Config</span></a> *config</code></em>);</pre>
+<p>Gets the domain name servers (DNS).</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="id-1.3.21.8.8.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>config</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMIP6Config.html" title="NMIP6Config"><span class="type">NMIP6Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.8.8.7"></a><h4>Returns</h4>
+<p> a <span class="type">GSList</span> containing elements of type 'struct in6_addr' which
+contain the addresses of nameservers of the configuration.  This is the
+internal copy used by the configuration and must not be modified.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip6-config-get-domains"></a><h3>nm_ip6_config_get_domains ()</h3>
+<pre class="programlisting">const <span class="returnvalue">GPtrArray</span> *
+nm_ip6_config_get_domains (<em class="parameter"><code><a class="link" href="NMIP6Config.html" title="NMIP6Config"><span class="type">NMIP6Config</span></a> *config</code></em>);</pre>
+<p>Gets the domain names.</p>
+<div class="refsect3">
+<a name="id-1.3.21.8.9.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>config</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMIP6Config.html" title="NMIP6Config"><span class="type">NMIP6Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.8.9.6"></a><h4>Returns</h4>
+<p> the <span class="type">GPtrArray</span> containing domains as strings.
+This is the internal copy used by the configuration, and must not be modified. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip6-config-get-searches"></a><h3>nm_ip6_config_get_searches ()</h3>
+<pre class="programlisting">const <span class="returnvalue">GPtrArray</span> *
+nm_ip6_config_get_searches (<em class="parameter"><code><a class="link" href="NMIP6Config.html" title="NMIP6Config"><span class="type">NMIP6Config</span></a> *config</code></em>);</pre>
+<p>Gets the dns searches.</p>
+<div class="refsect3">
+<a name="id-1.3.21.8.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>config</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMIP6Config.html" title="NMIP6Config"><span class="type">NMIP6Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.8.10.6"></a><h4>Returns</h4>
+<p> the <span class="type">GPtrArray</span> containing dns searches as strings.
+This is the internal copy used by the configuration, and must not be modified. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMIP6Config.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NM-IP6-CONFIG-GATEWAY:CAPS"></a><h3>NM_IP6_CONFIG_GATEWAY</h3>
+<pre class="programlisting">#define NM_IP6_CONFIG_GATEWAY "gateway"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-IP6-CONFIG-ADDRESSES:CAPS"></a><h3>NM_IP6_CONFIG_ADDRESSES</h3>
+<pre class="programlisting">#define NM_IP6_CONFIG_ADDRESSES "addresses"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-IP6-CONFIG-ROUTES:CAPS"></a><h3>NM_IP6_CONFIG_ROUTES</h3>
+<pre class="programlisting">#define NM_IP6_CONFIG_ROUTES "routes"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-IP6-CONFIG-NAMESERVERS:CAPS"></a><h3>NM_IP6_CONFIG_NAMESERVERS</h3>
+<pre class="programlisting">#define NM_IP6_CONFIG_NAMESERVERS "nameservers"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-IP6-CONFIG-DOMAINS:CAPS"></a><h3>NM_IP6_CONFIG_DOMAINS</h3>
+<pre class="programlisting">#define NM_IP6_CONFIG_DOMAINS "domains"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-IP6-CONFIG-SEARCHES:CAPS"></a><h3>NM_IP6_CONFIG_SEARCHES</h3>
+<pre class="programlisting">#define NM_IP6_CONFIG_SEARCHES "searches"
+</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMIP6Config.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="NMIP6Config--addresses"></a><h3>The <code class="literal">“addresses”</code> property</h3>
+<pre class="programlisting">  “addresses”                <span class="type">NMIP6AddressObjectArray</span> *</pre>
+<p>The <span class="type">GPtrArray</span> containing the IPv6 addresses;  use
+<a href="https://developer.gnome.org/libnm-util/0.9/libnm-util-nm-utils.html#nm-utils-ip6-addresses-from-gvalue"><code class="function">nm_utils_ip6_addresses_from_gvalue()</code></a> to return a <span class="type">GSList</span> of
+<span class="type">NMSettingIP6Address</span> objects that is more usable than the raw data.</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMIP6Config--domains"></a><h3>The <code class="literal">“domains”</code> property</h3>
+<pre class="programlisting">  “domains”                  <span class="type">NMStringArray</span> *</pre>
+<p>The <span class="type">GPtrArray</span> containing domain strings of the configuration.</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMIP6Config--gateway"></a><h3>The <code class="literal">“gateway”</code> property</h3>
+<pre class="programlisting">  “gateway”                  <span class="type">gchar</span> *</pre>
+<p>The IPv6 gateway as string</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMIP6Config--nameservers"></a><h3>The <code class="literal">“nameservers”</code> property</h3>
+<pre class="programlisting">  “nameservers”              <span class="type">NMIP6AddressArray</span> *</pre>
+<p>The <span class="type">GPtrArray</span> containing elements of type 'struct ip6_addr' which
+contain the addresses of nameservers of the configuration.</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMIP6Config--routes"></a><h3>The <code class="literal">“routes”</code> property</h3>
+<pre class="programlisting">  “routes”                   <span class="type">NMIP6RouteObjectArray</span> *</pre>
+<p>The <span class="type">GPtrArray</span> containing the IPv6 routes;  use
+<a href="https://developer.gnome.org/libnm-util/0.9/libnm-util-nm-utils.html#nm-utils-ip6-routes-from-gvalue"><code class="function">nm_utils_ip6_routes_from_gvalue()</code></a> to return a <span class="type">GSList</span> of
+<span class="type">NMSettingIP6Address</span> objects that is more usable than the raw data.</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMIP6Config--searches"></a><h3>The <code class="literal">“searches”</code> property</h3>
+<pre class="programlisting">  “searches”                 <span class="type">NMStringArray</span> *</pre>
+<p>The <span class="type">GPtrArray</span> containing dns search strings of the configuration.</p>
+<p>Flags: Read</p>
+<p class="since">Since: 0.9.10</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

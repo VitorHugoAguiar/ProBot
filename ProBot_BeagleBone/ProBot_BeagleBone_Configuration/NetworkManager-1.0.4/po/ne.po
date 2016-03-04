@@ -1,0 +1,229 @@
+# translation of NetworkManager.NETWORKMANAGER_0_6_0_RELEASE.ne.po to Nepali
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
+# Jyotsna Shrestha <jyoshrestha@hotmail.com>, 2005.
+# Shyam Krishna Bal <balshyam24@yahoo.com>, 2007.
+# Shiva Pokharel <shiva@mpp.org.np>, 2007.
+# Nabin Gautam <nabin@mpp.org.np>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: NetworkManager.NETWORKMANAGER_0_6_0_RELEASE.ne\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-03-03 03:27+0000\n"
+"PO-Revision-Date: 2008-01-21 11:28+0545\n"
+"Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
+"Language-Team: Nepali <info@mpp.org.np>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n !=1\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.c:405
+msgid "Cannot add VPN connection"
+msgstr "भीपीएन जडान थप गर्न सकिँदैन"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.c:407
+msgid ""
+"No suitable VPN software was found on your system. Contact your system "
+"administrator."
+msgstr ""
+"तपाईँको प्रणालीमा कुनै अनुकूल भीपीएन सफ्टवेयर फेला परेन । तपाईँको प्रणाली "
+"प्रशासकलाई सम्पर्क गर्नुहोस् ।"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.c:457
+msgid "Cannot import VPN connection"
+msgstr "भीपीएन जडान आयात गर्न सकिँदैन"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.c:459
+#, c-format
+msgid ""
+"Cannot find suitable software for VPN connection type '%s' to import the "
+"file '%s'. Contact your system administrator."
+msgstr "फाइल '%s' आयात गर्न भीपीएन जडान प्रकार '%s' का लागि उपयोगी सफ्टवेयर फेला पार्न सकिँदैन । तपाईँको प्रणाली प्रशासकलाई सम्पर्क गर्नुहोस् ।"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.c:596
+#, c-format
+msgid "Error retrieving VPN connection '%s'"
+msgstr "भीपीएन जडान पुन: प्राप्ति गर्दा त्रुटि '%s'"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.c:599
+#, c-format
+msgid ""
+"Could not find the UI files for VPN connection type '%s'. Contact your "
+"system administrator."
+msgstr "भीपीएन जडान प्रकार '%s' का लागि यूआई फाइलहरू फेला पार्न सकेन । तपाईँको प्रणाली प्रशासकलाई सम्पर्क गर्नुहोस् ।"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.c:746
+#, c-format
+msgid "Delete VPN connection \"%s\"?"
+msgstr "भीपीएन जडान \"%s\" मेट्नुहुन्छ ?"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.c:749
+#, c-format
+msgid ""
+"All information about the VPN connection \"%s\" will be lost and you may "
+"need your system administrator to provide information to create a new "
+"connection."
+msgstr "भीपीएन जडान \"%s\" बारेका सबै जानकारी हराउनेछन् र तपाईँलाई नयाँ जडान सिर्जना गर्न जानकारी उपलब्ध गराउन प्रणाली प्रशासक आवश्यक पर्दछ ।"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.c:963
+msgid "Unable to load"
+msgstr "लोड गर्न असक्षम"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.c:965
+msgid "Cannot find some needed resources (the glade file)!"
+msgstr "केही आवश्यक संसाधानहरू फेला पार्न सकिँदैन (ग्लेड फाइल)!"
+
+#. Edit dialog
+#: ../gnome/vpn-properties/nm-vpn-properties.c:1084
+msgid "Edit VPN Connection"
+msgstr "भीपीएन जडान सम्पादन गर्नुहोस्"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.glade.h:1
+msgid "Add a new VPN connection"
+msgstr "नयाँ भीपीएन जडान थप्नुहोस्"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.glade.h:2
+msgid "Choose which type of VPN connection you wish to create."
+msgstr "तपाईँ कस्तो प्रकारको भीपीएन जडान सिर्जना गर्न चाहनुहुन्छ रोज्नुहोस् ।"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.glade.h:3
+msgid "Connect to:"
+msgstr "जडान गर्नुहोस्:"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.glade.h:4
+msgid "Create VPN Connection"
+msgstr "भीपीएन जडान सिर्जना गर्नुहोस्"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.glade.h:5
+msgid "Create VPN Connection - 1 of 2"
+msgstr "भीपीएन जडान सिर्जना गर्नुहोस् - २ को १"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.glade.h:6
+msgid "Create VPN Connection - 2 of 2"
+msgstr "भीपीएन जडान सिर्जना गर्नुहोस् - २ को २"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.glade.h:7
+msgid "Delete the selected VPN connection"
+msgstr "चयन गरिएका भीपीएन जडान मेट्नुहोस्"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.glade.h:8
+msgid "E_xport"
+msgstr "निर्यात गर्नुहोस्"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.glade.h:9
+msgid "Edit the selected VPN connection"
+msgstr "चयन गरिएका भीपीएन जडान सम्पादन गर्नुहोस्"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.glade.h:10
+msgid "Export the VPN settings to a file"
+msgstr "फाइलमा भीपीएन सेटिङ निर्यात गर्नुहोस्"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.glade.h:11
+msgid "Export the selected VPN connection to a file"
+msgstr "फाइलमा चयन गरिएका भीपीएन जडान निर्यात गर्नुहोस्"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.glade.h:12
+msgid "Finish Creating VPN Connection"
+msgstr "भीपीएन जडानको सिर्जना समाप्त गर्नुहोस्"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.glade.h:13
+msgid "Manage Virtual Private Network Connections"
+msgstr "अवास्तविक नीजि सञ्जाल जडानहरू प्रबन्ध गर्नुहोस्"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.glade.h:14
+msgid ""
+"This assistant will guide you through the creation of a connection to a "
+"Virtual Private Network (VPN).\n"
+"\n"
+"It will require some information, such as IP addresses and secrets.  Please "
+"see your system administrator to obtain this information."
+msgstr ""
+"यो सहयोगले तपाईँलाई अवास्तविक नीजि सञ्जाल (भीपीएन) मा जडानको सिर्जना मार्फत मार्गदर्शन गर्नेछ ।\n"
+"\n"
+"यसलाई केही सूचनाको आवश्यक पर्नेछ, जस्तै आईपी ठेगानाहरू र गोप्य कुराहरू । कृपया यो जानकारी प्राप्त गर्न तपाईँको प्रणाली प्रशासकलाई सोध्नुहोस् ।"
+
+#: ../gnome/vpn-properties/nm-vpn-properties.glade.h:17
+msgid "VPN Connections"
+msgstr "भीपीएन जडान"
+
+#: ../src/nm-ap-security-wep.c:52
+msgid "40-bit WEP"
+msgstr "40-bit WEP"
+
+#: ../src/nm-ap-security-wep.c:54
+msgid "104-bit WEP"
+msgstr "104-bit WEP"
+
+#: ../src/nm-ap-security-wpa-psk.c:50
+msgid "WPA TKIP"
+msgstr "WPA TKIP"
+
+#: ../src/nm-ap-security-wpa-psk.c:52
+msgid "WPA CCMP"
+msgstr "WPA CCMP"
+
+#: ../src/nm-ap-security-wpa-psk.c:54
+msgid "WPA Automatic"
+msgstr "WPA स्वचालित"
+
+#: ../src/nm-ap-security-wpa-psk.c:59
+msgid "WPA2 TKIP"
+msgstr "WPA2 TKIP"
+
+#: ../src/nm-ap-security-wpa-psk.c:61
+msgid "WPA2 CCMP"
+msgstr "WPA2 CCMP"
+
+#: ../src/nm-ap-security-wpa-psk.c:63
+msgid "WPA2 Automatic"
+msgstr "WPA2 स्वचालित"
+
+#: ../src/nm-ap-security.c:338
+msgid "none"
+msgstr "कुनै पनि होइन"
+
+#: ../src/nm-netlink-monitor.c:170
+#, c-format
+msgid "unable to create netlink socket for monitoring wired ethernet devices - %s"
+msgstr "तारसहितको इथरनेट यन्त्रहरूको अनुगमनका लागि नेटलिङ्क सकेट सिर्जना गर्न असक्षम - %s"
+
+#: ../src/nm-netlink-monitor.c:188
+#, c-format
+msgid "unable to bind to netlink socket for monitoring wired ethernet devices - %s"
+msgstr "तारसहितको इथरनेट यन्त्रको अनुगमनका लागि नेटलिङ्क सकेटमा बाइन्ड गर्न असक्षम - %s"
+
+#: ../src/nm-netlink-monitor.c:426
+msgid "operation took too long"
+msgstr "सञ्चालनले धेरै लामो समय लियो"
+
+#: ../src/nm-netlink-monitor.c:523
+msgid "received data from wrong type of sender"
+msgstr "गलत प्रकारको प्रेषकबाट पठाएको डेटा प्राप्त गरियो ।"
+
+#: ../src/nm-netlink-monitor.c:536
+msgid "received data from unexpected sender"
+msgstr "अनपेक्षित प्रेषकबाट पठाएको डेटा प्राप्त गरियो"
+
+#: ../src/nm-netlink-monitor.c:665
+msgid "too much data was sent over socket and some of it was lost"
+msgstr "सकेट माथी धेरै डेटाहरू पठाइयो र त्यसमध्ये केही हराएको थियो ।"
+
+#: ../src/nm-netlink-monitor.c:775
+msgid "error occurred while waiting for data on socket"
+msgstr "सकेटमा डेटा प्रतिक्षा गर्दा त्रुटि देखापर्यो"
+
+#: ../src/nm-ap-security-wpa-eap.c:96 ../src/nm-ap-security-wpa-eap.c:120
+msgid "WPA2 Enterprise"
+msgstr "WPA2 उद्यमशीलता"
+
+#: ../src/nm-ap-security-wpa-eap.c:98 ../src/nm-ap-security-wpa-eap.c:125
+msgid "WPA Enterprise"
+msgstr "WPA उद्यमशीलता"
+
+#: ../src/nm-ap-security-leap.c:66 ../src/nm-ap-security-leap.c:82
+msgid "LEAP"
+msgstr "LEAP"
+

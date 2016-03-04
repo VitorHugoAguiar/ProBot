@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NMDeviceInfiniband: libnm-glib Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm-glib Reference Manual">
+<link rel="up" href="ch02.html" title="libnm-glib API Reference">
+<link rel="prev" href="NMDeviceGeneric.html" title="NMDeviceGeneric">
+<link rel="next" href="NMDeviceVlan.html" title="NMDeviceVlan">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#NMDeviceInfiniband.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#NMDeviceInfiniband.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#NMDeviceInfiniband.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="NMDeviceGeneric.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="NMDeviceVlan.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="NMDeviceInfiniband"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="NMDeviceInfiniband.top_of_page"></a>NMDeviceInfiniband</span></h2>
+<p>NMDeviceInfiniband</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="NMDeviceInfiniband.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDeviceInfiniband.html#nm-device-infiniband-error-quark" title="nm_device_infiniband_error_quark ()">nm_device_infiniband_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GObject</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDeviceInfiniband.html#nm-device-infiniband-new" title="nm_device_infiniband_new ()">nm_device_infiniband_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDeviceInfiniband.html#nm-device-infiniband-get-hw-address" title="nm_device_infiniband_get_hw_address ()">nm_device_infiniband_get_hw_address</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDeviceInfiniband.html#nm-device-infiniband-get-carrier" title="nm_device_infiniband_get_carrier ()">nm_device_infiniband_get_carrier</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMDeviceInfiniband.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMDeviceInfiniband.html#NMDeviceInfiniband--carrier" title="The “carrier” property">carrier</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMDeviceInfiniband.html#NMDeviceInfiniband--hw-address" title="The “hw-address” property">hw-address</a></td>
+<td class="property_flags">Read</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMDeviceInfiniband.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMDeviceInfiniband.html#NMDeviceInfinibandError" title="enum NMDeviceInfinibandError">NMDeviceInfinibandError</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDeviceInfiniband.html#NM-DEVICE-INFINIBAND-ERROR:CAPS" title="NM_DEVICE_INFINIBAND_ERROR">NM_DEVICE_INFINIBAND_ERROR</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDeviceInfiniband.html#NM-DEVICE-INFINIBAND-HW-ADDRESS:CAPS" title="NM_DEVICE_INFINIBAND_HW_ADDRESS">NM_DEVICE_INFINIBAND_HW_ADDRESS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDeviceInfiniband.html#NM-DEVICE-INFINIBAND-CARRIER:CAPS" title="NM_DEVICE_INFINIBAND_CARRIER">NM_DEVICE_INFINIBAND_CARRIER</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMDeviceInfiniband.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> <a class="link" href="NMObject.html" title="NMObject">NMObject</a>
+        <span class="lineart">╰──</span> <a class="link" href="NMDevice.html" title="NMDevice">NMDevice</a>
+            <span class="lineart">╰──</span> NMDeviceInfiniband
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMDeviceInfiniband.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="NMDeviceInfiniband.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="nm-device-infiniband-error-quark"></a><h3>nm_device_infiniband_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_device_infiniband_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Registers an error quark for <a class="link" href="NMDeviceInfiniband.html" title="NMDeviceInfiniband"><span class="type">NMDeviceInfiniband</span></a> if necessary.</p>
+<div class="refsect3">
+<a name="id-1.3.15.8.2.5"></a><h4>Returns</h4>
+<p> the error quark used for <a class="link" href="NMDeviceInfiniband.html" title="NMDeviceInfiniband"><span class="type">NMDeviceInfiniband</span></a> errors.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-infiniband-new"></a><h3>nm_device_infiniband_new ()</h3>
+<pre class="programlisting"><span class="returnvalue">GObject</span> *
+nm_device_infiniband_new (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/dbus-glib/dbus-glib-DBusGConnection.html#DBusGConnection"><span class="type">DBusGConnection</span></a> *connection</code></em>,
+                          <em class="parameter"><code>const <span class="type">char</span> *path</code></em>);</pre>
+<p>Creates a new <a class="link" href="NMDeviceInfiniband.html" title="NMDeviceInfiniband"><span class="type">NMDeviceInfiniband</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.3.15.8.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a href="/usr/share/gtk-doc/html/dbus-glib/dbus-glib-DBusGConnection.html#DBusGConnection"><span class="type">DBusGConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>the DBus object path of the device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.15.8.3.6"></a><h4>Returns</h4>
+<p> a new device. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-infiniband-get-hw-address"></a><h3>nm_device_infiniband_get_hw_address ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_device_infiniband_get_hw_address (<em class="parameter"><code><a class="link" href="NMDeviceInfiniband.html" title="NMDeviceInfiniband"><span class="type">NMDeviceInfiniband</span></a> *device</code></em>);</pre>
+<p>Gets the hardware (MAC) address of the <a class="link" href="NMDeviceInfiniband.html" title="NMDeviceInfiniband"><span class="type">NMDeviceInfiniband</span></a></p>
+<div class="refsect3">
+<a name="id-1.3.15.8.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDeviceInfiniband.html" title="NMDeviceInfiniband"><span class="type">NMDeviceInfiniband</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.15.8.4.6"></a><h4>Returns</h4>
+<p> the hardware address. This is the internal string used by the
+device, and must not be modified.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-infiniband-get-carrier"></a><h3>nm_device_infiniband_get_carrier ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_device_infiniband_get_carrier (<em class="parameter"><code><a class="link" href="NMDeviceInfiniband.html" title="NMDeviceInfiniband"><span class="type">NMDeviceInfiniband</span></a> *device</code></em>);</pre>
+<p>Whether the device has carrier.</p>
+<div class="refsect3">
+<a name="id-1.3.15.8.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDeviceInfiniband.html" title="NMDeviceInfiniband"><span class="type">NMDeviceInfiniband</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.15.8.5.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the device has carrier</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMDeviceInfiniband.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NMDeviceInfinibandError"></a><h3>enum NMDeviceInfinibandError</h3>
+<div class="refsect3">
+<a name="id-1.3.15.9.2.3"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-INFINIBAND-ERROR-UNKNOWN:CAPS"></a>NM_DEVICE_INFINIBAND_ERROR_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>unknown or unclassified error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-INFINIBAND-ERROR-NOT-INFINIBAND-CONNECTION:CAPS"></a>NM_DEVICE_INFINIBAND_ERROR_NOT_INFINIBAND_CONNECTION</p></td>
+<td class="enum_member_description">
+<p>the connection was not of InfiniBand type</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-INFINIBAND-ERROR-INVALID-INFINIBAND-CONNECTION:CAPS"></a>NM_DEVICE_INFINIBAND_ERROR_INVALID_INFINIBAND_CONNECTION</p></td>
+<td class="enum_member_description">
+<p>the InfiniBand connection was invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-INFINIBAND-ERROR-INVALID-DEVICE-MAC:CAPS"></a>NM_DEVICE_INFINIBAND_ERROR_INVALID_DEVICE_MAC</p></td>
+<td class="enum_member_description">
+<p>the device's MAC was invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-INFINIBAND-ERROR-MAC-MISMATCH:CAPS"></a>NM_DEVICE_INFINIBAND_ERROR_MAC_MISMATCH</p></td>
+<td class="enum_member_description">
+<p>the MACs of the connection and the device mismatched</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-INFINIBAND-ERROR:CAPS"></a><h3>NM_DEVICE_INFINIBAND_ERROR</h3>
+<pre class="programlisting">#define NM_DEVICE_INFINIBAND_ERROR nm_device_infiniband_error_quark ()
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-INFINIBAND-HW-ADDRESS:CAPS"></a><h3>NM_DEVICE_INFINIBAND_HW_ADDRESS</h3>
+<pre class="programlisting">#define NM_DEVICE_INFINIBAND_HW_ADDRESS  "hw-address"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-INFINIBAND-CARRIER:CAPS"></a><h3>NM_DEVICE_INFINIBAND_CARRIER</h3>
+<pre class="programlisting">#define NM_DEVICE_INFINIBAND_CARRIER     "carrier"
+</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMDeviceInfiniband.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="NMDeviceInfiniband--carrier"></a><h3>The <code class="literal">“carrier”</code> property</h3>
+<pre class="programlisting">  “carrier”                  <span class="type">gboolean</span></pre>
+<p>Whether the device has carrier.</p>
+<p>Flags: Read</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDeviceInfiniband--hw-address"></a><h3>The <code class="literal">“hw-address”</code> property</h3>
+<pre class="programlisting">  “hw-address”               <span class="type">gchar</span> *</pre>
+<p>The hardware (MAC) address of the device.</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

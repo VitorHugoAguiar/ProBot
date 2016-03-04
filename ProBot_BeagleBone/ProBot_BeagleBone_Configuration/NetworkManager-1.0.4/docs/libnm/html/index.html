@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>libnm Reference Manual: libnm Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm Reference Manual">
+<link rel="next" href="ref-overview.html" title="Overview">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="book">
+<div class="titlepage">
+<div>
+<div><table class="navigation" id="top" width="100%" cellpadding="2" cellspacing="0"><tr><th valign="middle"><p class="title">libnm Reference Manual</p></th></tr></table></div>
+<div><p class="releaseinfo">
+      for libnm 1.0.4
+
+      The latest version of this documentation can be found on-line at
+      <a class="ulink" href="https://developer.gnome.org/libnm/1.0/" target="_top">https://developer.gnome.org/libnm/1.0/</a>.
+    </p></div>
+<div><p class="copyright">Copyright © 2012-2014 The NetworkManager Authors</p></div>
+<div><div class="legalnotice">
+<a name="id-1.1.4"></a><p>
+	Permission is granted to copy, distribute and/or modify this
+	document under the terms of the <em class="citetitle">GNU Free
+	Documentation License</em>, Version 1.1 or any later
+	version published by the Free Software Foundation with no
+	Invariant Sections, no Front-Cover Texts, and no Back-Cover
+	Texts. You may obtain a copy of the <em class="citetitle">GNU Free
+	Documentation License</em> from the Free Software
+	Foundation by visiting <a class="ulink" href="http://www.fsf.org" target="_top">their Web site</a> or by writing
+	to:
+
+	</p>
+<div class="address"><p><br>
+	  The Free Software Foundation, Inc.,<br>
+	  <span class="street">51 Franklin Street</span> - Fifth Floor,<br>
+	  <span class="city">Boston</span>, <span class="state">MA</span> <span class="postcode">02110-1301</span>,<br>
+	  <span class="country">USA</span><br>
+	</p></div>
+<p>
+      </p>
+</div></div>
+</div>
+<hr>
+</div>
+<div class="toc"><dl class="toc">
+<dt><span class="chapter"><a href="ref-overview.html">Overview</a></span></dt>
+<dt><span class="chapter"><a href="ch02.html">Client Object API Reference</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="NMClient.html">NMClient</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSecretAgentOld.html">NMSecretAgentOld</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMObject.html">NMObject</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libnm-nm-errors.html">nm-errors</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libnm-nm-dbus-interface.html">nm-dbus-interface</a></span><span class="refpurpose"></span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch03.html">Connection and Setting API Reference</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="libnm-NMConnection.html">NMConnection</a></span><span class="refpurpose"> — Describes a connection to specific network or provider</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSimpleConnection.html">NMSimpleConnection</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSetting.html">NMSetting</a></span><span class="refpurpose"> — Describes related configuration information</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingConnection.html">NMSettingConnection</a></span><span class="refpurpose"> — Describes general connection properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSetting8021x.html">NMSetting8021x</a></span><span class="refpurpose"> — Describes 802.1x-authenticated connection properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingAdsl.html">NMSettingAdsl</a></span><span class="refpurpose"> — Describes ADSL-based properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingBluetooth.html">NMSettingBluetooth</a></span><span class="refpurpose"> — Describes Bluetooth connection properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingBond.html">NMSettingBond</a></span><span class="refpurpose"> — Describes connection properties for bonds</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingBridge.html">NMSettingBridge</a></span><span class="refpurpose"> — Describes connection properties for bridges</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingBridgePort.html">NMSettingBridgePort</a></span><span class="refpurpose"> — Describes connection properties for bridge ports</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingCdma.html">NMSettingCdma</a></span><span class="refpurpose"> — Describes CDMA-based mobile broadband properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingDcb.html">NMSettingDcb</a></span><span class="refpurpose"> — Connection properties for Data Center Bridging</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingGeneric.html">NMSettingGeneric</a></span><span class="refpurpose"> — Describes connection properties for generic devices</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingGsm.html">NMSettingGsm</a></span><span class="refpurpose"> — Describes GSM/3GPP-based mobile broadband properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingInfiniband.html">NMSettingInfiniband</a></span><span class="refpurpose"> — Describes connection properties for IP-over-InfiniBand networks</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingIPConfig.html">NMSettingIPConfig</a></span><span class="refpurpose"> — Abstract base class for IPv4 and IPv6
+  addressing, routing, and name service properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingIP4Config.html">NMSettingIP4Config</a></span><span class="refpurpose"> — Describes IPv4 addressing, routing, and name service properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingIP6Config.html">NMSettingIP6Config</a></span><span class="refpurpose"> — Describes IPv6 addressing, routing, and name service properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingOlpcMesh.html">NMSettingOlpcMesh</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingPpp.html">NMSettingPpp</a></span><span class="refpurpose"> — Describes connection properties for devices/networks
+that require PPP to deliver IP capability</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingPppoe.html">NMSettingPppoe</a></span><span class="refpurpose"> — Describes PPPoE connection properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingSerial.html">NMSettingSerial</a></span><span class="refpurpose"> — Describes connection properties for devices that use
+serial communications</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingTeam.html">NMSettingTeam</a></span><span class="refpurpose"> — Describes connection properties for teams</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingTeamPort.html">NMSettingTeamPort</a></span><span class="refpurpose"> — Describes connection properties for team ports</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingVlan.html">NMSettingVlan</a></span><span class="refpurpose"> — Describes connection properties for VLAN interfaces</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingVpn.html">NMSettingVpn</a></span><span class="refpurpose"> — Describes connection properties for Virtual Private Networks</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingWimax.html">NMSettingWimax</a></span><span class="refpurpose"> — Describes 802.16e Mobile WiMAX connection properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingWired.html">NMSettingWired</a></span><span class="refpurpose"> — Describes connection properties for Ethernet-based networks</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingWireless.html">NMSettingWireless</a></span><span class="refpurpose"> — Describes connection properties for 802.11 Wi-Fi networks</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingWirelessSecurity.html">NMSettingWirelessSecurity</a></span><span class="refpurpose"> — Describes connection properties for Wi-Fi networks that
+use WEP, LEAP, WPA or WPA2/RSN security</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch04.html">Device and Runtime Configuration API Reference</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="NMDevice.html">NMDevice</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMDeviceAdsl.html">NMDeviceAdsl</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMDeviceBond.html">NMDeviceBond</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMDeviceBridge.html">NMDeviceBridge</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMDeviceBt.html">NMDeviceBt</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMDeviceEthernet.html">NMDeviceEthernet</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMDeviceGeneric.html">NMDeviceGeneric</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMDeviceInfiniband.html">NMDeviceInfiniband</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMDeviceModem.html">NMDeviceModem</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMDeviceOlpcMesh.html">NMDeviceOlpcMesh</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMDeviceTeam.html">NMDeviceTeam</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMDeviceVlan.html">NMDeviceVlan</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMDeviceWifi.html">NMDeviceWifi</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMDeviceWimax.html">NMDeviceWimax</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMActiveConnection.html">NMActiveConnection</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMVpnConnection.html">NMVpnConnection</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMRemoteConnection.html">NMRemoteConnection</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMAccessPoint.html">NMAccessPoint</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMWimaxNsp.html">NMWimaxNsp</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMIPConfig.html">NMIPConfig</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMDhcpConfig.html">NMDhcpConfig</a></span><span class="refpurpose"></span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch05.html">Utility API Reference</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="libnm-nm-utils.html">nm-utils</a></span><span class="refpurpose"> — Utility functions</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libnm-nm-version.html">nm-version</a></span><span class="refpurpose"></span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch06.html">VPN Plugin API Reference</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="libnm-nm-vpn-dbus-interface.html">nm-vpn-dbus-interface</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMVpnEditor.html">NMVpnEditor</a></span><span class="refpurpose"></span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="object-tree.html">Object Hierarchy</a></span></dt>
+<dt><span class="index"><a href="api-index-full.html">API Index</a></span></dt>
+<dt><span class="glossary"><a href="annotation-glossary.html">Annotation Glossary</a></span></dt>
+</dl></div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

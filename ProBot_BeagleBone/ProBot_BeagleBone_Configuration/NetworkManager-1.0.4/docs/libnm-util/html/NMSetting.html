@@ -1,0 +1,1404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NMSetting: libnm-util Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm-util Reference Manual">
+<link rel="up" href="ch01.html" title="libnm-util API Reference">
+<link rel="prev" href="NMConnection.html" title="NMConnection">
+<link rel="next" href="NMSettingConnection.html" title="NMSettingConnection">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#NMSetting.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#NMSetting.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#NMSetting.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="NMConnection.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="NMSettingConnection.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="NMSetting"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="NMSetting.top_of_page"></a>NMSetting</span></h2>
+<p>NMSetting — Describes related configuration information</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="NMSetting.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSetting.html#nm-setting-error-quark" title="nm_setting_error_quark ()">nm_setting_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSetting.html#NM-SETTING-PARAM-SERIALIZE:CAPS" title="NM_SETTING_PARAM_SERIALIZE">NM_SETTING_PARAM_SERIALIZE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSetting.html#NM-SETTING-PARAM-REQUIRED:CAPS" title="NM_SETTING_PARAM_REQUIRED">NM_SETTING_PARAM_REQUIRED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSetting.html#NM-SETTING-PARAM-SECRET:CAPS" title="NM_SETTING_PARAM_SECRET">NM_SETTING_PARAM_SECRET</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSetting.html#NM-SETTING-PARAM-FUZZY-IGNORE:CAPS" title="NM_SETTING_PARAM_FUZZY_IGNORE">NM_SETTING_PARAM_FUZZY_IGNORE</a></td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="NMSetting.html#NMSettingClearSecretsWithFlagsFn" title="NMSettingClearSecretsWithFlagsFn ()">*NMSettingClearSecretsWithFlagsFn</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="NMSetting.html#NMSettingValueIterFn" title="NMSettingValueIterFn ()">*NMSettingValueIterFn</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GHashTable</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSetting.html#nm-setting-to-hash" title="nm_setting_to_hash ()">nm_setting_to_hash</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSetting.html#nm-setting-new-from-hash" title="nm_setting_new_from_hash ()">nm_setting_new_from_hash</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSetting.html#nm-setting-duplicate" title="nm_setting_duplicate ()">nm_setting_duplicate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSetting.html#nm-setting-get-name" title="nm_setting_get_name ()">nm_setting_get_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSetting.html#nm-setting-verify" title="nm_setting_verify ()">nm_setting_verify</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSetting.html#nm-setting-compare" title="nm_setting_compare ()">nm_setting_compare</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSetting.html#nm-setting-diff" title="nm_setting_diff ()">nm_setting_diff</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSetting.html#nm-setting-enumerate-values" title="nm_setting_enumerate_values ()">nm_setting_enumerate_values</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSetting.html#nm-setting-to-string" title="nm_setting_to_string ()">nm_setting_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSetting.html#nm-setting-clear-secrets" title="nm_setting_clear_secrets ()">nm_setting_clear_secrets</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSetting.html#nm-setting-clear-secrets-with-flags" title="nm_setting_clear_secrets_with_flags ()">nm_setting_clear_secrets_with_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GPtrArray</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSetting.html#nm-setting-need-secrets" title="nm_setting_need_secrets ()">nm_setting_need_secrets</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSetting.html#nm-setting-update-secrets" title="nm_setting_update_secrets ()">nm_setting_update_secrets</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSetting.html#nm-setting-get-secret-flags" title="nm_setting_get_secret_flags ()">nm_setting_get_secret_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSetting.html#nm-setting-set-secret-flags" title="nm_setting_set_secret_flags ()">nm_setting_set_secret_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSetting.html#nm-setting-get-virtual-iface-name" title="nm_setting_get_virtual_iface_name ()">nm_setting_get_virtual_iface_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSetting.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSetting.html#NMSetting--name" title="The “name” property">name</a></td>
+<td class="property_flags">Read / Write</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSetting.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSetting.html#NMSettingError" title="enum NMSettingError">NMSettingError</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSetting.html#NM-SETTING-ERROR:CAPS" title="NM_SETTING_ERROR">NM_SETTING_ERROR</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSetting.html#NM-SETTING-NAME:CAPS" title="NM_SETTING_NAME">NM_SETTING_NAME</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags">NMSettingSecretFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSetting.html#NMSettingCompareFlags" title="enum NMSettingCompareFlags">NMSettingCompareFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="NMSetting.html#NMSetting-struct" title="NMSetting">NMSetting</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSetting.html#NMSettingHashFlags" title="enum NMSettingHashFlags">NMSettingHashFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSetting.html#NMSettingDiffResult" title="enum NMSettingDiffResult">NMSettingDiffResult</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSetting.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Enumeration-and-Flag-Types.html">GEnum</a>
+    <span class="lineart">├──</span> NMSettingCompareFlags
+    <span class="lineart">├──</span> NMSettingDiffResult
+    <span class="lineart">├──</span> NMSettingError
+    <span class="lineart">├──</span> NMSettingHashFlags
+    <span class="lineart">╰──</span> NMSettingSecretFlags
+    GObject
+    <span class="lineart">╰──</span> NMSetting
+        <span class="lineart">├──</span> <a class="link" href="NMSetting8021x.html" title="NMSetting8021x">NMSetting8021x</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl">NMSettingAdsl</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingBluetooth.html" title="NMSettingBluetooth">NMSettingBluetooth</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingBond.html" title="NMSettingBond">NMSettingBond</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingTeam.html" title="NMSettingTeam">NMSettingTeam</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingTeamPort.html" title="NMSettingTeamPort">NMSettingTeamPort</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingBridge.html" title="NMSettingBridge">NMSettingBridge</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingBridgePort.html" title="NMSettingBridgePort">NMSettingBridgePort</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingConnection.html" title="NMSettingConnection">NMSettingConnection</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingDcb.html" title="NMSettingDcb">NMSettingDcb</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingInfiniband.html" title="NMSettingInfiniband">NMSettingInfiniband</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config">NMSettingIP4Config</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingVlan.html" title="NMSettingVlan">NMSettingVlan</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingIP6Config.html" title="NMSettingIP6Config">NMSettingIP6Config</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingPPP.html" title="NMSettingPPP">NMSettingPPP</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingPPPOE.html" title="NMSettingPPPOE">NMSettingPPPOE</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingSerial.html" title="NMSettingSerial">NMSettingSerial</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingGeneric.html" title="NMSettingGeneric">NMSettingGeneric</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingGsm.html" title="NMSettingGsm">NMSettingGsm</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingCdma.html" title="NMSettingCdma">NMSettingCdma</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingOlpcMesh.html" title="NMSettingOlpcMesh">NMSettingOlpcMesh</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingWimax.html" title="NMSettingWimax">NMSettingWimax</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingWired.html" title="NMSettingWired">NMSettingWired</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingWireless.html" title="NMSettingWireless">NMSettingWireless</a>
+        <span class="lineart">├──</span> <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity">NMSettingWirelessSecurity</a>
+        <span class="lineart">╰──</span> <a class="link" href="NMSettingVPN.html" title="NMSettingVPN">NMSettingVPN</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSetting.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;nm-setting.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSetting.description"></a><h2>Description</h2>
+<p>Each <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> contains properties that describe configuration that applies
+to a specific network layer (like IPv4 or IPv6 configuration) or device type
+(like Ethernet, or Wi-Fi).  A collection of individual settings together
+make up an <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a>. Each property is strongly typed and usually has
+a number of allowed values.  See each <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> subclass for a description
+of properties and allowed values.</p>
+</div>
+<div class="refsect1">
+<a name="NMSetting.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="nm-setting-error-quark"></a><h3>nm_setting_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_setting_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Registers an error quark for <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> if necessary.</p>
+<div class="refsect3">
+<a name="id-1.2.3.9.2.5"></a><h4>Returns</h4>
+<p> the error quark used for NMSetting errors.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PARAM-SERIALIZE:CAPS"></a><h3>NM_SETTING_PARAM_SERIALIZE</h3>
+<pre class="programlisting">#define NM_SETTING_PARAM_SERIALIZE    (1 &lt;&lt; (0 + G_PARAM_USER_SHIFT))
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PARAM-REQUIRED:CAPS"></a><h3>NM_SETTING_PARAM_REQUIRED</h3>
+<pre class="programlisting">#define NM_SETTING_PARAM_REQUIRED     (1 &lt;&lt; (1 + G_PARAM_USER_SHIFT))
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PARAM-SECRET:CAPS"></a><h3>NM_SETTING_PARAM_SECRET</h3>
+<pre class="programlisting">#define NM_SETTING_PARAM_SECRET       (1 &lt;&lt; (2 + G_PARAM_USER_SHIFT))
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PARAM-FUZZY-IGNORE:CAPS"></a><h3>NM_SETTING_PARAM_FUZZY_IGNORE</h3>
+<pre class="programlisting">#define NM_SETTING_PARAM_FUZZY_IGNORE (1 &lt;&lt; (3 + G_PARAM_USER_SHIFT))
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingClearSecretsWithFlagsFn"></a><h3>NMSettingClearSecretsWithFlagsFn ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+<span class="c_punctuation">(</span>*NMSettingClearSecretsWithFlagsFn<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *setting</code></em>,
+                                     <em class="parameter"><code>const <span class="type">char</span> *secret</code></em>,
+                                     <em class="parameter"><code><a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="type">NMSettingSecretFlags</span></a> flags</code></em>,
+                                     <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.3.9.7.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>The setting for which secrets are being iterated</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>secret</p></td>
+<td class="parameter_description"><p>The secret's name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>The secret's flags, eg <a class="link" href="NMSetting.html#NM-SETTING-SECRET-FLAG-AGENT-OWNED:CAPS"><code class="literal">NM_SETTING_SECRET_FLAG_AGENT_OWNED</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data passed to <a class="link" href="NMConnection.html#nm-connection-clear-secrets-with-flags" title="nm_connection_clear_secrets_with_flags ()"><code class="function">nm_connection_clear_secrets_with_flags()</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.3.9.7.5"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> to clear the secret, <code class="literal">FALSE</code> to not clear the secret</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingValueIterFn"></a><h3>NMSettingValueIterFn ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+<span class="c_punctuation">(</span>*NMSettingValueIterFn<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *setting</code></em>,
+                         <em class="parameter"><code>const <span class="type">char</span> *key</code></em>,
+                         <em class="parameter"><code>const <span class="type">GValue</span> *value</code></em>,
+                         <em class="parameter"><code><span class="type">GParamFlags</span> flags</code></em>,
+                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.3.9.8.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>The setting for which properties are being iterated, given to
+<a class="link" href="NMSetting.html#nm-setting-enumerate-values" title="nm_setting_enumerate_values ()"><code class="function">nm_setting_enumerate_values()</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>The value/property name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>The property's value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>The property's flags, like <a class="link" href="NMSetting.html#NM-SETTING-PARAM-SECRET:CAPS" title="NM_SETTING_PARAM_SECRET"><code class="literal">NM_SETTING_PARAM_SECRET</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data passed to <a class="link" href="NMSetting.html#nm-setting-enumerate-values" title="nm_setting_enumerate_values ()"><code class="function">nm_setting_enumerate_values()</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-to-hash"></a><h3>nm_setting_to_hash ()</h3>
+<pre class="programlisting"><span class="returnvalue">GHashTable</span> *
+nm_setting_to_hash (<em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *setting</code></em>,
+                    <em class="parameter"><code><a class="link" href="NMSetting.html#NMSettingHashFlags" title="enum NMSettingHashFlags"><span class="type">NMSettingHashFlags</span></a> flags</code></em>);</pre>
+<p>Converts the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> into a <span class="type">GHashTable</span> mapping each setting property
+name to a GValue describing that property, suitable for marshalling over
+D-Bus or serializing.  The mapping is string to GValue.</p>
+<div class="refsect3">
+<a name="id-1.2.3.9.9.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>hash flags, e.g. <a class="link" href="NMSetting.html#NM-SETTING-HASH-FLAG-ALL:CAPS"><code class="literal">NM_SETTING_HASH_FLAG_ALL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.3.9.9.6"></a><h4>Returns</h4>
+<p> a new <span class="type">GHashTable</span>
+describing the setting's properties. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 GObject.Value]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-new-from-hash"></a><h3>nm_setting_new_from_hash ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+nm_setting_new_from_hash (<em class="parameter"><code><span class="type">GType</span> setting_type</code></em>,
+                          <em class="parameter"><code><span class="type">GHashTable</span> *hash</code></em>);</pre>
+<p>Creates a new <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> object and populates that object with the properties
+contained in the hash table, using each hash key as the property to set,
+and each hash value as the value to set that property to.  Setting properties
+are strongly typed, thus the GValue type of the hash value must be correct.
+See the documentation on each <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> object subclass for the correct
+property names and value types.</p>
+<div class="refsect3">
+<a name="id-1.2.3.9.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting_type</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> type which the hash contains properties for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>hash</p></td>
+<td class="parameter_description"><p> the <span class="type">GHashTable</span> containing a
+string to GValue mapping of properties that apply to the setting. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 GObject.Value]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.3.9.10.6"></a><h4>Returns</h4>
+<p> a new <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> object populated with the properties from the
+hash table, or <code class="literal">NULL</code> on failure</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-duplicate"></a><h3>nm_setting_duplicate ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+nm_setting_duplicate (<em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *setting</code></em>);</pre>
+<p>Duplicates a <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.2.3.9.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> to duplicate</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.3.9.11.6"></a><h4>Returns</h4>
+<p> a new <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> containing the same properties and values as the
+source <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-get-name"></a><h3>nm_setting_get_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_get_name (<em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *setting</code></em>);</pre>
+<p>Returns the type name of the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> object</p>
+<div class="refsect3">
+<a name="id-1.2.3.9.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.3.9.12.6"></a><h4>Returns</h4>
+<p> a string containing the type name of the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> object,
+like 'ppp' or 'wireless' or 'wired'.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-verify"></a><h3>nm_setting_verify ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_verify (<em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *setting</code></em>,
+                   <em class="parameter"><code><span class="type">GSList</span> *all_settings</code></em>,
+                   <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Validates the setting.  Each setting's properties have allowed values, and
+some are dependent on other values (hence the need for <em class="parameter"><code>all_settings</code></em>
+).  The
+returned <span class="type">GError</span> contains information about which property of the setting
+failed validation, and in what way that property failed validation.</p>
+<div class="refsect3">
+<a name="id-1.2.3.9.13.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> to verify</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>all_settings</p></td>
+<td class="parameter_description"><p> a <span class="type">GSList</span> of all settings
+in the connection from which <em class="parameter"><code>setting</code></em>
+came. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> NMSetting]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.3.9.13.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the setting is valid, <code class="literal">FALSE</code> if it is not</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-compare"></a><h3>nm_setting_compare ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_compare (<em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *a</code></em>,
+                    <em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *b</code></em>,
+                    <em class="parameter"><code><a class="link" href="NMSetting.html#NMSettingCompareFlags" title="enum NMSettingCompareFlags"><span class="type">NMSettingCompareFlags</span></a> flags</code></em>);</pre>
+<p>Compares two <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> objects for similarity, with comparison behavior
+modified by a set of flags.  See the documentation for <a class="link" href="NMSetting.html#NMSettingCompareFlags" title="enum NMSettingCompareFlags"><span class="type">NMSettingCompareFlags</span></a>
+for a description of each flag's behavior.</p>
+<div class="refsect3">
+<a name="id-1.2.3.9.14.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>a</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>b</p></td>
+<td class="parameter_description"><p>a second <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> to compare with the first</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>compare flags, e.g. <a class="link" href="NMSetting.html#NM-SETTING-COMPARE-FLAG-EXACT:CAPS"><code class="literal">NM_SETTING_COMPARE_FLAG_EXACT</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.3.9.14.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the comparison succeeds, <code class="literal">FALSE</code> if it does not</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-diff"></a><h3>nm_setting_diff ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_diff (<em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *a</code></em>,
+                 <em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *b</code></em>,
+                 <em class="parameter"><code><a class="link" href="NMSetting.html#NMSettingCompareFlags" title="enum NMSettingCompareFlags"><span class="type">NMSettingCompareFlags</span></a> flags</code></em>,
+                 <em class="parameter"><code><span class="type">gboolean</span> invert_results</code></em>,
+                 <em class="parameter"><code><span class="type">GHashTable</span> **results</code></em>);</pre>
+<p>Compares two <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> objects for similarity, with comparison behavior
+modified by a set of flags.  See the documentation for <a class="link" href="NMSetting.html#NMSettingCompareFlags" title="enum NMSettingCompareFlags"><span class="type">NMSettingCompareFlags</span></a>
+for a description of each flag's behavior.  If the settings differ, the keys
+of each setting that differ from the other are added to <em class="parameter"><code>results</code></em>
+, mapped to
+one or more <a class="link" href="NMSetting.html#NMSettingDiffResult" title="enum NMSettingDiffResult"><span class="type">NMSettingDiffResult</span></a> values.</p>
+<div class="refsect3">
+<a name="id-1.2.3.9.15.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>a</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>b</p></td>
+<td class="parameter_description"><p>a second <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> to compare with the first</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>compare flags, e.g. <a class="link" href="NMSetting.html#NM-SETTING-COMPARE-FLAG-EXACT:CAPS"><code class="literal">NM_SETTING_COMPARE_FLAG_EXACT</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>invert_results</p></td>
+<td class="parameter_description"><p>this parameter is used internally by libnm-util and should
+be set to <code class="literal">FALSE</code>.  If <code class="literal">TRUE</code> inverts the meaning of the <a class="link" href="NMSetting.html#NMSettingDiffResult" title="enum NMSettingDiffResult"><span class="type">NMSettingDiffResult</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>results</p></td>
+<td class="parameter_description"><p> if the
+settings differ, on return a hash table mapping the differing keys to one or
+more <a class="link" href="NMSetting.html#NMSettingDiffResult" title="enum NMSettingDiffResult"><code class="literal">NMSettingDiffResult</code></a> values OR-ed together.  If the settings do not
+differ, any hash table passed in is unmodified.  If no hash table is passed
+in and the settings differ, a new one is created and returned. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 guint32]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.3.9.15.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the settings contain the same values, <code class="literal">FALSE</code> if they do not</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-enumerate-values"></a><h3>nm_setting_enumerate_values ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_enumerate_values (<em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *setting</code></em>,
+                             <em class="parameter"><code><a class="link" href="NMSetting.html#NMSettingValueIterFn" title="NMSettingValueIterFn ()"><span class="type">NMSettingValueIterFn</span></a> func</code></em>,
+                             <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Iterates over each property of the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> object, calling the supplied
+user function for each property.</p>
+<div class="refsect3">
+<a name="id-1.2.3.9.16.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>func</p></td>
+<td class="parameter_description"><p> user-supplied function called for each property of the setting. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid only during the call to the method."><span class="acronym">scope call</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data passed to <em class="parameter"><code>func</code></em>
+at each invocation</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-to-string"></a><h3>nm_setting_to_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+nm_setting_to_string (<em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *setting</code></em>);</pre>
+<p>Convert the setting into a string.  For debugging purposes ONLY, should NOT
+be used for serialization of the setting, or machine-parsed in any way. The
+output format is not guaranteed to be stable and may change at any time.</p>
+<div class="refsect3">
+<a name="id-1.2.3.9.17.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.3.9.17.6"></a><h4>Returns</h4>
+<p> an allocated string containing a textual representation of the
+setting's properties and values (including secrets!), which the caller should
+free with <code class="function">g_free()</code></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-clear-secrets"></a><h3>nm_setting_clear_secrets ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_clear_secrets (<em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *setting</code></em>);</pre>
+<p>Resets and clears any secrets in the setting.  Secrets should be added to the
+setting only when needed, and cleared immediately after use to prevent
+leakage of information.</p>
+<div class="refsect3">
+<a name="id-1.2.3.9.18.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-clear-secrets-with-flags"></a><h3>nm_setting_clear_secrets_with_flags ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_clear_secrets_with_flags (<em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *setting</code></em>,
+                                     <em class="parameter"><code><a class="link" href="NMSetting.html#NMSettingClearSecretsWithFlagsFn" title="NMSettingClearSecretsWithFlagsFn ()"><span class="type">NMSettingClearSecretsWithFlagsFn</span></a> func</code></em>,
+                                     <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Clears and frees secrets determined by <em class="parameter"><code>func</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.2.3.9.19.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>func</p></td>
+<td class="parameter_description"><p> function to be called to determine whether a
+specific secret should be cleared or not. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid only during the call to the method."><span class="acronym">scope call</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>caller-supplied data passed to <em class="parameter"><code>func</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-need-secrets"></a><h3>nm_setting_need_secrets ()</h3>
+<pre class="programlisting"><span class="returnvalue">GPtrArray</span> *
+nm_setting_need_secrets (<em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *setting</code></em>);</pre>
+<p>Returns an array of property names for each secret which may be required
+to make a successful connection.  The returned hints are only intended as a
+guide to what secrets may be required, because in some circumstances, there
+is no way to conclusively determine exactly which secrets are needed.</p>
+<div class="refsect3">
+<a name="id-1.2.3.9.20.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.3.9.20.6"></a><h4>Returns</h4>
+<p> a <span class="type">GPtrArray</span> containing
+the property names of secrets of the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> which may be required; the
+caller owns the array and must free it with <code class="function">g_ptr_array_free()</code>, but must not
+free the elements. </p>
+<p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-update-secrets"></a><h3>nm_setting_update_secrets ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_update_secrets (<em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *setting</code></em>,
+                           <em class="parameter"><code><span class="type">GHashTable</span> *secrets</code></em>,
+                           <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Update the setting's secrets, given a hash table of secrets intended for that
+setting (deserialized from D-Bus for example).</p>
+<div class="refsect3">
+<a name="id-1.2.3.9.21.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>secrets</p></td>
+<td class="parameter_description"><p> a <span class="type">GHashTable</span> mapping
+string to <span class="type">GValue</span> of setting property names and secrets. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 GObject.Value]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.3.9.21.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the secrets were successfully updated, <code class="literal">FALSE</code> on failure to
+update one or more of the secrets.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-get-secret-flags"></a><h3>nm_setting_get_secret_flags ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_get_secret_flags (<em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *setting</code></em>,
+                             <em class="parameter"><code>const <span class="type">char</span> *secret_name</code></em>,
+                             <em class="parameter"><code><a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="type">NMSettingSecretFlags</span></a> *out_flags</code></em>,
+                             <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>For a given secret, retrieves the <a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="type">NMSettingSecretFlags</span></a> describing how to
+handle that secret.</p>
+<div class="refsect3">
+<a name="id-1.2.3.9.22.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>secret_name</p></td>
+<td class="parameter_description"><p>the secret key name to get flags for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_flags</p></td>
+<td class="parameter_description"><p>on success, the <a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="type">NMSettingSecretFlags</span></a> for the secret</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.3.9.22.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success (if the given secret name was a valid property of
+this setting, and if that property is secret), <code class="literal">FALSE</code> if not</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-set-secret-flags"></a><h3>nm_setting_set_secret_flags ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_set_secret_flags (<em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *setting</code></em>,
+                             <em class="parameter"><code>const <span class="type">char</span> *secret_name</code></em>,
+                             <em class="parameter"><code><a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="type">NMSettingSecretFlags</span></a> flags</code></em>,
+                             <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>For a given secret, stores the <a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="type">NMSettingSecretFlags</span></a> describing how to
+handle that secret.</p>
+<div class="refsect3">
+<a name="id-1.2.3.9.23.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>secret_name</p></td>
+<td class="parameter_description"><p>the secret key name to set flags for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="type">NMSettingSecretFlags</span></a> for the secret</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.3.9.23.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success (if the given secret name was a valid property of
+this setting, and if that property is secret), <code class="literal">FALSE</code> if not</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-get-virtual-iface-name"></a><h3>nm_setting_get_virtual_iface_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_get_virtual_iface_name (<em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *setting</code></em>);</pre>
+<p>Returns the name of the virtual kernel interface which the connection
+needs to use if specified in the settings.</p>
+<div class="refsect3">
+<a name="id-1.2.3.9.24.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.3.9.24.6"></a><h4>Returns</h4>
+<p> Name of the virtual interface or <code class="literal">NULL</code> if the setting does not
+support this feature</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSetting.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NMSettingError"></a><h3>enum NMSettingError</h3>
+<p>Describes errors that may result from operations involving a <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.2.3.10.2.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-ERROR-UNKNOWN:CAPS"></a>NM_SETTING_ERROR_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>unknown or unclassified error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-ERROR-PROPERTY-NOT-FOUND:CAPS"></a>NM_SETTING_ERROR_PROPERTY_NOT_FOUND</p></td>
+<td class="enum_member_description">
+<p>a property required by the operation
+  was not found; for example, an attempt to update an invalid secret</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-ERROR-PROPERTY-NOT-SECRET:CAPS"></a>NM_SETTING_ERROR_PROPERTY_NOT_SECRET</p></td>
+<td class="enum_member_description">
+<p>an operation which requires a secret
+  was attempted on a non-secret property</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-ERROR-PROPERTY-TYPE-MISMATCH:CAPS"></a>NM_SETTING_ERROR_PROPERTY_TYPE_MISMATCH</p></td>
+<td class="enum_member_description">
+<p>the operation requires a property
+  of a specific type, or the value couldn't be transformed to the same type
+  as the property being acted upon</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-ERROR:CAPS"></a><h3>NM_SETTING_ERROR</h3>
+<pre class="programlisting">#define NM_SETTING_ERROR nm_setting_error_quark ()
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-NAME:CAPS"></a><h3>NM_SETTING_NAME</h3>
+<pre class="programlisting">#define NM_SETTING_NAME "name"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingSecretFlags"></a><h3>enum NMSettingSecretFlags</h3>
+<p>These flags indicate specific behavior related to handling of a secret.  Each
+secret has a corresponding set of these flags which indicate how the secret
+is to be stored and/or requested when it is needed.</p>
+<div class="refsect3">
+<a name="id-1.2.3.10.5.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-SECRET-FLAG-NONE:CAPS"></a>NM_SETTING_SECRET_FLAG_NONE</p></td>
+<td class="enum_member_description">
+<p>the system is responsible for providing and
+storing this secret (default)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-SECRET-FLAG-AGENT-OWNED:CAPS"></a>NM_SETTING_SECRET_FLAG_AGENT_OWNED</p></td>
+<td class="enum_member_description">
+<p>a user secret agent is responsible
+for providing and storing this secret; when it is required agents will be
+asked to retrieve it</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-SECRET-FLAG-NOT-SAVED:CAPS"></a>NM_SETTING_SECRET_FLAG_NOT_SAVED</p></td>
+<td class="enum_member_description">
+<p>this secret should not be saved, but
+should be requested from the user each time it is needed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-SECRET-FLAG-NOT-REQUIRED:CAPS"></a>NM_SETTING_SECRET_FLAG_NOT_REQUIRED</p></td>
+<td class="enum_member_description">
+<p>in situations where it cannot be
+automatically determined that the secret is required (some VPNs and PPP
+providers dont require all secrets) this flag indicates that the specific
+secret is not required</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingCompareFlags"></a><h3>enum NMSettingCompareFlags</h3>
+<p>These flags modify the comparison behavior when comparing two settings or
+two connections.</p>
+<div class="refsect3">
+<a name="id-1.2.3.10.6.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-COMPARE-FLAG-EXACT:CAPS"></a>NM_SETTING_COMPARE_FLAG_EXACT</p></td>
+<td class="enum_member_description">
+<p>match all properties exactly</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-COMPARE-FLAG-FUZZY:CAPS"></a>NM_SETTING_COMPARE_FLAG_FUZZY</p></td>
+<td class="enum_member_description">
+<p>match only important attributes, like SSID,
+  type, security settings, etc.  Does not match, for example, connection ID
+  or UUID.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-COMPARE-FLAG-IGNORE-ID:CAPS"></a>NM_SETTING_COMPARE_FLAG_IGNORE_ID</p></td>
+<td class="enum_member_description">
+<p>ignore the connection's ID</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-COMPARE-FLAG-IGNORE-SECRETS:CAPS"></a>NM_SETTING_COMPARE_FLAG_IGNORE_SECRETS</p></td>
+<td class="enum_member_description">
+<p>ignore all secrets</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-COMPARE-FLAG-IGNORE-AGENT-OWNED-SECRETS:CAPS"></a>NM_SETTING_COMPARE_FLAG_IGNORE_AGENT_OWNED_SECRETS</p></td>
+<td class="enum_member_description">
+<p>ignore secrets for which
+the secret's flags indicate the secret is owned by a user secret agent
+(ie, the secret's flag includes <em class="parameter"><code>NM_SETTING_SECRET_FLAG_AGENT_OWNED</code></em>
+)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-COMPARE-FLAG-IGNORE-NOT-SAVED-SECRETS:CAPS"></a>NM_SETTING_COMPARE_FLAG_IGNORE_NOT_SAVED_SECRETS</p></td>
+<td class="enum_member_description">
+<p>ignore secrets for which
+the secret's flags indicate the secret should not be saved to persistent
+storage (ie, the secret's flag includes <em class="parameter"><code>NM_SETTING_SECRET_FLAG_NOT_SAVED</code></em>
+)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-COMPARE-FLAG-DIFF-RESULT-WITH-DEFAULT:CAPS"></a>NM_SETTING_COMPARE_FLAG_DIFF_RESULT_WITH_DEFAULT</p></td>
+<td class="enum_member_description">
+<p>if this flag is set,
+<a class="link" href="NMSetting.html#nm-setting-diff" title="nm_setting_diff ()"><code class="function">nm_setting_diff()</code></a> and <a class="link" href="NMConnection.html#nm-connection-diff" title="nm_connection_diff ()"><code class="function">nm_connection_diff()</code></a> will also include properties that
+are set to their default value. See also <em class="parameter"><code>NM_SETTING_COMPARE_FLAG_DIFF_RESULT_NO_DEFAULT</code></em>
+.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-COMPARE-FLAG-DIFF-RESULT-NO-DEFAULT:CAPS"></a>NM_SETTING_COMPARE_FLAG_DIFF_RESULT_NO_DEFAULT</p></td>
+<td class="enum_member_description">
+<p>if this flag is set,
+<a class="link" href="NMSetting.html#nm-setting-diff" title="nm_setting_diff ()"><code class="function">nm_setting_diff()</code></a> and <a class="link" href="NMConnection.html#nm-connection-diff" title="nm_connection_diff ()"><code class="function">nm_connection_diff()</code></a> will not include properties that
+are set to their default value. This is the opposite of
+<em class="parameter"><code>NM_SETTING_COMPARE_FLAG_DIFF_RESULT_WITH_DEFAULT</code></em>
+. If both flags are set together,
+<em class="parameter"><code>NM_SETTING_COMPARE_FLAG_DIFF_RESULT_WITH_DEFAULT</code></em>
+ wins. If both flags are unset,
+this means to exclude default properties if there is a setting to compare,
+but include all properties, if the setting 'b' is missing. This is the legacy
+behaviour of libnm-util, where <a class="link" href="NMSetting.html#nm-setting-diff" title="nm_setting_diff ()"><code class="function">nm_setting_diff()</code></a> behaved differently depending
+on whether the setting 'b' was available. If <em class="parameter"><code>NM_SETTING_COMPARE_FLAG_DIFF_RESULT_WITH_DEFAULT</code></em>
+
+is set, <a class="link" href="NMSetting.html#nm-setting-diff" title="nm_setting_diff ()"><code class="function">nm_setting_diff()</code></a> will also set the flags <em class="parameter"><code>NM_SETTING_DIFF_RESULT_IN_A_DEFAULT</code></em>
+
+and <em class="parameter"><code>NM_SETTING_DIFF_RESULT_IN_B_DEFAULT</code></em>
+, if the values are default values.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSetting-struct"></a><h3>NMSetting</h3>
+<pre class="programlisting">typedef struct _NMSetting NMSetting;</pre>
+<p>The NMSetting struct contains only private data.
+It should only be accessed through the functions described below.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingHashFlags"></a><h3>enum NMSettingHashFlags</h3>
+<p>These flags determine which properties are added to the resulting hash
+when calling <a class="link" href="NMSetting.html#nm-setting-to-hash" title="nm_setting_to_hash ()"><code class="function">nm_setting_to_hash()</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.2.3.10.8.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-HASH-FLAG-ALL:CAPS"></a>NM_SETTING_HASH_FLAG_ALL</p></td>
+<td class="enum_member_description">
+<p>hash all properties (including secrets)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-HASH-FLAG-NO-SECRETS:CAPS"></a>NM_SETTING_HASH_FLAG_NO_SECRETS</p></td>
+<td class="enum_member_description">
+<p>do not include secrets</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-HASH-FLAG-ONLY-SECRETS:CAPS"></a>NM_SETTING_HASH_FLAG_ONLY_SECRETS</p></td>
+<td class="enum_member_description">
+<p>only hash secrets</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingDiffResult"></a><h3>enum NMSettingDiffResult</h3>
+<p>These values indicate the result of a setting difference operation.</p>
+<div class="refsect3">
+<a name="id-1.2.3.10.9.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-DIFF-RESULT-UNKNOWN:CAPS"></a>NM_SETTING_DIFF_RESULT_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>unknown result</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-DIFF-RESULT-IN-A:CAPS"></a>NM_SETTING_DIFF_RESULT_IN_A</p></td>
+<td class="enum_member_description">
+<p>the property is present in setting A</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-DIFF-RESULT-IN-B:CAPS"></a>NM_SETTING_DIFF_RESULT_IN_B</p></td>
+<td class="enum_member_description">
+<p>the property is present in setting B</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-DIFF-RESULT-IN-A-DEFAULT:CAPS"></a>NM_SETTING_DIFF_RESULT_IN_A_DEFAULT</p></td>
+<td class="enum_member_description">
+<p>the property is present in
+setting A but is set to the default value. This flag is only set,
+if you specify <em class="parameter"><code>NM_SETTING_COMPARE_FLAG_DIFF_RESULT_WITH_DEFAULT</code></em>
+.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-DIFF-RESULT-IN-B-DEFAULT:CAPS"></a>NM_SETTING_DIFF_RESULT_IN_B_DEFAULT</p></td>
+<td class="enum_member_description">
+<p>analog to <em class="parameter"><code>NM_SETTING_DIFF_RESULT_IN_A_DEFAULT</code></em>
+.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSetting.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="NMSetting--name"></a><h3>The <code class="literal">“name”</code> property</h3>
+<pre class="programlisting">  “name”                     <span class="type">gchar</span> *</pre>
+<p>The setting's name, which uniquely identifies the setting within the
+connection.  Each setting type has a name unique to that type, for
+example "ppp" or "wireless" or "wired".</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

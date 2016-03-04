@@ -1,0 +1,546 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NMVpnEditor: libnm Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm Reference Manual">
+<link rel="up" href="ch06.html" title="VPN Plugin API Reference">
+<link rel="prev" href="libnm-nm-vpn-dbus-interface.html" title="nm-vpn-dbus-interface">
+<link rel="next" href="object-tree.html" title="Object Hierarchy">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#NMVpnEditor.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#NMVpnEditor.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#NMVpnEditor.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#NMVpnEditor.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libnm-nm-vpn-dbus-interface.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="object-tree.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="NMVpnEditor"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="NMVpnEditor.top_of_page"></a>NMVpnEditor</span></h2>
+<p>NMVpnEditor</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="NMVpnEditor.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="NMVpnEditor.html#NMVpnEditorPlugin"><span class="returnvalue">NMVpnEditorPlugin</span></a> *
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="NMVpnEditor.html#NMVpnEditorPluginFactory" title="NMVpnEditorPluginFactory ()">*NMVpnEditorPluginFactory</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMVpnEditor.html#NMVpnEditorPlugin"><span class="returnvalue">NMVpnEditorPlugin</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMVpnEditor.html#nm-vpn-editor-plugin-factory" title="nm_vpn_editor_plugin_factory ()">nm_vpn_editor_plugin_factory</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMVpnEditor.html" title="NMVpnEditor"><span class="returnvalue">NMVpnEditor</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMVpnEditor.html#nm-vpn-editor-plugin-get-editor" title="nm_vpn_editor_plugin_get_editor ()">nm_vpn_editor_plugin_get_editor</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMVpnEditor.html#NMVpnEditorPluginCapability" title="enum NMVpnEditorPluginCapability"><span class="returnvalue">NMVpnEditorPluginCapability</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NMVpnEditor.html#nm-vpn-editor-plugin-get-capabilities" title="nm_vpn_editor_plugin_get_capabilities ()">nm_vpn_editor_plugin_get_capabilities</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="returnvalue">NMConnection</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMVpnEditor.html#nm-vpn-editor-plugin-import" title="nm_vpn_editor_plugin_import ()">nm_vpn_editor_plugin_import</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMVpnEditor.html#nm-vpn-editor-plugin-export" title="nm_vpn_editor_plugin_export ()">nm_vpn_editor_plugin_export</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMVpnEditor.html#nm-vpn-editor-plugin-get-suggested-filename" title="nm_vpn_editor_plugin_get_suggested_filename ()">nm_vpn_editor_plugin_get_suggested_filename</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GObject</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMVpnEditor.html#nm-vpn-editor-get-widget" title="nm_vpn_editor_get_widget ()">nm_vpn_editor_get_widget</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMVpnEditor.html#nm-vpn-editor-update-connection" title="nm_vpn_editor_update_connection ()">nm_vpn_editor_update_connection</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMVpnEditor.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMVpnEditor.html#NMVpnEditorPlugin--description" title="The “description” property">description</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMVpnEditor.html#NMVpnEditorPlugin--name" title="The “name” property">name</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMVpnEditor.html#NMVpnEditorPlugin--service" title="The “service” property">service</a></td>
+<td class="property_flags">Read</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMVpnEditor.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="signals_return">
+<col width="300px" class="signals_name">
+<col width="200px" class="signals_flags">
+</colgroup>
+<tbody><tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="NMVpnEditor.html#NMVpnEditor-changed" title="The “changed” signal">changed</a></td>
+<td class="signal_flags">Run First</td>
+</tr></tbody>
+</table></div>
+</div>
+<a name="NMVpnEditorPlugin"></a><div class="refsect1">
+<a name="NMVpnEditor.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMVpnEditor.html#NMVpnEditorPluginCapability" title="enum NMVpnEditorPluginCapability">NMVpnEditorPluginCapability</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMVpnEditor.html#NM-VPN-EDITOR-PLUGIN-NAME:CAPS" title="NM_VPN_EDITOR_PLUGIN_NAME">NM_VPN_EDITOR_PLUGIN_NAME</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMVpnEditor.html#NM-VPN-EDITOR-PLUGIN-DESCRIPTION:CAPS" title="NM_VPN_EDITOR_PLUGIN_DESCRIPTION">NM_VPN_EDITOR_PLUGIN_DESCRIPTION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMVpnEditor.html#NM-VPN-EDITOR-PLUGIN-SERVICE:CAPS" title="NM_VPN_EDITOR_PLUGIN_SERVICE">NM_VPN_EDITOR_PLUGIN_SERVICE</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="NMVpnEditor.html#NMVpnEditorPluginInterface" title="NMVpnEditorPluginInterface">NMVpnEditorPluginInterface</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="NMVpnEditor.html#NMVpnEditorInterface" title="NMVpnEditorInterface">NMVpnEditorInterface</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMVpnEditor.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Enumeration-and-Flag-Types.html">GFlags</a>
+    <span class="lineart">╰──</span> NMVpnEditorPluginCapability
+    <a href="/usr/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
+    <span class="lineart">├──</span> NMVpnEditor
+    <span class="lineart">╰──</span> NMVpnEditorPlugin
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMVpnEditor.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="NMVpnEditor.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="NMVpnEditorPluginFactory"></a><h3>NMVpnEditorPluginFactory ()</h3>
+<pre class="programlisting"><a class="link" href="NMVpnEditor.html#NMVpnEditorPlugin"><span class="returnvalue">NMVpnEditorPlugin</span></a> *
+<span class="c_punctuation">(</span>*NMVpnEditorPluginFactory<span class="c_punctuation">)</span> (<em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-editor-plugin-factory"></a><h3>nm_vpn_editor_plugin_factory ()</h3>
+<pre class="programlisting"><a class="link" href="NMVpnEditor.html#NMVpnEditorPlugin"><span class="returnvalue">NMVpnEditorPlugin</span></a> *
+nm_vpn_editor_plugin_factory (<em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-editor-plugin-get-editor"></a><h3>nm_vpn_editor_plugin_get_editor ()</h3>
+<pre class="programlisting"><a class="link" href="NMVpnEditor.html" title="NMVpnEditor"><span class="returnvalue">NMVpnEditor</span></a> *
+nm_vpn_editor_plugin_get_editor (<em class="parameter"><code><a class="link" href="NMVpnEditor.html#NMVpnEditorPlugin"><span class="type">NMVpnEditorPlugin</span></a> *plugin</code></em>,
+                                 <em class="parameter"><code><a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnection</span></a> *connection</code></em>,
+                                 <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.7.3.10.4.4"></a><h4>Returns</h4>
+<p>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-editor-plugin-get-capabilities"></a><h3>nm_vpn_editor_plugin_get_capabilities ()</h3>
+<pre class="programlisting"><a class="link" href="NMVpnEditor.html#NMVpnEditorPluginCapability" title="enum NMVpnEditorPluginCapability"><span class="returnvalue">NMVpnEditorPluginCapability</span></a>
+nm_vpn_editor_plugin_get_capabilities (<em class="parameter"><code><a class="link" href="NMVpnEditor.html#NMVpnEditorPlugin"><span class="type">NMVpnEditorPlugin</span></a> *plugin</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-editor-plugin-import"></a><h3>nm_vpn_editor_plugin_import ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="returnvalue">NMConnection</span></a> *
+nm_vpn_editor_plugin_import (<em class="parameter"><code><a class="link" href="NMVpnEditor.html#NMVpnEditorPlugin"><span class="type">NMVpnEditorPlugin</span></a> *plugin</code></em>,
+                             <em class="parameter"><code>const <span class="type">char</span> *path</code></em>,
+                             <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.7.3.10.6.4"></a><h4>Returns</h4>
+<p>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-editor-plugin-export"></a><h3>nm_vpn_editor_plugin_export ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_vpn_editor_plugin_export (<em class="parameter"><code><a class="link" href="NMVpnEditor.html#NMVpnEditorPlugin"><span class="type">NMVpnEditorPlugin</span></a> *plugin</code></em>,
+                             <em class="parameter"><code>const <span class="type">char</span> *path</code></em>,
+                             <em class="parameter"><code><a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnection</span></a> *connection</code></em>,
+                             <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-editor-plugin-get-suggested-filename"></a><h3>nm_vpn_editor_plugin_get_suggested_filename ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+nm_vpn_editor_plugin_get_suggested_filename
+                               (<em class="parameter"><code><a class="link" href="NMVpnEditor.html#NMVpnEditorPlugin"><span class="type">NMVpnEditorPlugin</span></a> *plugin</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-editor-get-widget"></a><h3>nm_vpn_editor_get_widget ()</h3>
+<pre class="programlisting"><span class="returnvalue">GObject</span> *
+nm_vpn_editor_get_widget (<em class="parameter"><code><a class="link" href="NMVpnEditor.html" title="NMVpnEditor"><span class="type">NMVpnEditor</span></a> *editor</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.7.3.10.9.4"></a><h4>Returns</h4>
+<p>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-editor-update-connection"></a><h3>nm_vpn_editor_update_connection ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_vpn_editor_update_connection (<em class="parameter"><code><a class="link" href="NMVpnEditor.html" title="NMVpnEditor"><span class="type">NMVpnEditor</span></a> *editor</code></em>,
+                                 <em class="parameter"><code><a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnection</span></a> *connection</code></em>,
+                                 <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMVpnEditor.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NMVpnEditorPluginCapability"></a><h3>enum NMVpnEditorPluginCapability</h3>
+<p>Flags that indicate certain capabilities of the plugin to editor programs.</p>
+<div class="refsect3">
+<a name="id-1.7.3.11.2.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-EDITOR-PLUGIN-CAPABILITY-NONE:CAPS"></a>NM_VPN_EDITOR_PLUGIN_CAPABILITY_NONE</p></td>
+<td class="enum_member_description">
+<p>unknown or no capability</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-EDITOR-PLUGIN-CAPABILITY-IMPORT:CAPS"></a>NM_VPN_EDITOR_PLUGIN_CAPABILITY_IMPORT</p></td>
+<td class="enum_member_description">
+<p>the plugin can import new connections</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-EDITOR-PLUGIN-CAPABILITY-EXPORT:CAPS"></a>NM_VPN_EDITOR_PLUGIN_CAPABILITY_EXPORT</p></td>
+<td class="enum_member_description">
+<p>the plugin can export connections</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-EDITOR-PLUGIN-CAPABILITY-IPV6:CAPS"></a>NM_VPN_EDITOR_PLUGIN_CAPABILITY_IPV6</p></td>
+<td class="enum_member_description">
+<p>the plugin supports IPv6 addressing</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-EDITOR-PLUGIN-NAME:CAPS"></a><h3>NM_VPN_EDITOR_PLUGIN_NAME</h3>
+<pre class="programlisting">#define NM_VPN_EDITOR_PLUGIN_NAME "name"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-EDITOR-PLUGIN-DESCRIPTION:CAPS"></a><h3>NM_VPN_EDITOR_PLUGIN_DESCRIPTION</h3>
+<pre class="programlisting">#define NM_VPN_EDITOR_PLUGIN_DESCRIPTION "description"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-EDITOR-PLUGIN-SERVICE:CAPS"></a><h3>NM_VPN_EDITOR_PLUGIN_SERVICE</h3>
+<pre class="programlisting">#define NM_VPN_EDITOR_PLUGIN_SERVICE "service"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMVpnEditorPluginInterface"></a><h3>NMVpnEditorPluginInterface</h3>
+<pre class="programlisting">typedef struct {
+	GTypeInterface g_iface;
+
+	NMVpnEditor * (*get_editor) (NMVpnEditorPlugin *plugin,
+	                             NMConnection *connection,
+	                             GError **error);
+
+	NMVpnEditorPluginCapability (*get_capabilities) (NMVpnEditorPlugin *plugin);
+
+	NMConnection * (*import_from_file) (NMVpnEditorPlugin *plugin,
+	                                    const char *path,
+	                                    GError **error);
+
+	gboolean (*export_to_file) (NMVpnEditorPlugin *plugin,
+	                            const char *path,
+	                            NMConnection *connection,
+	                            GError **error);
+
+	char * (*get_suggested_filename) (NMVpnEditorPlugin *plugin, NMConnection *connection);
+} NMVpnEditorPluginInterface;
+</pre>
+<p>Interface for VPN editor plugins.</p>
+<div class="refsect3">
+<a name="id-1.7.3.11.6.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><span class="type">GTypeInterface</span> <em class="structfield"><code><a name="NMVpnEditorPluginInterface.g-iface"></a>g_iface</code></em>;</p></td>
+<td class="struct_member_description"><p>the parent interface</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="NMVpnEditorPluginInterface.get-editor"></a>get_editor</code></em> ()</p></td>
+<td class="struct_member_description"><p>returns an <a class="link" href="NMVpnEditor.html" title="NMVpnEditor"><span class="type">NMVpnEditor</span></a>, pre-filled with values from <em class="parameter"><code>connection</code></em>
+if non-<code class="literal">NULL</code>.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="NMVpnEditorPluginInterface.get-capabilities"></a>get_capabilities</code></em> ()</p></td>
+<td class="struct_member_description"><p>returns a bitmask of capabilities.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="NMVpnEditorPluginInterface.import-from-file"></a>import_from_file</code></em> ()</p></td>
+<td class="struct_member_description"><p>Try to import a connection from the specified path.  On
+success, return a partial <a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnection</span></a> object.  On error, return <code class="literal">NULL</code> and
+set <em class="parameter"><code>error</code></em>
+with additional information.  Note that <em class="parameter"><code>error</code></em>
+can be <code class="literal">NULL</code>, in
+which case no additional error information should be provided.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="NMVpnEditorPluginInterface.export-to-file"></a>export_to_file</code></em> ()</p></td>
+<td class="struct_member_description"><p>Export the given connection to the specified path.  Return
+<code class="literal">TRUE</code> on success.  On error, return <code class="literal">FALSE</code> and set <em class="parameter"><code>error</code></em>
+with additional
+error information.  Note that <em class="parameter"><code>error</code></em>
+can be <code class="literal">NULL</code>, in which case no
+additional error information should be provided.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="NMVpnEditorPluginInterface.get-suggested-filename"></a>get_suggested_filename</code></em> ()</p></td>
+<td class="struct_member_description"><p>For a given connection, return a suggested file
+name.  Returned value will be <code class="literal">NULL</code> or a suggested file name to be freed by
+the caller.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMVpnEditorInterface"></a><h3>NMVpnEditorInterface</h3>
+<pre class="programlisting">typedef struct {
+	GTypeInterface g_iface;
+
+	GObject * (*get_widget) (NMVpnEditor *editor);
+
+	void (*placeholder) (void);
+
+	gboolean (*update_connection) (NMVpnEditor *editor,
+	                               NMConnection *connection,
+	                               GError **error);
+
+	void (*changed) (NMVpnEditor *editor);
+} NMVpnEditorInterface;
+</pre>
+<p>Interface for editing a specific <a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnection</span></a></p>
+<div class="refsect3">
+<a name="id-1.7.3.11.7.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><span class="type">GTypeInterface</span> <em class="structfield"><code><a name="NMVpnEditorInterface.g-iface"></a>g_iface</code></em>;</p></td>
+<td class="struct_member_description"><p>the parent interface</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="NMVpnEditorInterface.get-widget"></a>get_widget</code></em> ()</p></td>
+<td class="struct_member_description"><p>return the <span class="type">GtkWidget</span> for the VPN editor's UI</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="NMVpnEditorInterface.placeholder"></a>placeholder</code></em> ()</p></td>
+<td class="struct_member_description"><p>not currently used</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="NMVpnEditorInterface.update-connection"></a>update_connection</code></em> ()</p></td>
+<td class="struct_member_description"><p>called to save the user-entered options to the connection
+object.  Should return <code class="literal">FALSE</code> and set <em class="parameter"><code>error</code></em>
+if the current options are
+invalid.  <em class="parameter"><code>error</code></em>
+should contain enough information for the plugin to
+determine which UI widget is invalid at a later point in time.  For
+example, creating unique error codes for what error occurred and populating
+the message field of <em class="parameter"><code>error</code></em>
+with the name of the invalid property.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="NMVpnEditorInterface.changed"></a>changed</code></em> ()</p></td>
+<td class="struct_member_description"><p>emitted when the value of a UI widget changes.  May trigger a
+validity check via <em class="parameter"><code>update_connection</code></em>
+to write values to the connection.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMVpnEditor.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="NMVpnEditorPlugin--description"></a><h3>The <code class="literal">“description”</code> property</h3>
+<pre class="programlisting">  “description”              <span class="type">gchar</span> *</pre>
+<p>Longer description of the VPN plugin.</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMVpnEditorPlugin--name"></a><h3>The <code class="literal">“name”</code> property</h3>
+<pre class="programlisting">  “name”                     <span class="type">gchar</span> *</pre>
+<p>Short display name of the VPN plugin.</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMVpnEditorPlugin--service"></a><h3>The <code class="literal">“service”</code> property</h3>
+<pre class="programlisting">  “service”                  <span class="type">gchar</span> *</pre>
+<p>D-Bus service name of the plugin's VPN service.</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMVpnEditor.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="NMVpnEditor-changed"></a><h3>The <code class="literal">“changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="NMVpnEditor.html" title="NMVpnEditor"><span class="type">NMVpnEditor</span></a> *nmvpneditor,
+               <span class="type">gpointer</span>     user_data)</pre>
+<p>Flags: Run First</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

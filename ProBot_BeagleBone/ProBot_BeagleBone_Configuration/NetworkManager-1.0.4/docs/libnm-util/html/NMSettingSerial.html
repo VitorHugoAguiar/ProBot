@@ -1,0 +1,497 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NMSettingSerial: libnm-util Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm-util Reference Manual">
+<link rel="up" href="ch01.html" title="libnm-util API Reference">
+<link rel="prev" href="NMSettingBluetooth.html" title="NMSettingBluetooth">
+<link rel="next" href="NMSettingCdma.html" title="NMSettingCdma">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#NMSettingSerial.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#NMSettingSerial.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#NMSettingSerial.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="NMSettingBluetooth.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="NMSettingCdma.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="NMSettingSerial"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="NMSettingSerial.top_of_page"></a>NMSettingSerial</span></h2>
+<p>NMSettingSerial — Describes connection properties for devices that use
+serial communications</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="NMSettingSerial.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingSerial.html#nm-setting-serial-error-quark" title="nm_setting_serial_error_quark ()">nm_setting_serial_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingSerial.html#nm-setting-serial-new" title="nm_setting_serial_new ()">nm_setting_serial_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingSerial.html#nm-setting-serial-get-baud" title="nm_setting_serial_get_baud ()">nm_setting_serial_get_baud</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingSerial.html#nm-setting-serial-get-bits" title="nm_setting_serial_get_bits ()">nm_setting_serial_get_bits</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingSerial.html#nm-setting-serial-get-parity" title="nm_setting_serial_get_parity ()">nm_setting_serial_get_parity</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingSerial.html#nm-setting-serial-get-stopbits" title="nm_setting_serial_get_stopbits ()">nm_setting_serial_get_stopbits</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint64</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingSerial.html#nm-setting-serial-get-send-delay" title="nm_setting_serial_get_send_delay ()">nm_setting_serial_get_send_delay</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingSerial.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingSerial.html#NMSettingSerial--baud" title="The “baud” property">baud</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingSerial.html#NMSettingSerial--bits" title="The “bits” property">bits</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gchar</span></td>
+<td class="property_name"><a class="link" href="NMSettingSerial.html#NMSettingSerial--parity" title="The “parity” property">parity</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint64</span></td>
+<td class="property_name"><a class="link" href="NMSettingSerial.html#NMSettingSerial--send-delay" title="The “send-delay” property">send-delay</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingSerial.html#NMSettingSerial--stopbits" title="The “stopbits” property">stopbits</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingSerial.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingSerial.html#NM-SETTING-SERIAL-SETTING-NAME:CAPS" title="NM_SETTING_SERIAL_SETTING_NAME">NM_SETTING_SERIAL_SETTING_NAME</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSettingSerial.html#NMSettingSerialError" title="enum NMSettingSerialError">NMSettingSerialError</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingSerial.html#NM-SETTING-SERIAL-ERROR:CAPS" title="NM_SETTING_SERIAL_ERROR">NM_SETTING_SERIAL_ERROR</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingSerial.html#NM-SETTING-SERIAL-BAUD:CAPS" title="NM_SETTING_SERIAL_BAUD">NM_SETTING_SERIAL_BAUD</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingSerial.html#NM-SETTING-SERIAL-BITS:CAPS" title="NM_SETTING_SERIAL_BITS">NM_SETTING_SERIAL_BITS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingSerial.html#NM-SETTING-SERIAL-PARITY:CAPS" title="NM_SETTING_SERIAL_PARITY">NM_SETTING_SERIAL_PARITY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingSerial.html#NM-SETTING-SERIAL-STOPBITS:CAPS" title="NM_SETTING_SERIAL_STOPBITS">NM_SETTING_SERIAL_STOPBITS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingSerial.html#NM-SETTING-SERIAL-SEND-DELAY:CAPS" title="NM_SETTING_SERIAL_SEND_DELAY">NM_SETTING_SERIAL_SEND_DELAY</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingSerial.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Enumeration-and-Flag-Types.html">GEnum</a>
+    <span class="lineart">╰──</span> NMSettingSerialError
+    GObject
+    <span class="lineart">╰──</span> <a class="link" href="NMSetting.html" title="NMSetting">NMSetting</a>
+        <span class="lineart">╰──</span> NMSettingSerial
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSettingSerial.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;nm-setting-serial.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSettingSerial.description"></a><h2>Description</h2>
+<p>The <a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="type">NMSettingSerial</span></a> object is a <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> subclass that describes
+properties necessary for connections that may use serial communications,
+such as mobile broadband or analog telephone connections.</p>
+</div>
+<div class="refsect1">
+<a name="NMSettingSerial.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="nm-setting-serial-error-quark"></a><h3>nm_setting_serial_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_setting_serial_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Registers an error quark for <a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="type">NMSettingSerial</span></a> if necessary.</p>
+<div class="refsect3">
+<a name="id-1.2.9.9.2.5"></a><h4>Returns</h4>
+<p> the error quark used for <a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="type">NMSettingSerial</span></a> errors.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-serial-new"></a><h3>nm_setting_serial_new ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+nm_setting_serial_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="type">NMSettingSerial</span></a> object with default values.</p>
+<div class="refsect3">
+<a name="id-1.2.9.9.3.5"></a><h4>Returns</h4>
+<p> the new empty <a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="type">NMSettingSerial</span></a> object. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-serial-get-baud"></a><h3>nm_setting_serial_get_baud ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+nm_setting_serial_get_baud (<em class="parameter"><code><a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="type">NMSettingSerial</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.9.9.4.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="type">NMSettingSerial</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.9.9.4.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingSerial.html#NMSettingSerial--baud" title="The “baud” property"><span class="type">“baud”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-serial-get-bits"></a><h3>nm_setting_serial_get_bits ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+nm_setting_serial_get_bits (<em class="parameter"><code><a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="type">NMSettingSerial</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.9.9.5.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="type">NMSettingSerial</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.9.9.5.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingSerial.html#NMSettingSerial--bits" title="The “bits” property"><span class="type">“bits”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-serial-get-parity"></a><h3>nm_setting_serial_get_parity ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span>
+nm_setting_serial_get_parity (<em class="parameter"><code><a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="type">NMSettingSerial</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.9.9.6.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="type">NMSettingSerial</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.9.9.6.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingSerial.html#NMSettingSerial--parity" title="The “parity” property"><span class="type">“parity”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-serial-get-stopbits"></a><h3>nm_setting_serial_get_stopbits ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+nm_setting_serial_get_stopbits (<em class="parameter"><code><a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="type">NMSettingSerial</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.9.9.7.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="type">NMSettingSerial</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.9.9.7.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingSerial.html#NMSettingSerial--stopbits" title="The “stopbits” property"><span class="type">“stopbits”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-serial-get-send-delay"></a><h3>nm_setting_serial_get_send_delay ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint64</span>
+nm_setting_serial_get_send_delay (<em class="parameter"><code><a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="type">NMSettingSerial</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.9.9.8.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="type">NMSettingSerial</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.9.9.8.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingSerial.html#NMSettingSerial--send-delay" title="The “send-delay” property"><span class="type">“send-delay”</span></a> property of the setting</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSettingSerial.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NM-SETTING-SERIAL-SETTING-NAME:CAPS"></a><h3>NM_SETTING_SERIAL_SETTING_NAME</h3>
+<pre class="programlisting">#define NM_SETTING_SERIAL_SETTING_NAME "serial"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingSerialError"></a><h3>enum NMSettingSerialError</h3>
+<div class="refsect3">
+<a name="id-1.2.9.10.3.3"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-SERIAL-ERROR-UNKNOWN:CAPS"></a>NM_SETTING_SERIAL_ERROR_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>unknown or unclassified error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-SERIAL-ERROR-INVALID-PROPERTY:CAPS"></a>NM_SETTING_SERIAL_ERROR_INVALID_PROPERTY</p></td>
+<td class="enum_member_description">
+<p>the property was invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-SERIAL-ERROR-MISSING-PROPERTY:CAPS"></a>NM_SETTING_SERIAL_ERROR_MISSING_PROPERTY</p></td>
+<td class="enum_member_description">
+<p>the property was missing and is
+required</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-SERIAL-ERROR-MISSING-PPP-SETTING:CAPS"></a>NM_SETTING_SERIAL_ERROR_MISSING_PPP_SETTING</p></td>
+<td class="enum_member_description">
+<p>one of the properties of the
+setting requires the connection to contain an <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> setting</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-SERIAL-ERROR:CAPS"></a><h3>NM_SETTING_SERIAL_ERROR</h3>
+<pre class="programlisting">#define NM_SETTING_SERIAL_ERROR nm_setting_serial_error_quark ()
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-SERIAL-BAUD:CAPS"></a><h3>NM_SETTING_SERIAL_BAUD</h3>
+<pre class="programlisting">#define NM_SETTING_SERIAL_BAUD "baud"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-SERIAL-BITS:CAPS"></a><h3>NM_SETTING_SERIAL_BITS</h3>
+<pre class="programlisting">#define NM_SETTING_SERIAL_BITS "bits"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-SERIAL-PARITY:CAPS"></a><h3>NM_SETTING_SERIAL_PARITY</h3>
+<pre class="programlisting">#define NM_SETTING_SERIAL_PARITY "parity"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-SERIAL-STOPBITS:CAPS"></a><h3>NM_SETTING_SERIAL_STOPBITS</h3>
+<pre class="programlisting">#define NM_SETTING_SERIAL_STOPBITS "stopbits"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-SERIAL-SEND-DELAY:CAPS"></a><h3>NM_SETTING_SERIAL_SEND_DELAY</h3>
+<pre class="programlisting">#define NM_SETTING_SERIAL_SEND_DELAY "send-delay"
+</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSettingSerial.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="NMSettingSerial--baud"></a><h3>The <code class="literal">“baud”</code> property</h3>
+<pre class="programlisting">  “baud”                     <span class="type">guint</span></pre>
+<p>Speed to use for communication over the serial port.  Note that this
+value usually has no effect for mobile broadband modems as they generally
+ignore speed settings and use the highest available speed.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: 57600</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingSerial--bits"></a><h3>The <code class="literal">“bits”</code> property</h3>
+<pre class="programlisting">  “bits”                     <span class="type">guint</span></pre>
+<p>Byte-width of the serial communication. The 8 in "8n1" for example.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Allowed values: [5,8]</p>
+<p>Default value: 8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingSerial--parity"></a><h3>The <code class="literal">“parity”</code> property</h3>
+<pre class="programlisting">  “parity”                   <span class="type">gchar</span></pre>
+<p>Parity setting of the serial port.  Either 'E' for even parity, 'o' for
+odd parity, or 'n' for no parity.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Allowed values: [69,111]</p>
+<p>Default value: 110</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingSerial--send-delay"></a><h3>The <code class="literal">“send-delay”</code> property</h3>
+<pre class="programlisting">  “send-delay”               <span class="type">guint64</span></pre>
+<p>Time to delay between each byte sent to the modem, in microseconds.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingSerial--stopbits"></a><h3>The <code class="literal">“stopbits”</code> property</h3>
+<pre class="programlisting">  “stopbits”                 <span class="type">guint</span></pre>
+<p>Number of stop bits for communication on the serial port.  Either 1 or 2.
+The 1 in "8n1" for example.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Allowed values: [1,2]</p>
+<p>Default value: 1</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

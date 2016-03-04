@@ -1,0 +1,644 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NMSettingAdsl: libnm-util Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm-util Reference Manual">
+<link rel="up" href="ch01.html" title="libnm-util API Reference">
+<link rel="prev" href="NMSettingOlpcMesh.html" title="NMSettingOlpcMesh">
+<link rel="next" href="NMSettingDcb.html" title="NMSettingDcb">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#NMSettingAdsl.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#NMSettingAdsl.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#NMSettingAdsl.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="NMSettingOlpcMesh.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="NMSettingDcb.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="NMSettingAdsl"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="NMSettingAdsl.top_of_page"></a>NMSettingAdsl</span></h2>
+<p>NMSettingAdsl — Describes ADSL-based properties</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="NMSettingAdsl.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingAdsl.html#nm-setting-adsl-error-quark" title="nm_setting_adsl_error_quark ()">nm_setting_adsl_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingAdsl.html#nm-setting-adsl-new" title="nm_setting_adsl_new ()">nm_setting_adsl_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingAdsl.html#nm-setting-adsl-get-username" title="nm_setting_adsl_get_username ()">nm_setting_adsl_get_username</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingAdsl.html#nm-setting-adsl-get-password" title="nm_setting_adsl_get_password ()">nm_setting_adsl_get_password</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingAdsl.html#nm-setting-adsl-get-protocol" title="nm_setting_adsl_get_protocol ()">nm_setting_adsl_get_protocol</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingAdsl.html#nm-setting-adsl-get-encapsulation" title="nm_setting_adsl_get_encapsulation ()">nm_setting_adsl_get_encapsulation</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingAdsl.html#nm-setting-adsl-get-vpi" title="nm_setting_adsl_get_vpi ()">nm_setting_adsl_get_vpi</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingAdsl.html#nm-setting-adsl-get-vci" title="nm_setting_adsl_get_vci ()">nm_setting_adsl_get_vci</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="returnvalue">NMSettingSecretFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingAdsl.html#nm-setting-adsl-get-password-flags" title="nm_setting_adsl_get_password_flags ()">nm_setting_adsl_get_password_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingAdsl.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingAdsl.html#NMSettingAdsl--encapsulation" title="The “encapsulation” property">encapsulation</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingAdsl.html#NMSettingAdsl--password" title="The “password” property">password</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingAdsl.html#NMSettingAdsl--password-flags" title="The “password-flags” property">password-flags</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingAdsl.html#NMSettingAdsl--protocol" title="The “protocol” property">protocol</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingAdsl.html#NMSettingAdsl--username" title="The “username” property">username</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingAdsl.html#NMSettingAdsl--vci" title="The “vci” property">vci</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingAdsl.html#NMSettingAdsl--vpi" title="The “vpi” property">vpi</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingAdsl.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingAdsl.html#NM-SETTING-ADSL-SETTING-NAME:CAPS" title="NM_SETTING_ADSL_SETTING_NAME">NM_SETTING_ADSL_SETTING_NAME</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSettingAdsl.html#NMSettingAdslError" title="enum NMSettingAdslError">NMSettingAdslError</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingAdsl.html#NM-SETTING-ADSL-ERROR:CAPS" title="NM_SETTING_ADSL_ERROR">NM_SETTING_ADSL_ERROR</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingAdsl.html#NM-SETTING-ADSL-USERNAME:CAPS" title="NM_SETTING_ADSL_USERNAME">NM_SETTING_ADSL_USERNAME</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingAdsl.html#NM-SETTING-ADSL-PASSWORD:CAPS" title="NM_SETTING_ADSL_PASSWORD">NM_SETTING_ADSL_PASSWORD</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingAdsl.html#NM-SETTING-ADSL-PASSWORD-FLAGS:CAPS" title="NM_SETTING_ADSL_PASSWORD_FLAGS">NM_SETTING_ADSL_PASSWORD_FLAGS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingAdsl.html#NM-SETTING-ADSL-PROTOCOL:CAPS" title="NM_SETTING_ADSL_PROTOCOL">NM_SETTING_ADSL_PROTOCOL</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingAdsl.html#NM-SETTING-ADSL-ENCAPSULATION:CAPS" title="NM_SETTING_ADSL_ENCAPSULATION">NM_SETTING_ADSL_ENCAPSULATION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingAdsl.html#NM-SETTING-ADSL-VPI:CAPS" title="NM_SETTING_ADSL_VPI">NM_SETTING_ADSL_VPI</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingAdsl.html#NM-SETTING-ADSL-VCI:CAPS" title="NM_SETTING_ADSL_VCI">NM_SETTING_ADSL_VCI</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingAdsl.html#NM-SETTING-ADSL-PROTOCOL-PPPOA:CAPS" title="NM_SETTING_ADSL_PROTOCOL_PPPOA">NM_SETTING_ADSL_PROTOCOL_PPPOA</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingAdsl.html#NM-SETTING-ADSL-PROTOCOL-PPPOE:CAPS" title="NM_SETTING_ADSL_PROTOCOL_PPPOE">NM_SETTING_ADSL_PROTOCOL_PPPOE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingAdsl.html#NM-SETTING-ADSL-PROTOCOL-IPOATM:CAPS" title="NM_SETTING_ADSL_PROTOCOL_IPOATM">NM_SETTING_ADSL_PROTOCOL_IPOATM</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingAdsl.html#NM-SETTING-ADSL-ENCAPSULATION-VCMUX:CAPS" title="NM_SETTING_ADSL_ENCAPSULATION_VCMUX">NM_SETTING_ADSL_ENCAPSULATION_VCMUX</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingAdsl.html#NM-SETTING-ADSL-ENCAPSULATION-LLC:CAPS" title="NM_SETTING_ADSL_ENCAPSULATION_LLC">NM_SETTING_ADSL_ENCAPSULATION_LLC</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingAdsl.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Enumeration-and-Flag-Types.html">GEnum</a>
+    <span class="lineart">╰──</span> NMSettingAdslError
+    GObject
+    <span class="lineart">╰──</span> <a class="link" href="NMSetting.html" title="NMSetting">NMSetting</a>
+        <span class="lineart">╰──</span> NMSettingAdsl
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSettingAdsl.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;nm-setting-adsl.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSettingAdsl.description"></a><h2>Description</h2>
+<p>The <a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a> object is a <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> subclass that describes
+properties of ADSL connections.</p>
+</div>
+<div class="refsect1">
+<a name="NMSettingAdsl.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="nm-setting-adsl-error-quark"></a><h3>nm_setting_adsl_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_setting_adsl_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Registers an error quark for <a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a> if necessary.</p>
+<div class="refsect3">
+<a name="id-1.2.22.9.2.5"></a><h4>Returns</h4>
+<p> the error quark used for <a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a> errors.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-adsl-new"></a><h3>nm_setting_adsl_new ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+nm_setting_adsl_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a> object with default values.</p>
+<div class="refsect3">
+<a name="id-1.2.22.9.3.5"></a><h4>Returns</h4>
+<p> the new empty <a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a> object</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-adsl-get-username"></a><h3>nm_setting_adsl_get_username ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_adsl_get_username (<em class="parameter"><code><a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.22.9.4.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.22.9.4.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingAdsl.html#NMSettingAdsl--username" title="The “username” property"><span class="type">“username”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-adsl-get-password"></a><h3>nm_setting_adsl_get_password ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_adsl_get_password (<em class="parameter"><code><a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.22.9.5.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.22.9.5.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingAdsl.html#NMSettingAdsl--password" title="The “password” property"><span class="type">“password”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-adsl-get-protocol"></a><h3>nm_setting_adsl_get_protocol ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_adsl_get_protocol (<em class="parameter"><code><a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.22.9.6.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.22.9.6.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingAdsl.html#NMSettingAdsl--protocol" title="The “protocol” property"><span class="type">“protocol”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-adsl-get-encapsulation"></a><h3>nm_setting_adsl_get_encapsulation ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_adsl_get_encapsulation (<em class="parameter"><code><a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.22.9.7.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.22.9.7.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingAdsl.html#NMSettingAdsl--encapsulation" title="The “encapsulation” property"><span class="type">“encapsulation”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-adsl-get-vpi"></a><h3>nm_setting_adsl_get_vpi ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_adsl_get_vpi (<em class="parameter"><code><a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.22.9.8.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.22.9.8.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingAdsl.html#NMSettingAdsl--vpi" title="The “vpi” property"><span class="type">“vpi”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-adsl-get-vci"></a><h3>nm_setting_adsl_get_vci ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_adsl_get_vci (<em class="parameter"><code><a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.22.9.9.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.22.9.9.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingAdsl.html#NMSettingAdsl--vci" title="The “vci” property"><span class="type">“vci”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-adsl-get-password-flags"></a><h3>nm_setting_adsl_get_password_flags ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="returnvalue">NMSettingSecretFlags</span></a>
+nm_setting_adsl_get_password_flags (<em class="parameter"><code><a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.22.9.10.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.22.9.10.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="type">NMSettingSecretFlags</span></a> pertaining to the <a class="link" href="NMSettingAdsl.html#NMSettingAdsl--password" title="The “password” property"><span class="type">“password”</span></a></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSettingAdsl.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NM-SETTING-ADSL-SETTING-NAME:CAPS"></a><h3>NM_SETTING_ADSL_SETTING_NAME</h3>
+<pre class="programlisting">#define NM_SETTING_ADSL_SETTING_NAME "adsl"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingAdslError"></a><h3>enum NMSettingAdslError</h3>
+<div class="refsect3">
+<a name="id-1.2.22.10.3.3"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-ADSL-ERROR-UNKNOWN:CAPS"></a>NM_SETTING_ADSL_ERROR_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>unknown or unclassified error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-ADSL-ERROR-INVALID-PROPERTY:CAPS"></a>NM_SETTING_ADSL_ERROR_INVALID_PROPERTY</p></td>
+<td class="enum_member_description">
+<p>the property was invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-ADSL-ERROR-MISSING-PROPERTY:CAPS"></a>NM_SETTING_ADSL_ERROR_MISSING_PROPERTY</p></td>
+<td class="enum_member_description">
+<p>the property was missing and is
+required</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-ADSL-ERROR:CAPS"></a><h3>NM_SETTING_ADSL_ERROR</h3>
+<pre class="programlisting">#define NM_SETTING_ADSL_ERROR nm_setting_adsl_error_quark ()
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-ADSL-USERNAME:CAPS"></a><h3>NM_SETTING_ADSL_USERNAME</h3>
+<pre class="programlisting">#define NM_SETTING_ADSL_USERNAME            "username"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-ADSL-PASSWORD:CAPS"></a><h3>NM_SETTING_ADSL_PASSWORD</h3>
+<pre class="programlisting">#define NM_SETTING_ADSL_PASSWORD            "password"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-ADSL-PASSWORD-FLAGS:CAPS"></a><h3>NM_SETTING_ADSL_PASSWORD_FLAGS</h3>
+<pre class="programlisting">#define NM_SETTING_ADSL_PASSWORD_FLAGS      "password-flags"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-ADSL-PROTOCOL:CAPS"></a><h3>NM_SETTING_ADSL_PROTOCOL</h3>
+<pre class="programlisting">#define NM_SETTING_ADSL_PROTOCOL            "protocol"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-ADSL-ENCAPSULATION:CAPS"></a><h3>NM_SETTING_ADSL_ENCAPSULATION</h3>
+<pre class="programlisting">#define NM_SETTING_ADSL_ENCAPSULATION       "encapsulation"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-ADSL-VPI:CAPS"></a><h3>NM_SETTING_ADSL_VPI</h3>
+<pre class="programlisting">#define NM_SETTING_ADSL_VPI                 "vpi"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-ADSL-VCI:CAPS"></a><h3>NM_SETTING_ADSL_VCI</h3>
+<pre class="programlisting">#define NM_SETTING_ADSL_VCI                 "vci"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-ADSL-PROTOCOL-PPPOA:CAPS"></a><h3>NM_SETTING_ADSL_PROTOCOL_PPPOA</h3>
+<pre class="programlisting">#define NM_SETTING_ADSL_PROTOCOL_PPPOA      "pppoa"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-ADSL-PROTOCOL-PPPOE:CAPS"></a><h3>NM_SETTING_ADSL_PROTOCOL_PPPOE</h3>
+<pre class="programlisting">#define NM_SETTING_ADSL_PROTOCOL_PPPOE      "pppoe"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-ADSL-PROTOCOL-IPOATM:CAPS"></a><h3>NM_SETTING_ADSL_PROTOCOL_IPOATM</h3>
+<pre class="programlisting">#define NM_SETTING_ADSL_PROTOCOL_IPOATM     "ipoatm"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-ADSL-ENCAPSULATION-VCMUX:CAPS"></a><h3>NM_SETTING_ADSL_ENCAPSULATION_VCMUX</h3>
+<pre class="programlisting">#define NM_SETTING_ADSL_ENCAPSULATION_VCMUX "vcmux"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-ADSL-ENCAPSULATION-LLC:CAPS"></a><h3>NM_SETTING_ADSL_ENCAPSULATION_LLC</h3>
+<pre class="programlisting">#define NM_SETTING_ADSL_ENCAPSULATION_LLC   "llc"
+</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSettingAdsl.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="NMSettingAdsl--encapsulation"></a><h3>The <code class="literal">“encapsulation”</code> property</h3>
+<pre class="programlisting">  “encapsulation”            <span class="type">gchar</span> *</pre>
+<p>Encapsulation of ADSL connection.  Can be "vcmux" or "llc".</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingAdsl--password"></a><h3>The <code class="literal">“password”</code> property</h3>
+<pre class="programlisting">  “password”                 <span class="type">gchar</span> *</pre>
+<p>Password used to authenticate with the ADSL service.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingAdsl--password-flags"></a><h3>The <code class="literal">“password-flags”</code> property</h3>
+<pre class="programlisting">  “password-flags”           <span class="type">guint</span></pre>
+<p>Flags indicating how to handle the <a class="link" href="NMSettingAdsl.html#NMSettingAdsl--password" title="The “password” property"><span class="type">“password”</span></a> property.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &lt;= 7</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingAdsl--protocol"></a><h3>The <code class="literal">“protocol”</code> property</h3>
+<pre class="programlisting">  “protocol”                 <span class="type">gchar</span> *</pre>
+<p>ADSL connection protocol.  Can be "pppoa", "pppoe" or "ipoatm".</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingAdsl--username"></a><h3>The <code class="literal">“username”</code> property</h3>
+<pre class="programlisting">  “username”                 <span class="type">gchar</span> *</pre>
+<p>Username used to authenticate with the ADSL service.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingAdsl--vci"></a><h3>The <code class="literal">“vci”</code> property</h3>
+<pre class="programlisting">  “vci”                      <span class="type">guint</span></pre>
+<p>VCI of ADSL connection</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &lt;= 65536</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingAdsl--vpi"></a><h3>The <code class="literal">“vpi”</code> property</h3>
+<pre class="programlisting">  “vpi”                      <span class="type">guint</span></pre>
+<p>VPI of ADSL connection</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &lt;= 65536</p>
+<p>Default value: 0</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

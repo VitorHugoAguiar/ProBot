@@ -1,0 +1,713 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NMDeviceWimax: libnm Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm Reference Manual">
+<link rel="up" href="ch04.html" title="Device and Runtime Configuration API Reference">
+<link rel="prev" href="NMDeviceWifi.html" title="NMDeviceWifi">
+<link rel="next" href="NMActiveConnection.html" title="NMActiveConnection">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#NMDeviceWimax.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#NMDeviceWimax.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#NMDeviceWimax.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#NMDeviceWimax.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch04.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="NMDeviceWifi.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="NMActiveConnection.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="NMDeviceWimax"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="NMDeviceWimax.top_of_page"></a>NMDeviceWimax</span></h2>
+<p>NMDeviceWimax</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="NMDeviceWimax.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDeviceWimax.html#nm-device-wimax-get-hw-address" title="nm_device_wimax_get_hw_address ()">nm_device_wimax_get_hw_address</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMWimaxNsp.html" title="NMWimaxNsp"><span class="returnvalue">NMWimaxNsp</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDeviceWimax.html#nm-device-wimax-get-active-nsp" title="nm_device_wimax_get_active_nsp ()">nm_device_wimax_get_active_nsp</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMWimaxNsp.html" title="NMWimaxNsp"><span class="returnvalue">NMWimaxNsp</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDeviceWimax.html#nm-device-wimax-get-nsp-by-path" title="nm_device_wimax_get_nsp_by_path ()">nm_device_wimax_get_nsp_by_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">GPtrArray</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDeviceWimax.html#nm-device-wimax-get-nsps" title="nm_device_wimax_get_nsps ()">nm_device_wimax_get_nsps</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDeviceWimax.html#nm-device-wimax-get-center-frequency" title="nm_device_wimax_get_center_frequency ()">nm_device_wimax_get_center_frequency</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gint</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDeviceWimax.html#nm-device-wimax-get-rssi" title="nm_device_wimax_get_rssi ()">nm_device_wimax_get_rssi</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gint</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDeviceWimax.html#nm-device-wimax-get-cinr" title="nm_device_wimax_get_cinr ()">nm_device_wimax_get_cinr</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gint</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDeviceWimax.html#nm-device-wimax-get-tx-power" title="nm_device_wimax_get_tx_power ()">nm_device_wimax_get_tx_power</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDeviceWimax.html#nm-device-wimax-get-bsid" title="nm_device_wimax_get_bsid ()">nm_device_wimax_get_bsid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMDeviceWimax.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a class="link" href="NMWimaxNsp.html" title="NMWimaxNsp"><span class="type">NMWimaxNsp</span></a> *</td>
+<td class="property_name"><a class="link" href="NMDeviceWimax.html#NMDeviceWimax--active-nsp" title="The “active-nsp” property">active-nsp</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMDeviceWimax.html#NMDeviceWimax--bsid" title="The “bsid” property">bsid</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMDeviceWimax.html#NMDeviceWimax--center-frequency" title="The “center-frequency” property">center-frequency</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gint</span></td>
+<td class="property_name"><a class="link" href="NMDeviceWimax.html#NMDeviceWimax--cinr" title="The “cinr” property">cinr</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMDeviceWimax.html#NMDeviceWimax--hw-address" title="The “hw-address” property">hw-address</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GPtrArray</span> *</td>
+<td class="property_name"><a class="link" href="NMDeviceWimax.html#NMDeviceWimax--nsps" title="The “nsps” property">nsps</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gint</span></td>
+<td class="property_name"><a class="link" href="NMDeviceWimax.html#NMDeviceWimax--rssi" title="The “rssi” property">rssi</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gint</span></td>
+<td class="property_name"><a class="link" href="NMDeviceWimax.html#NMDeviceWimax--tx-power" title="The “tx-power” property">tx-power</a></td>
+<td class="property_flags">Read</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMDeviceWimax.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="signals_return">
+<col width="300px" class="signals_name">
+<col width="200px" class="signals_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="NMDeviceWimax.html#NMDeviceWimax-nsp-added" title="The “nsp-added” signal">nsp-added</a></td>
+<td class="signal_flags">Run First</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="NMDeviceWimax.html#NMDeviceWimax-nsp-removed" title="The “nsp-removed” signal">nsp-removed</a></td>
+<td class="signal_flags">Run First</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMDeviceWimax.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDeviceWimax.html#NM-DEVICE-WIMAX-HW-ADDRESS:CAPS" title="NM_DEVICE_WIMAX_HW_ADDRESS">NM_DEVICE_WIMAX_HW_ADDRESS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDeviceWimax.html#NM-DEVICE-WIMAX-ACTIVE-NSP:CAPS" title="NM_DEVICE_WIMAX_ACTIVE_NSP">NM_DEVICE_WIMAX_ACTIVE_NSP</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDeviceWimax.html#NM-DEVICE-WIMAX-CENTER-FREQUENCY:CAPS" title="NM_DEVICE_WIMAX_CENTER_FREQUENCY">NM_DEVICE_WIMAX_CENTER_FREQUENCY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDeviceWimax.html#NM-DEVICE-WIMAX-RSSI:CAPS" title="NM_DEVICE_WIMAX_RSSI">NM_DEVICE_WIMAX_RSSI</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDeviceWimax.html#NM-DEVICE-WIMAX-CINR:CAPS" title="NM_DEVICE_WIMAX_CINR">NM_DEVICE_WIMAX_CINR</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDeviceWimax.html#NM-DEVICE-WIMAX-TX-POWER:CAPS" title="NM_DEVICE_WIMAX_TX_POWER">NM_DEVICE_WIMAX_TX_POWER</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDeviceWimax.html#NM-DEVICE-WIMAX-BSID:CAPS" title="NM_DEVICE_WIMAX_BSID">NM_DEVICE_WIMAX_BSID</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDeviceWimax.html#NM-DEVICE-WIMAX-NSPS:CAPS" title="NM_DEVICE_WIMAX_NSPS">NM_DEVICE_WIMAX_NSPS</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMDeviceWimax.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> <a class="link" href="NMObject.html" title="NMObject">NMObject</a>
+        <span class="lineart">╰──</span> <a class="link" href="NMDevice.html" title="NMDevice">NMDevice</a>
+            <span class="lineart">╰──</span> NMDeviceWimax
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMDeviceWimax.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="NMDeviceWimax.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="nm-device-wimax-get-hw-address"></a><h3>nm_device_wimax_get_hw_address ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_device_wimax_get_hw_address (<em class="parameter"><code><a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a> *wimax</code></em>);</pre>
+<p>Gets the hardware (MAC) address of the <a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a></p>
+<div class="refsect3">
+<a name="id-1.5.15.9.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>wimax</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.15.9.2.6"></a><h4>Returns</h4>
+<p> the hardware address. This is the internal string used by the
+device, and must not be modified.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-wimax-get-active-nsp"></a><h3>nm_device_wimax_get_active_nsp ()</h3>
+<pre class="programlisting"><a class="link" href="NMWimaxNsp.html" title="NMWimaxNsp"><span class="returnvalue">NMWimaxNsp</span></a> *
+nm_device_wimax_get_active_nsp (<em class="parameter"><code><a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a> *wimax</code></em>);</pre>
+<p>Gets the active <a class="link" href="NMWimaxNsp.html" title="NMWimaxNsp"><span class="type">NMWimaxNsp</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.15.9.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>wimax</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.15.9.3.6"></a><h4>Returns</h4>
+<p> the access point or <code class="literal">NULL</code> if none is active. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-wimax-get-nsp-by-path"></a><h3>nm_device_wimax_get_nsp_by_path ()</h3>
+<pre class="programlisting"><a class="link" href="NMWimaxNsp.html" title="NMWimaxNsp"><span class="returnvalue">NMWimaxNsp</span></a> *
+nm_device_wimax_get_nsp_by_path (<em class="parameter"><code><a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a> *wimax</code></em>,
+                                 <em class="parameter"><code>const <span class="type">char</span> *path</code></em>);</pre>
+<p>Gets a <a class="link" href="NMWimaxNsp.html" title="NMWimaxNsp"><span class="type">NMWimaxNsp</span></a> by path.</p>
+<div class="refsect3">
+<a name="id-1.5.15.9.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>wimax</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>the object path of the NSP</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.15.9.4.6"></a><h4>Returns</h4>
+<p> the access point or <code class="literal">NULL</code> if none is found. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-wimax-get-nsps"></a><h3>nm_device_wimax_get_nsps ()</h3>
+<pre class="programlisting">const <span class="returnvalue">GPtrArray</span> *
+nm_device_wimax_get_nsps (<em class="parameter"><code><a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a> *wimax</code></em>);</pre>
+<p>Gets all the scanned NSPs of the <a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.15.9.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>wimax</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.15.9.5.6"></a><h4>Returns</h4>
+<p> a <span class="type">GPtrArray</span> containing
+all the scanned <a href="NMWimaxNsp.html"><span class="type">NMWimaxNsps</span></a>.
+The returned array is owned by the client and should not be modified. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> NMWimaxNsp]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-wimax-get-center-frequency"></a><h3>nm_device_wimax_get_center_frequency ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+nm_device_wimax_get_center_frequency (<em class="parameter"><code><a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a> *self</code></em>);</pre>
+<p>Gets the center frequency (in KHz) of the radio channel the device is using
+to communicate with the network when connected.  Has no meaning when the
+device is not connected.</p>
+<div class="refsect3">
+<a name="id-1.5.15.9.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.15.9.6.6"></a><h4>Returns</h4>
+<p> the center frequency in KHz, or 0</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-wimax-get-rssi"></a><h3>nm_device_wimax_get_rssi ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint</span>
+nm_device_wimax_get_rssi (<em class="parameter"><code><a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a> *self</code></em>);</pre>
+<p>Gets the RSSI of the current radio link in dBm.  This value indicates how
+strong the raw received RF signal from the base station is, but does not
+indicate the overall quality of the radio link.  Has no meaning when the
+device is not connected.</p>
+<div class="refsect3">
+<a name="id-1.5.15.9.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.15.9.7.6"></a><h4>Returns</h4>
+<p> the RSSI in dBm, or 0</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-wimax-get-cinr"></a><h3>nm_device_wimax_get_cinr ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint</span>
+nm_device_wimax_get_cinr (<em class="parameter"><code><a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a> *self</code></em>);</pre>
+<p>Gets the CINR (Carrier to Interference + Noise Ratio) of the current radio
+link in dB.  CINR is a more accurate measure of radio link quality.  Has no
+meaning when the device is not connected.</p>
+<div class="refsect3">
+<a name="id-1.5.15.9.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.15.9.8.6"></a><h4>Returns</h4>
+<p> the CINR in dB, or 0</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-wimax-get-tx-power"></a><h3>nm_device_wimax_get_tx_power ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint</span>
+nm_device_wimax_get_tx_power (<em class="parameter"><code><a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a> *self</code></em>);</pre>
+<p>Average power of the last burst transmitted by the device, in units of
+0.5 dBm.  i.e. a TxPower of -11 represents an actual device TX power of
+-5.5 dBm.  Has no meaning when the device is not connected.</p>
+<div class="refsect3">
+<a name="id-1.5.15.9.9.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.15.9.9.6"></a><h4>Returns</h4>
+<p> the TX power in dBm, or 0</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-wimax-get-bsid"></a><h3>nm_device_wimax_get_bsid ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_device_wimax_get_bsid (<em class="parameter"><code><a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a> *self</code></em>);</pre>
+<p>Gets the ID of the serving Base Station when the device is connected.</p>
+<div class="refsect3">
+<a name="id-1.5.15.9.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.15.9.10.6"></a><h4>Returns</h4>
+<p> the ID of the serving Base Station, or <code class="literal">NULL</code></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMDeviceWimax.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NM-DEVICE-WIMAX-HW-ADDRESS:CAPS"></a><h3>NM_DEVICE_WIMAX_HW_ADDRESS</h3>
+<pre class="programlisting">#define NM_DEVICE_WIMAX_HW_ADDRESS       "hw-address"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-WIMAX-ACTIVE-NSP:CAPS"></a><h3>NM_DEVICE_WIMAX_ACTIVE_NSP</h3>
+<pre class="programlisting">#define NM_DEVICE_WIMAX_ACTIVE_NSP       "active-nsp"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-WIMAX-CENTER-FREQUENCY:CAPS"></a><h3>NM_DEVICE_WIMAX_CENTER_FREQUENCY</h3>
+<pre class="programlisting">#define NM_DEVICE_WIMAX_CENTER_FREQUENCY "center-frequency"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-WIMAX-RSSI:CAPS"></a><h3>NM_DEVICE_WIMAX_RSSI</h3>
+<pre class="programlisting">#define NM_DEVICE_WIMAX_RSSI             "rssi"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-WIMAX-CINR:CAPS"></a><h3>NM_DEVICE_WIMAX_CINR</h3>
+<pre class="programlisting">#define NM_DEVICE_WIMAX_CINR             "cinr"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-WIMAX-TX-POWER:CAPS"></a><h3>NM_DEVICE_WIMAX_TX_POWER</h3>
+<pre class="programlisting">#define NM_DEVICE_WIMAX_TX_POWER         "tx-power"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-WIMAX-BSID:CAPS"></a><h3>NM_DEVICE_WIMAX_BSID</h3>
+<pre class="programlisting">#define NM_DEVICE_WIMAX_BSID             "bsid"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-WIMAX-NSPS:CAPS"></a><h3>NM_DEVICE_WIMAX_NSPS</h3>
+<pre class="programlisting">#define NM_DEVICE_WIMAX_NSPS             "nsps"
+</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMDeviceWimax.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="NMDeviceWimax--active-nsp"></a><h3>The <code class="literal">“active-nsp”</code> property</h3>
+<pre class="programlisting">  “active-nsp”               <a class="link" href="NMWimaxNsp.html" title="NMWimaxNsp"><span class="type">NMWimaxNsp</span></a> *</pre>
+<p>The active <a class="link" href="NMWimaxNsp.html" title="NMWimaxNsp"><span class="type">NMWimaxNsp</span></a> of the device.</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDeviceWimax--bsid"></a><h3>The <code class="literal">“bsid”</code> property</h3>
+<pre class="programlisting">  “bsid”                     <span class="type">gchar</span> *</pre>
+<p>The ID of the serving base station as received from the network.  Has
+no meaning when the device is not connected.</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDeviceWimax--center-frequency"></a><h3>The <code class="literal">“center-frequency”</code> property</h3>
+<pre class="programlisting">  “center-frequency”         <span class="type">guint</span></pre>
+<p>The center frequency (in KHz) of the radio channel the device is using to
+communicate with the network when connected.  Has no meaning when the
+device is not connected.</p>
+<p>Flags: Read</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDeviceWimax--cinr"></a><h3>The <code class="literal">“cinr”</code> property</h3>
+<pre class="programlisting">  “cinr”                     <span class="type">gint</span></pre>
+<p>CINR (Carrier to Interference + Noise Ratio) of the current radio link
+in dB.  CINR is a more accurate measure of radio link quality.  Has no
+meaning when the device is not connected.</p>
+<p>Flags: Read</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDeviceWimax--hw-address"></a><h3>The <code class="literal">“hw-address”</code> property</h3>
+<pre class="programlisting">  “hw-address”               <span class="type">gchar</span> *</pre>
+<p>The hardware (MAC) address of the device.</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDeviceWimax--nsps"></a><h3>The <code class="literal">“nsps”</code> property</h3>
+<pre class="programlisting">  “nsps”                     <span class="type">GPtrArray</span> *</pre>
+<p>List of all WiMAX Network Service Providers the device can see.</p>
+<p>Element-type: NMWimaxNsp</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDeviceWimax--rssi"></a><h3>The <code class="literal">“rssi”</code> property</h3>
+<pre class="programlisting">  “rssi”                     <span class="type">gint</span></pre>
+<p>RSSI of the current radio link in dBm.  This value indicates how strong
+the raw received RF signal from the base station is, but does not
+indicate the overall quality of the radio link.  Has no meaning when the
+device is not connected.</p>
+<p>Flags: Read</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDeviceWimax--tx-power"></a><h3>The <code class="literal">“tx-power”</code> property</h3>
+<pre class="programlisting">  “tx-power”                 <span class="type">gint</span></pre>
+<p>Average power of the last burst transmitted by the device, in units of
+0.5 dBm.  i.e. a TxPower of -11 represents an actual device TX power of
+-5.5 dBm.  Has no meaning when the device is not connected.</p>
+<p>Flags: Read</p>
+<p>Default value: 0</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMDeviceWimax.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="NMDeviceWimax-nsp-added"></a><h3>The <code class="literal">“nsp-added”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a> *self,
+               <span class="type">GObject</span>       *nsp,
+               <span class="type">gpointer</span>       user_data)</pre>
+<p>Notifies that a <a class="link" href="NMWimaxNsp.html" title="NMWimaxNsp"><span class="type">NMWimaxNsp</span></a> is added to the wimax device.</p>
+<div class="refsect3">
+<a name="id-1.5.15.12.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the wimax device that received the signal</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>nsp</p></td>
+<td class="parameter_description"><p>the new NSP</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDeviceWimax-nsp-removed"></a><h3>The <code class="literal">“nsp-removed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax"><span class="type">NMDeviceWimax</span></a> *self,
+               <span class="type">GObject</span>       *nsp,
+               <span class="type">gpointer</span>       user_data)</pre>
+<p>Notifies that a <a class="link" href="NMWimaxNsp.html" title="NMWimaxNsp"><span class="type">NMWimaxNsp</span></a> is removed from the wimax device.</p>
+<div class="refsect3">
+<a name="id-1.5.15.12.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the wimax device that received the signal</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>nsp</p></td>
+<td class="parameter_description"><p>the removed NSP</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

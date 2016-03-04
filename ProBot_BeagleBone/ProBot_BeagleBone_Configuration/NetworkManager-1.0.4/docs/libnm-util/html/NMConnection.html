@@ -1,0 +1,2694 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NMConnection: libnm-util Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm-util Reference Manual">
+<link rel="up" href="ch01.html" title="libnm-util API Reference">
+<link rel="prev" href="ch01.html" title="libnm-util API Reference">
+<link rel="next" href="NMSetting.html" title="NMSetting">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#NMConnection.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#NMConnection.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#NMConnection.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#NMConnection.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch01.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="NMSetting.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="NMConnection"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="NMConnection.top_of_page"></a>NMConnection</span></h2>
+<p>NMConnection — Describes a connection to specific network or provider</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="NMConnection.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-error-quark" title="nm_connection_error_quark ()">nm_connection_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMConnection.html" title="NMConnection"><span class="returnvalue">NMConnection</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-new" title="nm_connection_new ()">nm_connection_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMConnection.html" title="NMConnection"><span class="returnvalue">NMConnection</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-new-from-hash" title="nm_connection_new_from_hash ()">nm_connection_new_from_hash</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMConnection.html" title="NMConnection"><span class="returnvalue">NMConnection</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-duplicate" title="nm_connection_duplicate ()">nm_connection_duplicate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-create-setting" title="nm_connection_create_setting ()">nm_connection_create_setting</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-add-setting" title="nm_connection_add_setting ()">nm_connection_add_setting</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-remove-setting" title="nm_connection_remove_setting ()">nm_connection_remove_setting</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting" title="nm_connection_get_setting ()">nm_connection_get_setting</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-by-name" title="nm_connection_get_setting_by_name ()">nm_connection_get_setting_by_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-replace-settings" title="nm_connection_replace_settings ()">nm_connection_replace_settings</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-replace-settings-from-connection" title="nm_connection_replace_settings_from_connection ()">nm_connection_replace_settings_from_connection</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-compare" title="nm_connection_compare ()">nm_connection_compare</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-diff" title="nm_connection_diff ()">nm_connection_diff</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-verify" title="nm_connection_verify ()">nm_connection_verify</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-normalize" title="nm_connection_normalize ()">nm_connection_normalize</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-need-secrets" title="nm_connection_need_secrets ()">nm_connection_need_secrets</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-clear-secrets" title="nm_connection_clear_secrets ()">nm_connection_clear_secrets</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-clear-secrets-with-flags" title="nm_connection_clear_secrets_with_flags ()">nm_connection_clear_secrets_with_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-update-secrets" title="nm_connection_update_secrets ()">nm_connection_update_secrets</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-set-path" title="nm_connection_set_path ()">nm_connection_set_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-path" title="nm_connection_get_path ()">nm_connection_get_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-virtual-iface-name" title="nm_connection_get_virtual_iface_name ()">nm_connection_get_virtual_iface_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-interface-name" title="nm_connection_get_interface_name ()">nm_connection_get_interface_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-is-type" title="nm_connection_is_type ()">nm_connection_is_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-for-each-setting-value" title="nm_connection_for_each_setting_value ()">nm_connection_for_each_setting_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GHashTable</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-to-hash" title="nm_connection_to_hash ()">nm_connection_to_hash</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-dump" title="nm_connection_dump ()">nm_connection_dump</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GType</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-lookup-setting-type" title="nm_connection_lookup_setting_type ()">nm_connection_lookup_setting_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GType</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-lookup-setting-type-by-quark" title="nm_connection_lookup_setting_type_by_quark ()">nm_connection_lookup_setting_type_by_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-uuid" title="nm_connection_get_uuid ()">nm_connection_get_uuid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-id" title="nm_connection_get_id ()">nm_connection_get_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-connection-type" title="nm_connection_get_connection_type ()">nm_connection_get_connection_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-virtual-device-description" title="nm_connection_get_virtual_device_description ()">nm_connection_get_virtual_device_description</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting8021x.html" title="NMSetting8021x"><span class="returnvalue">NMSetting8021x</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-802-1x" title="nm_connection_get_setting_802_1x ()">nm_connection_get_setting_802_1x</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingBluetooth.html" title="NMSettingBluetooth"><span class="returnvalue">NMSettingBluetooth</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-bluetooth" title="nm_connection_get_setting_bluetooth ()">nm_connection_get_setting_bluetooth</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingBond.html" title="NMSettingBond"><span class="returnvalue">NMSettingBond</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-bond" title="nm_connection_get_setting_bond ()">nm_connection_get_setting_bond</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingTeam.html" title="NMSettingTeam"><span class="returnvalue">NMSettingTeam</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-team" title="nm_connection_get_setting_team ()">nm_connection_get_setting_team</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingTeamPort.html" title="NMSettingTeamPort"><span class="returnvalue">NMSettingTeamPort</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-team-port" title="nm_connection_get_setting_team_port ()">nm_connection_get_setting_team_port</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingBridge.html" title="NMSettingBridge"><span class="returnvalue">NMSettingBridge</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-bridge" title="nm_connection_get_setting_bridge ()">nm_connection_get_setting_bridge</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingBridgePort.html" title="NMSettingBridgePort"><span class="returnvalue">NMSettingBridgePort</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-bridge-port" title="nm_connection_get_setting_bridge_port ()">nm_connection_get_setting_bridge_port</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingCdma.html" title="NMSettingCdma"><span class="returnvalue">NMSettingCdma</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-cdma" title="nm_connection_get_setting_cdma ()">nm_connection_get_setting_cdma</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="returnvalue">NMSettingConnection</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-connection" title="nm_connection_get_setting_connection ()">nm_connection_get_setting_connection</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="returnvalue">NMSettingDcb</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-dcb" title="nm_connection_get_setting_dcb ()">nm_connection_get_setting_dcb</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingGeneric.html" title="NMSettingGeneric"><span class="returnvalue">NMSettingGeneric</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-generic" title="nm_connection_get_setting_generic ()">nm_connection_get_setting_generic</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="returnvalue">NMSettingGsm</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-gsm" title="nm_connection_get_setting_gsm ()">nm_connection_get_setting_gsm</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingInfiniband.html" title="NMSettingInfiniband"><span class="returnvalue">NMSettingInfiniband</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-infiniband" title="nm_connection_get_setting_infiniband ()">nm_connection_get_setting_infiniband</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="returnvalue">NMSettingIP4Config</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-ip4-config" title="nm_connection_get_setting_ip4_config ()">nm_connection_get_setting_ip4_config</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingIP6Config.html" title="NMSettingIP6Config"><span class="returnvalue">NMSettingIP6Config</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-ip6-config" title="nm_connection_get_setting_ip6_config ()">nm_connection_get_setting_ip6_config</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingOlpcMesh.html" title="NMSettingOlpcMesh"><span class="returnvalue">NMSettingOlpcMesh</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-olpc-mesh" title="nm_connection_get_setting_olpc_mesh ()">nm_connection_get_setting_olpc_mesh</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="returnvalue">NMSettingPPP</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-ppp" title="nm_connection_get_setting_ppp ()">nm_connection_get_setting_ppp</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingPPPOE.html" title="NMSettingPPPOE"><span class="returnvalue">NMSettingPPPOE</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-pppoe" title="nm_connection_get_setting_pppoe ()">nm_connection_get_setting_pppoe</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="returnvalue">NMSettingSerial</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-serial" title="nm_connection_get_setting_serial ()">nm_connection_get_setting_serial</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingVPN.html" title="NMSettingVPN"><span class="returnvalue">NMSettingVPN</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-vpn" title="nm_connection_get_setting_vpn ()">nm_connection_get_setting_vpn</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingWimax.html" title="NMSettingWimax"><span class="returnvalue">NMSettingWimax</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-wimax" title="nm_connection_get_setting_wimax ()">nm_connection_get_setting_wimax</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="returnvalue">NMSettingAdsl</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-adsl" title="nm_connection_get_setting_adsl ()">nm_connection_get_setting_adsl</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingWired.html" title="NMSettingWired"><span class="returnvalue">NMSettingWired</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-wired" title="nm_connection_get_setting_wired ()">nm_connection_get_setting_wired</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingWireless.html" title="NMSettingWireless"><span class="returnvalue">NMSettingWireless</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-wireless" title="nm_connection_get_setting_wireless ()">nm_connection_get_setting_wireless</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="returnvalue">NMSettingWirelessSecurity</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-wireless-security" title="nm_connection_get_setting_wireless_security ()">nm_connection_get_setting_wireless_security</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="returnvalue">NMSettingVlan</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMConnection.html#nm-connection-get-setting-vlan" title="nm_connection_get_setting_vlan ()">nm_connection_get_setting_vlan</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMConnection.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMConnection.html#NMConnection--path" title="The “path” property">path</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMConnection.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="signals_return">
+<col width="300px" class="signals_name">
+<col width="200px" class="signals_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="NMConnection.html#NMConnection-changed" title="The “changed” signal">changed</a></td>
+<td class="signal_flags">Run First</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="NMConnection.html#NMConnection-secrets-cleared" title="The “secrets-cleared” signal">secrets-cleared</a></td>
+<td class="signal_flags">Run First</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="NMConnection.html#NMConnection-secrets-updated" title="The “secrets-updated” signal">secrets-updated</a></td>
+<td class="signal_flags">Run First</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMConnection.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMConnection.html#NM-CONNECTION-SECRETS-UPDATED:CAPS" title="NM_CONNECTION_SECRETS_UPDATED">NM_CONNECTION_SECRETS_UPDATED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMConnection.html#NM-CONNECTION-SECRETS-CLEARED:CAPS" title="NM_CONNECTION_SECRETS_CLEARED">NM_CONNECTION_SECRETS_CLEARED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMConnection.html#NM-CONNECTION-CHANGED:CAPS" title="NM_CONNECTION_CHANGED">NM_CONNECTION_CHANGED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMConnection.html#NM-CONNECTION-PATH:CAPS" title="NM_CONNECTION_PATH">NM_CONNECTION_PATH</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMConnection.html#NMConnectionError" title="enum NMConnectionError">NMConnectionError</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMConnection.html#NM-CONNECTION-NORMALIZE-PARAM-IP6-CONFIG-METHOD:CAPS" title="NM_CONNECTION_NORMALIZE_PARAM_IP6_CONFIG_METHOD">NM_CONNECTION_NORMALIZE_PARAM_IP6_CONFIG_METHOD</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMConnection.html#NM-CONNECTION-ERROR:CAPS" title="NM_CONNECTION_ERROR">NM_CONNECTION_ERROR</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="NMConnection.html#NMConnection-struct" title="NMConnection">NMConnection</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMConnection.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Enumeration-and-Flag-Types.html">GEnum</a>
+    <span class="lineart">╰──</span> NMConnectionError
+    GObject
+    <span class="lineart">╰──</span> NMConnection
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMConnection.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;nm-connection.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMConnection.description"></a><h2>Description</h2>
+<p>An <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> describes all the settings and configuration values that
+are necessary to configure network devices for operation on a specific
+network.  Connections are the fundamental operating object for
+NetworkManager; no device is connected without a <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a>, or
+disconnected without having been connected with a <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a>.</p>
+<p>Each <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> contains a list of <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> objects usually referenced
+by name (using <a class="link" href="NMConnection.html#nm-connection-get-setting-by-name" title="nm_connection_get_setting_by_name ()"><code class="function">nm_connection_get_setting_by_name()</code></a>) or by type (with
+<a class="link" href="NMConnection.html#nm-connection-get-setting" title="nm_connection_get_setting ()"><code class="function">nm_connection_get_setting()</code></a>).  The settings describe the actual parameters
+with which the network devices are configured, including device-specific
+parameters (MTU, SSID, APN, channel, rate, etc) and IP-level parameters
+(addresses, routes, addressing methods, etc).</p>
+</div>
+<div class="refsect1">
+<a name="NMConnection.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="nm-connection-error-quark"></a><h3>nm_connection_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_connection_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Registers an error quark for <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> if necessary.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.2.5"></a><h4>Returns</h4>
+<p> the error quark used for <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> errors.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-new"></a><h3>nm_connection_new ()</h3>
+<pre class="programlisting"><a class="link" href="NMConnection.html" title="NMConnection"><span class="returnvalue">NMConnection</span></a> *
+nm_connection_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> object with no <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> objects.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.3.5"></a><h4>Returns</h4>
+<p> the new empty <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> object</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-new-from-hash"></a><h3>nm_connection_new_from_hash ()</h3>
+<pre class="programlisting"><a class="link" href="NMConnection.html" title="NMConnection"><span class="returnvalue">NMConnection</span></a> *
+nm_connection_new_from_hash (<em class="parameter"><code><span class="type">GHashTable</span> *hash</code></em>,
+                             <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Creates a new <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> from a hash table describing the connection.  See
+<a class="link" href="NMConnection.html#nm-connection-to-hash" title="nm_connection_to_hash ()"><code class="function">nm_connection_to_hash()</code></a> for a description of the expected hash table.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>hash</p></td>
+<td class="parameter_description"><p> the <span class="type">GHashTable</span> describing
+the connection. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 GLib.HashTable]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>on unsuccessful return, an error</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.4.6"></a><h4>Returns</h4>
+<p> the new <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> object, populated with settings created
+from the values in the hash table, or <code class="literal">NULL</code> if the connection failed to
+validate</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-duplicate"></a><h3>nm_connection_duplicate ()</h3>
+<pre class="programlisting"><a class="link" href="NMConnection.html" title="NMConnection"><span class="returnvalue">NMConnection</span></a> *
+nm_connection_duplicate (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>Duplicates a <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> to duplicate</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.5.6"></a><h4>Returns</h4>
+<p> a new <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> containing the same settings and properties
+as the source <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-create-setting"></a><h3>nm_connection_create_setting ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+nm_connection_create_setting (<em class="parameter"><code>const <span class="type">char</span> *name</code></em>);</pre>
+<p>Create a new <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> object of the desired type, given a setting name.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>a setting name</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.6.6"></a><h4>Returns</h4>
+<p> the new setting object, or <code class="literal">NULL</code> if the setting name was unknown. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-add-setting"></a><h3>nm_connection_add_setting ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_connection_add_setting (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>,
+                           <em class="parameter"><code><a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> *setting</code></em>);</pre>
+<p>Adds a <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> to the connection, replacing any previous <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> of the
+same name which has previously been added to the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a>.  The
+connection takes ownership of the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> object and does not increase
+the setting object's reference count.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p> the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> to add to the connection object. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-remove-setting"></a><h3>nm_connection_remove_setting ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_connection_remove_setting (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>,
+                              <em class="parameter"><code><span class="type">GType</span> setting_type</code></em>);</pre>
+<p>Removes the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> with the given <span class="type">GType</span> from the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a>.  This
+operation dereferences the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> object.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>setting_type</p></td>
+<td class="parameter_description"><p>the <span class="type">GType</span> of the setting object to remove</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting"></a><h3>nm_connection_get_setting ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+nm_connection_get_setting (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>,
+                           <em class="parameter"><code><span class="type">GType</span> setting_type</code></em>);</pre>
+<p>Gets the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> with the given <span class="type">GType</span>, if one has been previously added
+to the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.9.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>setting_type</p></td>
+<td class="parameter_description"><p>the <span class="type">GType</span> of the setting object to return</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.9.6"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a>, or <code class="literal">NULL</code> if no setting of that type was previously
+added to the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-by-name"></a><h3>nm_connection_get_setting_by_name ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+nm_connection_get_setting_by_name (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>,
+                                   <em class="parameter"><code>const <span class="type">char</span> *name</code></em>);</pre>
+<p>Gets the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> with the given name, if one has been previously added
+the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>a setting name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.10.6"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a>, or <code class="literal">NULL</code> if no setting with that name was previously
+added to the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-replace-settings"></a><h3>nm_connection_replace_settings ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_connection_replace_settings (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>,
+                                <em class="parameter"><code><span class="type">GHashTable</span> *new_settings</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.2.10.11.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>new_settings</p></td>
+<td class="parameter_description"><p> a <span class="type">GHashTable</span> of settings. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 GLib.HashTable]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.11.5"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the settings were valid and added to the connection, <code class="literal">FALSE</code>
+if they were not</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-replace-settings-from-connection"></a><h3>nm_connection_replace_settings_from_connection ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_connection_replace_settings_from_connection
+                               (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>,
+                                <em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *new_connection</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Deep-copies the settings of <em class="parameter"><code>new_conenction</code></em>
+ and replaces the settings of <em class="parameter"><code>connection</code></em>
+
+with the copied settings.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>new_connection</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> to replace the settings of <em class="parameter"><code>connection</code></em>
+with</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.12.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the settings were valid and added to the connection, <code class="literal">FALSE</code>
+if they were not</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-compare"></a><h3>nm_connection_compare ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_connection_compare (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *a</code></em>,
+                       <em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *b</code></em>,
+                       <em class="parameter"><code><a class="link" href="NMSetting.html#NMSettingCompareFlags" title="enum NMSettingCompareFlags"><span class="type">NMSettingCompareFlags</span></a> flags</code></em>);</pre>
+<p>Compares two <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> objects for similarity, with comparison behavior
+modified by a set of flags.  See <a class="link" href="NMSetting.html#nm-setting-compare" title="nm_setting_compare ()"><code class="function">nm_setting_compare()</code></a> for a description of
+each flag's behavior.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.13.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>a</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>b</p></td>
+<td class="parameter_description"><p>a second <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> to compare with the first</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>compare flags, e.g. <a class="link" href="NMSetting.html#NM-SETTING-COMPARE-FLAG-EXACT:CAPS"><code class="literal">NM_SETTING_COMPARE_FLAG_EXACT</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.13.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the comparison succeeds, <code class="literal">FALSE</code> if it does not</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-diff"></a><h3>nm_connection_diff ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_connection_diff (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *a</code></em>,
+                    <em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *b</code></em>,
+                    <em class="parameter"><code><a class="link" href="NMSetting.html#NMSettingCompareFlags" title="enum NMSettingCompareFlags"><span class="type">NMSettingCompareFlags</span></a> flags</code></em>,
+                    <em class="parameter"><code><span class="type">GHashTable</span> **out_settings</code></em>);</pre>
+<p>Compares two <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> objects for similarity, with comparison behavior
+modified by a set of flags.  See <a class="link" href="NMSetting.html#nm-setting-compare" title="nm_setting_compare ()"><code class="function">nm_setting_compare()</code></a> for a description of
+each flag's behavior.  If the connections differ, settings and keys within
+each setting that differ are added to the returned <em class="parameter"><code>out_settings</code></em>
+ hash table.
+No values are returned, only key names.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.14.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>a</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>b</p></td>
+<td class="parameter_description"><p>a second <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> to compare with the first</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>compare flags, e.g. <a class="link" href="NMSetting.html#NM-SETTING-COMPARE-FLAG-EXACT:CAPS"><code class="literal">NM_SETTING_COMPARE_FLAG_EXACT</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_settings</p></td>
+<td class="parameter_description"><p> if the
+connections differ, on return a hash table mapping setting names to
+second-level GHashTable (utf8 to guint32), which contains the key names that
+differ mapped to one or more of <a class="link" href="NMSetting.html#NMSettingDiffResult" title="enum NMSettingDiffResult"><code class="literal">NMSettingDiffResult</code></a> as a bitfield. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 GLib.HashTable]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.14.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the connections contain the same values, <code class="literal">FALSE</code> if they do
+not</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-verify"></a><h3>nm_connection_verify ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_connection_verify (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>,
+                      <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Validates the connection and all its settings.  Each setting's properties
+have allowed values, and some values are dependent on other values.  For
+example, if a Wi-Fi connection is security enabled, the <a class="link" href="NMSettingWireless.html" title="NMSettingWireless"><span class="type">NMSettingWireless</span></a>
+setting object's 'security' property must contain the setting name of the
+<a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> object, which must also be present in the
+connection for the connection to be valid.  As another example, the
+<a class="link" href="NMSettingWired.html" title="NMSettingWired"><span class="type">NMSettingWired</span></a> object's 'mac-address' property must be a validly formatted
+MAC address.  The returned <span class="type">GError</span> contains information about which
+setting and which property failed validation, and how it failed validation.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.15.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> to verify</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.15.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the connection is valid, <code class="literal">FALSE</code> if it is not</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-normalize"></a><h3>nm_connection_normalize ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_connection_normalize (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>,
+                         <em class="parameter"><code><span class="type">GHashTable</span> *parameters</code></em>,
+                         <em class="parameter"><code><span class="type">gboolean</span> *modified</code></em>,
+                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Does some basic normalization and fixup of well known inconsistencies
+and deprecated fields. If the connection was modified in any way,
+the output parameter <em class="parameter"><code>modified</code></em>
+ is set <code class="literal">TRUE</code>.</p>
+<p>Finally the connection will be verified and <code class="literal">TRUE</code> returns if the connection
+is valid. As this function only performs some specific normalization steps
+it cannot repair all connections. If the connection has errors that
+cannot be normalized, the connection will not be modified.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.16.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> to normalize</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>parameters</p></td>
+<td class="parameter_description"><p> a <span class="type">GHashTable</span> with
+normalization parameters to allow customization of the normalization by providing
+specific arguments. Unknown arguments will be ignored and the default will be
+used. The keys must be strings, hashed by <code class="function">g_str_hash()</code> and <code class="function">g_str_equal()</code> functions.
+The values are opaque and depend on the parameter name. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 gpointer]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>modified</p></td>
+<td class="parameter_description"><p> outputs whether any settings were modified. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code>. Contains the reason,
+why the connection is invalid, if the function returns an error.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.16.7"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the connection is valid, <code class="literal">FALSE</code> if it is not</p>
+</div>
+<p class="since">Since: 1.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-need-secrets"></a><h3>nm_connection_need_secrets ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_connection_need_secrets (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>,
+                            <em class="parameter"><code><span class="type">GPtrArray</span> **hints</code></em>);</pre>
+<p>Returns the name of the first setting object in the connection which would
+need secrets to make a successful connection.  The returned hints are only
+intended as a guide to what secrets may be required, because in some
+circumstances, there is no way to conclusively determine exactly which
+secrets are needed.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.17.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>hints</p></td>
+<td class="parameter_description"><p>  the address of a pointer to a <span class="type">GPtrArray</span>, initialized to <code class="literal">NULL</code>, which on
+return points to an allocated <span class="type">GPtrArray</span> containing the property names of
+secrets of the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> which may be required; the caller owns the array
+and must free the array itself with <code class="function">g_ptr_array_free()</code>, but not free its
+elements. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.17.6"></a><h4>Returns</h4>
+<p> the setting name of the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> object which has invalid or
+missing secrets</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-clear-secrets"></a><h3>nm_connection_clear_secrets ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_connection_clear_secrets (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>Clears and frees any secrets that may be stored in the connection, to avoid
+keeping secret data in memory when not needed.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.18.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-clear-secrets-with-flags"></a><h3>nm_connection_clear_secrets_with_flags ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_connection_clear_secrets_with_flags
+                               (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>,
+                                <em class="parameter"><code><a class="link" href="NMSetting.html#NMSettingClearSecretsWithFlagsFn" title="NMSettingClearSecretsWithFlagsFn ()"><span class="type">NMSettingClearSecretsWithFlagsFn</span></a> func</code></em>,
+                                <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Clears and frees secrets determined by <em class="parameter"><code>func</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.19.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>func</p></td>
+<td class="parameter_description"><p> function to be called to determine whether a
+specific secret should be cleared or not. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid only during the call to the method."><span class="acronym">scope call</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>caller-supplied data passed to <em class="parameter"><code>func</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-update-secrets"></a><h3>nm_connection_update_secrets ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_connection_update_secrets (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>,
+                              <em class="parameter"><code>const <span class="type">char</span> *setting_name</code></em>,
+                              <em class="parameter"><code><span class="type">GHashTable</span> *secrets</code></em>,
+                              <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Update the specified setting's secrets, given a hash table of secrets
+intended for that setting (deserialized from D-Bus for example).  Will also
+extract the given setting's secrets hash if given a hash of hashes, as would
+be returned from <a class="link" href="NMConnection.html#nm-connection-to-hash" title="nm_connection_to_hash ()"><code class="function">nm_connection_to_hash()</code></a>.  If <em class="parameter"><code>setting_name</code></em>
+ is <code class="literal">NULL</code>, expects
+a fully serialized <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> as returned by <a class="link" href="NMConnection.html#nm-connection-to-hash" title="nm_connection_to_hash ()"><code class="function">nm_connection_to_hash()</code></a> and
+will update all secrets from all settings contained in <em class="parameter"><code>secrets</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.20.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>setting_name</p></td>
+<td class="parameter_description"><p>the setting object name to which the secrets apply</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>secrets</p></td>
+<td class="parameter_description"><p> a <span class="type">GHashTable</span> mapping
+string:<span class="type">GValue</span> of setting property names and secrets of the given <em class="parameter"><code>setting_name</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 GObject.Value]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to store error, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.20.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the secrets were successfully updated, <code class="literal">FALSE</code> if the update
+failed (tried to update secrets for a setting that doesn't exist, etc)</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-set-path"></a><h3>nm_connection_set_path ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_connection_set_path (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>,
+                        <em class="parameter"><code>const <span class="type">char</span> *path</code></em>);</pre>
+<p>Sets the D-Bus path of the connection.  This property is not serialized, and
+is only for the reference of the caller.  Sets the <a class="link" href="NMConnection.html#NMConnection--path" title="The “path” property"><span class="type">“path”</span></a>
+property.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.21.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>the D-Bus path of the connection as given by the settings service
+which provides the connection</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-path"></a><h3>nm_connection_get_path ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_connection_get_path (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>Returns the connection's D-Bus path.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.22.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.22.6"></a><h4>Returns</h4>
+<p> the D-Bus path of the connection, previously set by a call to
+<a class="link" href="NMConnection.html#nm-connection-set-path" title="nm_connection_set_path ()"><code class="function">nm_connection_set_path()</code></a>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-virtual-iface-name"></a><h3>nm_connection_get_virtual_iface_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_connection_get_virtual_iface_name (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>Returns the name of the virtual kernel interface which the connection
+needs to use if specified in the settings. This function abstracts all
+connection types which require this functionality. For all other
+connection types, this function will return <code class="literal">NULL</code>.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.23.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>The <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.23.6"></a><h4>Returns</h4>
+<p> Name of the kernel interface or <code class="literal">NULL</code></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-interface-name"></a><h3>nm_connection_get_interface_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_connection_get_interface_name (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>Returns the interface name as stored in NMSettingConnection:interface_name.
+If the connection contains no NMSettingConnection, it will return <code class="literal">NULL</code>.</p>
+<p>For hardware devices and software devices created outside of NetworkManager,
+this name is used to match the device. for software devices created by
+NetworkManager, this is the name of the created interface.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.24.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>The <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.24.7"></a><h4>Returns</h4>
+<p> Name of the kernel interface or <code class="literal">NULL</code></p>
+</div>
+<p class="since">Since: 1.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-is-type"></a><h3>nm_connection_is_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_connection_is_type (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>,
+                       <em class="parameter"><code>const <span class="type">char</span> *type</code></em>);</pre>
+<p>A convenience function to check if the given <em class="parameter"><code>connection</code></em>
+ is a particular
+type (ie wired, Wi-Fi, ppp, etc). Checks the <a class="link" href="NMSettingConnection.html#NMSettingConnection--type" title="The “type” property"><span class="type">“type”</span></a>
+property of the connection and matches that against <em class="parameter"><code>type</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.25.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>a setting name to check the connection's type against (like
+<a class="link" href="NMSettingWireless.html#NM-SETTING-WIRELESS-SETTING-NAME:CAPS" title="NM_SETTING_WIRELESS_SETTING_NAME"><code class="literal">NM_SETTING_WIRELESS_SETTING_NAME</code></a> or <a class="link" href="NMSettingWired.html#NM-SETTING-WIRED-SETTING-NAME:CAPS" title="NM_SETTING_WIRED_SETTING_NAME"><code class="literal">NM_SETTING_WIRED_SETTING_NAME</code></a>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.25.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the connection is of the given <em class="parameter"><code>type</code></em>
+, <code class="literal">FALSE</code> if not</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-for-each-setting-value"></a><h3>nm_connection_for_each_setting_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_connection_for_each_setting_value (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>,
+                                      <em class="parameter"><code><a class="link" href="NMSetting.html#NMSettingValueIterFn" title="NMSettingValueIterFn ()"><span class="type">NMSettingValueIterFn</span></a> func</code></em>,
+                                      <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Iterates over the properties of each <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> object in the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a>,
+calling the supplied user function for each property.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.26.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>func</p></td>
+<td class="parameter_description"><p> user-supplied function called for each setting's property. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid only during the call to the method."><span class="acronym">scope call</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data passed to <em class="parameter"><code>func</code></em>
+at each invocation</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-to-hash"></a><h3>nm_connection_to_hash ()</h3>
+<pre class="programlisting"><span class="returnvalue">GHashTable</span> *
+nm_connection_to_hash (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>,
+                       <em class="parameter"><code><a class="link" href="NMSetting.html#NMSettingHashFlags" title="enum NMSettingHashFlags"><span class="type">NMSettingHashFlags</span></a> flags</code></em>);</pre>
+<p>Converts the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> into a <span class="type">GHashTable</span> describing the connection,
+suitable for marshalling over D-Bus or serializing.  The hash table mapping
+is string:<span class="type">GHashTable</span> with each element in the returned hash representing
+a <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> object.  The keys are setting object names, and the values
+are <span class="type">GHashTables</span> mapping string:GValue, each of which represents the
+properties of the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> object.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.27.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>hash flags, e.g. <a class="link" href="NMSetting.html#NM-SETTING-HASH-FLAG-ALL:CAPS"><code class="literal">NM_SETTING_HASH_FLAG_ALL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.27.6"></a><h4>Returns</h4>
+<p> a new
+<span class="type">GHashTable</span> describing the connection, its settings, and each setting's
+properties.  The caller owns the hash table and must unref the hash table
+with <code class="function">g_hash_table_unref()</code> when it is no longer needed. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 GLib.HashTable]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-dump"></a><h3>nm_connection_dump ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_connection_dump (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>Print the connection to stdout.  For debugging purposes ONLY, should NOT
+be used for serialization of the connection or machine-parsed in any way. The
+output format is not guaranteed to be stable and may change at any time.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.28.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-lookup-setting-type"></a><h3>nm_connection_lookup_setting_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">GType</span>
+nm_connection_lookup_setting_type (<em class="parameter"><code>const <span class="type">char</span> *name</code></em>);</pre>
+<p>Returns the <span class="type">GType</span> of the setting's class for a given setting name.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.29.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>a setting name</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.29.6"></a><h4>Returns</h4>
+<p> the <span class="type">GType</span> of the setting's class</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-lookup-setting-type-by-quark"></a><h3>nm_connection_lookup_setting_type_by_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GType</span>
+nm_connection_lookup_setting_type_by_quark
+                               (<em class="parameter"><code><span class="type">GQuark</span> error_quark</code></em>);</pre>
+<p>Returns the <span class="type">GType</span> of the setting's class for a given setting error quark.
+Useful for figuring out which setting a returned error is for.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.30.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>error_quark</p></td>
+<td class="parameter_description"><p>a setting error quark</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.30.6"></a><h4>Returns</h4>
+<p> the <span class="type">GType</span> of the setting's class</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-uuid"></a><h3>nm_connection_get_uuid ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_connection_get_uuid (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return the UUID from the connection's <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.31.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.31.6"></a><h4>Returns</h4>
+<p> the UUID from the connection's 'connection' setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-id"></a><h3>nm_connection_get_id ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_connection_get_id (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return the ID from the connection's <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.32.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.32.6"></a><h4>Returns</h4>
+<p> the ID from the connection's 'connection' setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-connection-type"></a><h3>nm_connection_get_connection_type ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_connection_get_connection_type (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return the type from the connection's <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.33.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.33.6"></a><h4>Returns</h4>
+<p> the type from the connection's 'connection' setting</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-virtual-device-description"></a><h3>nm_connection_get_virtual_device_description ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+nm_connection_get_virtual_device_description
+                               (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>Returns the name that <a href="https://developer.gnome.org/libnm-glib/0.9/NMDevice.html#nm-device-disambiguate-names"><code class="function">nm_device_disambiguate_names()</code></a> would
+return for the virtual device that would be created for <em class="parameter"><code>connection</code></em>
+.
+Eg, "VLAN (eth1.1)".</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.34.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>an <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> for a virtual device type</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.34.6"></a><h4>Returns</h4>
+<p> the name of <em class="parameter"><code>connection</code></em>
+'s device,
+or <code class="literal">NULL</code> if <em class="parameter"><code>connection</code></em>
+is not a virtual connection type. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-802-1x"></a><h3>nm_connection_get_setting_802_1x ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting8021x.html" title="NMSetting8021x"><span class="returnvalue">NMSetting8021x</span></a> *
+nm_connection_get_setting_802_1x (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSetting8021x.html" title="NMSetting8021x"><span class="type">NMSetting8021x</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.35.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.35.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSetting8021x.html" title="NMSetting8021x"><span class="type">NMSetting8021x</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-bluetooth"></a><h3>nm_connection_get_setting_bluetooth ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingBluetooth.html" title="NMSettingBluetooth"><span class="returnvalue">NMSettingBluetooth</span></a> *
+nm_connection_get_setting_bluetooth (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingBluetooth.html" title="NMSettingBluetooth"><span class="type">NMSettingBluetooth</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.36.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.36.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingBluetooth.html" title="NMSettingBluetooth"><span class="type">NMSettingBluetooth</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-bond"></a><h3>nm_connection_get_setting_bond ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingBond.html" title="NMSettingBond"><span class="returnvalue">NMSettingBond</span></a> *
+nm_connection_get_setting_bond (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingBond.html" title="NMSettingBond"><span class="type">NMSettingBond</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.37.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.37.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingBond.html" title="NMSettingBond"><span class="type">NMSettingBond</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-team"></a><h3>nm_connection_get_setting_team ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingTeam.html" title="NMSettingTeam"><span class="returnvalue">NMSettingTeam</span></a> *
+nm_connection_get_setting_team (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingTeam.html" title="NMSettingTeam"><span class="type">NMSettingTeam</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.38.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.38.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingTeam.html" title="NMSettingTeam"><span class="type">NMSettingTeam</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-team-port"></a><h3>nm_connection_get_setting_team_port ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingTeamPort.html" title="NMSettingTeamPort"><span class="returnvalue">NMSettingTeamPort</span></a> *
+nm_connection_get_setting_team_port (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingTeamPort.html" title="NMSettingTeamPort"><span class="type">NMSettingTeamPort</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.39.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.39.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingTeamPort.html" title="NMSettingTeamPort"><span class="type">NMSettingTeamPort</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-bridge"></a><h3>nm_connection_get_setting_bridge ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingBridge.html" title="NMSettingBridge"><span class="returnvalue">NMSettingBridge</span></a> *
+nm_connection_get_setting_bridge (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingBridge.html" title="NMSettingBridge"><span class="type">NMSettingBridge</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.40.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.40.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingBridge.html" title="NMSettingBridge"><span class="type">NMSettingBridge</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-bridge-port"></a><h3>nm_connection_get_setting_bridge_port ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingBridgePort.html" title="NMSettingBridgePort"><span class="returnvalue">NMSettingBridgePort</span></a> *
+nm_connection_get_setting_bridge_port (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingBridgePort.html" title="NMSettingBridgePort"><span class="type">NMSettingBridgePort</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.41.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.41.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingBridgePort.html" title="NMSettingBridgePort"><span class="type">NMSettingBridgePort</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-cdma"></a><h3>nm_connection_get_setting_cdma ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingCdma.html" title="NMSettingCdma"><span class="returnvalue">NMSettingCdma</span></a> *
+nm_connection_get_setting_cdma (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingCdma.html" title="NMSettingCdma"><span class="type">NMSettingCdma</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.42.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.42.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingCdma.html" title="NMSettingCdma"><span class="type">NMSettingCdma</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-connection"></a><h3>nm_connection_get_setting_connection ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="returnvalue">NMSettingConnection</span></a> *
+nm_connection_get_setting_connection (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.43.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.43.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-dcb"></a><h3>nm_connection_get_setting_dcb ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="returnvalue">NMSettingDcb</span></a> *
+nm_connection_get_setting_dcb (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.44.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.44.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> if the connection contains one, otherwise NULL. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-generic"></a><h3>nm_connection_get_setting_generic ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingGeneric.html" title="NMSettingGeneric"><span class="returnvalue">NMSettingGeneric</span></a> *
+nm_connection_get_setting_generic (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingGeneric.html" title="NMSettingGeneric"><span class="type">NMSettingGeneric</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.45.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.45.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingGeneric.html" title="NMSettingGeneric"><span class="type">NMSettingGeneric</span></a> if the connection contains one, otherwise NULL. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-gsm"></a><h3>nm_connection_get_setting_gsm ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="returnvalue">NMSettingGsm</span></a> *
+nm_connection_get_setting_gsm (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.46.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.46.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-infiniband"></a><h3>nm_connection_get_setting_infiniband ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingInfiniband.html" title="NMSettingInfiniband"><span class="returnvalue">NMSettingInfiniband</span></a> *
+nm_connection_get_setting_infiniband (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingInfiniband.html" title="NMSettingInfiniband"><span class="type">NMSettingInfiniband</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.47.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.47.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingInfiniband.html" title="NMSettingInfiniband"><span class="type">NMSettingInfiniband</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-ip4-config"></a><h3>nm_connection_get_setting_ip4_config ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="returnvalue">NMSettingIP4Config</span></a> *
+nm_connection_get_setting_ip4_config (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.48.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.48.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-ip6-config"></a><h3>nm_connection_get_setting_ip6_config ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingIP6Config.html" title="NMSettingIP6Config"><span class="returnvalue">NMSettingIP6Config</span></a> *
+nm_connection_get_setting_ip6_config (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingIP6Config.html" title="NMSettingIP6Config"><span class="type">NMSettingIP6Config</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.49.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.49.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingIP6Config.html" title="NMSettingIP6Config"><span class="type">NMSettingIP6Config</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-olpc-mesh"></a><h3>nm_connection_get_setting_olpc_mesh ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingOlpcMesh.html" title="NMSettingOlpcMesh"><span class="returnvalue">NMSettingOlpcMesh</span></a> *
+nm_connection_get_setting_olpc_mesh (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingOlpcMesh.html" title="NMSettingOlpcMesh"><span class="type">NMSettingOlpcMesh</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.50.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.50.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingOlpcMesh.html" title="NMSettingOlpcMesh"><span class="type">NMSettingOlpcMesh</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-ppp"></a><h3>nm_connection_get_setting_ppp ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="returnvalue">NMSettingPPP</span></a> *
+nm_connection_get_setting_ppp (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.51.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.51.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-pppoe"></a><h3>nm_connection_get_setting_pppoe ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingPPPOE.html" title="NMSettingPPPOE"><span class="returnvalue">NMSettingPPPOE</span></a> *
+nm_connection_get_setting_pppoe (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingPPPOE.html" title="NMSettingPPPOE"><span class="type">NMSettingPPPOE</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.52.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.52.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingPPPOE.html" title="NMSettingPPPOE"><span class="type">NMSettingPPPOE</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-serial"></a><h3>nm_connection_get_setting_serial ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="returnvalue">NMSettingSerial</span></a> *
+nm_connection_get_setting_serial (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="type">NMSettingSerial</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.53.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.53.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="type">NMSettingSerial</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-vpn"></a><h3>nm_connection_get_setting_vpn ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingVPN.html" title="NMSettingVPN"><span class="returnvalue">NMSettingVPN</span></a> *
+nm_connection_get_setting_vpn (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingVPN.html" title="NMSettingVPN"><span class="type">NMSettingVPN</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.54.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.54.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingVPN.html" title="NMSettingVPN"><span class="type">NMSettingVPN</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-wimax"></a><h3>nm_connection_get_setting_wimax ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingWimax.html" title="NMSettingWimax"><span class="returnvalue">NMSettingWimax</span></a> *
+nm_connection_get_setting_wimax (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingWimax.html" title="NMSettingWimax"><span class="type">NMSettingWimax</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.55.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.55.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingWimax.html" title="NMSettingWimax"><span class="type">NMSettingWimax</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-adsl"></a><h3>nm_connection_get_setting_adsl ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="returnvalue">NMSettingAdsl</span></a> *
+nm_connection_get_setting_adsl (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.56.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.56.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingAdsl.html" title="NMSettingAdsl"><span class="type">NMSettingAdsl</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-wired"></a><h3>nm_connection_get_setting_wired ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingWired.html" title="NMSettingWired"><span class="returnvalue">NMSettingWired</span></a> *
+nm_connection_get_setting_wired (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingWired.html" title="NMSettingWired"><span class="type">NMSettingWired</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.57.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.57.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingWired.html" title="NMSettingWired"><span class="type">NMSettingWired</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-wireless"></a><h3>nm_connection_get_setting_wireless ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingWireless.html" title="NMSettingWireless"><span class="returnvalue">NMSettingWireless</span></a> *
+nm_connection_get_setting_wireless (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingWireless.html" title="NMSettingWireless"><span class="type">NMSettingWireless</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.58.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.58.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingWireless.html" title="NMSettingWireless"><span class="type">NMSettingWireless</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-wireless-security"></a><h3>nm_connection_get_setting_wireless_security ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="returnvalue">NMSettingWirelessSecurity</span></a> *
+nm_connection_get_setting_wireless_security
+                               (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.59.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.59.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-get-setting-vlan"></a><h3>nm_connection_get_setting_vlan ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="returnvalue">NMSettingVlan</span></a> *
+nm_connection_get_setting_vlan (<em class="parameter"><code><a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>A shortcut to return any <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> the connection might contain.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.60.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.60.6"></a><h4>Returns</h4>
+<p> an <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> if the connection contains one, otherwise <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMConnection.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NM-CONNECTION-SECRETS-UPDATED:CAPS"></a><h3>NM_CONNECTION_SECRETS_UPDATED</h3>
+<pre class="programlisting">#define NM_CONNECTION_SECRETS_UPDATED "secrets-updated"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-CONNECTION-SECRETS-CLEARED:CAPS"></a><h3>NM_CONNECTION_SECRETS_CLEARED</h3>
+<pre class="programlisting">#define NM_CONNECTION_SECRETS_CLEARED "secrets-cleared"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-CONNECTION-CHANGED:CAPS"></a><h3>NM_CONNECTION_CHANGED</h3>
+<pre class="programlisting">#define NM_CONNECTION_CHANGED         "changed"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-CONNECTION-PATH:CAPS"></a><h3>NM_CONNECTION_PATH</h3>
+<pre class="programlisting">#define NM_CONNECTION_PATH "path"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMConnectionError"></a><h3>enum NMConnectionError</h3>
+<p>Describes errors that may result from operations involving a <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.2.2.11.6.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CONNECTION-ERROR-UNKNOWN:CAPS"></a>NM_CONNECTION_ERROR_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>unknown or unclassified error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CONNECTION-ERROR-CONNECTION-SETTING-NOT-FOUND:CAPS"></a>NM_CONNECTION_ERROR_CONNECTION_SETTING_NOT_FOUND</p></td>
+<td class="enum_member_description">
+<p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> object
+  did not contain the required <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> object, which must be
+  present for all connections</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CONNECTION-ERROR-CONNECTION-TYPE-INVALID:CAPS"></a>NM_CONNECTION_ERROR_CONNECTION_TYPE_INVALID</p></td>
+<td class="enum_member_description">
+<p>the 'type' property of the
+  'connection' setting did not point to a valid connection base type; ie
+  it was not a hardware-related setting like <a class="link" href="NMSettingWired.html" title="NMSettingWired"><span class="type">NMSettingWired</span></a> or
+  <a class="link" href="NMSettingWireless.html" title="NMSettingWireless"><span class="type">NMSettingWireless</span></a>.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CONNECTION-ERROR-SETTING-NOT-FOUND:CAPS"></a>NM_CONNECTION_ERROR_SETTING_NOT_FOUND</p></td>
+<td class="enum_member_description">
+<p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> object
+  did not contain the specified <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> object</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CONNECTION-ERROR-INVALID-SETTING:CAPS"></a>NM_CONNECTION_ERROR_INVALID_SETTING</p></td>
+<td class="enum_member_description">
+<p>the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> object contains
+  a conflicting setting object</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-CONNECTION-NORMALIZE-PARAM-IP6-CONFIG-METHOD:CAPS"></a><h3>NM_CONNECTION_NORMALIZE_PARAM_IP6_CONFIG_METHOD</h3>
+<pre class="programlisting">#define NM_CONNECTION_NORMALIZE_PARAM_IP6_CONFIG_METHOD "ip6-config-method"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-CONNECTION-ERROR:CAPS"></a><h3>NM_CONNECTION_ERROR</h3>
+<pre class="programlisting">#define NM_CONNECTION_ERROR nm_connection_error_quark ()
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMConnection-struct"></a><h3>NMConnection</h3>
+<pre class="programlisting">typedef struct _NMConnection NMConnection;</pre>
+<p>The NMConnection struct contains only private data.
+It should only be accessed through the functions described below.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMConnection.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="NMConnection--path"></a><h3>The <code class="literal">“path”</code> property</h3>
+<pre class="programlisting">  “path”                     <span class="type">gchar</span> *</pre>
+<p>The connection's D-Bus path, used only by the calling process as a record
+of the D-Bus path of the connection as provided by a settings service.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMConnection.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="NMConnection-changed"></a><h3>The <code class="literal">“changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection,
+               <span class="type">gpointer</span>      user_data)</pre>
+<p>The ::changed signal is emitted when any property of any property
+(including secrets) of any setting of the connection is modified,
+or when settings are added or removed.</p>
+<div class="refsect3">
+<a name="id-1.2.2.13.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the object on which the signal is emitted</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMConnection-secrets-cleared"></a><h3>The <code class="literal">“secrets-cleared”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection,
+               <span class="type">gpointer</span>      user_data)</pre>
+<p>The ::secrets-cleared signal is emitted when the secrets of a connection
+are cleared.</p>
+<div class="refsect3">
+<a name="id-1.2.2.13.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the object on which the signal is emitted</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMConnection-secrets-updated"></a><h3>The <code class="literal">“secrets-updated”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> *connection,
+               <span class="type">gchar</span>        *setting_name,
+               <span class="type">gpointer</span>      user_data)</pre>
+<p>The ::secrets-updated signal is emitted when the secrets of a setting
+have been changed.</p>
+<div class="refsect3">
+<a name="id-1.2.2.13.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the object on which the signal is emitted</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>setting_name</p></td>
+<td class="parameter_description"><p>the setting name of the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> for which secrets were
+updated</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

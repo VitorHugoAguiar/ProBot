@@ -1,0 +1,2261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NMDevice: libnm Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm Reference Manual">
+<link rel="up" href="ch04.html" title="Device and Runtime Configuration API Reference">
+<link rel="prev" href="ch04.html" title="Device and Runtime Configuration API Reference">
+<link rel="next" href="NMDeviceAdsl.html" title="NMDeviceAdsl">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#NMDevice.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#NMDevice.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#NMDevice.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#NMDevice.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch04.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch04.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="NMDeviceAdsl.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="NMDevice"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="NMDevice.top_of_page"></a>NMDevice</span></h2>
+<p>NMDevice</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="NMDevice.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-iface" title="nm_device_get_iface ()">nm_device_get_iface</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-ip-iface" title="nm_device_get_ip_iface ()">nm_device_get_ip_iface</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libnm-nm-dbus-interface.html#NMDeviceType" title="enum NMDeviceType"><span class="returnvalue">NMDeviceType</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-device-type" title="nm_device_get_device_type ()">nm_device_get_device_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-udi" title="nm_device_get_udi ()">nm_device_get_udi</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-driver" title="nm_device_get_driver ()">nm_device_get_driver</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-driver-version" title="nm_device_get_driver_version ()">nm_device_get_driver_version</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-firmware-version" title="nm_device_get_firmware_version ()">nm_device_get_firmware_version</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-type-description" title="nm_device_get_type_description ()">nm_device_get_type_description</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-hw-address" title="nm_device_get_hw_address ()">nm_device_get_hw_address</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libnm-nm-dbus-interface.html#NMDeviceCapabilities" title="enum NMDeviceCapabilities"><span class="returnvalue">NMDeviceCapabilities</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-capabilities" title="nm_device_get_capabilities ()">nm_device_get_capabilities</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-managed" title="nm_device_get_managed ()">nm_device_get_managed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-autoconnect" title="nm_device_get_autoconnect ()">nm_device_get_autoconnect</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-set-autoconnect" title="nm_device_set_autoconnect ()">nm_device_set_autoconnect</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-firmware-missing" title="nm_device_get_firmware_missing ()">nm_device_get_firmware_missing</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMIPConfig.html" title="NMIPConfig"><span class="returnvalue">NMIPConfig</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-ip4-config" title="nm_device_get_ip4_config ()">nm_device_get_ip4_config</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMDhcpConfig.html" title="NMDhcpConfig"><span class="returnvalue">NMDhcpConfig</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-dhcp4-config" title="nm_device_get_dhcp4_config ()">nm_device_get_dhcp4_config</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMIPConfig.html" title="NMIPConfig"><span class="returnvalue">NMIPConfig</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-ip6-config" title="nm_device_get_ip6_config ()">nm_device_get_ip6_config</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMDhcpConfig.html" title="NMDhcpConfig"><span class="returnvalue">NMDhcpConfig</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-dhcp6-config" title="nm_device_get_dhcp6_config ()">nm_device_get_dhcp6_config</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libnm-nm-dbus-interface.html#NMDeviceState" title="enum NMDeviceState"><span class="returnvalue">NMDeviceState</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-state" title="nm_device_get_state ()">nm_device_get_state</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libnm-nm-dbus-interface.html#NMDeviceStateReason" title="enum NMDeviceStateReason"><span class="returnvalue">NMDeviceStateReason</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-state-reason" title="nm_device_get_state_reason ()">nm_device_get_state_reason</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMActiveConnection.html" title="NMActiveConnection"><span class="returnvalue">NMActiveConnection</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-active-connection" title="nm_device_get_active_connection ()">nm_device_get_active_connection</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">GPtrArray</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-available-connections" title="nm_device_get_available_connections ()">nm_device_get_available_connections</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-physical-port-id" title="nm_device_get_physical_port_id ()">nm_device_get_physical_port_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-mtu" title="nm_device_get_mtu ()">nm_device_get_mtu</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-is-software" title="nm_device_is_software ()">nm_device_is_software</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-product" title="nm_device_get_product ()">nm_device_get_product</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-vendor" title="nm_device_get_vendor ()">nm_device_get_vendor</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-description" title="nm_device_get_description ()">nm_device_get_description</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> **
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-disambiguate-names" title="nm_device_disambiguate_names ()">nm_device_disambiguate_names</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-disconnect" title="nm_device_disconnect ()">nm_device_disconnect</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-disconnect-async" title="nm_device_disconnect_async ()">nm_device_disconnect_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-disconnect-finish" title="nm_device_disconnect_finish ()">nm_device_disconnect_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-delete" title="nm_device_delete ()">nm_device_delete</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-delete-async" title="nm_device_delete_async ()">nm_device_delete_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-delete-finish" title="nm_device_delete_finish ()">nm_device_delete_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GPtrArray</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-filter-connections" title="nm_device_filter_connections ()">nm_device_filter_connections</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-connection-valid" title="nm_device_connection_valid ()">nm_device_connection_valid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-connection-compatible" title="nm_device_connection_compatible ()">nm_device_connection_compatible</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GType</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMDevice.html#nm-device-get-setting-type" title="nm_device_get_setting_type ()">nm_device_get_setting_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMDevice.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a class="link" href="NMActiveConnection.html" title="NMActiveConnection"><span class="type">NMActiveConnection</span></a> *</td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--active-connection" title="The “active-connection” property">active-connection</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--autoconnect" title="The “autoconnect” property">autoconnect</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GPtrArray</span> *</td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--available-connections" title="The “available-connections” property">available-connections</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><a class="link" href="libnm-nm-dbus-interface.html#NMDeviceCapabilities" title="enum NMDeviceCapabilities"><span class="type">NMDeviceCapabilities</span></a></td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--capabilities" title="The “capabilities” property">capabilities</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><a class="link" href="libnm-nm-dbus-interface.html#NMDeviceType" title="enum NMDeviceType"><span class="type">NMDeviceType</span></a></td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--device-type" title="The “device-type” property">device-type</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="NMDhcpConfig.html" title="NMDhcpConfig"><span class="type">NMDhcpConfig</span></a> *</td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--dhcp4-config" title="The “dhcp4-config” property">dhcp4-config</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="NMDhcpConfig.html" title="NMDhcpConfig"><span class="type">NMDhcpConfig</span></a> *</td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--dhcp6-config" title="The “dhcp6-config” property">dhcp6-config</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--driver" title="The “driver” property">driver</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--driver-version" title="The “driver-version” property">driver-version</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--firmware-missing" title="The “firmware-missing” property">firmware-missing</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--firmware-version" title="The “firmware-version” property">firmware-version</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--interface" title="The “interface” property">interface</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--ip-interface" title="The “ip-interface” property">ip-interface</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="NMIPConfig.html" title="NMIPConfig"><span class="type">NMIPConfig</span></a> *</td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--ip4-config" title="The “ip4-config” property">ip4-config</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="NMIPConfig.html" title="NMIPConfig"><span class="type">NMIPConfig</span></a> *</td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--ip6-config" title="The “ip6-config” property">ip6-config</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--managed" title="The “managed” property">managed</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--mtu" title="The “mtu” property">mtu</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--physical-port-id" title="The “physical-port-id” property">physical-port-id</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--product" title="The “product” property">product</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><a class="link" href="libnm-nm-dbus-interface.html#NMDeviceState" title="enum NMDeviceState"><span class="type">NMDeviceState</span></a></td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--state" title="The “state” property">state</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--state-reason" title="The “state-reason” property">state-reason</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--udi" title="The “udi” property">udi</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMDevice.html#NMDevice--vendor" title="The “vendor” property">vendor</a></td>
+<td class="property_flags">Read</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMDevice.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="signals_return">
+<col width="300px" class="signals_name">
+<col width="200px" class="signals_flags">
+</colgroup>
+<tbody><tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="NMDevice.html#NMDevice-state-changed" title="The “state-changed” signal">state-changed</a></td>
+<td class="signal_flags">Run First</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMDevice.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-DEVICE-TYPE:CAPS" title="NM_DEVICE_DEVICE_TYPE">NM_DEVICE_DEVICE_TYPE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-UDI:CAPS" title="NM_DEVICE_UDI">NM_DEVICE_UDI</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-INTERFACE:CAPS" title="NM_DEVICE_INTERFACE">NM_DEVICE_INTERFACE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-IP-INTERFACE:CAPS" title="NM_DEVICE_IP_INTERFACE">NM_DEVICE_IP_INTERFACE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-DRIVER:CAPS" title="NM_DEVICE_DRIVER">NM_DEVICE_DRIVER</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-DRIVER-VERSION:CAPS" title="NM_DEVICE_DRIVER_VERSION">NM_DEVICE_DRIVER_VERSION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-FIRMWARE-VERSION:CAPS" title="NM_DEVICE_FIRMWARE_VERSION">NM_DEVICE_FIRMWARE_VERSION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-CAPABILITIES:CAPS" title="NM_DEVICE_CAPABILITIES">NM_DEVICE_CAPABILITIES</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-MANAGED:CAPS" title="NM_DEVICE_MANAGED">NM_DEVICE_MANAGED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-AUTOCONNECT:CAPS" title="NM_DEVICE_AUTOCONNECT">NM_DEVICE_AUTOCONNECT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-FIRMWARE-MISSING:CAPS" title="NM_DEVICE_FIRMWARE_MISSING">NM_DEVICE_FIRMWARE_MISSING</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-IP4-CONFIG:CAPS" title="NM_DEVICE_IP4_CONFIG">NM_DEVICE_IP4_CONFIG</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-DHCP4-CONFIG:CAPS" title="NM_DEVICE_DHCP4_CONFIG">NM_DEVICE_DHCP4_CONFIG</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-IP6-CONFIG:CAPS" title="NM_DEVICE_IP6_CONFIG">NM_DEVICE_IP6_CONFIG</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-DHCP6-CONFIG:CAPS" title="NM_DEVICE_DHCP6_CONFIG">NM_DEVICE_DHCP6_CONFIG</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-STATE:CAPS" title="NM_DEVICE_STATE">NM_DEVICE_STATE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-STATE-REASON:CAPS" title="NM_DEVICE_STATE_REASON">NM_DEVICE_STATE_REASON</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-ACTIVE-CONNECTION:CAPS" title="NM_DEVICE_ACTIVE_CONNECTION">NM_DEVICE_ACTIVE_CONNECTION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-AVAILABLE-CONNECTIONS:CAPS" title="NM_DEVICE_AVAILABLE_CONNECTIONS">NM_DEVICE_AVAILABLE_CONNECTIONS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-VENDOR:CAPS" title="NM_DEVICE_VENDOR">NM_DEVICE_VENDOR</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-PRODUCT:CAPS" title="NM_DEVICE_PRODUCT">NM_DEVICE_PRODUCT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-PHYSICAL-PORT-ID:CAPS" title="NM_DEVICE_PHYSICAL_PORT_ID">NM_DEVICE_PHYSICAL_PORT_ID</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMDevice.html#NM-DEVICE-MTU:CAPS" title="NM_DEVICE_MTU">NM_DEVICE_MTU</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMDevice.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> <a class="link" href="NMObject.html" title="NMObject">NMObject</a>
+        <span class="lineart">╰──</span> NMDevice
+            <span class="lineart">├──</span> <a class="link" href="NMDeviceAdsl.html" title="NMDeviceAdsl">NMDeviceAdsl</a>
+            <span class="lineart">├──</span> <a class="link" href="NMDeviceBond.html" title="NMDeviceBond">NMDeviceBond</a>
+            <span class="lineart">├──</span> <a class="link" href="NMDeviceBridge.html" title="NMDeviceBridge">NMDeviceBridge</a>
+            <span class="lineart">├──</span> <a class="link" href="NMDeviceBt.html" title="NMDeviceBt">NMDeviceBt</a>
+            <span class="lineart">├──</span> <a class="link" href="NMDeviceEthernet.html" title="NMDeviceEthernet">NMDeviceEthernet</a>
+            <span class="lineart">├──</span> <a class="link" href="NMDeviceGeneric.html" title="NMDeviceGeneric">NMDeviceGeneric</a>
+            <span class="lineart">├──</span> <a class="link" href="NMDeviceInfiniband.html" title="NMDeviceInfiniband">NMDeviceInfiniband</a>
+            <span class="lineart">├──</span> <a class="link" href="NMDeviceModem.html" title="NMDeviceModem">NMDeviceModem</a>
+            <span class="lineart">├──</span> <a class="link" href="NMDeviceOlpcMesh.html" title="NMDeviceOlpcMesh">NMDeviceOlpcMesh</a>
+            <span class="lineart">├──</span> <a class="link" href="NMDeviceTeam.html" title="NMDeviceTeam">NMDeviceTeam</a>
+            <span class="lineart">├──</span> <a class="link" href="NMDeviceVlan.html" title="NMDeviceVlan">NMDeviceVlan</a>
+            <span class="lineart">├──</span> <a class="link" href="NMDeviceWifi.html" title="NMDeviceWifi">NMDeviceWifi</a>
+            <span class="lineart">╰──</span> <a class="link" href="NMDeviceWimax.html" title="NMDeviceWimax">NMDeviceWimax</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMDevice.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="NMDevice.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="nm-device-get-iface"></a><h3>nm_device_get_iface ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_device_get_iface (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the interface name of the <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.2.6"></a><h4>Returns</h4>
+<p> the interface of the device. This is the internal string used by the
+device, and must not be modified.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-ip-iface"></a><h3>nm_device_get_ip_iface ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_device_get_ip_iface (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the IP interface name of the <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> over which IP traffic flows
+when the device is in the ACTIVATED state.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.3.6"></a><h4>Returns</h4>
+<p> the IP traffic interface of the device. This is the internal string
+used by the device, and must not be modified.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-device-type"></a><h3>nm_device_get_device_type ()</h3>
+<pre class="programlisting"><a class="link" href="libnm-nm-dbus-interface.html#NMDeviceType" title="enum NMDeviceType"><span class="returnvalue">NMDeviceType</span></a>
+nm_device_get_device_type (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Returns the numeric type of the <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>, ie Ethernet, Wi-Fi, etc.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.4.6"></a><h4>Returns</h4>
+<p> the device type</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-udi"></a><h3>nm_device_get_udi ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_device_get_udi (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the Unique Device Identifier of the <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.5.6"></a><h4>Returns</h4>
+<p> the Unique Device Identifier of the device.  This identifier may be
+used to gather more information about the device from various operating
+system services like udev or sysfs.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-driver"></a><h3>nm_device_get_driver ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_device_get_driver (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the driver of the <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.6.6"></a><h4>Returns</h4>
+<p> the driver of the device. This is the internal string used by the
+device, and must not be modified.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-driver-version"></a><h3>nm_device_get_driver_version ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_device_get_driver_version (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the driver version of the <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.7.6"></a><h4>Returns</h4>
+<p> the version of the device driver. This is the internal string used by the
+device, and must not be modified.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-firmware-version"></a><h3>nm_device_get_firmware_version ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_device_get_firmware_version (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the firmware version of the <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.8.6"></a><h4>Returns</h4>
+<p> the firmware version of the device. This is the internal string used by the
+device, and must not be modified.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-type-description"></a><h3>nm_device_get_type_description ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_device_get_type_description (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets a (non-localized) description of the type of device that
+<em class="parameter"><code>device</code></em>
+ is.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.9.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.9.6"></a><h4>Returns</h4>
+<p> the type description of the device. This is the internal
+string used by the device, and must not be modified.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-hw-address"></a><h3>nm_device_get_hw_address ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_device_get_hw_address (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the current a hardware address (MAC) for the <em class="parameter"><code>device</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.10.6"></a><h4>Returns</h4>
+<p> the current MAC of the device, or <code class="literal">NULL</code>.
+This is the internal string used by the device, and must not be modified.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-capabilities"></a><h3>nm_device_get_capabilities ()</h3>
+<pre class="programlisting"><a class="link" href="libnm-nm-dbus-interface.html#NMDeviceCapabilities" title="enum NMDeviceCapabilities"><span class="returnvalue">NMDeviceCapabilities</span></a>
+nm_device_get_capabilities (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the device' capabilities.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.11.6"></a><h4>Returns</h4>
+<p> the capabilities</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-managed"></a><h3>nm_device_get_managed ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_device_get_managed (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Whether the <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> is managed by NetworkManager.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.12.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the device is managed by NetworkManager</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-autoconnect"></a><h3>nm_device_get_autoconnect ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_device_get_autoconnect (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Whether the <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> can be autoconnected.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.13.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.13.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the device is allowed to be autoconnected</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-set-autoconnect"></a><h3>nm_device_set_autoconnect ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_device_set_autoconnect (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>,
+                           <em class="parameter"><code><span class="type">gboolean</span> autoconnect</code></em>);</pre>
+<p>Enables or disables automatic activation of the <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.14.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>autoconnect</p></td>
+<td class="parameter_description"><p><code class="literal">TRUE</code> to enable autoconnecting</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-firmware-missing"></a><h3>nm_device_get_firmware_missing ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_device_get_firmware_missing (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Indicates that firmware required for the device's operation is likely
+to be missing.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.15.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.15.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if firmware required for the device's operation is likely
+to be missing.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-ip4-config"></a><h3>nm_device_get_ip4_config ()</h3>
+<pre class="programlisting"><a class="link" href="NMIPConfig.html" title="NMIPConfig"><span class="returnvalue">NMIPConfig</span></a> *
+nm_device_get_ip4_config (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the current IPv4 <a class="link" href="NMIPConfig.html" title="NMIPConfig"><span class="type">NMIPConfig</span></a> associated with the <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>.</p>
+<p>You can alternatively use <a class="link" href="NMActiveConnection.html#nm-active-connection-get-ip4-config" title="nm_active_connection_get_ip4_config ()"><code class="function">nm_active_connection_get_ip4_config()</code></a>, which also
+works with VPN connections.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.16.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.16.7"></a><h4>Returns</h4>
+<p> the IPv4 <a class="link" href="NMIPConfig.html" title="NMIPConfig"><span class="type">NMIPConfig</span></a>, or <code class="literal">NULL</code> if the device is not
+activated. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-dhcp4-config"></a><h3>nm_device_get_dhcp4_config ()</h3>
+<pre class="programlisting"><a class="link" href="NMDhcpConfig.html" title="NMDhcpConfig"><span class="returnvalue">NMDhcpConfig</span></a> *
+nm_device_get_dhcp4_config (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the current IPv4 <a class="link" href="NMDhcpConfig.html" title="NMDhcpConfig"><span class="type">NMDhcpConfig</span></a> associated with the <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>.</p>
+<p>You can alternatively use <a class="link" href="NMActiveConnection.html#nm-active-connection-get-dhcp4-config" title="nm_active_connection_get_dhcp4_config ()"><code class="function">nm_active_connection_get_dhcp4_config()</code></a>, which also
+works with VPN connections.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.17.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.17.7"></a><h4>Returns</h4>
+<p> the IPv4 <a class="link" href="NMDhcpConfig.html" title="NMDhcpConfig"><span class="type">NMDhcpConfig</span></a>, or <code class="literal">NULL</code> if the device is
+not activated or not using DHCP. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-ip6-config"></a><h3>nm_device_get_ip6_config ()</h3>
+<pre class="programlisting"><a class="link" href="NMIPConfig.html" title="NMIPConfig"><span class="returnvalue">NMIPConfig</span></a> *
+nm_device_get_ip6_config (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the current IPv6 <a class="link" href="NMIPConfig.html" title="NMIPConfig"><span class="type">NMIPConfig</span></a> associated with the <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>.</p>
+<p>You can alternatively use <a class="link" href="NMActiveConnection.html#nm-active-connection-get-ip6-config" title="nm_active_connection_get_ip6_config ()"><code class="function">nm_active_connection_get_ip6_config()</code></a>, which also
+works with VPN connections.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.18.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.18.7"></a><h4>Returns</h4>
+<p> the IPv6 <a class="link" href="NMIPConfig.html" title="NMIPConfig"><span class="type">NMIPConfig</span></a> or <code class="literal">NULL</code> if the device is not activated. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-dhcp6-config"></a><h3>nm_device_get_dhcp6_config ()</h3>
+<pre class="programlisting"><a class="link" href="NMDhcpConfig.html" title="NMDhcpConfig"><span class="returnvalue">NMDhcpConfig</span></a> *
+nm_device_get_dhcp6_config (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the current IPv6 <a class="link" href="NMDhcpConfig.html" title="NMDhcpConfig"><span class="type">NMDhcpConfig</span></a> associated with the <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>.</p>
+<p>You can alternatively use <a class="link" href="NMActiveConnection.html#nm-active-connection-get-dhcp6-config" title="nm_active_connection_get_dhcp6_config ()"><code class="function">nm_active_connection_get_dhcp6_config()</code></a>, which also
+works with VPN connections.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.19.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.19.7"></a><h4>Returns</h4>
+<p> the IPv6 <a class="link" href="NMDhcpConfig.html" title="NMDhcpConfig"><span class="type">NMDhcpConfig</span></a>, or <code class="literal">NULL</code> if the device is
+not activated or not using DHCPv6. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-state"></a><h3>nm_device_get_state ()</h3>
+<pre class="programlisting"><a class="link" href="libnm-nm-dbus-interface.html#NMDeviceState" title="enum NMDeviceState"><span class="returnvalue">NMDeviceState</span></a>
+nm_device_get_state (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the current <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> state.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.20.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.20.6"></a><h4>Returns</h4>
+<p> the current device state</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-state-reason"></a><h3>nm_device_get_state_reason ()</h3>
+<pre class="programlisting"><a class="link" href="libnm-nm-dbus-interface.html#NMDeviceStateReason" title="enum NMDeviceStateReason"><span class="returnvalue">NMDeviceStateReason</span></a>
+nm_device_get_state_reason (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the reason for entering the current <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> state.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.21.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.21.6"></a><h4>Returns</h4>
+<p> the reason for entering the current device state</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-active-connection"></a><h3>nm_device_get_active_connection ()</h3>
+<pre class="programlisting"><a class="link" href="NMActiveConnection.html" title="NMActiveConnection"><span class="returnvalue">NMActiveConnection</span></a> *
+nm_device_get_active_connection (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the <a class="link" href="NMActiveConnection.html" title="NMActiveConnection"><span class="type">NMActiveConnection</span></a> object which owns this device during activation.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.22.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.22.6"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMActiveConnection.html" title="NMActiveConnection"><span class="type">NMActiveConnection</span></a> or <code class="literal">NULL</code> if the device is
+not part of an active connection. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-available-connections"></a><h3>nm_device_get_available_connections ()</h3>
+<pre class="programlisting">const <span class="returnvalue">GPtrArray</span> *
+nm_device_get_available_connections (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the <a href="NMRemoteConnection.html"><span class="type">NMRemoteConnections</span></a> currently known to the daemon that could
+be activated on <em class="parameter"><code>device</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.23.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.23.6"></a><h4>Returns</h4>
+<p> the <span class="type">GPtrArray</span>
+containing <a href="NMRemoteConnection.html"><span class="type">NMRemoteConnections</span></a>. This is the internal copy used by
+the connection, and must not be modified. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> NMRemoteConnection]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-physical-port-id"></a><h3>nm_device_get_physical_port_id ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_device_get_physical_port_id (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the physical port ID of the <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>. If non-<code class="literal">NULL</code>, this is
+an opaque string that can be used to recognize when
+seemingly-unrelated <a href="NMDevice.html"><span class="type">NMDevices</span></a> are actually just different virtual
+ports on a single physical port. (Eg, NPAR / SR-IOV.)</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.24.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.24.6"></a><h4>Returns</h4>
+<p> the physical port ID of the device, or <code class="literal">NULL</code> if the port
+ID is unknown. This is the internal string used by the device and
+must not be modified.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-mtu"></a><h3>nm_device_get_mtu ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_device_get_mtu (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the  MTU of the <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.25.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.25.6"></a><h4>Returns</h4>
+<p> the MTU of the device.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-is-software"></a><h3>nm_device_is_software ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_device_is_software (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Whether the device is a software device.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.26.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.26.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if <em class="parameter"><code>device</code></em>
+is a software device, <code class="literal">FALSE</code> if it is a hardware device.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-product"></a><h3>nm_device_get_product ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_device_get_product (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the product string of the <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.27.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.27.6"></a><h4>Returns</h4>
+<p> the product name of the device. This is the internal string used by the
+device, and must not be modified.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-vendor"></a><h3>nm_device_get_vendor ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_device_get_vendor (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the vendor string of the <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.28.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.28.6"></a><h4>Returns</h4>
+<p> the vendor name of the device. This is the internal string used by the
+device, and must not be modified.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-description"></a><h3>nm_device_get_description ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_device_get_description (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets a description of <em class="parameter"><code>device</code></em>
+, based on its vendor and product names.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.29.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>an <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.29.6"></a><h4>Returns</h4>
+<p> a description of <em class="parameter"><code>device</code></em>
+. If either the vendor or the
+product name is unknown, this returns the interface name.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-disambiguate-names"></a><h3>nm_device_disambiguate_names ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> **
+nm_device_disambiguate_names (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> **devices</code></em>,
+                              <em class="parameter"><code><span class="type">int</span> num_devices</code></em>);</pre>
+<p>Generates a list of short-ish unique presentation names for the
+devices in <em class="parameter"><code>devices</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.30.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>devices</p></td>
+<td class="parameter_description"><p> an array of <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=num_devices]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>num_devices</p></td>
+<td class="parameter_description"><p>length of <em class="parameter"><code>devices</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.30.6"></a><h4>Returns</h4>
+<p> the device names. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-disconnect"></a><h3>nm_device_disconnect ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_device_disconnect (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>,
+                      <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                      <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Disconnects the device if currently connected, and prevents the device from
+automatically connecting to networks until the next manual network connection
+request.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.31.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location for a <span class="type">GError</span>, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.31.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success, <code class="literal">FALSE</code> on error, in which case <em class="parameter"><code>error</code></em>
+will be set.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-disconnect-async"></a><h3>nm_device_disconnect_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_device_disconnect_async (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>,
+                            <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                            <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                            <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Asynchronously begins disconnecting the device if currently connected, and
+prevents the device from automatically connecting to networks until the next
+manual network connection request.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.32.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>callback to be called when the disconnect operation completes</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>caller-specific data passed to <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-disconnect-finish"></a><h3>nm_device_disconnect_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_device_disconnect_finish (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>,
+                             <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                             <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Gets the result of a call to <a class="link" href="NMDevice.html#nm-device-disconnect-async" title="nm_device_disconnect_async ()"><code class="function">nm_device_disconnect_async()</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.33.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>the result passed to the <span class="type">GAsyncReadyCallback</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location for a <span class="type">GError</span>, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.33.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success, <code class="literal">FALSE</code> on error, in which case <em class="parameter"><code>error</code></em>
+will be set.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-delete"></a><h3>nm_device_delete ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_device_delete (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>,
+                  <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                  <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Deletes the software device. Hardware devices can't be deleted.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.34.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location for a <span class="type">GError</span>, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.34.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success, <code class="literal">FALSE</code> on error, in which case <em class="parameter"><code>error</code></em>
+will be set.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-delete-async"></a><h3>nm_device_delete_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_device_delete_async (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>,
+                        <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                        <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                        <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Asynchronously begins deleteing the software device. Hardware devices can't
+be deleted.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.35.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>callback to be called when delete operation completes</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>caller-specific data passed to <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-delete-finish"></a><h3>nm_device_delete_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_device_delete_finish (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>,
+                         <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Gets the result of a call to <a class="link" href="NMDevice.html#nm-device-delete-async" title="nm_device_delete_async ()"><code class="function">nm_device_delete_async()</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.36.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>the result passed to the <span class="type">GAsyncReadyCallback</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location for a <span class="type">GError</span>, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.36.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success, <code class="literal">FALSE</code> on error, in which case <em class="parameter"><code>error</code></em>
+will be set.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-filter-connections"></a><h3>nm_device_filter_connections ()</h3>
+<pre class="programlisting"><span class="returnvalue">GPtrArray</span> *
+nm_device_filter_connections (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>,
+                              <em class="parameter"><code>const <span class="type">GPtrArray</span> *connections</code></em>);</pre>
+<p>Filters a given array of connections for a given <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> object and returns
+connections which may be activated with the device. For example if <em class="parameter"><code>device</code></em>
+
+is a Wi-Fi device that supports only WEP encryption, the returned array will
+contain any Wi-Fi connections in <em class="parameter"><code>connections</code></em>
+ that allow connection to
+unencrypted or WEP-enabled SSIDs.  The returned array will not contain
+Ethernet, Bluetooth, Wi-Fi WPA connections, or any other connection that is
+incompatible with the device. To get the full list of connections see
+<a class="link" href="NMClient.html#nm-client-get-connections" title="nm_client_get_connections ()"><code class="function">nm_client_get_connections()</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.37.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>an <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> to filter connections for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>connections</p></td>
+<td class="parameter_description"><p> an array of <a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnections</span></a> to filter. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> NMConnection]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.37.6"></a><h4>Returns</h4>
+<p> an array of
+<a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnections</span></a> that could be activated with the given <em class="parameter"><code>device</code></em>
+.  The array
+should be freed with <code class="function">g_ptr_array_unref()</code> when it is no longer required. </p>
+<p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> NMConnection]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-connection-valid"></a><h3>nm_device_connection_valid ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_device_connection_valid (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>,
+                            <em class="parameter"><code><a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnection</span></a> *connection</code></em>);</pre>
+<p>Validates a given connection for a given <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> object and returns
+whether the connection may be activated with the device. For example if
+<em class="parameter"><code>device</code></em>
+ is a Wi-Fi device that supports only WEP encryption, the connection
+will only be valid if it is a Wi-Fi connection which describes a WEP or open
+network, and will not be valid if it describes a WPA network, or if it is
+an Ethernet, Bluetooth, WWAN, etc connection that is incompatible with the
+device.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.38.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>an <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> to validate <em class="parameter"><code>connection</code></em>
+against</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>an <a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnection</span></a> to validate against <em class="parameter"><code>device</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.38.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the connection may be activated with this device, <code class="literal">FALSE</code>
+if is incompatible with the device's capabilities and characteristics.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-connection-compatible"></a><h3>nm_device_connection_compatible ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_device_connection_compatible (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>,
+                                 <em class="parameter"><code><a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnection</span></a> *connection</code></em>,
+                                 <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Validates a given connection for a given <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> object and returns
+whether the connection may be activated with the device. For example if
+<em class="parameter"><code>device</code></em>
+ is a Wi-Fi device that supports only WEP encryption, the connection
+will only be valid if it is a Wi-Fi connection which describes a WEP or open
+network, and will not be valid if it describes a WPA network, or if it is
+an Ethernet, Bluetooth, WWAN, etc connection that is incompatible with the
+device.</p>
+<p>This function does the same as <a class="link" href="NMDevice.html#nm-device-connection-valid" title="nm_device_connection_valid ()"><code class="function">nm_device_connection_valid()</code></a>, i.e. checking
+compatibility of the given device and connection. But, in addition, it sets
+GError when FALSE is returned.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.39.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>an <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> to validate <em class="parameter"><code>connection</code></em>
+against</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>an <a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnection</span></a> to validate against <em class="parameter"><code>device</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>return location for a <span class="type">GError</span>, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.39.7"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the connection may be activated with this device, <code class="literal">FALSE</code>
+if is incompatible with the device's capabilities and characteristics.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-get-setting-type"></a><h3>nm_device_get_setting_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">GType</span>
+nm_device_get_setting_type (<em class="parameter"><code><a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device</code></em>);</pre>
+<p>Gets the (primary) <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> subtype associated with connections
+that can be used on <em class="parameter"><code>device</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.5.2.9.40.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>an <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.2.9.40.6"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>device</code></em>
+'s associated <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> type</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMDevice.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NM-DEVICE-DEVICE-TYPE:CAPS"></a><h3>NM_DEVICE_DEVICE_TYPE</h3>
+<pre class="programlisting">#define NM_DEVICE_DEVICE_TYPE "device-type"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-UDI:CAPS"></a><h3>NM_DEVICE_UDI</h3>
+<pre class="programlisting">#define NM_DEVICE_UDI "udi"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-INTERFACE:CAPS"></a><h3>NM_DEVICE_INTERFACE</h3>
+<pre class="programlisting">#define NM_DEVICE_INTERFACE "interface"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-IP-INTERFACE:CAPS"></a><h3>NM_DEVICE_IP_INTERFACE</h3>
+<pre class="programlisting">#define NM_DEVICE_IP_INTERFACE "ip-interface"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-DRIVER:CAPS"></a><h3>NM_DEVICE_DRIVER</h3>
+<pre class="programlisting">#define NM_DEVICE_DRIVER "driver"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-DRIVER-VERSION:CAPS"></a><h3>NM_DEVICE_DRIVER_VERSION</h3>
+<pre class="programlisting">#define NM_DEVICE_DRIVER_VERSION "driver-version"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-FIRMWARE-VERSION:CAPS"></a><h3>NM_DEVICE_FIRMWARE_VERSION</h3>
+<pre class="programlisting">#define NM_DEVICE_FIRMWARE_VERSION "firmware-version"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-CAPABILITIES:CAPS"></a><h3>NM_DEVICE_CAPABILITIES</h3>
+<pre class="programlisting">#define NM_DEVICE_CAPABILITIES "capabilities"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-MANAGED:CAPS"></a><h3>NM_DEVICE_MANAGED</h3>
+<pre class="programlisting">#define NM_DEVICE_MANAGED "managed"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-AUTOCONNECT:CAPS"></a><h3>NM_DEVICE_AUTOCONNECT</h3>
+<pre class="programlisting">#define NM_DEVICE_AUTOCONNECT "autoconnect"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-FIRMWARE-MISSING:CAPS"></a><h3>NM_DEVICE_FIRMWARE_MISSING</h3>
+<pre class="programlisting">#define NM_DEVICE_FIRMWARE_MISSING "firmware-missing"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-IP4-CONFIG:CAPS"></a><h3>NM_DEVICE_IP4_CONFIG</h3>
+<pre class="programlisting">#define NM_DEVICE_IP4_CONFIG "ip4-config"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-DHCP4-CONFIG:CAPS"></a><h3>NM_DEVICE_DHCP4_CONFIG</h3>
+<pre class="programlisting">#define NM_DEVICE_DHCP4_CONFIG "dhcp4-config"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-IP6-CONFIG:CAPS"></a><h3>NM_DEVICE_IP6_CONFIG</h3>
+<pre class="programlisting">#define NM_DEVICE_IP6_CONFIG "ip6-config"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-DHCP6-CONFIG:CAPS"></a><h3>NM_DEVICE_DHCP6_CONFIG</h3>
+<pre class="programlisting">#define NM_DEVICE_DHCP6_CONFIG "dhcp6-config"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-STATE:CAPS"></a><h3>NM_DEVICE_STATE</h3>
+<pre class="programlisting">#define NM_DEVICE_STATE "state"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-STATE-REASON:CAPS"></a><h3>NM_DEVICE_STATE_REASON</h3>
+<pre class="programlisting">#define NM_DEVICE_STATE_REASON "state-reason"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-ACTIVE-CONNECTION:CAPS"></a><h3>NM_DEVICE_ACTIVE_CONNECTION</h3>
+<pre class="programlisting">#define NM_DEVICE_ACTIVE_CONNECTION "active-connection"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-AVAILABLE-CONNECTIONS:CAPS"></a><h3>NM_DEVICE_AVAILABLE_CONNECTIONS</h3>
+<pre class="programlisting">#define NM_DEVICE_AVAILABLE_CONNECTIONS "available-connections"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-VENDOR:CAPS"></a><h3>NM_DEVICE_VENDOR</h3>
+<pre class="programlisting">#define NM_DEVICE_VENDOR "vendor"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-PRODUCT:CAPS"></a><h3>NM_DEVICE_PRODUCT</h3>
+<pre class="programlisting">#define NM_DEVICE_PRODUCT "product"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-PHYSICAL-PORT-ID:CAPS"></a><h3>NM_DEVICE_PHYSICAL_PORT_ID</h3>
+<pre class="programlisting">#define NM_DEVICE_PHYSICAL_PORT_ID "physical-port-id"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-MTU:CAPS"></a><h3>NM_DEVICE_MTU</h3>
+<pre class="programlisting">#define NM_DEVICE_MTU "mtu"
+</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMDevice.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="NMDevice--active-connection"></a><h3>The <code class="literal">“active-connection”</code> property</h3>
+<pre class="programlisting">  “active-connection”        <a class="link" href="NMActiveConnection.html" title="NMActiveConnection"><span class="type">NMActiveConnection</span></a> *</pre>
+<p>The <a class="link" href="NMActiveConnection.html" title="NMActiveConnection"><span class="type">NMActiveConnection</span></a> object that "owns" this device during activation.</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--autoconnect"></a><h3>The <code class="literal">“autoconnect”</code> property</h3>
+<pre class="programlisting">  “autoconnect”              <span class="type">gboolean</span></pre>
+<p>Whether the device can auto-activate a connection.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--available-connections"></a><h3>The <code class="literal">“available-connections”</code> property</h3>
+<pre class="programlisting">  “available-connections”    <span class="type">GPtrArray</span> *</pre>
+<p>The available connections of the device</p>
+<p>Element-type: NMRemoteConnection</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--capabilities"></a><h3>The <code class="literal">“capabilities”</code> property</h3>
+<pre class="programlisting">  “capabilities”             <a class="link" href="libnm-nm-dbus-interface.html#NMDeviceCapabilities" title="enum NMDeviceCapabilities"><span class="type">NMDeviceCapabilities</span></a></pre>
+<p>The capabilities of the device.</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--device-type"></a><h3>The <code class="literal">“device-type”</code> property</h3>
+<pre class="programlisting">  “device-type”              <a class="link" href="libnm-nm-dbus-interface.html#NMDeviceType" title="enum NMDeviceType"><span class="type">NMDeviceType</span></a></pre>
+<p>The numeric type of the device.</p>
+<p>Flags: Read</p>
+<p>Default value: NM_DEVICE_TYPE_UNKNOWN</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--dhcp4-config"></a><h3>The <code class="literal">“dhcp4-config”</code> property</h3>
+<pre class="programlisting">  “dhcp4-config”             <a class="link" href="NMDhcpConfig.html" title="NMDhcpConfig"><span class="type">NMDhcpConfig</span></a> *</pre>
+<p>The IPv4 <a class="link" href="NMDhcpConfig.html" title="NMDhcpConfig"><span class="type">NMDhcpConfig</span></a> of the device.</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--dhcp6-config"></a><h3>The <code class="literal">“dhcp6-config”</code> property</h3>
+<pre class="programlisting">  “dhcp6-config”             <a class="link" href="NMDhcpConfig.html" title="NMDhcpConfig"><span class="type">NMDhcpConfig</span></a> *</pre>
+<p>The IPv6 <a class="link" href="NMDhcpConfig.html" title="NMDhcpConfig"><span class="type">NMDhcpConfig</span></a> of the device.</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--driver"></a><h3>The <code class="literal">“driver”</code> property</h3>
+<pre class="programlisting">  “driver”                   <span class="type">gchar</span> *</pre>
+<p>The driver of the device.</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--driver-version"></a><h3>The <code class="literal">“driver-version”</code> property</h3>
+<pre class="programlisting">  “driver-version”           <span class="type">gchar</span> *</pre>
+<p>The version of the device driver.</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--firmware-missing"></a><h3>The <code class="literal">“firmware-missing”</code> property</h3>
+<pre class="programlisting">  “firmware-missing”         <span class="type">gboolean</span></pre>
+<p>When <code class="literal">TRUE</code> indicates the device is likely missing firmware required
+for its operation.</p>
+<p>Flags: Read</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--firmware-version"></a><h3>The <code class="literal">“firmware-version”</code> property</h3>
+<pre class="programlisting">  “firmware-version”         <span class="type">gchar</span> *</pre>
+<p>The firmware version of the device.</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--interface"></a><h3>The <code class="literal">“interface”</code> property</h3>
+<pre class="programlisting">  “interface”                <span class="type">gchar</span> *</pre>
+<p>The interface of the device.</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--ip-interface"></a><h3>The <code class="literal">“ip-interface”</code> property</h3>
+<pre class="programlisting">  “ip-interface”             <span class="type">gchar</span> *</pre>
+<p>The IP interface of the device which should be used for all IP-related
+operations like addressing and routing.</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--ip4-config"></a><h3>The <code class="literal">“ip4-config”</code> property</h3>
+<pre class="programlisting">  “ip4-config”               <a class="link" href="NMIPConfig.html" title="NMIPConfig"><span class="type">NMIPConfig</span></a> *</pre>
+<p>The <a href="https://developer.gnome.org/libnm-glib/0.9/NMIP4Config.html"><span class="type">NMIP4Config</span></a> of the device.</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--ip6-config"></a><h3>The <code class="literal">“ip6-config”</code> property</h3>
+<pre class="programlisting">  “ip6-config”               <a class="link" href="NMIPConfig.html" title="NMIPConfig"><span class="type">NMIPConfig</span></a> *</pre>
+<p>The IPv6 <a class="link" href="NMIPConfig.html" title="NMIPConfig"><span class="type">NMIPConfig</span></a> of the device.</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--managed"></a><h3>The <code class="literal">“managed”</code> property</h3>
+<pre class="programlisting">  “managed”                  <span class="type">gboolean</span></pre>
+<p>Whether the device is managed by NetworkManager.</p>
+<p>Flags: Read</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--mtu"></a><h3>The <code class="literal">“mtu”</code> property</h3>
+<pre class="programlisting">  “mtu”                      <span class="type">guint</span></pre>
+<p>The MTU of the device.</p>
+<p>Flags: Read</p>
+<p>Default value: 1500</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--physical-port-id"></a><h3>The <code class="literal">“physical-port-id”</code> property</h3>
+<pre class="programlisting">  “physical-port-id”         <span class="type">gchar</span> *</pre>
+<p>The physical port ID of the device. (See
+<a class="link" href="NMDevice.html#nm-device-get-physical-port-id" title="nm_device_get_physical_port_id ()"><code class="function">nm_device_get_physical_port_id()</code></a>.)</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--product"></a><h3>The <code class="literal">“product”</code> property</h3>
+<pre class="programlisting">  “product”                  <span class="type">gchar</span> *</pre>
+<p>The product string of the device.</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--state"></a><h3>The <code class="literal">“state”</code> property</h3>
+<pre class="programlisting">  “state”                    <a class="link" href="libnm-nm-dbus-interface.html#NMDeviceState" title="enum NMDeviceState"><span class="type">NMDeviceState</span></a></pre>
+<p>The state of the device.</p>
+<p>Flags: Read</p>
+<p>Default value: NM_DEVICE_STATE_UNKNOWN</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--state-reason"></a><h3>The <code class="literal">“state-reason”</code> property</h3>
+<pre class="programlisting">  “state-reason”             <span class="type">guint</span></pre>
+<p>The reason for the device state.</p>
+<p>Flags: Read</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--udi"></a><h3>The <code class="literal">“udi”</code> property</h3>
+<pre class="programlisting">  “udi”                      <span class="type">gchar</span> *</pre>
+<p>An operating-system specific device hardware identifier; this is not
+unique to a specific hardware device across reboots or hotplugs.  It
+is an opaque string which for some device types (Bluetooth, Modem)
+contains an identifier provided by the underlying hardware service daemon
+such as Bluez or ModemManager, and clients can use this property to
+request more information about the device from those services.</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDevice--vendor"></a><h3>The <code class="literal">“vendor”</code> property</h3>
+<pre class="programlisting">  “vendor”                   <span class="type">gchar</span> *</pre>
+<p>The vendor string of the device.</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMDevice.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="NMDevice-state-changed"></a><h3>The <code class="literal">“state-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> *device,
+               <span class="type">guint</span>     new_state,
+               <span class="type">guint</span>     old_state,
+               <span class="type">guint</span>     reason,
+               <span class="type">gpointer</span>  user_data)</pre>
+<p>Notifies the state change of a <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.2.12.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>the device object that received the signal</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>new_state</p></td>
+<td class="parameter_description"><p>the new state of the device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>old_state</p></td>
+<td class="parameter_description"><p>the previous state of the device</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>reason</p></td>
+<td class="parameter_description"><p>the reason describing the state change</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+# translation of NetworkManager.HEAD.po to Macedonian
+# translation of mk.po.
+# Copyright (C) 2005 THE mk.po'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the mk.po package.
+#
+# Арангел Ангов <ufo@linux.net.mk>, 2005.
+# <>, 2005.
+# Jovan Naumovski <jovan@lugola.net>, 2006.
+# Arangel Angov <ufo@linux.net.mk>, 2006, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: NetworkManager.HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-12-18 17:15+0000\n"
+"PO-Revision-Date: 2008-02-27 23:15+0100\n"
+"Last-Translator: Arangel Angov <ufo@linux.net.mk>\n"
+"Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural= n==1 || n%10==1 ? 0 : 1\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../src/nm-netlink-monitor.c:188 ../src/nm-netlink-monitor.c:448
+#, c-format
+msgid "error processing netlink message: %s"
+msgstr "грешка при процесирање на netlink пораката: %s"
+
+#: ../src/nm-netlink-monitor.c:245
+#, c-format
+msgid "unable to allocate netlink handle for monitoring link status: %s"
+msgstr "не можам да алоцирам нетлинк справувач за надгледување на статусот на врската: %s"
+
+#: ../src/nm-netlink-monitor.c:255
+#, c-format
+msgid "unable to connect to netlink for monitoring link status: %s"
+msgstr "не можам да се поврзам за нетлинк за надгледување на статусот на врската: %s"
+
+#: ../src/nm-netlink-monitor.c:263
+#, c-format
+msgid "unable to join netlink group for monitoring link status: %s"
+msgstr "не можам да ја приклучам нетлинк групата за надгледување на статусот на врската: %s"
+
+#: ../src/nm-netlink-monitor.c:271
+#, c-format
+msgid "unable to allocate netlink link cache for monitoring link status: %s"
+msgstr "не можам да алоцирам нетлинк кеш за надгледување на статусот на врската: %s"
+
+#: ../src/nm-netlink-monitor.c:471
+msgid "error occurred while waiting for data on socket"
+msgstr "се случи грешка при чекањето на податоци од сокетот"
+
+#: ../src/NetworkManager.c:255
+#, c-format
+msgid "Invalid option.  Please use --help to see a list of valid options.\n"
+msgstr "Невалидна опција.  Ве молам користете --help за листа на валидни опции.\n"
+

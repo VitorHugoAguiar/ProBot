@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<!DOCTYPE nm-dbus-docs [
+]>
+
+<nm-dbus-docs>
+  <setting name="802-1x">
+</setting>
+<setting name="adsl">
+</setting>
+<setting name="bluetooth">
+</setting>
+<setting name="bond">
+<property name="interface-name" variable="interface-name" format="string" values="" default="" example="" description="Deprecated in favor of connection.interface-name, but can
+be used for backward-compatibility with older daemons, to set the
+bond&apos;s interface name."/>
+</setting>
+<setting name="bridge-port">
+</setting>
+<setting name="bridge">
+<property name="interface-name" variable="interface-name" format="string" values="" default="" example="" description="Deprecated in favor of connection.interface-name, but can
+be used for backward-compatibility with older daemons, to set the
+bridge&apos;s interface name."/>
+</setting>
+<setting name="cdma">
+</setting>
+<setting name="connection">
+</setting>
+<setting name="dcb">
+</setting>
+<setting name="generic">
+</setting>
+<setting name="gsm">
+</setting>
+<setting name="infiniband">
+</setting>
+<setting name="">
+</setting>
+<setting name="ipv4">
+<property name="dns" variable="dns" format="array of uint32" values="" default="" example="" description="Array of IP addresses of DNS servers (as network-byte-order
+integers)"/>
+<property name="addresses" variable="addresses" format="array of array of uint32" values="" default="" example="" description="Deprecated in favor of the &apos;address-data&apos; and &apos;gateway&apos;
+properties, but this can be used for backward-compatibility with older
+daemons. Note that if you send this property the daemon will ignore
+&apos;address-data&apos; and &apos;gateway&apos;.
+ Array of IPv4 address structures.  Each IPv4 address structure is
+composed of 3 32-bit values; the first being the IPv4 address (network
+byte order), the second the prefix (1 - 32), and last the IPv4 gateway
+(network byte order). The gateway may be left as 0 if no gateway exists
+for that subnet."/>
+<property name="address-data" variable="address-data" format="array of vardict" values="" default="" example="" description="Array of IPv4 addresses. Each address dictionary contains at
+least &apos;address&apos; and &apos;prefix&apos; entries, containing the IP address as a
+string, and the prefix length as a uint32. Additional attributes may
+also exist on some addresses."/>
+<property name="routes" variable="routes" format="array of array of uint32" values="" default="" example="" description="Deprecated in favor of the &apos;route-data&apos; property, but this
+can be used for backward-compatibility with older daemons. Note that if
+you send this property the daemon will ignore &apos;route-data&apos;.
+ Array of IPv4 route structures.  Each IPv4 route structure is composed
+of 4 32-bit values; the first being the destination IPv4 network or
+address (network byte order), the second the destination network or
+address prefix (1 - 32), the third being the next-hop (network byte
+order) if any, and the fourth being the route metric. If the metric is
+0, NM will choose an appropriate default metric for the device. (There
+is no way to explicitly specify an actual metric of 0 with this
+property.)"/>
+<property name="route-data" variable="route-data" format="array of vardict" values="" default="" example="" description="Array of IPv4 routes. Each route dictionary contains at
+least &apos;dest&apos; and &apos;prefix&apos; entries, containing the destination IP
+address as a string, and the prefix length as a uint32. Most routes
+will also have a &apos;gateway&apos; entry, containing the gateway IP address as
+a string. If the route has a &apos;metric&apos; entry (containing a uint32), that
+will be used as the metric for the route (otherwise NM will pick a
+default value appropriate to the device). Additional attributes may
+also exist on some routes."/>
+</setting>
+<setting name="ipv6">
+<property name="dns" variable="dns" format="array of byte array" values="" default="" example="" description="Array of IP addresses of DNS servers (in network byte order)"/>
+<property name="addresses" variable="addresses" format="array of legacy IPv6 address struct (a(ayuay))" values="" default="" example="" description="Deprecated in favor of the &apos;address-data&apos; and &apos;gateway&apos;
+properties, but this can be used for backward-compatibility with older
+daemons. Note that if you send this property the daemon will ignore
+&apos;address-data&apos; and &apos;gateway&apos;.
+ Array of IPv6 address structures.  Each IPv6 address structure is
+composed of an IPv6 address, a prefix length (1 - 128), and an IPv6
+gateway address. The gateway may be zeroed out if no gateway exists for
+that subnet."/>
+<property name="address-data" variable="address-data" format="array of vardict" values="" default="" example="" description="Array of IPv6 addresses. Each address dictionary contains at
+least &apos;address&apos; and &apos;prefix&apos; entries, containing the IP address as a
+string, and the prefix length as a uint32. Additional attributes may
+also exist on some addresses."/>
+<property name="routes" variable="routes" format="array of legacy IPv6 route struct (a(ayuayu))" values="" default="" example="" description="Deprecated in favor of the &apos;route-data&apos; property, but this
+can be used for backward-compatibility with older daemons. Note that if
+you send this property the daemon will ignore &apos;route-data&apos;.
+ Array of IPv6 route structures.  Each IPv6 route structure is
+composed of an IPv6 address, a prefix length (1 - 128), an IPv6
+next hop address (which may be zeroed out if there is no next hop),
+and a metric. If the metric is 0, NM will choose an appropriate
+default metric for the device."/>
+<property name="route-data" variable="route-data" format="array of vardict" values="" default="" example="" description="Array of IPv6 routes. Each route dictionary contains at
+least &apos;dest&apos; and &apos;prefix&apos; entries, containing the destination IP
+address as a string, and the prefix length as a uint32. Most routes
+will also have a &apos;next-hop&apos; entry, containing the next hop IP address as
+a string. If the route has a &apos;metric&apos; entry (containing a uint32), that
+will be used as the metric for the route (otherwise NM will pick a
+default value appropriate to the device). Additional attributes may
+also exist on some routes."/>
+</setting>
+<setting name="802-11-olpc-mesh">
+</setting>
+<setting name="ppp">
+</setting>
+<setting name="pppoe">
+</setting>
+<setting name="serial">
+<property name="parity" variable="parity" format="byte" values="" default="" example="" description="The connection parity: 69 (ASCII &apos;E&apos;) for even parity,
+111 (ASCII &apos;o&apos;) for odd, 110 (ASCII &apos;n&apos;) for none."/>
+</setting>
+<setting name="team-port">
+</setting>
+<setting name="team">
+<property name="interface-name" variable="interface-name" format="string" values="" default="" example="" description="Deprecated in favor of connection.interface-name, but can
+be used for backward-compatibility with older daemons, to set the
+team&apos;s interface name."/>
+</setting>
+<setting name="vlan">
+<property name="interface-name" variable="interface-name" format="string" values="" default="" example="" description="Deprecated in favor of connection.interface-name, but can
+be used for backward-compatibility with older daemons, to set the
+vlan&apos;s interface name."/>
+</setting>
+<setting name="vpn">
+</setting>
+<setting name="wimax">
+</setting>
+<setting name="802-3-ethernet">
+</setting>
+<setting name="802-11-wireless-security">
+</setting>
+<setting name="802-11-wireless">
+<property name="security" variable="security" format="" values="" default="" example="" description="This property is deprecated, but can be set to the value
+&apos;802-11-wireless-security&apos; when a wireless security setting is also
+present in the connection dictionary, for compatibility with very old
+NetworkManager daemons."/>
+</setting>
+</nm-dbus-docs>

@@ -1,0 +1,2723 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NMSettingIP4Config: libnm-util Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm-util Reference Manual">
+<link rel="up" href="ch01.html" title="libnm-util API Reference">
+<link rel="prev" href="NMSetting8021x.html" title="NMSetting8021x">
+<link rel="next" href="NMSettingIP6Config.html" title="NMSettingIP6Config">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#NMSettingIP4Config.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#NMSettingIP4Config.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#NMSettingIP4Config.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="NMSetting8021x.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="NMSettingIP6Config.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="NMSettingIP4Config"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="NMSettingIP4Config.top_of_page"></a>NMSettingIP4Config</span></h2>
+<p>NMSettingIP4Config — Describes IPv4 addressing, routing, and name service properties</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="NMSettingIP4Config.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-error-quark" title="nm_setting_ip4_config_error_quark ()">nm_setting_ip4_config_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="returnvalue">NMIP4Address</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-address-new" title="nm_ip4_address_new ()">nm_ip4_address_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="returnvalue">NMIP4Address</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-address-dup" title="nm_ip4_address_dup ()">nm_ip4_address_dup</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-address-ref" title="nm_ip4_address_ref ()">nm_ip4_address_ref</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-address-unref" title="nm_ip4_address_unref ()">nm_ip4_address_unref</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-address-compare" title="nm_ip4_address_compare ()">nm_ip4_address_compare</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-address-get-address" title="nm_ip4_address_get_address ()">nm_ip4_address_get_address</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-address-set-address" title="nm_ip4_address_set_address ()">nm_ip4_address_set_address</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-address-get-prefix" title="nm_ip4_address_get_prefix ()">nm_ip4_address_get_prefix</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-address-set-prefix" title="nm_ip4_address_set_prefix ()">nm_ip4_address_set_prefix</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-address-get-gateway" title="nm_ip4_address_get_gateway ()">nm_ip4_address_get_gateway</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-address-set-gateway" title="nm_ip4_address_set_gateway ()">nm_ip4_address_set_gateway</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="returnvalue">NMIP4Route</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-route-new" title="nm_ip4_route_new ()">nm_ip4_route_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="returnvalue">NMIP4Route</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-route-dup" title="nm_ip4_route_dup ()">nm_ip4_route_dup</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-route-ref" title="nm_ip4_route_ref ()">nm_ip4_route_ref</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-route-unref" title="nm_ip4_route_unref ()">nm_ip4_route_unref</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-route-compare" title="nm_ip4_route_compare ()">nm_ip4_route_compare</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-route-get-dest" title="nm_ip4_route_get_dest ()">nm_ip4_route_get_dest</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-route-set-dest" title="nm_ip4_route_set_dest ()">nm_ip4_route_set_dest</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-route-get-prefix" title="nm_ip4_route_get_prefix ()">nm_ip4_route_get_prefix</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-route-set-prefix" title="nm_ip4_route_set_prefix ()">nm_ip4_route_set_prefix</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-route-get-next-hop" title="nm_ip4_route_get_next_hop ()">nm_ip4_route_get_next_hop</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-route-set-next-hop" title="nm_ip4_route_set_next_hop ()">nm_ip4_route_set_next_hop</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-route-get-metric" title="nm_ip4_route_get_metric ()">nm_ip4_route_get_metric</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-ip4-route-set-metric" title="nm_ip4_route_set_metric ()">nm_ip4_route_set_metric</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-new" title="nm_setting_ip4_config_new ()">nm_setting_ip4_config_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-get-method" title="nm_setting_ip4_config_get_method ()">nm_setting_ip4_config_get_method</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-get-num-dns" title="nm_setting_ip4_config_get_num_dns ()">nm_setting_ip4_config_get_num_dns</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-get-dns" title="nm_setting_ip4_config_get_dns ()">nm_setting_ip4_config_get_dns</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-add-dns" title="nm_setting_ip4_config_add_dns ()">nm_setting_ip4_config_add_dns</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-remove-dns" title="nm_setting_ip4_config_remove_dns ()">nm_setting_ip4_config_remove_dns</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-remove-dns-by-value" title="nm_setting_ip4_config_remove_dns_by_value ()">nm_setting_ip4_config_remove_dns_by_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-clear-dns" title="nm_setting_ip4_config_clear_dns ()">nm_setting_ip4_config_clear_dns</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-get-num-dns-searches" title="nm_setting_ip4_config_get_num_dns_searches ()">nm_setting_ip4_config_get_num_dns_searches</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-get-dns-search" title="nm_setting_ip4_config_get_dns_search ()">nm_setting_ip4_config_get_dns_search</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-add-dns-search" title="nm_setting_ip4_config_add_dns_search ()">nm_setting_ip4_config_add_dns_search</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-remove-dns-search" title="nm_setting_ip4_config_remove_dns_search ()">nm_setting_ip4_config_remove_dns_search</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-remove-dns-search-by-value" title="nm_setting_ip4_config_remove_dns_search_by_value ()">nm_setting_ip4_config_remove_dns_search_by_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-clear-dns-searches" title="nm_setting_ip4_config_clear_dns_searches ()">nm_setting_ip4_config_clear_dns_searches</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-get-num-addresses" title="nm_setting_ip4_config_get_num_addresses ()">nm_setting_ip4_config_get_num_addresses</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="returnvalue">NMIP4Address</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-get-address" title="nm_setting_ip4_config_get_address ()">nm_setting_ip4_config_get_address</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-add-address" title="nm_setting_ip4_config_add_address ()">nm_setting_ip4_config_add_address</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-remove-address" title="nm_setting_ip4_config_remove_address ()">nm_setting_ip4_config_remove_address</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-remove-address-by-value" title="nm_setting_ip4_config_remove_address_by_value ()">nm_setting_ip4_config_remove_address_by_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-clear-addresses" title="nm_setting_ip4_config_clear_addresses ()">nm_setting_ip4_config_clear_addresses</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-get-num-routes" title="nm_setting_ip4_config_get_num_routes ()">nm_setting_ip4_config_get_num_routes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="returnvalue">NMIP4Route</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-get-route" title="nm_setting_ip4_config_get_route ()">nm_setting_ip4_config_get_route</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-add-route" title="nm_setting_ip4_config_add_route ()">nm_setting_ip4_config_add_route</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-remove-route" title="nm_setting_ip4_config_remove_route ()">nm_setting_ip4_config_remove_route</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-remove-route-by-value" title="nm_setting_ip4_config_remove_route_by_value ()">nm_setting_ip4_config_remove_route_by_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-clear-routes" title="nm_setting_ip4_config_clear_routes ()">nm_setting_ip4_config_clear_routes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gint64</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-get-route-metric" title="nm_setting_ip4_config_get_route_metric ()">nm_setting_ip4_config_get_route_metric</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-get-ignore-auto-routes" title="nm_setting_ip4_config_get_ignore_auto_routes ()">nm_setting_ip4_config_get_ignore_auto_routes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-get-ignore-auto-dns" title="nm_setting_ip4_config_get_ignore_auto_dns ()">nm_setting_ip4_config_get_ignore_auto_dns</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-get-dhcp-client-id" title="nm_setting_ip4_config_get_dhcp_client_id ()">nm_setting_ip4_config_get_dhcp_client_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-get-dhcp-send-hostname" title="nm_setting_ip4_config_get_dhcp_send_hostname ()">nm_setting_ip4_config_get_dhcp_send_hostname</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-get-dhcp-hostname" title="nm_setting_ip4_config_get_dhcp_hostname ()">nm_setting_ip4_config_get_dhcp_hostname</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-get-never-default" title="nm_setting_ip4_config_get_never_default ()">nm_setting_ip4_config_get_never_default</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingIP4Config.html#nm-setting-ip4-config-get-may-fail" title="nm_setting_ip4_config_get_may_fail ()">nm_setting_ip4_config_get_may_fail</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingIP4Config.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<span class="type">GPtrArray_GArray_guint__</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--addresses" title="The “addresses” property">addresses</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--dhcp-client-id" title="The “dhcp-client-id” property">dhcp-client-id</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--dhcp-hostname" title="The “dhcp-hostname” property">dhcp-hostname</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--dhcp-send-hostname" title="The “dhcp-send-hostname” property">dhcp-send-hostname</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GArray_guint_</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--dns" title="The “dns” property">dns</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GSList_gchararray_</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--dns-search" title="The “dns-search” property">dns-search</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--ignore-auto-dns" title="The “ignore-auto-dns” property">ignore-auto-dns</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--ignore-auto-routes" title="The “ignore-auto-routes” property">ignore-auto-routes</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--may-fail" title="The “may-fail” property">may-fail</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--method" title="The “method” property">method</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--never-default" title="The “never-default” property">never-default</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gint64</span></td>
+<td class="property_name"><a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--route-metric" title="The “route-metric” property">route-metric</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GPtrArray_GArray_guint__</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--routes" title="The “routes” property">routes</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<a name="NMIP4Address"></a><a name="NMIP4Route"></a><div class="refsect1">
+<a name="NMSettingIP4Config.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-SETTING-NAME:CAPS" title="NM_SETTING_IP4_CONFIG_SETTING_NAME">NM_SETTING_IP4_CONFIG_SETTING_NAME</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NMSettingIP4ConfigError" title="enum NMSettingIP4ConfigError">NMSettingIP4ConfigError</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-ERROR:CAPS" title="NM_SETTING_IP4_CONFIG_ERROR">NM_SETTING_IP4_CONFIG_ERROR</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-METHOD:CAPS" title="NM_SETTING_IP4_CONFIG_METHOD">NM_SETTING_IP4_CONFIG_METHOD</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-DNS:CAPS" title="NM_SETTING_IP4_CONFIG_DNS">NM_SETTING_IP4_CONFIG_DNS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-DNS-SEARCH:CAPS" title="NM_SETTING_IP4_CONFIG_DNS_SEARCH">NM_SETTING_IP4_CONFIG_DNS_SEARCH</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-ADDRESSES:CAPS" title="NM_SETTING_IP4_CONFIG_ADDRESSES">NM_SETTING_IP4_CONFIG_ADDRESSES</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-ROUTES:CAPS" title="NM_SETTING_IP4_CONFIG_ROUTES">NM_SETTING_IP4_CONFIG_ROUTES</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-ROUTE-METRIC:CAPS" title="NM_SETTING_IP4_CONFIG_ROUTE_METRIC">NM_SETTING_IP4_CONFIG_ROUTE_METRIC</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-IGNORE-AUTO-ROUTES:CAPS" title="NM_SETTING_IP4_CONFIG_IGNORE_AUTO_ROUTES">NM_SETTING_IP4_CONFIG_IGNORE_AUTO_ROUTES</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-IGNORE-AUTO-DNS:CAPS" title="NM_SETTING_IP4_CONFIG_IGNORE_AUTO_DNS">NM_SETTING_IP4_CONFIG_IGNORE_AUTO_DNS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-DHCP-CLIENT-ID:CAPS" title="NM_SETTING_IP4_CONFIG_DHCP_CLIENT_ID">NM_SETTING_IP4_CONFIG_DHCP_CLIENT_ID</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-DHCP-SEND-HOSTNAME:CAPS" title="NM_SETTING_IP4_CONFIG_DHCP_SEND_HOSTNAME">NM_SETTING_IP4_CONFIG_DHCP_SEND_HOSTNAME</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-DHCP-HOSTNAME:CAPS" title="NM_SETTING_IP4_CONFIG_DHCP_HOSTNAME">NM_SETTING_IP4_CONFIG_DHCP_HOSTNAME</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-NEVER-DEFAULT:CAPS" title="NM_SETTING_IP4_CONFIG_NEVER_DEFAULT">NM_SETTING_IP4_CONFIG_NEVER_DEFAULT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-MAY-FAIL:CAPS" title="NM_SETTING_IP4_CONFIG_MAY_FAIL">NM_SETTING_IP4_CONFIG_MAY_FAIL</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-METHOD-AUTO:CAPS" title="NM_SETTING_IP4_CONFIG_METHOD_AUTO">NM_SETTING_IP4_CONFIG_METHOD_AUTO</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-METHOD-LINK-LOCAL:CAPS" title="NM_SETTING_IP4_CONFIG_METHOD_LINK_LOCAL">NM_SETTING_IP4_CONFIG_METHOD_LINK_LOCAL</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-METHOD-MANUAL:CAPS" title="NM_SETTING_IP4_CONFIG_METHOD_MANUAL">NM_SETTING_IP4_CONFIG_METHOD_MANUAL</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-METHOD-SHARED:CAPS" title="NM_SETTING_IP4_CONFIG_METHOD_SHARED">NM_SETTING_IP4_CONFIG_METHOD_SHARED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingIP4Config.html#NM-SETTING-IP4-CONFIG-METHOD-DISABLED:CAPS" title="NM_SETTING_IP4_CONFIG_METHOD_DISABLED">NM_SETTING_IP4_CONFIG_METHOD_DISABLED</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingIP4Config.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
+    <span class="lineart">├──</span> NMIP4Address
+    <span class="lineart">╰──</span> NMIP4Route
+    <a href="/usr/share/gtk-doc/html/gobject/gobject-Enumeration-and-Flag-Types.html">GEnum</a>
+    <span class="lineart">╰──</span> NMSettingIP4ConfigError
+    GObject
+    <span class="lineart">╰──</span> <a class="link" href="NMSetting.html" title="NMSetting">NMSetting</a>
+        <span class="lineart">╰──</span> NMSettingIP4Config
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSettingIP4Config.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;nm-setting-ip4-config.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSettingIP4Config.description"></a><h2>Description</h2>
+<p>The <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> object is a <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> subclass that describes
+properties related to IPv4 addressing, routing, and Domain Name Service</p>
+</div>
+<div class="refsect1">
+<a name="NMSettingIP4Config.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-error-quark"></a><h3>nm_setting_ip4_config_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_setting_ip4_config_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Registers an error quark for <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> if necessary.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.2.5"></a><h4>Returns</h4>
+<p> the error quark used for <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> errors.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-address-new"></a><h3>nm_ip4_address_new ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="returnvalue">NMIP4Address</span></a> *
+nm_ip4_address_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates and returns a new <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> object.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.3.5"></a><h4>Returns</h4>
+<p> the new empty <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> object. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-address-dup"></a><h3>nm_ip4_address_dup ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="returnvalue">NMIP4Address</span></a> *
+nm_ip4_address_dup (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> *source</code></em>);</pre>
+<p>Copies a given <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> object and returns the copy.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>source</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> object to copy</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.4.6"></a><h4>Returns</h4>
+<p> the copy of the given <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> copy. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-address-ref"></a><h3>nm_ip4_address_ref ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_ip4_address_ref (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> *address</code></em>);</pre>
+<p>Increases the reference count of the object.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>address</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-address-unref"></a><h3>nm_ip4_address_unref ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_ip4_address_unref (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> *address</code></em>);</pre>
+<p>Decreases the reference count of the object.  If the reference count
+reaches zero, the object will be destroyed.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>address</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-address-compare"></a><h3>nm_ip4_address_compare ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_ip4_address_compare (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> *address</code></em>,
+                        <em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> *other</code></em>);</pre>
+<p>Determines if two <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> objects contain the same values.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>address</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>other</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> to compare <em class="parameter"><code>address</code></em>
+to.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.7.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the objects contain the same values, <code class="literal">FALSE</code> if they do not.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-address-get-address"></a><h3>nm_ip4_address_get_address ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_ip4_address_get_address (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> *address</code></em>);</pre>
+<p>Gets the IPv4 address property of this address object.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>address</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.8.6"></a><h4>Returns</h4>
+<p> the IPv4 address in network byte order</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-address-set-address"></a><h3>nm_ip4_address_set_address ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_ip4_address_set_address (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> *address</code></em>,
+                            <em class="parameter"><code><span class="type">guint32</span> addr</code></em>);</pre>
+<p>Sets the IPv4 address property of this object.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.9.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>address</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>addr</p></td>
+<td class="parameter_description"><p>the IPv4 address in network byte order</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-address-get-prefix"></a><h3>nm_ip4_address_get_prefix ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_ip4_address_get_prefix (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> *address</code></em>);</pre>
+<p>Gets the IPv4 address prefix (ie "24" or "30" etc) property of this address
+object.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>address</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.10.6"></a><h4>Returns</h4>
+<p> the IPv4 address prefix</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-address-set-prefix"></a><h3>nm_ip4_address_set_prefix ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_ip4_address_set_prefix (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> *address</code></em>,
+                           <em class="parameter"><code><span class="type">guint32</span> prefix</code></em>);</pre>
+<p>Sets the IPv4 address prefix.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>address</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>prefix</p></td>
+<td class="parameter_description"><p>the address prefix, a number between 1 and 32 inclusive</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-address-get-gateway"></a><h3>nm_ip4_address_get_gateway ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_ip4_address_get_gateway (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> *address</code></em>);</pre>
+<p>Gets the IPv4 default gateway property of this address object.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>address</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.12.6"></a><h4>Returns</h4>
+<p> the IPv4 gateway address in network byte order</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-address-set-gateway"></a><h3>nm_ip4_address_set_gateway ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_ip4_address_set_gateway (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> *address</code></em>,
+                            <em class="parameter"><code><span class="type">guint32</span> gateway</code></em>);</pre>
+<p>Sets the IPv4 default gateway property of this address object.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.13.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>address</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>gateway</p></td>
+<td class="parameter_description"><p>the IPv4 default gateway in network byte order</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-route-new"></a><h3>nm_ip4_route_new ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="returnvalue">NMIP4Route</span></a> *
+nm_ip4_route_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates and returns a new <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> object.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.14.5"></a><h4>Returns</h4>
+<p> the new empty <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> object. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-route-dup"></a><h3>nm_ip4_route_dup ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="returnvalue">NMIP4Route</span></a> *
+nm_ip4_route_dup (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> *source</code></em>);</pre>
+<p>Copies a given <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> object and returns the copy.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.15.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>source</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> object to copy</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.15.6"></a><h4>Returns</h4>
+<p> the copy of the given <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> copy. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-route-ref"></a><h3>nm_ip4_route_ref ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_ip4_route_ref (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> *route</code></em>);</pre>
+<p>Increases the reference count of the object.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.16.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>route</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-route-unref"></a><h3>nm_ip4_route_unref ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_ip4_route_unref (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> *route</code></em>);</pre>
+<p>Decreases the reference count of the object.  If the reference count
+reaches zero, the object will be destroyed.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.17.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>route</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-route-compare"></a><h3>nm_ip4_route_compare ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_ip4_route_compare (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> *route</code></em>,
+                      <em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> *other</code></em>);</pre>
+<p>Determines if two <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> objects contain the same values.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.18.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>route</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>other</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> to compare <em class="parameter"><code>route</code></em>
+to.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.18.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the objects contain the same values, <code class="literal">FALSE</code> if they do not.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-route-get-dest"></a><h3>nm_ip4_route_get_dest ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_ip4_route_get_dest (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> *route</code></em>);</pre>
+<p>Gets the IPv4 destination address property of this route object.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.19.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>route</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.19.6"></a><h4>Returns</h4>
+<p> the IPv4 address in network byte order</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-route-set-dest"></a><h3>nm_ip4_route_set_dest ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_ip4_route_set_dest (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> *route</code></em>,
+                       <em class="parameter"><code><span class="type">guint32</span> dest</code></em>);</pre>
+<p>Sets the IPv4 destination address property of this route object.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.20.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>route</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dest</p></td>
+<td class="parameter_description"><p>the destination address in network byte order</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-route-get-prefix"></a><h3>nm_ip4_route_get_prefix ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_ip4_route_get_prefix (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> *route</code></em>);</pre>
+<p>Gets the IPv4 prefix (ie "24" or "30" etc) of this route.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.21.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>route</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.21.6"></a><h4>Returns</h4>
+<p> the IPv4 prefix</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-route-set-prefix"></a><h3>nm_ip4_route_set_prefix ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_ip4_route_set_prefix (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> *route</code></em>,
+                         <em class="parameter"><code><span class="type">guint32</span> prefix</code></em>);</pre>
+<p>Sets the IPv4 prefix of this route.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.22.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>route</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>prefix</p></td>
+<td class="parameter_description"><p>the prefix, a number between 1 and 32 inclusive</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-route-get-next-hop"></a><h3>nm_ip4_route_get_next_hop ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_ip4_route_get_next_hop (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> *route</code></em>);</pre>
+<p>Gets the IPv4 address of the next hop of this route.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.23.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>route</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.23.6"></a><h4>Returns</h4>
+<p> the IPv4 address in network byte order</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-route-set-next-hop"></a><h3>nm_ip4_route_set_next_hop ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_ip4_route_set_next_hop (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> *route</code></em>,
+                           <em class="parameter"><code><span class="type">guint32</span> next_hop</code></em>);</pre>
+<p>Sets the IPv4 address of the next hop of this route.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.24.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>route</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>next_hop</p></td>
+<td class="parameter_description"><p>the IPv4 address of the next hop in network byte order</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-route-get-metric"></a><h3>nm_ip4_route_get_metric ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_ip4_route_get_metric (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> *route</code></em>);</pre>
+<p>Gets the route metric property of this route object; lower values indicate
+"better" or more preferred routes.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.25.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>route</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.25.6"></a><h4>Returns</h4>
+<p> the route metric</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-ip4-route-set-metric"></a><h3>nm_ip4_route_set_metric ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_ip4_route_set_metric (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> *route</code></em>,
+                         <em class="parameter"><code><span class="type">guint32</span> metric</code></em>);</pre>
+<p>Sets the route metric property of this route object; lower values indicate
+"better" or more preferred routes.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.26.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>route</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>metric</p></td>
+<td class="parameter_description"><p>the route metric</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-new"></a><h3>nm_setting_ip4_config_new ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+nm_setting_ip4_config_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> object with default values.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.27.5"></a><h4>Returns</h4>
+<p> the new empty <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> object. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-get-method"></a><h3>nm_setting_ip4_config_get_method ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_ip4_config_get_method (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.25.11.28.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.28.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--method" title="The “method” property"><span class="type">“method”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-get-num-dns"></a><h3>nm_setting_ip4_config_get_num_dns ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_ip4_config_get_num_dns (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.25.11.29.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.29.5"></a><h4>Returns</h4>
+<p> the number of configured DNS servers</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-get-dns"></a><h3>nm_setting_ip4_config_get_dns ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_ip4_config_get_dns (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>,
+                               <em class="parameter"><code><span class="type">guint32</span> i</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.25.11.30.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>i</p></td>
+<td class="parameter_description"><p>index number of the DNS server to return</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.30.5"></a><h4>Returns</h4>
+<p> the IPv4 address (network byte order) of the DNS server at index
+<em class="parameter"><code>i</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-add-dns"></a><h3>nm_setting_ip4_config_add_dns ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ip4_config_add_dns (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>,
+                               <em class="parameter"><code><span class="type">guint32</span> dns</code></em>);</pre>
+<p>Adds a new DNS server to the setting.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.31.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dns</p></td>
+<td class="parameter_description"><p>the IPv4 address (network byte order) of the DNS server to add</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.31.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the DNS server was added; <code class="literal">FALSE</code> if the server was already
+known</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-remove-dns"></a><h3>nm_setting_ip4_config_remove_dns ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_ip4_config_remove_dns (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>,
+                                  <em class="parameter"><code><span class="type">guint32</span> i</code></em>);</pre>
+<p>Removes the DNS server at index <em class="parameter"><code>i</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.32.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>i</p></td>
+<td class="parameter_description"><p>index number of the DNS server to remove</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-remove-dns-by-value"></a><h3>nm_setting_ip4_config_remove_dns_by_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ip4_config_remove_dns_by_value
+                               (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint32</span> dns</code></em>);</pre>
+<p>Removes the DNS server <em class="parameter"><code>dns</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.33.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dns</p></td>
+<td class="parameter_description"><p>the DNS server to remove</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.33.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the DNS server was found and removed; <code class="literal">FALSE</code> if it was not.
+domain was already known</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-clear-dns"></a><h3>nm_setting_ip4_config_clear_dns ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_ip4_config_clear_dns (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>);</pre>
+<p>Removes all configured DNS servers.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.34.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-get-num-dns-searches"></a><h3>nm_setting_ip4_config_get_num_dns_searches ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_ip4_config_get_num_dns_searches
+                               (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.25.11.35.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.35.5"></a><h4>Returns</h4>
+<p> the number of configured DNS search domains</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-get-dns-search"></a><h3>nm_setting_ip4_config_get_dns_search ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_ip4_config_get_dns_search (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>,
+                                      <em class="parameter"><code><span class="type">guint32</span> i</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.25.11.36.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>i</p></td>
+<td class="parameter_description"><p>index number of the DNS search domain to return</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.36.5"></a><h4>Returns</h4>
+<p> the DNS search domain at index <em class="parameter"><code>i</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-add-dns-search"></a><h3>nm_setting_ip4_config_add_dns_search ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ip4_config_add_dns_search (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>,
+                                      <em class="parameter"><code>const <span class="type">char</span> *dns_search</code></em>);</pre>
+<p>Adds a new DNS search domain to the setting.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.37.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dns_search</p></td>
+<td class="parameter_description"><p>the search domain to add</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.37.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the DNS search domain was added; <code class="literal">FALSE</code> if the search
+domain was already known</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-remove-dns-search"></a><h3>nm_setting_ip4_config_remove_dns_search ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_ip4_config_remove_dns_search
+                               (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint32</span> i</code></em>);</pre>
+<p>Removes the DNS search domain at index <em class="parameter"><code>i</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.38.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>i</p></td>
+<td class="parameter_description"><p>index number of the DNS search domain</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-remove-dns-search-by-value"></a><h3>nm_setting_ip4_config_remove_dns_search_by_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ip4_config_remove_dns_search_by_value
+                               (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *dns_search</code></em>);</pre>
+<p>Removes the DNS search domain <em class="parameter"><code>dns_search</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.39.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dns_search</p></td>
+<td class="parameter_description"><p>the search domain to remove</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.39.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the DNS search domain was found and removed; <code class="literal">FALSE</code> if it was not.</p>
+<p>Since 0.9.10</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-clear-dns-searches"></a><h3>nm_setting_ip4_config_clear_dns_searches ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_ip4_config_clear_dns_searches
+                               (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>);</pre>
+<p>Removes all configured DNS search domains.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.40.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-get-num-addresses"></a><h3>nm_setting_ip4_config_get_num_addresses ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_ip4_config_get_num_addresses
+                               (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.25.11.41.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.41.5"></a><h4>Returns</h4>
+<p> the number of configured addresses</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-get-address"></a><h3>nm_setting_ip4_config_get_address ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="returnvalue">NMIP4Address</span></a> *
+nm_setting_ip4_config_get_address (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>,
+                                   <em class="parameter"><code><span class="type">guint32</span> i</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.25.11.42.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>i</p></td>
+<td class="parameter_description"><p>index number of the address to return</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.42.5"></a><h4>Returns</h4>
+<p> the address at index <em class="parameter"><code>i</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-add-address"></a><h3>nm_setting_ip4_config_add_address ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ip4_config_add_address (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>,
+                                   <em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> *address</code></em>);</pre>
+<p>Adds a new IPv4 address and associated information to the setting.  The
+given address is duplicated internally and is not changed by this function.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.43.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>address</p></td>
+<td class="parameter_description"><p>the new address to add</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.43.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the address was added; <code class="literal">FALSE</code> if the address was already
+known.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-remove-address"></a><h3>nm_setting_ip4_config_remove_address ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_ip4_config_remove_address (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>,
+                                      <em class="parameter"><code><span class="type">guint32</span> i</code></em>);</pre>
+<p>Removes the address at index <em class="parameter"><code>i</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.44.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>i</p></td>
+<td class="parameter_description"><p>index number of the address to remove</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-remove-address-by-value"></a><h3>nm_setting_ip4_config_remove_address_by_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ip4_config_remove_address_by_value
+                               (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>,
+                                <em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Address"><span class="type">NMIP4Address</span></a> *address</code></em>);</pre>
+<p>Removes the address <em class="parameter"><code>address</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.45.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>address</p></td>
+<td class="parameter_description"><p>the IP address to remove</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.45.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the address was found and removed; <code class="literal">FALSE</code> if it was not.</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-clear-addresses"></a><h3>nm_setting_ip4_config_clear_addresses ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_ip4_config_clear_addresses (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>);</pre>
+<p>Removes all configured addresses.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.46.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-get-num-routes"></a><h3>nm_setting_ip4_config_get_num_routes ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_ip4_config_get_num_routes (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.25.11.47.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.47.5"></a><h4>Returns</h4>
+<p> the number of configured routes</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-get-route"></a><h3>nm_setting_ip4_config_get_route ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="returnvalue">NMIP4Route</span></a> *
+nm_setting_ip4_config_get_route (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>,
+                                 <em class="parameter"><code><span class="type">guint32</span> i</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.25.11.48.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>i</p></td>
+<td class="parameter_description"><p>index number of the route to return</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.48.5"></a><h4>Returns</h4>
+<p> the route at index <em class="parameter"><code>i</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-add-route"></a><h3>nm_setting_ip4_config_add_route ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ip4_config_add_route (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>,
+                                 <em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> *route</code></em>);</pre>
+<p>Adds a new IPv4 route and associated information to the setting.  The
+given route is duplicated internally and is not changed by this function.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.49.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>route</p></td>
+<td class="parameter_description"><p>the route to add</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.49.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the route was added; <code class="literal">FALSE</code> if the route was already known.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-remove-route"></a><h3>nm_setting_ip4_config_remove_route ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_ip4_config_remove_route (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>,
+                                    <em class="parameter"><code><span class="type">guint32</span> i</code></em>);</pre>
+<p>Removes the route at index <em class="parameter"><code>i</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.50.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>i</p></td>
+<td class="parameter_description"><p>index number of the route</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-remove-route-by-value"></a><h3>nm_setting_ip4_config_remove_route_by_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ip4_config_remove_route_by_value
+                               (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>,
+                                <em class="parameter"><code><a class="link" href="NMSettingIP4Config.html#NMIP4Route"><span class="type">NMIP4Route</span></a> *route</code></em>);</pre>
+<p>Removes the route <em class="parameter"><code>route</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.51.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>route</p></td>
+<td class="parameter_description"><p>the route to remove</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.51.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the route was found and removed; <code class="literal">FALSE</code> if it was not.</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-clear-routes"></a><h3>nm_setting_ip4_config_clear_routes ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_ip4_config_clear_routes (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>);</pre>
+<p>Removes all configured routes.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.52.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-get-route-metric"></a><h3>nm_setting_ip4_config_get_route_metric ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint64</span>
+nm_setting_ip4_config_get_route_metric
+                               (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>);</pre>
+<p>Returns the value contained in the <a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--route-metric" title="The “route-metric” property"><span class="type">“route-metric”</span></a>
+property.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.53.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.53.6"></a><h4>Returns</h4>
+<p> the route metric that is used for IPv4 routes that don't explicitly
+specify a metric. See <a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--route-metric" title="The “route-metric” property"><span class="type">“route-metric”</span></a> for more details.</p>
+</div>
+<p class="since">Since: 1.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-get-ignore-auto-routes"></a><h3>nm_setting_ip4_config_get_ignore_auto_routes ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ip4_config_get_ignore_auto_routes
+                               (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>);</pre>
+<p>Returns the value contained in the <a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--ignore-auto-routes" title="The “ignore-auto-routes” property"><span class="type">“ignore-auto-routes”</span></a>
+property.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.54.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.54.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if automatically configured (ie via DHCP) routes should be
+ignored.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-get-ignore-auto-dns"></a><h3>nm_setting_ip4_config_get_ignore_auto_dns ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ip4_config_get_ignore_auto_dns
+                               (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>);</pre>
+<p>Returns the value contained in the <a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--ignore-auto-dns" title="The “ignore-auto-dns” property"><span class="type">“ignore-auto-dns”</span></a>
+property.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.55.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.55.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if automatically configured (ie via DHCP) DNS information
+should be ignored.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-get-dhcp-client-id"></a><h3>nm_setting_ip4_config_get_dhcp_client_id ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_ip4_config_get_dhcp_client_id
+                               (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>);</pre>
+<p>Returns the value contained in the <a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--dhcp-client-id" title="The “dhcp-client-id” property"><span class="type">“dhcp-client-id”</span></a>
+property.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.56.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.56.6"></a><h4>Returns</h4>
+<p> the configured Client ID to send to the DHCP server when requesting
+addresses via DHCP.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-get-dhcp-send-hostname"></a><h3>nm_setting_ip4_config_get_dhcp_send_hostname ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ip4_config_get_dhcp_send_hostname
+                               (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>);</pre>
+<p>Returns the value contained in the <a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--dhcp-send-hostname" title="The “dhcp-send-hostname” property"><span class="type">“dhcp-send-hostname”</span></a>
+property.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.57.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.57.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if NetworkManager should send the machine hostname to the
+DHCP server when requesting addresses to allow the server to automatically
+update DNS information for this machine.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-get-dhcp-hostname"></a><h3>nm_setting_ip4_config_get_dhcp_hostname ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_ip4_config_get_dhcp_hostname
+                               (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>);</pre>
+<p>Returns the value contained in the <a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--dhcp-hostname" title="The “dhcp-hostname” property"><span class="type">“dhcp-hostname”</span></a>
+property.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.58.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.58.6"></a><h4>Returns</h4>
+<p> the configured hostname to send to the DHCP server</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-get-never-default"></a><h3>nm_setting_ip4_config_get_never_default ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ip4_config_get_never_default
+                               (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>);</pre>
+<p>Returns the value contained in the <a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--never-default" title="The “never-default” property"><span class="type">“never-default”</span></a>
+property.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.59.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.59.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if this connection should never be the default connection
+for IPv4 addressing</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ip4-config-get-may-fail"></a><h3>nm_setting_ip4_config_get_may_fail ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ip4_config_get_may_fail (<em class="parameter"><code><a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> *setting</code></em>);</pre>
+<p>Returns the value contained in the <a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--may-fail" title="The “may-fail” property"><span class="type">“may-fail”</span></a>
+property.</p>
+<div class="refsect3">
+<a name="id-1.2.25.11.60.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.25.11.60.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if this connection doesn't require IPv4 addressing to complete
+for the connection to succeed.</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSettingIP4Config.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-SETTING-NAME:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_SETTING_NAME</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_SETTING_NAME "ipv4"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingIP4ConfigError"></a><h3>enum NMSettingIP4ConfigError</h3>
+<div class="refsect3">
+<a name="id-1.2.25.12.3.3"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-IP4-CONFIG-ERROR-UNKNOWN:CAPS"></a>NM_SETTING_IP4_CONFIG_ERROR_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>unknown or unclassified error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-IP4-CONFIG-ERROR-INVALID-PROPERTY:CAPS"></a>NM_SETTING_IP4_CONFIG_ERROR_INVALID_PROPERTY</p></td>
+<td class="enum_member_description">
+<p>the property was invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-IP4-CONFIG-ERROR-MISSING-PROPERTY:CAPS"></a>NM_SETTING_IP4_CONFIG_ERROR_MISSING_PROPERTY</p></td>
+<td class="enum_member_description">
+<p>the property was missing and is
+required</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-IP4-CONFIG-ERROR-NOT-ALLOWED-FOR-METHOD:CAPS"></a>NM_SETTING_IP4_CONFIG_ERROR_NOT_ALLOWED_FOR_METHOD</p></td>
+<td class="enum_member_description">
+<p>the property's value is
+not valid with the given IP4 method</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-ERROR:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_ERROR</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_ERROR nm_setting_ip4_config_error_quark ()
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-METHOD:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_METHOD</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_METHOD             "method"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-DNS:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_DNS</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_DNS                "dns"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-DNS-SEARCH:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_DNS_SEARCH</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_DNS_SEARCH         "dns-search"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-ADDRESSES:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_ADDRESSES</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_ADDRESSES          "addresses"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-ROUTES:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_ROUTES</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_ROUTES             "routes"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-ROUTE-METRIC:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_ROUTE_METRIC</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_ROUTE_METRIC       "route-metric"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-IGNORE-AUTO-ROUTES:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_IGNORE_AUTO_ROUTES</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_IGNORE_AUTO_ROUTES "ignore-auto-routes"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-IGNORE-AUTO-DNS:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_IGNORE_AUTO_DNS</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_IGNORE_AUTO_DNS    "ignore-auto-dns"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-DHCP-CLIENT-ID:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_DHCP_CLIENT_ID</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_DHCP_CLIENT_ID     "dhcp-client-id"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-DHCP-SEND-HOSTNAME:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_DHCP_SEND_HOSTNAME</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_DHCP_SEND_HOSTNAME "dhcp-send-hostname"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-DHCP-HOSTNAME:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_DHCP_HOSTNAME</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_DHCP_HOSTNAME      "dhcp-hostname"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-NEVER-DEFAULT:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_NEVER_DEFAULT</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_NEVER_DEFAULT      "never-default"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-MAY-FAIL:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_MAY_FAIL</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_MAY_FAIL           "may-fail"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-METHOD-AUTO:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_METHOD_AUTO</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_METHOD_AUTO       "auto"
+</pre>
+<p>IPv4 configuration should be automatically determined via a method appropriate
+for the hardware interface, ie DHCP or PPP or some other device-specific
+manner.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-METHOD-LINK-LOCAL:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_METHOD_LINK_LOCAL</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_METHOD_LINK_LOCAL "link-local"
+</pre>
+<p>IPv4 configuration should be automatically configured for link-local-only
+operation.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-METHOD-MANUAL:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_METHOD_MANUAL</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_METHOD_MANUAL     "manual"
+</pre>
+<p>All necessary IPv4 configuration (addresses, prefix, DNS, etc) is specified
+in the setting's properties.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-METHOD-SHARED:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_METHOD_SHARED</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_METHOD_SHARED     "shared"
+</pre>
+<p>This connection specifies configuration that allows other computers to
+connect through it to the default network (usually the Internet).  The
+connection's interface will be assigned a private address, and a DHCP server,
+caching DNS server, and Network Address Translation (NAT) functionality will
+be started on this connection's interface to allow other devices to connect
+through that interface to the default network.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-IP4-CONFIG-METHOD-DISABLED:CAPS"></a><h3>NM_SETTING_IP4_CONFIG_METHOD_DISABLED</h3>
+<pre class="programlisting">#define NM_SETTING_IP4_CONFIG_METHOD_DISABLED   "disabled"
+</pre>
+<p>This connection does not use or require IPv4 address and it should be disabled.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSettingIP4Config.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="NMSettingIP4Config--addresses"></a><h3>The <code class="literal">“addresses”</code> property</h3>
+<pre class="programlisting">  “addresses”                <span class="type">GPtrArray_GArray_guint__</span> *</pre>
+<p>Array of IPv4 address structures.  Each IPv4 address structure is
+composed of 3 32-bit values; the first being the IPv4 address (network
+byte order), the second the prefix (1 - 32), and last the IPv4 gateway
+(network byte order). The gateway may be left as 0 if no gateway exists
+for that subnet.  For the "auto" method, given IP addresses are appended
+to those returned by automatic configuration.  Addresses cannot be used
+with the "shared", "link-local", or "disabled" methods as addressing is
+either automatic or disabled with these methods.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingIP4Config--dhcp-client-id"></a><h3>The <code class="literal">“dhcp-client-id”</code> property</h3>
+<pre class="programlisting">  “dhcp-client-id”           <span class="type">gchar</span> *</pre>
+<p>A string sent to the DHCP server to identify the local machine which the
+DHCP server may use to customize the DHCP lease and options.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingIP4Config--dhcp-hostname"></a><h3>The <code class="literal">“dhcp-hostname”</code> property</h3>
+<pre class="programlisting">  “dhcp-hostname”            <span class="type">gchar</span> *</pre>
+<p>If the <a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--dhcp-send-hostname" title="The “dhcp-send-hostname” property"><span class="type">“dhcp-send-hostname”</span></a> property is <code class="literal">TRUE</code>, then the
+specified name will be sent to the DHCP server when acquiring a lease.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingIP4Config--dhcp-send-hostname"></a><h3>The <code class="literal">“dhcp-send-hostname”</code> property</h3>
+<pre class="programlisting">  “dhcp-send-hostname”       <span class="type">gboolean</span></pre>
+<p>If <code class="literal">TRUE</code>, a hostname is sent to the DHCP server when acquiring a lease.
+Some DHCP servers use this hostname to update DNS databases, essentially
+providing a static hostname for the computer.  If the
+<a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--dhcp-hostname" title="The “dhcp-hostname” property"><span class="type">“dhcp-hostname”</span></a> property is empty and this property is
+<code class="literal">TRUE</code>, the current persistent hostname of the computer is sent.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingIP4Config--dns"></a><h3>The <code class="literal">“dns”</code> property</h3>
+<pre class="programlisting">  “dns”                      <span class="type">GArray_guint_</span> *</pre>
+<p>List of DNS servers (network byte order).  For the "auto" method, these
+DNS servers are appended to those (if any) returned by automatic
+configuration.  DNS servers cannot be used with the "shared",
+"link-local", or "disabled" methods as there is no upstream network.  In
+all other methods, these DNS servers are used as the only DNS servers for
+this connection.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingIP4Config--dns-search"></a><h3>The <code class="literal">“dns-search”</code> property</h3>
+<pre class="programlisting">  “dns-search”               <span class="type">GSList_gchararray_</span> *</pre>
+<p>List of DNS search domains.  For the "auto" method, these search domains
+are appended to those returned by automatic configuration. Search domains
+cannot be used with the "shared", "link-local", or "disabled" methods as
+there is no upstream network.  In all other methods, these search domains
+are used as the only search domains for this connection.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingIP4Config--ignore-auto-dns"></a><h3>The <code class="literal">“ignore-auto-dns”</code> property</h3>
+<pre class="programlisting">  “ignore-auto-dns”          <span class="type">gboolean</span></pre>
+<p>When the method is set to "auto" and this property to <code class="literal">TRUE</code>,
+automatically configured nameservers and search domains are ignored and
+only nameservers and search domains specified in the
+<a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--dns" title="The “dns” property"><span class="type">“dns”</span></a> and <a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--dns-search" title="The “dns-search” property"><span class="type">“dns-search”</span></a> properties, if
+any, are used.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingIP4Config--ignore-auto-routes"></a><h3>The <code class="literal">“ignore-auto-routes”</code> property</h3>
+<pre class="programlisting">  “ignore-auto-routes”       <span class="type">gboolean</span></pre>
+<p>When the method is set to "auto" and this property to <code class="literal">TRUE</code>,
+automatically configured routes are ignored and only routes specified in
+the <a class="link" href="NMSettingIP4Config.html#NMSettingIP4Config--routes" title="The “routes” property"><span class="type">“routes”</span></a> property, if any, are used.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingIP4Config--may-fail"></a><h3>The <code class="literal">“may-fail”</code> property</h3>
+<pre class="programlisting">  “may-fail”                 <span class="type">gboolean</span></pre>
+<p>If <code class="literal">TRUE</code>, allow overall network configuration to proceed even if IPv4
+configuration times out.  Note that at least one IP configuration must
+succeed or overall network configuration will still fail.  For example,
+in IPv6-only networks, setting this property to <code class="literal">TRUE</code> allows the overall
+network configuration to succeed if IPv4 configuration fails but IPv6
+configuration completes successfully.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingIP4Config--method"></a><h3>The <code class="literal">“method”</code> property</h3>
+<pre class="programlisting">  “method”                   <span class="type">gchar</span> *</pre>
+<p>IPv4 configuration method.  If "auto" is specified then the appropriate
+automatic method (DHCP, PPP, etc) is used for the interface and most
+other properties can be left unset.  If "link-local" is specified, then a
+link-local address in the 169.254/16 range will be assigned to the
+interface.  If "manual" is specified, static IP addressing is used and at
+least one IP address must be given in the "addresses" property.  If
+"shared" is specified (indicating that this connection will provide
+network access to other computers) then the interface is assigned an
+address in the 10.42.x.1/24 range and a DHCP and forwarding DNS server
+are started, and the interface is NAT-ed to the current default network
+connection.  "disabled" means IPv4 will not be used on this connection.
+This property must be set.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingIP4Config--never-default"></a><h3>The <code class="literal">“never-default”</code> property</h3>
+<pre class="programlisting">  “never-default”            <span class="type">gboolean</span></pre>
+<p>If <code class="literal">TRUE</code>, this connection will never be the default IPv4 connection,
+meaning it will never be assigned the default route by NetworkManager.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingIP4Config--route-metric"></a><h3>The <code class="literal">“route-metric”</code> property</h3>
+<pre class="programlisting">  “route-metric”             <span class="type">gint64</span></pre>
+<p>The default metric for routes that don't explicitly specify a metric.
+The default value -1 means that the metric is choosen automatically
+based on the device type.
+The metric applies to dynamic routes, manual (static) routes that
+don't have an explicit metric setting, address prefix routes, and
+the default route.
+As the linux kernel accepts zero (0) as a valid metric, zero is
+a valid value.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Allowed values: [-1,4294967295]</p>
+<p>Default value: -1</p>
+<p class="since">Since: 1.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingIP4Config--routes"></a><h3>The <code class="literal">“routes”</code> property</h3>
+<pre class="programlisting">  “routes”                   <span class="type">GPtrArray_GArray_guint__</span> *</pre>
+<p>Array of IPv4 route structures.  Each IPv4 route structure is composed of
+4 32-bit values; the first being the destination IPv4 network or address
+(network byte order), the second the destination network or address
+prefix (1 - 32), the third being the next-hop (network byte order) if
+any, and the fourth being the route metric. For the "auto" method, given
+IP routes are appended to those returned by automatic configuration.
+Routes cannot be used with the "shared", "link-local", or "disabled"
+methods because there is no upstream network.</p>
+<p>Flags: Read / Write</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

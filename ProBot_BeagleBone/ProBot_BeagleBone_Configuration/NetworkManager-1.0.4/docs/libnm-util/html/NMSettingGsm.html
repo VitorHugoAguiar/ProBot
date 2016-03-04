@@ -1,0 +1,1105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NMSettingGsm: libnm-util Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm-util Reference Manual">
+<link rel="up" href="ch01.html" title="libnm-util API Reference">
+<link rel="prev" href="NMSettingCdma.html" title="NMSettingCdma">
+<link rel="next" href="NMSettingWimax.html" title="NMSettingWimax">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#NMSettingGsm.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#NMSettingGsm.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#NMSettingGsm.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="NMSettingCdma.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="NMSettingWimax.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="NMSettingGsm"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="NMSettingGsm.top_of_page"></a>NMSettingGsm</span></h2>
+<p>NMSettingGsm — Describes GSM/3GPP-based mobile broadband properties</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="NMSettingGsm.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingGsm.html#nm-setting-gsm-error-quark" title="nm_setting_gsm_error_quark ()">nm_setting_gsm_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-BANDS-MAX:CAPS" title="NM_SETTING_GSM_BANDS_MAX">NM_SETTING_GSM_BANDS_MAX</a></td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingGsm.html#nm-setting-gsm-new" title="nm_setting_gsm_new ()">nm_setting_gsm_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingGsm.html#nm-setting-gsm-get-number" title="nm_setting_gsm_get_number ()">nm_setting_gsm_get_number</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingGsm.html#nm-setting-gsm-get-username" title="nm_setting_gsm_get_username ()">nm_setting_gsm_get_username</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingGsm.html#nm-setting-gsm-get-password" title="nm_setting_gsm_get_password ()">nm_setting_gsm_get_password</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingGsm.html#nm-setting-gsm-get-apn" title="nm_setting_gsm_get_apn ()">nm_setting_gsm_get_apn</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingGsm.html#nm-setting-gsm-get-network-id" title="nm_setting_gsm_get_network_id ()">nm_setting_gsm_get_network_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingGsm.html#nm-setting-gsm-get-pin" title="nm_setting_gsm_get_pin ()">nm_setting_gsm_get_pin</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingGsm.html#nm-setting-gsm-get-home-only" title="nm_setting_gsm_get_home_only ()">nm_setting_gsm_get_home_only</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="returnvalue">NMSettingSecretFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingGsm.html#nm-setting-gsm-get-pin-flags" title="nm_setting_gsm_get_pin_flags ()">nm_setting_gsm_get_pin_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="returnvalue">NMSettingSecretFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingGsm.html#nm-setting-gsm-get-password-flags" title="nm_setting_gsm_get_password_flags ()">nm_setting_gsm_get_password_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingGsm.html#nm-setting-gsm-get-network-type" title="nm_setting_gsm_get_network_type ()">nm_setting_gsm_get_network_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingGsm.html#nm-setting-gsm-get-allowed-bands" title="nm_setting_gsm_get_allowed_bands ()">nm_setting_gsm_get_allowed_bands</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingGsm.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingGsm.html#NMSettingGsm--allowed-bands" title="The “allowed-bands” property">allowed-bands</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingGsm.html#NMSettingGsm--apn" title="The “apn” property">apn</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingGsm.html#NMSettingGsm--home-only" title="The “home-only” property">home-only</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingGsm.html#NMSettingGsm--network-id" title="The “network-id” property">network-id</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gint</span></td>
+<td class="property_name"><a class="link" href="NMSettingGsm.html#NMSettingGsm--network-type" title="The “network-type” property">network-type</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingGsm.html#NMSettingGsm--number" title="The “number” property">number</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingGsm.html#NMSettingGsm--password" title="The “password” property">password</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingGsm.html#NMSettingGsm--password-flags" title="The “password-flags” property">password-flags</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingGsm.html#NMSettingGsm--pin" title="The “pin” property">pin</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingGsm.html#NMSettingGsm--pin-flags" title="The “pin-flags” property">pin-flags</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingGsm.html#NMSettingGsm--username" title="The “username” property">username</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingGsm.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-SETTING-NAME:CAPS" title="NM_SETTING_GSM_SETTING_NAME">NM_SETTING_GSM_SETTING_NAME</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSettingGsm.html#NMSettingGsmError" title="enum NMSettingGsmError">NMSettingGsmError</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-ERROR:CAPS" title="NM_SETTING_GSM_ERROR">NM_SETTING_GSM_ERROR</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-NUMBER:CAPS" title="NM_SETTING_GSM_NUMBER">NM_SETTING_GSM_NUMBER</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-USERNAME:CAPS" title="NM_SETTING_GSM_USERNAME">NM_SETTING_GSM_USERNAME</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-PASSWORD:CAPS" title="NM_SETTING_GSM_PASSWORD">NM_SETTING_GSM_PASSWORD</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-PASSWORD-FLAGS:CAPS" title="NM_SETTING_GSM_PASSWORD_FLAGS">NM_SETTING_GSM_PASSWORD_FLAGS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-APN:CAPS" title="NM_SETTING_GSM_APN">NM_SETTING_GSM_APN</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-NETWORK-ID:CAPS" title="NM_SETTING_GSM_NETWORK_ID">NM_SETTING_GSM_NETWORK_ID</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-PIN:CAPS" title="NM_SETTING_GSM_PIN">NM_SETTING_GSM_PIN</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-PIN-FLAGS:CAPS" title="NM_SETTING_GSM_PIN_FLAGS">NM_SETTING_GSM_PIN_FLAGS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-HOME-ONLY:CAPS" title="NM_SETTING_GSM_HOME_ONLY">NM_SETTING_GSM_HOME_ONLY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-ALLOWED-BANDS:CAPS" title="NM_SETTING_GSM_ALLOWED_BANDS">NM_SETTING_GSM_ALLOWED_BANDS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-NETWORK-TYPE:CAPS" title="NM_SETTING_GSM_NETWORK_TYPE">NM_SETTING_GSM_NETWORK_TYPE</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSettingGsm.html#NMSettingGsmNetworkType" title="enum NMSettingGsmNetworkType">NMSettingGsmNetworkType</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSettingGsm.html#NMSettingGsmNetworkBand" title="enum NMSettingGsmNetworkBand">NMSettingGsmNetworkBand</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingGsm.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Enumeration-and-Flag-Types.html">GEnum</a>
+    <span class="lineart">├──</span> NMSettingGsmError
+    <span class="lineart">├──</span> NMSettingGsmNetworkBand
+    <span class="lineart">╰──</span> NMSettingGsmNetworkType
+    GObject
+    <span class="lineart">╰──</span> <a class="link" href="NMSetting.html" title="NMSetting">NMSetting</a>
+        <span class="lineart">╰──</span> NMSettingGsm
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSettingGsm.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;nm-setting-gsm.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSettingGsm.description"></a><h2>Description</h2>
+<p>The <a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a> object is a <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> subclass that describes
+properties that allow connections to 3GPP-based mobile broadband
+networks, including those using GPRS/EDGE and UMTS/HSPA technology.</p>
+</div>
+<div class="refsect1">
+<a name="NMSettingGsm.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="nm-setting-gsm-error-quark"></a><h3>nm_setting_gsm_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_setting_gsm_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Registers an error quark for <a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a> if necessary.</p>
+<div class="refsect3">
+<a name="id-1.2.11.9.2.5"></a><h4>Returns</h4>
+<p> the error quark used for <a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a> errors.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-GSM-BANDS-MAX:CAPS"></a><h3>NM_SETTING_GSM_BANDS_MAX</h3>
+<pre class="programlisting">#define             NM_SETTING_GSM_BANDS_MAX</pre>
+<div class="warning">
+<p><code class="literal">NM_SETTING_GSM_BANDS_MAX</code> has been deprecated since version 0.9.10 and should not be used in newly-written code.</p>
+<p>No longer used.</p>
+</div>
+<p><a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-BANDS-MAX:CAPS" title="NM_SETTING_GSM_BANDS_MAX"><span class="type">NM_SETTING_GSM_BANDS_MAX</span></a> macro indicate the maximal value that can be used
+as the allowed frequency bands (<a class="link" href="NMSettingGsm.html#NMSettingGsm--allowed-bands" title="The “allowed-bands” property"><span class="type">“allowed-bands”</span></a> property).</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-gsm-new"></a><h3>nm_setting_gsm_new ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+nm_setting_gsm_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a> object with default values.</p>
+<div class="refsect3">
+<a name="id-1.2.11.9.4.5"></a><h4>Returns</h4>
+<p> the new empty <a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a> object</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-gsm-get-number"></a><h3>nm_setting_gsm_get_number ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_gsm_get_number (<em class="parameter"><code><a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.11.9.5.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.11.9.5.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingGsm.html#NMSettingGsm--number" title="The “number” property"><span class="type">“number”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-gsm-get-username"></a><h3>nm_setting_gsm_get_username ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_gsm_get_username (<em class="parameter"><code><a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.11.9.6.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.11.9.6.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingGsm.html#NMSettingGsm--username" title="The “username” property"><span class="type">“username”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-gsm-get-password"></a><h3>nm_setting_gsm_get_password ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_gsm_get_password (<em class="parameter"><code><a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.11.9.7.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.11.9.7.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingGsm.html#NMSettingGsm--password" title="The “password” property"><span class="type">“password”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-gsm-get-apn"></a><h3>nm_setting_gsm_get_apn ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_gsm_get_apn (<em class="parameter"><code><a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.11.9.8.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.11.9.8.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingGsm.html#NMSettingGsm--apn" title="The “apn” property"><span class="type">“apn”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-gsm-get-network-id"></a><h3>nm_setting_gsm_get_network_id ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_gsm_get_network_id (<em class="parameter"><code><a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.11.9.9.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.11.9.9.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingGsm.html#NMSettingGsm--network-id" title="The “network-id” property"><span class="type">“network-id”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-gsm-get-pin"></a><h3>nm_setting_gsm_get_pin ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_gsm_get_pin (<em class="parameter"><code><a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.11.9.10.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.11.9.10.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingGsm.html#NMSettingGsm--pin" title="The “pin” property"><span class="type">“pin”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-gsm-get-home-only"></a><h3>nm_setting_gsm_get_home_only ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_gsm_get_home_only (<em class="parameter"><code><a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.11.9.11.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.11.9.11.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingGsm.html#NMSettingGsm--home-only" title="The “home-only” property"><span class="type">“home-only”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-gsm-get-pin-flags"></a><h3>nm_setting_gsm_get_pin_flags ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="returnvalue">NMSettingSecretFlags</span></a>
+nm_setting_gsm_get_pin_flags (<em class="parameter"><code><a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.11.9.12.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.11.9.12.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="type">NMSettingSecretFlags</span></a> pertaining to the <a class="link" href="NMSettingGsm.html#NMSettingGsm--pin" title="The “pin” property"><span class="type">“pin”</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-gsm-get-password-flags"></a><h3>nm_setting_gsm_get_password_flags ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="returnvalue">NMSettingSecretFlags</span></a>
+nm_setting_gsm_get_password_flags (<em class="parameter"><code><a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.11.9.13.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.11.9.13.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="type">NMSettingSecretFlags</span></a> pertaining to the <a class="link" href="NMSettingGsm.html#NMSettingGsm--password" title="The “password” property"><span class="type">“password”</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-gsm-get-network-type"></a><h3>nm_setting_gsm_get_network_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+nm_setting_gsm_get_network_type (<em class="parameter"><code><a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a> *setting</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">nm_setting_gsm_get_network_type</code> has been deprecated since version 0.9.10 and should not be used in newly-written code.</p>
+<p>No longer used. Network type setting should be done talking to ModemManager directly.</p>
+</div>
+<div class="refsect3">
+<a name="id-1.2.11.9.14.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.11.9.14.6"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingGsm.html#NMSettingGsm--network-type" title="The “network-type” property"><span class="type">“network-type”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-gsm-get-allowed-bands"></a><h3>nm_setting_gsm_get_allowed_bands ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_gsm_get_allowed_bands (<em class="parameter"><code><a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a> *setting</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">nm_setting_gsm_get_allowed_bands</code> has been deprecated since version 0.9.10 and should not be used in newly-written code.</p>
+<p>No longer used. Bands setting should be done talking to ModemManager directly.</p>
+</div>
+<div class="refsect3">
+<a name="id-1.2.11.9.15.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingGsm.html" title="NMSettingGsm"><span class="type">NMSettingGsm</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.11.9.15.6"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingGsm.html#NMSettingGsm--allowed-bands" title="The “allowed-bands” property"><span class="type">“allowed-bands”</span></a> property of the setting</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSettingGsm.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NM-SETTING-GSM-SETTING-NAME:CAPS"></a><h3>NM_SETTING_GSM_SETTING_NAME</h3>
+<pre class="programlisting">#define NM_SETTING_GSM_SETTING_NAME "gsm"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingGsmError"></a><h3>enum NMSettingGsmError</h3>
+<div class="refsect3">
+<a name="id-1.2.11.10.3.3"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-ERROR-UNKNOWN:CAPS"></a>NM_SETTING_GSM_ERROR_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>unknown or unclassified error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-ERROR-INVALID-PROPERTY:CAPS"></a>NM_SETTING_GSM_ERROR_INVALID_PROPERTY</p></td>
+<td class="enum_member_description">
+<p>the property was invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-ERROR-MISSING-PROPERTY:CAPS"></a>NM_SETTING_GSM_ERROR_MISSING_PROPERTY</p></td>
+<td class="enum_member_description">
+<p>the property was missing and is
+required</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-ERROR-MISSING-SERIAL-SETTING:CAPS"></a>NM_SETTING_GSM_ERROR_MISSING_SERIAL_SETTING</p></td>
+<td class="enum_member_description">
+<p>the required <a class="link" href="NMSettingSerial.html" title="NMSettingSerial"><span class="type">NMSettingSerial</span></a>
+is missing in the connection</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-GSM-ERROR:CAPS"></a><h3>NM_SETTING_GSM_ERROR</h3>
+<pre class="programlisting">#define NM_SETTING_GSM_ERROR nm_setting_gsm_error_quark ()
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-GSM-NUMBER:CAPS"></a><h3>NM_SETTING_GSM_NUMBER</h3>
+<pre class="programlisting">#define NM_SETTING_GSM_NUMBER         "number"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-GSM-USERNAME:CAPS"></a><h3>NM_SETTING_GSM_USERNAME</h3>
+<pre class="programlisting">#define NM_SETTING_GSM_USERNAME       "username"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-GSM-PASSWORD:CAPS"></a><h3>NM_SETTING_GSM_PASSWORD</h3>
+<pre class="programlisting">#define NM_SETTING_GSM_PASSWORD       "password"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-GSM-PASSWORD-FLAGS:CAPS"></a><h3>NM_SETTING_GSM_PASSWORD_FLAGS</h3>
+<pre class="programlisting">#define NM_SETTING_GSM_PASSWORD_FLAGS "password-flags"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-GSM-APN:CAPS"></a><h3>NM_SETTING_GSM_APN</h3>
+<pre class="programlisting">#define NM_SETTING_GSM_APN            "apn"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-GSM-NETWORK-ID:CAPS"></a><h3>NM_SETTING_GSM_NETWORK_ID</h3>
+<pre class="programlisting">#define NM_SETTING_GSM_NETWORK_ID     "network-id"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-GSM-PIN:CAPS"></a><h3>NM_SETTING_GSM_PIN</h3>
+<pre class="programlisting">#define NM_SETTING_GSM_PIN            "pin"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-GSM-PIN-FLAGS:CAPS"></a><h3>NM_SETTING_GSM_PIN_FLAGS</h3>
+<pre class="programlisting">#define NM_SETTING_GSM_PIN_FLAGS      "pin-flags"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-GSM-HOME-ONLY:CAPS"></a><h3>NM_SETTING_GSM_HOME_ONLY</h3>
+<pre class="programlisting">#define NM_SETTING_GSM_HOME_ONLY      "home-only"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-GSM-ALLOWED-BANDS:CAPS"></a><h3>NM_SETTING_GSM_ALLOWED_BANDS</h3>
+<pre class="programlisting">#define NM_SETTING_GSM_ALLOWED_BANDS  "allowed-bands"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-GSM-NETWORK-TYPE:CAPS"></a><h3>NM_SETTING_GSM_NETWORK_TYPE</h3>
+<pre class="programlisting">#define NM_SETTING_GSM_NETWORK_TYPE   "network-type"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingGsmNetworkType"></a><h3>enum NMSettingGsmNetworkType</h3>
+<div class="warning">
+<p><code class="literal">NMSettingGsmNetworkType</code> has been deprecated since version 0.9.10 and should not be used in newly-written code.</p>
+<p>No longer used.</p>
+</div>
+<p><a class="link" href="NMSettingGsm.html#NMSettingGsmNetworkType" title="enum NMSettingGsmNetworkType"><span class="type">NMSettingGsmNetworkType</span></a> values indicate the allowed access technologies
+the device may use when connecting to this network.</p>
+<div class="refsect3">
+<a name="id-1.2.11.10.16.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-NETWORK-TYPE-ANY:CAPS"></a>NM_SETTING_GSM_NETWORK_TYPE_ANY</p></td>
+<td class="enum_member_description">
+<p>any access technology may be used</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-NETWORK-TYPE-UMTS-HSPA:CAPS"></a>NM_SETTING_GSM_NETWORK_TYPE_UMTS_HSPA</p></td>
+<td class="enum_member_description">
+<p>only 3G-type (UMTS and HSPA)
+technologies may be used</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-NETWORK-TYPE-GPRS-EDGE:CAPS"></a>NM_SETTING_GSM_NETWORK_TYPE_GPRS_EDGE</p></td>
+<td class="enum_member_description">
+<p>only 2G-type (GPRS and EDGE)
+technologies may be used</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-NETWORK-TYPE-PREFER-UMTS-HSPA:CAPS"></a>NM_SETTING_GSM_NETWORK_TYPE_PREFER_UMTS_HSPA</p></td>
+<td class="enum_member_description">
+<p>3G-type technologies are
+preferred but 2G-type technologies may be used as a fallback</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-NETWORK-TYPE-PREFER-GPRS-EDGE:CAPS"></a>NM_SETTING_GSM_NETWORK_TYPE_PREFER_GPRS_EDGE</p></td>
+<td class="enum_member_description">
+<p>2G-type technologies are
+preferred but 3G-type technologies may be used as a fallback</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-NETWORK-TYPE-PREFER-4G:CAPS"></a>NM_SETTING_GSM_NETWORK_TYPE_PREFER_4G</p></td>
+<td class="enum_member_description">
+<p>4G/LTE-type technologies are
+preferred but 3G/2/-type technologies may be used as a fallback</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-NETWORK-TYPE-4G:CAPS"></a>NM_SETTING_GSM_NETWORK_TYPE_4G</p></td>
+<td class="enum_member_description">
+<p>only 4G/LTE type
+technologies may be used</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingGsmNetworkBand"></a><h3>enum NMSettingGsmNetworkBand</h3>
+<div class="warning">
+<p><code class="literal">NMSettingGsmNetworkBand</code> has been deprecated since version 0.9.10 and should not be used in newly-written code.</p>
+<p>No longer used.</p>
+</div>
+<p><a class="link" href="NMSettingGsm.html#NMSettingGsmNetworkBand" title="enum NMSettingGsmNetworkBand"><span class="type">NMSettingGsmNetworkBand</span></a> values indicate the allowed frequency bands
+the device may use when connecting to this network.</p>
+<div class="refsect3">
+<a name="id-1.2.11.10.17.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-BAND-UNKNOWN:CAPS"></a>NM_SETTING_GSM_BAND_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>unknown or no band specified</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-BAND-ANY:CAPS"></a>NM_SETTING_GSM_BAND_ANY</p></td>
+<td class="enum_member_description">
+<p>any band is allowed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-BAND-EGSM:CAPS"></a>NM_SETTING_GSM_BAND_EGSM</p></td>
+<td class="enum_member_description">
+<p>900 MHz original GSM band</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-BAND-DCS:CAPS"></a>NM_SETTING_GSM_BAND_DCS</p></td>
+<td class="enum_member_description">
+<p>1800 MHz DCS band</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-BAND-PCS:CAPS"></a>NM_SETTING_GSM_BAND_PCS</p></td>
+<td class="enum_member_description">
+<p>US 1900 MHz PCS band</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-BAND-G850:CAPS"></a>NM_SETTING_GSM_BAND_G850</p></td>
+<td class="enum_member_description">
+<p>US 850 MHz Cellular band</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-BAND-U2100:CAPS"></a>NM_SETTING_GSM_BAND_U2100</p></td>
+<td class="enum_member_description">
+<p>WCDMA 3GPP UMTS 2100 MHz (Class I)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-BAND-U1800:CAPS"></a>NM_SETTING_GSM_BAND_U1800</p></td>
+<td class="enum_member_description">
+<p>WCDMA 3GPP UMTS 1800 MHz (Class III)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-BAND-U17IV:CAPS"></a>NM_SETTING_GSM_BAND_U17IV</p></td>
+<td class="enum_member_description">
+<p>WCDMA 3GPP AWS 1700/2100 MHz (Class IV)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-BAND-U800:CAPS"></a>NM_SETTING_GSM_BAND_U800</p></td>
+<td class="enum_member_description">
+<p>WCDMA 3GPP UMTS 800 MHz (Class VI)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-BAND-U850:CAPS"></a>NM_SETTING_GSM_BAND_U850</p></td>
+<td class="enum_member_description">
+<p>WCDMA 3GPP UMTS 850 MHz (Class V)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-BAND-U900:CAPS"></a>NM_SETTING_GSM_BAND_U900</p></td>
+<td class="enum_member_description">
+<p>WCDMA 3GPP UMTS 900 MHz (Class VIII)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-BAND-U17IX:CAPS"></a>NM_SETTING_GSM_BAND_U17IX</p></td>
+<td class="enum_member_description">
+<p>WCDMA 3GPP UMTS 1700 MHz (Class IX)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-BAND-U1900:CAPS"></a>NM_SETTING_GSM_BAND_U1900</p></td>
+<td class="enum_member_description">
+<p>WCDMA 3GPP UMTS 1900 MHz (Class II)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-GSM-BAND-U2600:CAPS"></a>NM_SETTING_GSM_BAND_U2600</p></td>
+<td class="enum_member_description">
+<p>WCDMA 3GPP UMTS 2600 MHz (Class VII, internal)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSettingGsm.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="NMSettingGsm--allowed-bands"></a><h3>The <code class="literal">“allowed-bands”</code> property</h3>
+<pre class="programlisting">  “allowed-bands”            <span class="type">guint</span></pre>
+<p>Bitfield of allowed frequency bands.  Note that not all devices allow
+frequency band control.  Permitted values are those specified by
+<a class="link" href="NMSettingGsm.html#NMSettingGsmNetworkBand" title="enum NMSettingGsmNetworkBand"><span class="type">NMSettingGsmNetworkBand</span></a>.</p>
+<div class="warning">
+<p><code class="literal">NMSettingGsm:allowed-bands</code> has been deprecated since version 0.9.10 and should not be used in newly-written code.</p>
+<p>No longer used. Band setting should be done by
+talking to ModemManager directly.</p>
+</div>
+<p>Flags: Read / Write / Construct</p>
+<p>Allowed values: &lt;= 16383</p>
+<p>Default value: 1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingGsm--apn"></a><h3>The <code class="literal">“apn”</code> property</h3>
+<pre class="programlisting">  “apn”                      <span class="type">gchar</span> *</pre>
+<p>The GPRS Access Point Name specifying the APN used when establishing a
+data session with the GSM-based network.  The APN often determines how
+the user will be billed for their network usage and whether the user has
+access to the Internet or just a provider-specific walled-garden, so it
+is important to use the correct APN for the user's mobile broadband plan.
+The APN may only be composed of the characters a-z, 0-9, ., and - per GSM
+03.60 Section 14.9.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingGsm--home-only"></a><h3>The <code class="literal">“home-only”</code> property</h3>
+<pre class="programlisting">  “home-only”                <span class="type">gboolean</span></pre>
+<p>When <code class="literal">TRUE</code>, only connections to the home network will be allowed.
+Connections to roaming networks will not be made.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingGsm--network-id"></a><h3>The <code class="literal">“network-id”</code> property</h3>
+<pre class="programlisting">  “network-id”               <span class="type">gchar</span> *</pre>
+<p>The Network ID (GSM LAI format, ie MCC-MNC) to force specific network
+registration.  If the Network ID is specified, NetworkManager will
+attempt to force the device to register only on the specified network.
+This can be used to ensure that the device does not roam when direct
+roaming control of the device is not otherwise possible.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingGsm--network-type"></a><h3>The <code class="literal">“network-type”</code> property</h3>
+<pre class="programlisting">  “network-type”             <span class="type">gint</span></pre>
+<p>Network preference to force the device to only use specific network
+technologies. The permitted values are <a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-NETWORK-TYPE-ANY:CAPS"><code class="literal">NM_SETTING_GSM_NETWORK_TYPE_ANY</code></a>,
+<a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-NETWORK-TYPE-UMTS-HSPA:CAPS"><code class="literal">NM_SETTING_GSM_NETWORK_TYPE_UMTS_HSPA</code></a>,
+<a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-NETWORK-TYPE-GPRS-EDGE:CAPS"><code class="literal">NM_SETTING_GSM_NETWORK_TYPE_GPRS_EDGE</code></a>,
+<a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-NETWORK-TYPE-PREFER-UMTS-HSPA:CAPS"><code class="literal">NM_SETTING_GSM_NETWORK_TYPE_PREFER_UMTS_HSPA</code></a>,
+<a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-NETWORK-TYPE-PREFER-GPRS-EDGE:CAPS"><code class="literal">NM_SETTING_GSM_NETWORK_TYPE_PREFER_GPRS_EDGE</code></a>,
+<a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-NETWORK-TYPE-PREFER-4G:CAPS"><code class="literal">NM_SETTING_GSM_NETWORK_TYPE_PREFER_4G</code></a>, and
+<a class="link" href="NMSettingGsm.html#NM-SETTING-GSM-NETWORK-TYPE-4G:CAPS"><code class="literal">NM_SETTING_GSM_NETWORK_TYPE_4G</code></a>.  Note that not all devices allow network
+preference control.</p>
+<div class="warning">
+<p><code class="literal">NMSettingGsm:network-type</code> has been deprecated since version 0.9.10 and should not be used in newly-written code.</p>
+<p>No longer used. Network type setting should be done
+by talking to ModemManager directly.</p>
+</div>
+<p>Flags: Read / Write / Construct</p>
+<p>Allowed values: [-1,5]</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingGsm--number"></a><h3>The <code class="literal">“number”</code> property</h3>
+<pre class="programlisting">  “number”                   <span class="type">gchar</span> *</pre>
+<p>Number to dial when establishing a PPP data session with the GSM-based
+mobile broadband network.  Many modems do not require PPP for connections
+to the mobile network and thus this property should be left blank, which
+allows NetworkManager to select the appropriate settings automatically.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingGsm--password"></a><h3>The <code class="literal">“password”</code> property</h3>
+<pre class="programlisting">  “password”                 <span class="type">gchar</span> *</pre>
+<p>The password used to authenticate with the network, if required.  Many
+providers do not require a password, or accept any password.  But if a
+password is required, it is specified here.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingGsm--password-flags"></a><h3>The <code class="literal">“password-flags”</code> property</h3>
+<pre class="programlisting">  “password-flags”           <span class="type">guint</span></pre>
+<p>Flags indicating how to handle the <a class="link" href="NMSettingGsm.html#NMSettingGsm--password" title="The “password” property"><span class="type">“password”</span></a> property.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &lt;= 7</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingGsm--pin"></a><h3>The <code class="literal">“pin”</code> property</h3>
+<pre class="programlisting">  “pin”                      <span class="type">gchar</span> *</pre>
+<p>If the SIM is locked with a PIN it must be unlocked before any other
+operations are requested.  Specify the PIN here to allow operation of the
+device.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingGsm--pin-flags"></a><h3>The <code class="literal">“pin-flags”</code> property</h3>
+<pre class="programlisting">  “pin-flags”                <span class="type">guint</span></pre>
+<p>Flags indicating how to handle the <a class="link" href="NMSettingGsm.html#NMSettingGsm--pin" title="The “pin” property"><span class="type">“pin”</span></a> property.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &lt;= 7</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingGsm--username"></a><h3>The <code class="literal">“username”</code> property</h3>
+<pre class="programlisting">  “username”                 <span class="type">gchar</span> *</pre>
+<p>The username used to authenticate with the network, if required.  Many
+providers do not require a username, or accept any username.  But if a
+username is required, it is specified here.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

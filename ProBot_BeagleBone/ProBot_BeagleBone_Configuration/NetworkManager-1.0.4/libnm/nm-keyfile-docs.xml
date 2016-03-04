@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE nm-keyfile-docs [
+]>
+
+<nm-keyfile-docs>
+  <setting name="802-1x">
+</setting>
+<setting name="adsl">
+</setting>
+<setting name="bluetooth">
+</setting>
+<setting name="bond">
+</setting>
+<setting name="bridge-port">
+</setting>
+<setting name="bridge">
+<property name="mac-address" variable="mac-address" format="ususal hex-digits-and-colons notation" values="" default="" example="mac-address=00:22:68:12:79:A2
+mac-address=0;34;104;18;121;162;" description="MAC address in traditional hex-digits-and-colons notation,
+or semicolon separated list of 6 decimal bytes (obsolete)"/>
+</setting>
+<setting name="cdma">
+</setting>
+<setting name="connection">
+</setting>
+<setting name="dcb">
+</setting>
+<setting name="generic">
+</setting>
+<setting name="gsm">
+</setting>
+<setting name="infiniband">
+<property name="mac-address" variable="mac-address" format="ususal hex-digits-and-colons notation" values="" default="" example="mac-address= 80:00:00:6d:fe:80:00:00:00:00:00:00:00:02:55:00:70:33:cf:01" description="MAC address in traditional hex-digits-and-colons notation, or
+or semicolon separated list of 20 decimal bytes (obsolete)"/>
+</setting>
+<setting name="">
+</setting>
+<setting name="ipv4">
+<property name="dns" variable="dns" format="list of DNS IP addresses" values="" default="" example="dns=1.2.3.4;8.8.8.8;8.8.4.4;" description="List of DNS servers."/>
+<property name="addresses" variable="address1, address2, ..." format="address/plen" values="" default="" example="address1=192.168.100.100/24 address2=10.1.1.5/24" description="List of static IP addresses."/>
+<property name="gateway" variable="gateway" format="string" values="" default="" example="gateway=192.168.100.1" description="Gateway IP addresses as a string."/>
+<property name="routes" variable="route1, route2, ..." format="route/plen[,gateway,metric]" values="" default="" example="route1=8.8.8.0/24,10.1.1.1,77
+route2=7.7.0.0/16" description="List of IP routes."/>
+</setting>
+<setting name="ipv6">
+<property name="dns" variable="dns" format="list of DNS IP addresses" values="" default="" example="dns=2001:4860:4860::8888;2001:4860:4860::8844;" description="List of DNS servers."/>
+<property name="addresses" variable="address1, address2, ..." format="address/plen" values="" default="" example="address1=abbe::cafe/96 address2=2001::1234" description="List of static IP addresses."/>
+<property name="gateway" variable="gateway" format="string" values="" default="" example="gateway=abbe::1" description="Gateway IP addresses as a string."/>
+<property name="routes" variable="route1, route2, ..." format="route/plen[,gateway,metric]" values="" default="" example="route1=2001:4860:4860::/64,2620:52:0:2219:222:68ff:fe11:5403" description="List of IP routes."/>
+</setting>
+<setting name="802-11-olpc-mesh">
+</setting>
+<setting name="ppp">
+</setting>
+<setting name="pppoe">
+</setting>
+<setting name="serial">
+<property name="parity" variable="parity" format="&apos;e&apos;, &apos;o&apos;, or &apos;n&apos;" values="" default="" example="parity=n" description="The connection parity; even, odd, or none. Note that older
+versions of NetworkManager stored this as an integer: 69 (&apos;E&apos;) for even,
+111 (&apos;o&apos;) for odd, or 110 (&apos;n&apos;) for none."/>
+</setting>
+<setting name="team-port">
+</setting>
+<setting name="team">
+</setting>
+<setting name="vlan">
+</setting>
+<setting name="vpn">
+<property name="data" variable="separate variables named after keys of the dictionary" format="" values="" default="" example="remote=ovpn.corp.com cipher=AES-256-CBC username=joe" description="The keys of the data dictionary are used as variable names directly
+under [vpn] section."/>
+<property name="secrets" variable="separate variables named after keys of the dictionary" format="" values="" default="" example="password=Popocatepetl" description="The keys of the secrets dictionary are used as variable names directly
+under [vpn-secrets] section."/>
+</setting>
+<setting name="wimax">
+</setting>
+<setting name="802-3-ethernet">
+<property name="mac-address" variable="mac-address" format="ususal hex-digits-and-colons notation" values="" default="" example="" description="MAC address in traditional hex-digits-and-colons notation
+(e.g. 00:22:68:12:79:A2), or semicolon separated list of 6 bytes (obsolete)
+(e.g. 0;34;104;18;121;162)"/>
+<property name="cloned-mac-address" variable="cloned-mac-address" format="ususal hex-digits-and-colons notation" values="" default="" example="" description="Cloned MAC address in traditional hex-digits-and-colons notation
+(e.g. 00:22:68:12:79:B2), or semicolon separated list of 6 bytes (obsolete)
+(e.g. 0;34;104;18;121;178)."/>
+<property name="mac-address-blacklist" variable="mac-address-blacklist" format="list of MACs (separated with semicolons)" values="" default="" example="mac-address-blacklist= 00:22:68:12:79:A6;00:22:68:12:79:78" description="MAC address blacklist."/>
+</setting>
+<setting name="802-11-wireless-security">
+</setting>
+<setting name="802-11-wireless">
+<property name="ssid" variable="ssid" format="string (or decimal-byte list - obsolete)" values="" default="" example="ssid=Quick Net" description="SSID of Wi-Fi network."/>
+<property name="mac-address" variable="mac-address" format="ususal hex-digits-and-colons notation" values="" default="" example="" description="MAC address in traditional hex-digits-and-colons notation
+(e.g. 00:22:68:12:79:A2), or semicolon separated list of 6 bytes (obsolete)
+(e.g. 0;34;104;18;121;162)."/>
+<property name="cloned-mac-address" variable="cloned-mac-address" format="ususal hex-digits-and-colons notation" values="" default="" example="" description="Cloned MAC address in traditional hex-digits-and-colons notation
+(e.g. 00:22:68:12:79:B2), or semicolon separated list of 6 bytes (obsolete)
+(e.g. 0;34;104;18;121;178)."/>
+<property name="mac-address-blacklist" variable="mac-address-blacklist" format="list of MACs (separated with semicolons)" values="" default="" example="mac-address-blacklist= 00:22:68:12:79:A6;00:22:68:12:79:78" description="MAC address blacklist."/>
+</setting>
+</nm-keyfile-docs>

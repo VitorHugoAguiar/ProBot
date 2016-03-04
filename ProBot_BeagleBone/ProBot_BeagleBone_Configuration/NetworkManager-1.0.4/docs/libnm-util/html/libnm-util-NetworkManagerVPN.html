@@ -1,0 +1,953 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NetworkManagerVPN: libnm-util Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm-util Reference Manual">
+<link rel="up" href="ch01.html" title="libnm-util API Reference">
+<link rel="prev" href="libnm-util-NetworkManager.html" title="NetworkManager">
+<link rel="next" href="object-tree.html" title="Object Hierarchy">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libnm-util-NetworkManagerVPN.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libnm-util-NetworkManager.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="object-tree.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libnm-util-NetworkManagerVPN"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libnm-util-NetworkManagerVPN.top_of_page"></a>NetworkManagerVPN</span></h2>
+<p>NetworkManagerVPN</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libnm-util-NetworkManagerVPN.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-PATH-VPN:CAPS" title="NM_DBUS_PATH_VPN">NM_DBUS_PATH_VPN</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-INTERFACE-VPN:CAPS" title="NM_DBUS_INTERFACE_VPN">NM_DBUS_INTERFACE_VPN</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-PATH-VPN-CONNECTION:CAPS" title="NM_DBUS_PATH_VPN_CONNECTION">NM_DBUS_PATH_VPN_CONNECTION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-INTERFACE-VPN-CONNECTION:CAPS" title="NM_DBUS_INTERFACE_VPN_CONNECTION">NM_DBUS_INTERFACE_VPN_CONNECTION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-DBUS-PLUGIN-PATH:CAPS" title="NM_VPN_DBUS_PLUGIN_PATH">NM_VPN_DBUS_PLUGIN_PATH</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-DBUS-PLUGIN-INTERFACE:CAPS" title="NM_VPN_DBUS_PLUGIN_INTERFACE">NM_VPN_DBUS_PLUGIN_INTERFACE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-NO-ACTIVE-VPN-CONNECTION:CAPS" title="NM_DBUS_NO_ACTIVE_VPN_CONNECTION">NM_DBUS_NO_ACTIVE_VPN_CONNECTION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-NO-VPN-CONNECTIONS:CAPS" title="NM_DBUS_NO_VPN_CONNECTIONS">NM_DBUS_NO_VPN_CONNECTIONS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-INVALID-VPN-CONNECTION:CAPS" title="NM_DBUS_INVALID_VPN_CONNECTION">NM_DBUS_INVALID_VPN_CONNECTION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-VPN-ERROR-PREFIX:CAPS" title="NM_DBUS_VPN_ERROR_PREFIX">NM_DBUS_VPN_ERROR_PREFIX</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-VPN-STARTING-IN-PROGRESS:CAPS" title="NM_DBUS_VPN_STARTING_IN_PROGRESS">NM_DBUS_VPN_STARTING_IN_PROGRESS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-VPN-ALREADY-STARTED:CAPS" title="NM_DBUS_VPN_ALREADY_STARTED">NM_DBUS_VPN_ALREADY_STARTED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-VPN-STOPPING-IN-PROGRESS:CAPS" title="NM_DBUS_VPN_STOPPING_IN_PROGRESS">NM_DBUS_VPN_STOPPING_IN_PROGRESS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-VPN-ALREADY-STOPPED:CAPS" title="NM_DBUS_VPN_ALREADY_STOPPED">NM_DBUS_VPN_ALREADY_STOPPED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-VPN-WRONG-STATE:CAPS" title="NM_DBUS_VPN_WRONG_STATE">NM_DBUS_VPN_WRONG_STATE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-VPN-BAD-ARGUMENTS:CAPS" title="NM_DBUS_VPN_BAD_ARGUMENTS">NM_DBUS_VPN_BAD_ARGUMENTS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-VPN-INTERACTIVE-NOT-SUPPORTED:CAPS" title="NM_DBUS_VPN_INTERACTIVE_NOT_SUPPORTED">NM_DBUS_VPN_INTERACTIVE_NOT_SUPPORTED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-VPN-SIGNAL-LOGIN-BANNER:CAPS" title="NM_DBUS_VPN_SIGNAL_LOGIN_BANNER">NM_DBUS_VPN_SIGNAL_LOGIN_BANNER</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-VPN-SIGNAL-LOGIN-FAILED:CAPS" title="NM_DBUS_VPN_SIGNAL_LOGIN_FAILED">NM_DBUS_VPN_SIGNAL_LOGIN_FAILED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-VPN-SIGNAL-LAUNCH-FAILED:CAPS" title="NM_DBUS_VPN_SIGNAL_LAUNCH_FAILED">NM_DBUS_VPN_SIGNAL_LAUNCH_FAILED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-VPN-SIGNAL-CONNECT-FAILED:CAPS" title="NM_DBUS_VPN_SIGNAL_CONNECT_FAILED">NM_DBUS_VPN_SIGNAL_CONNECT_FAILED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-VPN-SIGNAL-VPN-CONFIG-BAD:CAPS" title="NM_DBUS_VPN_SIGNAL_VPN_CONFIG_BAD">NM_DBUS_VPN_SIGNAL_VPN_CONFIG_BAD</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-VPN-SIGNAL-IP-CONFIG-BAD:CAPS" title="NM_DBUS_VPN_SIGNAL_IP_CONFIG_BAD">NM_DBUS_VPN_SIGNAL_IP_CONFIG_BAD</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-VPN-SIGNAL-STATE-CHANGE:CAPS" title="NM_DBUS_VPN_SIGNAL_STATE_CHANGE">NM_DBUS_VPN_SIGNAL_STATE_CHANGE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-DBUS-VPN-SIGNAL-IP4-CONFIG:CAPS" title="NM_DBUS_VPN_SIGNAL_IP4_CONFIG">NM_DBUS_VPN_SIGNAL_IP4_CONFIG</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NMVPNServiceState" title="enum NMVPNServiceState">NMVPNServiceState</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NMVPNConnectionState" title="enum NMVPNConnectionState">NMVPNConnectionState</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NMVPNConnectionStateReason" title="enum NMVPNConnectionStateReason">NMVPNConnectionStateReason</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NMVPNPluginFailure" title="enum NMVPNPluginFailure">NMVPNPluginFailure</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-CONFIG-TUNDEV:CAPS" title="NM_VPN_PLUGIN_CONFIG_TUNDEV">NM_VPN_PLUGIN_CONFIG_TUNDEV</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-CONFIG-BANNER:CAPS" title="NM_VPN_PLUGIN_CONFIG_BANNER">NM_VPN_PLUGIN_CONFIG_BANNER</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-CONFIG-EXT-GATEWAY:CAPS" title="NM_VPN_PLUGIN_CONFIG_EXT_GATEWAY">NM_VPN_PLUGIN_CONFIG_EXT_GATEWAY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-CONFIG-MTU:CAPS" title="NM_VPN_PLUGIN_CONFIG_MTU">NM_VPN_PLUGIN_CONFIG_MTU</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-CONFIG-HAS-IP4:CAPS" title="NM_VPN_PLUGIN_CONFIG_HAS_IP4">NM_VPN_PLUGIN_CONFIG_HAS_IP4</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-CONFIG-HAS-IP6:CAPS" title="NM_VPN_PLUGIN_CONFIG_HAS_IP6">NM_VPN_PLUGIN_CONFIG_HAS_IP6</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-CAN-PERSIST:CAPS" title="NM_VPN_PLUGIN_CAN_PERSIST">NM_VPN_PLUGIN_CAN_PERSIST</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP4-CONFIG-INT-GATEWAY:CAPS" title="NM_VPN_PLUGIN_IP4_CONFIG_INT_GATEWAY">NM_VPN_PLUGIN_IP4_CONFIG_INT_GATEWAY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP4-CONFIG-ADDRESS:CAPS" title="NM_VPN_PLUGIN_IP4_CONFIG_ADDRESS">NM_VPN_PLUGIN_IP4_CONFIG_ADDRESS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP4-CONFIG-PTP:CAPS" title="NM_VPN_PLUGIN_IP4_CONFIG_PTP">NM_VPN_PLUGIN_IP4_CONFIG_PTP</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP4-CONFIG-PREFIX:CAPS" title="NM_VPN_PLUGIN_IP4_CONFIG_PREFIX">NM_VPN_PLUGIN_IP4_CONFIG_PREFIX</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP4-CONFIG-DNS:CAPS" title="NM_VPN_PLUGIN_IP4_CONFIG_DNS">NM_VPN_PLUGIN_IP4_CONFIG_DNS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP4-CONFIG-NBNS:CAPS" title="NM_VPN_PLUGIN_IP4_CONFIG_NBNS">NM_VPN_PLUGIN_IP4_CONFIG_NBNS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP4-CONFIG-MSS:CAPS" title="NM_VPN_PLUGIN_IP4_CONFIG_MSS">NM_VPN_PLUGIN_IP4_CONFIG_MSS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP4-CONFIG-DOMAIN:CAPS" title="NM_VPN_PLUGIN_IP4_CONFIG_DOMAIN">NM_VPN_PLUGIN_IP4_CONFIG_DOMAIN</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP4-CONFIG-DOMAINS:CAPS" title="NM_VPN_PLUGIN_IP4_CONFIG_DOMAINS">NM_VPN_PLUGIN_IP4_CONFIG_DOMAINS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP4-CONFIG-ROUTES:CAPS" title="NM_VPN_PLUGIN_IP4_CONFIG_ROUTES">NM_VPN_PLUGIN_IP4_CONFIG_ROUTES</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP4-CONFIG-NEVER-DEFAULT:CAPS" title="NM_VPN_PLUGIN_IP4_CONFIG_NEVER_DEFAULT">NM_VPN_PLUGIN_IP4_CONFIG_NEVER_DEFAULT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP4-CONFIG-GATEWAY:CAPS" title="NM_VPN_PLUGIN_IP4_CONFIG_GATEWAY">NM_VPN_PLUGIN_IP4_CONFIG_GATEWAY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP4-CONFIG-BANNER:CAPS" title="NM_VPN_PLUGIN_IP4_CONFIG_BANNER">NM_VPN_PLUGIN_IP4_CONFIG_BANNER</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP4-CONFIG-EXT-GATEWAY:CAPS" title="NM_VPN_PLUGIN_IP4_CONFIG_EXT_GATEWAY">NM_VPN_PLUGIN_IP4_CONFIG_EXT_GATEWAY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP4-CONFIG-MTU:CAPS" title="NM_VPN_PLUGIN_IP4_CONFIG_MTU">NM_VPN_PLUGIN_IP4_CONFIG_MTU</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP4-CONFIG-TUNDEV:CAPS" title="NM_VPN_PLUGIN_IP4_CONFIG_TUNDEV">NM_VPN_PLUGIN_IP4_CONFIG_TUNDEV</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP6-CONFIG-INT-GATEWAY:CAPS" title="NM_VPN_PLUGIN_IP6_CONFIG_INT_GATEWAY">NM_VPN_PLUGIN_IP6_CONFIG_INT_GATEWAY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP6-CONFIG-ADDRESS:CAPS" title="NM_VPN_PLUGIN_IP6_CONFIG_ADDRESS">NM_VPN_PLUGIN_IP6_CONFIG_ADDRESS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP6-CONFIG-PTP:CAPS" title="NM_VPN_PLUGIN_IP6_CONFIG_PTP">NM_VPN_PLUGIN_IP6_CONFIG_PTP</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP6-CONFIG-PREFIX:CAPS" title="NM_VPN_PLUGIN_IP6_CONFIG_PREFIX">NM_VPN_PLUGIN_IP6_CONFIG_PREFIX</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP6-CONFIG-DNS:CAPS" title="NM_VPN_PLUGIN_IP6_CONFIG_DNS">NM_VPN_PLUGIN_IP6_CONFIG_DNS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP6-CONFIG-MSS:CAPS" title="NM_VPN_PLUGIN_IP6_CONFIG_MSS">NM_VPN_PLUGIN_IP6_CONFIG_MSS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP6-CONFIG-DOMAIN:CAPS" title="NM_VPN_PLUGIN_IP6_CONFIG_DOMAIN">NM_VPN_PLUGIN_IP6_CONFIG_DOMAIN</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP6-CONFIG-DOMAINS:CAPS" title="NM_VPN_PLUGIN_IP6_CONFIG_DOMAINS">NM_VPN_PLUGIN_IP6_CONFIG_DOMAINS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP6-CONFIG-ROUTES:CAPS" title="NM_VPN_PLUGIN_IP6_CONFIG_ROUTES">NM_VPN_PLUGIN_IP6_CONFIG_ROUTES</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-util-NetworkManagerVPN.html#NM-VPN-PLUGIN-IP6-CONFIG-NEVER-DEFAULT:CAPS" title="NM_VPN_PLUGIN_IP6_CONFIG_NEVER_DEFAULT">NM_VPN_PLUGIN_IP6_CONFIG_NEVER_DEFAULT</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libnm-util-NetworkManagerVPN.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="libnm-util-NetworkManagerVPN.functions_details"></a><h2>Functions</h2>
+<p></p>
+</div>
+<div class="refsect1">
+<a name="libnm-util-NetworkManagerVPN.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NM-DBUS-PATH-VPN:CAPS"></a><h3>NM_DBUS_PATH_VPN</h3>
+<pre class="programlisting">#define NM_DBUS_PATH_VPN                  "/org/freedesktop/NetworkManager/VPN/Manager"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-VPN:CAPS"></a><h3>NM_DBUS_INTERFACE_VPN</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_VPN             "org.freedesktop.NetworkManager.VPN.Manager"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-PATH-VPN-CONNECTION:CAPS"></a><h3>NM_DBUS_PATH_VPN_CONNECTION</h3>
+<pre class="programlisting">#define NM_DBUS_PATH_VPN_CONNECTION       "/org/freedesktop/NetworkManager/VPN/Connection"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-VPN-CONNECTION:CAPS"></a><h3>NM_DBUS_INTERFACE_VPN_CONNECTION</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_VPN_CONNECTION  "org.freedesktop.NetworkManager.VPN.Connection"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-DBUS-PLUGIN-PATH:CAPS"></a><h3>NM_VPN_DBUS_PLUGIN_PATH</h3>
+<pre class="programlisting">#define NM_VPN_DBUS_PLUGIN_PATH           "/org/freedesktop/NetworkManager/VPN/Plugin"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-DBUS-PLUGIN-INTERFACE:CAPS"></a><h3>NM_VPN_DBUS_PLUGIN_INTERFACE</h3>
+<pre class="programlisting">#define NM_VPN_DBUS_PLUGIN_INTERFACE      "org.freedesktop.NetworkManager.VPN.Plugin"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-NO-ACTIVE-VPN-CONNECTION:CAPS"></a><h3>NM_DBUS_NO_ACTIVE_VPN_CONNECTION</h3>
+<pre class="programlisting">#define NM_DBUS_NO_ACTIVE_VPN_CONNECTION "org.freedesktop.NetworkManager.VPNConnections.NoActiveVPNConnection"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-NO-VPN-CONNECTIONS:CAPS"></a><h3>NM_DBUS_NO_VPN_CONNECTIONS</h3>
+<pre class="programlisting">#define NM_DBUS_NO_VPN_CONNECTIONS       "org.freedesktop.NetworkManager.VPNConnections.NoVPNConnections"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INVALID-VPN-CONNECTION:CAPS"></a><h3>NM_DBUS_INVALID_VPN_CONNECTION</h3>
+<pre class="programlisting">#define NM_DBUS_INVALID_VPN_CONNECTION   "org.freedesktop.NetworkManager.VPNConnections.InvalidVPNConnection"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-VPN-ERROR-PREFIX:CAPS"></a><h3>NM_DBUS_VPN_ERROR_PREFIX</h3>
+<pre class="programlisting">#define NM_DBUS_VPN_ERROR_PREFIX              "org.freedesktop.NetworkManager.VPN.Error"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-VPN-STARTING-IN-PROGRESS:CAPS"></a><h3>NM_DBUS_VPN_STARTING_IN_PROGRESS</h3>
+<pre class="programlisting">#define NM_DBUS_VPN_STARTING_IN_PROGRESS      "StartingInProgress"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-VPN-ALREADY-STARTED:CAPS"></a><h3>NM_DBUS_VPN_ALREADY_STARTED</h3>
+<pre class="programlisting">#define NM_DBUS_VPN_ALREADY_STARTED           "AlreadyStarted"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-VPN-STOPPING-IN-PROGRESS:CAPS"></a><h3>NM_DBUS_VPN_STOPPING_IN_PROGRESS</h3>
+<pre class="programlisting">#define NM_DBUS_VPN_STOPPING_IN_PROGRESS      "StoppingInProgress"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-VPN-ALREADY-STOPPED:CAPS"></a><h3>NM_DBUS_VPN_ALREADY_STOPPED</h3>
+<pre class="programlisting">#define NM_DBUS_VPN_ALREADY_STOPPED           "AlreadyStopped"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-VPN-WRONG-STATE:CAPS"></a><h3>NM_DBUS_VPN_WRONG_STATE</h3>
+<pre class="programlisting">#define NM_DBUS_VPN_WRONG_STATE               "WrongState"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-VPN-BAD-ARGUMENTS:CAPS"></a><h3>NM_DBUS_VPN_BAD_ARGUMENTS</h3>
+<pre class="programlisting">#define NM_DBUS_VPN_BAD_ARGUMENTS             "BadArguments"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-VPN-INTERACTIVE-NOT-SUPPORTED:CAPS"></a><h3>NM_DBUS_VPN_INTERACTIVE_NOT_SUPPORTED</h3>
+<pre class="programlisting">#define NM_DBUS_VPN_INTERACTIVE_NOT_SUPPORTED "InteractiveNotSupported"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-VPN-SIGNAL-LOGIN-BANNER:CAPS"></a><h3>NM_DBUS_VPN_SIGNAL_LOGIN_BANNER</h3>
+<pre class="programlisting">#define NM_DBUS_VPN_SIGNAL_LOGIN_BANNER   "LoginBanner"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-VPN-SIGNAL-LOGIN-FAILED:CAPS"></a><h3>NM_DBUS_VPN_SIGNAL_LOGIN_FAILED</h3>
+<pre class="programlisting">#define NM_DBUS_VPN_SIGNAL_LOGIN_FAILED   "LoginFailed"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-VPN-SIGNAL-LAUNCH-FAILED:CAPS"></a><h3>NM_DBUS_VPN_SIGNAL_LAUNCH_FAILED</h3>
+<pre class="programlisting">#define NM_DBUS_VPN_SIGNAL_LAUNCH_FAILED  "LaunchFailed"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-VPN-SIGNAL-CONNECT-FAILED:CAPS"></a><h3>NM_DBUS_VPN_SIGNAL_CONNECT_FAILED</h3>
+<pre class="programlisting">#define NM_DBUS_VPN_SIGNAL_CONNECT_FAILED "ConnectFailed"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-VPN-SIGNAL-VPN-CONFIG-BAD:CAPS"></a><h3>NM_DBUS_VPN_SIGNAL_VPN_CONFIG_BAD</h3>
+<pre class="programlisting">#define NM_DBUS_VPN_SIGNAL_VPN_CONFIG_BAD "VPNConfigBad"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-VPN-SIGNAL-IP-CONFIG-BAD:CAPS"></a><h3>NM_DBUS_VPN_SIGNAL_IP_CONFIG_BAD</h3>
+<pre class="programlisting">#define NM_DBUS_VPN_SIGNAL_IP_CONFIG_BAD  "IPConfigBad"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-VPN-SIGNAL-STATE-CHANGE:CAPS"></a><h3>NM_DBUS_VPN_SIGNAL_STATE_CHANGE</h3>
+<pre class="programlisting">#define NM_DBUS_VPN_SIGNAL_STATE_CHANGE   "StateChange"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-VPN-SIGNAL-IP4-CONFIG:CAPS"></a><h3>NM_DBUS_VPN_SIGNAL_IP4_CONFIG</h3>
+<pre class="programlisting">#define NM_DBUS_VPN_SIGNAL_IP4_CONFIG     "IP4Config"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMVPNServiceState"></a><h3>enum NMVPNServiceState</h3>
+<p>VPN daemon states</p>
+<p>(Corresponds to the NM_VPN_SERVICE_STATE type in nm-vpn-connection.xml.)</p>
+<div class="refsect3">
+<a name="id-1.2.32.6.27.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-SERVICE-STATE-UNKNOWN:CAPS"></a>NM_VPN_SERVICE_STATE_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>The state of the VPN plugin is unknown.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-SERVICE-STATE-INIT:CAPS"></a>NM_VPN_SERVICE_STATE_INIT</p></td>
+<td class="enum_member_description">
+<p>The VPN plugin is initialized.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-SERVICE-STATE-SHUTDOWN:CAPS"></a>NM_VPN_SERVICE_STATE_SHUTDOWN</p></td>
+<td class="enum_member_description">
+<p>Not used.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-SERVICE-STATE-STARTING:CAPS"></a>NM_VPN_SERVICE_STATE_STARTING</p></td>
+<td class="enum_member_description">
+<p>The plugin is attempting to connect to a VPN server.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-SERVICE-STATE-STARTED:CAPS"></a>NM_VPN_SERVICE_STATE_STARTED</p></td>
+<td class="enum_member_description">
+<p>The plugin has connected to a VPN server.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-SERVICE-STATE-STOPPING:CAPS"></a>NM_VPN_SERVICE_STATE_STOPPING</p></td>
+<td class="enum_member_description">
+<p>The plugin is disconnecting from the VPN server.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-SERVICE-STATE-STOPPED:CAPS"></a>NM_VPN_SERVICE_STATE_STOPPED</p></td>
+<td class="enum_member_description">
+<p>The plugin has disconnected from the VPN server.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMVPNConnectionState"></a><h3>enum NMVPNConnectionState</h3>
+<p>VPN connection states</p>
+<p>(Corresponds to the NM_VPN_CONNECTION_STATE type in nm-vpn-connection.xml.)</p>
+<div class="refsect3">
+<a name="id-1.2.32.6.28.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-UNKNOWN:CAPS"></a>NM_VPN_CONNECTION_STATE_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>The state of the VPN connection is
+  unknown.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-PREPARE:CAPS"></a>NM_VPN_CONNECTION_STATE_PREPARE</p></td>
+<td class="enum_member_description">
+<p>The VPN connection is preparing to
+  connect.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-NEED-AUTH:CAPS"></a>NM_VPN_CONNECTION_STATE_NEED_AUTH</p></td>
+<td class="enum_member_description">
+<p>The VPN connection needs authorization
+  credentials.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-CONNECT:CAPS"></a>NM_VPN_CONNECTION_STATE_CONNECT</p></td>
+<td class="enum_member_description">
+<p>The VPN connection is being established.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-IP-CONFIG-GET:CAPS"></a>NM_VPN_CONNECTION_STATE_IP_CONFIG_GET</p></td>
+<td class="enum_member_description">
+<p>The VPN connection is getting an IP
+  address.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-ACTIVATED:CAPS"></a>NM_VPN_CONNECTION_STATE_ACTIVATED</p></td>
+<td class="enum_member_description">
+<p>The VPN connection is active.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-FAILED:CAPS"></a>NM_VPN_CONNECTION_STATE_FAILED</p></td>
+<td class="enum_member_description">
+<p>The VPN connection failed.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-DISCONNECTED:CAPS"></a>NM_VPN_CONNECTION_STATE_DISCONNECTED</p></td>
+<td class="enum_member_description">
+<p>The VPN connection is disconnected.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMVPNConnectionStateReason"></a><h3>enum NMVPNConnectionStateReason</h3>
+<p>VPN connection state reasons</p>
+<p>(Corresponds to the NM_VPN_CONNECTION_STATE_REASON type in nm-vpn-connection.xml.)</p>
+<div class="refsect3">
+<a name="id-1.2.32.6.29.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-REASON-UNKNOWN:CAPS"></a>NM_VPN_CONNECTION_STATE_REASON_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>The reason for the VPN connection
+  state change is unknown.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-REASON-NONE:CAPS"></a>NM_VPN_CONNECTION_STATE_REASON_NONE</p></td>
+<td class="enum_member_description">
+<p>No reason was given for the VPN
+  connection state change.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-REASON-USER-DISCONNECTED:CAPS"></a>NM_VPN_CONNECTION_STATE_REASON_USER_DISCONNECTED</p></td>
+<td class="enum_member_description">
+<p>The VPN connection changed
+  state because the user disconnected it.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-REASON-DEVICE-DISCONNECTED:CAPS"></a>NM_VPN_CONNECTION_STATE_REASON_DEVICE_DISCONNECTED</p></td>
+<td class="enum_member_description">
+<p>The VPN connection
+  changed state because the device it was using was disconnected.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-REASON-SERVICE-STOPPED:CAPS"></a>NM_VPN_CONNECTION_STATE_REASON_SERVICE_STOPPED</p></td>
+<td class="enum_member_description">
+<p>The service providing the
+  VPN connection was stopped.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-REASON-IP-CONFIG-INVALID:CAPS"></a>NM_VPN_CONNECTION_STATE_REASON_IP_CONFIG_INVALID</p></td>
+<td class="enum_member_description">
+<p>The IP config of the VPN
+  connection was invalid.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-REASON-CONNECT-TIMEOUT:CAPS"></a>NM_VPN_CONNECTION_STATE_REASON_CONNECT_TIMEOUT</p></td>
+<td class="enum_member_description">
+<p>The connection attempt to
+  the VPN service timed out.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-REASON-SERVICE-START-TIMEOUT:CAPS"></a>NM_VPN_CONNECTION_STATE_REASON_SERVICE_START_TIMEOUT</p></td>
+<td class="enum_member_description">
+<p>A timeout occurred
+  while starting the service providing the VPN connection.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-REASON-SERVICE-START-FAILED:CAPS"></a>NM_VPN_CONNECTION_STATE_REASON_SERVICE_START_FAILED</p></td>
+<td class="enum_member_description">
+<p>Starting the service
+  starting the service providing the VPN connection failed.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-REASON-NO-SECRETS:CAPS"></a>NM_VPN_CONNECTION_STATE_REASON_NO_SECRETS</p></td>
+<td class="enum_member_description">
+<p>Necessary secrets for the VPN
+  connection were not provided.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-REASON-LOGIN-FAILED:CAPS"></a>NM_VPN_CONNECTION_STATE_REASON_LOGIN_FAILED</p></td>
+<td class="enum_member_description">
+<p>Authentication to the VPN
+  server failed.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-CONNECTION-STATE-REASON-CONNECTION-REMOVED:CAPS"></a>NM_VPN_CONNECTION_STATE_REASON_CONNECTION_REMOVED</p></td>
+<td class="enum_member_description">
+<p>The connection was
+  deleted from settings.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMVPNPluginFailure"></a><h3>enum NMVPNPluginFailure</h3>
+<p>VPN plugin failure reasons</p>
+<p>(Corresponds to the NM_VPN_PLUGIN_FAILURE type in nm-vpn-plugin.xml.)</p>
+<div class="refsect3">
+<a name="id-1.2.32.6.30.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-FAILURE-LOGIN-FAILED:CAPS"></a>NM_VPN_PLUGIN_FAILURE_LOGIN_FAILED</p></td>
+<td class="enum_member_description">
+<p>Login failed.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-FAILURE-CONNECT-FAILED:CAPS"></a>NM_VPN_PLUGIN_FAILURE_CONNECT_FAILED</p></td>
+<td class="enum_member_description">
+<p>Connect failed.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-FAILURE-BAD-IP-CONFIG:CAPS"></a>NM_VPN_PLUGIN_FAILURE_BAD_IP_CONFIG</p></td>
+<td class="enum_member_description">
+<p>Invalid IP configuration returned from
+  the VPN plugin.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-CONFIG-TUNDEV:CAPS"></a><h3>NM_VPN_PLUGIN_CONFIG_TUNDEV</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_CONFIG_TUNDEV      "tundev"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-CONFIG-BANNER:CAPS"></a><h3>NM_VPN_PLUGIN_CONFIG_BANNER</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_CONFIG_BANNER      "banner"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-CONFIG-EXT-GATEWAY:CAPS"></a><h3>NM_VPN_PLUGIN_CONFIG_EXT_GATEWAY</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_CONFIG_EXT_GATEWAY "gateway"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-CONFIG-MTU:CAPS"></a><h3>NM_VPN_PLUGIN_CONFIG_MTU</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_CONFIG_MTU         "mtu"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-CONFIG-HAS-IP4:CAPS"></a><h3>NM_VPN_PLUGIN_CONFIG_HAS_IP4</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_CONFIG_HAS_IP4     "has-ip4"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-CONFIG-HAS-IP6:CAPS"></a><h3>NM_VPN_PLUGIN_CONFIG_HAS_IP6</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_CONFIG_HAS_IP6     "has-ip6"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-CAN-PERSIST:CAPS"></a><h3>NM_VPN_PLUGIN_CAN_PERSIST</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_CAN_PERSIST        "can-persist"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP4-CONFIG-INT-GATEWAY:CAPS"></a><h3>NM_VPN_PLUGIN_IP4_CONFIG_INT_GATEWAY</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP4_CONFIG_INT_GATEWAY "internal-gateway"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP4-CONFIG-ADDRESS:CAPS"></a><h3>NM_VPN_PLUGIN_IP4_CONFIG_ADDRESS</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP4_CONFIG_ADDRESS     "address"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP4-CONFIG-PTP:CAPS"></a><h3>NM_VPN_PLUGIN_IP4_CONFIG_PTP</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP4_CONFIG_PTP         "ptp"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP4-CONFIG-PREFIX:CAPS"></a><h3>NM_VPN_PLUGIN_IP4_CONFIG_PREFIX</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP4_CONFIG_PREFIX      "prefix"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP4-CONFIG-DNS:CAPS"></a><h3>NM_VPN_PLUGIN_IP4_CONFIG_DNS</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP4_CONFIG_DNS         "dns"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP4-CONFIG-NBNS:CAPS"></a><h3>NM_VPN_PLUGIN_IP4_CONFIG_NBNS</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP4_CONFIG_NBNS        "nbns"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP4-CONFIG-MSS:CAPS"></a><h3>NM_VPN_PLUGIN_IP4_CONFIG_MSS</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP4_CONFIG_MSS         "mss"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP4-CONFIG-DOMAIN:CAPS"></a><h3>NM_VPN_PLUGIN_IP4_CONFIG_DOMAIN</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP4_CONFIG_DOMAIN      "domain"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP4-CONFIG-DOMAINS:CAPS"></a><h3>NM_VPN_PLUGIN_IP4_CONFIG_DOMAINS</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP4_CONFIG_DOMAINS     "domains"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP4-CONFIG-ROUTES:CAPS"></a><h3>NM_VPN_PLUGIN_IP4_CONFIG_ROUTES</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP4_CONFIG_ROUTES      "routes"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP4-CONFIG-NEVER-DEFAULT:CAPS"></a><h3>NM_VPN_PLUGIN_IP4_CONFIG_NEVER_DEFAULT</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP4_CONFIG_NEVER_DEFAULT "never-default"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP4-CONFIG-GATEWAY:CAPS"></a><h3>NM_VPN_PLUGIN_IP4_CONFIG_GATEWAY</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP4_CONFIG_GATEWAY   NM_VPN_PLUGIN_IP4_CONFIG_EXT_GATEWAY
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP4-CONFIG-BANNER:CAPS"></a><h3>NM_VPN_PLUGIN_IP4_CONFIG_BANNER</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP4_CONFIG_BANNER      NM_VPN_PLUGIN_CONFIG_BANNER
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP4-CONFIG-EXT-GATEWAY:CAPS"></a><h3>NM_VPN_PLUGIN_IP4_CONFIG_EXT_GATEWAY</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP4_CONFIG_EXT_GATEWAY NM_VPN_PLUGIN_CONFIG_EXT_GATEWAY
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP4-CONFIG-MTU:CAPS"></a><h3>NM_VPN_PLUGIN_IP4_CONFIG_MTU</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP4_CONFIG_MTU         NM_VPN_PLUGIN_CONFIG_MTU
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP4-CONFIG-TUNDEV:CAPS"></a><h3>NM_VPN_PLUGIN_IP4_CONFIG_TUNDEV</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP4_CONFIG_TUNDEV      NM_VPN_PLUGIN_CONFIG_TUNDEV
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP6-CONFIG-INT-GATEWAY:CAPS"></a><h3>NM_VPN_PLUGIN_IP6_CONFIG_INT_GATEWAY</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP6_CONFIG_INT_GATEWAY "internal-gateway"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP6-CONFIG-ADDRESS:CAPS"></a><h3>NM_VPN_PLUGIN_IP6_CONFIG_ADDRESS</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP6_CONFIG_ADDRESS     "address"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP6-CONFIG-PTP:CAPS"></a><h3>NM_VPN_PLUGIN_IP6_CONFIG_PTP</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP6_CONFIG_PTP         "ptp"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP6-CONFIG-PREFIX:CAPS"></a><h3>NM_VPN_PLUGIN_IP6_CONFIG_PREFIX</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP6_CONFIG_PREFIX      "prefix"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP6-CONFIG-DNS:CAPS"></a><h3>NM_VPN_PLUGIN_IP6_CONFIG_DNS</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP6_CONFIG_DNS         "dns"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP6-CONFIG-MSS:CAPS"></a><h3>NM_VPN_PLUGIN_IP6_CONFIG_MSS</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP6_CONFIG_MSS         "mss"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP6-CONFIG-DOMAIN:CAPS"></a><h3>NM_VPN_PLUGIN_IP6_CONFIG_DOMAIN</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP6_CONFIG_DOMAIN      "domain"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP6-CONFIG-DOMAINS:CAPS"></a><h3>NM_VPN_PLUGIN_IP6_CONFIG_DOMAINS</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP6_CONFIG_DOMAINS     "domains"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP6-CONFIG-ROUTES:CAPS"></a><h3>NM_VPN_PLUGIN_IP6_CONFIG_ROUTES</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP6_CONFIG_ROUTES      "routes"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-IP6-CONFIG-NEVER-DEFAULT:CAPS"></a><h3>NM_VPN_PLUGIN_IP6_CONFIG_NEVER_DEFAULT</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_IP6_CONFIG_NEVER_DEFAULT "never-default"
+</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

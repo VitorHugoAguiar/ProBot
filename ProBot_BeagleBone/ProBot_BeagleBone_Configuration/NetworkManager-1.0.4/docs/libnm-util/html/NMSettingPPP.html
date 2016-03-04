@@ -1,0 +1,1240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NMSettingPPP: libnm-util Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm-util Reference Manual">
+<link rel="up" href="ch01.html" title="libnm-util API Reference">
+<link rel="prev" href="NMSettingIP6Config.html" title="NMSettingIP6Config">
+<link rel="next" href="NMSettingPPPOE.html" title="NMSettingPPPOE">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#NMSettingPPP.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#NMSettingPPP.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#NMSettingPPP.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="NMSettingIP6Config.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="NMSettingPPPOE.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="NMSettingPPP"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="NMSettingPPP.top_of_page"></a>NMSettingPPP</span></h2>
+<p>NMSettingPPP — Describes connection properties for devices/networks
+that require PPP to deliver IP capability</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="NMSettingPPP.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-error-quark" title="nm_setting_ppp_error_quark ()">nm_setting_ppp_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-new" title="nm_setting_ppp_new ()">nm_setting_ppp_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-get-noauth" title="nm_setting_ppp_get_noauth ()">nm_setting_ppp_get_noauth</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-get-refuse-eap" title="nm_setting_ppp_get_refuse_eap ()">nm_setting_ppp_get_refuse_eap</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-get-refuse-pap" title="nm_setting_ppp_get_refuse_pap ()">nm_setting_ppp_get_refuse_pap</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-get-refuse-chap" title="nm_setting_ppp_get_refuse_chap ()">nm_setting_ppp_get_refuse_chap</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-get-refuse-mschap" title="nm_setting_ppp_get_refuse_mschap ()">nm_setting_ppp_get_refuse_mschap</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-get-refuse-mschapv2" title="nm_setting_ppp_get_refuse_mschapv2 ()">nm_setting_ppp_get_refuse_mschapv2</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-get-nobsdcomp" title="nm_setting_ppp_get_nobsdcomp ()">nm_setting_ppp_get_nobsdcomp</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-get-nodeflate" title="nm_setting_ppp_get_nodeflate ()">nm_setting_ppp_get_nodeflate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-get-no-vj-comp" title="nm_setting_ppp_get_no_vj_comp ()">nm_setting_ppp_get_no_vj_comp</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-get-require-mppe" title="nm_setting_ppp_get_require_mppe ()">nm_setting_ppp_get_require_mppe</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-get-require-mppe-128" title="nm_setting_ppp_get_require_mppe_128 ()">nm_setting_ppp_get_require_mppe_128</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-get-mppe-stateful" title="nm_setting_ppp_get_mppe_stateful ()">nm_setting_ppp_get_mppe_stateful</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-get-crtscts" title="nm_setting_ppp_get_crtscts ()">nm_setting_ppp_get_crtscts</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-get-baud" title="nm_setting_ppp_get_baud ()">nm_setting_ppp_get_baud</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-get-mru" title="nm_setting_ppp_get_mru ()">nm_setting_ppp_get_mru</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-get-mtu" title="nm_setting_ppp_get_mtu ()">nm_setting_ppp_get_mtu</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-get-lcp-echo-failure" title="nm_setting_ppp_get_lcp_echo_failure ()">nm_setting_ppp_get_lcp_echo_failure</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingPPP.html#nm-setting-ppp-get-lcp-echo-interval" title="nm_setting_ppp_get_lcp_echo_interval ()">nm_setting_ppp_get_lcp_echo_interval</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingPPP.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingPPP.html#NMSettingPPP--baud" title="The “baud” property">baud</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingPPP.html#NMSettingPPP--crtscts" title="The “crtscts” property">crtscts</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingPPP.html#NMSettingPPP--lcp-echo-failure" title="The “lcp-echo-failure” property">lcp-echo-failure</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingPPP.html#NMSettingPPP--lcp-echo-interval" title="The “lcp-echo-interval” property">lcp-echo-interval</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingPPP.html#NMSettingPPP--mppe-stateful" title="The “mppe-stateful” property">mppe-stateful</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingPPP.html#NMSettingPPP--mru" title="The “mru” property">mru</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingPPP.html#NMSettingPPP--mtu" title="The “mtu” property">mtu</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingPPP.html#NMSettingPPP--no-vj-comp" title="The “no-vj-comp” property">no-vj-comp</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingPPP.html#NMSettingPPP--noauth" title="The “noauth” property">noauth</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingPPP.html#NMSettingPPP--nobsdcomp" title="The “nobsdcomp” property">nobsdcomp</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingPPP.html#NMSettingPPP--nodeflate" title="The “nodeflate” property">nodeflate</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingPPP.html#NMSettingPPP--refuse-chap" title="The “refuse-chap” property">refuse-chap</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingPPP.html#NMSettingPPP--refuse-eap" title="The “refuse-eap” property">refuse-eap</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingPPP.html#NMSettingPPP--refuse-mschap" title="The “refuse-mschap” property">refuse-mschap</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingPPP.html#NMSettingPPP--refuse-mschapv2" title="The “refuse-mschapv2” property">refuse-mschapv2</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingPPP.html#NMSettingPPP--refuse-pap" title="The “refuse-pap” property">refuse-pap</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingPPP.html#NMSettingPPP--require-mppe" title="The “require-mppe” property">require-mppe</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingPPP.html#NMSettingPPP--require-mppe-128" title="The “require-mppe-128” property">require-mppe-128</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingPPP.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-SETTING-NAME:CAPS" title="NM_SETTING_PPP_SETTING_NAME">NM_SETTING_PPP_SETTING_NAME</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NMSettingPPPError" title="enum NMSettingPPPError">NMSettingPPPError</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-ERROR:CAPS" title="NM_SETTING_PPP_ERROR">NM_SETTING_PPP_ERROR</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-NOAUTH:CAPS" title="NM_SETTING_PPP_NOAUTH">NM_SETTING_PPP_NOAUTH</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-REFUSE-EAP:CAPS" title="NM_SETTING_PPP_REFUSE_EAP">NM_SETTING_PPP_REFUSE_EAP</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-REFUSE-PAP:CAPS" title="NM_SETTING_PPP_REFUSE_PAP">NM_SETTING_PPP_REFUSE_PAP</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-REFUSE-CHAP:CAPS" title="NM_SETTING_PPP_REFUSE_CHAP">NM_SETTING_PPP_REFUSE_CHAP</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-REFUSE-MSCHAP:CAPS" title="NM_SETTING_PPP_REFUSE_MSCHAP">NM_SETTING_PPP_REFUSE_MSCHAP</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-REFUSE-MSCHAPV2:CAPS" title="NM_SETTING_PPP_REFUSE_MSCHAPV2">NM_SETTING_PPP_REFUSE_MSCHAPV2</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-NOBSDCOMP:CAPS" title="NM_SETTING_PPP_NOBSDCOMP">NM_SETTING_PPP_NOBSDCOMP</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-NODEFLATE:CAPS" title="NM_SETTING_PPP_NODEFLATE">NM_SETTING_PPP_NODEFLATE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-NO-VJ-COMP:CAPS" title="NM_SETTING_PPP_NO_VJ_COMP">NM_SETTING_PPP_NO_VJ_COMP</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-REQUIRE-MPPE:CAPS" title="NM_SETTING_PPP_REQUIRE_MPPE">NM_SETTING_PPP_REQUIRE_MPPE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-REQUIRE-MPPE-128:CAPS" title="NM_SETTING_PPP_REQUIRE_MPPE_128">NM_SETTING_PPP_REQUIRE_MPPE_128</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-MPPE-STATEFUL:CAPS" title="NM_SETTING_PPP_MPPE_STATEFUL">NM_SETTING_PPP_MPPE_STATEFUL</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-CRTSCTS:CAPS" title="NM_SETTING_PPP_CRTSCTS">NM_SETTING_PPP_CRTSCTS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-BAUD:CAPS" title="NM_SETTING_PPP_BAUD">NM_SETTING_PPP_BAUD</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-MRU:CAPS" title="NM_SETTING_PPP_MRU">NM_SETTING_PPP_MRU</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-MTU:CAPS" title="NM_SETTING_PPP_MTU">NM_SETTING_PPP_MTU</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-LCP-ECHO-FAILURE:CAPS" title="NM_SETTING_PPP_LCP_ECHO_FAILURE">NM_SETTING_PPP_LCP_ECHO_FAILURE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingPPP.html#NM-SETTING-PPP-LCP-ECHO-INTERVAL:CAPS" title="NM_SETTING_PPP_LCP_ECHO_INTERVAL">NM_SETTING_PPP_LCP_ECHO_INTERVAL</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingPPP.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Enumeration-and-Flag-Types.html">GEnum</a>
+    <span class="lineart">╰──</span> NMSettingPPPError
+    GObject
+    <span class="lineart">╰──</span> <a class="link" href="NMSetting.html" title="NMSetting">NMSetting</a>
+        <span class="lineart">╰──</span> NMSettingPPP
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSettingPPP.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;nm-setting-ppp.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSettingPPP.description"></a><h2>Description</h2>
+<p>The <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> object is a <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> subclass that describes properties
+necessary for connection to networks that require PPP transport, like PPPoE
+cable and DSL modems and some mobile broadband devices.</p>
+</div>
+<div class="refsect1">
+<a name="NMSettingPPP.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="nm-setting-ppp-error-quark"></a><h3>nm_setting_ppp_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_setting_ppp_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Registers an error quark for <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> if necessary.</p>
+<div class="refsect3">
+<a name="id-1.2.27.9.2.5"></a><h4>Returns</h4>
+<p> the error quark used for <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> errors.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-new"></a><h3>nm_setting_ppp_new ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+nm_setting_ppp_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> object with default values.</p>
+<div class="refsect3">
+<a name="id-1.2.27.9.3.5"></a><h4>Returns</h4>
+<p> the new empty <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> object. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-get-noauth"></a><h3>nm_setting_ppp_get_noauth ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ppp_get_noauth (<em class="parameter"><code><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.27.9.4.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.27.9.4.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingPPP.html#NMSettingPPP--noauth" title="The “noauth” property"><span class="type">“noauth”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-get-refuse-eap"></a><h3>nm_setting_ppp_get_refuse_eap ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ppp_get_refuse_eap (<em class="parameter"><code><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.27.9.5.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.27.9.5.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingPPP.html#NMSettingPPP--refuse-eap" title="The “refuse-eap” property"><span class="type">“refuse-eap”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-get-refuse-pap"></a><h3>nm_setting_ppp_get_refuse_pap ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ppp_get_refuse_pap (<em class="parameter"><code><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.27.9.6.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.27.9.6.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingPPP.html#NMSettingPPP--refuse-pap" title="The “refuse-pap” property"><span class="type">“refuse-pap”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-get-refuse-chap"></a><h3>nm_setting_ppp_get_refuse_chap ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ppp_get_refuse_chap (<em class="parameter"><code><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.27.9.7.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.27.9.7.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingPPP.html#NMSettingPPP--refuse-chap" title="The “refuse-chap” property"><span class="type">“refuse-chap”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-get-refuse-mschap"></a><h3>nm_setting_ppp_get_refuse_mschap ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ppp_get_refuse_mschap (<em class="parameter"><code><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.27.9.8.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.27.9.8.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingPPP.html#NMSettingPPP--refuse-mschap" title="The “refuse-mschap” property"><span class="type">“refuse-mschap”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-get-refuse-mschapv2"></a><h3>nm_setting_ppp_get_refuse_mschapv2 ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ppp_get_refuse_mschapv2 (<em class="parameter"><code><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.27.9.9.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.27.9.9.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingPPP.html#NMSettingPPP--refuse-mschapv2" title="The “refuse-mschapv2” property"><span class="type">“refuse-mschapv2”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-get-nobsdcomp"></a><h3>nm_setting_ppp_get_nobsdcomp ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ppp_get_nobsdcomp (<em class="parameter"><code><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.27.9.10.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.27.9.10.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingPPP.html#NMSettingPPP--nobsdcomp" title="The “nobsdcomp” property"><span class="type">“nobsdcomp”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-get-nodeflate"></a><h3>nm_setting_ppp_get_nodeflate ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ppp_get_nodeflate (<em class="parameter"><code><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.27.9.11.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.27.9.11.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingPPP.html#NMSettingPPP--nodeflate" title="The “nodeflate” property"><span class="type">“nodeflate”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-get-no-vj-comp"></a><h3>nm_setting_ppp_get_no_vj_comp ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ppp_get_no_vj_comp (<em class="parameter"><code><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.27.9.12.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.27.9.12.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingPPP.html#NMSettingPPP--no-vj-comp" title="The “no-vj-comp” property"><span class="type">“no-vj-comp”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-get-require-mppe"></a><h3>nm_setting_ppp_get_require_mppe ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ppp_get_require_mppe (<em class="parameter"><code><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.27.9.13.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.27.9.13.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingPPP.html#NMSettingPPP--require-mppe" title="The “require-mppe” property"><span class="type">“require-mppe”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-get-require-mppe-128"></a><h3>nm_setting_ppp_get_require_mppe_128 ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ppp_get_require_mppe_128 (<em class="parameter"><code><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.27.9.14.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.27.9.14.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingPPP.html#NMSettingPPP--require-mppe-128" title="The “require-mppe-128” property"><span class="type">“require-mppe-128”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-get-mppe-stateful"></a><h3>nm_setting_ppp_get_mppe_stateful ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ppp_get_mppe_stateful (<em class="parameter"><code><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.27.9.15.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.27.9.15.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingPPP.html#NMSettingPPP--mppe-stateful" title="The “mppe-stateful” property"><span class="type">“mppe-stateful”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-get-crtscts"></a><h3>nm_setting_ppp_get_crtscts ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_ppp_get_crtscts (<em class="parameter"><code><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.27.9.16.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.27.9.16.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingPPP.html#NMSettingPPP--crtscts" title="The “crtscts” property"><span class="type">“crtscts”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-get-baud"></a><h3>nm_setting_ppp_get_baud ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_ppp_get_baud (<em class="parameter"><code><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.27.9.17.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.27.9.17.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingPPP.html#NMSettingPPP--baud" title="The “baud” property"><span class="type">“baud”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-get-mru"></a><h3>nm_setting_ppp_get_mru ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_ppp_get_mru (<em class="parameter"><code><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.27.9.18.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.27.9.18.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingPPP.html#NMSettingPPP--mru" title="The “mru” property"><span class="type">“mru”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-get-mtu"></a><h3>nm_setting_ppp_get_mtu ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_ppp_get_mtu (<em class="parameter"><code><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.27.9.19.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.27.9.19.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingPPP.html#NMSettingPPP--mtu" title="The “mtu” property"><span class="type">“mtu”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-get-lcp-echo-failure"></a><h3>nm_setting_ppp_get_lcp_echo_failure ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_ppp_get_lcp_echo_failure (<em class="parameter"><code><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.27.9.20.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.27.9.20.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingPPP.html#NMSettingPPP--lcp-echo-failure" title="The “lcp-echo-failure” property"><span class="type">“lcp-echo-failure”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-ppp-get-lcp-echo-interval"></a><h3>nm_setting_ppp_get_lcp_echo_interval ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_ppp_get_lcp_echo_interval (<em class="parameter"><code><a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.27.9.21.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingPPP.html" title="NMSettingPPP"><span class="type">NMSettingPPP</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.27.9.21.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingPPP.html#NMSettingPPP--lcp-echo-interval" title="The “lcp-echo-interval” property"><span class="type">“lcp-echo-interval”</span></a> property of the setting</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSettingPPP.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-SETTING-NAME:CAPS"></a><h3>NM_SETTING_PPP_SETTING_NAME</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_SETTING_NAME "ppp"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingPPPError"></a><h3>enum NMSettingPPPError</h3>
+<div class="refsect3">
+<a name="id-1.2.27.10.3.3"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-PPP-ERROR-UNKNOWN:CAPS"></a>NM_SETTING_PPP_ERROR_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>unknown or unclassified error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-PPP-ERROR-INVALID-PROPERTY:CAPS"></a>NM_SETTING_PPP_ERROR_INVALID_PROPERTY</p></td>
+<td class="enum_member_description">
+<p>the property was invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-PPP-ERROR-MISSING-PROPERTY:CAPS"></a>NM_SETTING_PPP_ERROR_MISSING_PROPERTY</p></td>
+<td class="enum_member_description">
+<p>the property was missing and is
+required</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-PPP-ERROR-REQUIRE-MPPE-NOT-ALLOWED:CAPS"></a>NM_SETTING_PPP_ERROR_REQUIRE_MPPE_NOT_ALLOWED</p></td>
+<td class="enum_member_description">
+<p>requiring MPPE is not compatible
+with other setting configuration parameters</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-ERROR:CAPS"></a><h3>NM_SETTING_PPP_ERROR</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_ERROR nm_setting_ppp_error_quark ()
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-NOAUTH:CAPS"></a><h3>NM_SETTING_PPP_NOAUTH</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_NOAUTH            "noauth"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-REFUSE-EAP:CAPS"></a><h3>NM_SETTING_PPP_REFUSE_EAP</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_REFUSE_EAP        "refuse-eap"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-REFUSE-PAP:CAPS"></a><h3>NM_SETTING_PPP_REFUSE_PAP</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_REFUSE_PAP        "refuse-pap"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-REFUSE-CHAP:CAPS"></a><h3>NM_SETTING_PPP_REFUSE_CHAP</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_REFUSE_CHAP       "refuse-chap"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-REFUSE-MSCHAP:CAPS"></a><h3>NM_SETTING_PPP_REFUSE_MSCHAP</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_REFUSE_MSCHAP     "refuse-mschap"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-REFUSE-MSCHAPV2:CAPS"></a><h3>NM_SETTING_PPP_REFUSE_MSCHAPV2</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_REFUSE_MSCHAPV2   "refuse-mschapv2"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-NOBSDCOMP:CAPS"></a><h3>NM_SETTING_PPP_NOBSDCOMP</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_NOBSDCOMP         "nobsdcomp"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-NODEFLATE:CAPS"></a><h3>NM_SETTING_PPP_NODEFLATE</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_NODEFLATE         "nodeflate"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-NO-VJ-COMP:CAPS"></a><h3>NM_SETTING_PPP_NO_VJ_COMP</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_NO_VJ_COMP        "no-vj-comp"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-REQUIRE-MPPE:CAPS"></a><h3>NM_SETTING_PPP_REQUIRE_MPPE</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_REQUIRE_MPPE      "require-mppe"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-REQUIRE-MPPE-128:CAPS"></a><h3>NM_SETTING_PPP_REQUIRE_MPPE_128</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_REQUIRE_MPPE_128  "require-mppe-128"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-MPPE-STATEFUL:CAPS"></a><h3>NM_SETTING_PPP_MPPE_STATEFUL</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_MPPE_STATEFUL     "mppe-stateful"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-CRTSCTS:CAPS"></a><h3>NM_SETTING_PPP_CRTSCTS</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_CRTSCTS           "crtscts"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-BAUD:CAPS"></a><h3>NM_SETTING_PPP_BAUD</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_BAUD              "baud"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-MRU:CAPS"></a><h3>NM_SETTING_PPP_MRU</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_MRU               "mru"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-MTU:CAPS"></a><h3>NM_SETTING_PPP_MTU</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_MTU               "mtu"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-LCP-ECHO-FAILURE:CAPS"></a><h3>NM_SETTING_PPP_LCP_ECHO_FAILURE</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_LCP_ECHO_FAILURE  "lcp-echo-failure"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-PPP-LCP-ECHO-INTERVAL:CAPS"></a><h3>NM_SETTING_PPP_LCP_ECHO_INTERVAL</h3>
+<pre class="programlisting">#define NM_SETTING_PPP_LCP_ECHO_INTERVAL "lcp-echo-interval"
+</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSettingPPP.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="NMSettingPPP--baud"></a><h3>The <code class="literal">“baud”</code> property</h3>
+<pre class="programlisting">  “baud”                     <span class="type">guint</span></pre>
+<p>If non-zero, instruct pppd to set the serial port to the specified
+baudrate.  This value should normally be left as 0 to automatically
+choose the speed.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingPPP--crtscts"></a><h3>The <code class="literal">“crtscts”</code> property</h3>
+<pre class="programlisting">  “crtscts”                  <span class="type">gboolean</span></pre>
+<p>If <code class="literal">TRUE</code>, specify that pppd should set the serial port to use hardware
+flow control with RTS and CTS signals.  This value should normally be set
+to <code class="literal">FALSE</code>.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingPPP--lcp-echo-failure"></a><h3>The <code class="literal">“lcp-echo-failure”</code> property</h3>
+<pre class="programlisting">  “lcp-echo-failure”         <span class="type">guint</span></pre>
+<p>If non-zero, instruct pppd to presume the connection to the peer has
+failed if the specified number of LCP echo-requests go unanswered by the
+peer.  The "lcp-echo-interval" property must also be set to a non-zero
+value if this property is used.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingPPP--lcp-echo-interval"></a><h3>The <code class="literal">“lcp-echo-interval”</code> property</h3>
+<pre class="programlisting">  “lcp-echo-interval”        <span class="type">guint</span></pre>
+<p>If non-zero, instruct pppd to send an LCP echo-request frame to the peer
+every n seconds (where n is the specified value).  Note that some PPP
+peers will respond to echo requests and some will not, and it is not
+possible to autodetect this.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingPPP--mppe-stateful"></a><h3>The <code class="literal">“mppe-stateful”</code> property</h3>
+<pre class="programlisting">  “mppe-stateful”            <span class="type">gboolean</span></pre>
+<p>If <code class="literal">TRUE</code>, stateful MPPE is used.  See pppd documentation for more
+information on stateful MPPE.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingPPP--mru"></a><h3>The <code class="literal">“mru”</code> property</h3>
+<pre class="programlisting">  “mru”                      <span class="type">guint</span></pre>
+<p>If non-zero, instruct pppd to request that the peer send packets no
+larger than the specified size.  If non-zero, the MRU should be between
+128 and 16384.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Allowed values: &lt;= 16384</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingPPP--mtu"></a><h3>The <code class="literal">“mtu”</code> property</h3>
+<pre class="programlisting">  “mtu”                      <span class="type">guint</span></pre>
+<p>If non-zero, instruct pppd to send packets no larger than the specified
+size.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingPPP--no-vj-comp"></a><h3>The <code class="literal">“no-vj-comp”</code> property</h3>
+<pre class="programlisting">  “no-vj-comp”               <span class="type">gboolean</span></pre>
+<p>If <code class="literal">TRUE</code>, Van Jacobsen TCP header compression will not be requested.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingPPP--noauth"></a><h3>The <code class="literal">“noauth”</code> property</h3>
+<pre class="programlisting">  “noauth”                   <span class="type">gboolean</span></pre>
+<p>If <code class="literal">TRUE</code>, do not require the other side (usually the PPP server) to
+authenticate itself to the client.  If <code class="literal">FALSE</code>, require authentication
+from the remote side.  In almost all cases, this should be <code class="literal">TRUE</code>.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingPPP--nobsdcomp"></a><h3>The <code class="literal">“nobsdcomp”</code> property</h3>
+<pre class="programlisting">  “nobsdcomp”                <span class="type">gboolean</span></pre>
+<p>If <code class="literal">TRUE</code>, BSD compression will not be requested.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingPPP--nodeflate"></a><h3>The <code class="literal">“nodeflate”</code> property</h3>
+<pre class="programlisting">  “nodeflate”                <span class="type">gboolean</span></pre>
+<p>If <code class="literal">TRUE</code>, "deflate" compression will not be requested.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingPPP--refuse-chap"></a><h3>The <code class="literal">“refuse-chap”</code> property</h3>
+<pre class="programlisting">  “refuse-chap”              <span class="type">gboolean</span></pre>
+<p>If <code class="literal">TRUE</code>, the CHAP authentication method will not be used.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingPPP--refuse-eap"></a><h3>The <code class="literal">“refuse-eap”</code> property</h3>
+<pre class="programlisting">  “refuse-eap”               <span class="type">gboolean</span></pre>
+<p>If <code class="literal">TRUE</code>, the EAP authentication method will not be used.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingPPP--refuse-mschap"></a><h3>The <code class="literal">“refuse-mschap”</code> property</h3>
+<pre class="programlisting">  “refuse-mschap”            <span class="type">gboolean</span></pre>
+<p>If <code class="literal">TRUE</code>, the MSCHAP authentication method will not be used.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingPPP--refuse-mschapv2"></a><h3>The <code class="literal">“refuse-mschapv2”</code> property</h3>
+<pre class="programlisting">  “refuse-mschapv2”          <span class="type">gboolean</span></pre>
+<p>If <code class="literal">TRUE</code>, the MSCHAPv2 authentication method will not be used.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingPPP--refuse-pap"></a><h3>The <code class="literal">“refuse-pap”</code> property</h3>
+<pre class="programlisting">  “refuse-pap”               <span class="type">gboolean</span></pre>
+<p>If <code class="literal">TRUE</code>, the PAP authentication method will not be used.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingPPP--require-mppe"></a><h3>The <code class="literal">“require-mppe”</code> property</h3>
+<pre class="programlisting">  “require-mppe”             <span class="type">gboolean</span></pre>
+<p>If <code class="literal">TRUE</code>, MPPE (Microsoft Point-to-Point Encrpytion) will be required for
+the PPP session.  If either 64-bit or 128-bit MPPE is not available the
+session will fail.  Note that MPPE is not used on mobile broadband
+connections.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingPPP--require-mppe-128"></a><h3>The <code class="literal">“require-mppe-128”</code> property</h3>
+<pre class="programlisting">  “require-mppe-128”         <span class="type">gboolean</span></pre>
+<p>If <code class="literal">TRUE</code>, 128-bit MPPE (Microsoft Point-to-Point Encrpytion) will be
+required for the PPP session, and the "require-mppe" property must also
+be set to <code class="literal">TRUE</code>.  If 128-bit MPPE is not available the session will fail.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: FALSE</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

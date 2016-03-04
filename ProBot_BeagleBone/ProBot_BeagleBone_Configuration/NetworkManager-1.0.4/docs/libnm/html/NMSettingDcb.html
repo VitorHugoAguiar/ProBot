@@ -1,0 +1,1398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NMSettingDcb: libnm Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm Reference Manual">
+<link rel="up" href="ch03.html" title="Connection and Setting API Reference">
+<link rel="prev" href="NMSettingCdma.html" title="NMSettingCdma">
+<link rel="next" href="NMSettingGeneric.html" title="NMSettingGeneric">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#NMSettingDcb.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#NMSettingDcb.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#NMSettingDcb.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="NMSettingCdma.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="NMSettingGeneric.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="NMSettingDcb"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="NMSettingDcb.top_of_page"></a>NMSettingDcb</span></h2>
+<p>NMSettingDcb — Connection properties for Data Center Bridging</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="NMSettingDcb.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-new" title="nm_setting_dcb_new ()">nm_setting_dcb_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="returnvalue">NMSettingDcbFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-get-app-fcoe-flags" title="nm_setting_dcb_get_app_fcoe_flags ()">nm_setting_dcb_get_app_fcoe_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gint</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-get-app-fcoe-priority" title="nm_setting_dcb_get_app_fcoe_priority ()">nm_setting_dcb_get_app_fcoe_priority</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-get-app-fcoe-mode" title="nm_setting_dcb_get_app_fcoe_mode ()">nm_setting_dcb_get_app_fcoe_mode</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="returnvalue">NMSettingDcbFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-get-app-iscsi-flags" title="nm_setting_dcb_get_app_iscsi_flags ()">nm_setting_dcb_get_app_iscsi_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gint</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-get-app-iscsi-priority" title="nm_setting_dcb_get_app_iscsi_priority ()">nm_setting_dcb_get_app_iscsi_priority</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="returnvalue">NMSettingDcbFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-get-app-fip-flags" title="nm_setting_dcb_get_app_fip_flags ()">nm_setting_dcb_get_app_fip_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gint</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-get-app-fip-priority" title="nm_setting_dcb_get_app_fip_priority ()">nm_setting_dcb_get_app_fip_priority</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="returnvalue">NMSettingDcbFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-get-priority-flow-control-flags" title="nm_setting_dcb_get_priority_flow_control_flags ()">nm_setting_dcb_get_priority_flow_control_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-get-priority-flow-control" title="nm_setting_dcb_get_priority_flow_control ()">nm_setting_dcb_get_priority_flow_control</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-set-priority-flow-control" title="nm_setting_dcb_set_priority_flow_control ()">nm_setting_dcb_set_priority_flow_control</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="returnvalue">NMSettingDcbFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-get-priority-group-flags" title="nm_setting_dcb_get_priority_group_flags ()">nm_setting_dcb_get_priority_group_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-get-priority-group-id" title="nm_setting_dcb_get_priority_group_id ()">nm_setting_dcb_get_priority_group_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-set-priority-group-id" title="nm_setting_dcb_set_priority_group_id ()">nm_setting_dcb_set_priority_group_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-get-priority-group-bandwidth" title="nm_setting_dcb_get_priority_group_bandwidth ()">nm_setting_dcb_get_priority_group_bandwidth</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-set-priority-group-bandwidth" title="nm_setting_dcb_set_priority_group_bandwidth ()">nm_setting_dcb_set_priority_group_bandwidth</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-get-priority-bandwidth" title="nm_setting_dcb_get_priority_bandwidth ()">nm_setting_dcb_get_priority_bandwidth</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-set-priority-bandwidth" title="nm_setting_dcb_set_priority_bandwidth ()">nm_setting_dcb_set_priority_bandwidth</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-get-priority-strict-bandwidth" title="nm_setting_dcb_get_priority_strict_bandwidth ()">nm_setting_dcb_get_priority_strict_bandwidth</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-set-priority-strict-bandwidth" title="nm_setting_dcb_set_priority_strict_bandwidth ()">nm_setting_dcb_set_priority_strict_bandwidth</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-get-priority-traffic-class" title="nm_setting_dcb_get_priority_traffic_class ()">nm_setting_dcb_get_priority_traffic_class</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingDcb.html#nm-setting-dcb-set-priority-traffic-class" title="nm_setting_dcb_set_priority_traffic_class ()">nm_setting_dcb_set_priority_traffic_class</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingDcb.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="type">NMSettingDcbFlags</span></a></td>
+<td class="property_name"><a class="link" href="NMSettingDcb.html#NMSettingDcb--app-fcoe-flags" title="The “app-fcoe-flags” property">app-fcoe-flags</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingDcb.html#NMSettingDcb--app-fcoe-mode" title="The “app-fcoe-mode” property">app-fcoe-mode</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gint</span></td>
+<td class="property_name"><a class="link" href="NMSettingDcb.html#NMSettingDcb--app-fcoe-priority" title="The “app-fcoe-priority” property">app-fcoe-priority</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="type">NMSettingDcbFlags</span></a></td>
+<td class="property_name"><a class="link" href="NMSettingDcb.html#NMSettingDcb--app-fip-flags" title="The “app-fip-flags” property">app-fip-flags</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gint</span></td>
+<td class="property_name"><a class="link" href="NMSettingDcb.html#NMSettingDcb--app-fip-priority" title="The “app-fip-priority” property">app-fip-priority</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="type">NMSettingDcbFlags</span></a></td>
+<td class="property_name"><a class="link" href="NMSettingDcb.html#NMSettingDcb--app-iscsi-flags" title="The “app-iscsi-flags” property">app-iscsi-flags</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gint</span></td>
+<td class="property_name"><a class="link" href="NMSettingDcb.html#NMSettingDcb--app-iscsi-priority" title="The “app-iscsi-priority” property">app-iscsi-priority</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GArray</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-bandwidth" title="The “priority-bandwidth” property">priority-bandwidth</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GArray</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-flow-control" title="The “priority-flow-control” property">priority-flow-control</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="type">NMSettingDcbFlags</span></a></td>
+<td class="property_name"><a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-flow-control-flags" title="The “priority-flow-control-flags” property">priority-flow-control-flags</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GArray</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-group-bandwidth" title="The “priority-group-bandwidth” property">priority-group-bandwidth</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="type">NMSettingDcbFlags</span></a></td>
+<td class="property_name"><a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-group-flags" title="The “priority-group-flags” property">priority-group-flags</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GArray</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-group-id" title="The “priority-group-id” property">priority-group-id</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GArray</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-strict-bandwidth" title="The “priority-strict-bandwidth” property">priority-strict-bandwidth</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GArray</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-traffic-class" title="The “priority-traffic-class” property">priority-traffic-class</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingDcb.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-SETTING-NAME:CAPS" title="NM_SETTING_DCB_SETTING_NAME">NM_SETTING_DCB_SETTING_NAME</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags">NMSettingDcbFlags</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FCOE-MODE-FABRIC:CAPS" title="NM_SETTING_DCB_FCOE_MODE_FABRIC">NM_SETTING_DCB_FCOE_MODE_FABRIC</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FCOE-MODE-VN2VN:CAPS" title="NM_SETTING_DCB_FCOE_MODE_VN2VN">NM_SETTING_DCB_FCOE_MODE_VN2VN</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-APP-FCOE-FLAGS:CAPS" title="NM_SETTING_DCB_APP_FCOE_FLAGS">NM_SETTING_DCB_APP_FCOE_FLAGS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-APP-FCOE-PRIORITY:CAPS" title="NM_SETTING_DCB_APP_FCOE_PRIORITY">NM_SETTING_DCB_APP_FCOE_PRIORITY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-APP-FCOE-MODE:CAPS" title="NM_SETTING_DCB_APP_FCOE_MODE">NM_SETTING_DCB_APP_FCOE_MODE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-APP-ISCSI-FLAGS:CAPS" title="NM_SETTING_DCB_APP_ISCSI_FLAGS">NM_SETTING_DCB_APP_ISCSI_FLAGS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-APP-ISCSI-PRIORITY:CAPS" title="NM_SETTING_DCB_APP_ISCSI_PRIORITY">NM_SETTING_DCB_APP_ISCSI_PRIORITY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-APP-FIP-FLAGS:CAPS" title="NM_SETTING_DCB_APP_FIP_FLAGS">NM_SETTING_DCB_APP_FIP_FLAGS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-APP-FIP-PRIORITY:CAPS" title="NM_SETTING_DCB_APP_FIP_PRIORITY">NM_SETTING_DCB_APP_FIP_PRIORITY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-PRIORITY-FLOW-CONTROL-FLAGS:CAPS" title="NM_SETTING_DCB_PRIORITY_FLOW_CONTROL_FLAGS">NM_SETTING_DCB_PRIORITY_FLOW_CONTROL_FLAGS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-PRIORITY-FLOW-CONTROL:CAPS" title="NM_SETTING_DCB_PRIORITY_FLOW_CONTROL">NM_SETTING_DCB_PRIORITY_FLOW_CONTROL</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-PRIORITY-GROUP-FLAGS:CAPS" title="NM_SETTING_DCB_PRIORITY_GROUP_FLAGS">NM_SETTING_DCB_PRIORITY_GROUP_FLAGS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-PRIORITY-GROUP-ID:CAPS" title="NM_SETTING_DCB_PRIORITY_GROUP_ID">NM_SETTING_DCB_PRIORITY_GROUP_ID</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-PRIORITY-GROUP-BANDWIDTH:CAPS" title="NM_SETTING_DCB_PRIORITY_GROUP_BANDWIDTH">NM_SETTING_DCB_PRIORITY_GROUP_BANDWIDTH</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-PRIORITY-BANDWIDTH:CAPS" title="NM_SETTING_DCB_PRIORITY_BANDWIDTH">NM_SETTING_DCB_PRIORITY_BANDWIDTH</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-PRIORITY-STRICT-BANDWIDTH:CAPS" title="NM_SETTING_DCB_PRIORITY_STRICT_BANDWIDTH">NM_SETTING_DCB_PRIORITY_STRICT_BANDWIDTH</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-PRIORITY-TRAFFIC-CLASS:CAPS" title="NM_SETTING_DCB_PRIORITY_TRAFFIC_CLASS">NM_SETTING_DCB_PRIORITY_TRAFFIC_CLASS</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingDcb.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Enumeration-and-Flag-Types.html">GFlags</a>
+    <span class="lineart">╰──</span> NMSettingDcbFlags
+    GObject
+    <span class="lineart">╰──</span> <a class="link" href="NMSetting.html" title="NMSetting">NMSetting</a>
+        <span class="lineart">╰──</span> NMSettingDcb
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSettingDcb.description"></a><h2>Description</h2>
+<p>The <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> object is a <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> subclass that describes properties
+for enabling and using Data Center Bridging (DCB) on Ethernet networks.
+DCB is a set of protocols (including 802.1Qbb, 802.1Qaz, 802.1Qau, and
+802.1AB) to eliminate packet loss in Ethernet networks and support the use
+of storage technologies like Fibre Channel over Ethernet (FCoE) and iSCSI.</p>
+</div>
+<div class="refsect1">
+<a name="NMSettingDcb.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="nm-setting-dcb-new"></a><h3>nm_setting_dcb_new ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+nm_setting_dcb_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> object with default values.</p>
+<div class="refsect3">
+<a name="id-1.4.13.8.2.5"></a><h4>Returns</h4>
+<p> the new empty <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> object. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-get-app-fcoe-flags"></a><h3>nm_setting_dcb_get_app_fcoe_flags ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="returnvalue">NMSettingDcbFlags</span></a>
+nm_setting_dcb_get_app_fcoe_flags (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.4.13.8.3.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.13.8.3.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingDcb.html#NMSettingDcb--app-fcoe-flags" title="The “app-fcoe-flags” property"><span class="type">“app-fcoe-flags”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-get-app-fcoe-priority"></a><h3>nm_setting_dcb_get_app_fcoe_priority ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint</span>
+nm_setting_dcb_get_app_fcoe_priority (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.4.13.8.4.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.13.8.4.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingDcb.html#NMSettingDcb--app-fcoe-priority" title="The “app-fcoe-priority” property"><span class="type">“app-fcoe-priority”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-get-app-fcoe-mode"></a><h3>nm_setting_dcb_get_app_fcoe_mode ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_dcb_get_app_fcoe_mode (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.4.13.8.5.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.13.8.5.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingDcb.html#NMSettingDcb--app-fcoe-mode" title="The “app-fcoe-mode” property"><span class="type">“app-fcoe-mode”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-get-app-iscsi-flags"></a><h3>nm_setting_dcb_get_app_iscsi_flags ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="returnvalue">NMSettingDcbFlags</span></a>
+nm_setting_dcb_get_app_iscsi_flags (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.4.13.8.6.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.13.8.6.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingDcb.html#NMSettingDcb--app-iscsi-flags" title="The “app-iscsi-flags” property"><span class="type">“app-iscsi-flags”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-get-app-iscsi-priority"></a><h3>nm_setting_dcb_get_app_iscsi_priority ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint</span>
+nm_setting_dcb_get_app_iscsi_priority (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.4.13.8.7.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.13.8.7.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingDcb.html#NMSettingDcb--app-iscsi-priority" title="The “app-iscsi-priority” property"><span class="type">“app-iscsi-priority”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-get-app-fip-flags"></a><h3>nm_setting_dcb_get_app_fip_flags ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="returnvalue">NMSettingDcbFlags</span></a>
+nm_setting_dcb_get_app_fip_flags (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.4.13.8.8.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.13.8.8.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingDcb.html#NMSettingDcb--app-fip-flags" title="The “app-fip-flags” property"><span class="type">“app-fip-flags”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-get-app-fip-priority"></a><h3>nm_setting_dcb_get_app_fip_priority ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint</span>
+nm_setting_dcb_get_app_fip_priority (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.4.13.8.9.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.13.8.9.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingDcb.html#NMSettingDcb--app-fip-priority" title="The “app-fip-priority” property"><span class="type">“app-fip-priority”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-get-priority-flow-control-flags"></a><h3>nm_setting_dcb_get_priority_flow_control_flags ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="returnvalue">NMSettingDcbFlags</span></a>
+nm_setting_dcb_get_priority_flow_control_flags
+                               (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.4.13.8.10.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.13.8.10.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-flow-control-flags" title="The “priority-flow-control-flags” property"><span class="type">“priority-flow-control-flags”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-get-priority-flow-control"></a><h3>nm_setting_dcb_get_priority_flow_control ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_dcb_get_priority_flow_control
+                               (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint</span> user_priority</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.4.13.8.11.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_priority</p></td>
+<td class="parameter_description"><p>the User Priority (0 - 7) to retrieve flow control for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.13.8.11.5"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if flow control is enabled for the given <em class="parameter"><code>user_priority</code></em>
+,
+<code class="literal">FALSE</code> if not enabled</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-set-priority-flow-control"></a><h3>nm_setting_dcb_set_priority_flow_control ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_dcb_set_priority_flow_control
+                               (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint</span> user_priority</code></em>,
+                                <em class="parameter"><code><span class="type">gboolean</span> enabled</code></em>);</pre>
+<p>These values are only valid when <a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-flow-control" title="The “priority-flow-control” property"><span class="type">“priority-flow-control”</span></a> includes
+the <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ENABLE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ENABLE</code></a> flag.</p>
+<div class="refsect3">
+<a name="id-1.4.13.8.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_priority</p></td>
+<td class="parameter_description"><p>the User Priority (0 - 7) to set flow control for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>enabled</p></td>
+<td class="parameter_description"><p><code class="literal">TRUE</code> to enable flow control for this priority, <code class="literal">FALSE</code> to disable it</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-get-priority-group-flags"></a><h3>nm_setting_dcb_get_priority_group_flags ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="returnvalue">NMSettingDcbFlags</span></a>
+nm_setting_dcb_get_priority_group_flags
+                               (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.4.13.8.13.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.13.8.13.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-group-flags" title="The “priority-group-flags” property"><span class="type">“priority-group-flags”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-get-priority-group-id"></a><h3>nm_setting_dcb_get_priority_group_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+nm_setting_dcb_get_priority_group_id (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>,
+                                      <em class="parameter"><code><span class="type">guint</span> user_priority</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.4.13.8.14.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_priority</p></td>
+<td class="parameter_description"><p>the User Priority (0 - 7) to retrieve the group ID for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.13.8.14.5"></a><h4>Returns</h4>
+<p> the group number <em class="parameter"><code>user_priority</code></em>
+is assigned to.  These values are
+only valid when <a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-group-flags" title="The “priority-group-flags” property"><span class="type">“priority-group-flags”</span></a> includes the
+<a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ENABLE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ENABLE</code></a> flag.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-set-priority-group-id"></a><h3>nm_setting_dcb_set_priority_group_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_dcb_set_priority_group_id (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>,
+                                      <em class="parameter"><code><span class="type">guint</span> user_priority</code></em>,
+                                      <em class="parameter"><code><span class="type">guint</span> group_id</code></em>);</pre>
+<p>These values are only valid when <a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-group-flags" title="The “priority-group-flags” property"><span class="type">“priority-group-flags”</span></a> includes
+the <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ENABLE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ENABLE</code></a> flag.</p>
+<div class="refsect3">
+<a name="id-1.4.13.8.15.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_priority</p></td>
+<td class="parameter_description"><p>the User Priority (0 - 7) to set flow control for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>group_id</p></td>
+<td class="parameter_description"><p>the group (0 - 7) to assign <em class="parameter"><code>user_priority</code></em>
+to, or 15 for the
+unrestricted group.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-get-priority-group-bandwidth"></a><h3>nm_setting_dcb_get_priority_group_bandwidth ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+nm_setting_dcb_get_priority_group_bandwidth
+                               (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint</span> group_id</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.4.13.8.16.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>group_id</p></td>
+<td class="parameter_description"><p>the priority group (0 - 7) to retrieve the bandwidth percentage for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.13.8.16.5"></a><h4>Returns</h4>
+<p> the bandwidth percentage assigned to <em class="parameter"><code>group_id</code></em>
+.  These values are
+only valid when <a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-group-flags" title="The “priority-group-flags” property"><span class="type">“priority-group-flags”</span></a> includes the
+<a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ENABLE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ENABLE</code></a> flag.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-set-priority-group-bandwidth"></a><h3>nm_setting_dcb_set_priority_group_bandwidth ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_dcb_set_priority_group_bandwidth
+                               (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint</span> group_id</code></em>,
+                                <em class="parameter"><code><span class="type">guint</span> bandwidth_percent</code></em>);</pre>
+<p>These values are only valid when <a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-group-flags" title="The “priority-group-flags” property"><span class="type">“priority-group-flags”</span></a> includes
+the <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ENABLE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ENABLE</code></a> flag.</p>
+<div class="refsect3">
+<a name="id-1.4.13.8.17.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>group_id</p></td>
+<td class="parameter_description"><p>the priority group (0 - 7) to set the bandwidth percentage for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bandwidth_percent</p></td>
+<td class="parameter_description"><p>the bandwidth percentage (0 - 100) to assign to <em class="parameter"><code>group_id</code></em>
+to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-get-priority-bandwidth"></a><h3>nm_setting_dcb_get_priority_bandwidth ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+nm_setting_dcb_get_priority_bandwidth (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>,
+                                       <em class="parameter"><code><span class="type">guint</span> user_priority</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.4.13.8.18.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_priority</p></td>
+<td class="parameter_description"><p>the User Priority (0 - 7) to retrieve the group bandwidth percentage for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.13.8.18.5"></a><h4>Returns</h4>
+<p> the allowed bandwidth percentage of <em class="parameter"><code>user_priority</code></em>
+in its priority group.
+These values are only valid when <a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-group-flags" title="The “priority-group-flags” property"><span class="type">“priority-group-flags”</span></a> includes the
+<a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ENABLE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ENABLE</code></a> flag.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-set-priority-bandwidth"></a><h3>nm_setting_dcb_set_priority_bandwidth ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_dcb_set_priority_bandwidth (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>,
+                                       <em class="parameter"><code><span class="type">guint</span> user_priority</code></em>,
+                                       <em class="parameter"><code><span class="type">guint</span> bandwidth_percent</code></em>);</pre>
+<p>These values are only valid when <a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-group-flags" title="The “priority-group-flags” property"><span class="type">“priority-group-flags”</span></a> includes
+the <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ENABLE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ENABLE</code></a> flag.</p>
+<div class="refsect3">
+<a name="id-1.4.13.8.19.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_priority</p></td>
+<td class="parameter_description"><p>the User Priority (0 - 7) to set the bandwidth percentage for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bandwidth_percent</p></td>
+<td class="parameter_description"><p>the bandwidth percentage (0 - 100) that <em class="parameter"><code>user_priority</code></em>
+is
+allowed to use within its priority group</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-get-priority-strict-bandwidth"></a><h3>nm_setting_dcb_get_priority_strict_bandwidth ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_dcb_get_priority_strict_bandwidth
+                               (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint</span> user_priority</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.4.13.8.20.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_priority</p></td>
+<td class="parameter_description"><p>the User Priority (0 - 7) to retrieve strict bandwidth for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.13.8.20.5"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if <em class="parameter"><code>user_priority</code></em>
+may use all of the bandwidth allocated to its
+assigned group, or <code class="literal">FALSE</code> if not. These values are only valid when
+<a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-group-flags" title="The “priority-group-flags” property"><span class="type">“priority-group-flags”</span></a> includes the <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ENABLE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ENABLE</code></a> flag.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-set-priority-strict-bandwidth"></a><h3>nm_setting_dcb_set_priority_strict_bandwidth ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_dcb_set_priority_strict_bandwidth
+                               (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint</span> user_priority</code></em>,
+                                <em class="parameter"><code><span class="type">gboolean</span> strict</code></em>);</pre>
+<p>These values are only valid when <a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-group-flags" title="The “priority-group-flags” property"><span class="type">“priority-group-flags”</span></a> includes
+the <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ENABLE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ENABLE</code></a> flag.</p>
+<div class="refsect3">
+<a name="id-1.4.13.8.21.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_priority</p></td>
+<td class="parameter_description"><p>the User Priority (0 - 7) to set strict bandwidth for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>strict</p></td>
+<td class="parameter_description"><p><code class="literal">TRUE</code> to allow <em class="parameter"><code>user_priority</code></em>
+to use all the bandwidth allocated to
+its priority group, or <code class="literal">FALSE</code> if not</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-get-priority-traffic-class"></a><h3>nm_setting_dcb_get_priority_traffic_class ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+nm_setting_dcb_get_priority_traffic_class
+                               (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint</span> user_priority</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.4.13.8.22.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_priority</p></td>
+<td class="parameter_description"><p>the User Priority (0 - 7) to retrieve the traffic class for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.13.8.22.5"></a><h4>Returns</h4>
+<p> the traffic class assigned to <em class="parameter"><code>user_priority</code></em>
+. These values are only
+valid when <a class="link" href="NMSettingDcb.html#NMSettingDcb--priority-group-flags" title="The “priority-group-flags” property"><span class="type">“priority-group-flags”</span></a> includes the
+<a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ENABLE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ENABLE</code></a> flag.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-dcb-set-priority-traffic-class"></a><h3>nm_setting_dcb_set_priority_traffic_class ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_dcb_set_priority_traffic_class
+                               (<em class="parameter"><code><a class="link" href="NMSettingDcb.html" title="NMSettingDcb"><span class="type">NMSettingDcb</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint</span> user_priority</code></em>,
+                                <em class="parameter"><code><span class="type">guint</span> traffic_class</code></em>);</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSettingDcb.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NM-SETTING-DCB-SETTING-NAME:CAPS"></a><h3>NM_SETTING_DCB_SETTING_NAME</h3>
+<pre class="programlisting">#define NM_SETTING_DCB_SETTING_NAME "dcb"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingDcbFlags"></a><h3>enum NMSettingDcbFlags</h3>
+<p>DCB feature flags.</p>
+<div class="refsect3">
+<a name="id-1.4.13.9.3.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-DCB-FLAG-NONE:CAPS"></a>NM_SETTING_DCB_FLAG_NONE</p></td>
+<td class="enum_member_description">
+<p>no flag</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-DCB-FLAG-ENABLE:CAPS"></a>NM_SETTING_DCB_FLAG_ENABLE</p></td>
+<td class="enum_member_description">
+<p>the feature is enabled</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-DCB-FLAG-ADVERTISE:CAPS"></a>NM_SETTING_DCB_FLAG_ADVERTISE</p></td>
+<td class="enum_member_description">
+<p>the feature is advertised</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-DCB-FLAG-WILLING:CAPS"></a>NM_SETTING_DCB_FLAG_WILLING</p></td>
+<td class="enum_member_description">
+<p>the feature is willing to change based on
+peer configuration advertisements</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-DCB-FCOE-MODE-FABRIC:CAPS"></a><h3>NM_SETTING_DCB_FCOE_MODE_FABRIC</h3>
+<pre class="programlisting">#define NM_SETTING_DCB_FCOE_MODE_FABRIC  "fabric"
+</pre>
+<p>Indicates that the FCoE controller should use "fabric" mode (default)</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-DCB-FCOE-MODE-VN2VN:CAPS"></a><h3>NM_SETTING_DCB_FCOE_MODE_VN2VN</h3>
+<pre class="programlisting">#define NM_SETTING_DCB_FCOE_MODE_VN2VN   "vn2vn"
+</pre>
+<p>Indicates that the FCoE controller should use "VN2VN" mode.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-DCB-APP-FCOE-FLAGS:CAPS"></a><h3>NM_SETTING_DCB_APP_FCOE_FLAGS</h3>
+<pre class="programlisting">#define NM_SETTING_DCB_APP_FCOE_FLAGS         "app-fcoe-flags"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-DCB-APP-FCOE-PRIORITY:CAPS"></a><h3>NM_SETTING_DCB_APP_FCOE_PRIORITY</h3>
+<pre class="programlisting">#define NM_SETTING_DCB_APP_FCOE_PRIORITY      "app-fcoe-priority"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-DCB-APP-FCOE-MODE:CAPS"></a><h3>NM_SETTING_DCB_APP_FCOE_MODE</h3>
+<pre class="programlisting">#define NM_SETTING_DCB_APP_FCOE_MODE          "app-fcoe-mode"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-DCB-APP-ISCSI-FLAGS:CAPS"></a><h3>NM_SETTING_DCB_APP_ISCSI_FLAGS</h3>
+<pre class="programlisting">#define NM_SETTING_DCB_APP_ISCSI_FLAGS        "app-iscsi-flags"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-DCB-APP-ISCSI-PRIORITY:CAPS"></a><h3>NM_SETTING_DCB_APP_ISCSI_PRIORITY</h3>
+<pre class="programlisting">#define NM_SETTING_DCB_APP_ISCSI_PRIORITY     "app-iscsi-priority"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-DCB-APP-FIP-FLAGS:CAPS"></a><h3>NM_SETTING_DCB_APP_FIP_FLAGS</h3>
+<pre class="programlisting">#define NM_SETTING_DCB_APP_FIP_FLAGS          "app-fip-flags"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-DCB-APP-FIP-PRIORITY:CAPS"></a><h3>NM_SETTING_DCB_APP_FIP_PRIORITY</h3>
+<pre class="programlisting">#define NM_SETTING_DCB_APP_FIP_PRIORITY       "app-fip-priority"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-DCB-PRIORITY-FLOW-CONTROL-FLAGS:CAPS"></a><h3>NM_SETTING_DCB_PRIORITY_FLOW_CONTROL_FLAGS</h3>
+<pre class="programlisting">#define NM_SETTING_DCB_PRIORITY_FLOW_CONTROL_FLAGS  "priority-flow-control-flags"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-DCB-PRIORITY-FLOW-CONTROL:CAPS"></a><h3>NM_SETTING_DCB_PRIORITY_FLOW_CONTROL</h3>
+<pre class="programlisting">#define NM_SETTING_DCB_PRIORITY_FLOW_CONTROL        "priority-flow-control"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-DCB-PRIORITY-GROUP-FLAGS:CAPS"></a><h3>NM_SETTING_DCB_PRIORITY_GROUP_FLAGS</h3>
+<pre class="programlisting">#define NM_SETTING_DCB_PRIORITY_GROUP_FLAGS      "priority-group-flags"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-DCB-PRIORITY-GROUP-ID:CAPS"></a><h3>NM_SETTING_DCB_PRIORITY_GROUP_ID</h3>
+<pre class="programlisting">#define NM_SETTING_DCB_PRIORITY_GROUP_ID         "priority-group-id"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-DCB-PRIORITY-GROUP-BANDWIDTH:CAPS"></a><h3>NM_SETTING_DCB_PRIORITY_GROUP_BANDWIDTH</h3>
+<pre class="programlisting">#define NM_SETTING_DCB_PRIORITY_GROUP_BANDWIDTH  "priority-group-bandwidth"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-DCB-PRIORITY-BANDWIDTH:CAPS"></a><h3>NM_SETTING_DCB_PRIORITY_BANDWIDTH</h3>
+<pre class="programlisting">#define NM_SETTING_DCB_PRIORITY_BANDWIDTH        "priority-bandwidth"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-DCB-PRIORITY-STRICT-BANDWIDTH:CAPS"></a><h3>NM_SETTING_DCB_PRIORITY_STRICT_BANDWIDTH</h3>
+<pre class="programlisting">#define NM_SETTING_DCB_PRIORITY_STRICT_BANDWIDTH "priority-strict-bandwidth"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-DCB-PRIORITY-TRAFFIC-CLASS:CAPS"></a><h3>NM_SETTING_DCB_PRIORITY_TRAFFIC_CLASS</h3>
+<pre class="programlisting">#define NM_SETTING_DCB_PRIORITY_TRAFFIC_CLASS    "priority-traffic-class"
+</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSettingDcb.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="NMSettingDcb--app-fcoe-flags"></a><h3>The <code class="literal">“app-fcoe-flags”</code> property</h3>
+<pre class="programlisting">  “app-fcoe-flags”           <a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="type">NMSettingDcbFlags</span></a></pre>
+<p>Specifies the <a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="type">NMSettingDcbFlags</span></a> for the DCB FCoE application.  Flags may
+be any combination of <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ENABLE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ENABLE</code></a>,
+<a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ADVERTISE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ADVERTISE</code></a>, and <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-WILLING:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_WILLING</code></a>.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingDcb--app-fcoe-mode"></a><h3>The <code class="literal">“app-fcoe-mode”</code> property</h3>
+<pre class="programlisting">  “app-fcoe-mode”            <span class="type">gchar</span> *</pre>
+<p>The FCoE controller mode; either <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FCOE-MODE-FABRIC:CAPS" title="NM_SETTING_DCB_FCOE_MODE_FABRIC"><code class="literal">NM_SETTING_DCB_FCOE_MODE_FABRIC</code></a>
+(default) or <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FCOE-MODE-VN2VN:CAPS" title="NM_SETTING_DCB_FCOE_MODE_VN2VN"><code class="literal">NM_SETTING_DCB_FCOE_MODE_VN2VN</code></a>.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: "fabric"</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingDcb--app-fcoe-priority"></a><h3>The <code class="literal">“app-fcoe-priority”</code> property</h3>
+<pre class="programlisting">  “app-fcoe-priority”        <span class="type">gint</span></pre>
+<p>The highest User Priority (0 - 7) which FCoE frames should use, or -1 for
+default priority.  Only used when the <a class="link" href="NMSettingDcb.html#NMSettingDcb--app-fcoe-flags" title="The “app-fcoe-flags” property"><span class="type">“app-fcoe-flags”</span></a>
+property includes the <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ENABLE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ENABLE</code></a> flag.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Allowed values: [-1,7]</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingDcb--app-fip-flags"></a><h3>The <code class="literal">“app-fip-flags”</code> property</h3>
+<pre class="programlisting">  “app-fip-flags”            <a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="type">NMSettingDcbFlags</span></a></pre>
+<p>Specifies the <a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="type">NMSettingDcbFlags</span></a> for the DCB FIP application.  Flags may
+be any combination of <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ENABLE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ENABLE</code></a>,
+<a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ADVERTISE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ADVERTISE</code></a>, and <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-WILLING:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_WILLING</code></a>.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingDcb--app-fip-priority"></a><h3>The <code class="literal">“app-fip-priority”</code> property</h3>
+<pre class="programlisting">  “app-fip-priority”         <span class="type">gint</span></pre>
+<p>The highest User Priority (0 - 7) which FIP frames should use, or -1 for
+default priority.  Only used when the <a class="link" href="NMSettingDcb.html#NMSettingDcb--app-fip-flags" title="The “app-fip-flags” property"><span class="type">“app-fip-flags”</span></a>
+property includes the <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ENABLE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ENABLE</code></a> flag.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Allowed values: [-1,7]</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingDcb--app-iscsi-flags"></a><h3>The <code class="literal">“app-iscsi-flags”</code> property</h3>
+<pre class="programlisting">  “app-iscsi-flags”          <a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="type">NMSettingDcbFlags</span></a></pre>
+<p>Specifies the <a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="type">NMSettingDcbFlags</span></a> for the DCB iSCSI application.  Flags
+may be any combination of <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ENABLE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ENABLE</code></a>,
+<a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ADVERTISE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ADVERTISE</code></a>, and <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-WILLING:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_WILLING</code></a>.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingDcb--app-iscsi-priority"></a><h3>The <code class="literal">“app-iscsi-priority”</code> property</h3>
+<pre class="programlisting">  “app-iscsi-priority”       <span class="type">gint</span></pre>
+<p>The highest User Priority (0 - 7) which iSCSI frames should use, or -1
+for default priority. Only used when the <a class="link" href="NMSettingDcb.html#NMSettingDcb--app-iscsi-flags" title="The “app-iscsi-flags” property"><span class="type">“app-iscsi-flags”</span></a>
+property includes the <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ENABLE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ENABLE</code></a> flag.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Allowed values: [-1,7]</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingDcb--priority-bandwidth"></a><h3>The <code class="literal">“priority-bandwidth”</code> property</h3>
+<pre class="programlisting">  “priority-bandwidth”       <span class="type">GArray</span> *</pre>
+<p>An array of 8 uint values, where the array index corresponds to the User
+Priority (0 - 7) and the value indicates the percentage of bandwidth of
+the priority's assigned group that the priority may use.  The sum of all
+percentages for priorities which belong to the same group must total 100
+percent.</p>
+<p>Element-type: guint</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingDcb--priority-flow-control"></a><h3>The <code class="literal">“priority-flow-control”</code> property</h3>
+<pre class="programlisting">  “priority-flow-control”    <span class="type">GArray</span> *</pre>
+<p>An array of 8 boolean values, where the array index corresponds to the User
+Priority (0 - 7) and the value indicates whether or not the corresponding
+priority should transmit priority pause.</p>
+<p>Element-type: gboolean</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingDcb--priority-flow-control-flags"></a><h3>The <code class="literal">“priority-flow-control-flags”</code> property</h3>
+<pre class="programlisting">  “priority-flow-control-flags” <a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="type">NMSettingDcbFlags</span></a></pre>
+<p>Specifies the <a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="type">NMSettingDcbFlags</span></a> for DCB Priority Flow Control (PFC).
+Flags may be any combination of <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ENABLE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ENABLE</code></a>,
+<a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ADVERTISE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ADVERTISE</code></a>, and <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-WILLING:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_WILLING</code></a>.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingDcb--priority-group-bandwidth"></a><h3>The <code class="literal">“priority-group-bandwidth”</code> property</h3>
+<pre class="programlisting">  “priority-group-bandwidth” <span class="type">GArray</span> *</pre>
+<p>An array of 8 uint values, where the array index corresponds to the
+Priority Group ID (0 - 7) and the value indicates the percentage of link
+bandwidth allocated to that group.  Allowed values are 0 - 100, and the
+sum of all values must total 100 percent.</p>
+<p>Element-type: guint</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingDcb--priority-group-flags"></a><h3>The <code class="literal">“priority-group-flags”</code> property</h3>
+<pre class="programlisting">  “priority-group-flags”     <a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="type">NMSettingDcbFlags</span></a></pre>
+<p>Specifies the <a class="link" href="NMSettingDcb.html#NMSettingDcbFlags" title="enum NMSettingDcbFlags"><span class="type">NMSettingDcbFlags</span></a> for DCB Priority Groups.  Flags may be
+any combination of <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ENABLE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ENABLE</code></a>,
+<a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-ADVERTISE:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_ADVERTISE</code></a>, and <a class="link" href="NMSettingDcb.html#NM-SETTING-DCB-FLAG-WILLING:CAPS"><code class="literal">NM_SETTING_DCB_FLAG_WILLING</code></a>.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingDcb--priority-group-id"></a><h3>The <code class="literal">“priority-group-id”</code> property</h3>
+<pre class="programlisting">  “priority-group-id”        <span class="type">GArray</span> *</pre>
+<p>An array of 8 uint values, where the array index corresponds to the User
+Priority (0 - 7) and the value indicates the Priority Group ID.  Allowed
+Priority Group ID values are 0 - 7 or 15 for the unrestricted group.</p>
+<p>Element-type: guint</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingDcb--priority-strict-bandwidth"></a><h3>The <code class="literal">“priority-strict-bandwidth”</code> property</h3>
+<pre class="programlisting">  “priority-strict-bandwidth” <span class="type">GArray</span> *</pre>
+<p>An array of 8 boolean values, where the array index corresponds to the User
+Priority (0 - 7) and the value indicates whether or not the priority may
+use all of the bandwidth allocated to its assigned group.</p>
+<p>Element-type: gboolean</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingDcb--priority-traffic-class"></a><h3>The <code class="literal">“priority-traffic-class”</code> property</h3>
+<pre class="programlisting">  “priority-traffic-class”   <span class="type">GArray</span> *</pre>
+<p>An array of 8 uint values, where the array index corresponds to the User
+Priority (0 - 7) and the value indicates the traffic class (0 - 7) to
+which the priority is mapped.</p>
+<p>Element-type: guint</p>
+<p>Flags: Read / Write</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

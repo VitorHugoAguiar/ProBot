@@ -1,0 +1,342 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN" "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd">
+<refentry id="nm-settings-ifcfg-rh"><refentryinfo><date>14 July 2015</date></refentryinfo><refmeta><refentrytitle>nm-settings-ifcfg-rh</refentrytitle><manvolnum>5</manvolnum><refmiscinfo class="source">NetworkManager</refmiscinfo><refmiscinfo class="manual">Configuration</refmiscinfo><refmiscinfo class="version">1.0.4</refmiscinfo></refmeta><refnamediv><refname>nm-settings-ifcfg-rh</refname><refpurpose>Description of <emphasis>ifcfg-rh</emphasis> settings plugin</refpurpose></refnamediv><refsect1><title>DESCRIPTION</title><para>
+          NetworkManager is based on the concept of connection profiles that contain
+          network configuration (see <citerefentry><refentrytitle>nm-settings</refentrytitle><manvolnum>5</manvolnum></citerefentry> for details). The profiles can be
+          stored in various formats. NetworkManager uses plugins for reading and writing
+          the data. The plugins can be configured in <citerefentry><refentrytitle>NetworkManager.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry>.
+        </para><para>
+          The <emphasis>ifcfg-rh</emphasis> plugin is used on the Fedora and Red Hat
+          Enterprise Linux distributions to read/write configuration from/to
+          the standard <filename>/etc/sysconfig/network-scripts/ifcfg-*</filename> files.
+          Each NetworkManager connection maps to one <filename>ifcfg-*</filename> file, with
+          possible usage of <filename>keys-*</filename> for passwords, <filename>route-*</filename>
+          for static IPv4 routes and <filename>route6-*</filename> for static IPv6 routes.
+          The plugin currently supports reading and writing Ethernet, Wi-Fi, InfiniBand,
+          VLAN, Bond, Bridge, and Team connections. Unsupported connection types (such as
+          WWAN, PPPoE, VPN, or ADSL are handled by <emphasis>keyfile</emphasis> plugin
+          (<citerefentry><refentrytitle>nm-settings-keyfile</refentrytitle><manvolnum>5</manvolnum></citerefentry>).
+          The main reason for using <emphasis>ifcfg-rh</emphasis> plugin is the compatibility
+          with legacy configurations for <emphasis>ifup</emphasis> and <emphasis>ifdown</emphasis>
+          (initscripts).
+        </para></refsect1><refsect1><title>File Format</title><para>
+          The <emphasis>ifcfg-rh</emphasis> config format is a simple text file containing
+          VARIABLE="value" lines. The format is described in <filename>sysconfig.txt</filename>
+          of <emphasis>initscripts</emphasis> package. Note that the configuration files
+          may be sourced by <emphasis>initscripts</emphasis>, so they must be valid shell
+          scripts. That means, for instance, that <literal>#</literal> character can be used
+          for comments, strings with spaces must be quoted, special characters must be escaped,
+          etc.
+        </para><para>
+          Users can create or modify the <emphasis>ifcfg-rh</emphasis> connection files
+          manually, even if that is not the recommended way of managing the profiles.
+          However, if they choose to do that, they must inform NetworkManager about
+          their changes (see <emphasis>monitor-connection-file</emphasis> in
+          <citerefentry><refentrytitle>nm-settings</refentrytitle><manvolnum>5</manvolnum></citerefentry>, and <emphasis>nmcli con (re)load</emphasis>).
+        </para><formalpara><title>Some <emphasis>ifcfg-rh</emphasis> configuration examples:</title><para><programlisting><emphasis role="bold">Simple DHCP ethernet configuration:</emphasis>
+NAME=ethernet
+UUID=1c4ddf70-01bf-46d6-b04f-47e842bd98da
+TYPE=Ethernet
+BOOTPROTO=dhcp
+DEFROUTE=yes
+PEERDNS=yes
+PEERROUTES=yes
+IPV4_FAILURE_FATAL=no
+ONBOOT=yes
+            </programlisting></para><para><programlisting><emphasis role="bold">Simple ethernet configuration with static IP:</emphasis>
+TYPE=Ethernet
+BOOTPROTO=none
+IPADDR=10.1.0.25
+PREFIX=24
+GATEWAY=10.1.0.1
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_FAILURE_FATAL=no
+NAME=ethernet-em2
+UUID=51bb3904-c0fc-4dfe-83b2-0a71e7928c13
+DEVICE=em2
+ONBOOT=yes
+            </programlisting></para><para><programlisting><emphasis role="bold">WPA2 Enterprise WLAN (TTLS with inner MSCHAPV2 authentication):</emphasis>
+ESSID="CompanyWLAN"
+MODE=Managed
+KEY_MGMT=WPA-EAP
+TYPE=Wireless
+IEEE_8021X_EAP_METHODS=TTLS
+IEEE_8021X_IDENTITY=joe
+IEEE_8021X_PASSWORD_FLAGS=ask
+IEEE_8021X_INNER_AUTH_METHODS=MSCHAPV2
+IEEE_8021X_CA_CERT=/home/joe/.cert/company.crt
+BOOTPROTO=dhcp
+DEFROUTE=yes
+PEERDNS=yes
+PEERROUTES=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no
+NAME=MyCompany
+UUID=f79848ff-11a6-4810-9e1a-99039dea84c4
+ONBOOT=yes
+            </programlisting></para><para><programlisting><emphasis role="bold">Bridge and bridge port configuration:</emphasis>
+ifcfg-bridge:                                ifcfg-bridge-port:
+NAME=bridge                                  NAME=bridge007-port-eth0
+UUID=4be99ce0-c5b2-4764-8b77-ec226e440125    UUID=3ad56c4a-47e1-419b-b0d4-8ad86eb967a3
+DEVICE=bridge007                             DEVICE=eth0
+STP=yes                                      ONBOOT=yes
+TYPE=Bridge                                  TYPE=Ethernet
+BRIDGING_OPTS=priority=32768                 BRIDGE=bridge007
+ONBOOT=yes
+BOOTPROTO=dhcp
+
+            </programlisting></para><para><programlisting><emphasis role="bold">Bonding configuration:</emphasis>
+ifcfg-BOND:                                  ifcfg-BOND-slave:
+NAME=BOND                                    NAME=BOND-slave
+UUID=b41888aa-924c-450c-b0f8-85a4f0a51b4a    UUID=9bb048e4-286a-4cc3-b104-007dbd20decb
+DEVICE=bond100                               DEVICE=eth0
+BONDING_OPTS="mode=balance-rr miimon=100"    ONBOOT=yes
+TYPE=Bond                                    TYPE=Ethernet
+BONDING_MASTER=yes                           MASTER=bond100
+ONBOOT=yes                                   SLAVE=yes
+BOOTPROTO=dhcp
+
+            </programlisting></para><para><programlisting><emphasis role="bold">Team and team port configuration:</emphasis>
+ifcfg-my_team0:
+DEVICE=team0
+TEAM_CONFIG="{ \"device\": \"team0\", \"runner\": {\"name\": \"roundrobin\"}, \"ports\": {\"eth1\": {}, \"eth2\": {}} }"
+DEVICETYPE=Team
+BOOTPROTO=dhcp
+NAME=team0-profile
+UUID=1d3460a0-7b37-457f-a300-fe8d92da4807
+ONBOOT=yes
+
+ifcfg-my_team0_slave1:
+NAME=team0-slave1
+UUID=d5aed298-c567-4cc1-b808-6d38ecef9e64
+DEVICE=eth1
+ONBOOT=yes
+TEAM_MASTER=team0
+DEVICETYPE=TeamPort
+
+ifcfg-my_team0_slave2:
+NAME=team0-slave2
+UUID=94e75f4e-e5ad-401c-8962-31e0ae5d2215
+DEVICE=eth2
+ONBOOT=yes
+TEAM_MASTER=team0
+DEVICETYPE=TeamPort
+            </programlisting></para><para>
+            The UUID values in the config files must be unique. You can use <emphasis>uuidgen</emphasis>
+            command line tool to generate such values. Alternatively, you can leave out UUID
+            entirely. In that case NetworkManager will generate a UUID based on the file name.
+          </para></formalpara></refsect1><refsect1><title>Differences against initscripts</title><para>
+          The main differences of NetworkManager ifcfg-rh plugin and traditional
+          initscripts are:
+          <variablelist class="NM-initscripts-differences"><varlistentry><term><emphasis role="bold">NM_CONTROLLED=yes|no</emphasis></term><listitem><para>
+                NM_CONTROLLED is NetworkManager-specific variable used by NetworkManager
+                for determining whether the device of the <emphasis>ifcfg</emphasis> file
+                should be managed. NM_CONTROLLED=yes is supposed if the variable is not
+                present in the file.
+                Note that if you have more <emphasis>ifcfg</emphasis> files for a single
+                device, NM_CONTROLLED=no in one of the files will cause the device not
+                to be managed. The profile may not even be the active one.
+              </para></listitem></varlistentry><varlistentry><term><emphasis role="bold">New variables</emphasis></term><listitem><para>
+                NetworkManager has introduced some new variable, not present in initscripts,
+                to be able to store data for its new features. The variables are marked
+                as extensions in the tables bellows.
+              </para></listitem></varlistentry><varlistentry><term><emphasis role="bold">Semantic change of variables</emphasis></term><listitem><para>
+                NetworkManager had to slightly change the semantic for a few variables.
+                <itemizedlist><listitem><para><literal>PEERDNS</literal> -
+                    initscripts interpret PEERDNS=no to mean "never touch resolv.conf".
+                    NetworkManager interprets it to say "never add automatic (DHCP, PPP, VPN, etc.)
+                    nameservers to resolv.conf".</para></listitem><listitem><para><literal>ONBOOT</literal> -
+                    initscripts use ONBOOT=yes to mark the devices that are to be activated
+                    during boot. NetworkManager extents this to also mean that this profile
+                    can be used for auto-connecting at any time.</para></listitem><listitem><para><literal>BOOTPROTO</literal> -
+                    NetworkManager supports traditional values <emphasis>none</emphasis> (static),
+                    <emphasis>dhcp</emphasis>. But it also allows additional values to
+                    enable new addressing methods. They are <emphasis>autoip</emphasis> for IPv4
+                    link-local addressing using Avahi daemon and <emphasis>shared</emphasis> for
+                    connection sharing. When <emphasis>shared</emphasis> is used, NetworkManager
+                    assigns the interface 10.42.0.1, or it uses the first static address,
+                    if configured.</para></listitem></itemizedlist></para></listitem></varlistentry></variablelist></para><para>
+          See the next section for detailed mapping of NetworkManager properties and
+          <emphasis>ifcfg-rh</emphasis> variables. Variable names, format and usage
+          differences in NetworkManager and initscripts are documented in the tables bellow.
+        </para></refsect1><refsect1><title>DETAILS</title><para><emphasis>ifcfg-rh</emphasis> plugin variables marked with <emphasis>(+)</emphasis>
+          are NetworkManager specific extensions not understood by traditional initscripts.
+        </para><table><title>802-1x setting</title><tgroup cols="4"><thead><row><entry>Property</entry><entry>Ifcfg-rh Variable</entry><entry>Default</entry><entry>Description</entry></row></thead><tbody><row><entry align="left">eap</entry><entry align="left">IEEE_8021X_EAP_METHODS<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">EAP method for 802.1X authentication.<emphasis role="bold">
+
+Example: </emphasis>IEEE_8021X_EAP_METHODS=PEAP<emphasis role="bold">
+
+Allowed values: </emphasis>"LEAP", "PWD", "TLS", "PEAP", "TTLS", "FAST"</entry></row><row><entry align="left">identity</entry><entry align="left">IEEE_8021X_IDENTITY<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Identity for EAP authentication methods.<emphasis role="bold">
+
+Example: </emphasis>IEEE_8021X_IDENTITY=itsme</entry></row><row><entry align="left">anonymous-identity</entry><entry align="left">IEEE_8021X_ANON_IDENTITY<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Anonymous identity for EAP authentication methods.</entry></row><row><entry align="left">pac-file</entry><entry align="left">IEEE_8021X_PAC_FILE<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">File with PAC (Protected Access Credential) for EAP-FAST.<emphasis role="bold">
+
+Example: </emphasis>IEEE_8021X_PAC_FILE=/home/joe/my-fast.pac</entry></row><row><entry align="left">ca-cert</entry><entry align="left">IEEE_8021X_CA_CERT<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">CA certificate for EAP.<emphasis role="bold">
+
+Example: </emphasis>IEEE_8021X_CA_CERT=/home/joe/cacert.crt</entry></row><row><entry align="left">ca-path</entry><entry align="left">(none)</entry><entry align="left"/><entry align="left">The property is not handled by ifcfg-rh plugin.</entry></row><row><entry align="left">subject-match</entry><entry align="left">IEEE_8021X_SUBJECT_MATCH<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Substring to match subject of server certificate against.<emphasis role="bold">
+
+Example: </emphasis>IEEE_8021X_SUBJECT_MATCH="Red Hat"</entry></row><row><entry align="left">altsubject-matches</entry><entry align="left">IEEE_8021X_ALTSUBJECT_MATCHES<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">List of strings to be matched against the altSubjectName.<emphasis role="bold">
+
+Example: </emphasis>IEEE_8021X_ALTSUBJECT_MATCHES="s1.domain.cc"</entry></row><row><entry align="left">client-cert</entry><entry align="left">IEEE_8021X_CLIENT_CERT<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Client certificate for EAP.<emphasis role="bold">
+
+Example: </emphasis>IEEE_8021X_CLIENT_CERT=/home/joe/mycert.crt</entry></row><row><entry align="left">phase1-peapver</entry><entry align="left">IEEE_8021X_PEAP_VERSION<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Use to force a specific PEAP version.<emphasis role="bold">
+
+Allowed values: </emphasis>0, 1</entry></row><row><entry align="left">phase1-peaplabel</entry><entry align="left">IEEE_8021X_PEAP_FORCE_NEW_LABEL<emphasis>(+)</emphasis></entry><entry align="left">no</entry><entry align="left">Use to force the new PEAP label during key derivation.<emphasis role="bold">
+
+Allowed values: </emphasis>yes, no</entry></row><row><entry align="left">phase1-fast-provisioning</entry><entry align="left">IEEE_8021X_FAST_PROVISIONING<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Enable in-line provisioning of EAP-FAST credentials.<emphasis role="bold">
+
+Example: </emphasis>IEEE_8021X_FAST_PROVISIONING="allow-auth allow-unauth"<emphasis role="bold">
+
+Allowed values: </emphasis>space-separated list of these values [allow-auth, allow-unauth]</entry></row><row><entry align="left">phase2-auth</entry><entry align="left">IEEE_8021X_INNER_AUTH_METHODS<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Inner non-EAP authentication methods. IEEE_8021X_INNER_AUTH_METHODS can contain values both for 'phase2-auth' and 'phase2-autheap' properties.<emphasis role="bold">
+
+Example: </emphasis>IEEE_8021X_INNER_AUTH_METHODS=PAP<emphasis role="bold">
+
+Allowed values: </emphasis>"PAP", "CHAP", "MSCHAP", "MSCHAPV2", "GTC", "OTP", "MD5" and "TLS"</entry></row><row><entry align="left">phase2-autheap</entry><entry align="left">IEEE_8021X_INNER_AUTH_METHODS<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Inner EAP-based authentication methods. Note that IEEE_8021X_INNER_AUTH_METHODS is also used for 'phase2-auth' values.<emphasis role="bold">
+
+Example: </emphasis>IEEE_8021X_INNER_AUTH_METHODS="MSCHAPV2 EAP-TLS"<emphasis role="bold">
+
+Allowed values: </emphasis>"EAP-MD5", "EAP-MSCHAPV2", "EAP-GTC", "EAP-OTP" and "EAP-TLS"</entry></row><row><entry align="left">phase2-subject-match</entry><entry align="left">IEEE_8021X_PHASE2_SUBJECT_MATCH<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Substring to match subject of server certificate against.<emphasis role="bold">
+
+Example: </emphasis>IEEE_8021X_PHASE2_SUBJECT_MATCH="Red Hat"</entry></row><row><entry align="left">phase2-altsubject-matches</entry><entry align="left">IEEE_8021X_PHASE2_ALTSUBJECT_MATCHES<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left"/></row><row><entry align="left">phase2-client-cert</entry><entry align="left">IEEE_8021X_INNER_CLIENT_CERT<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Client certificate for inner EAP method.<emphasis role="bold">
+
+Example: </emphasis>IEEE_8021X_INNER_CLIENT_CERT=/home/joe/mycert.crt</entry></row><row><entry align="left">password</entry><entry align="left">IEEE_8021X_PASSWORD<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">UTF-8 encoded password used for EAP. It can also go to "key-" lookaside file, or it can be owned by a secret agent.</entry></row><row><entry align="left">password-flags</entry><entry align="left">IEEE_8021X_PASSWORD_FLAGS<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Password flags for IEEE_8021X_PASSWORD password. (see <xref linkend="secrets-flags"/> for _FLAGS values)</entry></row><row><entry align="left">password-raw</entry><entry align="left">(none)</entry><entry align="left"/><entry align="left">The property is not handled by ifcfg-rh plugin.</entry></row><row><entry align="left">password-raw-flags</entry><entry align="left">(none)</entry><entry align="left"/><entry align="left">The property is not handled by ifcfg-rh plugin.</entry></row><row><entry align="left">private-key</entry><entry align="left">IEEE_8021X_PRIVATE_KEY<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Private key for EAP-TLS.<emphasis role="bold">
+
+Example: </emphasis>IEEE_8021X_PRIVATE_KEY=/home/joe/mykey.p12</entry></row><row><entry align="left">private-key-password</entry><entry align="left">IEEE_8021X_PRIVATE_KEY_PASSWORD<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Password for IEEE_8021X_PRIVATE_KEY. It can also go to "key-" lookaside file, or it can be owned by a secret agent.</entry></row><row><entry align="left">private-key-password-flags</entry><entry align="left">IEEE_8021X_PRIVATE_KEY_PASSWORD_FLAGS<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Password flags for IEEE_8021X_PRIVATE_KEY_PASSWORD password. (see <xref linkend="secrets-flags"/> for _FLAGS values)</entry></row><row><entry align="left">phase2-private-key</entry><entry align="left">IEEE_8021X_INNER_PRIVATE_KEY<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Private key for inner authentication method for EAP-TLS.</entry></row><row><entry align="left">phase2-private-key-password</entry><entry align="left">IEEE_8021X_INNER_PRIVATE_KEY_PASSWORD<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Password for IEEE_8021X_INNER_PRIVATE_KEY. It can also go to "key-" lookaside file, or it can be owned by a secret agent.</entry></row><row><entry align="left">phase2-private-key-password-flags</entry><entry align="left">IEEE_8021X_INNER_PRIVATE_KEY_PASSWORD_FLAGS<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Password flags for IEEE_8021X_INNER_PRIVATE_KEY_PASSWORD password. (see <xref linkend="secrets-flags"/> for _FLAGS values)</entry></row><row><entry align="left">pin</entry><entry align="left">(none)</entry><entry align="left"/><entry align="left">The property is not handled by ifcfg-rh plugin.</entry></row><row><entry align="left">pin-flags</entry><entry align="left">(none)</entry><entry align="left"/><entry align="left">The property is not handled by ifcfg-rh plugin.</entry></row><row><entry align="left">system-ca-certs</entry><entry align="left">(none)</entry><entry align="left"/><entry align="left">The property is not handled by ifcfg-rh plugin.</entry></row></tbody></tgroup></table><table><title>bond setting</title><tgroup cols="4"><thead><row><entry>Property</entry><entry>Ifcfg-rh Variable</entry><entry>Default</entry><entry>Description</entry></row></thead><tbody><row><entry align="left">options</entry><entry align="left">BONDING_OPTS</entry><entry align="left"/><entry align="left">Bonding options.<emphasis role="bold">
+
+Example: </emphasis>BONDING_OPTS="miimon=100 mode=broadcast"</entry></row></tbody></tgroup></table><table><title>bridge-port setting</title><tgroup cols="4"><thead><row><entry>Property</entry><entry>Ifcfg-rh Variable</entry><entry>Default</entry><entry>Description</entry></row></thead><tbody><row><entry align="left">priority</entry><entry align="left">BRIDGING_OPTS: priority=</entry><entry align="left">32</entry><entry align="left">STP priority.<emphasis role="bold">
+
+Allowed values: </emphasis>0 - 63</entry></row><row><entry align="left">path-cost</entry><entry align="left">BRIDGING_OPTS: path_cost=</entry><entry align="left">100</entry><entry align="left">STP cost.<emphasis role="bold">
+
+Allowed values: </emphasis>1 - 65535</entry></row><row><entry align="left">hairpin-mode</entry><entry align="left">BRIDGING_OPTS: hairpin_mode=</entry><entry align="left">yes</entry><entry align="left">Hairpin mode of the bridge port.</entry></row></tbody></tgroup></table><table><title>bridge setting</title><tgroup cols="4"><thead><row><entry>Property</entry><entry>Ifcfg-rh Variable</entry><entry>Default</entry><entry>Description</entry></row></thead><tbody><row><entry align="left">mac-address</entry><entry align="left">MACADDR<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">MAC address of the bridge. Note that this requires a recent kernel support, originally introduced in 3.15 upstream kernel) MACADDR for bridges is an NM extension.</entry></row><row><entry align="left">stp</entry><entry align="left">STP</entry><entry align="left">no</entry><entry align="left">Span tree protocol participation.</entry></row><row><entry align="left">priority</entry><entry align="left">BRIDGING_OPTS: priority=</entry><entry align="left">32768</entry><entry align="left">STP priority.<emphasis role="bold">
+
+Allowed values: </emphasis>0 - 32768</entry></row><row><entry align="left">forward-delay</entry><entry align="left">DELAY</entry><entry align="left">15</entry><entry align="left">STP forwarding delay.<emphasis role="bold">
+
+Allowed values: </emphasis>2 - 30</entry></row><row><entry align="left">hello-time</entry><entry align="left">BRIDGING_OPTS: hello_time=</entry><entry align="left">2</entry><entry align="left">STP hello time.<emphasis role="bold">
+
+Allowed values: </emphasis>1 - 10</entry></row><row><entry align="left">max-age</entry><entry align="left">BRIDGING_OPTS: max_age=</entry><entry align="left">20</entry><entry align="left">STP maximum message age.<emphasis role="bold">
+
+Allowed values: </emphasis>6 - 40</entry></row><row><entry align="left">ageing-time</entry><entry align="left">BRIDGING_OPTS: ageing_time=</entry><entry align="left">300</entry><entry align="left">Ethernet MAC ageing time.<emphasis role="bold">
+
+Allowed values: </emphasis>0 - 1000000</entry></row></tbody></tgroup></table><table><title>connection setting</title><tgroup cols="4"><thead><row><entry>Property</entry><entry>Ifcfg-rh Variable</entry><entry>Default</entry><entry>Description</entry></row></thead><tbody><row><entry align="left">id</entry><entry align="left">NAME<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">User friendly name for the connection profile.</entry></row><row><entry align="left">uuid</entry><entry align="left">UUID<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">UUID for the connection profile. When missing, NetworkManager creates the UUID itself (by hashing the file).</entry></row><row><entry align="left">interface-name</entry><entry align="left">DEVICE</entry><entry align="left"/><entry align="left">Interface name of the device this profile is bound to. The variable can be left out when the profile should apply for more devices. Note that DEVICE can be required for some connection types.</entry></row><row><entry align="left">type</entry><entry align="left">TYPE (DEVICETYPE, DEVICE)</entry><entry align="left"/><entry align="left">Base type of the connection. DEVICETYPE is used for teaming connections.<emphasis role="bold">
+
+Example: </emphasis>TYPE=Ethernet; TYPE=Bond; TYPE=Bridge; DEVICETYPE=TeamPort<emphasis role="bold">
+
+Allowed values: </emphasis>Ethernet, Wireless, InfiniBand, Bridge, Bond, Vlan, Team, TeamPort</entry></row><row><entry align="left">permissions</entry><entry align="left">USERS<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">USERS restrict the access for this conenction to certain users only.<emphasis role="bold">
+
+Example: </emphasis>USERS="joe bob"</entry></row><row><entry align="left">autoconnect</entry><entry align="left">ONBOOT</entry><entry align="left">yes</entry><entry align="left">Whether the connection should be autoconnected (not only while booting).</entry></row><row><entry align="left">autoconnect-priority</entry><entry align="left">AUTOCONNECT_PRIORITY<emphasis>(+)</emphasis></entry><entry align="left">0</entry><entry align="left">Connection priority for automatic activation. Connections with higher numbers are preferred when selecting profiles for automatic activation.<emphasis role="bold">
+
+Example: </emphasis>AUTOCONNECT_PRIORITY=20<emphasis role="bold">
+
+Allowed values: </emphasis>-999 to 999</entry></row><row><entry align="left">zone</entry><entry align="left">ZONE<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Trust level of this connection. The string is usually used for a firewall.<emphasis role="bold">
+
+Example: </emphasis>ZONE=Work</entry></row><row><entry align="left">master</entry><entry align="left">MASTER, TEAM_MASTER, BRIDGE</entry><entry align="left"/><entry align="left">Reference to master connection. The variable used depends on the connection type.</entry></row><row><entry align="left">slave-type</entry><entry align="left">MASTER, TEAM_MASTER, DEVICETYPE, BRIDGE</entry><entry align="left"/><entry align="left">Slave type doesn't map directly to a variable, but it is recognized using different variables.  MASTER for bonding, TEAM_MASTER and DEVICETYPE for teaming, BRIDGE for bridging.</entry></row><row><entry align="left">autoconnect-slaves</entry><entry align="left">AUTOCONNECT-SLAVES<emphasis>(+)</emphasis></entry><entry align="left">missing variable means global default</entry><entry align="left">Whether slaves of this connection should be auto-connected when this connection is activated.</entry></row><row><entry align="left">secondaries</entry><entry align="left">SECONDARY_UUIDS<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">UUID of VPN connections that should be activated together with this connection.</entry></row><row><entry align="left">gateway-ping-timeout</entry><entry align="left">GATEWAY_PING_TIMEOUT<emphasis>(+)</emphasis></entry><entry align="left">0</entry><entry align="left">If greater than zero, the IP connectivity will be checked by pinging the gateway and waiting for the specified timeout (in seconds).<emphasis role="bold">
+
+Example: </emphasis>GATEWAY_PING_TIMEOUT=5</entry></row></tbody></tgroup></table><table><title>dcb setting</title><tgroup cols="4"><thead><row><entry>Property</entry><entry>Ifcfg-rh Variable</entry><entry>Default</entry><entry>Description</entry></row></thead><tbody><row><entry align="left">app-fcoe-flags</entry><entry align="left">DCB_APP_FCOE_ENABLE, DCB_APP_FCOE_ADVERTISE, DCB_APP_FCOE_WILLING</entry><entry align="left">no</entry><entry align="left">FCOE flags.<emphasis role="bold">
+
+Example: </emphasis>DCB_APP_FCOE_ENABLE=yes DCB_APP_FCOE_ADVERTISE=yes</entry></row><row><entry align="left">app-fcoe-priority</entry><entry align="left">DCB_APP_FCOE_PRIORITY</entry><entry align="left"/><entry align="left">Priority of FCoE frames.<emphasis role="bold">
+
+Allowed values: </emphasis>0 - 7</entry></row><row><entry align="left">app-fcoe-mode</entry><entry align="left">DCB_APP_FCOE_MODE</entry><entry align="left">fabric</entry><entry align="left">FCoE controller mode.<emphasis role="bold">
+
+Allowed values: </emphasis>fabric, vn2vn</entry></row><row><entry align="left">app-iscsi-flags</entry><entry align="left">DCB_APP_ISCSI_ENABLE, DCB_APP_ISCSI_ADVERTISE, DCB_APP_ISCSI_WILLING</entry><entry align="left">no</entry><entry align="left">iSCSI flags.</entry></row><row><entry align="left">app-iscsi-priority</entry><entry align="left">DCB_APP_ISCSI_PRIORITY</entry><entry align="left"/><entry align="left">Priority of iSCSI frames.<emphasis role="bold">
+
+Allowed values: </emphasis>0 - 7</entry></row><row><entry align="left">app-fip-flags</entry><entry align="left">DCB_APP_FIP_ENABLE, DCB_APP_FIP_ADVERTISE, DCB_APP_FIP_WILLING</entry><entry align="left">no</entry><entry align="left">FIP flags.</entry></row><row><entry align="left">app-fip-priority</entry><entry align="left">DCB_APP_FIP_PRIORITY</entry><entry align="left"/><entry align="left">Priority of FIP frames.<emphasis role="bold">
+
+Allowed values: </emphasis>0 - 7</entry></row><row><entry align="left">priority-flow-control-flags</entry><entry align="left">DCB_PFC_ENABLE, DCB_PFC_ADVERTISE, DCB_PFC_WILLING</entry><entry align="left">no</entry><entry align="left">Priority flow control flags.</entry></row><row><entry align="left">priority-flow-control</entry><entry align="left">DCB_PFC_UP</entry><entry align="left"/><entry align="left">Priority flow control values. String of 8 "0" and "1", where "0". means "do not transmit priority pause", "1" means "transmit pause".<emphasis role="bold">
+
+Example: </emphasis>DCB_PFC_UP=01101110</entry></row><row><entry align="left">priority-group-flags</entry><entry align="left">DCB_PG_ENABLE, DCB_PG_ADVERTISE, DCB_PG_WILLING</entry><entry align="left">no</entry><entry align="left">Priority groups flags.</entry></row><row><entry align="left">priority-group-id</entry><entry align="left">DCB_PG_ID</entry><entry align="left"/><entry align="left">Priority groups values. String of eight priorities (0 - 7) or "f" (unrestricted).<emphasis role="bold">
+
+Example: </emphasis>DCB_PG_ID=1205f173</entry></row><row><entry align="left">priority-group-bandwidth</entry><entry align="left">DCB_PG_PCT</entry><entry align="left"/><entry align="left">Priority groups values. Eight bandwidths (in percent), separated with commas.<emphasis role="bold">
+
+Example: </emphasis>DCB_PG_PCT=10,5,10,15,10,10,10,30</entry></row><row><entry align="left">priority-bandwidth</entry><entry align="left">DCB_PG_UPPCT</entry><entry align="left"/><entry align="left">Priority values. Eight bandwidths (in percent), separated with commas. The sum of the numbers must be 100.<emphasis role="bold">
+
+Example: </emphasis>DCB_PG_UPPCT=7,13,10,10,15,15,10,20</entry></row><row><entry align="left">priority-strict-bandwidth</entry><entry align="left">DCB_PG_STRICT</entry><entry align="left"/><entry align="left">Priority values. String of eight "0" or "1", where "0" means "may not utilize all bandwidth", "1" means "may utilize all bandwidth".<emphasis role="bold">
+
+Example: </emphasis>DCB_PG_STRICT=01101110</entry></row><row><entry align="left">priority-traffic-class</entry><entry align="left">DCB_PG_UP2TC</entry><entry align="left"/><entry align="left">Priority values. String of eight trafic class values (0 - 7).<emphasis role="bold">
+
+Example: </emphasis>DCB_PG_UP2TC=01623701</entry></row></tbody></tgroup></table><para>
+          All DCB related configuration is a NetworkManager extention. DCB=yes must be
+          used explicitly to enable DCB so that the rest of the DCB_* variables can apply.
+        </para><table><title>infiniband setting</title><tgroup cols="4"><thead><row><entry>Property</entry><entry>Ifcfg-rh Variable</entry><entry>Default</entry><entry>Description</entry></row></thead><tbody><row><entry align="left">mac-address</entry><entry align="left">HWADDR</entry><entry align="left"/><entry align="left">IBoIP 20-byte hardware address of the device (in traditional hex-digits-and-colons notation).<emphasis role="bold">
+
+Example: </emphasis>HWADDR=01:02:03:04:05:06:07:08:09:0A:01:02:03:04:05:06:07:08:09:11</entry></row><row><entry align="left">mtu</entry><entry align="left">MTU</entry><entry align="left"/><entry align="left">MTU of the interface.</entry></row><row><entry align="left">transport-mode</entry><entry align="left">CONNECTED_MODE</entry><entry align="left">CONNECTED_MODE=no</entry><entry align="left">CONNECTED_MODE=yes for "connected" mode, CONNECTED_MODE=no for "datagram" mode</entry></row><row><entry align="left">p-key</entry><entry align="left">PKEY_ID (and PKEY=yes)</entry><entry align="left">PKEY=no</entry><entry align="left">InfiniBand P_Key. The value can be a hex number prefixed with "0x" or a decimal number. When PKEY_ID is specified, PHYSDEV and DEVICE also must be specified.<emphasis role="bold">
+
+Example: </emphasis>PKEY=yes PKEY_ID=2 PHYSDEV=mlx4_ib0 DEVICE=mlx4_ib0.8002</entry></row><row><entry align="left">parent</entry><entry align="left">PHYSDEV (PKEY=yes)</entry><entry align="left">PKEY=no</entry><entry align="left">InfiniBand parent device.<emphasis role="bold">
+
+Example: </emphasis>PHYSDEV=ib0</entry></row></tbody></tgroup></table><table><title>ipv4 setting</title><tgroup cols="4"><thead><row><entry>Property</entry><entry>Ifcfg-rh Variable</entry><entry>Default</entry><entry>Description</entry></row></thead><tbody><row><entry align="left">method</entry><entry align="left">BOOTPROTO</entry><entry align="left">none</entry><entry align="left">Method used for IPv4 protocol configuration.<emphasis role="bold">
+
+Allowed values: </emphasis>none, dhcp (bootp), static, ibft, autoip, shared</entry></row><row><entry align="left">dns</entry><entry align="left">DNS1, DNS2, ...</entry><entry align="left"/><entry align="left">List of DNS servers. Even if NetworkManager supports many DNS servers, initscripts and resolver only care about the first three, usually.<emphasis role="bold">
+
+Example: </emphasis>DNS1=1.2.3.4 DNS2=10.0.0.254 DNS3=8.8.8.8</entry></row><row><entry align="left">dns-search</entry><entry align="left">DOMAIN</entry><entry align="left"/><entry align="left">List of DNS search domains.</entry></row><row><entry align="left">addresses</entry><entry align="left">IPADDR, PREFIX, IPADDR1, PREFIX1, ...</entry><entry align="left"/><entry align="left">List of static IP addresses.<emphasis role="bold">
+
+Example: </emphasis>IPADDR=10.5.5.23 PREFIX=24 IPADDR1=1.1.1.2 PREFIX1=16</entry></row><row><entry align="left">gateway</entry><entry align="left">GATEWAY</entry><entry align="left"/><entry align="left">Gateway IP address.<emphasis role="bold">
+
+Example: </emphasis>GATEWAY=10.5.5.1</entry></row><row><entry align="left">routes</entry><entry align="left">ADDRESS1, NETMASK1, GATEWAY1, METRIC1, ...</entry><entry align="left"/><entry align="left">List of static routes. They are not stored in ifcfg-* file, but in route-* file instead.</entry></row><row><entry align="left">ignore-auto-routes</entry><entry align="left">PEERROUTES<emphasis>(+)</emphasis></entry><entry align="left">yes</entry><entry align="left">PEERROUTES has the opposite meaning as 'ignore-auto-routes' property.</entry></row><row><entry align="left">ignore-auto-dns</entry><entry align="left">PEERDNS</entry><entry align="left">yes</entry><entry align="left">PEERDNS has the opposite meaning as 'ignore-auto-dns' property.</entry></row><row><entry align="left">dhcp-send-hostname</entry><entry align="left">DHCP_SEND_HOSTNAME<emphasis>(+)</emphasis></entry><entry align="left">yes</entry><entry align="left">Whether DHCP_HOSTNAME should be sent to the DHCP server.</entry></row><row><entry align="left">dhcp-hostname</entry><entry align="left">DHCP_HOSTNAME</entry><entry align="left"/><entry align="left">Hostname to send to the DHCP server.</entry></row><row><entry align="left">never-default</entry><entry align="left">DEFROUTE (GATEWAYDEV in /etc/sysconfig/network)</entry><entry align="left">yes</entry><entry align="left">DEFROUTE=no tells NetworkManager that this connection should not be assigned the default route. DEFROUTE has the opposite meaning as 'never-default' property.</entry></row><row><entry align="left">may-fail</entry><entry align="left">IPV4_FAILURE_FATAL<emphasis>(+)</emphasis></entry><entry align="left">no</entry><entry align="left">IPV4_FAILURE_FATAL has the opposite meaning as 'may-fail' property.</entry></row><row><entry align="left">route-metric</entry><entry align="left">IPV4_ROUTE_METRIC<emphasis>(+)</emphasis></entry><entry align="left">-1</entry><entry align="left">IPV4_ROUTE_METRIC is the default IPv4 metric for routes on this connection. If set to -1, a default metric based on the device type is used.</entry></row><row><entry align="left">dhcp-client-id</entry><entry align="left">DHCP_CLIENT_ID<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">A string sent to the DHCP server to identify the local machine.<emphasis role="bold">
+
+Example: </emphasis>DHCP_CLIENT_ID=ax-srv-1</entry></row></tbody></tgroup></table><table><title>ipv6 setting</title><tgroup cols="4"><thead><row><entry>Property</entry><entry>Ifcfg-rh Variable</entry><entry>Default</entry><entry>Description</entry></row></thead><tbody><row><entry align="left">method</entry><entry align="left">IPV6INIT, IPV6FORWARDING, IPV6_AUTOCONF, DHCPV6C</entry><entry align="left">IPV6INIT=yes; IPV6FORWARDING=no; IPV6_AUTOCONF=!IPV6FORWARDING, DHCPV6=no</entry><entry align="left">Method used for IPv6 protocol configuration. ignore ~ IPV6INIT=no; auto ~ IPV6_AUTOCONF=yes; dhcp ~ IPV6_AUTOCONF=no and DHCPV6C=yes</entry></row><row><entry align="left">dns</entry><entry align="left">DNS1, DNS2, ...</entry><entry align="left"/><entry align="left">List of DNS servers. NetworkManager uses the variables both for IPv4 and IPv6.</entry></row><row><entry align="left">dns-search</entry><entry align="left">DOMAIN</entry><entry align="left"/><entry align="left">List of DNS search domains.</entry></row><row><entry align="left">addresses</entry><entry align="left">IPV6ADDR, IPV6ADDR_SECONDARIES</entry><entry align="left"/><entry align="left">List of static IP addresses.<emphasis role="bold">
+
+Example: </emphasis>IPV6ADDR=ab12:9876::1 IPV6ADDR_SECONDARIES="ab12:9876::2 ab12:9876::3"</entry></row><row><entry align="left">gateway</entry><entry align="left">IPV6_DEFAULTGW</entry><entry align="left"/><entry align="left">Gateway IP address.<emphasis role="bold">
+
+Example: </emphasis>IPV6_DEFAULTGW=abbe::1</entry></row><row><entry align="left">routes</entry><entry align="left">(none)</entry><entry align="left"/><entry align="left">List of static routes. They are not stored in ifcfg-* file, but in route6-* file instead in the form of command line for 'ip route add'.</entry></row><row><entry align="left">ignore-auto-routes</entry><entry align="left">IPV6_PEERROUTES<emphasis>(+)</emphasis></entry><entry align="left">yes</entry><entry align="left">IPV6_PEERROUTES has the opposite meaning as 'ignore-auto-routes' property.</entry></row><row><entry align="left">ignore-auto-dns</entry><entry align="left">IPV6_PEERDNS<emphasis>(+)</emphasis></entry><entry align="left">yes</entry><entry align="left">IPV6_PEERDNS has the opposite meaning as 'ignore-auto-dns' property.</entry></row><row><entry align="left">dhcp-hostname</entry><entry align="left">DHCP_HOSTNAME</entry><entry align="left"/><entry align="left">Hostname to send the DHCP server.</entry></row><row><entry align="left">never-default</entry><entry align="left">IPV6_DEFROUTE<emphasis>(+)</emphasis>, (and IPV6_DEFAULTGW, IPV6_DEFAULTDEV in /etc/sysconfig/network)</entry><entry align="left">IPV6_DEFROUTE=yes (when no variable specified)</entry><entry align="left">IPV6_DEFROUTE=no tells NetworkManager that this connection should not be assigned the default IPv6 route. IPV6_DEFROUTE has the opposite meaning as 'never-default' property.</entry></row><row><entry align="left">may-fail</entry><entry align="left">IPV6_FAILURE_FATAL<emphasis>(+)</emphasis></entry><entry align="left">no</entry><entry align="left">IPV6_FAILURE_FATAL has the opposite meaning as 'may-fail' property.</entry></row><row><entry align="left">route-metric</entry><entry align="left">IPV6_ROUTE_METRIC<emphasis>(+)</emphasis></entry><entry align="left">-1</entry><entry align="left">IPV6_ROUTE_METRIC is the default IPv6 metric for routes on this connection. If set to -1, a default metric based on the device type is used.</entry></row><row><entry align="left">ip6-privacy</entry><entry align="left">IPV6_PRIVACY, IPV6_PRIVACY_PREFER_PUBLIC_IP<emphasis>(+)</emphasis></entry><entry align="left">no</entry><entry align="left">Configure IPv6 Privacy Extensions for SLAAC (RFC4941).<emphasis role="bold">
+
+Example: </emphasis>IPV6_PRIVACY=rfc3041 IPV6_PRIVACY_PREFER_PUBLIC_IP=yes<emphasis role="bold">
+
+Allowed values: </emphasis>IPV6_PRIVACY: no, yes (rfc3041 or rfc4941); IPV6_PRIVACY_PREFER_PUBLIC_IP: yes, no</entry></row></tbody></tgroup></table><table><title>team-port setting</title><tgroup cols="4"><thead><row><entry>Property</entry><entry>Ifcfg-rh Variable</entry><entry>Default</entry><entry>Description</entry></row></thead><tbody><row><entry align="left">config</entry><entry align="left">TEAM_PORT_CONFIG</entry><entry align="left"/><entry align="left">Team port configuration in JSON. See man teamd.conf for details.</entry></row></tbody></tgroup></table><table><title>team setting</title><tgroup cols="4"><thead><row><entry>Property</entry><entry>Ifcfg-rh Variable</entry><entry>Default</entry><entry>Description</entry></row></thead><tbody><row><entry align="left">config</entry><entry align="left">TEAM_CONFIG</entry><entry align="left"/><entry align="left">Team configuration in JSON. See man teamd.conf for details.</entry></row></tbody></tgroup></table><table><title>vlan setting</title><tgroup cols="4"><thead><row><entry>Property</entry><entry>Ifcfg-rh Variable</entry><entry>Default</entry><entry>Description</entry></row></thead><tbody><row><entry align="left">parent</entry><entry align="left">DEVICE or PHYSDEV</entry><entry align="left"/><entry align="left">Parent interface of the VLAN.</entry></row><row><entry align="left">id</entry><entry align="left">VLAN_ID or DEVICE</entry><entry align="left"/><entry align="left">VLAN identifier.</entry></row><row><entry align="left">flags</entry><entry align="left">VLAN_FLAGS, REORDER_HDR</entry><entry align="left"/><entry align="left">Parent interface of the VLAN.<emphasis role="bold">
+
+Allowed values: </emphasis>"GVRP", "LOOSE_BINDING" for VLAN_FLAGS; 0 or 1 for REORDER_HDR</entry></row><row><entry align="left">ingress-property-map</entry><entry align="left">VLAN_INGRESS_PRIORITY_MAP</entry><entry align="left"/><entry align="left">Ingress priority mapping.<emphasis role="bold">
+
+Example: </emphasis>VLAN_INGRESS_PRIORITY_MAP=4:2,3:5</entry></row><row><entry align="left">egress-property-map</entry><entry align="left">VLAN_EGRESS_PRIORITY_MAP</entry><entry align="left"/><entry align="left">Egress priority mapping.<emphasis role="bold">
+
+Example: </emphasis>VLAN_EGRESS_PRIORITY_MAP=5:4,4:1,3:7</entry></row><row><entry align="left">interface-name</entry><entry align="left">PHYSDEV and VLAN_ID, or DEVICE</entry><entry align="left"/><entry align="left">VLAN interface name. If all variables are set, parent device from PHYSDEV takes precedence over DEVICE, but VLAN id from DEVICE takes precedence over VLAN_ID.<emphasis role="bold">
+
+Example: </emphasis>PHYSDEV=eth0, VLAN_ID=12; or DEVICE=eth0.12</entry></row></tbody></tgroup></table><table><title>802-3-ethernet setting</title><tgroup cols="4"><thead><row><entry>Property</entry><entry>Ifcfg-rh Variable</entry><entry>Default</entry><entry>Description</entry></row></thead><tbody><row><entry align="left">port</entry><entry align="left">(none)</entry><entry align="left"/><entry align="left">The property is not saved by the plugin.</entry></row><row><entry align="left">speed</entry><entry align="left">(none)</entry><entry align="left"/><entry align="left">The property is not saved by the plugin.</entry></row><row><entry align="left">duplex</entry><entry align="left">(none)</entry><entry align="left"/><entry align="left">The property is not saved by the plugin.</entry></row><row><entry align="left">auto-negotiate</entry><entry align="left">(none)</entry><entry align="left"/><entry align="left">The property is not saved by the plugin.</entry></row><row><entry align="left">mac-address</entry><entry align="left">HWADDR</entry><entry align="left"/><entry align="left">Hardware address of the device in traditional hex-digits-and-colons notation (e.g. 00:22:68:14:5A:05).</entry></row><row><entry align="left">cloned-mac-address</entry><entry align="left">MACADDR</entry><entry align="left"/><entry align="left">Cloned (spoofed) MAC address in traditional hex-digits-and-colons notation (e.g. 00:22:68:14:5A:99).</entry></row><row><entry align="left">mac-address-blacklist</entry><entry align="left">HWADDR_BLACKLIST<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">It denies usage of the connection for any device whose address is listed.<emphasis role="bold">
+
+Example: </emphasis>HWADDR_BLACKLIST="00:22:68:11:69:08 00:11:22:11:44:55"</entry></row><row><entry align="left">mtu</entry><entry align="left">MTU</entry><entry align="left"/><entry align="left">MTU of the interface.</entry></row><row><entry align="left">s390-subchannels</entry><entry align="left">SUBCHANNELS</entry><entry align="left"/><entry align="left">Subchannels for IBM S390 hosts.<emphasis role="bold">
+
+Example: </emphasis>SUBCHANNELS=0.0.b00a,0.0.b00b,0.0.b00c</entry></row><row><entry align="left">s390-nettype</entry><entry align="left">NETTYPE</entry><entry align="left"/><entry align="left">Network type of the S390 host.<emphasis role="bold">
+
+Example: </emphasis>NETTYPE=qeth<emphasis role="bold">
+
+Allowed values: </emphasis>"qeth", "lcs" or "ctc"</entry></row><row><entry align="left">s390-options</entry><entry align="left">OPTIONS and PORTNAME, CTCPROTO,</entry><entry align="left"/><entry align="left">S390 device options. All options go to OPTIONS, except for "portname" and "ctcprot" that have their own variables.</entry></row></tbody></tgroup></table><table><title>802-11-wireless-security setting</title><tgroup cols="4"><thead><row><entry>Property</entry><entry>Ifcfg-rh Variable</entry><entry>Default</entry><entry>Description</entry></row></thead><tbody><row><entry align="left">key-mgmt</entry><entry align="left">KEY_MGMT<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Key management menthod.<emphasis role="bold">
+
+Allowed values: </emphasis>IEEE8021X, WPA-PSK, WPA-EAP</entry></row><row><entry align="left">wep-tx-keyidx</entry><entry align="left">DEFAULTKEY</entry><entry align="left">1</entry><entry align="left">Index of active WEP key.<emphasis role="bold">
+
+Allowed values: </emphasis>1, 2, 3, 4</entry></row><row><entry align="left">auth-alg</entry><entry align="left">SECURITYMODE<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Authentication algorithm for WEP.<emphasis role="bold">
+
+Allowed values: </emphasis>restricted, open, leap</entry></row><row><entry align="left">proto</entry><entry align="left">WPA_ALLOW_WPA<emphasis>(+)</emphasis>, WPA_ALLOW_WPA2<emphasis>(+)</emphasis></entry><entry align="left">no</entry><entry align="left">Allowed WPA protocols, WPA and WPA2 (RSN).<emphasis role="bold">
+
+Allowed values: </emphasis>yes, no</entry></row><row><entry align="left">pairwise</entry><entry align="left">CIPHER_PAIRWISE<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Restrict pairwise encryption algorithms, specified as a space separated list.<emphasis role="bold">
+
+Allowed values: </emphasis>CCMP, TKIP</entry></row><row><entry align="left">group</entry><entry align="left">CIPHER_GROUP<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Restrict group/broadcast encryption algorithms, specified as a space separated list.<emphasis role="bold">
+
+Allowed values: </emphasis>CCMP, TKIP, WEP40, WEP104</entry></row><row><entry align="left">leap-username</entry><entry align="left">IEEE_8021X_IDENTITY<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Login name for LEAP.</entry></row><row><entry align="left">wep-key0</entry><entry align="left">KEY1, KEY_PASSPHRASE1<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">The first WEP key (used in most networks). See also DEFAULTKEY for key index.</entry></row><row><entry align="left">wep-key1</entry><entry align="left">KEY2, KEY_PASSPHRASE2<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">WEP key with index 1. See also DEFAULTKEY for key index.</entry></row><row><entry align="left">wep-key2</entry><entry align="left">KEY3, KEY_PASSPHRASE3<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">WEP key with index 2. See also DEFAULTKEY for key index.</entry></row><row><entry align="left">wep-key3</entry><entry align="left">KEY4, KEY_PASSPHRASE4<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">WEP key with index 3. See also DEFAULTKEY for key index.</entry></row><row><entry align="left">wep-key-flags</entry><entry align="left">WEP_KEY_FLAGS<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Password flags for KEY&lt;i&gt;, KEY_PASSPHRASE&lt;i&gt; password. (see <xref linkend="secrets-flags"/> for _FLAGS values)</entry></row><row><entry align="left">psk</entry><entry align="left">WPA_PSK</entry><entry align="left"/><entry align="left">Pre-Shared-Key for WPA networks.</entry></row><row><entry align="left">psk-flags</entry><entry align="left">WPA_PSK_FLAGS<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Password flags for WPA_PSK_FLAGS. (see <xref linkend="secrets-flags"/> for _FLAGS values)<emphasis role="bold">
+
+Example: </emphasis>WPA_PSK_FLAGS=user</entry></row><row><entry align="left">leap-password</entry><entry align="left">IEEE_8021X_PASSWORD<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Password for LEAP. It can also go to "key-" lookaside file, or it can be owned by a secret agent.</entry></row><row><entry align="left">leap-password-flags</entry><entry align="left">IEEE_8021X_PASSWORD_FLAGS<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Password flags for IEEE_8021X_PASSWORD_FLAGS. (see <xref linkend="secrets-flags"/> for _FLAGS values)</entry></row><row><entry align="left">wep-key-type</entry><entry align="left">KEY&lt;i&gt; or KEY_PASSPHRASE&lt;i&gt;<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">KEY is used for "key" type (10 or 26 hexadecimal characters, or 5 or 13 character string prefixed with "s:"). KEY_PASSPHRASE is used for WEP passphrases.<emphasis role="bold">
+
+Example: </emphasis>KEY1=s:ahoj, KEY1=0a1c45bc02, KEY_PASSPHRASE1=mysupersecretkey</entry></row></tbody></tgroup></table><table><title>802-11-wireless setting</title><tgroup cols="4"><thead><row><entry>Property</entry><entry>Ifcfg-rh Variable</entry><entry>Default</entry><entry>Description</entry></row></thead><tbody><row><entry align="left">ssid</entry><entry align="left">ESSID</entry><entry align="left"/><entry align="left">SSID of Wi-Fi network.<emphasis role="bold">
+
+Example: </emphasis>ESSID="Quick Net"</entry></row><row><entry align="left">mode</entry><entry align="left">MODE</entry><entry align="left"/><entry align="left">Wi-Fi network mode.<emphasis role="bold">
+
+Allowed values: </emphasis>Ad-Hoc, Managed (Auto)  [case insensitive]</entry></row><row><entry align="left">band</entry><entry align="left">BAND<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">BAND alone is honored, but CHANNEL overrides BAND since it implies a band.<emphasis role="bold">
+
+Example: </emphasis>BAND=bg<emphasis role="bold">
+
+Allowed values: </emphasis>a, bg</entry></row><row><entry align="left">channel</entry><entry align="left">CHANNEL</entry><entry align="left"/><entry align="left">Channel used for the Wi-Fi communication. Channels greater than 14 mean "a" band, otherwise the band is "bg".<emphasis role="bold">
+
+Example: </emphasis>CHANNEL=6</entry></row><row><entry align="left">bssid</entry><entry align="left">BSSID<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Restricts association only to a single AP.<emphasis role="bold">
+
+Example: </emphasis>BSSID=00:1E:BD:64:83:21</entry></row><row><entry align="left">rate</entry><entry align="left">(none)</entry><entry align="left"/><entry align="left">This property is not handled by ifcfg-rh plugin.</entry></row><row><entry align="left">tx-power</entry><entry align="left">(none)</entry><entry align="left"/><entry align="left">This property is not handled by ifcfg-rh plugin.</entry></row><row><entry align="left">mac-address</entry><entry align="left">HWADDR</entry><entry align="left"/><entry align="left">Hardware address of the device in traditional hex-digits-and-colons notation (e.g. 00:22:68:14:5A:05).</entry></row><row><entry align="left">cloned-mac-address</entry><entry align="left">MACADDR</entry><entry align="left"/><entry align="left">Cloned (spoofed) MAC address in traditional hex-digits-and-colons notation (e.g. 00:22:68:14:5A:99).</entry></row><row><entry align="left">mac-address-blacklist</entry><entry align="left">HWADDR_BLACKLIST<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">It denies usage of the connection for any device whose address is listed.</entry></row><row><entry align="left">seen-bssids</entry><entry align="left">(none)</entry><entry align="left"/><entry align="left">This property is not handled by ifcfg-rh plugin.</entry></row><row><entry align="left">mtu</entry><entry align="left">MTU</entry><entry align="left"/><entry align="left">MTU of the wireless interface.</entry></row><row><entry align="left">hidden</entry><entry align="left">SSID_HIDDEN<emphasis>(+)</emphasis></entry><entry align="left"/><entry align="left">Whether the network hides the SSID.</entry></row><row><entry align="left">security</entry><entry align="left">(none)</entry><entry align="left"/><entry align="left">This property is deprecated and not handled by ifcfg-rh-plugin.</entry></row></tbody></tgroup></table><para>The following settings are not supported by <emphasis>ifcfg-rh</emphasis> plugin:</para><para>adsl, bluetooth, ppp, pppoe, serial, generic, gsm, cdma, 802-11-olpc-mesh, wimax, vpn</para><refsect2 id="secrets-flags"><title>Secret flags</title><para>
+            Each secret property in a NetworkManager setting has an associated
+            <emphasis>flags</emphasis> property that describes how to handle that secret.
+            In the <emphasis>fcfg-rh</emphasis> plugin variables for secret flags have a
+            <emphasis>_FLAGS</emphasis> suffix. The variables contain one or more of the
+            folowing values (space separated). Missing (or empty) *_FLAGS variable means
+            that the password is owned by NetworkManager.
+          </para><itemizedlist><listitem><para><literal>user</literal> - a user-session secret agent is responsible for providing
+              and storing this secret; when it is required, agents will be asked to provide it.</para></listitem><listitem><para><literal>ask</literal> - the associated password is not saved but it will be
+              requested from the user each time it is required.</para></listitem><listitem><para><literal>unused</literal> - in some situations it cannot be automatically determined
+              that a secret is required or not. This flag hints that the secret is not required and should
+              not be requested from the user.</para></listitem></itemizedlist></refsect2></refsect1><refsect1><title>AUTHOR</title><para><author><firstname>NetworkManager developers</firstname></author></para></refsect1><refsect1><title>FILES</title><para><filename>/etc/sysconfig/network-scripts/ifcfg-*</filename></para><para><filename>/etc/sysconfig/network-scripts/keys-*</filename></para><para><filename>/etc/sysconfig/network-scripts/route-*</filename></para><para><filename>/etc/sysconfig/network-scripts/route6-*</filename></para><para><filename>/usr/share/doc/initscripts/sysconfig.txt</filename></para></refsect1><refsect1><title>SEE ALSO</title><para>https://developer.gnome.org/NetworkManager/unstable/ref-settings.html</para><para>nm-settings(5), nm-settings-keyfile(5), NetworkManager(8), NetworkManager.conf(5), nmcli(1), nmcli-examples(5)</para></refsect1></refentry>

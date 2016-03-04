@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<!DOCTYPE nm-ifcfg-rh-docs [
+]>
+
+<nm-ifcfg-rh-docs>
+  <setting name="802-1x">
+<property name="eap" variable="IEEE_8021X_EAP_METHODS(+)" format="" values="&quot;LEAP&quot;, &quot;PWD&quot;, &quot;TLS&quot;, &quot;PEAP&quot;, &quot;TTLS&quot;, &quot;FAST&quot;" default="" example="IEEE_8021X_EAP_METHODS=PEAP" description="EAP method for 802.1X authentication."/>
+<property name="identity" variable="IEEE_8021X_IDENTITY(+)" format="" values="" default="" example="IEEE_8021X_IDENTITY=itsme" description="Identity for EAP authentication methods."/>
+<property name="anonymous-identity" variable="IEEE_8021X_ANON_IDENTITY(+)" format="" values="" default="" example="" description="Anonymous identity for EAP authentication methods."/>
+<property name="pac-file" variable="IEEE_8021X_PAC_FILE(+)" format="" values="" default="" example="IEEE_8021X_PAC_FILE=/home/joe/my-fast.pac" description="File with PAC (Protected Access Credential) for EAP-FAST."/>
+<property name="ca-cert" variable="IEEE_8021X_CA_CERT(+)" format="" values="" default="" example="IEEE_8021X_CA_CERT=/home/joe/cacert.crt" description="CA certificate for EAP."/>
+<property name="ca-path" variable="(none)" format="" values="" default="" example="" description="The property is not handled by ifcfg-rh plugin."/>
+<property name="subject-match" variable="IEEE_8021X_SUBJECT_MATCH(+)" format="" values="" default="" example="IEEE_8021X_SUBJECT_MATCH=&quot;Red Hat&quot;" description="Substring to match subject of server certificate against."/>
+<property name="altsubject-matches" variable="IEEE_8021X_ALTSUBJECT_MATCHES(+)" format="" values="" default="" example="IEEE_8021X_ALTSUBJECT_MATCHES=&quot;s1.domain.cc&quot;" description="List of strings to be matched against the altSubjectName."/>
+<property name="client-cert" variable="IEEE_8021X_CLIENT_CERT(+)" format="" values="" default="" example="IEEE_8021X_CLIENT_CERT=/home/joe/mycert.crt" description="Client certificate for EAP."/>
+<property name="phase1-peapver" variable="IEEE_8021X_PEAP_VERSION(+)" format="" values="0, 1" default="" example="" description="Use to force a specific PEAP version."/>
+<property name="phase1-peaplabel" variable="IEEE_8021X_PEAP_FORCE_NEW_LABEL(+)" format="" values="yes, no" default="no" example="" description="Use to force the new PEAP label during key derivation."/>
+<property name="phase1-fast-provisioning" variable="IEEE_8021X_FAST_PROVISIONING(+)" format="" values="space-separated list of these values [allow-auth, allow-unauth]" default="" example="IEEE_8021X_FAST_PROVISIONING=&quot;allow-auth allow-unauth&quot;" description="Enable in-line provisioning of EAP-FAST credentials."/>
+<property name="phase2-auth" variable="IEEE_8021X_INNER_AUTH_METHODS(+)" format="" values="&quot;PAP&quot;, &quot;CHAP&quot;, &quot;MSCHAP&quot;, &quot;MSCHAPV2&quot;, &quot;GTC&quot;, &quot;OTP&quot;, &quot;MD5&quot; and &quot;TLS&quot;" default="" example="IEEE_8021X_INNER_AUTH_METHODS=PAP" description="Inner non-EAP authentication methods. IEEE_8021X_INNER_AUTH_METHODS
+can contain values both for &apos;phase2-auth&apos; and &apos;phase2-autheap&apos; properties."/>
+<property name="phase2-autheap" variable="IEEE_8021X_INNER_AUTH_METHODS(+)" format="" values="&quot;EAP-MD5&quot;, &quot;EAP-MSCHAPV2&quot;, &quot;EAP-GTC&quot;, &quot;EAP-OTP&quot; and &quot;EAP-TLS&quot;" default="" example="IEEE_8021X_INNER_AUTH_METHODS=&quot;MSCHAPV2 EAP-TLS&quot;" description="Inner EAP-based authentication methods. Note that
+IEEE_8021X_INNER_AUTH_METHODS is also used for &apos;phase2-auth&apos; values."/>
+<property name="phase2-subject-match" variable="IEEE_8021X_PHASE2_SUBJECT_MATCH(+)" format="" values="" default="" example="IEEE_8021X_PHASE2_SUBJECT_MATCH=&quot;Red Hat&quot;" description="Substring to match subject of server certificate against."/>
+<property name="phase2-altsubject-matches" variable="IEEE_8021X_PHASE2_ALTSUBJECT_MATCHES(+)" format="" values="" default="" example="" description=""/>
+<property name="phase2-client-cert" variable="IEEE_8021X_INNER_CLIENT_CERT(+)" format="" values="" default="" example="IEEE_8021X_INNER_CLIENT_CERT=/home/joe/mycert.crt" description="Client certificate for inner EAP method."/>
+<property name="password" variable="IEEE_8021X_PASSWORD(+)" format="" values="" default="" example="" description="UTF-8 encoded password used for EAP. It can also go to &quot;key-&quot;
+lookaside file, or it can be owned by a secret agent."/>
+<property name="password-flags" variable="IEEE_8021X_PASSWORD_FLAGS(+)" format="NMSettingSecretFlags" values="" default="" example="" description="Password flags for IEEE_8021X_PASSWORD password."/>
+<property name="password-raw" variable="(none)" format="" values="" default="" example="" description="The property is not handled by ifcfg-rh plugin."/>
+<property name="password-raw-flags" variable="(none)" format="" values="" default="" example="" description="The property is not handled by ifcfg-rh plugin."/>
+<property name="private-key" variable="IEEE_8021X_PRIVATE_KEY(+)" format="" values="" default="" example="IEEE_8021X_PRIVATE_KEY=/home/joe/mykey.p12" description="Private key for EAP-TLS."/>
+<property name="private-key-password" variable="IEEE_8021X_PRIVATE_KEY_PASSWORD(+)" format="" values="" default="" example="" description="Password for IEEE_8021X_PRIVATE_KEY. It can also go to &quot;key-&quot;
+lookaside file, or it can be owned by a secret agent."/>
+<property name="private-key-password-flags" variable="IEEE_8021X_PRIVATE_KEY_PASSWORD_FLAGS(+)" format="NMSettingSecretFlags" values="" default="" example="" description="Password flags for IEEE_8021X_PRIVATE_KEY_PASSWORD password."/>
+<property name="phase2-private-key" variable="IEEE_8021X_INNER_PRIVATE_KEY(+)" format="" values="" default="" example="" description="Private key for inner authentication method for EAP-TLS."/>
+<property name="phase2-private-key-password" variable="IEEE_8021X_INNER_PRIVATE_KEY_PASSWORD(+)" format="" values="" default="" example="" description="Password for IEEE_8021X_INNER_PRIVATE_KEY. It can also go to &quot;key-&quot;
+lookaside file, or it can be owned by a secret agent."/>
+<property name="phase2-private-key-password-flags" variable="IEEE_8021X_INNER_PRIVATE_KEY_PASSWORD_FLAGS(+)" format="NMSettingSecretFlags" values="" default="" example="" description="Password flags for IEEE_8021X_INNER_PRIVATE_KEY_PASSWORD password."/>
+<property name="pin" variable="(none)" format="" values="" default="" example="" description="The property is not handled by ifcfg-rh plugin."/>
+<property name="pin-flags" variable="(none)" format="" values="" default="" example="" description="The property is not handled by ifcfg-rh plugin."/>
+<property name="system-ca-certs" variable="(none)" format="" values="" default="" example="" description="The property is not handled by ifcfg-rh plugin."/>
+</setting>
+<setting name="adsl">
+</setting>
+<setting name="bluetooth">
+</setting>
+<setting name="bond">
+<property name="options" variable="BONDING_OPTS" format="" values="" default="" example="BONDING_OPTS=&quot;miimon=100 mode=broadcast&quot;" description="Bonding options."/>
+</setting>
+<setting name="bridge-port">
+<property name="priority" variable="BRIDGING_OPTS: priority=" format="" values="0 - 63" default="32" example="" description="STP priority."/>
+<property name="path-cost" variable="BRIDGING_OPTS: path_cost=" format="" values="1 - 65535" default="100" example="" description="STP cost."/>
+<property name="hairpin-mode" variable="BRIDGING_OPTS: hairpin_mode=" format="" values="" default="yes" example="" description="Hairpin mode of the bridge port."/>
+</setting>
+<setting name="bridge">
+<property name="mac-address" variable="MACADDR(+)" format="" values="" default="" example="" description="MAC address of the bridge. Note that this requires a recent
+kernel support, originally introduced in 3.15 upstream kernel)
+MACADDR for bridges is an NM extension."/>
+<property name="stp" variable="STP" format="" values="" default="no" example="" description="Span tree protocol participation."/>
+<property name="priority" variable="BRIDGING_OPTS: priority=" format="" values="0 - 32768" default="32768" example="" description="STP priority."/>
+<property name="forward-delay" variable="DELAY" format="" values="2 - 30" default="15" example="" description="STP forwarding delay."/>
+<property name="hello-time" variable="BRIDGING_OPTS: hello_time=" format="" values="1 - 10" default="2" example="" description="STP hello time."/>
+<property name="max-age" variable="BRIDGING_OPTS: max_age=" format="" values="6 - 40" default="20" example="" description="STP maximum message age."/>
+<property name="ageing-time" variable="BRIDGING_OPTS: ageing_time=" format="" values="0 - 1000000" default="300" example="" description="Ethernet MAC ageing time."/>
+</setting>
+<setting name="cdma">
+</setting>
+<setting name="connection">
+<property name="id" variable="NAME(+)" format="" values="" default="" example="" description="User friendly name for the connection profile."/>
+<property name="uuid" variable="UUID(+)" format="" values="" default="" example="" description="UUID for the connection profile. When missing, NetworkManager
+creates the UUID itself (by hashing the file)."/>
+<property name="interface-name" variable="DEVICE" format="" values="" default="" example="" description="Interface name of the device this profile is bound to. The variable
+can be left out when the profile should apply for more devices. Note that DEVICE
+can be required for some connection types."/>
+<property name="type" variable="TYPE (DEVICETYPE, DEVICE)" format="" values="Ethernet, Wireless, InfiniBand, Bridge, Bond, Vlan, Team, TeamPort" default="" example="TYPE=Ethernet; TYPE=Bond; TYPE=Bridge; DEVICETYPE=TeamPort" description="Base type of the connection. DEVICETYPE is used for teaming
+connections."/>
+<property name="permissions" variable="USERS(+)" format="" values="" default="" example="USERS=&quot;joe bob&quot;" description="USERS restrict the access for this conenction to certain
+users only."/>
+<property name="autoconnect" variable="ONBOOT" format="" values="" default="yes" example="" description="Whether the connection should be autoconnected (not only while booting)."/>
+<property name="autoconnect-priority" variable="AUTOCONNECT_PRIORITY(+)" format="" values="-999 to 999" default="0" example="AUTOCONNECT_PRIORITY=20" description="Connection priority for automatic activation. Connections with
+higher numbers are preferred when selecting profiles for automatic activation."/>
+<property name="zone" variable="ZONE(+)" format="" values="" default="" example="ZONE=Work" description="Trust level of this connection. The string is usually used
+for a firewall."/>
+<property name="master" variable="MASTER, TEAM_MASTER, BRIDGE" format="" values="" default="" example="" description="Reference to master connection. The variable used depends on
+the connection type."/>
+<property name="slave-type" variable="MASTER, TEAM_MASTER, DEVICETYPE, BRIDGE" format="" values="" default="" example="" description="Slave type doesn&apos;t map directly to a variable, but it is
+recognized using different variables.  MASTER for bonding,
+TEAM_MASTER and DEVICETYPE for teaming, BRIDGE for bridging."/>
+<property name="autoconnect-slaves" variable="AUTOCONNECT-SLAVES(+)" format="" values="" default="missing variable means global default" example="" description="Whether slaves of this connection should be auto-connected
+when this connection is activated."/>
+<property name="secondaries" variable="SECONDARY_UUIDS(+)" format="" values="" default="" example="" description="UUID of VPN connections that should be activated
+together with this connection."/>
+<property name="gateway-ping-timeout" variable="GATEWAY_PING_TIMEOUT(+)" format="" values="" default="0" example="GATEWAY_PING_TIMEOUT=5" description="If greater than zero, the IP connectivity will be checked by
+pinging the gateway and waiting for the specified timeout (in seconds)."/>
+</setting>
+<setting name="dcb">
+<property name="app-fcoe-flags" variable="DCB_APP_FCOE_ENABLE, DCB_APP_FCOE_ADVERTISE, DCB_APP_FCOE_WILLING" format="" values="" default="no" example="DCB_APP_FCOE_ENABLE=yes DCB_APP_FCOE_ADVERTISE=yes" description="FCOE flags."/>
+<property name="app-fcoe-priority" variable="DCB_APP_FCOE_PRIORITY" format="" values="0 - 7" default="" example="" description="Priority of FCoE frames."/>
+<property name="app-fcoe-mode" variable="DCB_APP_FCOE_MODE" format="" values="fabric, vn2vn" default="fabric" example="" description="FCoE controller mode."/>
+<property name="app-iscsi-flags" variable="DCB_APP_ISCSI_ENABLE, DCB_APP_ISCSI_ADVERTISE, DCB_APP_ISCSI_WILLING" format="" values="" default="no" example="" description="iSCSI flags."/>
+<property name="app-iscsi-priority" variable="DCB_APP_ISCSI_PRIORITY" format="" values="0 - 7" default="" example="" description="Priority of iSCSI frames."/>
+<property name="app-fip-flags" variable="DCB_APP_FIP_ENABLE, DCB_APP_FIP_ADVERTISE, DCB_APP_FIP_WILLING" format="" values="" default="no" example="" description="FIP flags."/>
+<property name="app-fip-priority" variable="DCB_APP_FIP_PRIORITY" format="" values="0 - 7" default="" example="" description="Priority of FIP frames."/>
+<property name="priority-flow-control-flags" variable="DCB_PFC_ENABLE, DCB_PFC_ADVERTISE, DCB_PFC_WILLING" format="" values="" default="no" example="" description="Priority flow control flags."/>
+<property name="priority-flow-control" variable="DCB_PFC_UP" format="" values="" default="" example="DCB_PFC_UP=01101110" description="Priority flow control values. String of 8 &quot;0&quot; and &quot;1&quot;, where &quot;0&quot;.
+means &quot;do not transmit priority pause&quot;, &quot;1&quot; means &quot;transmit pause&quot;."/>
+<property name="priority-group-flags" variable="DCB_PG_ENABLE, DCB_PG_ADVERTISE, DCB_PG_WILLING" format="" values="" default="no" example="" description="Priority groups flags."/>
+<property name="priority-group-id" variable="DCB_PG_ID" format="" values="" default="" example="DCB_PG_ID=1205f173" description="Priority groups values. String of eight priorities (0 - 7) or &quot;f&quot;
+(unrestricted)."/>
+<property name="priority-group-bandwidth" variable="DCB_PG_PCT" format="" values="" default="" example="DCB_PG_PCT=10,5,10,15,10,10,10,30" description="Priority groups values. Eight bandwidths (in percent), separated with commas."/>
+<property name="priority-bandwidth" variable="DCB_PG_UPPCT" format="" values="" default="" example="DCB_PG_UPPCT=7,13,10,10,15,15,10,20" description="Priority values. Eight bandwidths (in percent), separated with commas.
+The sum of the numbers must be 100."/>
+<property name="priority-strict-bandwidth" variable="DCB_PG_STRICT" format="" values="" default="" example="DCB_PG_STRICT=01101110" description="Priority values. String of eight &quot;0&quot; or &quot;1&quot;, where &quot;0&quot; means
+&quot;may not utilize all bandwidth&quot;, &quot;1&quot; means &quot;may utilize all bandwidth&quot;."/>
+<property name="priority-traffic-class" variable="DCB_PG_UP2TC" format="" values="" default="" example="DCB_PG_UP2TC=01623701" description="Priority values. String of eight trafic class values (0 - 7)."/>
+</setting>
+<setting name="generic">
+</setting>
+<setting name="gsm">
+</setting>
+<setting name="infiniband">
+<property name="mac-address" variable="HWADDR" format="" values="" default="" example="HWADDR=01:02:03:04:05:06:07:08:09:0A:01:02:03:04:05:06:07:08:09:11" description="IBoIP 20-byte hardware address of the device (in traditional
+hex-digits-and-colons notation)."/>
+<property name="mtu" variable="MTU" format="" values="" default="" example="" description="MTU of the interface."/>
+<property name="transport-mode" variable="CONNECTED_MODE" format="" values="" default="CONNECTED_MODE=no" example="" description="CONNECTED_MODE=yes for &quot;connected&quot; mode, CONNECTED_MODE=no for
+&quot;datagram&quot; mode"/>
+<property name="p-key" variable="PKEY_ID (and PKEY=yes)" format="" values="" default="PKEY=no" example="PKEY=yes PKEY_ID=2 PHYSDEV=mlx4_ib0 DEVICE=mlx4_ib0.8002" description="InfiniBand P_Key. The value can be a hex number prefixed with &quot;0x&quot;
+or a decimal number.
+When PKEY_ID is specified, PHYSDEV and DEVICE also must be specified."/>
+<property name="parent" variable="PHYSDEV (PKEY=yes)" format="" values="" default="PKEY=no" example="PHYSDEV=ib0" description="InfiniBand parent device."/>
+</setting>
+<setting name="">
+</setting>
+<setting name="ipv4">
+<property name="method" variable="BOOTPROTO" format="string" values="none, dhcp (bootp), static, ibft, autoip, shared" default="none" example="" description="Method used for IPv4 protocol configuration."/>
+<property name="dns" variable="DNS1, DNS2, ..." format="string" values="" default="" example="DNS1=1.2.3.4 DNS2=10.0.0.254 DNS3=8.8.8.8" description="List of DNS servers. Even if NetworkManager supports many DNS
+servers, initscripts and resolver only care about the first three, usually."/>
+<property name="dns-search" variable="DOMAIN" format="string (space-separated domains)" values="" default="" example="" description="List of DNS search domains."/>
+<property name="addresses" variable="IPADDR, PREFIX, IPADDR1, PREFIX1, ..." format="" values="" default="" example="IPADDR=10.5.5.23 PREFIX=24 IPADDR1=1.1.1.2 PREFIX1=16" description="List of static IP addresses."/>
+<property name="gateway" variable="GATEWAY" format="" values="" default="" example="GATEWAY=10.5.5.1" description="Gateway IP address."/>
+<property name="routes" variable="ADDRESS1, NETMASK1, GATEWAY1, METRIC1, ..." format="" values="" default="" example="" description="List of static routes. They are not stored in ifcfg-* file,
+but in route-* file instead."/>
+<property name="ignore-auto-routes" variable="PEERROUTES(+)" format="" values="" default="yes" example="" description="PEERROUTES has the opposite meaning as &apos;ignore-auto-routes&apos; property."/>
+<property name="ignore-auto-dns" variable="PEERDNS" format="" values="" default="yes" example="" description="PEERDNS has the opposite meaning as &apos;ignore-auto-dns&apos; property."/>
+<property name="dhcp-send-hostname" variable="DHCP_SEND_HOSTNAME(+)" format="" values="" default="yes" example="" description="Whether DHCP_HOSTNAME should be sent to the DHCP server."/>
+<property name="dhcp-hostname" variable="DHCP_HOSTNAME" format="" values="" default="" example="" description="Hostname to send to the DHCP server."/>
+<property name="never-default" variable="DEFROUTE (GATEWAYDEV in /etc/sysconfig/network)" format="" values="" default="yes" example="" description="DEFROUTE=no tells NetworkManager that this connection
+should not be assigned the default route. DEFROUTE has the opposite
+meaning as &apos;never-default&apos; property."/>
+<property name="may-fail" variable="IPV4_FAILURE_FATAL(+)" format="" values="" default="no" example="" description="IPV4_FAILURE_FATAL has the opposite meaning as &apos;may-fail&apos; property."/>
+<property name="route-metric" variable="IPV4_ROUTE_METRIC(+)" format="" values="" default="-1" example="" description="IPV4_ROUTE_METRIC is the default IPv4 metric for routes on this connection.
+If set to -1, a default metric based on the device type is used."/>
+<property name="dhcp-client-id" variable="DHCP_CLIENT_ID(+)" format="" values="" default="" example="DHCP_CLIENT_ID=ax-srv-1" description="A string sent to the DHCP server to identify the local machine."/>
+</setting>
+<setting name="ipv6">
+<property name="method" variable="IPV6INIT, IPV6FORWARDING, IPV6_AUTOCONF, DHCPV6C" format="" values="" default="IPV6INIT=yes; IPV6FORWARDING=no; IPV6_AUTOCONF=!IPV6FORWARDING, DHCPV6=no" example="" description="Method used for IPv6 protocol configuration.
+ignore ~ IPV6INIT=no; auto ~ IPV6_AUTOCONF=yes; dhcp ~ IPV6_AUTOCONF=no and DHCPV6C=yes"/>
+<property name="dns" variable="DNS1, DNS2, ..." format="string" values="" default="" example="" description="List of DNS servers. NetworkManager uses the variables both
+for IPv4 and IPv6."/>
+<property name="dns-search" variable="DOMAIN" format="string (space-separated domains)" values="" default="" example="" description="List of DNS search domains."/>
+<property name="addresses" variable="IPV6ADDR, IPV6ADDR_SECONDARIES" format="" values="" default="" example="IPV6ADDR=ab12:9876::1
+IPV6ADDR_SECONDARIES=&quot;ab12:9876::2 ab12:9876::3&quot;" description="List of static IP addresses."/>
+<property name="gateway" variable="IPV6_DEFAULTGW" format="" values="" default="" example="IPV6_DEFAULTGW=abbe::1" description="Gateway IP address."/>
+<property name="routes" variable="(none)" format="" values="" default="" example="" description="List of static routes. They are not stored in ifcfg-* file,
+but in route6-* file instead in the form of command line for &apos;ip route add&apos;."/>
+<property name="ignore-auto-routes" variable="IPV6_PEERROUTES(+)" format="" values="" default="yes" example="" description="IPV6_PEERROUTES has the opposite meaning as &apos;ignore-auto-routes&apos; property."/>
+<property name="ignore-auto-dns" variable="IPV6_PEERDNS(+)" format="" values="" default="yes" example="" description="IPV6_PEERDNS has the opposite meaning as &apos;ignore-auto-dns&apos; property."/>
+<property name="dhcp-hostname" variable="DHCP_HOSTNAME" format="" values="" default="" example="" description="Hostname to send the DHCP server."/>
+<property name="never-default" variable="IPV6_DEFROUTE(+), (and IPV6_DEFAULTGW, IPV6_DEFAULTDEV in /etc/sysconfig/network)" format="" values="" default="IPV6_DEFROUTE=yes (when no variable specified)" example="" description="IPV6_DEFROUTE=no tells NetworkManager that this connection
+should not be assigned the default IPv6 route. IPV6_DEFROUTE has the opposite
+meaning as &apos;never-default&apos; property."/>
+<property name="may-fail" variable="IPV6_FAILURE_FATAL(+)" format="" values="" default="no" example="" description="IPV6_FAILURE_FATAL has the opposite meaning as &apos;may-fail&apos; property."/>
+<property name="route-metric" variable="IPV6_ROUTE_METRIC(+)" format="" values="" default="-1" example="" description="IPV6_ROUTE_METRIC is the default IPv6 metric for routes on this connection.
+If set to -1, a default metric based on the device type is used."/>
+<property name="ip6-privacy" variable="IPV6_PRIVACY, IPV6_PRIVACY_PREFER_PUBLIC_IP(+)" format="" values="IPV6_PRIVACY: no, yes (rfc3041 or rfc4941);
+IPV6_PRIVACY_PREFER_PUBLIC_IP: yes, no" default="no" example="IPV6_PRIVACY=rfc3041 IPV6_PRIVACY_PREFER_PUBLIC_IP=yes" description="Configure IPv6 Privacy Extensions for SLAAC (RFC4941)."/>
+</setting>
+<setting name="802-11-olpc-mesh">
+</setting>
+<setting name="ppp">
+</setting>
+<setting name="pppoe">
+</setting>
+<setting name="serial">
+</setting>
+<setting name="team-port">
+<property name="config" variable="TEAM_PORT_CONFIG" format="" values="" default="" example="" description="Team port configuration in JSON. See man teamd.conf for details."/>
+</setting>
+<setting name="team">
+<property name="config" variable="TEAM_CONFIG" format="" values="" default="" example="" description="Team configuration in JSON. See man teamd.conf for details."/>
+</setting>
+<setting name="vlan">
+<property name="parent" variable="DEVICE or PHYSDEV" format="" values="" default="" example="" description="Parent interface of the VLAN."/>
+<property name="id" variable="VLAN_ID or DEVICE" format="" values="" default="" example="" description="VLAN identifier."/>
+<property name="flags" variable="VLAN_FLAGS, REORDER_HDR" format="" values="&quot;GVRP&quot;, &quot;LOOSE_BINDING&quot; for VLAN_FLAGS; 0 or 1 for REORDER_HDR" default="" example="" description="Parent interface of the VLAN."/>
+<property name="ingress-property-map" variable="VLAN_INGRESS_PRIORITY_MAP" format="" values="" default="" example="VLAN_INGRESS_PRIORITY_MAP=4:2,3:5" description="Ingress priority mapping."/>
+<property name="egress-property-map" variable="VLAN_EGRESS_PRIORITY_MAP" format="" values="" default="" example="VLAN_EGRESS_PRIORITY_MAP=5:4,4:1,3:7" description="Egress priority mapping."/>
+<property name="interface-name" variable="PHYSDEV and VLAN_ID, or DEVICE" format="" values="" default="" example="PHYSDEV=eth0, VLAN_ID=12; or DEVICE=eth0.12" description="VLAN interface name.
+If all variables are set, parent device from PHYSDEV takes precedence over DEVICE,
+but VLAN id from DEVICE takes precedence over VLAN_ID."/>
+</setting>
+<setting name="vpn">
+</setting>
+<setting name="wimax">
+</setting>
+<setting name="802-3-ethernet">
+<property name="port" variable="(none)" format="" values="" default="" example="" description="The property is not saved by the plugin."/>
+<property name="speed" variable="(none)" format="" values="" default="" example="" description="The property is not saved by the plugin."/>
+<property name="duplex" variable="(none)" format="" values="" default="" example="" description="The property is not saved by the plugin."/>
+<property name="auto-negotiate" variable="(none)" format="" values="" default="" example="" description="The property is not saved by the plugin."/>
+<property name="mac-address" variable="HWADDR" format="" values="" default="" example="" description="Hardware address of the device in traditional hex-digits-and-colons
+notation (e.g. 00:22:68:14:5A:05)."/>
+<property name="cloned-mac-address" variable="MACADDR" format="" values="" default="" example="" description="Cloned (spoofed) MAC address in traditional hex-digits-and-colons
+notation (e.g. 00:22:68:14:5A:99)."/>
+<property name="mac-address-blacklist" variable="HWADDR_BLACKLIST(+)" format="" values="" default="" example="HWADDR_BLACKLIST=&quot;00:22:68:11:69:08 00:11:22:11:44:55&quot;" description="It denies usage of the connection for any device whose address
+is listed."/>
+<property name="mtu" variable="MTU" format="" values="" default="" example="" description="MTU of the interface."/>
+<property name="s390-subchannels" variable="SUBCHANNELS" format="" values="" default="" example="SUBCHANNELS=0.0.b00a,0.0.b00b,0.0.b00c" description="Subchannels for IBM S390 hosts."/>
+<property name="s390-nettype" variable="NETTYPE" format="" values="&quot;qeth&quot;, &quot;lcs&quot; or &quot;ctc&quot;" default="" example="NETTYPE=qeth" description="Network type of the S390 host."/>
+<property name="s390-options" variable="OPTIONS and PORTNAME, CTCPROTO," format="" values="" default="" example="" description="S390 device options. All options go to OPTIONS, except for
+&quot;portname&quot; and &quot;ctcprot&quot; that have their own variables."/>
+</setting>
+<setting name="802-11-wireless-security">
+<property name="key-mgmt" variable="KEY_MGMT(+)" format="" values="IEEE8021X, WPA-PSK, WPA-EAP" default="" example="" description="Key management menthod."/>
+<property name="wep-tx-keyidx" variable="DEFAULTKEY" format="" values="1, 2, 3, 4" default="1" example="" description="Index of active WEP key."/>
+<property name="auth-alg" variable="SECURITYMODE(+)" format="" values="restricted, open, leap" default="" example="" description="Authentication algorithm for WEP."/>
+<property name="proto" variable="WPA_ALLOW_WPA(+), WPA_ALLOW_WPA2(+)" format="" values="yes, no" default="no" example="" description="Allowed WPA protocols, WPA and WPA2 (RSN)."/>
+<property name="pairwise" variable="CIPHER_PAIRWISE(+)" format="" values="CCMP, TKIP" default="" example="" description="Restrict pairwise encryption algorithms, specified as a space
+separated list."/>
+<property name="group" variable="CIPHER_GROUP(+)" format="" values="CCMP, TKIP, WEP40, WEP104" default="" example="" description="Restrict group/broadcast encryption algorithms, specified as a space
+separated list."/>
+<property name="leap-username" variable="IEEE_8021X_IDENTITY(+)" format="" values="" default="" example="" description="Login name for LEAP."/>
+<property name="wep-key0" variable="KEY1, KEY_PASSPHRASE1(+)" format="" values="" default="" example="" description="The first WEP key (used in most networks). See also DEFAULTKEY for key index."/>
+<property name="wep-key1" variable="KEY2, KEY_PASSPHRASE2(+)" format="" values="" default="" example="" description="WEP key with index 1. See also DEFAULTKEY for key index."/>
+<property name="wep-key2" variable="KEY3, KEY_PASSPHRASE3(+)" format="" values="" default="" example="" description="WEP key with index 2. See also DEFAULTKEY for key index."/>
+<property name="wep-key3" variable="KEY4, KEY_PASSPHRASE4(+)" format="" values="" default="" example="" description="WEP key with index 3. See also DEFAULTKEY for key index."/>
+<property name="wep-key-flags" variable="WEP_KEY_FLAGS(+)" format="NMSettingSecretFlags" values="" default="" example="" description="Password flags for KEY&lt;i&gt;, KEY_PASSPHRASE&lt;i&gt; password."/>
+<property name="psk" variable="WPA_PSK" format="" values="" default="" example="" description="Pre-Shared-Key for WPA networks."/>
+<property name="psk-flags" variable="WPA_PSK_FLAGS(+)" format="NMSettingSecretFlags" values="" default="" example="WPA_PSK_FLAGS=user" description="Password flags for WPA_PSK_FLAGS."/>
+<property name="leap-password" variable="IEEE_8021X_PASSWORD(+)" format="" values="" default="" example="" description="Password for LEAP. It can also go to &quot;key-&quot;
+lookaside file, or it can be owned by a secret agent."/>
+<property name="leap-password-flags" variable="IEEE_8021X_PASSWORD_FLAGS(+)" format="NMSettingSecretFlags" values="" default="" example="" description="Password flags for IEEE_8021X_PASSWORD_FLAGS."/>
+<property name="wep-key-type" variable="KEY&lt;i&gt; or KEY_PASSPHRASE&lt;i&gt;(+)" format="" values="" default="" example="KEY1=s:ahoj, KEY1=0a1c45bc02, KEY_PASSPHRASE1=mysupersecretkey" description="KEY is used for &quot;key&quot; type (10 or 26 hexadecimal characters,
+or 5 or 13 character string prefixed with &quot;s:&quot;). KEY_PASSPHRASE is used
+for WEP passphrases."/>
+</setting>
+<setting name="802-11-wireless">
+<property name="ssid" variable="ESSID" format="" values="" default="" example="ESSID=&quot;Quick Net&quot;" description="SSID of Wi-Fi network."/>
+<property name="mode" variable="MODE" format="" values="Ad-Hoc, Managed (Auto)  [case insensitive]" default="" example="" description="Wi-Fi network mode."/>
+<property name="band" variable="BAND(+)" format="" values="a, bg" default="" example="BAND=bg" description="BAND alone is honored, but CHANNEL overrides BAND since it
+implies a band."/>
+<property name="channel" variable="CHANNEL" format="" values="" default="" example="CHANNEL=6" description="Channel used for the Wi-Fi communication.
+Channels greater than 14 mean &quot;a&quot; band, otherwise the
+band is &quot;bg&quot;."/>
+<property name="bssid" variable="BSSID(+)" format="" values="" default="" example="BSSID=00:1E:BD:64:83:21" description="Restricts association only to a single AP."/>
+<property name="rate" variable="(none)" format="" values="" default="" example="" description="This property is not handled by ifcfg-rh plugin."/>
+<property name="tx-power" variable="(none)" format="" values="" default="" example="" description="This property is not handled by ifcfg-rh plugin."/>
+<property name="mac-address" variable="HWADDR" format="" values="" default="" example="" description="Hardware address of the device in traditional hex-digits-and-colons
+notation (e.g. 00:22:68:14:5A:05)."/>
+<property name="cloned-mac-address" variable="MACADDR" format="" values="" default="" example="" description="Cloned (spoofed) MAC address in traditional hex-digits-and-colons
+notation (e.g. 00:22:68:14:5A:99)."/>
+<property name="mac-address-blacklist" variable="HWADDR_BLACKLIST(+)" format="" values="" default="" example="" description="It denies usage of the connection for any device whose address
+is listed."/>
+<property name="seen-bssids" variable="(none)" format="" values="" default="" example="" description="This property is not handled by ifcfg-rh plugin."/>
+<property name="mtu" variable="MTU" format="" values="" default="" example="" description="MTU of the wireless interface."/>
+<property name="hidden" variable="SSID_HIDDEN(+)" format="" values="" default="" example="" description="Whether the network hides the SSID."/>
+<property name="security" variable="(none)" format="" values="" default="" example="" description="This property is deprecated and not handled by ifcfg-rh-plugin."/>
+</setting>
+</nm-ifcfg-rh-docs>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>libnm-util API Reference: libnm-util Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm-util Reference Manual">
+<link rel="up" href="index.html" title="libnm-util Reference Manual">
+<link rel="prev" href="index.html" title="libnm-util Reference Manual">
+<link rel="next" href="NMConnection.html" title="NMConnection">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><img src="up-insensitive.png" width="16" height="16" border="0"></td>
+<td><a accesskey="p" href="index.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="NMConnection.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h1 class="title">
+<a name="id-1.2"></a>libnm-util API Reference</h1></div></div></div>
+<div class="toc"><dl class="toc">
+<dt>
+<span class="refentrytitle"><a href="NMConnection.html">NMConnection</a></span><span class="refpurpose"> — Describes a connection to specific network or provider</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSetting.html">NMSetting</a></span><span class="refpurpose"> — Describes related configuration information</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingConnection.html">NMSettingConnection</a></span><span class="refpurpose"> — Describes general connection properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingWired.html">NMSettingWired</a></span><span class="refpurpose"> — Describes connection properties for Ethernet-based networks</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingWireless.html">NMSettingWireless</a></span><span class="refpurpose"> — Describes connection properties for 802.11 Wi-Fi networks</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingWirelessSecurity.html">NMSettingWirelessSecurity</a></span><span class="refpurpose"> — Describes connection properties for Wi-Fi networks that
+use WEP, LEAP, WPA or WPA2/RSN security</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingBluetooth.html">NMSettingBluetooth</a></span><span class="refpurpose"> — Describes Bluetooth connection properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingSerial.html">NMSettingSerial</a></span><span class="refpurpose"> — Describes connection properties for devices that use
+serial communications</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingCdma.html">NMSettingCdma</a></span><span class="refpurpose"> — Describes CDMA-based mobile broadband properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingGsm.html">NMSettingGsm</a></span><span class="refpurpose"> — Describes GSM/3GPP-based mobile broadband properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingWimax.html">NMSettingWimax</a></span><span class="refpurpose"> — Describes 802.16e Mobile WiMAX connection properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingBond.html">NMSettingBond</a></span><span class="refpurpose"> — Describes connection properties for bonds</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingBridge.html">NMSettingBridge</a></span><span class="refpurpose"> — Describes connection properties for bridges</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingBridgePort.html">NMSettingBridgePort</a></span><span class="refpurpose"> — Describes connection properties for bridge ports</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingTeam.html">NMSettingTeam</a></span><span class="refpurpose"> — Describes connection properties for teams</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingTeamPort.html">NMSettingTeamPort</a></span><span class="refpurpose"> — Describes connection properties for team ports</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingGeneric.html">NMSettingGeneric</a></span><span class="refpurpose"> — Describes connection properties for generic devices</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingInfiniband.html">NMSettingInfiniband</a></span><span class="refpurpose"> — Describes connection properties for IP-over-InfiniBand networks</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingVlan.html">NMSettingVlan</a></span><span class="refpurpose"> — Describes connection properties for VLAN interfaces</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingOlpcMesh.html">NMSettingOlpcMesh</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingAdsl.html">NMSettingAdsl</a></span><span class="refpurpose"> — Describes ADSL-based properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingDcb.html">NMSettingDcb</a></span><span class="refpurpose"> — Connection properties for Data Center Bridging</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSetting8021x.html">NMSetting8021x</a></span><span class="refpurpose"> — Describes 802.1x-authenticated connection properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingIP4Config.html">NMSettingIP4Config</a></span><span class="refpurpose"> — Describes IPv4 addressing, routing, and name service properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingIP6Config.html">NMSettingIP6Config</a></span><span class="refpurpose"> — Describes IPv6 addressing, routing, and name service properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingPPP.html">NMSettingPPP</a></span><span class="refpurpose"> — Describes connection properties for devices/networks
+that require PPP to deliver IP capability</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingPPPOE.html">NMSettingPPPOE</a></span><span class="refpurpose"> — Describes PPPoE connection properties</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="NMSettingVPN.html">NMSettingVPN</a></span><span class="refpurpose"> — Describes connection properties for Virtual Private Networks</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libnm-util-nm-utils.html">nm-utils</a></span><span class="refpurpose"> — Utility functions</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libnm-util-NetworkManager.html">NetworkManager</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libnm-util-NetworkManagerVPN.html">NetworkManagerVPN</a></span><span class="refpurpose"></span>
+</dt>
+</dl></div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

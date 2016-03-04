@@ -1,0 +1,272 @@
+'\" t
+.\"     Title: NetworkManager
+.\"    Author: 
+.\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
+.\"      Date: 07/14/2015
+.\"    Manual: Network management daemons
+.\"    Source: NetworkManager 1.0
+.\"  Language: English
+.\"
+.TH "NETWORKMANAGER" "8" "" "NetworkManager 1\&.0" "Network management daemons"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+NetworkManager \- network management daemon
+.SH "SYNOPSIS"
+.HP \w'\fBNetworkManager\ \fR\fB[OPTIONS...]\fR\ 'u
+\fBNetworkManager \fR\fB[OPTIONS...]\fR
+.SH "DESCRIPTION"
+.PP
+The NetworkManager daemon attempts to make networking configuration and operation as painless and automatic as possible by managing the primary network connection and other network interfaces, like Ethernet, WiFi, and Mobile Broadband devices\&. NetworkManager will connect any network device when a connection for that device becomes available, unless that behavior is disabled\&. Information about networking is exported via a D\-Bus interface to any interested application, providing a rich API with which to inspect and control network settings and operation\&.
+.SH "DISPATCHER SCRIPTS"
+.PP
+NetworkManager will execute scripts in the /etc/NetworkManager/dispatcher\&.d directory or subdirectories in alphabetical order in response to network events\&. Each script should be a regular executable file owned by root\&. Furthermore, it must not be writable by group or other, and not setuid\&.
+.PP
+Each script receives two arguments, the first being the interface name of the device an operation just happened on, and second the action\&.
+.PP
+The actions are:
+.PP
+\fIpre\-up\fR
+.RS 4
+The interface is connected to the network but is not yet fully activated\&. Scripts acting on this event must be placed or symlinked into the /etc/NetworkManager/dispatcher\&.d/pre\-up\&.d directory, and NetworkManager will wait for script execution to complete before indicating to applications that the interface is fully activated\&.
+.RE
+.PP
+\fIup\fR
+.RS 4
+The interface has been activated\&.
+.RE
+.PP
+\fIpre\-down\fR
+.RS 4
+The interface will be deactivated but has not yet been disconnected from the network\&. Scripts acting on this event must be placed or symlinked into the /etc/NetworkManager/dispatcher\&.d/pre\-down\&.d directory, and NetworkManager will wait for script execution to complete before disconnecting the interface from its network\&. Note that this event is not emitted for forced disconnections, like when carrier is lost or a wireless signal fades\&. It is only emitted when there is an opportunity to cleanly handle a network disconnection event\&.
+.RE
+.PP
+\fIdown\fR
+.RS 4
+The interface has been deactivated\&.
+.RE
+.PP
+\fIvpn\-pre\-up\fR
+.RS 4
+The VPN is connected to the network but is not yet fully activated\&. Scripts acting on this event must be placed or symlinked into the /etc/NetworkManager/dispatcher\&.d/pre\-up\&.d directory, and NetworkManager will wait for script execution to complete before indicating to applications that the VPN is fully activated\&.
+.RE
+.PP
+\fIvpn\-up\fR
+.RS 4
+A VPN connection has been activated\&.
+.RE
+.PP
+\fIvpn\-pre\-down\fR
+.RS 4
+The VPN will be deactivated but has not yet been disconnected from the network\&. Scripts acting on this event must be placed or symlinked into the /etc/NetworkManager/dispatcher\&.d/pre\-down\&.d directory, and NetworkManager will wait for script execution to complete before disconnecting the VPN from its network\&. Note that this event is not emitted for forced disconnections, like when the VPN terminates unexpectedly or general connectivity is lost\&. It is only emitted when there is an opportunity to cleanly handle a VPN disconnection event\&.
+.RE
+.PP
+\fIvpn\-down\fR
+.RS 4
+A VPN connection has been deactivated\&.
+.RE
+.PP
+\fIhostname\fR
+.RS 4
+The system hostname has been updated\&. Use gethostname(2) to retrieve it\&. The interface name (first argument) is empty and no environment variable is set for this action\&.
+.RE
+.PP
+\fIdhcp4\-change\fR
+.RS 4
+The DHCPv4 lease has changed (renewed, rebound, etc)\&.
+.RE
+.PP
+\fIdhcp6\-change\fR
+.RS 4
+The DHCPv6 lease has changed (renewed, rebound, etc)\&.
+.RE
+.PP
+The environment contains more information about the interface and the connection\&. The following variables are available for the use in the dispatcher scripts:
+.PP
+\fICONNECTION_UUID\fR
+.RS 4
+The UUID of the connection profile\&.
+.RE
+.PP
+\fICONNECTION_ID\fR
+.RS 4
+The name (ID) of the connection profile\&.
+.RE
+.PP
+\fICONNECTION_FILENAME\fR
+.RS 4
+The backing file name of the connection profile (if any)\&.
+.RE
+.PP
+\fIDEVICE_IFACE\fR
+.RS 4
+The interface name of the device\&.
+.RE
+.PP
+\fIDEVICE_IP_IFACE\fR
+.RS 4
+The IP interface name of the device\&.
+.RE
+.PP
+\fIIP4_ADDRESS_N\fR
+.RS 4
+The IPv4 address in the format "address/prefix gateway", where N is a number from 0 to (# IPv4 addresses \- 1)\&. gateway item in this variable is deprecated, use IP4_GATEWAY instead\&.
+.RE
+.PP
+\fIIP4_NUM_ADDRESSES\fR
+.RS 4
+The variable contains the number of IPv4 addresses the script may expect\&.
+.RE
+.PP
+\fIIP4_GATEWAY\fR
+.RS 4
+The gateway IPv4 address in traditional numbers\-and\-dots notation\&.
+.RE
+.PP
+\fIIP4_ROUTE_N\fR
+.RS 4
+The IPv4 route in the format "address/prefix next\-hop metric", where N is a number from 0 to (# IPv4 routes \- 1)\&.
+.RE
+.PP
+\fIIP4_NUM_ROUTES\fR
+.RS 4
+The variable contains the number of IPv4 routes the script may expect\&.
+.RE
+.PP
+\fIIP4_NAMESERVERS\fR
+.RS 4
+The variable contains a space\-separated list of the DNS servers\&.
+.RE
+.PP
+\fIIP4_DOMAINS\fR
+.RS 4
+The variable contains a space\-separated list of the search domains\&.
+.RE
+.PP
+\fIDHCP4_<dhcp\-option\-name>\fR
+.RS 4
+If the connection used DHCP for address configuration, the received DHCP configuration is passed in the environment using standard DHCP option names, prefixed with "DHCP4_", like "DHCP4_HOST_NAME=foobar"\&.
+.RE
+.PP
+\fIIP6_<name> and DHCP6_<name>\fR
+.RS 4
+The same variables as for IPv4 are available for IPv6, but the prefixes are IP6_ and DHCP6_ instead\&.
+.RE
+.PP
+In case of VPN, VPN_IP_IFACE is set, and IP4_*, IP6_* variables with VPN prefix are exported too, like VPN_IP4_ADDRESS_0, VPN_IP4_NUM_ADDRESSES\&.
+.PP
+Dispatcher scripts are run one at a time, but asynchronously from the main NetworkManager process, and will be killed if they run for too long\&. If your script might take arbitrarily long to complete, you should spawn a child process and have the parent return immediately\&. Also beware that once a script is queued, it will always be run, even if a later event renders it obsolete\&. (Eg, if an interface goes up, and then back down again quickly, it is possible that one or more "up" scripts will be run after the interface has gone down\&.)
+.SH "OPTIONS"
+.PP
+The following options are understood:
+.PP
+\fB\-\-version\fR | \fB\-V\fR
+.RS 4
+Print the NetworkManager software version and exit\&.
+.RE
+.PP
+\fB\-\-help\fR | \fB\-h\fR
+.RS 4
+Print NetworkManager\*(Aqs available options and exit\&.
+.RE
+.PP
+\fB\-\-no\-daemon\fR | \fB\-n\fR
+.RS 4
+Do not daemonize\&.
+.RE
+.PP
+\fB\-\-debug\fR | \fB\-d\fR
+.RS 4
+Do not daemonize, and direct log output to the controlling terminal in addition to syslog\&.
+.RE
+.PP
+\fB\-\-pid\-file\fR | \fB\-p\fR
+.RS 4
+Specify location of a PID file\&. The PID file is used for storing PID of the running proccess and prevents running multiple instances\&.
+.RE
+.PP
+\fB\-\-state\-file\fR
+.RS 4
+Specify file for storing state of the NetworkManager persistently\&. If not specified, the default value of /var/lib/NetworkManager/NetworkManager\&.state is used\&.
+.RE
+.PP
+\fB\-\-config\fR
+.RS 4
+Specify configuration file to set up various settings for NetworkManager\&. If not specified, the default value of /etc/NetworkManager/NetworkManager\&.conf is used with a fallback to the older \*(Aqnm\-system\-settings\&.conf\*(Aq if located in the same directory\&. See
+\fBNetworkManager.conf\fR(5)
+for more information on configuration file\&.
+.RE
+.PP
+\fB\-\-plugins\fR
+.RS 4
+List plugins used to manage system\-wide connection settings\&. This list has preference over plugins specified in the configuration file\&. Currently supported plugins are: keyfile,
+\fBifcfg\-rh\fR,
+\fBifcfg\-suse\fR,
+\fBifupdown\fR\&.
+.RE
+.PP
+\fB\-\-log\-level\fR
+.RS 4
+Sets how much information NetworkManager sends to the log destination (usually syslog\*(Aqs "daemon" facility)\&. By default, only informational, warning, and error messages are logged\&. See the section on
+logging
+in
+\fBNetworkManager.conf\fR(5)
+for more information\&.
+.RE
+.PP
+\fB\-\-log\-domains\fR
+.RS 4
+A comma\-separated list specifying which operations are logged to the log destination (usually syslog)\&. By default, most domains are logging\-enabled\&. See the section on
+logging
+in
+\fBNetworkManager.conf\fR(5)
+for more information\&.
+.RE
+.SH "UDEV PROPERTIES"
+.PP
+\fBudev\fR(7)
+device manager is used for the network device discovery\&. The following property influences how NetworkManager manages the devices:
+.PP
+\fINM_UNMANAGED\fR
+.RS 4
+No default connection will be created and automatic activation will not be attempted when this property of a device is set to a true value ("1" or "true")\&. You will still be able to attach a connection to the device manually or observe externally added configuration such as addresses or routes\&.
+.sp
+Create an udev rule that sets this property to prevent NetworkManager from interfering with virtual Ethernet device interfaces that are managed by virtualization tools\&.
+.RE
+.SH "DEBUGGING"
+.PP
+The following environment variables are supported to help debugging\&. When used in conjunction with the
+\fB\-\-no\-daemon\fR
+option (thus echoing PPP and DHCP helper output to stdout) these can quickly help pinpoint the source of connection issues\&. Also see the
+\fB\-\-log\-level\fR
+and
+\fB\-\-log\-domains\fR
+to enable debug logging inside NetworkManager itself\&.
+.PP
+\fBNM_PPP_DEBUG\fR: When set to anything, causes NetworkManager to turn on PPP debugging in pppd, which logs all PPP and PPTP frames and client/server exchanges\&.
+.SH "SEE ALSO"
+.PP
+\fBNetworkManager.conf\fR(5),
+\fBnmcli\fR(1),
+\fBnmcli-examples\fR(5),
+\fBnm-online\fR(1),
+\fBnm-settings\fR(5),
+\fBnm-applet\fR(1),
+\fBnm-connection-editor\fR(1)\fBudev\fR(7)

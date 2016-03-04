@@ -1,0 +1,1995 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>nm-dbus-interface: libnm Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm Reference Manual">
+<link rel="up" href="ch02.html" title="Client Object API Reference">
+<link rel="prev" href="libnm-nm-errors.html" title="nm-errors">
+<link rel="next" href="ch03.html" title="Connection and Setting API Reference">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libnm-nm-dbus-interface.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#libnm-nm-dbus-interface.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libnm-nm-errors.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ch03.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libnm-nm-dbus-interface"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libnm-nm-dbus-interface.top_of_page"></a>nm-dbus-interface</span></h2>
+<p>nm-dbus-interface</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libnm-nm-dbus-interface.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-SERVICE:CAPS" title="NM_DBUS_SERVICE">NM_DBUS_SERVICE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-PATH:CAPS" title="NM_DBUS_PATH">NM_DBUS_PATH</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE:CAPS" title="NM_DBUS_INTERFACE">NM_DBUS_INTERFACE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE:CAPS" title="NM_DBUS_INTERFACE_DEVICE">NM_DBUS_INTERFACE_DEVICE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE-WIRED:CAPS" title="NM_DBUS_INTERFACE_DEVICE_WIRED">NM_DBUS_INTERFACE_DEVICE_WIRED</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE-ADSL:CAPS" title="NM_DBUS_INTERFACE_DEVICE_ADSL">NM_DBUS_INTERFACE_DEVICE_ADSL</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE-WIRELESS:CAPS" title="NM_DBUS_INTERFACE_DEVICE_WIRELESS">NM_DBUS_INTERFACE_DEVICE_WIRELESS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE-BLUETOOTH:CAPS" title="NM_DBUS_INTERFACE_DEVICE_BLUETOOTH">NM_DBUS_INTERFACE_DEVICE_BLUETOOTH</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE-OLPC-MESH:CAPS" title="NM_DBUS_INTERFACE_DEVICE_OLPC_MESH">NM_DBUS_INTERFACE_DEVICE_OLPC_MESH</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-PATH-ACCESS-POINT:CAPS" title="NM_DBUS_PATH_ACCESS_POINT">NM_DBUS_PATH_ACCESS_POINT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-ACCESS-POINT:CAPS" title="NM_DBUS_INTERFACE_ACCESS_POINT">NM_DBUS_INTERFACE_ACCESS_POINT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE-MODEM:CAPS" title="NM_DBUS_INTERFACE_DEVICE_MODEM">NM_DBUS_INTERFACE_DEVICE_MODEM</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE-WIMAX:CAPS" title="NM_DBUS_INTERFACE_DEVICE_WIMAX">NM_DBUS_INTERFACE_DEVICE_WIMAX</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-WIMAX-NSP:CAPS" title="NM_DBUS_INTERFACE_WIMAX_NSP">NM_DBUS_INTERFACE_WIMAX_NSP</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-PATH-WIMAX-NSP:CAPS" title="NM_DBUS_PATH_WIMAX_NSP">NM_DBUS_PATH_WIMAX_NSP</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-ACTIVE-CONNECTION:CAPS" title="NM_DBUS_INTERFACE_ACTIVE_CONNECTION">NM_DBUS_INTERFACE_ACTIVE_CONNECTION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-IP4-CONFIG:CAPS" title="NM_DBUS_INTERFACE_IP4_CONFIG">NM_DBUS_INTERFACE_IP4_CONFIG</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DHCP4-CONFIG:CAPS" title="NM_DBUS_INTERFACE_DHCP4_CONFIG">NM_DBUS_INTERFACE_DHCP4_CONFIG</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-IP6-CONFIG:CAPS" title="NM_DBUS_INTERFACE_IP6_CONFIG">NM_DBUS_INTERFACE_IP6_CONFIG</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DHCP6-CONFIG:CAPS" title="NM_DBUS_INTERFACE_DHCP6_CONFIG">NM_DBUS_INTERFACE_DHCP6_CONFIG</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE-INFINIBAND:CAPS" title="NM_DBUS_INTERFACE_DEVICE_INFINIBAND">NM_DBUS_INTERFACE_DEVICE_INFINIBAND</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE-BOND:CAPS" title="NM_DBUS_INTERFACE_DEVICE_BOND">NM_DBUS_INTERFACE_DEVICE_BOND</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE-TEAM:CAPS" title="NM_DBUS_INTERFACE_DEVICE_TEAM">NM_DBUS_INTERFACE_DEVICE_TEAM</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE-VLAN:CAPS" title="NM_DBUS_INTERFACE_DEVICE_VLAN">NM_DBUS_INTERFACE_DEVICE_VLAN</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE-BRIDGE:CAPS" title="NM_DBUS_INTERFACE_DEVICE_BRIDGE">NM_DBUS_INTERFACE_DEVICE_BRIDGE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE-GENERIC:CAPS" title="NM_DBUS_INTERFACE_DEVICE_GENERIC">NM_DBUS_INTERFACE_DEVICE_GENERIC</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE-VETH:CAPS" title="NM_DBUS_INTERFACE_DEVICE_VETH">NM_DBUS_INTERFACE_DEVICE_VETH</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE-TUN:CAPS" title="NM_DBUS_INTERFACE_DEVICE_TUN">NM_DBUS_INTERFACE_DEVICE_TUN</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE-MACVLAN:CAPS" title="NM_DBUS_INTERFACE_DEVICE_MACVLAN">NM_DBUS_INTERFACE_DEVICE_MACVLAN</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE-VXLAN:CAPS" title="NM_DBUS_INTERFACE_DEVICE_VXLAN">NM_DBUS_INTERFACE_DEVICE_VXLAN</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-DEVICE-GRE:CAPS" title="NM_DBUS_INTERFACE_DEVICE_GRE">NM_DBUS_INTERFACE_DEVICE_GRE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-SETTINGS:CAPS" title="NM_DBUS_INTERFACE_SETTINGS">NM_DBUS_INTERFACE_SETTINGS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-PATH-SETTINGS:CAPS" title="NM_DBUS_PATH_SETTINGS">NM_DBUS_PATH_SETTINGS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-SETTINGS-CONNECTION:CAPS" title="NM_DBUS_INTERFACE_SETTINGS_CONNECTION">NM_DBUS_INTERFACE_SETTINGS_CONNECTION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-PATH-SETTINGS-CONNECTION:CAPS" title="NM_DBUS_PATH_SETTINGS_CONNECTION">NM_DBUS_PATH_SETTINGS_CONNECTION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-SETTINGS-CONNECTION-SECRETS:CAPS" title="NM_DBUS_INTERFACE_SETTINGS_CONNECTION_SECRETS">NM_DBUS_INTERFACE_SETTINGS_CONNECTION_SECRETS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-AGENT-MANAGER:CAPS" title="NM_DBUS_INTERFACE_AGENT_MANAGER">NM_DBUS_INTERFACE_AGENT_MANAGER</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-PATH-AGENT-MANAGER:CAPS" title="NM_DBUS_PATH_AGENT_MANAGER">NM_DBUS_PATH_AGENT_MANAGER</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-INTERFACE-SECRET-AGENT:CAPS" title="NM_DBUS_INTERFACE_SECRET_AGENT">NM_DBUS_INTERFACE_SECRET_AGENT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM-DBUS-PATH-SECRET-AGENT:CAPS" title="NM_DBUS_PATH_SECRET_AGENT">NM_DBUS_PATH_SECRET_AGENT</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NMState" title="enum NMState">NMState</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NMConnectivityState" title="enum NMConnectivityState">NMConnectivityState</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NMDeviceType" title="enum NMDeviceType">NMDeviceType</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NMDeviceCapabilities" title="enum NMDeviceCapabilities">NMDeviceCapabilities</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NMDeviceWifiCapabilities" title="enum NMDeviceWifiCapabilities">NMDeviceWifiCapabilities</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM80211ApFlags" title="enum NM80211ApFlags">NM80211ApFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM80211ApSecurityFlags" title="enum NM80211ApSecurityFlags">NM80211ApSecurityFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NM80211Mode" title="enum NM80211Mode">NM80211Mode</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NMBluetoothCapabilities" title="enum NMBluetoothCapabilities">NMBluetoothCapabilities</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NMDeviceModemCapabilities" title="enum NMDeviceModemCapabilities">NMDeviceModemCapabilities</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NMDeviceState" title="enum NMDeviceState">NMDeviceState</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NMDeviceStateReason" title="enum NMDeviceStateReason">NMDeviceStateReason</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NMActiveConnectionState" title="enum NMActiveConnectionState">NMActiveConnectionState</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NMSecretAgentGetSecretsFlags" title="enum NMSecretAgentGetSecretsFlags">NMSecretAgentGetSecretsFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-dbus-interface.html#NMSecretAgentCapabilities" title="enum NMSecretAgentCapabilities">NMSecretAgentCapabilities</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libnm-nm-dbus-interface.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Enumeration-and-Flag-Types.html">GEnum</a>
+    <span class="lineart">├──</span> NM80211Mode
+    <span class="lineart">├──</span> NMActiveConnectionState
+    <span class="lineart">├──</span> NMConnectivityState
+    <span class="lineart">├──</span> NMDeviceState
+    <span class="lineart">├──</span> NMDeviceStateReason
+    <span class="lineart">├──</span> NMDeviceType
+    <span class="lineart">╰──</span> NMState
+    <a href="/usr/share/gtk-doc/html/gobject/gobject-Enumeration-and-Flag-Types.html">GFlags</a>
+    <span class="lineart">├──</span> NM80211ApFlags
+    <span class="lineart">├──</span> NM80211ApSecurityFlags
+    <span class="lineart">├──</span> NMBluetoothCapabilities
+    <span class="lineart">├──</span> NMDeviceCapabilities
+    <span class="lineart">├──</span> NMDeviceModemCapabilities
+    <span class="lineart">├──</span> NMDeviceWifiCapabilities
+    <span class="lineart">├──</span> NMSecretAgentCapabilities
+    <span class="lineart">╰──</span> NMSecretAgentGetSecretsFlags
+</pre>
+</div>
+<div class="refsect1">
+<a name="libnm-nm-dbus-interface.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="libnm-nm-dbus-interface.functions_details"></a><h2>Functions</h2>
+<p></p>
+</div>
+<div class="refsect1">
+<a name="libnm-nm-dbus-interface.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NM-DBUS-SERVICE:CAPS"></a><h3>NM_DBUS_SERVICE</h3>
+<pre class="programlisting">#define NM_DBUS_SERVICE                     "org.freedesktop.NetworkManager"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-PATH:CAPS"></a><h3>NM_DBUS_PATH</h3>
+<pre class="programlisting">#define NM_DBUS_PATH                        "/org/freedesktop/NetworkManager"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE:CAPS"></a><h3>NM_DBUS_INTERFACE</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE                   "org.freedesktop.NetworkManager"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE            NM_DBUS_INTERFACE ".Device"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE-WIRED:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE_WIRED</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE_WIRED      NM_DBUS_INTERFACE_DEVICE ".Wired"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE-ADSL:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE_ADSL</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE_ADSL       NM_DBUS_INTERFACE_DEVICE ".Adsl"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE-WIRELESS:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE_WIRELESS</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE_WIRELESS   NM_DBUS_INTERFACE_DEVICE ".Wireless"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE-BLUETOOTH:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE_BLUETOOTH</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE_BLUETOOTH  NM_DBUS_INTERFACE_DEVICE ".Bluetooth"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE-OLPC-MESH:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE_OLPC_MESH</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE_OLPC_MESH  NM_DBUS_INTERFACE_DEVICE ".OlpcMesh"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-PATH-ACCESS-POINT:CAPS"></a><h3>NM_DBUS_PATH_ACCESS_POINT</h3>
+<pre class="programlisting">#define NM_DBUS_PATH_ACCESS_POINT           NM_DBUS_PATH "/AccessPoint"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-ACCESS-POINT:CAPS"></a><h3>NM_DBUS_INTERFACE_ACCESS_POINT</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_ACCESS_POINT      NM_DBUS_INTERFACE ".AccessPoint"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE-MODEM:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE_MODEM</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE_MODEM      NM_DBUS_INTERFACE_DEVICE ".Modem"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE-WIMAX:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE_WIMAX</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE_WIMAX      NM_DBUS_INTERFACE_DEVICE ".WiMax"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-WIMAX-NSP:CAPS"></a><h3>NM_DBUS_INTERFACE_WIMAX_NSP</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_WIMAX_NSP         NM_DBUS_INTERFACE ".WiMax.Nsp"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-PATH-WIMAX-NSP:CAPS"></a><h3>NM_DBUS_PATH_WIMAX_NSP</h3>
+<pre class="programlisting">#define NM_DBUS_PATH_WIMAX_NSP              NM_DBUS_PATH "/Nsp"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-ACTIVE-CONNECTION:CAPS"></a><h3>NM_DBUS_INTERFACE_ACTIVE_CONNECTION</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_ACTIVE_CONNECTION NM_DBUS_INTERFACE ".Connection.Active"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-IP4-CONFIG:CAPS"></a><h3>NM_DBUS_INTERFACE_IP4_CONFIG</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_IP4_CONFIG        NM_DBUS_INTERFACE ".IP4Config"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DHCP4-CONFIG:CAPS"></a><h3>NM_DBUS_INTERFACE_DHCP4_CONFIG</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DHCP4_CONFIG      NM_DBUS_INTERFACE ".DHCP4Config"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-IP6-CONFIG:CAPS"></a><h3>NM_DBUS_INTERFACE_IP6_CONFIG</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_IP6_CONFIG        NM_DBUS_INTERFACE ".IP6Config"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DHCP6-CONFIG:CAPS"></a><h3>NM_DBUS_INTERFACE_DHCP6_CONFIG</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DHCP6_CONFIG      NM_DBUS_INTERFACE ".DHCP6Config"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE-INFINIBAND:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE_INFINIBAND</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE_INFINIBAND NM_DBUS_INTERFACE_DEVICE ".Infiniband"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE-BOND:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE_BOND</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE_BOND       NM_DBUS_INTERFACE_DEVICE ".Bond"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE-TEAM:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE_TEAM</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE_TEAM       NM_DBUS_INTERFACE_DEVICE ".Team"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE-VLAN:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE_VLAN</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE_VLAN       NM_DBUS_INTERFACE_DEVICE ".Vlan"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE-BRIDGE:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE_BRIDGE</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE_BRIDGE     NM_DBUS_INTERFACE_DEVICE ".Bridge"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE-GENERIC:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE_GENERIC</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE_GENERIC    NM_DBUS_INTERFACE_DEVICE ".Generic"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE-VETH:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE_VETH</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE_VETH       NM_DBUS_INTERFACE_DEVICE ".Veth"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE-TUN:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE_TUN</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE_TUN        NM_DBUS_INTERFACE_DEVICE ".Tun"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE-MACVLAN:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE_MACVLAN</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE_MACVLAN    NM_DBUS_INTERFACE_DEVICE ".Macvlan"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE-VXLAN:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE_VXLAN</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE_VXLAN      NM_DBUS_INTERFACE_DEVICE ".Vxlan"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-DEVICE-GRE:CAPS"></a><h3>NM_DBUS_INTERFACE_DEVICE_GRE</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_DEVICE_GRE        NM_DBUS_INTERFACE_DEVICE ".Gre"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-SETTINGS:CAPS"></a><h3>NM_DBUS_INTERFACE_SETTINGS</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_SETTINGS        "org.freedesktop.NetworkManager.Settings"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-PATH-SETTINGS:CAPS"></a><h3>NM_DBUS_PATH_SETTINGS</h3>
+<pre class="programlisting">#define NM_DBUS_PATH_SETTINGS             "/org/freedesktop/NetworkManager/Settings"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-SETTINGS-CONNECTION:CAPS"></a><h3>NM_DBUS_INTERFACE_SETTINGS_CONNECTION</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_SETTINGS_CONNECTION "org.freedesktop.NetworkManager.Settings.Connection"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-PATH-SETTINGS-CONNECTION:CAPS"></a><h3>NM_DBUS_PATH_SETTINGS_CONNECTION</h3>
+<pre class="programlisting">#define NM_DBUS_PATH_SETTINGS_CONNECTION  "/org/freedesktop/NetworkManager/Settings/Connection"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-SETTINGS-CONNECTION-SECRETS:CAPS"></a><h3>NM_DBUS_INTERFACE_SETTINGS_CONNECTION_SECRETS</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_SETTINGS_CONNECTION_SECRETS "org.freedesktop.NetworkManager.Settings.Connection.Secrets"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-AGENT-MANAGER:CAPS"></a><h3>NM_DBUS_INTERFACE_AGENT_MANAGER</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_AGENT_MANAGER   NM_DBUS_INTERFACE ".AgentManager"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-PATH-AGENT-MANAGER:CAPS"></a><h3>NM_DBUS_PATH_AGENT_MANAGER</h3>
+<pre class="programlisting">#define NM_DBUS_PATH_AGENT_MANAGER        "/org/freedesktop/NetworkManager/AgentManager"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-INTERFACE-SECRET-AGENT:CAPS"></a><h3>NM_DBUS_INTERFACE_SECRET_AGENT</h3>
+<pre class="programlisting">#define NM_DBUS_INTERFACE_SECRET_AGENT    NM_DBUS_INTERFACE ".SecretAgent"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DBUS-PATH-SECRET-AGENT:CAPS"></a><h3>NM_DBUS_PATH_SECRET_AGENT</h3>
+<pre class="programlisting">#define NM_DBUS_PATH_SECRET_AGENT         "/org/freedesktop/NetworkManager/SecretAgent"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMState"></a><h3>enum NMState</h3>
+<p><a class="link" href="libnm-nm-dbus-interface.html#NMState" title="enum NMState"><span class="type">NMState</span></a> values indicate the current overall networking state.</p>
+<p>(Corresponds to the NM_STATE type in nm-manager.xml.)</p>
+<div class="refsect3">
+<a name="id-1.3.6.7.42.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-STATE-UNKNOWN:CAPS"></a>NM_STATE_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>networking state is unknown</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-STATE-ASLEEP:CAPS"></a>NM_STATE_ASLEEP</p></td>
+<td class="enum_member_description">
+<p>networking is not enabled</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-STATE-DISCONNECTED:CAPS"></a>NM_STATE_DISCONNECTED</p></td>
+<td class="enum_member_description">
+<p>there is no active network connection</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-STATE-DISCONNECTING:CAPS"></a>NM_STATE_DISCONNECTING</p></td>
+<td class="enum_member_description">
+<p>network connections are being cleaned up</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-STATE-CONNECTING:CAPS"></a>NM_STATE_CONNECTING</p></td>
+<td class="enum_member_description">
+<p>a network connection is being started</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-STATE-CONNECTED-LOCAL:CAPS"></a>NM_STATE_CONNECTED_LOCAL</p></td>
+<td class="enum_member_description">
+<p>there is only local IPv4 and/or IPv6 connectivity</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-STATE-CONNECTED-SITE:CAPS"></a>NM_STATE_CONNECTED_SITE</p></td>
+<td class="enum_member_description">
+<p>there is only site-wide IPv4 and/or IPv6 connectivity</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-STATE-CONNECTED-GLOBAL:CAPS"></a>NM_STATE_CONNECTED_GLOBAL</p></td>
+<td class="enum_member_description">
+<p>there is global IPv4 and/or IPv6 Internet connectivity</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMConnectivityState"></a><h3>enum NMConnectivityState</h3>
+<p>(Corresponds to the NM_CONNECTIVITY type in nm-manager.xml.)</p>
+<div class="refsect3">
+<a name="id-1.3.6.7.43.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CONNECTIVITY-UNKNOWN:CAPS"></a>NM_CONNECTIVITY_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>Network connectivity is unknown.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CONNECTIVITY-NONE:CAPS"></a>NM_CONNECTIVITY_NONE</p></td>
+<td class="enum_member_description">
+<p>The host is not connected to any network.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CONNECTIVITY-PORTAL:CAPS"></a>NM_CONNECTIVITY_PORTAL</p></td>
+<td class="enum_member_description">
+<p>The host is behind a captive portal and
+  cannot reach the full Internet.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CONNECTIVITY-LIMITED:CAPS"></a>NM_CONNECTIVITY_LIMITED</p></td>
+<td class="enum_member_description">
+<p>The host is connected to a network, but
+  does not appear to be able to reach the full Internet.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CONNECTIVITY-FULL:CAPS"></a>NM_CONNECTIVITY_FULL</p></td>
+<td class="enum_member_description">
+<p>The host is connected to a network, and
+  appears to be able to reach the full Internet.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDeviceType"></a><h3>enum NMDeviceType</h3>
+<p><a class="link" href="libnm-nm-dbus-interface.html#NMDeviceType" title="enum NMDeviceType"><span class="type">NMDeviceType</span></a> values indicate the type of hardware represented by
+an <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>.</p>
+<p>(Corresponds to the NM_DEVICE_TYPE type in nm-device.xml.)</p>
+<div class="refsect3">
+<a name="id-1.3.6.7.44.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-TYPE-UNKNOWN:CAPS"></a>NM_DEVICE_TYPE_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>unknown device</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-TYPE-ETHERNET:CAPS"></a>NM_DEVICE_TYPE_ETHERNET</p></td>
+<td class="enum_member_description">
+<p>a wired ethernet device</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-TYPE-WIFI:CAPS"></a>NM_DEVICE_TYPE_WIFI</p></td>
+<td class="enum_member_description">
+<p>an 802.11 WiFi device</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-TYPE-UNUSED1:CAPS"></a>NM_DEVICE_TYPE_UNUSED1</p></td>
+<td class="enum_member_description">
+<p>not used</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-TYPE-UNUSED2:CAPS"></a>NM_DEVICE_TYPE_UNUSED2</p></td>
+<td class="enum_member_description">
+<p>not used</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-TYPE-BT:CAPS"></a>NM_DEVICE_TYPE_BT</p></td>
+<td class="enum_member_description">
+<p>a Bluetooth device supporting PAN or DUN access protocols</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-TYPE-OLPC-MESH:CAPS"></a>NM_DEVICE_TYPE_OLPC_MESH</p></td>
+<td class="enum_member_description">
+<p>an OLPC XO mesh networking device</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-TYPE-WIMAX:CAPS"></a>NM_DEVICE_TYPE_WIMAX</p></td>
+<td class="enum_member_description">
+<p>an 802.16e Mobile WiMAX broadband device</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-TYPE-MODEM:CAPS"></a>NM_DEVICE_TYPE_MODEM</p></td>
+<td class="enum_member_description">
+<p>a modem supporting analog telephone, CDMA/EVDO,
+GSM/UMTS, or LTE network access protocols</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-TYPE-INFINIBAND:CAPS"></a>NM_DEVICE_TYPE_INFINIBAND</p></td>
+<td class="enum_member_description">
+<p>an IP-over-InfiniBand device</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-TYPE-BOND:CAPS"></a>NM_DEVICE_TYPE_BOND</p></td>
+<td class="enum_member_description">
+<p>a bond master interface</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-TYPE-VLAN:CAPS"></a>NM_DEVICE_TYPE_VLAN</p></td>
+<td class="enum_member_description">
+<p>an 802.1Q VLAN interface</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-TYPE-ADSL:CAPS"></a>NM_DEVICE_TYPE_ADSL</p></td>
+<td class="enum_member_description">
+<p>ADSL modem</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-TYPE-BRIDGE:CAPS"></a>NM_DEVICE_TYPE_BRIDGE</p></td>
+<td class="enum_member_description">
+<p>a bridge master interface</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-TYPE-GENERIC:CAPS"></a>NM_DEVICE_TYPE_GENERIC</p></td>
+<td class="enum_member_description">
+<p>generic support for unrecognized device types</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-TYPE-TEAM:CAPS"></a>NM_DEVICE_TYPE_TEAM</p></td>
+<td class="enum_member_description">
+<p>a team master interface</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDeviceCapabilities"></a><h3>enum NMDeviceCapabilities</h3>
+<p>General device capability flags.</p>
+<p>(Corresponds to the NM_DEVICE_CAP type in nm-device-wifi.xml.)</p>
+<div class="refsect3">
+<a name="id-1.3.6.7.45.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-CAP-NONE:CAPS"></a>NM_DEVICE_CAP_NONE</p></td>
+<td class="enum_member_description">
+<p>device has no special capabilities</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-CAP-NM-SUPPORTED:CAPS"></a>NM_DEVICE_CAP_NM_SUPPORTED</p></td>
+<td class="enum_member_description">
+<p>NetworkManager supports this device</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-CAP-CARRIER-DETECT:CAPS"></a>NM_DEVICE_CAP_CARRIER_DETECT</p></td>
+<td class="enum_member_description">
+<p>this device can indicate carrier status</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-CAP-IS-SOFTWARE:CAPS"></a>NM_DEVICE_CAP_IS_SOFTWARE</p></td>
+<td class="enum_member_description">
+<p>this device is a software device</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDeviceWifiCapabilities"></a><h3>enum NMDeviceWifiCapabilities</h3>
+<p>802.11 specific device encryption and authentication capabilities.</p>
+<p>(Corresponds to the NM_802_11_DEVICE_CAP type in nm-device-wifi.xml.)</p>
+<div class="refsect3">
+<a name="id-1.3.6.7.46.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-WIFI-DEVICE-CAP-NONE:CAPS"></a>NM_WIFI_DEVICE_CAP_NONE</p></td>
+<td class="enum_member_description">
+<p>device has no encryption/authentication capabilities</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-WIFI-DEVICE-CAP-CIPHER-WEP40:CAPS"></a>NM_WIFI_DEVICE_CAP_CIPHER_WEP40</p></td>
+<td class="enum_member_description">
+<p>device supports 40/64-bit WEP encryption</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-WIFI-DEVICE-CAP-CIPHER-WEP104:CAPS"></a>NM_WIFI_DEVICE_CAP_CIPHER_WEP104</p></td>
+<td class="enum_member_description">
+<p>device supports 104/128-bit WEP encryption</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-WIFI-DEVICE-CAP-CIPHER-TKIP:CAPS"></a>NM_WIFI_DEVICE_CAP_CIPHER_TKIP</p></td>
+<td class="enum_member_description">
+<p>device supports TKIP encryption</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-WIFI-DEVICE-CAP-CIPHER-CCMP:CAPS"></a>NM_WIFI_DEVICE_CAP_CIPHER_CCMP</p></td>
+<td class="enum_member_description">
+<p>device supports AES/CCMP encryption</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-WIFI-DEVICE-CAP-WPA:CAPS"></a>NM_WIFI_DEVICE_CAP_WPA</p></td>
+<td class="enum_member_description">
+<p>device supports WPA1 authentication</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-WIFI-DEVICE-CAP-RSN:CAPS"></a>NM_WIFI_DEVICE_CAP_RSN</p></td>
+<td class="enum_member_description">
+<p>device supports WPA2/RSN authentication</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-WIFI-DEVICE-CAP-AP:CAPS"></a>NM_WIFI_DEVICE_CAP_AP</p></td>
+<td class="enum_member_description">
+<p>device supports Access Point mode</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-WIFI-DEVICE-CAP-ADHOC:CAPS"></a>NM_WIFI_DEVICE_CAP_ADHOC</p></td>
+<td class="enum_member_description">
+<p>device supports Ad-Hoc mode</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-WIFI-DEVICE-CAP-FREQ-VALID:CAPS"></a>NM_WIFI_DEVICE_CAP_FREQ_VALID</p></td>
+<td class="enum_member_description">
+<p>device reports frequency capabilities</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-WIFI-DEVICE-CAP-FREQ-2GHZ:CAPS"></a>NM_WIFI_DEVICE_CAP_FREQ_2GHZ</p></td>
+<td class="enum_member_description">
+<p>device supports 2.4GHz frequencies</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-WIFI-DEVICE-CAP-FREQ-5GHZ:CAPS"></a>NM_WIFI_DEVICE_CAP_FREQ_5GHZ</p></td>
+<td class="enum_member_description">
+<p>device supports 5GHz frequencies</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM80211ApFlags"></a><h3>enum NM80211ApFlags</h3>
+<p>802.11 access point flags.</p>
+<p>(Corresponds to the NM_802_11_AP_FLAGS type in nm-access-point.xml.)</p>
+<div class="refsect3">
+<a name="id-1.3.6.7.47.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-802-11-AP-FLAGS-NONE:CAPS"></a>NM_802_11_AP_FLAGS_NONE</p></td>
+<td class="enum_member_description">
+<p>access point has no special capabilities</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-802-11-AP-FLAGS-PRIVACY:CAPS"></a>NM_802_11_AP_FLAGS_PRIVACY</p></td>
+<td class="enum_member_description">
+<p>access point requires authentication and
+encryption (usually means WEP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM80211ApSecurityFlags"></a><h3>enum NM80211ApSecurityFlags</h3>
+<p>802.11 access point security and authentication flags.  These flags describe
+the current security requirements of an access point as determined from the
+access point's beacon.</p>
+<p>(Corresponds to the NM_802_11_AP_SEC type in nm-access-point.xml.)</p>
+<div class="refsect3">
+<a name="id-1.3.6.7.48.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-802-11-AP-SEC-NONE:CAPS"></a>NM_802_11_AP_SEC_NONE</p></td>
+<td class="enum_member_description">
+<p>the access point has no special security requirements</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-802-11-AP-SEC-PAIR-WEP40:CAPS"></a>NM_802_11_AP_SEC_PAIR_WEP40</p></td>
+<td class="enum_member_description">
+<p>40/64-bit WEP is supported for
+pairwise/unicast encryption</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-802-11-AP-SEC-PAIR-WEP104:CAPS"></a>NM_802_11_AP_SEC_PAIR_WEP104</p></td>
+<td class="enum_member_description">
+<p>104/128-bit WEP is supported for
+pairwise/unicast encryption</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-802-11-AP-SEC-PAIR-TKIP:CAPS"></a>NM_802_11_AP_SEC_PAIR_TKIP</p></td>
+<td class="enum_member_description">
+<p>TKIP is supported for pairwise/unicast encryption</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-802-11-AP-SEC-PAIR-CCMP:CAPS"></a>NM_802_11_AP_SEC_PAIR_CCMP</p></td>
+<td class="enum_member_description">
+<p>AES/CCMP is supported for pairwise/unicast encryption</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-802-11-AP-SEC-GROUP-WEP40:CAPS"></a>NM_802_11_AP_SEC_GROUP_WEP40</p></td>
+<td class="enum_member_description">
+<p>40/64-bit WEP is supported for group/broadcast
+encryption</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-802-11-AP-SEC-GROUP-WEP104:CAPS"></a>NM_802_11_AP_SEC_GROUP_WEP104</p></td>
+<td class="enum_member_description">
+<p>104/128-bit WEP is supported for
+group/broadcast encryption</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-802-11-AP-SEC-GROUP-TKIP:CAPS"></a>NM_802_11_AP_SEC_GROUP_TKIP</p></td>
+<td class="enum_member_description">
+<p>TKIP is supported for group/broadcast encryption</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-802-11-AP-SEC-GROUP-CCMP:CAPS"></a>NM_802_11_AP_SEC_GROUP_CCMP</p></td>
+<td class="enum_member_description">
+<p>AES/CCMP is supported for group/broadcast
+encryption</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-802-11-AP-SEC-KEY-MGMT-PSK:CAPS"></a>NM_802_11_AP_SEC_KEY_MGMT_PSK</p></td>
+<td class="enum_member_description">
+<p>WPA/RSN Pre-Shared Key encryption is
+supported</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-802-11-AP-SEC-KEY-MGMT-802-1X:CAPS"></a>NM_802_11_AP_SEC_KEY_MGMT_802_1X</p></td>
+<td class="enum_member_description">
+<p>802.1x authentication and key management
+is supported</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM80211Mode"></a><h3>enum NM80211Mode</h3>
+<p>Indicates the 802.11 mode an access point or device is currently in.</p>
+<p>(Corresponds to the NM_802_11_MODE type in generic-types.xml.)</p>
+<div class="refsect3">
+<a name="id-1.3.6.7.49.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-802-11-MODE-UNKNOWN:CAPS"></a>NM_802_11_MODE_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>the device or access point mode is unknown</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-802-11-MODE-ADHOC:CAPS"></a>NM_802_11_MODE_ADHOC</p></td>
+<td class="enum_member_description">
+<p>for both devices and access point objects, indicates
+  the object is part of an Ad-Hoc 802.11 network without a central
+  coordinating access point.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-802-11-MODE-INFRA:CAPS"></a>NM_802_11_MODE_INFRA</p></td>
+<td class="enum_member_description">
+<p>the device or access point is in infrastructure mode.
+  For devices, this indicates the device is an 802.11 client/station.  For
+  access point objects, this indicates the object is an access point that
+  provides connectivity to clients.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-802-11-MODE-AP:CAPS"></a>NM_802_11_MODE_AP</p></td>
+<td class="enum_member_description">
+<p>the device is an access point/hotspot.  Not valid for
+  access point objects; used only for hotspot mode on the local machine.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMBluetoothCapabilities"></a><h3>enum NMBluetoothCapabilities</h3>
+<p><a class="link" href="libnm-nm-dbus-interface.html#NMBluetoothCapabilities" title="enum NMBluetoothCapabilities"><span class="type">NMBluetoothCapabilities</span></a> values indicate the usable capabilities of a
+Bluetooth device.</p>
+<p>(Corresponds to the NM_BT_CAPABILITY type in nm-device-bt.xml.)</p>
+<div class="refsect3">
+<a name="id-1.3.6.7.50.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-BT-CAPABILITY-NONE:CAPS"></a>NM_BT_CAPABILITY_NONE</p></td>
+<td class="enum_member_description">
+<p>device has no usable capabilities</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-BT-CAPABILITY-DUN:CAPS"></a>NM_BT_CAPABILITY_DUN</p></td>
+<td class="enum_member_description">
+<p>device provides Dial-Up Networking capability</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-BT-CAPABILITY-NAP:CAPS"></a>NM_BT_CAPABILITY_NAP</p></td>
+<td class="enum_member_description">
+<p>device provides Network Access Point capability</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDeviceModemCapabilities"></a><h3>enum NMDeviceModemCapabilities</h3>
+<p><a class="link" href="libnm-nm-dbus-interface.html#NMDeviceModemCapabilities" title="enum NMDeviceModemCapabilities"><span class="type">NMDeviceModemCapabilities</span></a> values indicate the generic radio access
+technology families a modem device supports.  For more information on the
+specific access technologies the device supports use the ModemManager D-Bus
+API.</p>
+<p>(Corresponds to the NM_DEVICE_MODEM_CAPABILITY type in nm-device-modem.xml.)</p>
+<div class="refsect3">
+<a name="id-1.3.6.7.51.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-MODEM-CAPABILITY-NONE:CAPS"></a>NM_DEVICE_MODEM_CAPABILITY_NONE</p></td>
+<td class="enum_member_description">
+<p>modem has no usable capabilities</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-MODEM-CAPABILITY-POTS:CAPS"></a>NM_DEVICE_MODEM_CAPABILITY_POTS</p></td>
+<td class="enum_member_description">
+<p>modem uses the analog wired telephone
+network and is not a wireless/cellular device</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-MODEM-CAPABILITY-CDMA-EVDO:CAPS"></a>NM_DEVICE_MODEM_CAPABILITY_CDMA_EVDO</p></td>
+<td class="enum_member_description">
+<p>modem supports at least one of CDMA
+1xRTT, EVDO revision 0, EVDO revision A, or EVDO revision B</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-MODEM-CAPABILITY-GSM-UMTS:CAPS"></a>NM_DEVICE_MODEM_CAPABILITY_GSM_UMTS</p></td>
+<td class="enum_member_description">
+<p>modem supports at least one of GSM,
+GPRS, EDGE, UMTS, HSDPA, HSUPA, or HSPA+ packet switched data capability</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-MODEM-CAPABILITY-LTE:CAPS"></a>NM_DEVICE_MODEM_CAPABILITY_LTE</p></td>
+<td class="enum_member_description">
+<p>modem has LTE data capability</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDeviceState"></a><h3>enum NMDeviceState</h3>
+<p>(Corresponds to the NM_DEVICE_STATE type in nm-device.xml.)</p>
+<div class="refsect3">
+<a name="id-1.3.6.7.52.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-UNKNOWN:CAPS"></a>NM_DEVICE_STATE_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>the device's state is unknown</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-UNMANAGED:CAPS"></a>NM_DEVICE_STATE_UNMANAGED</p></td>
+<td class="enum_member_description">
+<p>the device is recognized, but not managed by
+  NetworkManager</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-UNAVAILABLE:CAPS"></a>NM_DEVICE_STATE_UNAVAILABLE</p></td>
+<td class="enum_member_description">
+<p>the device is managed by NetworkManager, but
+  is not available for use.  Reasons may include the wireless switched off,
+  missing firmware, no ethernet carrier, missing supplicant or modem manager,
+  etc.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-DISCONNECTED:CAPS"></a>NM_DEVICE_STATE_DISCONNECTED</p></td>
+<td class="enum_member_description">
+<p>the device can be activated, but is currently
+  idle and not connected to a network.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-PREPARE:CAPS"></a>NM_DEVICE_STATE_PREPARE</p></td>
+<td class="enum_member_description">
+<p>the device is preparing the connection to the
+  network.  This may include operations like changing the MAC address,
+  setting physical link properties, and anything else required to connect
+  to the requested network.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-CONFIG:CAPS"></a>NM_DEVICE_STATE_CONFIG</p></td>
+<td class="enum_member_description">
+<p>the device is connecting to the requested network.
+  This may include operations like associating with the WiFi AP, dialing
+  the modem, connecting to the remote Bluetooth device, etc.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-NEED-AUTH:CAPS"></a>NM_DEVICE_STATE_NEED_AUTH</p></td>
+<td class="enum_member_description">
+<p>the device requires more information to continue
+  connecting to the requested network.  This includes secrets like WiFi
+  passphrases, login passwords, PIN codes, etc.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-IP-CONFIG:CAPS"></a>NM_DEVICE_STATE_IP_CONFIG</p></td>
+<td class="enum_member_description">
+<p>the device is requesting IPv4 and/or IPv6
+  addresses and routing information from the network.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-IP-CHECK:CAPS"></a>NM_DEVICE_STATE_IP_CHECK</p></td>
+<td class="enum_member_description">
+<p>the device is checking whether further action is
+  required for the requested network connection.  This may include checking
+  whether only local network access is available, whether a captive portal
+  is blocking access to the Internet, etc.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-SECONDARIES:CAPS"></a>NM_DEVICE_STATE_SECONDARIES</p></td>
+<td class="enum_member_description">
+<p>the device is waiting for a secondary
+  connection (like a VPN) which must activated before the device can be
+  activated</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-ACTIVATED:CAPS"></a>NM_DEVICE_STATE_ACTIVATED</p></td>
+<td class="enum_member_description">
+<p>the device has a network connection, either local
+  or global.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-DEACTIVATING:CAPS"></a>NM_DEVICE_STATE_DEACTIVATING</p></td>
+<td class="enum_member_description">
+<p>a disconnection from the current network
+  connection was requested, and the device is cleaning up resources used for
+  that connection.  The network connection may still be valid.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-FAILED:CAPS"></a>NM_DEVICE_STATE_FAILED</p></td>
+<td class="enum_member_description">
+<p>the device failed to connect to the requested
+  network and is cleaning up the connection request</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDeviceStateReason"></a><h3>enum NMDeviceStateReason</h3>
+<p>Device state change reason codes</p>
+<p>(Corresponds to the NM_DEVICE_STATE_REASON type in nm-device.xml.)</p>
+<div class="refsect3">
+<a name="id-1.3.6.7.53.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-NONE:CAPS"></a>NM_DEVICE_STATE_REASON_NONE</p></td>
+<td class="enum_member_description">
+<p>No reason given</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-UNKNOWN:CAPS"></a>NM_DEVICE_STATE_REASON_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>Unknown error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-NOW-MANAGED:CAPS"></a>NM_DEVICE_STATE_REASON_NOW_MANAGED</p></td>
+<td class="enum_member_description">
+<p>Device is now managed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-NOW-UNMANAGED:CAPS"></a>NM_DEVICE_STATE_REASON_NOW_UNMANAGED</p></td>
+<td class="enum_member_description">
+<p>Device is now unmanaged</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-CONFIG-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_CONFIG_FAILED</p></td>
+<td class="enum_member_description">
+<p>The device could not be readied for configuration</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-IP-CONFIG-UNAVAILABLE:CAPS"></a>NM_DEVICE_STATE_REASON_IP_CONFIG_UNAVAILABLE</p></td>
+<td class="enum_member_description">
+<p>IP configuration could not be reserved (no available address, timeout, etc)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-IP-CONFIG-EXPIRED:CAPS"></a>NM_DEVICE_STATE_REASON_IP_CONFIG_EXPIRED</p></td>
+<td class="enum_member_description">
+<p>The IP config is no longer valid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-NO-SECRETS:CAPS"></a>NM_DEVICE_STATE_REASON_NO_SECRETS</p></td>
+<td class="enum_member_description">
+<p>Secrets were required, but not provided</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-SUPPLICANT-DISCONNECT:CAPS"></a>NM_DEVICE_STATE_REASON_SUPPLICANT_DISCONNECT</p></td>
+<td class="enum_member_description">
+<p>802.1x supplicant disconnected</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-SUPPLICANT-CONFIG-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_SUPPLICANT_CONFIG_FAILED</p></td>
+<td class="enum_member_description">
+<p>802.1x supplicant configuration failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-SUPPLICANT-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_SUPPLICANT_FAILED</p></td>
+<td class="enum_member_description">
+<p>802.1x supplicant failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-SUPPLICANT-TIMEOUT:CAPS"></a>NM_DEVICE_STATE_REASON_SUPPLICANT_TIMEOUT</p></td>
+<td class="enum_member_description">
+<p>802.1x supplicant took too long to authenticate</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-PPP-START-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_PPP_START_FAILED</p></td>
+<td class="enum_member_description">
+<p>PPP service failed to start</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-PPP-DISCONNECT:CAPS"></a>NM_DEVICE_STATE_REASON_PPP_DISCONNECT</p></td>
+<td class="enum_member_description">
+<p>PPP service disconnected</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-PPP-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_PPP_FAILED</p></td>
+<td class="enum_member_description">
+<p>PPP failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-DHCP-START-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_DHCP_START_FAILED</p></td>
+<td class="enum_member_description">
+<p>DHCP client failed to start</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-DHCP-ERROR:CAPS"></a>NM_DEVICE_STATE_REASON_DHCP_ERROR</p></td>
+<td class="enum_member_description">
+<p>DHCP client error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-DHCP-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_DHCP_FAILED</p></td>
+<td class="enum_member_description">
+<p>DHCP client failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-SHARED-START-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_SHARED_START_FAILED</p></td>
+<td class="enum_member_description">
+<p>Shared connection service failed to start</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-SHARED-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_SHARED_FAILED</p></td>
+<td class="enum_member_description">
+<p>Shared connection service failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-AUTOIP-START-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_AUTOIP_START_FAILED</p></td>
+<td class="enum_member_description">
+<p>AutoIP service failed to start</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-AUTOIP-ERROR:CAPS"></a>NM_DEVICE_STATE_REASON_AUTOIP_ERROR</p></td>
+<td class="enum_member_description">
+<p>AutoIP service error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-AUTOIP-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_AUTOIP_FAILED</p></td>
+<td class="enum_member_description">
+<p>AutoIP service failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-MODEM-BUSY:CAPS"></a>NM_DEVICE_STATE_REASON_MODEM_BUSY</p></td>
+<td class="enum_member_description">
+<p>The line is busy</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-MODEM-NO-DIAL-TONE:CAPS"></a>NM_DEVICE_STATE_REASON_MODEM_NO_DIAL_TONE</p></td>
+<td class="enum_member_description">
+<p>No dial tone</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-MODEM-NO-CARRIER:CAPS"></a>NM_DEVICE_STATE_REASON_MODEM_NO_CARRIER</p></td>
+<td class="enum_member_description">
+<p>No carrier could be established</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-MODEM-DIAL-TIMEOUT:CAPS"></a>NM_DEVICE_STATE_REASON_MODEM_DIAL_TIMEOUT</p></td>
+<td class="enum_member_description">
+<p>The dialing request timed out</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-MODEM-DIAL-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_MODEM_DIAL_FAILED</p></td>
+<td class="enum_member_description">
+<p>The dialing attempt failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-MODEM-INIT-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_MODEM_INIT_FAILED</p></td>
+<td class="enum_member_description">
+<p>Modem initialization failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-GSM-APN-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_GSM_APN_FAILED</p></td>
+<td class="enum_member_description">
+<p>Failed to select the specified APN</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-GSM-REGISTRATION-NOT-SEARCHING:CAPS"></a>NM_DEVICE_STATE_REASON_GSM_REGISTRATION_NOT_SEARCHING</p></td>
+<td class="enum_member_description">
+<p>Not searching for networks</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-GSM-REGISTRATION-DENIED:CAPS"></a>NM_DEVICE_STATE_REASON_GSM_REGISTRATION_DENIED</p></td>
+<td class="enum_member_description">
+<p>Network registration denied</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-GSM-REGISTRATION-TIMEOUT:CAPS"></a>NM_DEVICE_STATE_REASON_GSM_REGISTRATION_TIMEOUT</p></td>
+<td class="enum_member_description">
+<p>Network registration timed out</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-GSM-REGISTRATION-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_GSM_REGISTRATION_FAILED</p></td>
+<td class="enum_member_description">
+<p>Failed to register with the requested network</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-GSM-PIN-CHECK-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_GSM_PIN_CHECK_FAILED</p></td>
+<td class="enum_member_description">
+<p>PIN check failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-FIRMWARE-MISSING:CAPS"></a>NM_DEVICE_STATE_REASON_FIRMWARE_MISSING</p></td>
+<td class="enum_member_description">
+<p>Necessary firmware for the device may be missing</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-REMOVED:CAPS"></a>NM_DEVICE_STATE_REASON_REMOVED</p></td>
+<td class="enum_member_description">
+<p>The device was removed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-SLEEPING:CAPS"></a>NM_DEVICE_STATE_REASON_SLEEPING</p></td>
+<td class="enum_member_description">
+<p>NetworkManager went to sleep</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-CONNECTION-REMOVED:CAPS"></a>NM_DEVICE_STATE_REASON_CONNECTION_REMOVED</p></td>
+<td class="enum_member_description">
+<p>The device's active connection disappeared</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-USER-REQUESTED:CAPS"></a>NM_DEVICE_STATE_REASON_USER_REQUESTED</p></td>
+<td class="enum_member_description">
+<p>Device disconnected by user or client</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-CARRIER:CAPS"></a>NM_DEVICE_STATE_REASON_CARRIER</p></td>
+<td class="enum_member_description">
+<p>Carrier/link changed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-CONNECTION-ASSUMED:CAPS"></a>NM_DEVICE_STATE_REASON_CONNECTION_ASSUMED</p></td>
+<td class="enum_member_description">
+<p>The device's existing connection was assumed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-SUPPLICANT-AVAILABLE:CAPS"></a>NM_DEVICE_STATE_REASON_SUPPLICANT_AVAILABLE</p></td>
+<td class="enum_member_description">
+<p>The supplicant is now available</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-MODEM-NOT-FOUND:CAPS"></a>NM_DEVICE_STATE_REASON_MODEM_NOT_FOUND</p></td>
+<td class="enum_member_description">
+<p>The modem could not be found</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-BT-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_BT_FAILED</p></td>
+<td class="enum_member_description">
+<p>The Bluetooth connection failed or timed out</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-GSM-SIM-NOT-INSERTED:CAPS"></a>NM_DEVICE_STATE_REASON_GSM_SIM_NOT_INSERTED</p></td>
+<td class="enum_member_description">
+<p>GSM Modem's SIM Card not inserted</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-GSM-SIM-PIN-REQUIRED:CAPS"></a>NM_DEVICE_STATE_REASON_GSM_SIM_PIN_REQUIRED</p></td>
+<td class="enum_member_description">
+<p>GSM Modem's SIM Pin required</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-GSM-SIM-PUK-REQUIRED:CAPS"></a>NM_DEVICE_STATE_REASON_GSM_SIM_PUK_REQUIRED</p></td>
+<td class="enum_member_description">
+<p>GSM Modem's SIM Puk required</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-GSM-SIM-WRONG:CAPS"></a>NM_DEVICE_STATE_REASON_GSM_SIM_WRONG</p></td>
+<td class="enum_member_description">
+<p>GSM Modem's SIM wrong</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-INFINIBAND-MODE:CAPS"></a>NM_DEVICE_STATE_REASON_INFINIBAND_MODE</p></td>
+<td class="enum_member_description">
+<p>InfiniBand device does not support connected mode</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-DEPENDENCY-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_DEPENDENCY_FAILED</p></td>
+<td class="enum_member_description">
+<p>A dependency of the connection failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-BR2684-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_BR2684_FAILED</p></td>
+<td class="enum_member_description">
+<p>Problem with the RFC 2684 Ethernet over ADSL bridge</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-MODEM-MANAGER-UNAVAILABLE:CAPS"></a>NM_DEVICE_STATE_REASON_MODEM_MANAGER_UNAVAILABLE</p></td>
+<td class="enum_member_description">
+<p>ModemManager not running</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-SSID-NOT-FOUND:CAPS"></a>NM_DEVICE_STATE_REASON_SSID_NOT_FOUND</p></td>
+<td class="enum_member_description">
+<p>The WiFi network could not be found</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-SECONDARY-CONNECTION-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_SECONDARY_CONNECTION_FAILED</p></td>
+<td class="enum_member_description">
+<p>A secondary connection of the base connection failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-DCB-FCOE-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_DCB_FCOE_FAILED</p></td>
+<td class="enum_member_description">
+<p>DCB or FCoE setup failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-TEAMD-CONTROL-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_TEAMD_CONTROL_FAILED</p></td>
+<td class="enum_member_description">
+<p>teamd control failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-MODEM-FAILED:CAPS"></a>NM_DEVICE_STATE_REASON_MODEM_FAILED</p></td>
+<td class="enum_member_description">
+<p>Modem failed or no longer available</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-MODEM-AVAILABLE:CAPS"></a>NM_DEVICE_STATE_REASON_MODEM_AVAILABLE</p></td>
+<td class="enum_member_description">
+<p>Modem now ready and available</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-SIM-PIN-INCORRECT:CAPS"></a>NM_DEVICE_STATE_REASON_SIM_PIN_INCORRECT</p></td>
+<td class="enum_member_description">
+<p>SIM PIN was incorrect</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-NEW-ACTIVATION:CAPS"></a>NM_DEVICE_STATE_REASON_NEW_ACTIVATION</p></td>
+<td class="enum_member_description">
+<p>New connection activation was enqueued</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-PARENT-CHANGED:CAPS"></a>NM_DEVICE_STATE_REASON_PARENT_CHANGED</p></td>
+<td class="enum_member_description">
+<p>the device's parent changed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-STATE-REASON-PARENT-MANAGED-CHANGED:CAPS"></a>NM_DEVICE_STATE_REASON_PARENT_MANAGED_CHANGED</p></td>
+<td class="enum_member_description">
+<p>the device parent's management changed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMActiveConnectionState"></a><h3>enum NMActiveConnectionState</h3>
+<p><a class="link" href="libnm-nm-dbus-interface.html#NMActiveConnectionState" title="enum NMActiveConnectionState"><span class="type">NMActiveConnectionState</span></a> values indicate the state of a connection to a
+specific network while it is starting, connected, or disconnecting from that
+network.</p>
+<p>(Corresponds to the NM_ACTIVE_CONNECTION_STATE type in nm-active-connection.xml.)</p>
+<div class="refsect3">
+<a name="id-1.3.6.7.54.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-ACTIVE-CONNECTION-STATE-UNKNOWN:CAPS"></a>NM_ACTIVE_CONNECTION_STATE_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>the state of the connection is unknown</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-ACTIVE-CONNECTION-STATE-ACTIVATING:CAPS"></a>NM_ACTIVE_CONNECTION_STATE_ACTIVATING</p></td>
+<td class="enum_member_description">
+<p>a network connection is being prepared</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-ACTIVE-CONNECTION-STATE-ACTIVATED:CAPS"></a>NM_ACTIVE_CONNECTION_STATE_ACTIVATED</p></td>
+<td class="enum_member_description">
+<p>there is a connection to the network</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-ACTIVE-CONNECTION-STATE-DEACTIVATING:CAPS"></a>NM_ACTIVE_CONNECTION_STATE_DEACTIVATING</p></td>
+<td class="enum_member_description">
+<p>the network connection is being
+  torn down and cleaned up</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-ACTIVE-CONNECTION-STATE-DEACTIVATED:CAPS"></a>NM_ACTIVE_CONNECTION_STATE_DEACTIVATED</p></td>
+<td class="enum_member_description">
+<p>the network connection is disconnected
+  and will be removed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSecretAgentGetSecretsFlags"></a><h3>enum NMSecretAgentGetSecretsFlags</h3>
+<p><a class="link" href="libnm-nm-dbus-interface.html#NMSecretAgentGetSecretsFlags" title="enum NMSecretAgentGetSecretsFlags"><span class="type">NMSecretAgentGetSecretsFlags</span></a> values modify the behavior of a GetSecrets request.</p>
+<p>(Corresponds to the NM_SECRET_AGENT_GET_SECRETS_FLAGS type in nm-secret-agent.xml.)</p>
+<div class="refsect3">
+<a name="id-1.3.6.7.55.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SECRET-AGENT-GET-SECRETS-FLAG-NONE:CAPS"></a>NM_SECRET_AGENT_GET_SECRETS_FLAG_NONE</p></td>
+<td class="enum_member_description">
+<p>no special behavior; by default no
+  user interaction is allowed and requests for secrets are fulfilled from
+  persistent storage, or if no secrets are available an error is returned.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SECRET-AGENT-GET-SECRETS-FLAG-ALLOW-INTERACTION:CAPS"></a>NM_SECRET_AGENT_GET_SECRETS_FLAG_ALLOW_INTERACTION</p></td>
+<td class="enum_member_description">
+<p>allows the request to
+  interact with the user, possibly prompting via UI for secrets if any are
+  required, or if none are found in persistent storage.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SECRET-AGENT-GET-SECRETS-FLAG-REQUEST-NEW:CAPS"></a>NM_SECRET_AGENT_GET_SECRETS_FLAG_REQUEST_NEW</p></td>
+<td class="enum_member_description">
+<p>explicitly prompt for new
+  secrets from the user.  This flag signals that NetworkManager thinks any
+  existing secrets are invalid or wrong.  This flag implies that interaction
+  is allowed.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SECRET-AGENT-GET-SECRETS-FLAG-USER-REQUESTED:CAPS"></a>NM_SECRET_AGENT_GET_SECRETS_FLAG_USER_REQUESTED</p></td>
+<td class="enum_member_description">
+<p>set if the request was
+  initiated by user-requested action via the D-Bus interface, as opposed to
+  automatically initiated by NetworkManager in response to (for example) scan
+  results or carrier changes.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SECRET-AGENT-GET-SECRETS-FLAG-ONLY-SYSTEM:CAPS"></a>NM_SECRET_AGENT_GET_SECRETS_FLAG_ONLY_SYSTEM</p></td>
+<td class="enum_member_description">
+<p>Internal flag, not part of
+  the D-Bus API.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SECRET-AGENT-GET-SECRETS-FLAG-NO-ERRORS:CAPS"></a>NM_SECRET_AGENT_GET_SECRETS_FLAG_NO_ERRORS</p></td>
+<td class="enum_member_description">
+<p>Internal flag, not part of
+  the D-Bus API.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSecretAgentCapabilities"></a><h3>enum NMSecretAgentCapabilities</h3>
+<p><a class="link" href="libnm-nm-dbus-interface.html#NMSecretAgentCapabilities" title="enum NMSecretAgentCapabilities"><span class="type">NMSecretAgentCapabilities</span></a> indicate various capabilities of the agent.</p>
+<p>(Corresponds to the NM_SECRET_AGENT_CAPABILITIES type in nm-secret-agent.xml.)</p>
+<div class="refsect3">
+<a name="id-1.3.6.7.56.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SECRET-AGENT-CAPABILITY-NONE:CAPS"></a>NM_SECRET_AGENT_CAPABILITY_NONE</p></td>
+<td class="enum_member_description">
+<p>the agent supports no special capabilities</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SECRET-AGENT-CAPABILITY-VPN-HINTS:CAPS"></a>NM_SECRET_AGENT_CAPABILITY_VPN_HINTS</p></td>
+<td class="enum_member_description">
+<p>the agent supports passing hints to
+VPN plugin authentication dialogs.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SECRET-AGENT-CAPABILITY-LAST:CAPS"></a>NM_SECRET_AGENT_CAPABILITY_LAST</p></td>
+<td class="enum_member_description">
+<p>bounds checking value; should not be used.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

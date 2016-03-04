@@ -1,0 +1,959 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>nm-errors: libnm Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm Reference Manual">
+<link rel="up" href="ch02.html" title="Client Object API Reference">
+<link rel="prev" href="NMObject.html" title="NMObject">
+<link rel="next" href="libnm-nm-dbus-interface.html" title="nm-dbus-interface">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libnm-nm-errors.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#libnm-nm-errors.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="NMObject.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libnm-nm-dbus-interface.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libnm-nm-errors"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libnm-nm-errors.top_of_page"></a>nm-errors</span></h2>
+<p>nm-errors</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libnm-nm-errors.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-nm-errors.html#nm-agent-manager-error-quark" title="nm_agent_manager_error_quark ()">nm_agent_manager_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-errors.html#NM-AGENT-MANAGER-ERROR:CAPS" title="NM_AGENT_MANAGER_ERROR">NM_AGENT_MANAGER_ERROR</a></td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-nm-errors.html#nm-connection-error-quark" title="nm_connection_error_quark ()">nm_connection_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-nm-errors.html#nm-crypto-error-quark" title="nm_crypto_error_quark ()">nm_crypto_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-nm-errors.html#nm-device-error-quark" title="nm_device_error_quark ()">nm_device_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-nm-errors.html#nm-manager-error-quark" title="nm_manager_error_quark ()">nm_manager_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-errors.html#NM-MANAGER-ERROR:CAPS" title="NM_MANAGER_ERROR">NM_MANAGER_ERROR</a></td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-nm-errors.html#nm-secret-agent-error-quark" title="nm_secret_agent_error_quark ()">nm_secret_agent_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-errors.html#NM-SECRET-AGENT-ERROR:CAPS" title="NM_SECRET_AGENT_ERROR">NM_SECRET_AGENT_ERROR</a></td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-nm-errors.html#nm-settings-error-quark" title="nm_settings_error_quark ()">nm_settings_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-errors.html#NM-SETTINGS-ERROR:CAPS" title="NM_SETTINGS_ERROR">NM_SETTINGS_ERROR</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-errors.html#NM-VPN-PLUGIN-ERROR:CAPS" title="NM_VPN_PLUGIN_ERROR">NM_VPN_PLUGIN_ERROR</a></td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-nm-errors.html#nm-vpn-plugin-error-quark" title="nm_vpn_plugin_error_quark ()">nm_vpn_plugin_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libnm-nm-errors.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-errors.html#NMAgentManagerError" title="enum NMAgentManagerError">NMAgentManagerError</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-errors.html#NMConnectionError" title="enum NMConnectionError">NMConnectionError</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-errors.html#NM-CONNECTION-ERROR:CAPS" title="NM_CONNECTION_ERROR">NM_CONNECTION_ERROR</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-errors.html#NMCryptoError" title="enum NMCryptoError">NMCryptoError</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-errors.html#NM-CRYPTO-ERROR:CAPS" title="NM_CRYPTO_ERROR">NM_CRYPTO_ERROR</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-errors.html#NMDeviceError" title="enum NMDeviceError">NMDeviceError</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-nm-errors.html#NM-DEVICE-ERROR:CAPS" title="NM_DEVICE_ERROR">NM_DEVICE_ERROR</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-errors.html#NMManagerError" title="enum NMManagerError">NMManagerError</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-errors.html#NMSecretAgentError" title="enum NMSecretAgentError">NMSecretAgentError</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-errors.html#NMSettingsError" title="enum NMSettingsError">NMSettingsError</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-nm-errors.html#NMVpnPluginError" title="enum NMVpnPluginError">NMVpnPluginError</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libnm-nm-errors.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Enumeration-and-Flag-Types.html">GEnum</a>
+    <span class="lineart">├──</span> NMAgentManagerError
+    <span class="lineart">├──</span> NMConnectionError
+    <span class="lineart">├──</span> NMCryptoError
+    <span class="lineart">├──</span> NMDeviceError
+    <span class="lineart">├──</span> NMManagerError
+    <span class="lineart">├──</span> NMSecretAgentError
+    <span class="lineart">├──</span> NMSettingsError
+    <span class="lineart">╰──</span> NMVpnPluginError
+</pre>
+</div>
+<div class="refsect1">
+<a name="libnm-nm-errors.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="libnm-nm-errors.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="nm-agent-manager-error-quark"></a><h3>nm_agent_manager_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_agent_manager_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-AGENT-MANAGER-ERROR:CAPS"></a><h3>NM_AGENT_MANAGER_ERROR</h3>
+<pre class="programlisting">#define NM_AGENT_MANAGER_ERROR (nm_agent_manager_error_quark ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-connection-error-quark"></a><h3>nm_connection_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_connection_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-crypto-error-quark"></a><h3>nm_crypto_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_crypto_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-device-error-quark"></a><h3>nm_device_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_device_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-manager-error-quark"></a><h3>nm_manager_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_manager_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-MANAGER-ERROR:CAPS"></a><h3>NM_MANAGER_ERROR</h3>
+<pre class="programlisting">#define NM_MANAGER_ERROR (nm_manager_error_quark ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-secret-agent-error-quark"></a><h3>nm_secret_agent_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_secret_agent_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SECRET-AGENT-ERROR:CAPS"></a><h3>NM_SECRET_AGENT_ERROR</h3>
+<pre class="programlisting">#define NM_SECRET_AGENT_ERROR         (nm_secret_agent_error_quark ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-settings-error-quark"></a><h3>nm_settings_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_settings_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTINGS-ERROR:CAPS"></a><h3>NM_SETTINGS_ERROR</h3>
+<pre class="programlisting">#define NM_SETTINGS_ERROR (nm_settings_error_quark ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-ERROR:CAPS"></a><h3>NM_VPN_PLUGIN_ERROR</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_ERROR      (nm_vpn_plugin_error_quark ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-plugin-error-quark"></a><h3>nm_vpn_plugin_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_vpn_plugin_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="libnm-nm-errors.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NMAgentManagerError"></a><h3>enum NMAgentManagerError</h3>
+<p>Errors returned from the secret-agent manager.</p>
+<p>These errors may be returned from operations that could cause secrets to be
+requested (such as <a href="https://developer.gnome.org/libnm-glib/0.9/NMClient.html#nm-client-activate-connection"><code class="function">nm_client_activate_connection()</code></a>), and correspond to D-Bus
+errors in the "org.freedesktop.NetworkManager.AgentManager" namespace.</p>
+<div class="refsect3">
+<a name="id-1.3.5.8.2.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-AGENT-MANAGER-ERROR-FAILED:CAPS"></a>NM_AGENT_MANAGER_ERROR_FAILED</p></td>
+<td class="enum_member_description">
+<p>unknown or unspecified error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-AGENT-MANAGER-ERROR-PERMISSION-DENIED:CAPS"></a>NM_AGENT_MANAGER_ERROR_PERMISSION_DENIED</p></td>
+<td class="enum_member_description">
+<p>The caller does not have permission
+  to register a secret agent, or is trying to register the same secret agent
+  twice.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-AGENT-MANAGER-ERROR-INVALID-IDENTIFIER:CAPS"></a>NM_AGENT_MANAGER_ERROR_INVALID_IDENTIFIER</p></td>
+<td class="enum_member_description">
+<p>The identifier is not a valid
+  secret agent identifier.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-AGENT-MANAGER-ERROR-NOT-REGISTERED:CAPS"></a>NM_AGENT_MANAGER_ERROR_NOT_REGISTERED</p></td>
+<td class="enum_member_description">
+<p>The caller tried to unregister an agent
+  that was not registered.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-AGENT-MANAGER-ERROR-NO-SECRETS:CAPS"></a>NM_AGENT_MANAGER_ERROR_NO_SECRETS</p></td>
+<td class="enum_member_description">
+<p>No secret agent returned secrets for this
+  request</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-AGENT-MANAGER-ERROR-USER-CANCELED:CAPS"></a>NM_AGENT_MANAGER_ERROR_USER_CANCELED</p></td>
+<td class="enum_member_description">
+<p>The user canceled the secrets request.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMConnectionError"></a><h3>enum NMConnectionError</h3>
+<p>Describes errors that may result from operations involving a <a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnection</span></a>
+or its <a href="NMSetting.html"><span class="type">NMSettings</span></a>.</p>
+<p>These errors may be returned directly from <a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnection</span></a> and <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a>
+methods, or may be returned from D-Bus operations (eg on <a class="link" href="NMClient.html" title="NMClient"><span class="type">NMClient</span></a> or
+<a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a>), where they correspond to errors in the
+"org.freedesktop.NetworkManager.Settings.Connection" namespace.</p>
+<div class="refsect3">
+<a name="id-1.3.5.8.3.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CONNECTION-ERROR-FAILED:CAPS"></a>NM_CONNECTION_ERROR_FAILED</p></td>
+<td class="enum_member_description">
+<p>unknown or unclassified error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CONNECTION-ERROR-SETTING-NOT-FOUND:CAPS"></a>NM_CONNECTION_ERROR_SETTING_NOT_FOUND</p></td>
+<td class="enum_member_description">
+<p>the <a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnection</span></a> object
+  did not contain the specified <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> object</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CONNECTION-ERROR-PROPERTY-NOT-FOUND:CAPS"></a>NM_CONNECTION_ERROR_PROPERTY_NOT_FOUND</p></td>
+<td class="enum_member_description">
+<p>the <a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnection</span></a> did not contain the
+  requested <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> property</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CONNECTION-ERROR-PROPERTY-NOT-SECRET:CAPS"></a>NM_CONNECTION_ERROR_PROPERTY_NOT_SECRET</p></td>
+<td class="enum_member_description">
+<p>an operation which requires a secret
+  was attempted on a non-secret property</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CONNECTION-ERROR-MISSING-SETTING:CAPS"></a>NM_CONNECTION_ERROR_MISSING_SETTING</p></td>
+<td class="enum_member_description">
+<p>the <a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnection</span></a> object is missing an
+  <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> which is required for its configuration. The error message will
+  always be prefixed with "&lt;setting-name&gt;: ", where "&lt;setting-name&gt;" is the
+  name of the setting that is missing.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CONNECTION-ERROR-INVALID-SETTING:CAPS"></a>NM_CONNECTION_ERROR_INVALID_SETTING</p></td>
+<td class="enum_member_description">
+<p>the <a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnection</span></a> object contains an
+  invalid or inappropriate <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a>. The error message will always be
+  prefixed with "&lt;setting-name&gt;: ", where "&lt;setting-name&gt;" is the name of the
+  setting that is invalid.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CONNECTION-ERROR-MISSING-PROPERTY:CAPS"></a>NM_CONNECTION_ERROR_MISSING_PROPERTY</p></td>
+<td class="enum_member_description">
+<p>the <a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnection</span></a> object is invalid
+  because it is missing a required property. The error message will always be
+  prefixed with "&lt;setting-name&gt;.&lt;property-name&gt;: ", where "&lt;setting-name&gt;" is
+  the name of the setting with the missing property, and "&lt;property-name&gt;" is
+  the property that is missing.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CONNECTION-ERROR-INVALID-PROPERTY:CAPS"></a>NM_CONNECTION_ERROR_INVALID_PROPERTY</p></td>
+<td class="enum_member_description">
+<p>the <a href="https://developer.gnome.org/libnm-util/0.9/NMConnection.html"><span class="type">NMConnection</span></a> object is invalid
+  because a property has an invalid value. The error message will always be
+  prefixed with "&lt;setting-name&gt;.&lt;property-name&gt;: ", where "&lt;setting-name&gt;" is
+  the name of the setting with the invalid property, and "&lt;property-name&gt;" is
+  the property that is invalid.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-CONNECTION-ERROR:CAPS"></a><h3>NM_CONNECTION_ERROR</h3>
+<pre class="programlisting">#define NM_CONNECTION_ERROR nm_connection_error_quark ()
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMCryptoError"></a><h3>enum NMCryptoError</h3>
+<p>Cryptography-related errors that can be returned from some nm-utils methods,
+and some <a class="link" href="NMSetting8021x.html" title="NMSetting8021x"><span class="type">NMSetting8021x</span></a> operations.</p>
+<div class="refsect3">
+<a name="id-1.3.5.8.5.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CRYPTO-ERROR-FAILED:CAPS"></a>NM_CRYPTO_ERROR_FAILED</p></td>
+<td class="enum_member_description">
+<p>generic failure</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CRYPTO-ERROR-INVALID-DATA:CAPS"></a>NM_CRYPTO_ERROR_INVALID_DATA</p></td>
+<td class="enum_member_description">
+<p>the certificate or key data provided
+  was invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CRYPTO-ERROR-INVALID-PASSWORD:CAPS"></a>NM_CRYPTO_ERROR_INVALID_PASSWORD</p></td>
+<td class="enum_member_description">
+<p>the password was invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CRYPTO-ERROR-UNKNOWN-CIPHER:CAPS"></a>NM_CRYPTO_ERROR_UNKNOWN_CIPHER</p></td>
+<td class="enum_member_description">
+<p>the data uses an unknown cipher</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CRYPTO-ERROR-DECRYPTION-FAILED:CAPS"></a>NM_CRYPTO_ERROR_DECRYPTION_FAILED</p></td>
+<td class="enum_member_description">
+<p>decryption failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-CRYPTO-ERROR-ENCRYPTION-FAILED:CAPS"></a>NM_CRYPTO_ERROR_ENCRYPTION_FAILED</p></td>
+<td class="enum_member_description">
+<p>encryption failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-CRYPTO-ERROR:CAPS"></a><h3>NM_CRYPTO_ERROR</h3>
+<pre class="programlisting">#define NM_CRYPTO_ERROR nm_crypto_error_quark ()
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMDeviceError"></a><h3>enum NMDeviceError</h3>
+<p>Device-related errors.</p>
+<p>These errors may be returned directly from <a class="link" href="NMDevice.html" title="NMDevice"><span class="type">NMDevice</span></a> methods, or may be
+returned from D-Bus operations (where they correspond to errors in the
+"org.freedesktop.NetworkManager.Device" namespace).</p>
+<div class="refsect3">
+<a name="id-1.3.5.8.7.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-ERROR-FAILED:CAPS"></a>NM_DEVICE_ERROR_FAILED</p></td>
+<td class="enum_member_description">
+<p>unknown or unclassified error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-ERROR-CREATION-FAILED:CAPS"></a>NM_DEVICE_ERROR_CREATION_FAILED</p></td>
+<td class="enum_member_description">
+<p>NetworkManager failed to create the device</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-ERROR-INVALID-CONNECTION:CAPS"></a>NM_DEVICE_ERROR_INVALID_CONNECTION</p></td>
+<td class="enum_member_description">
+<p>the specified connection is not valid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-ERROR-INCOMPATIBLE-CONNECTION:CAPS"></a>NM_DEVICE_ERROR_INCOMPATIBLE_CONNECTION</p></td>
+<td class="enum_member_description">
+<p>the specified connection is not
+  compatible with this device.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-ERROR-NOT-ACTIVE:CAPS"></a>NM_DEVICE_ERROR_NOT_ACTIVE</p></td>
+<td class="enum_member_description">
+<p>the device does not have an active connection</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-ERROR-NOT-SOFTWARE:CAPS"></a>NM_DEVICE_ERROR_NOT_SOFTWARE</p></td>
+<td class="enum_member_description">
+<p>the requested operation is only valid on
+  software devices.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-ERROR-NOT-ALLOWED:CAPS"></a>NM_DEVICE_ERROR_NOT_ALLOWED</p></td>
+<td class="enum_member_description">
+<p>the requested operation is not allowed at
+  this time.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-DEVICE-ERROR-SPECIFIC-OBJECT-NOT-FOUND:CAPS"></a>NM_DEVICE_ERROR_SPECIFIC_OBJECT_NOT_FOUND</p></td>
+<td class="enum_member_description">
+<p>the "specific object" in the
+  activation request (eg, the <a class="link" href="NMAccessPoint.html" title="NMAccessPoint"><span class="type">NMAccessPoint</span></a> or <a class="link" href="NMWimaxNsp.html" title="NMWimaxNsp"><span class="type">NMWimaxNsp</span></a>) was not
+  found.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-DEVICE-ERROR:CAPS"></a><h3>NM_DEVICE_ERROR</h3>
+<pre class="programlisting">#define NM_DEVICE_ERROR nm_device_error_quark ()
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMManagerError"></a><h3>enum NMManagerError</h3>
+<p>Errors related to the main "network management" interface of NetworkManager.
+These may be returned from <a class="link" href="NMClient.html" title="NMClient"><span class="type">NMClient</span></a> methods that invoke D-Bus operations on
+the "org.freedesktop.NetworkManager" interface, and correspond to D-Bus
+errors in that namespace.</p>
+<div class="refsect3">
+<a name="id-1.3.5.8.9.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-MANAGER-ERROR-FAILED:CAPS"></a>NM_MANAGER_ERROR_FAILED</p></td>
+<td class="enum_member_description">
+<p>unknown or unclassified error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-MANAGER-ERROR-PERMISSION-DENIED:CAPS"></a>NM_MANAGER_ERROR_PERMISSION_DENIED</p></td>
+<td class="enum_member_description">
+<p>Permission denied.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-MANAGER-ERROR-UNKNOWN-CONNECTION:CAPS"></a>NM_MANAGER_ERROR_UNKNOWN_CONNECTION</p></td>
+<td class="enum_member_description">
+<p>The requested connection is not known.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-MANAGER-ERROR-UNKNOWN-DEVICE:CAPS"></a>NM_MANAGER_ERROR_UNKNOWN_DEVICE</p></td>
+<td class="enum_member_description">
+<p>The requested device is not known.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-MANAGER-ERROR-CONNECTION-NOT-AVAILABLE:CAPS"></a>NM_MANAGER_ERROR_CONNECTION_NOT_AVAILABLE</p></td>
+<td class="enum_member_description">
+<p>The requested connection cannot be
+  activated at this time.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-MANAGER-ERROR-CONNECTION-NOT-ACTIVE:CAPS"></a>NM_MANAGER_ERROR_CONNECTION_NOT_ACTIVE</p></td>
+<td class="enum_member_description">
+<p>The request could not be completed
+  because a required connection is not active.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-MANAGER-ERROR-CONNECTION-ALREADY-ACTIVE:CAPS"></a>NM_MANAGER_ERROR_CONNECTION_ALREADY_ACTIVE</p></td>
+<td class="enum_member_description">
+<p>The connection to be activated was
+  already active on another device.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-MANAGER-ERROR-DEPENDENCY-FAILED:CAPS"></a>NM_MANAGER_ERROR_DEPENDENCY_FAILED</p></td>
+<td class="enum_member_description">
+<p>An activation request failed due to a
+  dependency being unavailable.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-MANAGER-ERROR-ALREADY-ASLEEP-OR-AWAKE:CAPS"></a>NM_MANAGER_ERROR_ALREADY_ASLEEP_OR_AWAKE</p></td>
+<td class="enum_member_description">
+<p>The manager is already in the requested
+  sleep/wake state.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-MANAGER-ERROR-ALREADY-ENABLED-OR-DISABLED:CAPS"></a>NM_MANAGER_ERROR_ALREADY_ENABLED_OR_DISABLED</p></td>
+<td class="enum_member_description">
+<p>The network is already
+  enabled/disabled.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-MANAGER-ERROR-UNKNOWN-LOG-LEVEL:CAPS"></a>NM_MANAGER_ERROR_UNKNOWN_LOG_LEVEL</p></td>
+<td class="enum_member_description">
+<p>Unknown log level in SetLogging</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-MANAGER-ERROR-UNKNOWN-LOG-DOMAIN:CAPS"></a>NM_MANAGER_ERROR_UNKNOWN_LOG_DOMAIN</p></td>
+<td class="enum_member_description">
+<p>Unknown log domain in SetLogging</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSecretAgentError"></a><h3>enum NMSecretAgentError</h3>
+<p><a class="link" href="libnm-nm-errors.html#NMSecretAgentError" title="enum NMSecretAgentError"><span class="type">NMSecretAgentError</span></a> values are passed by secret agents back to NetworkManager
+when they encounter problems retrieving secrets on behalf of NM. They
+correspond to errors in the "org.freedesktop.NetworkManager.SecretManager"
+namespace.</p>
+<p>Client APIs such as <a href="https://developer.gnome.org/libnm-glib/0.9/NMClient.html#nm-client-activate-connection"><code class="function">nm_client_activate_connection()</code></a> will not see these error
+codes; instead, the secret agent manager will translate them to the
+corresponding <a class="link" href="libnm-nm-errors.html#NMAgentManagerError" title="enum NMAgentManagerError"><span class="type">NMAgentManagerError</span></a> codes.</p>
+<div class="refsect3">
+<a name="id-1.3.5.8.10.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SECRET-AGENT-ERROR-FAILED:CAPS"></a>NM_SECRET_AGENT_ERROR_FAILED</p></td>
+<td class="enum_member_description">
+<p>unknown or unclassified error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SECRET-AGENT-ERROR-PERMISSION-DENIED:CAPS"></a>NM_SECRET_AGENT_ERROR_PERMISSION_DENIED</p></td>
+<td class="enum_member_description">
+<p>the caller (ie, NetworkManager) is
+  not authorized to make this request</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SECRET-AGENT-ERROR-INVALID-CONNECTION:CAPS"></a>NM_SECRET_AGENT_ERROR_INVALID_CONNECTION</p></td>
+<td class="enum_member_description">
+<p>the connection for which secrets
+  were requested is invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SECRET-AGENT-ERROR-USER-CANCELED:CAPS"></a>NM_SECRET_AGENT_ERROR_USER_CANCELED</p></td>
+<td class="enum_member_description">
+<p>the request was canceled by the user</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SECRET-AGENT-ERROR-AGENT-CANCELED:CAPS"></a>NM_SECRET_AGENT_ERROR_AGENT_CANCELED</p></td>
+<td class="enum_member_description">
+<p>the agent canceled the request
+  because it was requested to do so by NetworkManager</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SECRET-AGENT-ERROR-NO-SECRETS:CAPS"></a>NM_SECRET_AGENT_ERROR_NO_SECRETS</p></td>
+<td class="enum_member_description">
+<p>the agent cannot find any secrets for this
+  connection</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingsError"></a><h3>enum NMSettingsError</h3>
+<p>Errors related to the settings/persistent configuration interface of
+NetworkManager.</p>
+<p>These may be returned from <a class="link" href="NMClient.html" title="NMClient"><span class="type">NMClient</span></a> methods that invoke D-Bus operations on
+the "org.freedesktop.NetworkManager.Settings" interface, and correspond to
+D-Bus errors in that namespace.</p>
+<div class="refsect3">
+<a name="id-1.3.5.8.11.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTINGS-ERROR-FAILED:CAPS"></a>NM_SETTINGS_ERROR_FAILED</p></td>
+<td class="enum_member_description">
+<p>unknown or unclassified error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTINGS-ERROR-PERMISSION-DENIED:CAPS"></a>NM_SETTINGS_ERROR_PERMISSION_DENIED</p></td>
+<td class="enum_member_description">
+<p>permission denied</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTINGS-ERROR-NOT-SUPPORTED:CAPS"></a>NM_SETTINGS_ERROR_NOT_SUPPORTED</p></td>
+<td class="enum_member_description">
+<p>the requested operation is not supported by any
+  active settings backend</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTINGS-ERROR-INVALID-CONNECTION:CAPS"></a>NM_SETTINGS_ERROR_INVALID_CONNECTION</p></td>
+<td class="enum_member_description">
+<p>the connection was invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTINGS-ERROR-READ-ONLY-CONNECTION:CAPS"></a>NM_SETTINGS_ERROR_READ_ONLY_CONNECTION</p></td>
+<td class="enum_member_description">
+<p>attempted to modify a read-only connection</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTINGS-ERROR-UUID-EXISTS:CAPS"></a>NM_SETTINGS_ERROR_UUID_EXISTS</p></td>
+<td class="enum_member_description">
+<p>a connection with that UUID already exists</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTINGS-ERROR-INVALID-HOSTNAME:CAPS"></a>NM_SETTINGS_ERROR_INVALID_HOSTNAME</p></td>
+<td class="enum_member_description">
+<p>attempted to set an invalid hostname</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMVpnPluginError"></a><h3>enum NMVpnPluginError</h3>
+<p>Returned by the VPN service plugin to indicate errors. These codes correspond
+to errors in the "org.freedesktop.NetworkManager.VPN.Error" namespace.</p>
+<div class="refsect3">
+<a name="id-1.3.5.8.12.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-FAILED:CAPS"></a>NM_VPN_PLUGIN_ERROR_FAILED</p></td>
+<td class="enum_member_description">
+<p>unknown or unclassified error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-STARTING-IN-PROGRESS:CAPS"></a>NM_VPN_PLUGIN_ERROR_STARTING_IN_PROGRESS</p></td>
+<td class="enum_member_description">
+<p>the plugin is already starting,
+  and another connect request was received</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-ALREADY-STARTED:CAPS"></a>NM_VPN_PLUGIN_ERROR_ALREADY_STARTED</p></td>
+<td class="enum_member_description">
+<p>the plugin is already connected, and
+  another connect request was received</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-STOPPING-IN-PROGRESS:CAPS"></a>NM_VPN_PLUGIN_ERROR_STOPPING_IN_PROGRESS</p></td>
+<td class="enum_member_description">
+<p>the plugin is already stopping,
+  and another stop request was received</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-ALREADY-STOPPED:CAPS"></a>NM_VPN_PLUGIN_ERROR_ALREADY_STOPPED</p></td>
+<td class="enum_member_description">
+<p>the plugin is already stopped, and
+  another disconnect request was received</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-WRONG-STATE:CAPS"></a>NM_VPN_PLUGIN_ERROR_WRONG_STATE</p></td>
+<td class="enum_member_description">
+<p>the operation could not be performed in
+  this state</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-BAD-ARGUMENTS:CAPS"></a>NM_VPN_PLUGIN_ERROR_BAD_ARGUMENTS</p></td>
+<td class="enum_member_description">
+<p>the operation could not be performed as
+  the request contained malformed arguments, or arguments of unexpected type.
+  Usually means that one of the VPN setting data items or secrets was not of
+  the expected type (ie int, string, bool, etc).</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-LAUNCH-FAILED:CAPS"></a>NM_VPN_PLUGIN_ERROR_LAUNCH_FAILED</p></td>
+<td class="enum_member_description">
+<p>a child process failed to launch</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-INVALID-CONNECTION:CAPS"></a>NM_VPN_PLUGIN_ERROR_INVALID_CONNECTION</p></td>
+<td class="enum_member_description">
+<p>the operation could not be performed
+  because the connection was invalid.  Usually means that the connection's
+  VPN setting was missing some required data item or secret.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-INTERACTIVE-NOT-SUPPORTED:CAPS"></a>NM_VPN_PLUGIN_ERROR_INTERACTIVE_NOT_SUPPORTED</p></td>
+<td class="enum_member_description">
+<p>the operation could not be
+  performed as the plugin does not support interactive operations, such as
+  <code class="function">ConnectInteractive()</code> or <code class="function">NewSecrets()</code></p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

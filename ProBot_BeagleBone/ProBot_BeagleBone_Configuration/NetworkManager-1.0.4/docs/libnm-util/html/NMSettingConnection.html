@@ -1,0 +1,1522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NMSettingConnection: libnm-util Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm-util Reference Manual">
+<link rel="up" href="ch01.html" title="libnm-util API Reference">
+<link rel="prev" href="NMSetting.html" title="NMSetting">
+<link rel="next" href="NMSettingWired.html" title="NMSettingWired">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#NMSettingConnection.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#NMSettingConnection.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#NMSettingConnection.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="NMSetting.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="NMSettingWired.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="NMSettingConnection"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="NMSettingConnection.top_of_page"></a>NMSettingConnection</span></h2>
+<p>NMSettingConnection — Describes general connection properties</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="NMSettingConnection.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-error-quark" title="nm_setting_connection_error_quark ()">nm_setting_connection_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-new" title="nm_setting_connection_new ()">nm_setting_connection_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-get-id" title="nm_setting_connection_get_id ()">nm_setting_connection_get_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-get-uuid" title="nm_setting_connection_get_uuid ()">nm_setting_connection_get_uuid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-get-interface-name" title="nm_setting_connection_get_interface_name ()">nm_setting_connection_get_interface_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-get-connection-type" title="nm_setting_connection_get_connection_type ()">nm_setting_connection_get_connection_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-get-autoconnect" title="nm_setting_connection_get_autoconnect ()">nm_setting_connection_get_autoconnect</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint64</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-get-timestamp" title="nm_setting_connection_get_timestamp ()">nm_setting_connection_get_timestamp</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-get-read-only" title="nm_setting_connection_get_read_only ()">nm_setting_connection_get_read_only</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-get-num-permissions" title="nm_setting_connection_get_num_permissions ()">nm_setting_connection_get_num_permissions</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-get-permission" title="nm_setting_connection_get_permission ()">nm_setting_connection_get_permission</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-get-zone" title="nm_setting_connection_get_zone ()">nm_setting_connection_get_zone</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-permissions-user-allowed" title="nm_setting_connection_permissions_user_allowed ()">nm_setting_connection_permissions_user_allowed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-add-permission" title="nm_setting_connection_add_permission ()">nm_setting_connection_add_permission</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-remove-permission" title="nm_setting_connection_remove_permission ()">nm_setting_connection_remove_permission</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-remove-permission-by-value" title="nm_setting_connection_remove_permission_by_value ()">nm_setting_connection_remove_permission_by_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-get-master" title="nm_setting_connection_get_master ()">nm_setting_connection_get_master</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-is-slave-type" title="nm_setting_connection_is_slave_type ()">nm_setting_connection_is_slave_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-get-slave-type" title="nm_setting_connection_get_slave_type ()">nm_setting_connection_get_slave_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-get-num-secondaries" title="nm_setting_connection_get_num_secondaries ()">nm_setting_connection_get_num_secondaries</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-get-secondary" title="nm_setting_connection_get_secondary ()">nm_setting_connection_get_secondary</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-add-secondary" title="nm_setting_connection_add_secondary ()">nm_setting_connection_add_secondary</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-remove-secondary" title="nm_setting_connection_remove_secondary ()">nm_setting_connection_remove_secondary</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-remove-secondary-by-value" title="nm_setting_connection_remove_secondary_by_value ()">nm_setting_connection_remove_secondary_by_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingConnection.html#nm-setting-connection-get-gateway-ping-timeout" title="nm_setting_connection_get_gateway_ping_timeout ()">nm_setting_connection_get_gateway_ping_timeout</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingConnection.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingConnection.html#NMSettingConnection--autoconnect" title="The “autoconnect” property">autoconnect</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingConnection.html#NMSettingConnection--gateway-ping-timeout" title="The “gateway-ping-timeout” property">gateway-ping-timeout</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingConnection.html#NMSettingConnection--id" title="The “id” property">id</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingConnection.html#NMSettingConnection--interface-name" title="The “interface-name” property">interface-name</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingConnection.html#NMSettingConnection--master" title="The “master” property">master</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GSList_gchararray_</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingConnection.html#NMSettingConnection--permissions" title="The “permissions” property">permissions</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="NMSettingConnection.html#NMSettingConnection--read-only" title="The “read-only” property">read-only</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GSList_gchararray_</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingConnection.html#NMSettingConnection--secondaries" title="The “secondaries” property">secondaries</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingConnection.html#NMSettingConnection--slave-type" title="The “slave-type” property">slave-type</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint64</span></td>
+<td class="property_name"><a class="link" href="NMSettingConnection.html#NMSettingConnection--timestamp" title="The “timestamp” property">timestamp</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingConnection.html#NMSettingConnection--type" title="The “type” property">type</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingConnection.html#NMSettingConnection--uuid" title="The “uuid” property">uuid</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingConnection.html#NMSettingConnection--zone" title="The “zone” property">zone</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingConnection.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingConnection.html#NM-SETTING-CONNECTION-SETTING-NAME:CAPS" title="NM_SETTING_CONNECTION_SETTING_NAME">NM_SETTING_CONNECTION_SETTING_NAME</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSettingConnection.html#NMSettingConnectionError" title="enum NMSettingConnectionError">NMSettingConnectionError</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingConnection.html#NM-SETTING-CONNECTION-ERROR:CAPS" title="NM_SETTING_CONNECTION_ERROR">NM_SETTING_CONNECTION_ERROR</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingConnection.html#NM-SETTING-CONNECTION-ID:CAPS" title="NM_SETTING_CONNECTION_ID">NM_SETTING_CONNECTION_ID</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingConnection.html#NM-SETTING-CONNECTION-UUID:CAPS" title="NM_SETTING_CONNECTION_UUID">NM_SETTING_CONNECTION_UUID</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingConnection.html#NM-SETTING-CONNECTION-INTERFACE-NAME:CAPS" title="NM_SETTING_CONNECTION_INTERFACE_NAME">NM_SETTING_CONNECTION_INTERFACE_NAME</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingConnection.html#NM-SETTING-CONNECTION-TYPE:CAPS" title="NM_SETTING_CONNECTION_TYPE">NM_SETTING_CONNECTION_TYPE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingConnection.html#NM-SETTING-CONNECTION-AUTOCONNECT:CAPS" title="NM_SETTING_CONNECTION_AUTOCONNECT">NM_SETTING_CONNECTION_AUTOCONNECT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingConnection.html#NM-SETTING-CONNECTION-TIMESTAMP:CAPS" title="NM_SETTING_CONNECTION_TIMESTAMP">NM_SETTING_CONNECTION_TIMESTAMP</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingConnection.html#NM-SETTING-CONNECTION-READ-ONLY:CAPS" title="NM_SETTING_CONNECTION_READ_ONLY">NM_SETTING_CONNECTION_READ_ONLY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingConnection.html#NM-SETTING-CONNECTION-PERMISSIONS:CAPS" title="NM_SETTING_CONNECTION_PERMISSIONS">NM_SETTING_CONNECTION_PERMISSIONS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingConnection.html#NM-SETTING-CONNECTION-ZONE:CAPS" title="NM_SETTING_CONNECTION_ZONE">NM_SETTING_CONNECTION_ZONE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingConnection.html#NM-SETTING-CONNECTION-MASTER:CAPS" title="NM_SETTING_CONNECTION_MASTER">NM_SETTING_CONNECTION_MASTER</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingConnection.html#NM-SETTING-CONNECTION-SLAVE-TYPE:CAPS" title="NM_SETTING_CONNECTION_SLAVE_TYPE">NM_SETTING_CONNECTION_SLAVE_TYPE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingConnection.html#NM-SETTING-CONNECTION-SECONDARIES:CAPS" title="NM_SETTING_CONNECTION_SECONDARIES">NM_SETTING_CONNECTION_SECONDARIES</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingConnection.html#NM-SETTING-CONNECTION-GATEWAY-PING-TIMEOUT:CAPS" title="NM_SETTING_CONNECTION_GATEWAY_PING_TIMEOUT">NM_SETTING_CONNECTION_GATEWAY_PING_TIMEOUT</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="NMSettingConnection.html#NMSettingConnection-struct" title="NMSettingConnection">NMSettingConnection</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingConnection.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Enumeration-and-Flag-Types.html">GEnum</a>
+    <span class="lineart">╰──</span> NMSettingConnectionError
+    GObject
+    <span class="lineart">╰──</span> <a class="link" href="NMSetting.html" title="NMSetting">NMSetting</a>
+        <span class="lineart">╰──</span> NMSettingConnection
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSettingConnection.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;nm-setting-connection.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSettingConnection.description"></a><h2>Description</h2>
+<p>The <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> object is a <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> subclass that describes
+properties that apply to all <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> objects, regardless of what type
+of network connection they describe.  Each <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a> object must contain
+a <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> setting.</p>
+</div>
+<div class="refsect1">
+<a name="NMSettingConnection.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="nm-setting-connection-error-quark"></a><h3>nm_setting_connection_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_setting_connection_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Registers an error quark for <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> if necessary.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.2.5"></a><h4>Returns</h4>
+<p> the error quark used for <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> errors.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-new"></a><h3>nm_setting_connection_new ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+nm_setting_connection_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> object with default values.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.3.5"></a><h4>Returns</h4>
+<p> the new empty <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> object</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-get-id"></a><h3>nm_setting_connection_get_id ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_connection_get_id (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>);</pre>
+<p>Returns the <a class="link" href="NMSettingConnection.html#NMSettingConnection--id" title="The “id” property"><span class="type">“id”</span></a> property of the connection.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.4.6"></a><h4>Returns</h4>
+<p> the connection ID</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-get-uuid"></a><h3>nm_setting_connection_get_uuid ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_connection_get_uuid (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>);</pre>
+<p>Returns the <a class="link" href="NMSettingConnection.html#NMSettingConnection--uuid" title="The “uuid” property"><span class="type">“uuid”</span></a> property of the connection.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.5.6"></a><h4>Returns</h4>
+<p> the connection UUID</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-get-interface-name"></a><h3>nm_setting_connection_get_interface_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_connection_get_interface_name
+                               (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>);</pre>
+<p>Returns the <a class="link" href="NMSettingConnection.html#NMSettingConnection--interface-name" title="The “interface-name” property"><span class="type">“interface-name”</span></a> property of the connection.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.6.6"></a><h4>Returns</h4>
+<p> the connection's interface name</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-get-connection-type"></a><h3>nm_setting_connection_get_connection_type ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_connection_get_connection_type
+                               (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>);</pre>
+<p>Returns the <a class="link" href="NMSettingConnection.html#NMSettingConnection--type" title="The “type” property"><span class="type">“type”</span></a> property of the connection.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.7.6"></a><h4>Returns</h4>
+<p> the connection type</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-get-autoconnect"></a><h3>nm_setting_connection_get_autoconnect ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_connection_get_autoconnect (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>);</pre>
+<p>Returns the <a class="link" href="NMSettingConnection.html#NMSettingConnection--autoconnect" title="The “autoconnect” property"><span class="type">“autoconnect”</span></a> property of the connection.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.8.6"></a><h4>Returns</h4>
+<p> the connection's autoconnect behavior</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-get-timestamp"></a><h3>nm_setting_connection_get_timestamp ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint64</span>
+nm_setting_connection_get_timestamp (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>);</pre>
+<p>Returns the <a class="link" href="NMSettingConnection.html#NMSettingConnection--timestamp" title="The “timestamp” property"><span class="type">“timestamp”</span></a> property of the connection.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.9.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.9.6"></a><h4>Returns</h4>
+<p> the connection's timestamp</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-get-read-only"></a><h3>nm_setting_connection_get_read_only ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_connection_get_read_only (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>);</pre>
+<p>Returns the <a class="link" href="NMSettingConnection.html#NMSettingConnection--read-only" title="The “read-only” property"><span class="type">“read-only”</span></a> property of the connection.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.10.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the connection is read-only, <code class="literal">FALSE</code> if it is not</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-get-num-permissions"></a><h3>nm_setting_connection_get_num_permissions ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_connection_get_num_permissions
+                               (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>);</pre>
+<p>Returns the number of entires in the <a class="link" href="NMSettingConnection.html#NMSettingConnection--permissions" title="The “permissions” property"><span class="type">“permissions”</span></a>
+property of this setting.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.11.6"></a><h4>Returns</h4>
+<p> the number of permissions entires</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-get-permission"></a><h3>nm_setting_connection_get_permission ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_connection_get_permission (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>,
+                                      <em class="parameter"><code><span class="type">guint32</span> idx</code></em>,
+                                      <em class="parameter"><code>const <span class="type">char</span> **out_ptype</code></em>,
+                                      <em class="parameter"><code>const <span class="type">char</span> **out_pitem</code></em>,
+                                      <em class="parameter"><code>const <span class="type">char</span> **out_detail</code></em>);</pre>
+<p>Retrieve one of the entries of the <a class="link" href="NMSettingConnection.html#NMSettingConnection--permissions" title="The “permissions” property"><span class="type">“permissions”</span></a> property
+of this setting.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>idx</p></td>
+<td class="parameter_description"><p>the zero-based index of the permissions entry</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_ptype</p></td>
+<td class="parameter_description"><p>on return, the permission type (at this time, always "user")</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_pitem</p></td>
+<td class="parameter_description"><p>on return, the permission item (formatted accoring to <em class="parameter"><code>ptype</code></em>
+, see
+<a class="link" href="NMSettingConnection.html#NMSettingConnection--permissions" title="The “permissions” property"><span class="type">“permissions”</span></a> for more detail</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_detail</p></td>
+<td class="parameter_description"><p>on return, the permission detail (at this time, always <code class="literal">NULL</code>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.12.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if a permission was returned, <code class="literal">FALSE</code> if <em class="parameter"><code>idx</code></em>
+was invalid</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-get-zone"></a><h3>nm_setting_connection_get_zone ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_connection_get_zone (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>);</pre>
+<p>Returns the <a class="link" href="NMSettingConnection.html#NMSettingConnection--zone" title="The “zone” property"><span class="type">“zone”</span></a> property of the connection.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.13.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.13.6"></a><h4>Returns</h4>
+<p> the trust level of a connection</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-permissions-user-allowed"></a><h3>nm_setting_connection_permissions_user_allowed ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_connection_permissions_user_allowed
+                               (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *uname</code></em>);</pre>
+<p>Checks whether the given username is allowed to view/access this connection.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.14.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uname</p></td>
+<td class="parameter_description"><p>the user name to check permissions for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.14.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the requested user is allowed to view this connection,
+<code class="literal">FALSE</code> if the given user is not allowed to view this connection</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-add-permission"></a><h3>nm_setting_connection_add_permission ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_connection_add_permission (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>,
+                                      <em class="parameter"><code>const <span class="type">char</span> *ptype</code></em>,
+                                      <em class="parameter"><code>const <span class="type">char</span> *pitem</code></em>,
+                                      <em class="parameter"><code>const <span class="type">char</span> *detail</code></em>);</pre>
+<p>Adds a permission to the connection's permission list.  At this time, only
+the "user" permission type is supported, and <em class="parameter"><code>pitem</code></em>
+ must be a username. See
+<a class="link" href="NMSettingConnection.html#NMSettingConnection--permissions" title="The “permissions” property"><span class="type">“permissions”</span></a>: for more details.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.15.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ptype</p></td>
+<td class="parameter_description"><p>the permission type; at this time only "user" is supported</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>pitem</p></td>
+<td class="parameter_description"><p>the permission item formatted as required for <em class="parameter"><code>ptype</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>detail</p></td>
+<td class="parameter_description"><p> unused at this time; must be <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.15.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the permission was unique and was successfully added to the
+list, <code class="literal">FALSE</code> if <em class="parameter"><code>ptype</code></em>
+or <em class="parameter"><code>pitem</code></em>
+was invalid or it the permission was already
+present in the list</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-remove-permission"></a><h3>nm_setting_connection_remove_permission ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_connection_remove_permission
+                               (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint32</span> idx</code></em>);</pre>
+<p>Removes the permission at index <em class="parameter"><code>idx</code></em>
+ from the connection.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.16.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>idx</p></td>
+<td class="parameter_description"><p>the zero-based index of the permission to remove</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-remove-permission-by-value"></a><h3>nm_setting_connection_remove_permission_by_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_connection_remove_permission_by_value
+                               (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *ptype</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *pitem</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *detail</code></em>);</pre>
+<p>Removes the permission from the connection.
+At this time, only the "user" permission type is supported, and <em class="parameter"><code>pitem</code></em>
+ must
+be a username. See <a class="link" href="NMSettingConnection.html#NMSettingConnection--permissions" title="The “permissions” property"><span class="type">“permissions”</span></a>: for more details.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.17.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ptype</p></td>
+<td class="parameter_description"><p>the permission type; at this time only "user" is supported</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>pitem</p></td>
+<td class="parameter_description"><p>the permission item formatted as required for <em class="parameter"><code>ptype</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>detail</p></td>
+<td class="parameter_description"><p> unused at this time; must be <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.17.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the permission was found and removed; <code class="literal">FALSE</code> if it was not.</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-get-master"></a><h3>nm_setting_connection_get_master ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_connection_get_master (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>);</pre>
+<p>Returns the <a class="link" href="NMSettingConnection.html#NMSettingConnection--master" title="The “master” property"><span class="type">“master”</span></a> property of the connection.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.18.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.18.6"></a><h4>Returns</h4>
+<p> interface name of the master device or UUID of the master
+connection.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-is-slave-type"></a><h3>nm_setting_connection_is_slave_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_connection_is_slave_type (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>,
+                                     <em class="parameter"><code>const <span class="type">char</span> *type</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.4.9.19.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the setting name (ie <a class="link" href="NMSettingBond.html#NM-SETTING-BOND-SETTING-NAME:CAPS" title="NM_SETTING_BOND_SETTING_NAME"><span class="type">NM_SETTING_BOND_SETTING_NAME</span></a>) to be matched
+against <em class="parameter"><code>setting</code></em>
+'s slave type</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.19.5"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if connection is of the given slave <em class="parameter"><code>type</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-get-slave-type"></a><h3>nm_setting_connection_get_slave_type ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_connection_get_slave_type (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>);</pre>
+<p>Returns the <a class="link" href="NMSettingConnection.html#NMSettingConnection--slave-type" title="The “slave-type” property"><span class="type">“slave-type”</span></a> property of the connection.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.20.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.20.6"></a><h4>Returns</h4>
+<p> the type of slave this connection is, if any</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-get-num-secondaries"></a><h3>nm_setting_connection_get_num_secondaries ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_connection_get_num_secondaries
+                               (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.4.9.21.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.21.5"></a><h4>Returns</h4>
+<p> the number of configured secondary connection UUIDs</p>
+</div>
+<p class="since">Since: 0.9.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-get-secondary"></a><h3>nm_setting_connection_get_secondary ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_connection_get_secondary (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>,
+                                     <em class="parameter"><code><span class="type">guint32</span> idx</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.4.9.22.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>idx</p></td>
+<td class="parameter_description"><p>the zero-based index of the secondary connection UUID entry</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.22.5"></a><h4>Returns</h4>
+<p> the secondary connection UUID at index <em class="parameter"><code>idx</code></em>
+</p>
+</div>
+<p class="since">Since: 0.9.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-add-secondary"></a><h3>nm_setting_connection_add_secondary ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_connection_add_secondary (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>,
+                                     <em class="parameter"><code>const <span class="type">char</span> *sec_uuid</code></em>);</pre>
+<p>Adds a new secondary connetion UUID to the setting.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.23.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sec_uuid</p></td>
+<td class="parameter_description"><p>the secondary connection UUID to add</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.23.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the secondary connection UUID was added; <code class="literal">FALSE</code> if the UUID
+was already present</p>
+</div>
+<p class="since">Since: 0.9.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-remove-secondary"></a><h3>nm_setting_connection_remove_secondary ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_connection_remove_secondary
+                               (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint32</span> idx</code></em>);</pre>
+<p>Removes the secondary coonnection UUID at index <em class="parameter"><code>idx</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.24.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>idx</p></td>
+<td class="parameter_description"><p>index number of the secondary connection UUID</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.9.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-remove-secondary-by-value"></a><h3>nm_setting_connection_remove_secondary_by_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_connection_remove_secondary_by_value
+                               (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *sec_uuid</code></em>);</pre>
+<p>Removes the secondary coonnection UUID <em class="parameter"><code>sec_uuid</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.2.4.9.25.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sec_uuid</p></td>
+<td class="parameter_description"><p>the secondary connection UUID to remove</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.25.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the secondary connection UUID was found and removed; <code class="literal">FALSE</code> if it was not.</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-connection-get-gateway-ping-timeout"></a><h3>nm_setting_connection_get_gateway_ping_timeout ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_connection_get_gateway_ping_timeout
+                               (<em class="parameter"><code><a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.4.9.26.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.9.26.5"></a><h4>Returns</h4>
+<p> the value contained in the <a class="link" href="NMSettingConnection.html#NMSettingConnection--gateway-ping-timeout" title="The “gateway-ping-timeout” property"><span class="type">“gateway-ping-timeout”</span></a>
+property.</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSettingConnection.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NM-SETTING-CONNECTION-SETTING-NAME:CAPS"></a><h3>NM_SETTING_CONNECTION_SETTING_NAME</h3>
+<pre class="programlisting">#define NM_SETTING_CONNECTION_SETTING_NAME "connection"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingConnectionError"></a><h3>enum NMSettingConnectionError</h3>
+<p>Describes errors that may result from operations involving a
+<a class="link" href="NMSettingConnection.html" title="NMSettingConnection"><span class="type">NMSettingConnection</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.2.4.10.3.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-CONNECTION-ERROR-UNKNOWN:CAPS"></a>NM_SETTING_CONNECTION_ERROR_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>unknown or unclassified error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-CONNECTION-ERROR-INVALID-PROPERTY:CAPS"></a>NM_SETTING_CONNECTION_ERROR_INVALID_PROPERTY</p></td>
+<td class="enum_member_description">
+<p>the property's value is
+  invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-CONNECTION-ERROR-MISSING-PROPERTY:CAPS"></a>NM_SETTING_CONNECTION_ERROR_MISSING_PROPERTY</p></td>
+<td class="enum_member_description">
+<p>a required property is not
+  present</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-CONNECTION-ERROR-TYPE-SETTING-NOT-FOUND:CAPS"></a>NM_SETTING_CONNECTION_ERROR_TYPE_SETTING_NOT_FOUND</p></td>
+<td class="enum_member_description">
+<p>the <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> object
+  referenced by the setting name contained in the
+  <a class="link" href="NMSettingConnection.html#NMSettingConnection--type" title="The “type” property"><span class="type">“type”</span></a> property was not present in the <a class="link" href="NMConnection.html" title="NMConnection"><span class="type">NMConnection</span></a></p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-CONNECTION-ERROR-IP-CONFIG-NOT-ALLOWED:CAPS"></a>NM_SETTING_CONNECTION_ERROR_IP_CONFIG_NOT_ALLOWED</p></td>
+<td class="enum_member_description">
+<p>ip configuration is not
+  allowed to be present.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-CONNECTION-ERROR:CAPS"></a><h3>NM_SETTING_CONNECTION_ERROR</h3>
+<pre class="programlisting">#define NM_SETTING_CONNECTION_ERROR nm_setting_connection_error_quark ()
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-CONNECTION-ID:CAPS"></a><h3>NM_SETTING_CONNECTION_ID</h3>
+<pre class="programlisting">#define NM_SETTING_CONNECTION_ID             "id"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-CONNECTION-UUID:CAPS"></a><h3>NM_SETTING_CONNECTION_UUID</h3>
+<pre class="programlisting">#define NM_SETTING_CONNECTION_UUID           "uuid"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-CONNECTION-INTERFACE-NAME:CAPS"></a><h3>NM_SETTING_CONNECTION_INTERFACE_NAME</h3>
+<pre class="programlisting">#define NM_SETTING_CONNECTION_INTERFACE_NAME "interface-name"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-CONNECTION-TYPE:CAPS"></a><h3>NM_SETTING_CONNECTION_TYPE</h3>
+<pre class="programlisting">#define NM_SETTING_CONNECTION_TYPE           "type"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-CONNECTION-AUTOCONNECT:CAPS"></a><h3>NM_SETTING_CONNECTION_AUTOCONNECT</h3>
+<pre class="programlisting">#define NM_SETTING_CONNECTION_AUTOCONNECT    "autoconnect"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-CONNECTION-TIMESTAMP:CAPS"></a><h3>NM_SETTING_CONNECTION_TIMESTAMP</h3>
+<pre class="programlisting">#define NM_SETTING_CONNECTION_TIMESTAMP      "timestamp"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-CONNECTION-READ-ONLY:CAPS"></a><h3>NM_SETTING_CONNECTION_READ_ONLY</h3>
+<pre class="programlisting">#define NM_SETTING_CONNECTION_READ_ONLY      "read-only"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-CONNECTION-PERMISSIONS:CAPS"></a><h3>NM_SETTING_CONNECTION_PERMISSIONS</h3>
+<pre class="programlisting">#define NM_SETTING_CONNECTION_PERMISSIONS    "permissions"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-CONNECTION-ZONE:CAPS"></a><h3>NM_SETTING_CONNECTION_ZONE</h3>
+<pre class="programlisting">#define NM_SETTING_CONNECTION_ZONE           "zone"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-CONNECTION-MASTER:CAPS"></a><h3>NM_SETTING_CONNECTION_MASTER</h3>
+<pre class="programlisting">#define NM_SETTING_CONNECTION_MASTER         "master"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-CONNECTION-SLAVE-TYPE:CAPS"></a><h3>NM_SETTING_CONNECTION_SLAVE_TYPE</h3>
+<pre class="programlisting">#define NM_SETTING_CONNECTION_SLAVE_TYPE     "slave-type"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-CONNECTION-SECONDARIES:CAPS"></a><h3>NM_SETTING_CONNECTION_SECONDARIES</h3>
+<pre class="programlisting">#define NM_SETTING_CONNECTION_SECONDARIES    "secondaries"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-CONNECTION-GATEWAY-PING-TIMEOUT:CAPS"></a><h3>NM_SETTING_CONNECTION_GATEWAY_PING_TIMEOUT</h3>
+<pre class="programlisting">#define NM_SETTING_CONNECTION_GATEWAY_PING_TIMEOUT "gateway-ping-timeout"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingConnection-struct"></a><h3>NMSettingConnection</h3>
+<pre class="programlisting">typedef struct _NMSettingConnection NMSettingConnection;</pre>
+<p>The NMSettingConnection struct contains only private data.
+It should only be accessed through the functions described below.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSettingConnection.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="NMSettingConnection--autoconnect"></a><h3>The <code class="literal">“autoconnect”</code> property</h3>
+<pre class="programlisting">  “autoconnect”              <span class="type">gboolean</span></pre>
+<p>Whether or not the connection should be automatically connected by
+NetworkManager when the resources for the connection are available.
+<code class="literal">TRUE</code> to automatically activate the connection, <code class="literal">FALSE</code> to require manual
+intervention to activate the connection.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingConnection--gateway-ping-timeout"></a><h3>The <code class="literal">“gateway-ping-timeout”</code> property</h3>
+<pre class="programlisting">  “gateway-ping-timeout”     <span class="type">guint</span></pre>
+<p>If greater than zero, delay success of IP addressing until either the
+timeout is reached, or an IP gateway replies to a ping.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Allowed values: &lt;= 30</p>
+<p>Default value: 0</p>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingConnection--id"></a><h3>The <code class="literal">“id”</code> property</h3>
+<pre class="programlisting">  “id”                       <span class="type">gchar</span> *</pre>
+<p>A human readable unique identifier for the connection, like "Work Wi-Fi"
+or "T-Mobile 3G".</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingConnection--interface-name"></a><h3>The <code class="literal">“interface-name”</code> property</h3>
+<pre class="programlisting">  “interface-name”           <span class="type">gchar</span> *</pre>
+<p>The name of the network interface this connection is bound to. If not
+set, then the connection can be attached to any interface of the
+appropriate type (subject to restrictions imposed by other settings).</p>
+<p>For software devices this specifies the name of the created device.</p>
+<p>For connection types where interface names cannot easily be made
+persistent (e.g. mobile broadband or USB Ethernet), this property should
+not be used. Setting this property restricts the interfaces a connection
+can be used with, and if interface names change or are reordered the
+connection may be applied to the wrong interface.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingConnection--master"></a><h3>The <code class="literal">“master”</code> property</h3>
+<pre class="programlisting">  “master”                   <span class="type">gchar</span> *</pre>
+<p>Interface name of the master device or UUID of the master connection.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingConnection--permissions"></a><h3>The <code class="literal">“permissions”</code> property</h3>
+<pre class="programlisting">  “permissions”              <span class="type">GSList_gchararray_</span> *</pre>
+<p>An array of strings defining what access a given user has to this
+connection.  If this is <code class="literal">NULL</code> or empty, all users are allowed to access
+this connection.  Otherwise a user is allowed to access this connection
+if and only if they are in this list. Each entry is of the form
+"[type]:[id]:[reserved]"; for example, "user:dcbw:blah".</p>
+<p>At this time only the "user" [type] is allowed.  Any other values are
+ignored and reserved for future use.  [id] is the username that this
+permission refers to, which may not contain the ":" character. Any
+[reserved] information present must be ignored and is reserved for future
+use.  All of [type], [id], and [reserved] must be valid UTF-8.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingConnection--read-only"></a><h3>The <code class="literal">“read-only”</code> property</h3>
+<pre class="programlisting">  “read-only”                <span class="type">gboolean</span></pre>
+<p><code class="literal">FALSE</code> if the connection can be modified using the provided settings
+service's D-Bus interface with the right privileges, or <code class="literal">TRUE</code> if the
+connection is read-only and cannot be modified.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingConnection--secondaries"></a><h3>The <code class="literal">“secondaries”</code> property</h3>
+<pre class="programlisting">  “secondaries”              <span class="type">GSList_gchararray_</span> *</pre>
+<p>List of connection UUIDs that should be activated when the base
+connection itself is activated. Currently only VPN connections are
+supported.</p>
+<p>Flags: Read / Write</p>
+<p class="since">Since: 0.9.8</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingConnection--slave-type"></a><h3>The <code class="literal">“slave-type”</code> property</h3>
+<pre class="programlisting">  “slave-type”               <span class="type">gchar</span> *</pre>
+<p>Setting name of the device type of this slave's master connection (eg,
+<a class="link" href="NMSettingBond.html#NM-SETTING-BOND-SETTING-NAME:CAPS" title="NM_SETTING_BOND_SETTING_NAME"><code class="literal">NM_SETTING_BOND_SETTING_NAME</code></a>), or <code class="literal">NULL</code> if this connection is not a
+slave.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingConnection--timestamp"></a><h3>The <code class="literal">“timestamp”</code> property</h3>
+<pre class="programlisting">  “timestamp”                <span class="type">guint64</span></pre>
+<p>The time, in seconds since the Unix Epoch, that the connection was last
+_successfully_ fully activated.</p>
+<p>NetworkManager updates the connection timestamp periodically when the
+connection is active to ensure that an active connection has the latest
+timestamp. The property is only meant for reading (changes to this
+property will not be preserved).</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingConnection--type"></a><h3>The <code class="literal">“type”</code> property</h3>
+<pre class="programlisting">  “type”                     <span class="type">gchar</span> *</pre>
+<p>Base type of the connection. For hardware-dependent connections, should
+contain the setting name of the hardware-type specific setting (ie,
+"802-3-ethernet" or "802-11-wireless" or "bluetooth", etc), and for
+non-hardware dependent connections like VPN or otherwise, should contain
+the setting name of that setting type (ie, "vpn" or "bridge", etc).</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingConnection--uuid"></a><h3>The <code class="literal">“uuid”</code> property</h3>
+<pre class="programlisting">  “uuid”                     <span class="type">gchar</span> *</pre>
+<p>A universally unique identifier for the connection, for example generated
+with libuuid.  It should be assigned when the connection is created, and
+never changed as long as the connection still applies to the same
+network.  For example, it should not be changed when the
+<a class="link" href="NMSettingConnection.html#NMSettingConnection--id" title="The “id” property"><span class="type">“id”</span></a> property or <a class="link" href="NMSettingIP4Config.html" title="NMSettingIP4Config"><span class="type">NMSettingIP4Config</span></a> changes, but
+might need to be re-created when the Wi-Fi SSID, mobile broadband network
+provider, or <a class="link" href="NMSettingConnection.html#NMSettingConnection--type" title="The “type” property"><span class="type">“type”</span></a> property changes.</p>
+<p>The UUID must be in the format "2815492f-7e56-435e-b2e9-246bd7cdc664"
+(ie, contains only hexadecimal characters and "-").  A suitable UUID may
+be generated by <a class="link" href="libnm-util-nm-utils.html#nm-utils-uuid-generate" title="nm_utils_uuid_generate ()"><code class="function">nm_utils_uuid_generate()</code></a> or
+<a class="link" href="libnm-util-nm-utils.html#nm-utils-uuid-generate-from-string" title="nm_utils_uuid_generate_from_string ()"><code class="function">nm_utils_uuid_generate_from_string()</code></a>.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingConnection--zone"></a><h3>The <code class="literal">“zone”</code> property</h3>
+<pre class="programlisting">  “zone”                     <span class="type">gchar</span> *</pre>
+<p>The trust level of a the connection.  Free form case-insensitive string
+(for example "Home", "Work", "Public").  <code class="literal">NULL</code> or unspecified zone means
+the connection will be placed in the default zone as defined by the
+firewall.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

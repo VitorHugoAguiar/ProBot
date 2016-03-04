@@ -1,0 +1,1010 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NMSettingVlan: libnm-util Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm-util Reference Manual">
+<link rel="up" href="ch01.html" title="libnm-util API Reference">
+<link rel="prev" href="NMSettingInfiniband.html" title="NMSettingInfiniband">
+<link rel="next" href="NMSettingOlpcMesh.html" title="NMSettingOlpcMesh">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#NMSettingVlan.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#NMSettingVlan.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#NMSettingVlan.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="NMSettingInfiniband.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="NMSettingOlpcMesh.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="NMSettingVlan"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="NMSettingVlan.top_of_page"></a>NMSettingVlan</span></h2>
+<p>NMSettingVlan — Describes connection properties for VLAN interfaces</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="NMSettingVlan.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingVlan.html#nm-setting-vlan-error-quark" title="nm_setting_vlan_error_quark ()">nm_setting_vlan_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingVlan.html#nm-setting-vlan-new" title="nm_setting_vlan_new ()">nm_setting_vlan_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingVlan.html#nm-setting-vlan-get-interface-name" title="nm_setting_vlan_get_interface_name ()">nm_setting_vlan_get_interface_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingVlan.html#nm-setting-vlan-get-parent" title="nm_setting_vlan_get_parent ()">nm_setting_vlan_get_parent</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingVlan.html#nm-setting-vlan-get-id" title="nm_setting_vlan_get_id ()">nm_setting_vlan_get_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingVlan.html#nm-setting-vlan-get-flags" title="nm_setting_vlan_get_flags ()">nm_setting_vlan_get_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingVlan.html#nm-setting-vlan-get-num-priorities" title="nm_setting_vlan_get_num_priorities ()">nm_setting_vlan_get_num_priorities</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingVlan.html#nm-setting-vlan-get-priority" title="nm_setting_vlan_get_priority ()">nm_setting_vlan_get_priority</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingVlan.html#nm-setting-vlan-add-priority" title="nm_setting_vlan_add_priority ()">nm_setting_vlan_add_priority</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingVlan.html#nm-setting-vlan-remove-priority" title="nm_setting_vlan_remove_priority ()">nm_setting_vlan_remove_priority</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingVlan.html#nm-setting-vlan-remove-priority-by-value" title="nm_setting_vlan_remove_priority_by_value ()">nm_setting_vlan_remove_priority_by_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingVlan.html#nm-setting-vlan-remove-priority-str-by-value" title="nm_setting_vlan_remove_priority_str_by_value ()">nm_setting_vlan_remove_priority_str_by_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingVlan.html#nm-setting-vlan-clear-priorities" title="nm_setting_vlan_clear_priorities ()">nm_setting_vlan_clear_priorities</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingVlan.html#nm-setting-vlan-add-priority-str" title="nm_setting_vlan_add_priority_str ()">nm_setting_vlan_add_priority_str</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingVlan.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<span class="type">GSList_gchararray_</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingVlan.html#NMSettingVlan--egress-priority-map" title="The “egress-priority-map” property">egress-priority-map</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingVlan.html#NMSettingVlan--flags" title="The “flags” property">flags</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingVlan.html#NMSettingVlan--id" title="The “id” property">id</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GSList_gchararray_</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingVlan.html#NMSettingVlan--ingress-priority-map" title="The “ingress-priority-map” property">ingress-priority-map</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingVlan.html#NMSettingVlan--interface-name" title="The “interface-name” property">interface-name</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingVlan.html#NMSettingVlan--parent" title="The “parent” property">parent</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingVlan.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingVlan.html#NM-SETTING-VLAN-SETTING-NAME:CAPS" title="NM_SETTING_VLAN_SETTING_NAME">NM_SETTING_VLAN_SETTING_NAME</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSettingVlan.html#NMSettingVlanError" title="enum NMSettingVlanError">NMSettingVlanError</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingVlan.html#NM-SETTING-VLAN-ERROR:CAPS" title="NM_SETTING_VLAN_ERROR">NM_SETTING_VLAN_ERROR</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingVlan.html#NM-SETTING-VLAN-INTERFACE-NAME:CAPS" title="NM_SETTING_VLAN_INTERFACE_NAME">NM_SETTING_VLAN_INTERFACE_NAME</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingVlan.html#NM-SETTING-VLAN-PARENT:CAPS" title="NM_SETTING_VLAN_PARENT">NM_SETTING_VLAN_PARENT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingVlan.html#NM-SETTING-VLAN-ID:CAPS" title="NM_SETTING_VLAN_ID">NM_SETTING_VLAN_ID</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingVlan.html#NM-SETTING-VLAN-FLAGS:CAPS" title="NM_SETTING_VLAN_FLAGS">NM_SETTING_VLAN_FLAGS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingVlan.html#NM-SETTING-VLAN-INGRESS-PRIORITY-MAP:CAPS" title="NM_SETTING_VLAN_INGRESS_PRIORITY_MAP">NM_SETTING_VLAN_INGRESS_PRIORITY_MAP</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingVlan.html#NM-SETTING-VLAN-EGRESS-PRIORITY-MAP:CAPS" title="NM_SETTING_VLAN_EGRESS_PRIORITY_MAP">NM_SETTING_VLAN_EGRESS_PRIORITY_MAP</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSettingVlan.html#NMVlanPriorityMap" title="enum NMVlanPriorityMap">NMVlanPriorityMap</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSettingVlan.html#NMVlanFlags" title="enum NMVlanFlags">NMVlanFlags</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingVlan.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Enumeration-and-Flag-Types.html">GEnum</a>
+    <span class="lineart">├──</span> NMSettingVlanError
+    <span class="lineart">├──</span> NMVlanFlags
+    <span class="lineart">╰──</span> NMVlanPriorityMap
+    GObject
+    <span class="lineart">╰──</span> <a class="link" href="NMSetting.html" title="NMSetting">NMSetting</a>
+        <span class="lineart">╰──</span> NMSettingVlan
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSettingVlan.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;nm-setting-vlan.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSettingVlan.description"></a><h2>Description</h2>
+<p>The <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> object is a <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> subclass that describes properties
+necessary for connection to VLAN interfaces.</p>
+</div>
+<div class="refsect1">
+<a name="NMSettingVlan.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="nm-setting-vlan-error-quark"></a><h3>nm_setting_vlan_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_setting_vlan_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Registers an error quark for <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> if necessary.</p>
+<div class="refsect3">
+<a name="id-1.2.20.9.2.5"></a><h4>Returns</h4>
+<p> the error quark used for <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> errors.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-vlan-new"></a><h3>nm_setting_vlan_new ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+nm_setting_vlan_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> object with default values.</p>
+<div class="refsect3">
+<a name="id-1.2.20.9.3.5"></a><h4>Returns</h4>
+<p> the new empty <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> object. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-vlan-get-interface-name"></a><h3>nm_setting_vlan_get_interface_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_vlan_get_interface_name (<em class="parameter"><code><a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.20.9.4.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.20.9.4.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingVlan.html#NMSettingVlan--interface-name" title="The “interface-name” property"><span class="type">“interface_name”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-vlan-get-parent"></a><h3>nm_setting_vlan_get_parent ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_vlan_get_parent (<em class="parameter"><code><a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.20.9.5.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.20.9.5.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingVlan.html#NMSettingVlan--parent" title="The “parent” property"><span class="type">“parent”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-vlan-get-id"></a><h3>nm_setting_vlan_get_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_vlan_get_id (<em class="parameter"><code><a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.20.9.6.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.20.9.6.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingVlan.html#NMSettingVlan--id" title="The “id” property"><span class="type">“id”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-vlan-get-flags"></a><h3>nm_setting_vlan_get_flags ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_vlan_get_flags (<em class="parameter"><code><a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.20.9.7.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.20.9.7.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingVlan.html#NMSettingVlan--flags" title="The “flags” property"><span class="type">“flags”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-vlan-get-num-priorities"></a><h3>nm_setting_vlan_get_num_priorities ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint32</span>
+nm_setting_vlan_get_num_priorities (<em class="parameter"><code><a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> *setting</code></em>,
+                                    <em class="parameter"><code><a class="link" href="NMSettingVlan.html#NMVlanPriorityMap" title="enum NMVlanPriorityMap"><span class="type">NMVlanPriorityMap</span></a> map</code></em>);</pre>
+<p>Returns the number of entires in the
+<a class="link" href="NMSettingVlan.html#NMSettingVlan--ingress-priority-map" title="The “ingress-priority-map” property"><span class="type">“ingress_priority_map”</span></a> or <a class="link" href="NMSettingVlan.html#NMSettingVlan--egress-priority-map" title="The “egress-priority-map” property"><span class="type">“egress_priority_map”</span></a>
+properties of this setting.</p>
+<div class="refsect3">
+<a name="id-1.2.20.9.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>map</p></td>
+<td class="parameter_description"><p>the type of priority map</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.20.9.8.6"></a><h4>Returns</h4>
+<p> return the number of ingress/egress priority entries, -1 if error</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-vlan-get-priority"></a><h3>nm_setting_vlan_get_priority ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_vlan_get_priority (<em class="parameter"><code><a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> *setting</code></em>,
+                              <em class="parameter"><code><a class="link" href="NMSettingVlan.html#NMVlanPriorityMap" title="enum NMVlanPriorityMap"><span class="type">NMVlanPriorityMap</span></a> map</code></em>,
+                              <em class="parameter"><code><span class="type">guint32</span> idx</code></em>,
+                              <em class="parameter"><code><span class="type">guint32</span> *out_from</code></em>,
+                              <em class="parameter"><code><span class="type">guint32</span> *out_to</code></em>);</pre>
+<p>Retrieve one of the entries of the <a class="link" href="NMSettingVlan.html#NMSettingVlan--ingress-priority-map" title="The “ingress-priority-map” property"><span class="type">“ingress_priority_map”</span></a>
+or <a class="link" href="NMSettingVlan.html#NMSettingVlan--egress-priority-map" title="The “egress-priority-map” property"><span class="type">“egress_priority_map”</span></a> properties of this setting.</p>
+<div class="refsect3">
+<a name="id-1.2.20.9.9.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>map</p></td>
+<td class="parameter_description"><p>the type of priority map</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>idx</p></td>
+<td class="parameter_description"><p>the zero-based index of the ingress/egress priority map entry</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_from</p></td>
+<td class="parameter_description"><p> on return the value of the priority map's 'from' item. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_to</p></td>
+<td class="parameter_description"><p> on return the value of priority map's 'to' item. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.20.9.9.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if a priority map was returned, <code class="literal">FALSE</code> if error</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-vlan-add-priority"></a><h3>nm_setting_vlan_add_priority ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_vlan_add_priority (<em class="parameter"><code><a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> *setting</code></em>,
+                              <em class="parameter"><code><a class="link" href="NMSettingVlan.html#NMVlanPriorityMap" title="enum NMVlanPriorityMap"><span class="type">NMVlanPriorityMap</span></a> map</code></em>,
+                              <em class="parameter"><code><span class="type">guint32</span> from</code></em>,
+                              <em class="parameter"><code><span class="type">guint32</span> to</code></em>);</pre>
+<p>Adds a priority mapping to the <a class="link" href="NMSettingVlan.html#NMSettingVlan--ingress-priority-map" title="The “ingress-priority-map” property"><span class="type">“ingress_priority_map”</span></a> or
+<a class="link" href="NMSettingVlan.html#NMSettingVlan--egress-priority-map" title="The “egress-priority-map” property"><span class="type">“egress_priority_map”</span></a> properties of the setting. If <em class="parameter"><code>from</code></em>
+ is
+already in the given priority map, this function will overwrite the
+existing entry with the new <em class="parameter"><code>to</code></em>
+.</p>
+<p>If <em class="parameter"><code>map</code></em>
+ is <a class="link" href="NMSettingVlan.html#NM-VLAN-INGRESS-MAP:CAPS"><span class="type">NM_VLAN_INGRESS_MAP</span></a> then <em class="parameter"><code>from</code></em>
+ is the incoming 802.1q VLAN
+Priority Code Point (PCP) value, and <em class="parameter"><code>to</code></em>
+ is the Linux SKB priority value.</p>
+<p>If <em class="parameter"><code>map</code></em>
+ is <a class="link" href="NMSettingVlan.html#NM-VLAN-EGRESS-MAP:CAPS"><span class="type">NM_VLAN_EGRESS_MAP</span></a> then <em class="parameter"><code>from</code></em>
+ is the Linux SKB priority value and
+<em class="parameter"><code>to</code></em>
+ is the outgoing 802.1q VLAN Priority Code Point (PCP) value.</p>
+<div class="refsect3">
+<a name="id-1.2.20.9.10.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>map</p></td>
+<td class="parameter_description"><p>the type of priority map</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>from</p></td>
+<td class="parameter_description"><p>the priority to map to <em class="parameter"><code>to</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>to</p></td>
+<td class="parameter_description"><p>the priority to map <em class="parameter"><code>from</code></em>
+to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.20.9.10.8"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the new priority mapping was successfully added to the
+list, <code class="literal">FALSE</code> if error</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-vlan-remove-priority"></a><h3>nm_setting_vlan_remove_priority ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_vlan_remove_priority (<em class="parameter"><code><a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> *setting</code></em>,
+                                 <em class="parameter"><code><a class="link" href="NMSettingVlan.html#NMVlanPriorityMap" title="enum NMVlanPriorityMap"><span class="type">NMVlanPriorityMap</span></a> map</code></em>,
+                                 <em class="parameter"><code><span class="type">guint32</span> idx</code></em>);</pre>
+<p>Removes the priority map at index <em class="parameter"><code>idx</code></em>
+ from the
+<a class="link" href="NMSettingVlan.html#NMSettingVlan--ingress-priority-map" title="The “ingress-priority-map” property"><span class="type">“ingress_priority_map”</span></a> or <a class="link" href="NMSettingVlan.html#NMSettingVlan--egress-priority-map" title="The “egress-priority-map” property"><span class="type">“egress_priority_map”</span></a>
+properties.</p>
+<div class="refsect3">
+<a name="id-1.2.20.9.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>map</p></td>
+<td class="parameter_description"><p>the type of priority map</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>idx</p></td>
+<td class="parameter_description"><p>the zero-based index of the priority map to remove</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-vlan-remove-priority-by-value"></a><h3>nm_setting_vlan_remove_priority_by_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_vlan_remove_priority_by_value
+                               (<em class="parameter"><code><a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> *setting</code></em>,
+                                <em class="parameter"><code><a class="link" href="NMSettingVlan.html#NMVlanPriorityMap" title="enum NMVlanPriorityMap"><span class="type">NMVlanPriorityMap</span></a> map</code></em>,
+                                <em class="parameter"><code><span class="type">guint32</span> from</code></em>,
+                                <em class="parameter"><code><span class="type">guint32</span> to</code></em>);</pre>
+<p>Removes the priority map <em class="parameter"><code>form</code></em>
+:<em class="parameter"><code>to</code></em>
+ from the <a class="link" href="NMSettingVlan.html#NMSettingVlan--ingress-priority-map" title="The “ingress-priority-map” property"><span class="type">“ingress_priority_map”</span></a>
+or <a class="link" href="NMSettingVlan.html#NMSettingVlan--egress-priority-map" title="The “egress-priority-map” property"><span class="type">“egress_priority_map”</span></a> (according to <em class="parameter"><code>map</code></em>
+ argument)
+properties.</p>
+<div class="refsect3">
+<a name="id-1.2.20.9.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>map</p></td>
+<td class="parameter_description"><p>the type of priority map</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>from</p></td>
+<td class="parameter_description"><p>the priority to map to <em class="parameter"><code>to</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>to</p></td>
+<td class="parameter_description"><p>the priority to map <em class="parameter"><code>from</code></em>
+to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.20.9.12.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the priority mapping was found and removed; <code class="literal">FALSE</code> if it was not.</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-vlan-remove-priority-str-by-value"></a><h3>nm_setting_vlan_remove_priority_str_by_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_vlan_remove_priority_str_by_value
+                               (<em class="parameter"><code><a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> *setting</code></em>,
+                                <em class="parameter"><code><a class="link" href="NMSettingVlan.html#NMVlanPriorityMap" title="enum NMVlanPriorityMap"><span class="type">NMVlanPriorityMap</span></a> map</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *str</code></em>);</pre>
+<p>Removes the priority map <em class="parameter"><code>str</code></em>
+ from the <a class="link" href="NMSettingVlan.html#NMSettingVlan--ingress-priority-map" title="The “ingress-priority-map” property"><span class="type">“ingress_priority_map”</span></a>
+or <a class="link" href="NMSettingVlan.html#NMSettingVlan--egress-priority-map" title="The “egress-priority-map” property"><span class="type">“egress_priority_map”</span></a> (according to <em class="parameter"><code>map</code></em>
+ argument)
+properties.</p>
+<div class="refsect3">
+<a name="id-1.2.20.9.13.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>map</p></td>
+<td class="parameter_description"><p>the type of priority map</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>the string which contains a priority map, like "3:7"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.20.9.13.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the priority mapping was found and removed; <code class="literal">FALSE</code> if it was not.</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-vlan-clear-priorities"></a><h3>nm_setting_vlan_clear_priorities ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_vlan_clear_priorities (<em class="parameter"><code><a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> *setting</code></em>,
+                                  <em class="parameter"><code><a class="link" href="NMSettingVlan.html#NMVlanPriorityMap" title="enum NMVlanPriorityMap"><span class="type">NMVlanPriorityMap</span></a> map</code></em>);</pre>
+<p>Clear all the entires from <a class="link" href="NMSettingVlan.html#NMSettingVlan--ingress-priority-map" title="The “ingress-priority-map” property"><span class="type">“ingress_priority_map”</span></a> or
+<a class="link" href="NMSettingVlan.html#NMSettingVlan--egress-priority-map" title="The “egress-priority-map” property"><span class="type">“egress_priority_map”</span></a> properties.</p>
+<div class="refsect3">
+<a name="id-1.2.20.9.14.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>map</p></td>
+<td class="parameter_description"><p>the type of priority map</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-vlan-add-priority-str"></a><h3>nm_setting_vlan_add_priority_str ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_vlan_add_priority_str (<em class="parameter"><code><a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a> *setting</code></em>,
+                                  <em class="parameter"><code><a class="link" href="NMSettingVlan.html#NMVlanPriorityMap" title="enum NMVlanPriorityMap"><span class="type">NMVlanPriorityMap</span></a> map</code></em>,
+                                  <em class="parameter"><code>const <span class="type">char</span> *str</code></em>);</pre>
+<p>Adds a priority map entry into either the <a class="link" href="NMSettingVlan.html#NMSettingVlan--ingress-priority-map" title="The “ingress-priority-map” property"><span class="type">“ingress_priority_map”</span></a>
+or the <a class="link" href="NMSettingVlan.html#NMSettingVlan--egress-priority-map" title="The “egress-priority-map” property"><span class="type">“egress_priority_map”</span></a> properties.  The priority map maps
+the Linux SKB priorities to 802.1p priorities.</p>
+<div class="refsect3">
+<a name="id-1.2.20.9.15.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingVlan.html" title="NMSettingVlan"><span class="type">NMSettingVlan</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>map</p></td>
+<td class="parameter_description"><p>the type of priority map</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>the string which contains a priority map, like "3:7"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.20.9.15.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the entry was successfully added to the list, or it
+overwrote the old value, <code class="literal">FALSE</code> if error</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSettingVlan.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NM-SETTING-VLAN-SETTING-NAME:CAPS"></a><h3>NM_SETTING_VLAN_SETTING_NAME</h3>
+<pre class="programlisting">#define NM_SETTING_VLAN_SETTING_NAME "vlan"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingVlanError"></a><h3>enum NMSettingVlanError</h3>
+<div class="refsect3">
+<a name="id-1.2.20.10.3.3"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-VLAN-ERROR-UNKNOWN:CAPS"></a>NM_SETTING_VLAN_ERROR_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>unknown or unclassified error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-VLAN-ERROR-INVALID-PROPERTY:CAPS"></a>NM_SETTING_VLAN_ERROR_INVALID_PROPERTY</p></td>
+<td class="enum_member_description">
+<p>the property was invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-VLAN-ERROR-MISSING-PROPERTY:CAPS"></a>NM_SETTING_VLAN_ERROR_MISSING_PROPERTY</p></td>
+<td class="enum_member_description">
+<p>the property was missing and is
+  required</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-VLAN-ERROR-INVALID-PARENT:CAPS"></a>NM_SETTING_VLAN_ERROR_INVALID_PARENT</p></td>
+<td class="enum_member_description">
+<p>the VLAN parent was specified
+  inconsistently</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-VLAN-ERROR:CAPS"></a><h3>NM_SETTING_VLAN_ERROR</h3>
+<pre class="programlisting">#define NM_SETTING_VLAN_ERROR nm_setting_vlan_error_quark ()
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-VLAN-INTERFACE-NAME:CAPS"></a><h3>NM_SETTING_VLAN_INTERFACE_NAME</h3>
+<pre class="programlisting">#define NM_SETTING_VLAN_INTERFACE_NAME       "interface-name"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-VLAN-PARENT:CAPS"></a><h3>NM_SETTING_VLAN_PARENT</h3>
+<pre class="programlisting">#define NM_SETTING_VLAN_PARENT               "parent"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-VLAN-ID:CAPS"></a><h3>NM_SETTING_VLAN_ID</h3>
+<pre class="programlisting">#define NM_SETTING_VLAN_ID                   "id"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-VLAN-FLAGS:CAPS"></a><h3>NM_SETTING_VLAN_FLAGS</h3>
+<pre class="programlisting">#define NM_SETTING_VLAN_FLAGS                "flags"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-VLAN-INGRESS-PRIORITY-MAP:CAPS"></a><h3>NM_SETTING_VLAN_INGRESS_PRIORITY_MAP</h3>
+<pre class="programlisting">#define NM_SETTING_VLAN_INGRESS_PRIORITY_MAP "ingress-priority-map"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-VLAN-EGRESS-PRIORITY-MAP:CAPS"></a><h3>NM_SETTING_VLAN_EGRESS_PRIORITY_MAP</h3>
+<pre class="programlisting">#define NM_SETTING_VLAN_EGRESS_PRIORITY_MAP  "egress-priority-map"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMVlanPriorityMap"></a><h3>enum NMVlanPriorityMap</h3>
+<p>A selector for traffic priority maps; these map Linux SKB priorities
+to 802.1p priorities used in VLANs.</p>
+<div class="refsect3">
+<a name="id-1.2.20.10.11.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VLAN-INGRESS-MAP:CAPS"></a>NM_VLAN_INGRESS_MAP</p></td>
+<td class="enum_member_description">
+<p>map for incoming data</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VLAN-EGRESS-MAP:CAPS"></a>NM_VLAN_EGRESS_MAP</p></td>
+<td class="enum_member_description">
+<p>map for outgoing data</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMVlanFlags"></a><h3>enum NMVlanFlags</h3>
+<p><a class="link" href="NMSettingVlan.html#NMVlanFlags" title="enum NMVlanFlags"><span class="type">NMVlanFlags</span></a> values control the behavior of the VLAN interface.</p>
+<div class="refsect3">
+<a name="id-1.2.20.10.12.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VLAN-FLAG-REORDER-HEADERS:CAPS"></a>NM_VLAN_FLAG_REORDER_HEADERS</p></td>
+<td class="enum_member_description">
+<p>indicates that this interface should reorder
+ outgoing packet headers to look more like a non-VLAN Ethernet interface</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VLAN-FLAG-GVRP:CAPS"></a>NM_VLAN_FLAG_GVRP</p></td>
+<td class="enum_member_description">
+<p>indicates that this interface should use GVRP to register
+ itself with it's switch</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VLAN-FLAG-LOOSE-BINDING:CAPS"></a>NM_VLAN_FLAG_LOOSE_BINDING</p></td>
+<td class="enum_member_description">
+<p>indicates that this interface's operating
+ state is tied to the underlying network interface but other details
+ (like routing) are not.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSettingVlan.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="NMSettingVlan--egress-priority-map"></a><h3>The <code class="literal">“egress-priority-map”</code> property</h3>
+<pre class="programlisting">  “egress-priority-map”      <span class="type">GSList_gchararray_</span> *</pre>
+<p>For outgoing packets, a list of mappings from Linux SKB priorities to
+802.1p priorities.  The mapping is given in the format "from:to" where
+both "from" and "to" are unsigned integers, ie "7:3".</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingVlan--flags"></a><h3>The <code class="literal">“flags”</code> property</h3>
+<pre class="programlisting">  “flags”                    <span class="type">guint</span></pre>
+<p>One or more flags which control the behavior and features of the VLAN
+interface.  Flags include <a class="link" href="NMSettingVlan.html#NM-VLAN-FLAG-REORDER-HEADERS:CAPS"><code class="literal">NM_VLAN_FLAG_REORDER_HEADERS</code></a> (reordering of
+output packet headers), <a class="link" href="NMSettingVlan.html#NM-VLAN-FLAG-GVRP:CAPS"><code class="literal">NM_VLAN_FLAG_GVRP</code></a> (use of the GVRP protocol),
+and <a class="link" href="NMSettingVlan.html#NM-VLAN-FLAG-LOOSE-BINDING:CAPS"><code class="literal">NM_VLAN_FLAG_LOOSE_BINDING</code></a> (loose binding of the interface to its
+master device's operating state).</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingVlan--id"></a><h3>The <code class="literal">“id”</code> property</h3>
+<pre class="programlisting">  “id”                       <span class="type">guint</span></pre>
+<p>The VLAN identifier that the interface created by this connection should
+be assigned.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Allowed values: &lt;= 4095</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingVlan--ingress-priority-map"></a><h3>The <code class="literal">“ingress-priority-map”</code> property</h3>
+<pre class="programlisting">  “ingress-priority-map”     <span class="type">GSList_gchararray_</span> *</pre>
+<p>For incoming packets, a list of mappings from 802.1p priorities to Linux
+SKB priorities.  The mapping is given in the format "from:to" where both
+"from" and "to" are unsigned integers, ie "7:3".</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingVlan--interface-name"></a><h3>The <code class="literal">“interface-name”</code> property</h3>
+<pre class="programlisting">  “interface-name”           <span class="type">gchar</span> *</pre>
+<p>If given, specifies the kernel name of the VLAN interface. If not given,
+a default name will be constructed from the interface described by the
+parent interface and the <a class="link" href="NMSettingVlan.html#NMSettingVlan--id" title="The “id” property"><span class="type">“id”</span></a> property, eg "eth2.1". The
+parent interface may be given by the <a class="link" href="NMSettingVlan.html#NMSettingVlan--parent" title="The “parent” property"><span class="type">“parent”</span></a> property or by
+the <a class="link" href="NMSettingWired.html#NMSettingWired--mac-address" title="The “mac-address” property"><span class="type">“mac-address”</span></a> property of an <a class="link" href="NMSettingWired.html" title="NMSettingWired"><span class="type">NMSettingWired</span></a> setting.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingVlan--parent"></a><h3>The <code class="literal">“parent”</code> property</h3>
+<pre class="programlisting">  “parent”                   <span class="type">gchar</span> *</pre>
+<p>If given, specifies the parent interface name or parent connection UUID
+from which this VLAN interface should be created.  If this property is
+not specified, the connection must contain an <a class="link" href="NMSettingWired.html" title="NMSettingWired"><span class="type">NMSettingWired</span></a> setting
+with a <a class="link" href="NMSettingWired.html#NMSettingWired--mac-address" title="The “mac-address” property"><span class="type">“mac-address”</span></a> property.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

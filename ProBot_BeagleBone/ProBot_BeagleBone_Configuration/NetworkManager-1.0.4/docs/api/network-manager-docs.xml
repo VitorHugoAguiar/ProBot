@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml">
+]>
+<book id="index" xmlns:xi="http://www.w3.org/2003/XInclude">
+  <bookinfo>
+    <title>NetworkManager D-Bus Reference Manual</title>
+    <releaseinfo>Version &version;</releaseinfo>
+
+    <copyright>
+      <year>2012</year>
+      <holder>The NetworkManager Authors</holder>
+    </copyright>
+
+    <legalnotice>
+      <para>
+	Permission is granted to copy, distribute and/or modify this
+	document under the terms of the <citetitle>GNU Free
+	Documentation License</citetitle>, Version 1.1 or any later
+	version published by the Free Software Foundation with no
+	Invariant Sections, no Front-Cover Texts, and no Back-Cover
+	Texts. You may obtain a copy of the <citetitle>GNU Free
+	Documentation License</citetitle> from the Free Software
+	Foundation by visiting <ulink type="http"
+	url="http://www.fsf.org">their Web site</ulink> or by writing
+	to:
+
+	<address>
+	  The Free Software Foundation, Inc.,
+	  <street>51 Franklin Street</street> - Fifth Floor,
+	  <city>Boston</city>, <state>MA</state> <postcode>02110-1301</postcode>,
+	  <country>USA</country>
+	</address>
+      </para>
+    </legalnotice>
+  </bookinfo>
+
+  <chapter id="ref-dbus">
+    <title>D-Bus API Reference</title>
+    <para>
+      This part documents the D-Bus interface used to access the
+      NetworkManager daemon.
+    </para>
+    <ulink url="spec.html"/>
+  </chapter>
+
+  <chapter id="ref-settings">
+    <title>Network Configuration Setting Specification</title>
+    <para>
+      This part documents the properties and value types of each "Setting"
+      object that composes the basic unit of NetworkManager configuration,
+      the "Connection".  Each Connection object is simply a dictionary mapping
+      setting names (like "wimax" or "bluetooth") to a dictionary of
+      key/value pairs that represents each itself.
+    </para>
+    <xi:include href="settings-spec.xml">
+      <xi:fallback>
+	<section>
+	  <title>Configuration Settings</title>
+	  <note><para>
+	    (NetworkManager was built without full introspection support. Setting
+	    documentation is not available.)
+	  </para></note>
+	</section>
+      </xi:fallback>
+    </xi:include>
+    <section id="secrets-flags">
+      <title>Secret flag types</title>
+      <para>
+        Each secret property in a setting has an associated "flags" property
+        that describes how to handle that secret.  The "flags" property is a
+        bitfield that contains zero or more of the following values logically
+        OR-ed together.
+      </para>
+      <para>
+        <itemizedlist>
+          <listitem>
+            <literal>0x0 (none)</literal> - the system is responsible for providing
+            and storing this secret.
+          </listitem>
+          <listitem>
+            <literal>0x1 (agent-owned)</literal> - a user-session secret agent
+            is responsible for providing and storing this secret; when it is
+            required, agents will be asked to provide it.
+          </listitem>
+          <listitem>
+            <literal>0x2 (not-saved)</literal> - this secret should not be saved
+            but should be requested from the user each time it is required. This
+            flag should be used for One-Time-Pad secrets, PIN codes from
+            hardware tokens, or if the user simply does not want to save the
+            secret.
+          </listitem>
+          <listitem>
+            <literal>0x4 (not-required)</literal> - in some situations it cannot
+            be automatically determined that a secret is required or not.  This
+            flag hints that the secret is not required and should not be
+            requested from the user.
+          </listitem>
+        </itemizedlist>
+      </para>
+    </section>
+  </chapter>
+
+  <xi:include href="migrating-to-09.xml" />
+
+  <index>
+    <title>Index</title>
+  </index>
+
+  <!-- License -->
+
+  <appendix id="license">
+    <title>License</title>
+    <para>
+<programlisting><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="../../COPYING" parse="text"><xi:fallback>FIXME: MISSING XINCLUDE CONTENT</xi:fallback></xi:include></programlisting>
+    </para>
+  </appendix>
+</book>
+

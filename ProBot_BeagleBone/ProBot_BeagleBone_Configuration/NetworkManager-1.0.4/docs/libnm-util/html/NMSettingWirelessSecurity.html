@@ -1,0 +1,1903 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NMSettingWirelessSecurity: libnm-util Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm-util Reference Manual">
+<link rel="up" href="ch01.html" title="libnm-util API Reference">
+<link rel="prev" href="NMSettingWireless.html" title="NMSettingWireless">
+<link rel="next" href="NMSettingBluetooth.html" title="NMSettingBluetooth">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#NMSettingWirelessSecurity.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#NMSettingWirelessSecurity.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#NMSettingWirelessSecurity.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="NMSettingWireless.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="NMSettingBluetooth.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="NMSettingWirelessSecurity"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="NMSettingWirelessSecurity.top_of_page"></a>NMSettingWirelessSecurity</span></h2>
+<p>NMSettingWirelessSecurity — Describes connection properties for Wi-Fi networks that
+use WEP, LEAP, WPA or WPA2/RSN security</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="NMSettingWirelessSecurity.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-error-quark" title="nm_setting_wireless_security_error_quark ()">nm_setting_wireless_security_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-new" title="nm_setting_wireless_security_new ()">nm_setting_wireless_security_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-get-key-mgmt" title="nm_setting_wireless_security_get_key_mgmt ()">nm_setting_wireless_security_get_key_mgmt</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-get-num-protos" title="nm_setting_wireless_security_get_num_protos ()">nm_setting_wireless_security_get_num_protos</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-get-proto" title="nm_setting_wireless_security_get_proto ()">nm_setting_wireless_security_get_proto</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-add-proto" title="nm_setting_wireless_security_add_proto ()">nm_setting_wireless_security_add_proto</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-remove-proto" title="nm_setting_wireless_security_remove_proto ()">nm_setting_wireless_security_remove_proto</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-remove-proto-by-value" title="nm_setting_wireless_security_remove_proto_by_value ()">nm_setting_wireless_security_remove_proto_by_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-clear-protos" title="nm_setting_wireless_security_clear_protos ()">nm_setting_wireless_security_clear_protos</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-get-num-pairwise" title="nm_setting_wireless_security_get_num_pairwise ()">nm_setting_wireless_security_get_num_pairwise</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-get-pairwise" title="nm_setting_wireless_security_get_pairwise ()">nm_setting_wireless_security_get_pairwise</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-add-pairwise" title="nm_setting_wireless_security_add_pairwise ()">nm_setting_wireless_security_add_pairwise</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-remove-pairwise" title="nm_setting_wireless_security_remove_pairwise ()">nm_setting_wireless_security_remove_pairwise</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-remove-pairwise-by-value" title="nm_setting_wireless_security_remove_pairwise_by_value ()">nm_setting_wireless_security_remove_pairwise_by_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-clear-pairwise" title="nm_setting_wireless_security_clear_pairwise ()">nm_setting_wireless_security_clear_pairwise</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-get-num-groups" title="nm_setting_wireless_security_get_num_groups ()">nm_setting_wireless_security_get_num_groups</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-get-group" title="nm_setting_wireless_security_get_group ()">nm_setting_wireless_security_get_group</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-add-group" title="nm_setting_wireless_security_add_group ()">nm_setting_wireless_security_add_group</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-remove-group" title="nm_setting_wireless_security_remove_group ()">nm_setting_wireless_security_remove_group</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-remove-group-by-value" title="nm_setting_wireless_security_remove_group_by_value ()">nm_setting_wireless_security_remove_group_by_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-clear-groups" title="nm_setting_wireless_security_clear_groups ()">nm_setting_wireless_security_clear_groups</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-get-psk" title="nm_setting_wireless_security_get_psk ()">nm_setting_wireless_security_get_psk</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="returnvalue">NMSettingSecretFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-get-psk-flags" title="nm_setting_wireless_security_get_psk_flags ()">nm_setting_wireless_security_get_psk_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-get-leap-username" title="nm_setting_wireless_security_get_leap_username ()">nm_setting_wireless_security_get_leap_username</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-get-leap-password" title="nm_setting_wireless_security_get_leap_password ()">nm_setting_wireless_security_get_leap_password</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="returnvalue">NMSettingSecretFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-get-leap-password-flags" title="nm_setting_wireless_security_get_leap_password_flags ()">nm_setting_wireless_security_get_leap_password_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-get-wep-key" title="nm_setting_wireless_security_get_wep_key ()">nm_setting_wireless_security_get_wep_key</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-set-wep-key" title="nm_setting_wireless_security_set_wep_key ()">nm_setting_wireless_security_set_wep_key</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint32</span>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-get-wep-tx-keyidx" title="nm_setting_wireless_security_get_wep_tx_keyidx ()">nm_setting_wireless_security_get_wep_tx_keyidx</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-get-auth-alg" title="nm_setting_wireless_security_get_auth_alg ()">nm_setting_wireless_security_get_auth_alg</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="returnvalue">NMSettingSecretFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-get-wep-key-flags" title="nm_setting_wireless_security_get_wep_key_flags ()">nm_setting_wireless_security_get_wep_key_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="NMSettingWirelessSecurity.html#NMWepKeyType" title="enum NMWepKeyType"><span class="returnvalue">NMWepKeyType</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="NMSettingWirelessSecurity.html#nm-setting-wireless-security-get-wep-key-type" title="nm_setting_wireless_security_get_wep_key_type ()">nm_setting_wireless_security_get_wep_key_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingWirelessSecurity.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--auth-alg" title="The “auth-alg” property">auth-alg</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GSList_gchararray_</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--group" title="The “group” property">group</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--key-mgmt" title="The “key-mgmt” property">key-mgmt</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--leap-password" title="The “leap-password” property">leap-password</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--leap-password-flags" title="The “leap-password-flags” property">leap-password-flags</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--leap-username" title="The “leap-username” property">leap-username</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GSList_gchararray_</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--pairwise" title="The “pairwise” property">pairwise</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GSList_gchararray_</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--proto" title="The “proto” property">proto</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--psk" title="The “psk” property">psk</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--psk-flags" title="The “psk-flags” property">psk-flags</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--wep-key-flags" title="The “wep-key-flags” property">wep-key-flags</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--wep-key-type" title="The “wep-key-type” property">wep-key-type</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--wep-key0" title="The “wep-key0” property">wep-key0</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--wep-key1" title="The “wep-key1” property">wep-key1</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--wep-key2" title="The “wep-key2” property">wep-key2</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--wep-key3" title="The “wep-key3” property">wep-key3</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--wep-tx-keyidx" title="The “wep-tx-keyidx” property">wep-tx-keyidx</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingWirelessSecurity.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-SETTING-NAME:CAPS" title="NM_SETTING_WIRELESS_SECURITY_SETTING_NAME">NM_SETTING_WIRELESS_SECURITY_SETTING_NAME</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurityError" title="enum NMSettingWirelessSecurityError">NMSettingWirelessSecurityError</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-ERROR:CAPS" title="NM_SETTING_WIRELESS_SECURITY_ERROR">NM_SETTING_WIRELESS_SECURITY_ERROR</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NMWepKeyType" title="enum NMWepKeyType">NMWepKeyType</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-KEY-MGMT:CAPS" title="NM_SETTING_WIRELESS_SECURITY_KEY_MGMT">NM_SETTING_WIRELESS_SECURITY_KEY_MGMT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-WEP-TX-KEYIDX:CAPS" title="NM_SETTING_WIRELESS_SECURITY_WEP_TX_KEYIDX">NM_SETTING_WIRELESS_SECURITY_WEP_TX_KEYIDX</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-AUTH-ALG:CAPS" title="NM_SETTING_WIRELESS_SECURITY_AUTH_ALG">NM_SETTING_WIRELESS_SECURITY_AUTH_ALG</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-PROTO:CAPS" title="NM_SETTING_WIRELESS_SECURITY_PROTO">NM_SETTING_WIRELESS_SECURITY_PROTO</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-PAIRWISE:CAPS" title="NM_SETTING_WIRELESS_SECURITY_PAIRWISE">NM_SETTING_WIRELESS_SECURITY_PAIRWISE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-GROUP:CAPS" title="NM_SETTING_WIRELESS_SECURITY_GROUP">NM_SETTING_WIRELESS_SECURITY_GROUP</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-LEAP-USERNAME:CAPS" title="NM_SETTING_WIRELESS_SECURITY_LEAP_USERNAME">NM_SETTING_WIRELESS_SECURITY_LEAP_USERNAME</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-WEP-KEY0:CAPS" title="NM_SETTING_WIRELESS_SECURITY_WEP_KEY0">NM_SETTING_WIRELESS_SECURITY_WEP_KEY0</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-WEP-KEY1:CAPS" title="NM_SETTING_WIRELESS_SECURITY_WEP_KEY1">NM_SETTING_WIRELESS_SECURITY_WEP_KEY1</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-WEP-KEY2:CAPS" title="NM_SETTING_WIRELESS_SECURITY_WEP_KEY2">NM_SETTING_WIRELESS_SECURITY_WEP_KEY2</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-WEP-KEY3:CAPS" title="NM_SETTING_WIRELESS_SECURITY_WEP_KEY3">NM_SETTING_WIRELESS_SECURITY_WEP_KEY3</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-WEP-KEY-FLAGS:CAPS" title="NM_SETTING_WIRELESS_SECURITY_WEP_KEY_FLAGS">NM_SETTING_WIRELESS_SECURITY_WEP_KEY_FLAGS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-WEP-KEY-TYPE:CAPS" title="NM_SETTING_WIRELESS_SECURITY_WEP_KEY_TYPE">NM_SETTING_WIRELESS_SECURITY_WEP_KEY_TYPE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-PSK:CAPS" title="NM_SETTING_WIRELESS_SECURITY_PSK">NM_SETTING_WIRELESS_SECURITY_PSK</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-PSK-FLAGS:CAPS" title="NM_SETTING_WIRELESS_SECURITY_PSK_FLAGS">NM_SETTING_WIRELESS_SECURITY_PSK_FLAGS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-LEAP-PASSWORD:CAPS" title="NM_SETTING_WIRELESS_SECURITY_LEAP_PASSWORD">NM_SETTING_WIRELESS_SECURITY_LEAP_PASSWORD</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="NMSettingWirelessSecurity.html#NM-SETTING-WIRELESS-SECURITY-LEAP-PASSWORD-FLAGS:CAPS" title="NM_SETTING_WIRELESS_SECURITY_LEAP_PASSWORD_FLAGS">NM_SETTING_WIRELESS_SECURITY_LEAP_PASSWORD_FLAGS</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="NMSettingWirelessSecurity.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Enumeration-and-Flag-Types.html">GEnum</a>
+    <span class="lineart">├──</span> NMSettingWirelessSecurityError
+    <span class="lineart">╰──</span> NMWepKeyType
+    GObject
+    <span class="lineart">╰──</span> <a class="link" href="NMSetting.html" title="NMSetting">NMSetting</a>
+        <span class="lineart">╰──</span> NMSettingWirelessSecurity
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSettingWirelessSecurity.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;nm-setting-wireless-security.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="NMSettingWirelessSecurity.description"></a><h2>Description</h2>
+<p>The <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> object is a <a class="link" href="NMSetting.html" title="NMSetting"><span class="type">NMSetting</span></a> subclass that describes
+properties necessary for connection to encrypted Wi-Fi networks.</p>
+<p>It's a good idea to read up on wpa_supplicant configuration before using this
+setting extensively, since most of the options here correspond closely with
+the relevant wpa_supplicant configuration options.  To get a better overview
+of how Wi-Fi security works, you may want to get copies of the following books.</p>
+<p> 802.11 Wireless Networks: The Definitive Guide, Second Edition
+      Author: Matthew Gast
+      ISBN: 978-0596100520</p>
+<p> Cisco Wireless LAN Security
+      Authors: Krishna Sankar, Sri Sundaralingam, Darrin Miller, and Andrew Balinsky
+      ISBN: 978-1587051548</p>
+</div>
+<div class="refsect1">
+<a name="NMSettingWirelessSecurity.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-error-quark"></a><h3>nm_setting_wireless_security_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_setting_wireless_security_error_quark
+                               (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Registers an error quark for <a class="link" href="NMSettingWired.html" title="NMSettingWired"><span class="type">NMSettingWired</span></a> if necessary.</p>
+<div class="refsect3">
+<a name="id-1.2.7.9.2.5"></a><h4>Returns</h4>
+<p> the error quark used for <a class="link" href="NMSettingWired.html" title="NMSettingWired"><span class="type">NMSettingWired</span></a> errors.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-new"></a><h3>nm_setting_wireless_security_new ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html" title="NMSetting"><span class="returnvalue">NMSetting</span></a> *
+nm_setting_wireless_security_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> object with default values.</p>
+<div class="refsect3">
+<a name="id-1.2.7.9.3.5"></a><h4>Returns</h4>
+<p> the new empty <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> object. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-get-key-mgmt"></a><h3>nm_setting_wireless_security_get_key_mgmt ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_wireless_security_get_key_mgmt
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.7.9.4.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.4.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--key-mgmt" title="The “key-mgmt” property"><span class="type">“key-mgmt”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-get-num-protos"></a><h3>nm_setting_wireless_security_get_num_protos ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_wireless_security_get_num_protos
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.7.9.5.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.5.5"></a><h4>Returns</h4>
+<p> the number of security protocols this connection allows when
+connecting to secure Wi-Fi networks</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-get-proto"></a><h3>nm_setting_wireless_security_get_proto ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_wireless_security_get_proto
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint32</span> i</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.7.9.6.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>i</p></td>
+<td class="parameter_description"><p>an index into the protocol list</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.6.5"></a><h4>Returns</h4>
+<p> the protocol at index <em class="parameter"><code>i</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-add-proto"></a><h3>nm_setting_wireless_security_add_proto ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_wireless_security_add_proto
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *proto</code></em>);</pre>
+<p>Adds a Wi-Fi security protocol (one of "wpa" or "rsn") to the allowed list;
+only protocols in this list will be used when finding and connecting to
+the Wi-Fi network specified by this connection.  For example, if the
+protocol list contains only "wpa" but the access point for the SSID specified
+by this connection only supports WPA2/RSN, the connection cannot be used
+with the access point.</p>
+<div class="refsect3">
+<a name="id-1.2.7.9.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>proto</p></td>
+<td class="parameter_description"><p>the protocol to add, one of "wpa" or "rsn"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.7.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the protocol was new and and was added to the allowed
+protocol list, or <code class="literal">FALSE</code> if it was already in the list</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-remove-proto"></a><h3>nm_setting_wireless_security_remove_proto ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_wireless_security_remove_proto
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint32</span> i</code></em>);</pre>
+<p>Removes a protocol from the allowed protocol list.</p>
+<div class="refsect3">
+<a name="id-1.2.7.9.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>i</p></td>
+<td class="parameter_description"><p>index of the protocol to remove</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-remove-proto-by-value"></a><h3>nm_setting_wireless_security_remove_proto_by_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_wireless_security_remove_proto_by_value
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *proto</code></em>);</pre>
+<p>Removes a protocol from the allowed protocol list.</p>
+<div class="refsect3">
+<a name="id-1.2.7.9.9.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>proto</p></td>
+<td class="parameter_description"><p>the protocol to remove, one of "wpa" or "rsn"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.9.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the protocol was found and removed; <code class="literal">FALSE</code> it it was not.</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-clear-protos"></a><h3>nm_setting_wireless_security_clear_protos ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_wireless_security_clear_protos
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>);</pre>
+<p>Removes all protocols from the allowed list.  If there are no protocols
+specified then all protocols are allowed.</p>
+<div class="refsect3">
+<a name="id-1.2.7.9.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-get-num-pairwise"></a><h3>nm_setting_wireless_security_get_num_pairwise ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_wireless_security_get_num_pairwise
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.7.9.11.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.11.5"></a><h4>Returns</h4>
+<p> the number of pairwise encryption algorithms in the allowed list</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-get-pairwise"></a><h3>nm_setting_wireless_security_get_pairwise ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_wireless_security_get_pairwise
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint32</span> i</code></em>);</pre>
+<p>Returns the allowed pairwise encryption algorithm from allowed algorithm
+list.</p>
+<div class="refsect3">
+<a name="id-1.2.7.9.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>i</p></td>
+<td class="parameter_description"><p>index of an item in the allowed pairwise encryption algorithm list</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.12.6"></a><h4>Returns</h4>
+<p> the pairwise encryption algorithm at index <em class="parameter"><code>i</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-add-pairwise"></a><h3>nm_setting_wireless_security_add_pairwise ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_wireless_security_add_pairwise
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *pairwise</code></em>);</pre>
+<p>Adds an encryption algorithm to the list of allowed pairwise encryption
+algorithms.  If the list is not empty, then only access points that support
+one or more of the encryption algorithms in the list will be considered
+compatible with this connection.</p>
+<div class="refsect3">
+<a name="id-1.2.7.9.13.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>pairwise</p></td>
+<td class="parameter_description"><p>the encryption algorithm to add, one of "tkip" or "ccmp"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.13.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the algorithm was added to the list, <code class="literal">FALSE</code> if it was
+already in the list</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-remove-pairwise"></a><h3>nm_setting_wireless_security_remove_pairwise ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_wireless_security_remove_pairwise
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint32</span> i</code></em>);</pre>
+<p>Removes an encryption algorithm from the allowed pairwise encryption
+algorithm list.</p>
+<div class="refsect3">
+<a name="id-1.2.7.9.14.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>i</p></td>
+<td class="parameter_description"><p>the index of an item in the allowed pairwise encryption algorithm list</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-remove-pairwise-by-value"></a><h3>nm_setting_wireless_security_remove_pairwise_by_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_wireless_security_remove_pairwise_by_value
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *pairwise</code></em>);</pre>
+<p>Removes an encryption algorithm from the allowed pairwise encryption
+algorithm list.</p>
+<div class="refsect3">
+<a name="id-1.2.7.9.15.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>pairwise</p></td>
+<td class="parameter_description"><p>the encryption algorithm to remove, one of "tkip" or "ccmp"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.15.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the encryption algorith was found and removed; <code class="literal">FALSE</code> it it was not.</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-clear-pairwise"></a><h3>nm_setting_wireless_security_clear_pairwise ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_wireless_security_clear_pairwise
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>);</pre>
+<p>Removes all algorithms from the allowed list.  If there are no algorithms
+specified then all pairwise encryption algorithms are allowed.</p>
+<div class="refsect3">
+<a name="id-1.2.7.9.16.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-get-num-groups"></a><h3>nm_setting_wireless_security_get_num_groups ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_wireless_security_get_num_groups
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.7.9.17.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.17.5"></a><h4>Returns</h4>
+<p> the number of groupwise encryption algorithms in the allowed list</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-get-group"></a><h3>nm_setting_wireless_security_get_group ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_wireless_security_get_group
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint32</span> i</code></em>);</pre>
+<p>Returns the allowed groupwise encryption algorithm from allowed algorithm
+list.</p>
+<div class="refsect3">
+<a name="id-1.2.7.9.18.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>i</p></td>
+<td class="parameter_description"><p>index of an item in the allowed groupwise encryption algorithm list</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.18.6"></a><h4>Returns</h4>
+<p> the groupwise encryption algorithm at index <em class="parameter"><code>i</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-add-group"></a><h3>nm_setting_wireless_security_add_group ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_wireless_security_add_group
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *group</code></em>);</pre>
+<p>Adds an encryption algorithm to the list of allowed groupwise encryption
+algorithms.  If the list is not empty, then only access points that support
+one or more of the encryption algorithms in the list will be considered
+compatible with this connection.</p>
+<div class="refsect3">
+<a name="id-1.2.7.9.19.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>group</p></td>
+<td class="parameter_description"><p>the encryption algorithm to add, one of "wep40", "wep104",
+"tkip", or "ccmp"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.19.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the algorithm was added to the list, <code class="literal">FALSE</code> if it was
+already in the list</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-remove-group"></a><h3>nm_setting_wireless_security_remove_group ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_wireless_security_remove_group
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint32</span> i</code></em>);</pre>
+<p>Removes an encryption algorithm from the allowed groupwise encryption
+algorithm list.</p>
+<div class="refsect3">
+<a name="id-1.2.7.9.20.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>i</p></td>
+<td class="parameter_description"><p>the index of an item in the allowed groupwise encryption algorithm list</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-remove-group-by-value"></a><h3>nm_setting_wireless_security_remove_group_by_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_setting_wireless_security_remove_group_by_value
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *group</code></em>);</pre>
+<p>Removes an encryption algorithm from the allowed groupwise encryption
+algorithm list.</p>
+<div class="refsect3">
+<a name="id-1.2.7.9.21.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>group</p></td>
+<td class="parameter_description"><p>the encryption algorithm to remove, one of "wep40", "wep104",
+"tkip", or "ccmp"</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.21.6"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the algorithm was found and removed; <code class="literal">FALSE</code> it it was not.</p>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-clear-groups"></a><h3>nm_setting_wireless_security_clear_groups ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_wireless_security_clear_groups
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>);</pre>
+<p>Removes all algorithms from the allowed list.  If there are no algorithms
+specified then all groupwise encryption algorithms are allowed.</p>
+<div class="refsect3">
+<a name="id-1.2.7.9.22.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-get-psk"></a><h3>nm_setting_wireless_security_get_psk ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_wireless_security_get_psk (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.7.9.23.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.23.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--psk" title="The “psk” property"><span class="type">“psk”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-get-psk-flags"></a><h3>nm_setting_wireless_security_get_psk_flags ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="returnvalue">NMSettingSecretFlags</span></a>
+nm_setting_wireless_security_get_psk_flags
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.7.9.24.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.24.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="type">NMSettingSecretFlags</span></a> pertaining to the
+<a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--psk" title="The “psk” property"><span class="type">“psk”</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-get-leap-username"></a><h3>nm_setting_wireless_security_get_leap_username ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_wireless_security_get_leap_username
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.7.9.25.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.25.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--leap-username" title="The “leap-username” property"><span class="type">“leap-username”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-get-leap-password"></a><h3>nm_setting_wireless_security_get_leap_password ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_wireless_security_get_leap_password
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.7.9.26.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.26.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--leap-password" title="The “leap-password” property"><span class="type">“leap-password”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-get-leap-password-flags"></a><h3>nm_setting_wireless_security_get_leap_password_flags ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="returnvalue">NMSettingSecretFlags</span></a>
+nm_setting_wireless_security_get_leap_password_flags
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.7.9.27.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.27.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="type">NMSettingSecretFlags</span></a> pertaining to the
+<a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--leap-password" title="The “leap-password” property"><span class="type">“leap-password”</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-get-wep-key"></a><h3>nm_setting_wireless_security_get_wep_key ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_wireless_security_get_wep_key
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint32</span> idx</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.7.9.28.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>idx</p></td>
+<td class="parameter_description"><p>the WEP key index (0..3 inclusive)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.28.5"></a><h4>Returns</h4>
+<p> the WEP key at the given index</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-set-wep-key"></a><h3>nm_setting_wireless_security_set_wep_key ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_setting_wireless_security_set_wep_key
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>,
+                                <em class="parameter"><code><span class="type">guint32</span> idx</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *key</code></em>);</pre>
+<p>Sets a WEP key in the given index.</p>
+<div class="refsect3">
+<a name="id-1.2.7.9.29.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>idx</p></td>
+<td class="parameter_description"><p>the index of the key (0..3 inclusive)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>the WEP key as a string, in either hexadecimal, ASCII, or passphrase
+form as determiend by the value of the <a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--wep-key-type" title="The “wep-key-type” property"><span class="type">“wep-key-type”</span></a>
+property.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-get-wep-tx-keyidx"></a><h3>nm_setting_wireless_security_get_wep_tx_keyidx ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint32</span>
+nm_setting_wireless_security_get_wep_tx_keyidx
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.7.9.30.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.30.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--wep-tx-keyidx" title="The “wep-tx-keyidx” property"><span class="type">“wep-tx-keyidx”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-get-auth-alg"></a><h3>nm_setting_wireless_security_get_auth_alg ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+nm_setting_wireless_security_get_auth_alg
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.7.9.31.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.31.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--auth-alg" title="The “auth-alg” property"><span class="type">“auth-alg”</span></a> property of the setting</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-get-wep-key-flags"></a><h3>nm_setting_wireless_security_get_wep_key_flags ()</h3>
+<pre class="programlisting"><a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="returnvalue">NMSettingSecretFlags</span></a>
+nm_setting_wireless_security_get_wep_key_flags
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.7.9.32.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.32.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSetting.html#NMSettingSecretFlags" title="enum NMSettingSecretFlags"><span class="type">NMSettingSecretFlags</span></a> pertaining to the all WEP keys</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-setting-wireless-security-get-wep-key-type"></a><h3>nm_setting_wireless_security_get_wep_key_type ()</h3>
+<pre class="programlisting"><a class="link" href="NMSettingWirelessSecurity.html#NMWepKeyType" title="enum NMWepKeyType"><span class="returnvalue">NMWepKeyType</span></a>
+nm_setting_wireless_security_get_wep_key_type
+                               (<em class="parameter"><code><a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a> *setting</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.7.9.33.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>setting</p></td>
+<td class="parameter_description"><p>the <a class="link" href="NMSettingWirelessSecurity.html" title="NMSettingWirelessSecurity"><span class="type">NMSettingWirelessSecurity</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.7.9.33.5"></a><h4>Returns</h4>
+<p> the <a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--wep-key-type" title="The “wep-key-type” property"><span class="type">“wep-key-type”</span></a> property of the setting</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSettingWirelessSecurity.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-SETTING-NAME:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_SETTING_NAME</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_SETTING_NAME "802-11-wireless-security"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingWirelessSecurityError"></a><h3>enum NMSettingWirelessSecurityError</h3>
+<div class="refsect3">
+<a name="id-1.2.7.10.3.3"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-WIRELESS-SECURITY-ERROR-UNKNOWN:CAPS"></a>NM_SETTING_WIRELESS_SECURITY_ERROR_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>unknown or unclassified error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-WIRELESS-SECURITY-ERROR-INVALID-PROPERTY:CAPS"></a>NM_SETTING_WIRELESS_SECURITY_ERROR_INVALID_PROPERTY</p></td>
+<td class="enum_member_description">
+<p>the property was invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-WIRELESS-SECURITY-ERROR-MISSING-PROPERTY:CAPS"></a>NM_SETTING_WIRELESS_SECURITY_ERROR_MISSING_PROPERTY</p></td>
+<td class="enum_member_description">
+<p>the property was
+missing and is required</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-WIRELESS-SECURITY-ERROR-MISSING-802-1X-SETTING:CAPS"></a>NM_SETTING_WIRELESS_SECURITY_ERROR_MISSING_802_1X_SETTING</p></td>
+<td class="enum_member_description">
+<p>a property contained
+a value that requires the connection to contain a <a class="link" href="NMSetting8021x.html" title="NMSetting8021x"><span class="type">NMSetting8021x</span></a> setting</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-WIRELESS-SECURITY-ERROR-LEAP-REQUIRES-802-1X:CAPS"></a>NM_SETTING_WIRELESS_SECURITY_ERROR_LEAP_REQUIRES_802_1X</p></td>
+<td class="enum_member_description">
+<p>LEAP authentication
+was specified but key management was not set to "8021x"</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-WIRELESS-SECURITY-ERROR-LEAP-REQUIRES-USERNAME:CAPS"></a>NM_SETTING_WIRELESS_SECURITY_ERROR_LEAP_REQUIRES_USERNAME</p></td>
+<td class="enum_member_description">
+<p>LEAP authentication
+was specified but no LEAP username was given</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-SETTING-WIRELESS-SECURITY-ERROR-SHARED-KEY-REQUIRES-WEP:CAPS"></a>NM_SETTING_WIRELESS_SECURITY_ERROR_SHARED_KEY_REQUIRES_WEP</p></td>
+<td class="enum_member_description">
+<p>Shared Key
+authentication was specified but the setting did not specify WEP as the
+encryption protocol</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-ERROR:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_ERROR</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_ERROR nm_setting_wireless_security_error_quark ()
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMWepKeyType"></a><h3>enum NMWepKeyType</h3>
+<p>The <a class="link" href="NMSettingWirelessSecurity.html#NMWepKeyType" title="enum NMWepKeyType"><span class="type">NMWepKeyType</span></a> values specify how any WEP keys present in the setting
+are intepreted.  There are no standards governing how to hash the various WEP
+key/passphrase formats into the actual WEP key.  Unfortunately some WEP keys
+can be interpreted in multiple ways, requring the setting to specify how to
+interpret the any WEP keys.  For example, the key "732f2d712e4a394a375d366931"
+is both a valid Hexadecimal WEP key and a WEP passphrase.  Further, many
+ASCII keys are also valid WEP passphrases, but since passphrases and ASCII
+keys are hashed differently to determine the actual WEP key the type must be
+specified.</p>
+<div class="refsect3">
+<a name="id-1.2.7.10.5.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-WEP-KEY-TYPE-UNKNOWN:CAPS"></a>NM_WEP_KEY_TYPE_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>unknown WEP key type</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-WEP-KEY-TYPE-KEY:CAPS"></a>NM_WEP_KEY_TYPE_KEY</p></td>
+<td class="enum_member_description">
+<p>indicates a hexadecimal or ASCII formatted WEP key.
+Hex keys are either 10 or 26 hexadecimal characters (ie "5f782f2f5f" or
+"732f2d712e4a394a375d366931"), while ASCII keys are either 5 or 13 ASCII
+characters (ie "abcde" or "blahblah99$*1").</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-WEP-KEY-TYPE-PASSPHRASE:CAPS"></a>NM_WEP_KEY_TYPE_PASSPHRASE</p></td>
+<td class="enum_member_description">
+<p>indicates a WEP passphrase (ex "I bought a duck
+on my way back from the market 235Q&amp;^%^*%") instead of a hexadecimal or ASCII
+key.  Passphrases are between 8 and 64 characters inclusive and are hashed
+the actual WEP key using the MD5 hash algorithm.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-WEP-KEY-TYPE-LAST:CAPS"></a>NM_WEP_KEY_TYPE_LAST</p></td>
+<td class="enum_member_description">
+<p>placeholder value for bounds-checking</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-KEY-MGMT:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_KEY_MGMT</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_KEY_MGMT "key-mgmt"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-WEP-TX-KEYIDX:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_WEP_TX_KEYIDX</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_WEP_TX_KEYIDX "wep-tx-keyidx"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-AUTH-ALG:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_AUTH_ALG</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_AUTH_ALG "auth-alg"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-PROTO:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_PROTO</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_PROTO "proto"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-PAIRWISE:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_PAIRWISE</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_PAIRWISE "pairwise"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-GROUP:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_GROUP</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_GROUP "group"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-LEAP-USERNAME:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_LEAP_USERNAME</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_LEAP_USERNAME "leap-username"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-WEP-KEY0:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_WEP_KEY0</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_WEP_KEY0 "wep-key0"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-WEP-KEY1:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_WEP_KEY1</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_WEP_KEY1 "wep-key1"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-WEP-KEY2:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_WEP_KEY2</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_WEP_KEY2 "wep-key2"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-WEP-KEY3:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_WEP_KEY3</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_WEP_KEY3 "wep-key3"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-WEP-KEY-FLAGS:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_WEP_KEY_FLAGS</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_WEP_KEY_FLAGS "wep-key-flags"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-WEP-KEY-TYPE:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_WEP_KEY_TYPE</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_WEP_KEY_TYPE "wep-key-type"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-PSK:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_PSK</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_PSK "psk"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-PSK-FLAGS:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_PSK_FLAGS</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_PSK_FLAGS "psk-flags"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-LEAP-PASSWORD:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_LEAP_PASSWORD</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_LEAP_PASSWORD "leap-password"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-SETTING-WIRELESS-SECURITY-LEAP-PASSWORD-FLAGS:CAPS"></a><h3>NM_SETTING_WIRELESS_SECURITY_LEAP_PASSWORD_FLAGS</h3>
+<pre class="programlisting">#define NM_SETTING_WIRELESS_SECURITY_LEAP_PASSWORD_FLAGS "leap-password-flags"
+</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="NMSettingWirelessSecurity.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="NMSettingWirelessSecurity--auth-alg"></a><h3>The <code class="literal">“auth-alg”</code> property</h3>
+<pre class="programlisting">  “auth-alg”                 <span class="type">gchar</span> *</pre>
+<p>When WEP is used (ie, key-mgmt = "none" or "ieee8021x") indicate the
+802.11 authentication algorithm required by the AP here.  One of "open"
+for Open System, "shared" for Shared Key, or "leap" for Cisco LEAP.  When
+using Cisco LEAP (ie, key-mgmt = "ieee8021x" and auth-alg = "leap") the
+"leap-username" and "leap-password" properties must be specified.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingWirelessSecurity--group"></a><h3>The <code class="literal">“group”</code> property</h3>
+<pre class="programlisting">  “group”                    <span class="type">GSList_gchararray_</span> *</pre>
+<p>A list of group/broadcast encryption algorithms which prevents
+connections to Wi-Fi networks that do not utilize one of the algorithms
+in the list.  For maximum compatibility leave this property empty.  Each
+list element may be one of "wep40", "wep104", "tkip", or "ccmp".</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingWirelessSecurity--key-mgmt"></a><h3>The <code class="literal">“key-mgmt”</code> property</h3>
+<pre class="programlisting">  “key-mgmt”                 <span class="type">gchar</span> *</pre>
+<p>Key management used for the connection.  One of "none" (WEP), "ieee8021x"
+(Dynamic WEP), "wpa-none" (Ad-Hoc WPA-PSK), "wpa-psk" (infrastructure
+WPA-PSK), or "wpa-eap" (WPA-Enterprise).  This property must be set for
+any Wi-Fi connection that uses security.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingWirelessSecurity--leap-password"></a><h3>The <code class="literal">“leap-password”</code> property</h3>
+<pre class="programlisting">  “leap-password”            <span class="type">gchar</span> *</pre>
+<p>The login password for legacy LEAP connections (ie, key-mgmt =
+"ieee8021x" and auth-alg = "leap").</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingWirelessSecurity--leap-password-flags"></a><h3>The <code class="literal">“leap-password-flags”</code> property</h3>
+<pre class="programlisting">  “leap-password-flags”      <span class="type">guint</span></pre>
+<p>Flags indicating how to handle the
+<a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--leap-password" title="The “leap-password” property"><span class="type">“leap-password”</span></a> property.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &lt;= 7</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingWirelessSecurity--leap-username"></a><h3>The <code class="literal">“leap-username”</code> property</h3>
+<pre class="programlisting">  “leap-username”            <span class="type">gchar</span> *</pre>
+<p>The login username for legacy LEAP connections (ie, key-mgmt =
+"ieee8021x" and auth-alg = "leap").</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingWirelessSecurity--pairwise"></a><h3>The <code class="literal">“pairwise”</code> property</h3>
+<pre class="programlisting">  “pairwise”                 <span class="type">GSList_gchararray_</span> *</pre>
+<p>A list of pairwise encryption algorithms which prevents connections to
+Wi-Fi networks that do not utilize one of the algorithms in the list.
+For maximum compatibility leave this property empty.  Each list element
+may be one of "tkip" or "ccmp".</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingWirelessSecurity--proto"></a><h3>The <code class="literal">“proto”</code> property</h3>
+<pre class="programlisting">  “proto”                    <span class="type">GSList_gchararray_</span> *</pre>
+<p>List of strings specifying the allowed WPA protocol versions to use.
+Each element may be one "wpa" (allow WPA) or "rsn" (allow WPA2/RSN).  If
+not specified, both WPA and RSN connections are allowed.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingWirelessSecurity--psk"></a><h3>The <code class="literal">“psk”</code> property</h3>
+<pre class="programlisting">  “psk”                      <span class="type">gchar</span> *</pre>
+<p>Pre-Shared-Key for WPA networks.  If the key is 64-characters long, it
+must contain only hexadecimal characters and is interpreted as a
+hexadecimal WPA key.  Otherwise, the key must be between 8 and 63 ASCII
+characters (as specified in the 802.11i standard) and is interpreted as a
+WPA passphrase, and is hashed to derive the actual WPA-PSK used when
+connecting to the Wi-Fi network.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingWirelessSecurity--psk-flags"></a><h3>The <code class="literal">“psk-flags”</code> property</h3>
+<pre class="programlisting">  “psk-flags”                <span class="type">guint</span></pre>
+<p>Flags indicating how to handle the <a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--psk" title="The “psk” property"><span class="type">“psk”</span></a>
+property.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &lt;= 7</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingWirelessSecurity--wep-key-flags"></a><h3>The <code class="literal">“wep-key-flags”</code> property</h3>
+<pre class="programlisting">  “wep-key-flags”            <span class="type">guint</span></pre>
+<p>Flags indicating how to handle the <a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--wep-key0" title="The “wep-key0” property"><span class="type">“wep-key0”</span></a>,
+<a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--wep-key1" title="The “wep-key1” property"><span class="type">“wep-key1”</span></a>, <a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--wep-key2" title="The “wep-key2” property"><span class="type">“wep-key2”</span></a>,
+and <a class="link" href="NMSettingWirelessSecurity.html#NMSettingWirelessSecurity--wep-key3" title="The “wep-key3” property"><span class="type">“wep-key3”</span></a> properties.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &lt;= 7</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingWirelessSecurity--wep-key-type"></a><h3>The <code class="literal">“wep-key-type”</code> property</h3>
+<pre class="programlisting">  “wep-key-type”             <span class="type">guint</span></pre>
+<p>Controls the interpretation of WEP keys.  Allowed values are
+<a class="link" href="NMSettingWirelessSecurity.html#NM-WEP-KEY-TYPE-KEY:CAPS"><code class="literal">NM_WEP_KEY_TYPE_KEY</code></a>, in which case the key is either a 10- or
+26-character hexadecimal string, or a 5- or 13-character ASCII password;
+or <a class="link" href="NMSettingWirelessSecurity.html#NM-WEP-KEY-TYPE-PASSPHRASE:CAPS"><code class="literal">NM_WEP_KEY_TYPE_PASSPHRASE</code></a>, in which case the passphrase is provided
+as a string and will be hashed using the de-facto MD5 method to derive
+the actual WEP key.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Allowed values: &lt;= 2</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingWirelessSecurity--wep-key0"></a><h3>The <code class="literal">“wep-key0”</code> property</h3>
+<pre class="programlisting">  “wep-key0”                 <span class="type">gchar</span> *</pre>
+<p>Index 0 WEP key.  This is the WEP key used in most networks.  See the
+"wep-key-type" property for a description of how this key is interpreted.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingWirelessSecurity--wep-key1"></a><h3>The <code class="literal">“wep-key1”</code> property</h3>
+<pre class="programlisting">  “wep-key1”                 <span class="type">gchar</span> *</pre>
+<p>Index 1 WEP key.  This WEP index is not used by most networks.  See the
+"wep-key-type" property for a description of how this key is interpreted.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingWirelessSecurity--wep-key2"></a><h3>The <code class="literal">“wep-key2”</code> property</h3>
+<pre class="programlisting">  “wep-key2”                 <span class="type">gchar</span> *</pre>
+<p>Index 2 WEP key.  This WEP index is not used by most networks.  See the
+"wep-key-type" property for a description of how this key is interpreted.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingWirelessSecurity--wep-key3"></a><h3>The <code class="literal">“wep-key3”</code> property</h3>
+<pre class="programlisting">  “wep-key3”                 <span class="type">gchar</span> *</pre>
+<p>Index 3 WEP key.  This WEP index is not used by most networks.  See the
+"wep-key-type" property for a description of how this key is interpreted.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMSettingWirelessSecurity--wep-tx-keyidx"></a><h3>The <code class="literal">“wep-tx-keyidx”</code> property</h3>
+<pre class="programlisting">  “wep-tx-keyidx”            <span class="type">guint</span></pre>
+<p>When static WEP is used (ie, key-mgmt = "none") and a non-default WEP key
+index is used by the AP, put that WEP key index here.  Valid values are 0
+(default key) through 3.  Note that some consumer access points (like the
+Linksys WRT54G) number the keys 1 - 4.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Allowed values: &lt;= 3</p>
+<p>Default value: 0</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

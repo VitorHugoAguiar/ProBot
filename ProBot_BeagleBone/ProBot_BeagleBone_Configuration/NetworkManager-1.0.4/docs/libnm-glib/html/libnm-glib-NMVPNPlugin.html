@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NMVPNPlugin: libnm-glib Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libnm-glib Reference Manual">
+<link rel="up" href="ch02.html" title="libnm-glib API Reference">
+<link rel="prev" href="NMVPNConnection.html" title="NMVPNConnection">
+<link rel="next" href="libnm-glib-NMVpnPluginUiWidget.html" title="NMVpnPluginUiWidget">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libnm-glib-NMVPNPlugin.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="NMVPNConnection.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libnm-glib-NMVpnPluginUiWidget.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libnm-glib-NMVPNPlugin"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libnm-glib-NMVPNPlugin.top_of_page"></a>NMVPNPlugin</span></h2>
+<p>NMVPNPlugin</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libnm-glib-NMVPNPlugin.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-glib-NMVPNPlugin.html#nm-vpn-plugin-error-quark" title="nm_vpn_plugin_error_quark ()">nm_vpn_plugin_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/dbus-glib/dbus-glib-DBusGConnection.html#DBusGConnection"><span class="returnvalue">DBusGConnection</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libnm-glib-NMVPNPlugin.html#nm-vpn-plugin-get-connection" title="nm_vpn_plugin_get_connection ()">nm_vpn_plugin_get_connection</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/libnm-util/0.9/libnm-util-NetworkManagerVPN.html#NMVPNServiceState"><span class="returnvalue">NMVPNServiceState</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-glib-NMVPNPlugin.html#nm-vpn-plugin-get-state" title="nm_vpn_plugin_get_state ()">nm_vpn_plugin_get_state</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-glib-NMVPNPlugin.html#nm-vpn-plugin-set-state" title="nm_vpn_plugin_set_state ()">nm_vpn_plugin_set_state</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-glib-NMVPNPlugin.html#nm-vpn-plugin-secrets-required" title="nm_vpn_plugin_secrets_required ()">nm_vpn_plugin_secrets_required</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-glib-NMVPNPlugin.html#nm-vpn-plugin-set-login-banner" title="nm_vpn_plugin_set_login_banner ()">nm_vpn_plugin_set_login_banner</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-glib-NMVPNPlugin.html#nm-vpn-plugin-failure" title="nm_vpn_plugin_failure ()">nm_vpn_plugin_failure</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-glib-NMVPNPlugin.html#nm-vpn-plugin-set-config" title="nm_vpn_plugin_set_config ()">nm_vpn_plugin_set_config</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-glib-NMVPNPlugin.html#nm-vpn-plugin-set-ip4-config" title="nm_vpn_plugin_set_ip4_config ()">nm_vpn_plugin_set_ip4_config</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-glib-NMVPNPlugin.html#nm-vpn-plugin-set-ip6-config" title="nm_vpn_plugin_set_ip6_config ()">nm_vpn_plugin_set_ip6_config</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libnm-glib-NMVPNPlugin.html#nm-vpn-plugin-disconnect" title="nm_vpn_plugin_disconnect ()">nm_vpn_plugin_disconnect</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libnm-glib-NMVPNPlugin.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-glib-NMVPNPlugin.html#NM-VPN-PLUGIN-DBUS-SERVICE-NAME:CAPS" title="NM_VPN_PLUGIN_DBUS_SERVICE_NAME">NM_VPN_PLUGIN_DBUS_SERVICE_NAME</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libnm-glib-NMVPNPlugin.html#NM-VPN-PLUGIN-STATE:CAPS" title="NM_VPN_PLUGIN_STATE">NM_VPN_PLUGIN_STATE</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libnm-glib-NMVPNPlugin.html#NMVPNPluginError" title="enum NMVPNPluginError">NMVPNPluginError</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libnm-glib-NMVPNPlugin.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="libnm-glib-NMVPNPlugin.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="nm-vpn-plugin-error-quark"></a><h3>nm_vpn_plugin_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+nm_vpn_plugin_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-plugin-get-connection"></a><h3>nm_vpn_plugin_get_connection ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/dbus-glib/dbus-glib-DBusGConnection.html#DBusGConnection"><span class="returnvalue">DBusGConnection</span></a> *
+nm_vpn_plugin_get_connection (<em class="parameter"><code><span class="type">NMVPNPlugin</span> *plugin</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-plugin-get-state"></a><h3>nm_vpn_plugin_get_state ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/libnm-util/0.9/libnm-util-NetworkManagerVPN.html#NMVPNServiceState"><span class="returnvalue">NMVPNServiceState</span></a>
+nm_vpn_plugin_get_state (<em class="parameter"><code><span class="type">NMVPNPlugin</span> *plugin</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-plugin-set-state"></a><h3>nm_vpn_plugin_set_state ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_vpn_plugin_set_state (<em class="parameter"><code><span class="type">NMVPNPlugin</span> *plugin</code></em>,
+                         <em class="parameter"><code><a href="https://developer.gnome.org/libnm-util/0.9/libnm-util-NetworkManagerVPN.html#NMVPNServiceState"><span class="type">NMVPNServiceState</span></a> state</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-plugin-secrets-required"></a><h3>nm_vpn_plugin_secrets_required ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_vpn_plugin_secrets_required (<em class="parameter"><code><span class="type">NMVPNPlugin</span> *plugin</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *message</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> **hints</code></em>);</pre>
+<p>Called by VPN plugin implementations to signal to NetworkManager that secrets
+are required during the connection process.  This signal may be used to
+request new secrets when the secrets originally provided by NetworkManager
+are insufficient, or the VPN process indicates that it needs additional
+information to complete the request.</p>
+<div class="refsect3">
+<a name="id-1.3.30.6.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>the <span class="type">NMVPNPlugin</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>message</p></td>
+<td class="parameter_description"><p>an information message about why secrets are required, if any</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>hints</p></td>
+<td class="parameter_description"><p>VPN specific secret names for required new secrets</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.9.10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-plugin-set-login-banner"></a><h3>nm_vpn_plugin_set_login_banner ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_vpn_plugin_set_login_banner (<em class="parameter"><code><span class="type">NMVPNPlugin</span> *plugin</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *banner</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-plugin-failure"></a><h3>nm_vpn_plugin_failure ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_vpn_plugin_failure (<em class="parameter"><code><span class="type">NMVPNPlugin</span> *plugin</code></em>,
+                       <em class="parameter"><code><a href="https://developer.gnome.org/libnm-util/0.9/libnm-util-NetworkManagerVPN.html#NMVPNPluginFailure"><span class="type">NMVPNPluginFailure</span></a> reason</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-plugin-set-config"></a><h3>nm_vpn_plugin_set_config ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_vpn_plugin_set_config (<em class="parameter"><code><span class="type">NMVPNPlugin</span> *plugin</code></em>,
+                          <em class="parameter"><code><span class="type">GHashTable</span> *config</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-plugin-set-ip4-config"></a><h3>nm_vpn_plugin_set_ip4_config ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_vpn_plugin_set_ip4_config (<em class="parameter"><code><span class="type">NMVPNPlugin</span> *plugin</code></em>,
+                              <em class="parameter"><code><span class="type">GHashTable</span> *ip4_config</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-plugin-set-ip6-config"></a><h3>nm_vpn_plugin_set_ip6_config ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+nm_vpn_plugin_set_ip6_config (<em class="parameter"><code><span class="type">NMVPNPlugin</span> *plugin</code></em>,
+                              <em class="parameter"><code><span class="type">GHashTable</span> *ip6_config</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="nm-vpn-plugin-disconnect"></a><h3>nm_vpn_plugin_disconnect ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+nm_vpn_plugin_disconnect (<em class="parameter"><code><span class="type">NMVPNPlugin</span> *plugin</code></em>,
+                          <em class="parameter"><code><span class="type">GError</span> **err</code></em>);</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="libnm-glib-NMVPNPlugin.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-DBUS-SERVICE-NAME:CAPS"></a><h3>NM_VPN_PLUGIN_DBUS_SERVICE_NAME</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_DBUS_SERVICE_NAME "service-name"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NM-VPN-PLUGIN-STATE:CAPS"></a><h3>NM_VPN_PLUGIN_STATE</h3>
+<pre class="programlisting">#define NM_VPN_PLUGIN_STATE             "state"
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="NMVPNPluginError"></a><h3>enum NMVPNPluginError</h3>
+<p>Returned by the VPN service plugin to indicate errors.</p>
+<div class="refsect3">
+<a name="id-1.3.30.7.4.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-GENERAL:CAPS"></a>NM_VPN_PLUGIN_ERROR_GENERAL</p></td>
+<td class="enum_member_description">
+<p>general failure</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-STARTING-IN-PROGRESS:CAPS"></a>NM_VPN_PLUGIN_ERROR_STARTING_IN_PROGRESS</p></td>
+<td class="enum_member_description">
+<p>the plugin is already starting,
+ and another connect request was received</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-ALREADY-STARTED:CAPS"></a>NM_VPN_PLUGIN_ERROR_ALREADY_STARTED</p></td>
+<td class="enum_member_description">
+<p>the plugin is already connected, and
+ another connect request was received</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-STOPPING-IN-PROGRESS:CAPS"></a>NM_VPN_PLUGIN_ERROR_STOPPING_IN_PROGRESS</p></td>
+<td class="enum_member_description">
+<p>the plugin is already stopping,
+ and another stop request was received</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-ALREADY-STOPPED:CAPS"></a>NM_VPN_PLUGIN_ERROR_ALREADY_STOPPED</p></td>
+<td class="enum_member_description">
+<p>the plugin is already stopped, and
+ another disconnect request was received</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-WRONG-STATE:CAPS"></a>NM_VPN_PLUGIN_ERROR_WRONG_STATE</p></td>
+<td class="enum_member_description">
+<p>the operation could not be performed in
+ this state</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-BAD-ARGUMENTS:CAPS"></a>NM_VPN_PLUGIN_ERROR_BAD_ARGUMENTS</p></td>
+<td class="enum_member_description">
+<p>the operation could not be performed as
+ the request contained malformed arguments, or arguments of unexpected type.
+ Usually means that one of the VPN setting data items or secrets was not of
+ the expected type (ie int, string, bool, etc).</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-LAUNCH-FAILED:CAPS"></a>NM_VPN_PLUGIN_ERROR_LAUNCH_FAILED</p></td>
+<td class="enum_member_description">
+<p>a child process failed to launch</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-CONNECTION-INVALID:CAPS"></a>NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID</p></td>
+<td class="enum_member_description">
+<p>the operation could not be performed
+ because the connection was invalid.  Usually means that the connection's
+ VPN setting was missing some required data item or secret.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="NM-VPN-PLUGIN-ERROR-INTERACTIVE-NOT-SUPPORTED:CAPS"></a>NM_VPN_PLUGIN_ERROR_INTERACTIVE_NOT_SUPPORTED</p></td>
+<td class="enum_member_description">
+<p>the operation could not be
+ performed as the plugin does not support interactive operations, such as
+ <code class="function">ConnectInteractive()</code> or <code class="function">NewSecrets()</code></p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>
