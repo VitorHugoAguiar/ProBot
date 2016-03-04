@@ -8,11 +8,9 @@ How to configure the ProBot BeagleBone:
 
 3 - Disable HDMI on the /boot/uEnv.txt
 
-4 - Install network-manager 1.0.4 (follow the instructions that are within the folder NetworkManager-1.0.4)
+4 - Install network-manager 1.0.4 (follow the instructions that are within the folder ProBot_BeagleBone_Configuration/NetworkManager-1.0.4)
 
 5 - Install Xenomai [from here] (http://syrianspock.github.io/embedded-linux/2015/08/03/xenomai-installation-on-a-beaglebone-black.html) and make the latency test
-
-    
 
 6 - Install zmq and smbus with:
     
@@ -25,7 +23,7 @@ How to configure the ProBot BeagleBone:
 
 8 - Use the same command for the others encoders files
 
-9 - Install crossbar (follow the instructions that are within the folder Crossbar)
+9 - Install crossbar (follow the instructions that are within the folder ProBot_BeagleBone_Configuration/Crossbar)
 
 11 - Type "crontab -e" and write:
 
