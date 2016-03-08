@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # Low Pass Filter used to obtain a smooth response from the joystick's potenciomenters and keyboard's arrows
 filteredDataFR=[0,0,0,0]
 filteredDataLR=[0,0,0,0]
