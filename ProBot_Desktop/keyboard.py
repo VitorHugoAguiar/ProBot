@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import pygame
 import ZMQCommunication
 import LowPassFilter
