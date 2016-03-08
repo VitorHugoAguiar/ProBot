@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import sys, pygame, pygame.midi, zmq, time, math
 import ZMQCommunication
 
