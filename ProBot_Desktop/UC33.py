@@ -47,7 +47,7 @@ class UC33():
 				self.KdV_UC33=(0.1*self.Matrix[30]+0.01*self.Matrix[22]+0.001*self.Matrix[14]-0.1*self.Matrix[6])
 				self.KpA_UC33=(0.1*self.Matrix[31]+0.01*self.Matrix[23]+0.001*self.Matrix[15]-0.1*self.Matrix[7])
 				self.KiA_UC33=(0.1*self.Matrix[32]+0.01*self.Matrix[24]+0.001*self.Matrix[16]-0.1*self.Matrix[8])
-				self.KdA_UC33=(0.1*self.Matrix[33])
+				self.KdA_UC33=(-0.1*self.Matrix[33])
 				print (" KpP %.3f\n" % self.KpP_UC33,"KiP %.3f\n" % self.KiP_UC33, "KdP %.3f\n" % self.KdP_UC33, "KpV %.3f\n" % self.KpV_UC33, "KiV %.3f\n" % self.KiV_UC33, "KdV %.3f\n" % self.KdV_UC33, "KpA %.3f\n" % self.KpA_UC33, "KiA %.3f\n" % self.KiA_UC33, "KdA %.3f\n" % self.KdA_UC33)
 				publisher=Pub_Sub.publisher('UC33', self.id, self.value)
 			
