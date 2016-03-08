@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 # First program to execute, where we choose the midi device
 print ('\nChoose the midi device you want to use:')
 print ('\n1 - Joystick')
