@@ -56,22 +56,17 @@ function checkVariable(){
 }
 
 var arrowName="";
-///////// KEYBOARD
 
 $(document).keydown(function(e) {
         noclicks=1;
         var code = (e.keyCode ? e.keyCode : e.which);
         if (code == 40) {
-            //console.log("down pressed");
             arrowName="down";
         } else if (code == 38) {
-            //console.log("up pressed");
             arrowName="up";
         } else if (code == 37) {
-            //console.log("left pressed");
             arrowName="left";
         } else if (code == 39) {
-            //console.log("right pressed");
             arrowName="right";
         }
          document.getElementById(arrowName).src=arrowName+"_.png";
@@ -88,16 +83,12 @@ $(document).keydown(function(e) {
 $(document).keyup(function(e) {
         var code = (e.keyCode ? e.keyCode : e.which);
         if (code == 40) {
-            //console.log("down release");
             arrowName="down";
         } else if (code == 38) {
-            //console.log("up release");
             arrowName="up";
         } else if (code == 37) {
-            //console.log("left release");
             arrowName="left";
         } else if (code == 39) {
-            //console.log("right release");
             arrowName="right";
         }
         document.getElementById(arrowName).src=arrowName+".png";
@@ -106,8 +97,6 @@ $(document).keyup(function(e) {
     });
 
 
-///////// MOUSE
-
 function hold(){
   noclicks=1;
   document.getElementById(arrowName).src=arrowName+"_.png";
@@ -115,7 +104,6 @@ function hold(){
 console.log(arrowName);
   setTimeout(function(){
      if (arrowName!="") {
-      //console.log(arrowName);
         hold();
       }
     }, 100);
@@ -128,9 +116,6 @@ console.log(arrowName);
 }
 
 function changeImage(id) {
-  //console.log("null="+arrowName);
-  //arrowName=id;
-
      setTimeout(function(){
      if (document.getElementById(id).src.match(id)) {
         document.getElementById(id).src=id+".png";
