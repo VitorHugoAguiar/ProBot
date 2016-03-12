@@ -4,7 +4,7 @@ How to configure the ProBot BeagleBone:
 
 2 - Run 
 	
-	apt-get update
+	sudo apt-get update
 
 3 - Disable HDMI on the /boot/uEnv.txt
 
