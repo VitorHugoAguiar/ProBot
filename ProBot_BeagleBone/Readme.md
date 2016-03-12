@@ -28,7 +28,7 @@ How to configure the ProBot BeagleBone:
 11 - Type "crontab -e" and write:
 
 	@reboot sh /(path to)/ProBot/ProBot_BeagleBone/EnableEncoders.sh
-	@reboot python /(path to)/ProBot/ProBot_BeagleBone/forward_ZMQ.py
+	@reboot python /(path to)/ProBot/ProBot_BeagleBone/forward_ZMQ_Client.py
 	@reboot sleep 20 && python /(path to)/ProBot/ProBot_BeagleBone/WebClient.py ws://(server ip's):9000
 
 12 - Restart BeagleBone	
