@@ -1,3 +1,0 @@
-# case 5: multi-argument allow-* (even worse: trailing space)
-allow-hotplug eth0 wlan0 
-

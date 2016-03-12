@@ -1,5 +1,0 @@
-# case 3: line wrapped over multiple lines & multi-argument allow-*
-allow-hotplug eth0 \
-		wlan0 \
-		bnep0
-
