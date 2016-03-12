@@ -1,7 +1,7 @@
 Install the following libraries:
 
-    apt-get install python3-pygame
-    apt-get install python-zmq
+    sudo apt-get install python3-pygame
+    sudo apt-get install python-zmq
 
 Run:
 
