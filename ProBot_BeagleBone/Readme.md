@@ -29,7 +29,7 @@ How to configure the ProBot BeagleBone:
 
 	@reboot sh /(path to)/ProBot/ProBot_BeagleBone/EnableEncoders.sh
 	@reboot python /(path to)/ProBot/ProBot_BeagleBone/forward_ZMQ.py
-	@reboot sleep 20 && python /(path to)/ProBot/ProBot_BeagleBone/WebClient.py ws://(ip of the server):9000
+	@reboot sleep 20 && python /(path to)/ProBot/ProBot_BeagleBone/WebClient.py ws://(server ip's):9000
 
 12 - Restart BeagleBone	
 
