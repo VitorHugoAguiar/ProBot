@@ -25,7 +25,7 @@ How to configure the ProBot BeagleBone:
 
 9 - Install crossbar (follow the instructions that are within the folder Crossbar)
 
-11 - Type "crontab -e" and write:
+11 - Type "sudo crontab -e" and write:
 
 	@reboot sh /(path to)/ProBot/ProBot_BeagleBone/EnableEncoders.sh
 	@reboot python /(path to)/ProBot/ProBot_BeagleBone/forward_ZMQ_Client.py
