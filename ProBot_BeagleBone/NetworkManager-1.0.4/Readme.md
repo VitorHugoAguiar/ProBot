@@ -16,6 +16,7 @@ Execute the following commands:
         --disable-ppp        \
         --with-systemdsystemunitdir=no \
         --docdir=/usr/share/doc/network-manager-1.0.4
+        
     sudo make
     sudo make check
     sudo make install
