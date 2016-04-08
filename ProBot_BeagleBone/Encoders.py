@@ -29,7 +29,7 @@ class EncodersReadings():
         wheelPosition1_m = (float(wheelPosition1)) / Pconst.ticks * math.pi * Pconst.wheelDiameter	# Calculate the travelled distance for first encoder
         wheelPosition2_m = (float(wheelPosition2)) / Pconst.ticks * math.pi * Pconst.wheelDiameter	# Calculated the travelled distance for second encoder
 
-        wheelVelocity1 = float(wheelPosition1_m - self.LastwheelPosition1)				# Wheel velocity (we are sampling at 100ms the encoders)
+        wheelVelocity1 = float(wheelPosition1_m - self.LastwheelPosition1)				# Wheel velocity
 	wheelVelocity2 = float(wheelPosition2_m - self.LastwheelPosition2)   		
 
  
