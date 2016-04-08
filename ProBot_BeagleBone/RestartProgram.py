@@ -4,6 +4,7 @@ import os
 import zmq
 import SocketCommunication
 
+# Initialization of classes from local files
 Pub_Sub = SocketCommunication.publisher_and_subscriber()
 
 class Restart():
