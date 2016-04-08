@@ -4,10 +4,11 @@
 import Adafruit_BBIO.UART as UART
 import serial
 import struct
+import ProBotConstants
 
 # Start the UART1
 UART.setup("UART1")
-
+Pconst = ProBotConstants.Constants()
 
 # Packetized serial mode in the Sabertooth
 class PacketizedCommunication():
@@ -15,15 +16,10 @@ class PacketizedCommunication():
     commands = {'motor1fwd': 0, 'motor1bwd': 1, 'vmin': 2, 'vmax': 3, 'motor2fwd': 4, 'motor2bwd': 5, 'motor1drive': 6, 'motor2drive': 7, 'timeout': 14, 'baud': 15}
     baudcodes = {2400: 1, 9600: 2, 19200: 3, 38400: 4}
 
-    # Baudrate and address for sabertooth controller
-    baud = 38400
-    addr = 128
-
     # Define serial connection
-    ser = serial.Serial('/dev/ttyO1', baud, timeout=0.5)
+    ser = serial.Serial('/dev/ttyO1', Pconst.baud, timeout=0.5)
 
     # Initialization of the sabertooth connection
-    print "\nSending commands to the address", addr, "with a baudrate of\n", baud
     ser.flush()
     ser.write(chr(0xAA))
     ser.flush()
@@ -52,6 +48,6 @@ class PacketizedCommunication():
         return struct.pack('BBBB', address, command, data, (127 & (address+command + data)))
 
     def stopAndReset(self):											# Stop and Reset function to begin or end
-        self.drive(self.addr, 1, int(0))
-        self.drive(self.addr, 2, int(0))
+        self.drive(Pconst.addr, 1, int(0))
+        self.drive(Pconst.addr, 2, int(0))
         self.ser.flush()	
