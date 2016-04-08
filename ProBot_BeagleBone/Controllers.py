@@ -6,6 +6,7 @@ import ProBotConstants
 import decimal
 import time
 
+# Initialization of classes from local files
 Pconst = ProBotConstants.Constants()
 
 # PID functions
