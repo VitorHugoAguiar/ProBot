@@ -6,6 +6,7 @@ import serial
 import struct
 import ProBotConstants
 
+# Initialization of classes from local files
 Pconst = ProBotConstants.Constants()
 
 # Start the UART1
