@@ -6,9 +6,11 @@ import serial
 import struct
 import ProBotConstants
 
+Pconst = ProBotConstants.Constants()
+
 # Start the UART1
 UART.setup("UART1")
-Pconst = ProBotConstants.Constants()
+
 
 # Packetized serial mode in the Sabertooth
 class PacketizedCommunication():
