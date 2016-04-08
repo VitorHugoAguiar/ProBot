@@ -5,6 +5,7 @@ import eqep
 import math
 import ProBotConstants
 
+# Initialization of classes from local files
 Pconst = ProBotConstants.Constants()
 
 # Instantiate an instance of the driver for encoder of the motor 1
