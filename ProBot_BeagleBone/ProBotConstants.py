@@ -3,7 +3,6 @@
 # Constants used in the algorithm
 class Constants():
     def __init__(self):
-	self.userChoice=0
 	self.baud=38400
 	self.addr=128
 	self.PWM_Freq=15000
