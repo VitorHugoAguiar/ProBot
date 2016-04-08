@@ -11,7 +11,7 @@ from autobahn.twisted.websocket import WebSocketClientFactory, \
     WebSocketClientProtocol, \
     connectWS
 
-
+# Initialization of classes from local files
 Pub_Sub = SocketCommunication.publisher_and_subscriber()
 
 class EchoClientProtocol(WebSocketClientProtocol):
