@@ -2,7 +2,6 @@
 
 # Python Standart Library Imports
 import Adafruit_BBIO.ADC as ADC
-import Adafruit_BBIO.GPIO as GPIO
 import ProBotConstants
 
 # Initialization of classes from local files
@@ -11,15 +10,11 @@ Pconst = ProBotConstants.Constants()
 # Start the ADC
 ADC.setup()
 
-# Definition of the GPIO's
-GPIO.setup(Pconst.RedLED, GPIO.OUT)
-GPIO.setup(Pconst.GreenLED, GPIO.OUT)
-
 # Battery measurement
 class BatteryVoltage():
 
         def VoltageValue(self, type):
-            # Readings from the BeagleBone and Motors batteries
+            # Reading from the LiPo battery
             options = {'LiPo': [Pconst.AnalogPinLiPo, Pconst.mLiPo, Pconst.MinRedLiPo, Pconst.GreenLED, Pconst.RedLED]}
             voltageVar = options[type]
 
