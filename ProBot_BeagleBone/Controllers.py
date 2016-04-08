@@ -27,7 +27,7 @@ class PIDControllers():
 
     def standardPID(self, reference, measured, id, value, type, userChoice1):
         self.error = float(reference - measured)
-	# Updating the local variables with the values from th UC33
+	# Updating the local variables with the values from the UC33
 	idInt=int(id)
 	self.Matrix[idInt]=value
 	self.KpP_UC33=(1*self.Matrix[25]+0.01*self.Matrix[17]+0.001*self.Matrix[9]-0.1*self.Matrix[1])
@@ -39,8 +39,8 @@ class PIDControllers():
 	self.KpV_UC33=(1*self.Matrix[31]+0.01*self.Matrix[23]+0.001*self.Matrix[15]-0.1*self.Matrix[7])
 	self.KiV_UC33=(1*self.Matrix[32]+0.01*self.Matrix[24]+0.001*self.Matrix[16]-0.1*self.Matrix[8])
 	self.KdV_UC33=(1*self.Matrix[33])
-
-
+	
+	# Load of the right values for the controllers depending on if we are using Sabertooth of PWM controller
 	if userChoice1=='1':	
 		KpV=Pconst.SaberTooth_KpV
 		KiV=Pconst.SaberTooth_KiV
