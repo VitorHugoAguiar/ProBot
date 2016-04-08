@@ -72,7 +72,7 @@ if userChoice1=='2':
 	print "\nSending a PWM signal with a frequency of", Pconst.PWM_Freq, "Hz"
 
 class ProBot():
-    def __init__(self, wheelPositionRef=0, VelocityRef=0, TurnMotorRight=0, TurnMotorLeft=0, id=0, value=0, lastAccelerometerAngleX=0, LoopTimeRatioSeg=0, sensor=0, filteredX=0, lock=0):
+    def __init__(self, wheelPositionRef=0, VelocityRef=0, TurnMotorRight=0, TurnMotorLeft=0, id=0, value=0, lastAccelerometerAngleX=0, LoopTimeRatioSeg=0, sensor=0, filteredX=0):
 	self.wheelPositionRef = wheelPositionRef
         self.VelocityRef = VelocityRef
         self.TurnMotorRight = TurnMotorRight
@@ -83,28 +83,27 @@ class ProBot():
 	self.LoopTimeRatioSeg=LoopTimeRatioSeg
 	self.sensor=MPU6050(0x68)
 	self.filteredX=filteredX
-	self.lock=lock
 
     def MPU6050Readings(self):
+    	# Readings from the MPU6050
         accel_data = self.sensor.get_accel_data()
     	gyro_data = self.sensor.get_gyro_data()
   
 	RAD_TO_DEG = 57.29578	
  	AccXangle = ((atan2(accel_data['y'],accel_data['z'])+pi)*RAD_TO_DEG)-180
-
+	
+	# Complementary filter
     	self.filteredX = float(0.98 * (self.lastAccelerometerAngleX+self.LoopTimeRatioSeg*gyro_data['x']) + (1 - 0.98) * AccXangle)
     	self.lastAccelerometerAngleX=self.filteredX
 	self.filteredX=self.filteredX+4
-	#print self.filteredX
 	return self.filteredX
 
     def Calibration_MPU6050(self):
+    	# Calibration of the MPU6050, on the begginer of the program
 	ProBot.MPU6050Readings()
 	while self.filteredX<-0.2 or self.filteredX>0.2:
 		ProBot.MPU6050Readings()
 	
-
-
     def SabertoothCommunication_initialization(self):
     	# Starting the communication with Sabertooth
         GPIO.output(Pconst.RedLED, GPIO.HIGH)
@@ -117,6 +116,7 @@ class ProBot():
 	GPIO.output(Pconst.BlueLED, GPIO.HIGH)
 
     def PWM_initialization(self):
+    	# Starting the communication with the PWM controller
         GPIO.output(Pconst.RedLED, GPIO.HIGH)
 
         time.sleep(3)									# Wait to stabilize the communication
@@ -134,7 +134,7 @@ class ProBot():
 
         else:
             midi_device, subscriberSplit2, subscriberSplit3  = subscriber.split()
-	    #print midi_device, subscriberSplit2, subscriberSplit3           
+
             if midi_device=='UC33':
                 self.id=float(decimal.Decimal(subscriberSplit2))
                 self.value=float(decimal.Decimal(subscriberSplit3))
@@ -149,6 +149,7 @@ class ProBot():
                 return  self.VelocityRef,  self.TurnMotorRight, self.TurnMotorLeft
 
     def RestartProgram(self):
+    	# Routine called when the angle is out of range and we need to restart the program
 	PC.stopAndReset()
 	
 	GPIO.output(Pconst.GreenLED, GPIO.LOW)
@@ -156,6 +157,7 @@ class ProBot():
 
 	print "\nProBot angle's out of range!!!"
 	print "\nPut ProBot at 90 degrees!!!"
+	
 	while self.filteredX<-0.2 or self.filteredX>0.2:
 		ProBot.MPU6050Readings()
 
@@ -175,22 +177,24 @@ class ProBot():
 	time.sleep(1.5)
         while True:
             try:
-		#print "dentro do while"
 		LoopTime=datetime.datetime.now()
 
 		# Verification of the voltage from the Beaglebone and motors batteries
                 Battery.VoltageValue('LiPo')
-
+		
+		# Reading the MPU6050 values
 		ProBot.MPU6050Readings()
 		
 		# Readings from the encoders
                 Encoders = Enc.EncodersValues(0)
 		wheelVelocity1  = Encoders [0]               
 		wheelVelocity2 = Encoders[1]
-
+		
+		# Checking if the angle is out of range
 		if self.filteredX<-20 or self.filteredX>20:
 			ProBot.RestartProgram()
-
+			
+		# Reading the values from the midi device and the webpage
                 Midi_device = ProBot.Midi_device()
 
                 # With the values from the midi devices or WebPage, we can calculate the outputs from the controllers
@@ -199,13 +203,14 @@ class ProBot():
                 
 		rightMotor = PID.standardPID(VelocityController1, self.filteredX, self.id, self.value, 'Angle1', userChoice1)
                 leftMotor = PID.standardPID(VelocityController2, self.filteredX, self.id, self.value, 'Angle2', userChoice1)
-
-                # Sending the values to the Sabertooth that is connected to the motors
+                
 		if userChoice1=='1':
+			# Sending the values to the Sabertooth that is connected to the motors
 			PC.drive(Pconst.addr, 1, int(rightMotor))
 	                PC.drive(Pconst.addr, 2, int(leftMotor))
 
 		if userChoice1=='2':
+			# Sending the values to the PWM controller that is connected to the motors
 			percentageR=0.78125*math.fabs(rightMotor)
 			percentageL=0.78125*math.fabs(leftMotor)
 			percentageR = max(0, min(percentageR, 100))
