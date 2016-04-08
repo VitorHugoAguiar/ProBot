@@ -153,6 +153,7 @@ class ProBot():
 	PC.stopAndReset()
 	
 	GPIO.output(Pconst.GreenLED, GPIO.LOW)
+	GPIO.output(Pconst.RedLED, GPIO.LOW)
 	GPIO.output(Pconst.BlueLED, GPIO.HIGH)
 
 	print "\nProBot angle's out of range!!!"
