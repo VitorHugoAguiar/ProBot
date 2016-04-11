@@ -11,7 +11,7 @@ How to configure the ProBot BeagleBone:
 
 4 - To Install network-manager 1.0.4, run:
 
-	./install_NetworkManager-1.0.4
+	./install_NetworkManager-1.0.4.py
 	
 5 - Install the encoders running the following command:
 	
