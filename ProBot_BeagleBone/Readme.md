@@ -3,7 +3,7 @@ How to configure the ProBot BeagleBone:
 1 - Install the lastest debian image [from here]
 (https://beagleboard.org/latest-images). 
 
-2 - Install machinekit following the instructions [from here] (https://github.com/machinekit/machinekit-docs/blob/master/machinekit-documentation/getting-started/getting-started-platform.asciidoc).
+2 - Install machinekit following the instructions [from here] (https://github.com/machinekit/machinekit-docs/blob/master/machinekit-documentation/getting-started/installing-packages.asciidoc).
 
 3 - The HDMI port causes interference on the functioning of the USB port and some Encoders GPIO's. To disable it, remove the # in front of the cape_disable command on the /boot/uEnv.txt so it looks like: 
 
