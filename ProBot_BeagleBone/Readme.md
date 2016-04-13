@@ -11,15 +11,15 @@ How to configure the ProBot BeagleBone:
 
 4 - To Install network-manager 1.0.4, run:
 
-	./install_NetworkManager-1.0.4.py
+	./install_NetworkManager-1.0.4.sh
 	
 5 - Install the encoders running the following command:
 	
-	./install_Encoders.py
+	./install_Encoders.sh
 	
 6 - Install crossbar running:
 
-	./install_Crossbar.py
+	./install_Crossbar.sh
 	
 7 - Install zmq and smbus with:
     
