@@ -26,11 +26,11 @@ How to configure the ProBot BeagleBone:
     
     sudo apt-get -y install python-zmq python-smbus
 
-8 - Type "sudo crontab -e" and write:
+8 - To enable on the boot the execution of some scripts required, type:
 
-	@reboot sh /(path to)/ProBot/ProBot_BeagleBone/EnableEncoders.sh
-	@reboot python /(path to)/ProBot/ProBot_BeagleBone/forward_ZMQ_Client.py
-	@reboot sleep 20 && python /(path to)/ProBot/ProBot_BeagleBone/WebClient.py ws://(server ip's):9000
+	sudo sh install_bootScripts.sh 
+	
+Note: Don't forget to change the path to this files and the server's ip
 
 9 - Restart BeagleBone	
 
