@@ -1,6 +1,6 @@
 How to configure the ProBot BeagleBone:
 
-1 - Install debian image
+1 - Install the lastest debian image [from here]. (https://beagleboard.org/latest-images). 
 
 2 - Install machinekit following the instructions [from here] (https://github.com/strahlex/asciidoc-sandbox/wiki/Creating-a-Machinekit-Debian-Image).
 
