@@ -11,14 +11,17 @@ How to configure the ProBot BeagleBone:
 
 4 - To Install network-manager 1.0.4, run:
 
+	cd ProBot/ProBot_BeagleBone/
 	./install_NetworkManager-1.0.4.sh
 	
 5 - Install the encoders running the following command:
-	
+
+	cd ProBot/ProBot_BeagleBone/
 	./install_Encoders.sh
 	
 6 - Install crossbar running:
 
+	cd ProBot/ProBot_BeagleBone/
 	./install_Crossbar.sh
 	
 7 - Install zmq and smbus with:
