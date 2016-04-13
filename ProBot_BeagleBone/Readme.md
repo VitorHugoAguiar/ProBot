@@ -10,21 +10,15 @@ How to configure the ProBot BeagleBone:
     ##Disable HDMI
     cape_disable=capemgr.disable_partno=BB-BONELT-HDMI,BB-BONELT-HDMIN
 
-4 - Go to:
-	
-	cd ProBot/ProBot_BeagleBone
-
-and:
-
-	4.1 - To Install network-manager 1.0.4, run:
+4 - To Install network-manager 1.0.4, run:
 
 	sudo sh install_NetworkManager-1.0.4.sh
 	
-	4.2 - Install the encoders running the following command:
+5 -  Install the encoders running the following command:
 
 	sudo sh install_Encoders.sh
 	
-	4.3 - Install crossbar running:
+6 -  Install crossbar running:
 
 	sudo sh install_Crossbar.sh
 
@@ -32,7 +26,7 @@ and:
 
 	sudo sh install_bootScripts.sh 
 	
-Note: Don't forget to change the files path and the server's ip
+Note: Don't forget to change the files path and the server's ip.
 
 6 - Restart BeagleBone	
 
