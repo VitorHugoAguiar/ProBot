@@ -12,6 +12,8 @@ How to configure the ProBot BeagleBone:
     cape_disable=capemgr.disable_partno=BB-BONELT-HDMI,BB-BONELT-HDMIN
 
 4 - Use git clone to download the ProBot's files.
+	
+	git clone https://github.com/VitorHugoAguiar/ProBot.git
 
 5 - To Install network-manager 1.0.4, run:
 
