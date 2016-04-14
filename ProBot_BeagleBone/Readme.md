@@ -26,7 +26,7 @@ How to configure the ProBot BeagleBone:
 
 	sudo sh install_bootScripts.sh 
 	
-Note: Don't forget to change the files path and the server's ip.
+Note: Open the install_bootScripts.sh and change the files path and the server's ip.
 
 6 - Restart BeagleBone	
 
