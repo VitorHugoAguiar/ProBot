@@ -26,6 +26,10 @@ and:
 6.1 - To Install network-manager 1.0.4, run:
 
 	sudo sh install_NetworkManager-1.0.4.sh
+
+6.1.1 - To configure the networks and the BeagleBone's ip, do:
+	
+	sudo nmtui
 	
 6.2 -  Install the encoders running the following command:
 
