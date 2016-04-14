@@ -37,10 +37,10 @@ and:
 
 6.4 - To enable on the boot the execution of some scripts required, type:
 
-	sudo sh install_bootScripts.sh 
-	
 Note: Open the install_bootScripts.sh and change the files path and the server's ip.
 
+	sudo sh install_bootScripts.sh 
+	
 7 - Restart BeagleBone	
 
 8 - Go again to ProBot/ProBot_BeagleBone and run ProBot.py to iniatiliaze the program:
