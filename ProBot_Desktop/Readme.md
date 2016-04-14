@@ -1,9 +1,9 @@
-Install the following libraries:
+1 - Install the following libraries:
 
     sudo apt-get install python3-pygame
     sudo apt-get install python-zmq
 
-Run:
+2 - Run:
 
     python3 Midi_device.py
 
