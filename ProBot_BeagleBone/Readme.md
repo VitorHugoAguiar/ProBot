@@ -4,6 +4,7 @@ How to configure the ProBot BeagleBone:
 (https://beagleboard.org/latest-images). 
 
 2 - Make the update with:
+
 	sudo apt-get update
 	
 3 - Install machinekit following the instructions [from here] (https://github.com/machinekit/machinekit-docs/blob/master/machinekit-documentation/getting-started/installing-packages.asciidoc).
