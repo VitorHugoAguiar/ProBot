@@ -24,6 +24,7 @@ Note: This is gonna take a while :(
 	sudo sh everything_ProBot.sh
 
 This file is gonna install:
+
 	machinekit
 	NetworkManager-1.0.4
 	Encoders
