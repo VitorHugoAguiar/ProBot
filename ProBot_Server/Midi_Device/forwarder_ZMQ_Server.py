@@ -2,7 +2,8 @@
 import zmq
 
 def main():
-    print "\nServer for ProBot is running..."
+    print "\nProBot's ZMQ Server is running..."
+
     try:
         context = zmq.Context(1)
         # Socket facing clients
