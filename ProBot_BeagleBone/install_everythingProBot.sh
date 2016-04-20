@@ -44,11 +44,12 @@ sudo echo 'deb http://ftp.nl.debian.org/debian/ jessie main' >> /etc/apt/sources
 sudo echo 'deb-src http://ftp.nl.debian.org/debian/ jessie main' >> /etc/apt/sources.list
 sudo echo 'deb http://ftp.nl.debian.org/debian/ sid main' >> /etc/apt/sources.list
 sudo echo 'deb-src http://ftp.nl.debian.org/debian/ sid main' >> /etc/apt/sources.list
-sudo rm -rf /etc/apt/apt.conf.d/02compress-indexes 
 
 sudo apt-get update
 
 sudo apt-get install -y -t sid libczmq-dev
+sudo rm -rf /etc/apt/apt.conf.d/02compress-indexes 
+sudo apt-get update
 sudo apt-get install -y apt-show-versions
 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 43DDF224
