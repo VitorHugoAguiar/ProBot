@@ -35,6 +35,7 @@ sudo sh -c \
 "echo 'Package: *
 Pin: release a=stable
 Pin-Priority: 900
+
 Package: *
 Pin: release o=Debian
 Pin-Priority: -10' > \
@@ -48,6 +49,7 @@ sudo echo 'deb-src http://ftp.nl.debian.org/debian/ sid main' >> /etc/apt/source
 sudo apt-get update
 
 sudo apt-get install -y -t sid libczmq-dev
+
 sudo rm -rf /etc/apt/apt.conf.d/02compress-indexes 
 sudo apt-get update
 sudo apt-get install -y apt-show-versions
