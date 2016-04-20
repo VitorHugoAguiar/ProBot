@@ -61,6 +61,8 @@ sudo apt-get install -y apt-show-versions
 sudo apt-get install -y linux-image-3.8.13-xenomai-r78 
 sudo apt-get install -y machinekit-xenomai machinekit-dev
 
+# MACHINEKIT INSTALLED!!!
+
 sudo apt-get -y install intltool libdbus-glib-1-dev libgudev-1.0-dev libnl-3-dev libnl-route-3-dev libnl-genl-3-dev uuid-dev libreadline-dev libnss3-dev ppp-dev libndp-dev python-gi python-dbus libnewt-dev python-zmq python-smbus build-essential libssl-dev libffi-dev python-dev
 sudo python get-pip.py
 sudo pip install --upgrade six
@@ -81,6 +83,8 @@ sudo make && sudo make install
 
 sudo cp network-manager /etc/init.d && sudo cp NetworkManager.conf /etc/NetworkManager && sudo update-rc.d network-manager defaults
 
+# NETWORK MANAGER INSTALLED!!!
+
 cd ..
 cd encoders
 sudo cp bone_eqep0-00A0.dtbo /lib/firmware
@@ -88,4 +92,9 @@ sudo cp bone_eqep1-00A0.dtbo /lib/firmware
 sudo cp bone_eqep2-00A0.dtbo /lib/firmware
 sudo cp bone_eqep2b-00A0.dtbo /lib/firmware
 
+# ENCODERS INSTALLED!!!
+
 sudo pip install crossbar
+
+# CROSSBAR INSTALLED!!
+#NOW YOU ARE READY TO GO!!!!
