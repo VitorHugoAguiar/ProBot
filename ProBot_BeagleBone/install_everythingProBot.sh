@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 echo "Please enter the Server's ip: "
 read input_variable
 echo "Please enter the port that you gonna use: "
@@ -24,6 +23,8 @@ else
 fi
 
 set -ex
+sudo crontab -e
+(sudo crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/WebClient.py $input_variable:$input_variable2") |sudo crontab -
 sudo crontab -r
 (sudo crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/WebClient.py $input_variable:$input_variable2") |sudo crontab -
 (sudo crontab -l ; echo "@reboot sh $(pwd -P)/EnableEncoders.sh") |sudo crontab -
@@ -31,18 +32,14 @@ sudo crontab -r
 (sudo crontab -l ; echo "@reboot python $(pwd -P)/RestartProgram_ZMQ.py") |sudo crontab -
 (sudo crontab -l ; echo "@reboot python $(pwd -P)/RestartProgram.py") |sudo crontab -
 
-
-
 sudo sh -c \
 "echo 'Package: *
 Pin: release a=stable
 Pin-Priority: 900
-
 Package: *
 Pin: release o=Debian
 Pin-Priority: -10' > \
 /etc/apt/preferences.d/sid;"
-
 
 sudo echo 'deb http://ftp.nl.debian.org/debian/ jessie main' >> /etc/apt/sources.list
 sudo echo 'deb-src http://ftp.nl.debian.org/debian/ jessie main' >> /etc/apt/sources.list
