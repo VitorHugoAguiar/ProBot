@@ -64,7 +64,7 @@ sudo apt-get install -y machinekit-xenomai machinekit-dev
 
 sudo apt-get -y install intltool libdbus-glib-1-dev libgudev-1.0-dev libnl-3-dev libnl-route-3-dev libnl-genl-3-dev uuid-dev libreadline-dev libnss3-dev ppp-dev libndp-dev python-gi python-dbus libnewt-dev python-zmq python-smbus build-essential libssl-dev libffi-dev python-dev
 sudo python get-pip.py
-sudo pip install -y --upgrade setuptools
+sudo pip install --upgrade setuptools
 
 tar xf NetworkManager-1.0.4.tar.xz
 cd NetworkManager-1.0.4
