@@ -23,6 +23,7 @@ else
 fi
 
 set -ex
+export EDITOR=nano
 sudo crontab -r
 (sudo crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/WebClient.py $input_variable:$input_variable2") |sudo crontab -
 (sudo crontab -l ; echo "@reboot sh $(pwd -P)/EnableEncoders.sh") |sudo crontab -
