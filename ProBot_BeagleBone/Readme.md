@@ -21,7 +21,7 @@ and:
 
 Note: This is gonna take a while :(
 	
-	sudo sh everything_ProBot.sh
+	sudo sh install_everythingProBot.sh
 
 This file is gonna install:
 
