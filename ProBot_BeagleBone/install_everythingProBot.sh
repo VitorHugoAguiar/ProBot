@@ -31,7 +31,7 @@ sudo crontab -r
 (sudo crontab -l ; echo "@reboot python $(pwd -P)/RestartProgram_ZMQ.py") |sudo crontab -
 (sudo crontab -l ; echo "@reboot python $(pwd -P)/RestartProgram.py") |sudo crontab -
 
-sudo apt-get update
+
 
 sudo sh -c \
 "echo 'Package: *
@@ -50,16 +50,18 @@ sudo echo 'deb http://ftp.nl.debian.org/debian/ sid main' >> /etc/apt/sources.li
 sudo echo 'deb-src http://ftp.nl.debian.org/debian/ sid main' >> /etc/apt/sources.list
 sudo rm -rf /etc/apt/apt.conf.d/02compress-indexes 
 
+sudo apt-get update
+
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 43DDF224
 sudo sh -c \
   "echo 'deb http://deb.machinekit.io/debian jessie main' > \
   /etc/apt/sources.list.d/machinekit.list"
 
 sudo apt-get update
+
 sudo apt-get install -y -t sid libczmq-dev
 sudo apt-get install -y apt-show-versions
 sudo apt-get install -y linux-image-3.8.13-xenomai-r78 
-sudo apt-get update
 sudo apt-get install -y machinekit-xenomai machinekit-dev
 
 sudo apt-get -y install intltool libdbus-glib-1-dev libgudev-1.0-dev libnl-3-dev libnl-route-3-dev libnl-genl-3-dev uuid-dev libreadline-dev libnss3-dev ppp-dev libndp-dev python-gi python-dbus libnewt-dev python-zmq python-smbus build-essential libssl-dev libffi-dev python-dev
