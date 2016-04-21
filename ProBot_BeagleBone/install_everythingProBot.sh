@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "Please enter the Server's ip: "
+echo "Please enter the ProBot Server ip: "
 read input_variable
 echo "Please enter the port that you gonna use: "
 read input_variable2
@@ -23,13 +23,11 @@ else
 fi
 
 set -ex
-export EDITOR=nano
-sudo crontab -r
-(sudo crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/WebClient.py $input_variable:$input_variable2") |sudo crontab -
-(sudo crontab -l ; echo "@reboot sh $(pwd -P)/EnableEncoders.sh") |sudo crontab -
-(sudo crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_Client.py") |sudo crontab -
-(sudo crontab -l ; echo "@reboot python $(pwd -P)/RestartProgram_ZMQ.py") |sudo crontab -
-(sudo crontab -l ; echo "@reboot python $(pwd -P)/RestartProgram.py") |sudo crontab -
+(sudo crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/WebClient.py $input_variable:$input_variable2") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+(sudo crontab -l ; echo "@reboot sh $(pwd -P)/EnableEncoders.sh") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+(sudo crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_Client.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+(sudo crontab -l ; echo "@reboot python $(pwd -P)/RestartProgram_ZMQ.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+(sudo crontab -l ; echo "@reboot python $(pwd -P)/RestartProgram.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 
 sudo sh -c \
 "echo 'Package: *
