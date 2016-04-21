@@ -43,10 +43,10 @@ Pin: release o=Debian
 Pin-Priority: -10' > \
 /etc/apt/preferences.d/sid;"
 
-sudo echo 'deb http://ftp.nl.debian.org/debian/ jessie main' > /etc/apt/sources.list
-sudo echo 'deb-src http://ftp.nl.debian.org/debian/ jessie main' > /etc/apt/sources.list
-sudo echo 'deb http://ftp.nl.debian.org/debian/ sid main' > /etc/apt/sources.list
-sudo echo 'deb-src http://ftp.nl.debian.org/debian/ sid main' > /etc/apt/sources.list
+sudo echo 'deb http://ftp.nl.debian.org/debian/ jessie main' >> /etc/apt/sources.list
+sudo echo 'deb-src http://ftp.nl.debian.org/debian/ jessie main' >> /etc/apt/sources.list
+sudo echo 'deb http://ftp.nl.debian.org/debian/ sid main' >> /etc/apt/sources.list
+sudo echo 'deb-src http://ftp.nl.debian.org/debian/ sid main' >> /etc/apt/sources.list
 
 sudo apt-get update
 
