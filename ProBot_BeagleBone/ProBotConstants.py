@@ -16,11 +16,11 @@ class Constants():
         self.GreenLED = "P8_9"
 	self.BlueLED = "P8_11"
         self.SaberTooth_KpV = 125
-        self.SaberTooth_KiV = 0.3
-        self.SaberTooth_KdV = 20
-        self.SaberTooth_KpA = 10
-        self.SaberTooth_KiA = 0.65
-        self.SaberTooth_KdA = -2.5
+        self.SaberTooth_KiV = 0.5
+        self.SaberTooth_KdV = 12
+        self.SaberTooth_KpA = 16
+        self.SaberTooth_KiA = 2.6
+        self.SaberTooth_KdA = -3
         self.PWM_KpV = 0
         self.PWM_KiV = 0
         self.PWM_KdV = 0
@@ -44,8 +44,8 @@ class Constants():
         self.tenths = 0.1
         self.hundredths = 0.01
         self.thousandths = 0.001
-        self.ajustFR = 0.02
-        self.ajustLR = 0.008
+        self.ajustFR = 0.010
+        self.ajustLR = 0.005
 
 
 
