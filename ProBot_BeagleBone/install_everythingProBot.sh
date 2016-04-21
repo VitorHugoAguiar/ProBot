@@ -49,7 +49,7 @@ sudo apt-get install -y -t sid libczmq-dev
 
 sudo rm -rf /etc/apt/apt.conf.d/02compress-indexes 
 sudo apt-get update
-sudo apt-get install xauth
+sudo apt-get install -y xauth
 sudo apt-get install -y apt-show-versions
 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 43DDF224
