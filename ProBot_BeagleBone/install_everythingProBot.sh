@@ -12,14 +12,14 @@ read answer
 
 if echo "$answer" | grep -iq "^n" ;then
     echo "Try again please!!!"
-    bash test.sh
+    bash install_everythingProBot.sh
 fi
 
 if echo "$answer" | grep -iq "^y" ;then
     echo "OK!"
 else
     echo "Learn to write please X)"
-    bash test.sh
+    bash install_everythingProBot.sh
 fi
 
 set -ex
