@@ -37,7 +37,7 @@ This file is gonna install:
 
 	sudo nmtui	
 
-7 - Go again to ProBot/ProBot_BeagleBone and run ProBot.py to iniatiliaze the program:
+7 - Go again to ProBot/ProBot_BeagleBone and run ProBot.py to initialize the program:
 
 	cd ProBot/ProBot_BeagleBone
 	sudo python ProBot.py
