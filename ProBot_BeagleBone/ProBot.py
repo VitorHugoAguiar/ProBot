@@ -187,7 +187,7 @@ class ProBot():
 		ProBot.MPU6050Readings()
 		
 		# Readings from the encoders
-                Encoders = Enc.EncodersValues(0)
+                Encoders = Enc.EncodersValues()
 		wheelVelocity1  = Encoders [0]               
 		wheelVelocity2 = Encoders[1]
 		
