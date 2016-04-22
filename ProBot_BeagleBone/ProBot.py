@@ -212,8 +212,8 @@ class ProBot():
 
 		if userChoice1=='2':
 			# Sending the values to the PWM controller that is connected to the motors
-			percentageR=0.78125*math.fabs(rightMotor)
-			percentageL=0.78125*math.fabs(leftMotor)
+			percentageR=math.fabs(rightMotor)
+			percentageL=math.fabs(leftMotor)
 			percentageR = max(0, min(percentageR, 100))
 			percentageL = max(0, min(percentageL, 100))
 		
