@@ -94,12 +94,18 @@ class PIDControllers():
 	if(type is 'Angle1'):
             Pconst.integrated_error_A1 = controllerVar[4]
             Pconst.last_error_A1= controllerVar[5]
-            PID_result = max(-127, min(PID_result, 127))
-
+            if userChoice1=='1':
+            	PID_result = max(-127, min(PID_result, 127))
+            if userChoice1=='2':
+		PID_result = max(-100, min(PID_result, 100))
+		
 	if(type is 'Angle2'):
             Pconst.integrated_error_A2 = controllerVar[4]
             Pconst.last_error_A2= controllerVar[5]
-            PID_result = max(-127, min(PID_result, 127))
+            if userChoice1=='1':
+            	PID_result = max(-127, min(PID_result, 127))
+            if userChoice1=='2':
+		PID_result = max(-100, min(PID_result, 100))
 
 
         return -PID_result
