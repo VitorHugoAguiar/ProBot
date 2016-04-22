@@ -134,7 +134,7 @@ class ProBot():
 
         else:
             midi_device, subscriberSplit2, subscriberSplit3  = subscriber.split()
-
+            #print midi_device
             if midi_device=='UC33':
                 self.id=float(decimal.Decimal(subscriberSplit2))
                 self.value=float(decimal.Decimal(subscriberSplit3))
