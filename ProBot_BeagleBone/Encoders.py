@@ -19,10 +19,7 @@ class EncodersReadings():
         self.LastwheelPosition1 = LastwheelPosition1
 	self.LastwheelPosition2 = LastwheelPosition2
 
-    def EncodersValues(self, ResetPositionEncoders):
-	if ResetPositionEncoders==1:
-		encoder1.set_position(0)
-		encoder2.set_position(0)
+    def EncodersValues(self):
 
         wheelPosition1 = encoder1.get_position()					# Get position from the first encoder
         wheelPosition2 = encoder2.get_position()					# Get position from the second encoder
