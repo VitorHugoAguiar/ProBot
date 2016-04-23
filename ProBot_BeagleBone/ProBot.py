@@ -151,7 +151,11 @@ class ProBot():
     def RestartProgram(self):
     	# Routine called when the angle is out of range and we need to restart the program
 	PC.stopAndReset()
-	
+	PWM.stop(Pconst.PWM_RF)
+	PWM.stop(Pconst.PWM_RR)
+	PWM.stop(Pconst.PWM_LF)
+	PWM.stop(Pconst.PWM_LR)
+	PWM.cleanup()
 	GPIO.output(Pconst.GreenLED, GPIO.LOW)
 	GPIO.output(Pconst.RedLED, GPIO.LOW)
 	GPIO.output(Pconst.BlueLED, GPIO.HIGH)
