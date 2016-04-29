@@ -15,12 +15,12 @@ class Constants():
         self.RedLED = "P8_7"
         self.GreenLED = "P8_9"
 	self.BlueLED = "P8_11"
-        self.SaberTooth_KpV = 135
+        self.SaberTooth_KpV = 290
         self.SaberTooth_KiV = 0.65
-        self.SaberTooth_KdV = 12
-        self.SaberTooth_KpA = 16
-        self.SaberTooth_KiA = 2.1
-        self.SaberTooth_KdA = -2
+        self.SaberTooth_KdV = 3
+        self.SaberTooth_KpA = 12
+        self.SaberTooth_KiA = 0.6
+        self.SaberTooth_KdA = -1.5
         self.PWM_KpV = 0
         self.PWM_KiV = 0
         self.PWM_KdV = 0
