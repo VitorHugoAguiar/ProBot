@@ -179,7 +179,7 @@ class ProBot():
 	ProBot.Calibration_MPU6050()
 	GPIO.output(Pconst.BlueLED, GPIO.LOW)
 	GPIO.output(Pconst.GreenLED, GPIO.HIGH)
-	time.sleep(1.5)
+	time.sleep(0.5)
         while True:
             try:
 		LoopTime=datetime.datetime.now()
