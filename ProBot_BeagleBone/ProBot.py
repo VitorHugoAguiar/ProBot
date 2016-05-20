@@ -17,6 +17,7 @@ import Encoders
 import SocketCommunication
 import ProBotConstants
 import RestartProgram
+import LowPassFilter
 from math import atan, atan2, sqrt,pi
 from MPU6050 import MPU6050
 import Sabertooth
@@ -24,25 +25,19 @@ import Sabertooth
 Pub_Sub = SocketCommunication.publisher_and_subscriber()
 
 restartVar = Pub_Sub.subscriber2()
+
 if restartVar is None:
     restartVar=0
-    userChoice = '0'
     userChoice1 = '0'
 else:
-    userChoice, userChoice1 = restartVar.split()
+    userChoice1 = restartVar
 
-if userChoice is '0':
-    print ('\nChoose how you want to control the ProBot:')
-    print ('\n1 - WebPage')
-    print ('2 - MidiDevice')
-    userChoice=input('\nYour choice is: ')
+if userChoice1 is '0':
 
     print ('\nChoose the type of control of the ProBots motors:')
     print ('\n1 - Sabertooth 2x25')
     print ('2 - PWM Controller OSMC3-2')
     userChoice1=input('\nYour choice is: ')
-    
-    userChoice=str(userChoice)
     userChoice1=str(userChoice1)
 
 # Initialization of classes from local files
@@ -52,7 +47,8 @@ PID = Controllers.PIDControllers()
 Enc = Encoders.EncodersReadings()
 Pconst = ProBotConstants.Constants()
 Restartconst = RestartProgram.Restart()
-UserChoice = Pub_Sub.userChoice(userChoice)
+LPF=LowPassFilter.LowPassFilter()
+
 
 #PWM.start(channel, duty, freq, polarity)
 PWM.start(Pconst.PWM_RF, 0, Pconst.PWM_Freq, 0)
@@ -125,37 +121,29 @@ class ProBot():
 	GPIO.output(Pconst.BlueLED, GPIO.HIGH)
         
 
-    def Midi_device(self):
-    	# Readings from the midi devices (Joystick, keyboard and UC33 )
+    def WebPage(self):
+    	# Readings from the WebPage
         subscriber = Pub_Sub.subscriber()
 
         if subscriber is None:
             subscriber = 0
 
         else:
-            midi_device, subscriberSplit2, subscriberSplit3  = subscriber.split()
-            #print midi_device
-            if midi_device=='UC33':
-                self.id=float(decimal.Decimal(subscriberSplit2))
-                self.value=float(decimal.Decimal(subscriberSplit3))
-                return self.id, self.value
-
-            if midi_device=='keyboard' or midi_device=='joystick' or midi_device=='msg':
-                ForwardReverse = float(decimal.Decimal(subscriberSplit2))
-                LeftRight = float(decimal.Decimal(subscriberSplit3))
-                self.VelocityRef = -float(ForwardReverse*Pconst.ajustFR)
-                self.TurnMotorRight = float(LeftRight*Pconst.ajustLR)
-                self.TurnMotorLeft = -float(LeftRight*Pconst.ajustLR)
-                return  self.VelocityRef,  self.TurnMotorRight, self.TurnMotorLeft
+            WebPage, subscriberSplit2, subscriberSplit3  = subscriber.split()
+            #print WebPage, subscriberSplit2, subscriberSplit3
+	    ForwardReverse = float(decimal.Decimal(subscriberSplit2))
+	    LeftRight = float(decimal.Decimal(subscriberSplit3))
+	    ForwardReverse=LPF.lowPassFilterFR(ForwardReverse)
+	    LeftRight=LPF.lowPassFilterLR(LeftRight)
+	    self.VelocityRef = -float(ForwardReverse*Pconst.ajustFR)
+	    self.TurnMotorRight = float(LeftRight*Pconst.ajustLR)
+	    self.TurnMotorLeft = -float(LeftRight*Pconst.ajustLR)
+	    return  self.VelocityRef,  self.TurnMotorRight, self.TurnMotorLeft
 
     def RestartProgram(self):
     	# Routine called when the angle is out of range and we need to restart the program
 	PC.stopAndReset()
-	PWM.stop(Pconst.PWM_RF)
-	PWM.stop(Pconst.PWM_RR)
-	PWM.stop(Pconst.PWM_LF)
-	PWM.stop(Pconst.PWM_LR)
-	PWM.cleanup()
+	
 	GPIO.output(Pconst.GreenLED, GPIO.LOW)
 	GPIO.output(Pconst.RedLED, GPIO.LOW)
 	GPIO.output(Pconst.BlueLED, GPIO.HIGH)
@@ -166,7 +154,7 @@ class ProBot():
 	while self.filteredX<-0.2 or self.filteredX>0.2:
 		ProBot.MPU6050Readings()
 
-	publisher2=Pub_Sub.publisher2(userChoice, userChoice1)
+	publisher2=Pub_Sub.publisher2(userChoice1)
 	GPIO.output(Pconst.BlueLED, GPIO.LOW)	
 	print "\nRestarting the Program..."
       
@@ -198,9 +186,9 @@ class ProBot():
 		# Checking if the angle is out of range
 		if self.filteredX<-20 or self.filteredX>20:
 			ProBot.RestartProgram()
-			
+		
 		# Reading the values from the midi device and the webpage
-                Midi_device = ProBot.Midi_device()
+                WebPage = ProBot.WebPage()
 
                 # With the values from the midi devices or WebPage, we can calculate the outputs from the controllers
                 VelocityController1 = PID.standardPID((self.VelocityRef+self.TurnMotorRight), wheelVelocity1, self.id, self.value, 'Velocity1', userChoice1)
@@ -208,7 +196,7 @@ class ProBot():
                 
 		rightMotor = PID.standardPID(VelocityController1, self.filteredX, self.id, self.value, 'Angle1', userChoice1)
                 leftMotor = PID.standardPID(VelocityController2, self.filteredX, self.id, self.value, 'Angle2', userChoice1)
-                
+ 
 		if userChoice1=='1':
 			# Sending the values to the Sabertooth that is connected to the motors
 			PC.drive(Pconst.addr, 1, int(rightMotor))
@@ -253,7 +241,7 @@ class ProBot():
 		PWM.stop(Pconst.PWM_LF)
 		PWM.stop(Pconst.PWM_LR)
 		PWM.cleanup()
-		publisher2=Pub_Sub.publisher2('0', '0')
+		publisher2=Pub_Sub.publisher2('0')
                 sys.exit('\n\nPROGRAM STOPPED!!!\n')
                 raise
 

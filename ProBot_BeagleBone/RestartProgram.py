@@ -14,15 +14,15 @@ class Restart():
 		restartVar = Pub_Sub.subscriber2()
 		if restartVar is None:
     			restartVar = 0
-			userChoice = '0'
 			userChoice1 = '0'
 		else:
-    			userChoice, userChoice1 = restartVar.split()
+    			userChoice1 = restartVar
+
     			# Sending the previous value of the user's choices to the ProBot.py file
-			if userChoice=='0':
+			if userChoice1=='0':
 				python = sys.executable
     				os.execl(python, python, * sys.argv)
-			publisher2=Pub_Sub.publisher2(userChoice, userChoice1)
+			publisher2=Pub_Sub.publisher2(userChoice1)
 
 if __name__ == '__main__':
 	Restart=Restart()

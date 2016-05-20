@@ -8,6 +8,7 @@ subscriber = contextS.socket(zmq.SUB)
 subscriber.setsockopt(zmq.SUBSCRIBE, "")
 poller = zmq.Poller()
 poller.register(subscriber, zmq.POLLIN)
+subscriber.connect('tcp://localhost:5580')
 
 # Connection to our publisher socket
 contextP = zmq.Context()
@@ -31,13 +32,9 @@ publisher2.sndhwm = 1100000
 
 
 class publisher_and_subscriber():
-    def userChoice(self, userChoice):
-        if userChoice=='1':
-            subscriber.connect('tcp://localhost:5580')
-        if userChoice=='2':
-            subscriber.connect('tcp://139.162.157.96:5560')
 
     def subscriber(self):
+
         socks = dict(poller.poll(0))
         if socks:
             if socks.get(subscriber) == zmq.POLLIN:
@@ -61,8 +58,8 @@ class publisher_and_subscriber():
             else:
                 print "error:message timeout"
 
-    def publisher2(self, var1, var2):
-	publisher2.send_string('{} {}'.format(var1, var2),zmq.NOBLOCK)
+    def publisher2(self, var1):
+	publisher2.send_string('{}'.format(var1),zmq.NOBLOCK)
 
 
 
