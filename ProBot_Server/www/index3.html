@@ -14,9 +14,7 @@
 		<script src="jquery-1.11.2.js"></script>
 		<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 
-    </script>
-	
-<style>
+	<style>
         html, body {
             position: absolute;
             top: 0;
@@ -27,7 +25,7 @@
             margin: 0;
         }
 
-		#left {
+	#left {
             position: absolute;
             left: 0;
             top: 0;
@@ -35,6 +33,7 @@
             width: 50%;
             background: rgba(0, 0, 0, 0);
         }
+        
         #right {
             position: absolute;
             right: 0;
@@ -43,190 +42,180 @@
             width: 50%;
             background: rgba(0, 0, 0, 0);
         }
+        
         #main{
             top: 10%;
             margin-left: 10%; 
             width:80%; 
             height:700px
-
         }
 
         </style>
 
-      </head>
+      	</head>
 
 	<body onload="checkVariable()">
 
 
-    <div id="strip" >
-        <div class = "centerText">ProBot</div>
-    </div>
+    	<div id="strip" >
+        	<div class = "centerText">ProBot</div>
+    	</div>
+
+    	<div style=" top: 10%; margin-left: 10%; width:80%; height:600px" id = 'main' class='main' >
+        	<iframe src="https://videolink2.me/o/b5e7c982" frameborder="0" scrolling="yes"></iframe>    
+    	</div>
+
+    	<div style="top:70%;text-align: center; position:relative; width: 100%; border-width: 1px 0 0 0; ">
+        	<p><h2>Choose the device that you want to control the ProBot. To change your choice, refresh the Webpage.</h2>.</p>
+        	<button id="keyboard" onclick="myFunction()">keyboard</button>
+        	<button id="joystick" onclick="myFunction1()">joystick</button>
+    	</div>
 
 
+	<script type="text/javascript">
 
-    <div style=" top: 10%; margin-left: 10%; width:80%; height:600px" id = 'main' class='main' >
-        <iframe src="https://videolink2.me/o/b5e7c982" frameborder="0" scrolling="yes"></iframe>    
-    </div>
+	var socket = null;
+	var isopen = false;
+	var noclicks=0;
+	var dirFR=200;
+	var dirLR=500;
 
-    <div style="top:70%;text-align: center; position:relative; width: 100%; border-width: 1px 0 0 0; ">
-        <p><h2>Choose the device that you want to control the ProBot. To change your choice, refresh the Webpage.</h2>.</p>
-        <button id="keyboard" onclick="myFunction()">keyboard</button>
-        <button id="joystick" onclick="myFunction1()">joystick</button>
-    </div>
+	socket = new WebSocket("ws://139.162.157.96:9000");
 
-
-<script type="text/javascript">
-
-var socket = null;
-var isopen = false;
-var noclicks=0;
-var dirFR=200;
-var dirLR=500;
-
-socket = new WebSocket("ws://139.162.157.96:9000");
-
-socket.onopen = function() {
-  console.log("Connected!");
-  isopen = true;
-}
+	socket.onopen = function() {
+  		console.log("Connected!");
+  		isopen = true;
+	}
 
 
-function checkVariable(){
-    setTimeout(function(){
-        socket.send(noclicks);
-        checkVariable();
+	function checkVariable(){
+    		setTimeout(function(){
+        	socket.send(noclicks);
+        	checkVariable();
 
-    }, 100);
-}
+    	}, 100);
+	}
 
-function myFunction() {
-document.onkeydown = checkKey;
+	function myFunction() {
+	document.onkeydown = checkKey;
 
-function checkKey(e) {
+	function checkKey(e) {
 
-    e = e || window.event;
+    	e = e || window.event;
 
-    if (e.keyCode == '38') {
-        dirFR=dirFR+1;
-        if (dirFR>=300){
-            dirFR=300;
-        }
-        if (dirFR<=100){
-            dirFR=100;
-        }
-        if (isopen) {
-            socket.send(dirFR);    
-        } 
+    	if (e.keyCode == '38') {
+        	dirFR=dirFR+1;
+        	if (dirFR>=300){
+            		dirFR=300;
+        	}
+        	if (dirFR<=100){
+            		dirFR=100;
+        	}
+        	if (isopen) {
+            		socket.send(dirFR);    
+        	} 
         
    
-    noclicks=dirFR;
-    }
-    else if (e.keyCode == '40') {
-        dirFR=dirFR-1;
-        if (dirFR>=300){
-            dirFR=300;
-        }
-        if (dirFR<=100){
-            dirFR=100;
-        }
-        if (isopen) {
-            socket.send(dirFR);
+    		noclicks=dirFR;
+    	}
+    	else if (e.keyCode == '40') {
+        	dirFR=dirFR-1;
+        	if (dirFR>=300){
+            		dirFR=300;
+        	}
+        	if (dirFR<=100){
+            		dirFR=100;
+        	}
+        	if (isopen) {
+            		socket.send(dirFR);
             
-         } 
+         	} 
        
-    noclicks=dirFR;
-    }
-    else if (e.keyCode == '37') {
-        dirLR=dirLR+1;
-        if (dirLR>=600){
-            dirLR=600;
-        }
-        if (dirLR<=400){
-            dirLR=400;
-        }
-        if (isopen) {
-            socket.send(dirLR);
-        } 
+    		noclicks=dirFR;
+    	}
+    	else if (e.keyCode == '37') {
+        	dirLR=dirLR+1;
+        	if (dirLR>=600){
+            		dirLR=600;
+        	}
+        	if (dirLR<=400){
+            		dirLR=400;
+        	}
+        	if (isopen) {
+            		socket.send(dirLR);
+        	} 
         
-    noclicks=dirLR;
-    }
-    else if (e.keyCode == '39') {
-        dirLR=dirLR-1;
-        if (dirLR>=600){
-            dirLR=600;
-        }
-        if (dirLR<=400){
-            dirLR=400;
-        }
-        if (isopen) {
-            socket.send(dirLR);    
-         } 
+    		noclicks=dirLR;
+    	}
+    	else if (e.keyCode == '39') {
+        	dirLR=dirLR-1;
+        	if (dirLR>=600){
+            		dirLR=600;
+        	}
+        	if (dirLR<=400){
+            		dirLR=400;
+        	}
+        	if (isopen) {
+            		socket.send(dirLR);    
+         	} 
         
-    noclicks=dirLR;
-    }
+    		noclicks=dirLR;
+    		}
 
+	}
 
-}
+	document.onkeyup = checkKey1
+        function checkKey1(e) {
+    	
+    	e = e || window.event;
 
-document.onkeyup = checkKey1
-         function checkKey1(e) {
+    	if (e.keyCode == '38') {
+        	dirFR=200;
+        	if (isopen) {
+            		socket.send(dirFR);
+         	}
+    	}
 
-    e = e || window.event;
-
-    if (e.keyCode == '38') {
-        dirFR=200;
-        if (isopen) {
-            socket.send(dirFR);
-            
-         }
-             
-    }
-
-    else if (e.keyCode == '40') {
-        dirFR=200;
-        if (isopen) {
-            socket.send(dirFR);
-            
-         }
+    	else if (e.keyCode == '40') {
+        	dirFR=200;
+        	if (isopen) {
+            		socket.send(dirFR);
+         	}
         
-    }
+    	}
+    	
+    	else if (e.keyCode == '37') {
+        	dirLR=500;
+        	if (isopen) {
+            		socket.send(dirLR);
+         	}
+	}
 
-    else if (e.keyCode == '37') {
-        dirLR=500;
-        if (isopen) {
-            socket.send(dirLR);
-            
-         }
-       
-    }
-
-    else if (e.keyCode == '39') {
-        dirLR=500;
-        if (isopen) {
-            socket.send(dirLR);
-            
-         }
+    	else if (e.keyCode == '39') {
+        	dirLR=500;
+        	if (isopen) {
+            		socket.send(dirLR);
+         	}
       
-    }
+    	}
 
-    noclicks=0;}
+    	noclicks=0;}
 
-   document.getElementById("keyboard").disabled = true;
-   document.getElementById("joystick").disabled = true;
-}
+   	document.getElementById("keyboard").disabled = true;
+   	document.getElementById("joystick").disabled = true;
+	}
 
 
-function myFunction1() {
-    var hasGP = false;
-    var repGP;
+	function myFunction1() {
+    	var hasGP = false;
+    	var repGP;
  
-    function canGame() {
-        return "getGamepads" in navigator;
+    	function canGame() {
+        	return "getGamepads" in navigator;
 
-
-    }
+    	}
  
-function reportOnGamepad() {
+	function reportOnGamepad() {
         var gp = navigator.getGamepads()[0];
         var html = "";
             html += "id: "+gp.id+"<br/>";
@@ -249,10 +238,9 @@ function reportOnGamepad() {
         }
 
         $("#gamepadDisplay").html(html);
-    }
+    	}
  
- 
-    $(document).ready(function() {
+    	$(document).ready(function() {
  
         if(canGame()) {
  
@@ -282,18 +270,13 @@ function reportOnGamepad() {
             }, 500);
         }
  
-    });
+    	});
 
-    document.getElementById("joystick").disabled = true;
-    document.getElementById("keyboard").disabled = true;
-}
+    	document.getElementById("joystick").disabled = true;
+    	document.getElementById("keyboard").disabled = true;
+    	}
 
-
-
-</script>
-
-		<div id='footer'></div>
-
-
+    	</script>
+    	
 	</body>
 </html>
