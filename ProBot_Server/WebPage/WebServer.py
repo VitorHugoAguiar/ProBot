@@ -1,6 +1,31 @@
-#!/usr/bin/python
+###############################################################################
+#
+# The MIT License (MIT)
+#
+# Copyright (c) Tavendo GmbH
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+#
+###############################################################################
+
 import sys
-import LowPassFilter
+import decimal
 from twisted.internet import reactor
 from twisted.python import log
 from twisted.web.server import Site
@@ -10,14 +35,12 @@ from autobahn.twisted.websocket import WebSocketServerFactory, \
     WebSocketServerProtocol, \
     listenWS
 
-LPF=LowPassFilter.LowPassFilter()
-
 class BroadcastServerProtocol(WebSocketServerProtocol):
 
     directionUp=0
     directionDown=0
-    FilteredValuesFR=0
-    FilteredValuesLR=0
+    ValuesFR=0
+    ValuesLR=0
     maxValFR=0
     maxValLR=0
 
@@ -25,28 +48,19 @@ class BroadcastServerProtocol(WebSocketServerProtocol):
         self.factory.register(self)
 
     def onMessage(self, payload, isBinary):
-        if payload.decode('utf8')=="0":
-            BroadcastServerProtocol.FilteredValuesFR=LPF.lowPassFilterFR(0)
-            BroadcastServerProtocol.FilteredValuesLR=LPF.lowPassFilterLR(0)
 
-        if payload.decode('utf8')=="up":
-            BroadcastServerProtocol.maxValFR=0.7
-            BroadcastServerProtocol.FilteredValuesFR=LPF.lowPassFilterFR(BroadcastServerProtocol.maxValFR)
+	direction=float(decimal.Decimal(payload.decode('utf8')))
+	if direction==0:
+		BroadcastServerProtocol.ValuesFR=0
+		BroadcastServerProtocol.ValuesLR=0
+        if (direction>=100 and direction<=300):
+		direction=(direction-200)*0.01
+	  	BroadcastServerProtocol.ValuesFR=direction
+	if direction>=400 and direction<=600:
+           	direction=(direction-500)*0.01
+	   	BroadcastServerProtocol.ValuesLR=direction
 
-        if payload.decode('utf8')=="down":
-            BroadcastServerProtocol.maxValFR=-0.7
-            BroadcastServerProtocol.FilteredValuesFR=LPF.lowPassFilterFR(BroadcastServerProtocol.maxValFR)
-
-        if payload.decode('utf8')=="left":
-            BroadcastServerProtocol.maxValLR=0.8
-            BroadcastServerProtocol.FilteredValuesLR=LPF.lowPassFilterLR(BroadcastServerProtocol.maxValLR)
-
-        if payload.decode('utf8')=="right":
-            BroadcastServerProtocol.maxValLR=-0.8
-            BroadcastServerProtocol.FilteredValuesLR=LPF.lowPassFilterLR(BroadcastServerProtocol.maxValLR)
-
-
-        msg = "{0} {1:.3f} {2:.3f}".format("msg", BroadcastServerProtocol.FilteredValuesFR, BroadcastServerProtocol.FilteredValuesLR)
+        msg = "{0} {1:.3f} {2:.3f}".format("msg", BroadcastServerProtocol.ValuesFR, BroadcastServerProtocol.ValuesLR)
         factory.broadcast(msg)
 
 
@@ -101,4 +115,6 @@ if __name__ == '__main__':
     webdir = File(".")
     web = Site(webdir)
     reactor.listenTCP(8080, web)
+    #BroadcastServerProtocol=BroadcastServerProtocol()
+    #BroadcastServerProtocol.onMessage("1", False)
     reactor.run()
