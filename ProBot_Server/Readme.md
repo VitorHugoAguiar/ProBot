@@ -1,6 +1,6 @@
 1 - To control the ProBot with a Webpage, run:
 
-Note: Do not forget to change the server' ip on the WebServer.py file.
+Note: Do not forget to change the server' ip on the WebServer.py file (line ).
 
     python ProBot_Server/WebPage/WebServer.py 
 
