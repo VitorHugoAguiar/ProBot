@@ -54,7 +54,7 @@ and:
 
 8.2 - To Install network-manager, run:
 
-	sudo apt-get install network-manager
+	sudo apt-get -y install network-manager
 
 Note: After network manager been installed, type:
 	
