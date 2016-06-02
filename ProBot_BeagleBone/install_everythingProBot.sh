@@ -69,7 +69,6 @@ sudo apt-get install -y machinekit-xenomai machinekit-dev
 
 sudo apt-get -y install network-manager
 
-cd ..
 cd Encoders
 sudo cp bone_eqep0-00A0.dtbo /lib/firmware
 sudo cp bone_eqep1-00A0.dtbo /lib/firmware
