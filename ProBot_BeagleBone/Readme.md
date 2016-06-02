@@ -19,14 +19,12 @@ and:
 
 4.1 - To install everything that it's required to run ProBot's program, for debian images, just type:
 
-Note: This is gonna take a while :(
-	
 	sudo sh install_everythingProBot.sh
 
 This file is gonna install:
 
-	machinekit
-	NetworkManager-1.0.4
+	Machinekit
+	Network Manager
 	Encoders
 	Crossbar
 	bootScripts
@@ -56,7 +54,7 @@ and:
 
 8.2 - To Install network-manager 1.0.4, run:
 
-	sudo sh install_NetworkManager-1.0.4.sh
+	sudo apt-get install network-manager
 
 Note: After network-manager been installed, type:
 	
