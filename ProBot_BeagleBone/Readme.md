@@ -24,7 +24,7 @@ and:
 This file is gonna install:
 
 	Machinekit
-	Network-manager
+	Network-Manager
 	Encoders
 	Crossbar
 	bootScripts
