@@ -24,7 +24,7 @@ and:
 This file is gonna install:
 
 	Machinekit
-	Network Manager
+	Network-manager
 	Encoders
 	Crossbar
 	bootScripts
@@ -52,11 +52,11 @@ and:
 	
 	sudo sh install_machinekit.sh
 
-8.2 - To Install network-manager 1.0.4, run:
+8.2 - To Install network-manager, run:
 
 	sudo apt-get install network-manager
 
-Note: After network-manager been installed, type:
+Note: After network manager been installed, type:
 	
 	sudo nmtui
 	
