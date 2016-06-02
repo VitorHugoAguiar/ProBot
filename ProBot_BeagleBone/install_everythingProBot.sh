@@ -67,11 +67,7 @@ sudo apt-get update
 sudo apt-get install -y linux-image-3.8.13-xenomai-r78 
 sudo apt-get install -y machinekit-xenomai machinekit-dev
 
-echo "MACHINEKIT INSTALLED!!!"
-
 sudo apt-get -y install network-manager
-
-echo "NETWORK-MANAGER INSTALLED!!!"
 
 cd ..
 cd Encoders
@@ -80,16 +76,15 @@ sudo cp bone_eqep1-00A0.dtbo /lib/firmware
 sudo cp bone_eqep2-00A0.dtbo /lib/firmware
 sudo cp bone_eqep2b-00A0.dtbo /lib/firmware
 
-echo "ENCODERS INSTALLED!!!"
-
+cd ..
+cd crossbar
 sudo apt-get install -y build-essential libssl-dev libffi-dev python-dev
 sudo python get-pip.py
 sudo pip install --upgrade six
 sudo pip install --upgrade setuptools
 
 git clone https://github.com/crossbario/crossbar.git
-cd crossbar
 sudo pip install --upgrade -e .[all]
 
-echo "CROSSBAR INSTALLED!!"
+
 echo "Now restart the BeagleBone and you are ready to go!!!!"
