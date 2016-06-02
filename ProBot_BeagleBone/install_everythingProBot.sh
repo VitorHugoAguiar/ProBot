@@ -76,14 +76,12 @@ sudo cp bone_eqep2-00A0.dtbo /lib/firmware
 sudo cp bone_eqep2b-00A0.dtbo /lib/firmware
 
 cd ..
-cd crossbar
+cd Crossbar
 sudo apt-get install -y build-essential libssl-dev libffi-dev python-dev
 sudo python get-pip.py
 sudo pip install --upgrade six
 sudo pip install --upgrade setuptools
 
 git clone https://github.com/crossbario/crossbar.git
+cd crossbar
 sudo pip install --upgrade -e .[all]
-
-
-echo "Now restart the BeagleBone and you are ready to go!!!!"
