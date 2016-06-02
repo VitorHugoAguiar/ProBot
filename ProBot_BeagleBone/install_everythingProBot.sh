@@ -85,3 +85,5 @@ sudo pip install --upgrade setuptools
 git clone https://github.com/crossbario/crossbar.git
 cd crossbar
 sudo pip install --upgrade -e .[all]
+cd ..
+sudo rm -rf crossbar
