@@ -69,28 +69,6 @@ sudo apt-get install -y machinekit-xenomai machinekit-dev
 
 echo "MACHINEKIT INSTALLED!!!"
 
-sudo apt-get -y install intltool libdbus-glib-1-dev libgudev-1.0-dev libnl-3-dev libnl-route-3-dev libnl-genl-3-dev uuid-dev libreadline-dev libnss3-dev ppp-dev libndp-dev python-gi python-dbus libnewt-dev python-zmq python-smbus build-essential libssl-dev libffi-dev python-dev
-sudo python get-pip.py
-sudo pip install --upgrade six
-sudo pip install --upgrade setuptools
-
-tar xf NetworkManager-1.0.4.tar.xz
-cd NetworkManager-1.0.4
-
-sudo ./configure --prefix=/usr\
-    --sysconfdir=/etc    \
-    --localstatedir=/var \
-    --with-nmtui         \
-    --disable-ppp        \
-    --with-systemdsystemunitdir=no \
-    --docdir=/usr/share/doc/network-manager-1.0.4
-
-sudo make && sudo make install
-
-sudo cp network-manager /etc/init.d && sudo cp NetworkManager.conf /etc/NetworkManager && sudo update-rc.d network-manager defaults
-
-echo "NETWORK MANAGER INSTALLED!!!"
-
 cd ..
 cd encoders
 sudo cp bone_eqep0-00A0.dtbo /lib/firmware
@@ -99,6 +77,11 @@ sudo cp bone_eqep2-00A0.dtbo /lib/firmware
 sudo cp bone_eqep2b-00A0.dtbo /lib/firmware
 
 echo "ENCODERS INSTALLED!!!"
+
+sudo apt-get install -y build-essential libssl-dev libffi-dev python-dev
+sudo python get-pip.py
+sudo pip install --upgrade six
+sudo pip install --upgrade setuptools
 
 git clone https://github.com/crossbario/crossbar.git
 cd crossbar
