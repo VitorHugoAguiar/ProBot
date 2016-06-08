@@ -80,7 +80,7 @@
 	var dirFR=200;
 	var dirLR=500;
 
-	socket = new WebSocket("ws://139.162.157.96:9000");
+	socket = new WebSocket("ws://192.168.10.50:9000");
 
 	socket.onopen = function() {
   		console.log("Connected!");
@@ -104,59 +104,63 @@
     	e = e || window.event;
 
     	if (e.keyCode == '38') {
-        	dirFR=dirFR+1;
-        	if (dirFR>=300){
-            		dirFR=300;
+        	dirFR=dirFR+8;
+        	if (dirFR>=275){
+            		dirFR=275;
         	}
-        	if (dirFR<=100){
-            		dirFR=100;
+        	if (dirFR<=125){
+            		dirFR=125;
         	}
         	if (isopen) {
-            		socket.send(dirFR);    
+            		socket.send(dirFR);
+			   
         	} 
         
    
     		noclicks=dirFR;
     	}
     	else if (e.keyCode == '40') {
-        	dirFR=dirFR-1;
-        	if (dirFR>=300){
-            		dirFR=300;
+        	dirFR=dirFR-8;
+        	if (dirFR>=275){
+            		dirFR=275;
         	}
-        	if (dirFR<=100){
-            		dirFR=100;
+        	if (dirFR<=125){
+            		dirFR=125;
         	}
         	if (isopen) {
             		socket.send(dirFR);
+			
             
          	} 
        
     		noclicks=dirFR;
     	}
     	else if (e.keyCode == '37') {
-        	dirLR=dirLR+1;
-        	if (dirLR>=600){
-            		dirLR=600;
+        	dirLR=dirLR+6;
+        	if (dirLR>=575){
+            		dirLR=575;
         	}
-        	if (dirLR<=400){
-            		dirLR=400;
+        	if (dirLR<=425){
+            		dirLR=425;
         	}
         	if (isopen) {
             		socket.send(dirLR);
+			
         	} 
         
     		noclicks=dirLR;
     	}
     	else if (e.keyCode == '39') {
-        	dirLR=dirLR-1;
-        	if (dirLR>=600){
-            		dirLR=600;
+        	dirLR=dirLR-6;
+        	if (dirLR>=575){
+            		dirLR=575;
         	}
-        	if (dirLR<=400){
-            		dirLR=400;
+        	if (dirLR<=425){
+            		dirLR=425;
         	}
         	if (isopen) {
-            		socket.send(dirLR);    
+            		socket.send(dirLR);
+			    
          	} 
         
     		noclicks=dirLR;
@@ -172,14 +176,17 @@
     	if (e.keyCode == '38') {
         	dirFR=200;
         	if (isopen) {
-            		socket.send(dirFR);
+			
+           		socket.send(dirFR);
          	}
     	}
 
     	else if (e.keyCode == '40') {
         	dirFR=200;
         	if (isopen) {
-            		socket.send(dirFR);
+
+	                socket.send(dirFR);
+
          	}
         
     	}
@@ -188,6 +195,7 @@
         	dirLR=500;
         	if (isopen) {
             		socket.send(dirLR);
+			
          	}
 	}
 
@@ -195,12 +203,13 @@
         	dirLR=500;
         	if (isopen) {
             		socket.send(dirLR);
-         	}
+         		
+		}
       
     	}
 
-    	noclicks=0;}
-
+    }
+	nocliks=0;
    	document.getElementById("keyboard").disabled = true;
    	document.getElementById("joystick").disabled = true;
 	}
@@ -230,8 +239,8 @@
             html+= "Stick "+(Math.ceil(i/2)+1)+": "+gp.axes[i]+","+gp.axes[i+1]+"<br/>";
             
             if (isopen) {
-            socket.send((gp.axes[1]*-100)+200);
-            socket.send((gp.axes[2]*-100)+500);
+            socket.send((gp.axes[1]*-75)+200);
+            socket.send((gp.axes[2]*-75)+500);
             noclicks=1;
             } 
             

@@ -15,18 +15,18 @@ class Constants():
         self.RedLED = "P8_7"
         self.GreenLED = "P8_9"
 	self.BlueLED = "P8_11"
-        self.SaberTooth_KpV = 290
-        self.SaberTooth_KiV = 0.65
-        self.SaberTooth_KdV = 3
-        self.SaberTooth_KpA = 12
-        self.SaberTooth_KiA = 0.6
-        self.SaberTooth_KdA = -1.5
-        self.PWM_KpV = 250
-        self.PWM_KiV = 2
-        self.PWM_KdV = 8
-        self.PWM_KpA = 6
-        self.PWM_KiA = 1.2
-        self.PWM_KdA = -0.2
+        self.SaberTooth_KpV = 280
+        self.SaberTooth_KiV = 0.6
+        self.SaberTooth_KdV = 12
+        self.SaberTooth_KpA = 18
+        self.SaberTooth_KiA = 2.2
+        self.SaberTooth_KdA = -2
+        self.PWM_KpV = 0
+        self.PWM_KiV = 0
+        self.PWM_KdV = 0
+        self.PWM_KpA = 0
+        self.PWM_KiA = 0
+        self.PWM_KdA = 0
         self.limitV = 310 
         self.limitP = 10 
         self.limitA = 310 
@@ -41,10 +41,7 @@ class Constants():
         self.mLiPo = 25.2951
         self.MinRedLiPo = 20
         self.AnalogPinLiPo = "P9_40"
-        self.tenths = 0.1
-        self.hundredths = 0.01
-        self.thousandths = 0.001
-        self.ajustFR = 0.010
+        self.ajustFR = 0.0085
         self.ajustLR = 0.005
 
 

@@ -16,29 +16,29 @@ import Controllers
 import Encoders
 import SocketCommunication
 import ProBotConstants
-import RestartProgram
 import LowPassFilter
 from math import atan, atan2, sqrt,pi
 from MPU6050 import MPU6050
 import Sabertooth
 
-Pub_Sub = SocketCommunication.publisher_and_subscriber()
 
-restartVar = Pub_Sub.subscriber2()
+# Open a file
+userChoiceFile = open("userChoice.txt", "r+")
+userChoice = userChoiceFile.read(1);
+# Close opend file
+userChoiceFile.close()
 
-if restartVar is None:
-    restartVar=0
-    userChoice1 = '0'
-else:
-    userChoice1 = restartVar
+if userChoice=='0':
+	print ('\nChoose the type of control of the ProBots motors:')
+	print ('\n1 - Sabertooth 2x25')
+	print ('2 - PWM Controller OSMC3-2')
+	userChoice=input('\nYour choice is: ')
+	userChoice=str(userChoice)
 
-if userChoice1 is '0':
+	userChoiceFile = open("userChoice.txt", "wb")
+	userChoiceFile.write(userChoice);
+	userChoiceFile.close()
 
-    print ('\nChoose the type of control of the ProBots motors:')
-    print ('\n1 - Sabertooth 2x25')
-    print ('2 - PWM Controller OSMC3-2')
-    userChoice1=input('\nYour choice is: ')
-    userChoice1=str(userChoice1)
 
 # Initialization of classes from local files
 PC = Sabertooth.PacketizedCommunication()
@@ -46,8 +46,8 @@ Battery = BatteryMonitor.BatteryVoltage()
 PID = Controllers.PIDControllers()
 Enc = Encoders.EncodersReadings()
 Pconst = ProBotConstants.Constants()
-Restartconst = RestartProgram.Restart()
 LPF=LowPassFilter.LowPassFilter()
+Pub_Sub = SocketCommunication.publisher_and_subscriber()
 
 
 #PWM.start(channel, duty, freq, polarity)
@@ -56,25 +56,24 @@ PWM.start(Pconst.PWM_RR, 0, Pconst.PWM_Freq, 0)
 PWM.start(Pconst.PWM_LF, 0, Pconst.PWM_Freq, 0)
 PWM.start(Pconst.PWM_LR, 0, Pconst.PWM_Freq, 0)
 
+
 # Configuration the type of GPIO's
 GPIO.setup(Pconst.RedLED, GPIO.OUT)
 GPIO.setup(Pconst.GreenLED, GPIO.OUT)
 GPIO.setup(Pconst.BlueLED, GPIO.OUT)
 
-if userChoice1=='1':
+if userChoice=='1':
 	print "\nSending commands to the address", Pconst.addr, "with a baudrate of\n", Pconst.baud
 
-if userChoice1=='2':
+if userChoice=='2':
 	print "\nSending a PWM signal with a frequency of", Pconst.PWM_Freq, "Hz"
 
 class ProBot():
-    def __init__(self, wheelPositionRef=0, VelocityRef=0, TurnMotorRight=0, TurnMotorLeft=0, id=0, value=0, lastAccelerometerAngleX=0, LoopTimeRatioSeg=0, sensor=0, filteredX=0):
+    def __init__(self, wheelPositionRef=0, VelocityRef=0, TurnMotorRight=0, TurnMotorLeft=0, lastAccelerometerAngleX=0, LoopTimeRatioSeg=0, sensor=0, filteredX=0):
 	self.wheelPositionRef = wheelPositionRef
         self.VelocityRef = VelocityRef
         self.TurnMotorRight = TurnMotorRight
         self.TurnMotorLeft = TurnMotorLeft
-	self.id=id
-	self.value=value
 	self.lastAccelerometerAngleX=lastAccelerometerAngleX
 	self.LoopTimeRatioSeg=LoopTimeRatioSeg
 	self.sensor=MPU6050(0x68)
@@ -91,7 +90,8 @@ class ProBot():
 	# Complementary filter
     	self.filteredX = float(0.98 * (self.lastAccelerometerAngleX+self.LoopTimeRatioSeg*gyro_data['x']) + (1 - 0.98) * AccXangle)
     	self.lastAccelerometerAngleX=self.filteredX
-	self.filteredX=self.filteredX+4
+	self.filteredX=self.filteredX+2.3
+	#print 	self.filteredX
 	return self.filteredX
 
     def Calibration_MPU6050(self):
@@ -110,6 +110,7 @@ class ProBot():
 
 	GPIO.output(Pconst.RedLED, GPIO.LOW)
 	GPIO.output(Pconst.BlueLED, GPIO.HIGH)
+
 
     def PWM_initialization(self):
     	# Starting the communication with the PWM controller
@@ -134,6 +135,7 @@ class ProBot():
 	    ForwardReverse = float(decimal.Decimal(subscriberSplit2))
 	    LeftRight = float(decimal.Decimal(subscriberSplit3))
 	    ForwardReverse=LPF.lowPassFilterFR(ForwardReverse)
+	    #print ForwardReverse
 	    LeftRight=LPF.lowPassFilterLR(LeftRight)
 	    self.VelocityRef = -float(ForwardReverse*Pconst.ajustFR)
 	    self.TurnMotorRight = float(LeftRight*Pconst.ajustLR)
@@ -154,10 +156,13 @@ class ProBot():
 	while self.filteredX<-0.2 or self.filteredX>0.2:
 		ProBot.MPU6050Readings()
 
-	publisher2=Pub_Sub.publisher2(userChoice1)
 	GPIO.output(Pconst.BlueLED, GPIO.LOW)	
 	print "\nRestarting the Program..."
-      
+      	
+	userChoiceFile = open("userChoice.txt", "wb")
+	userChoiceFile.write( userChoice);
+	userChoiceFile.close()
+
    	python = sys.executable
     	os.execl(python, python, * sys.argv)
 
@@ -191,18 +196,18 @@ class ProBot():
                 WebPage = ProBot.WebPage()
 
                 # With the values from the midi devices or WebPage, we can calculate the outputs from the controllers
-                VelocityController1 = PID.standardPID((self.VelocityRef+self.TurnMotorRight), wheelVelocity1, self.id, self.value, 'Velocity1', userChoice1)
-                VelocityController2 = PID.standardPID((self.VelocityRef+self.TurnMotorLeft), wheelVelocity2, self.id, self.value, 'Velocity2', userChoice1)
+                VelocityController1 = PID.standardPID((self.VelocityRef+self.TurnMotorRight), wheelVelocity1, 'Velocity1', userChoice)
+                VelocityController2 = PID.standardPID((self.VelocityRef+self.TurnMotorLeft), wheelVelocity2, 'Velocity2', userChoice)
                 
-		rightMotor = PID.standardPID(VelocityController1, self.filteredX, self.id, self.value, 'Angle1', userChoice1)
-                leftMotor = PID.standardPID(VelocityController2, self.filteredX, self.id, self.value, 'Angle2', userChoice1)
+		rightMotor = PID.standardPID(VelocityController1, self.filteredX, 'Angle1', userChoice)
+                leftMotor = PID.standardPID(VelocityController2, self.filteredX, 'Angle2', userChoice)
  
-		if userChoice1=='1':
+		if userChoice=='1':
 			# Sending the values to the Sabertooth that is connected to the motors
 			PC.drive(Pconst.addr, 1, int(rightMotor))
 	                PC.drive(Pconst.addr, 2, int(leftMotor))
 
-		if userChoice1=='2':
+		if userChoice=='2':
 			# Sending the values to the PWM controller that is connected to the motors
 			percentageR=math.fabs(rightMotor)
 			percentageL=math.fabs(leftMotor)
@@ -241,14 +246,16 @@ class ProBot():
 		PWM.stop(Pconst.PWM_LF)
 		PWM.stop(Pconst.PWM_LR)
 		PWM.cleanup()
-		publisher2=Pub_Sub.publisher2('0')
+		userChoiceFile = open("userChoice.txt", "wb")
+		userChoiceFile.write("0");
+		userChoiceFile.close()
                 sys.exit('\n\nPROGRAM STOPPED!!!\n')
                 raise
 
     def main(self):
-	if userChoice1=='1':
+	if userChoice=='1':
         	ProBot.SabertoothCommunication_initialization()
-	if userChoice1=='2':
+	if userChoice=='2':
 		ProBot.PWM_initialization()
         ProBot.mainRoutine()
 
