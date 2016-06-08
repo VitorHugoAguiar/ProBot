@@ -75,12 +75,12 @@ sudo cp bone_eqep2b-00A0.dtbo /lib/firmware
 
 cd ..
 cd Crossbar
-sudo apt-get install -y build-essential libssl-dev libffi-dev python-dev
+sudo apt-get install -y build-essential libssl-dev libffi-dev python-dev python-smbus
 sudo python get-pip.py
 sudo pip install --upgrade six
 sudo pip install --upgrade setuptools
 
 git clone https://github.com/crossbario/crossbar.git
 cd crossbar
-sudo pip install --upgrade -e .[all]
+sudo pip install --upgrade -e .
 
