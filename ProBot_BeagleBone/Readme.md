@@ -17,7 +17,7 @@ How to configure the ProBot BeagleBone:
 	cd ProBot/ProBot_BeagleBone
 and:
 
-4.1 - To install everything that it's required to run ProBot's program, for debian images, just type:
+4.1 - To install everything that it's required to run ProBot's program, for debian images (jessie), just type:
 
 	sudo sh install_everythingProBot.sh
 
@@ -47,7 +47,7 @@ If you just want to install some files or libraries, follow the next instruction
 
 and:
 
-8.1 - To install just machinekit for debian images type:
+8.1 - To install just machinekit, for debian images (jessie), type:
 	
 	sudo sh install_machinekit.sh
 
