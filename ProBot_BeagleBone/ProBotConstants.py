@@ -28,7 +28,6 @@ class Constants():
         self.PWM_KiA = 0
         self.PWM_KdA = 0
         self.limitV = 310 
-        self.limitP = 10 
         self.limitA = 310 
         self.integrated_error_V1 = 0
         self.integrated_error_V2 = 0
