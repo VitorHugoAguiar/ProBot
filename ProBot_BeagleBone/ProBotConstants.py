@@ -42,6 +42,3 @@ class Constants():
         self.AnalogPinLiPo = "P9_40"
         self.ajustFR = 0.0085
         self.ajustLR = 0.005
-
-
-
