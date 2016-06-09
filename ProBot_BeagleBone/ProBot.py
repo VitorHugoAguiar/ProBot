@@ -22,7 +22,7 @@ from MPU6050 import MPU6050
 import Sabertooth
 
 
-# Open a file
+# We create a file to store the userChoice (Sabertooth or PWM)
 userChoiceFile = open("userChoice.txt", "r+")
 userChoice = userChoiceFile.read(1);
 # Close opend file
@@ -90,8 +90,7 @@ class ProBot():
 	# Complementary filter
     	self.filteredX = float(0.98 * (self.lastAccelerometerAngleX+self.LoopTimeRatioSeg*gyro_data['x']) + (1 - 0.98) * AccXangle)
     	self.lastAccelerometerAngleX=self.filteredX
-	self.filteredX=self.filteredX+2.3
-	#print 	self.filteredX
+	self.filteredX=self.filteredX+2.3				# Angle offset
 	return self.filteredX
 
     def Calibration_MPU6050(self):
@@ -131,11 +130,9 @@ class ProBot():
 
         else:
             WebPage, subscriberSplit2, subscriberSplit3  = subscriber.split()
-            #print WebPage, subscriberSplit2, subscriberSplit3
 	    ForwardReverse = float(decimal.Decimal(subscriberSplit2))
 	    LeftRight = float(decimal.Decimal(subscriberSplit3))
 	    ForwardReverse=LPF.lowPassFilterFR(ForwardReverse)
-	    #print ForwardReverse
 	    LeftRight=LPF.lowPassFilterLR(LeftRight)
 	    self.VelocityRef = -float(ForwardReverse*Pconst.ajustFR)
 	    self.TurnMotorRight = float(LeftRight*Pconst.ajustLR)
