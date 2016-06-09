@@ -27,7 +27,6 @@ This file is gonna install:
 	Network-Manager
 	Encoders
 	Crossbar
-	bootScripts
 
 5 - Restart BeagleBone
 
@@ -40,7 +39,7 @@ This file is gonna install:
 	cd ProBot/ProBot_BeagleBone
 	sudo python ProBot.py
 	
-if you just want to install some files or libraries, follow the next instructions:
+If you just want to install some files or libraries, follow the next instructions:
 
 8 - Go to:
 
