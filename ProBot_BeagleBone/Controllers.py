@@ -18,7 +18,7 @@ class PIDControllers():
     def standardPID(self, reference, measured, type, userChoice):
         self.error = float(reference - measured)
 	
-	# Load of the right values for the controllers depending on if we are using Sabertooth of PWM controller
+	# Load the right values for the controllers,  depending on if we are using Sabertooth of PWM controller
 	if userChoice=='1':	
 		KpV=Pconst.SaberTooth_KpV
 		KiV=Pconst.SaberTooth_KiV
@@ -44,7 +44,7 @@ class PIDControllers():
 
         controllerVar=typeController[type]
 
-	# Code for the controllers PID
+	# Code for the PID controllers
         pTerm = float(controllerVar[0] * self.error)
         controllerVar[4] += float(self.error)
 
@@ -62,27 +62,25 @@ class PIDControllers():
             Pconst.integrated_error_V1 = controllerVar[4]
             Pconst.last_error_V1= controllerVar[5]
 
-
         if(type is 'Velocity2'):
             Pconst.integrated_error_V2 = controllerVar[4]
             Pconst.last_error_V2= controllerVar[5]
-
 
 	if(type is 'Angle1'):
             Pconst.integrated_error_A1 = controllerVar[4]
             Pconst.last_error_A1= controllerVar[5]
             if userChoice=='1':
-            	PID_result = max(-127, min(PID_result, 127))
+            	PID_result = max(-127, min(PID_result, 127)) 			#Limiting the PID values because of the Sabertooth range (-127, 127)
             if userChoice=='2':
-		PID_result = max(-100, min(PID_result, 100))
+		PID_result = max(-100, min(PID_result, 100))			#Limiting the percentage of the PWM
 		
 	if(type is 'Angle2'):
-            Pconst.integrated_error_A2 = controllerVar[4]
+            Pconst.integrated_error_A2 = controllerVar[4]			
             Pconst.last_error_A2= controllerVar[5]
-            if userChoice=='1':
-            	PID_result = max(-127, min(PID_result, 127))
+            if userChoice=='1':							#Limiting the PID values because of the Sabertooth range (-127, 127)	
+            	PID_result = max(-127, min(PID_result, 127))			
             if userChoice=='2':
-		PID_result = max(-100, min(PID_result, 100))
+		PID_result = max(-100, min(PID_result, 100))			#Limiting the percentage of the PWM					
 
 
         return -PID_result
