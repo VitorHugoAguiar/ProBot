@@ -12,7 +12,17 @@ Pin: release o=Debian
 Pin-Priority: -10' > \
 /etc/apt/preferences.d/sid;"
 
-sudo rm -rf /etc/apt/apt.conf.d/02compress-indexes 
+sudo grep -q -F 'deb http://ftp.nl.debian.org/debian/ jessie main' /etc/apt/sources.list || echo 'deb http://ftp.nl.debian.org/debian/ jessie main' >> /etc/apt/sources.list
+sudo grep -q -F 'deb-src http://ftp.nl.debian.org/debian/ jessie main' /etc/apt/sources.list || echo 'deb-src http://ftp.nl.debian.org/debian/ jessie main' >> /etc/apt/sources.list
+sudo grep -q -F 'deb http://ftp.nl.debian.org/debian/ sid main' /etc/apt/sources.list || echo 'deb http://ftp.nl.debian.org/debian/ sid main' >> /etc/apt/sources.list
+sudo grep -q -F 'deb-src http://ftp.nl.debian.org/debian/ sid main' /etc/apt/sources.list || echo 'deb-src http://ftp.nl.debian.org/debian/ sid main' >> /etc/apt/sources.list
+
+sudo rm -rf /etc/apt/apt.conf.d/02compress-indexes
+
+sudo apt-get update
+
+sudo apt-get install -y -t sid libczmq-dev
+sudo apt-get install -y apt-show-versions
 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 43DDF224
 sudo sh -c \
@@ -20,7 +30,7 @@ sudo sh -c \
   /etc/apt/sources.list.d/machinekit.list"
 
 sudo apt-get update
-sudo apt-get install -y -t sid libczmq-dev
-sudo apt-get install -y apt-show-versions
-sudo apt-get install -y linux-image-3.8.13-xenomai-r78 
+
+sudo apt-get install -y linux-image-3.8.13-xenomai-r78
+sudo apt-get install -y linux-headers-3.8.13-xenomai-r78
 sudo apt-get install -y machinekit-xenomai machinekit-dev
