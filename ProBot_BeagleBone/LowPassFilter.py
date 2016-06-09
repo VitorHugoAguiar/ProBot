@@ -4,8 +4,6 @@ filteredDataLR=[0,0,0,0]
 LPFgainFR=0.1
 LPFgainLR=0.3
 
-
-
 # We use two filters, one to Forward/Reverse situation and one for the Turn situation
 class LowPassFilter():
 	def lowPassFilterFR(self, directionForwardReverse):
@@ -17,7 +15,6 @@ class LowPassFilter():
 
 
 	def lowPassFilterLR(self, directionLeftTRight):
-
 
 		filteredDataLR[0]=directionLeftTRight*LPFgainLR+filteredDataLR[1]*(1-LPFgainLR)
 		filteredDataLR[1]=filteredDataLR[0]
