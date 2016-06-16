@@ -65,6 +65,7 @@ sudo apt-get install -y linux-headers-3.8.13-xenomai-r78
 sudo apt-get install -y linux-image-3.8.13-xenomai-r78 
 sudo apt-get install -y machinekit-xenomai machinekit-dev
 
+sudo apt-get -y install firmware-ralink 
 sudo apt-get -y install network-manager
 
 cd Encoders
