@@ -19,8 +19,8 @@ class EchoClientProtocol(WebSocketClientProtocol):
     def onMessage(self, payload, isBinary):
         if not isBinary:
             publisher=Pub_Sub.publisher(payload.decode('utf8'))
-
-
+	    print payload.decode('utf8')
+	
 
 class EchoClientFactory(ReconnectingClientFactory, WebSocketClientFactory):
 

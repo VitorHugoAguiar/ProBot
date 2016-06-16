@@ -130,6 +130,7 @@ class ProBot():
 
         else:
             WebPage, subscriberSplit2, subscriberSplit3  = subscriber.split()
+	    print WebPage, subscriberSplit2, subscriberSplit3
 	    ForwardReverse = float(decimal.Decimal(subscriberSplit2))
 	    LeftRight = float(decimal.Decimal(subscriberSplit3))
 	    ForwardReverse=LPF.lowPassFilterFR(ForwardReverse)
@@ -234,8 +235,10 @@ class ProBot():
 		LoopTime2 = datetime.datetime.now()
 		LoopTimeRatio=LoopTime2-LoopTime
 		self.LoopTimeRatioSeg=(LoopTimeRatio.microseconds*0.001)/1000
-		
-				
+	    except OSError as err:
+    		print("OS error: {0}".format(err))
+	    except ValueError:
+    		print("Could not convert data to an integer.")			
             except:
                 PC.stopAndReset()
 		PWM.stop(Pconst.PWM_RF)
@@ -246,7 +249,8 @@ class ProBot():
 		userChoiceFile = open("userChoice.txt", "wb")
 		userChoiceFile.write("0");
 		userChoiceFile.close()
-                sys.exit('\n\nPROGRAM STOPPED!!!\n')
+ 		print("Unexpected error:\n", sys.exc_info()[0])
+		sys.exit('\n\nPROGRAM STOPPED!!!\n')
                 raise
 
     def main(self):
