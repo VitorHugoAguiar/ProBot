@@ -129,15 +129,22 @@ class ProBot():
             subscriber = 0
 
         else:
-            WebPage, subscriberSplit2, subscriberSplit3  = subscriber.split()
-	    print WebPage, subscriberSplit2, subscriberSplit3
-	    ForwardReverse = float(decimal.Decimal(subscriberSplit2))
-	    LeftRight = float(decimal.Decimal(subscriberSplit3))
+            WebPage, up, down, left, right  = subscriber.split()
+	    
+	    Forward = float(decimal.Decimal(up))
+	    Reverse = -float(decimal.Decimal(down))
+	    Left = float(decimal.Decimal(left))
+	    Right = -float(decimal.Decimal(right))
+
+	    ForwardReverse=Forward+Reverse
+	    LeftRight=Left+Right
+
 	    ForwardReverse=LPF.lowPassFilterFR(ForwardReverse)
 	    LeftRight=LPF.lowPassFilterLR(LeftRight)
 	    self.VelocityRef = -float(ForwardReverse*Pconst.ajustFR)
 	    self.TurnMotorRight = float(LeftRight*Pconst.ajustLR)
 	    self.TurnMotorLeft = -float(LeftRight*Pconst.ajustLR)
+	    #print self.VelocityRef, self.TurnMotorRight, selfTurnMotorLeft
 	    return  self.VelocityRef,  self.TurnMotorRight, self.TurnMotorLeft
 
     def RestartProgram(self):
