@@ -244,21 +244,21 @@ class ProBot():
 			percentageL=math.fabs(leftMotor)
 
 			if rightMotor>0:
-				PWM.set_duty_cycle(Pconst.PWM_RF, percentageR)
-				PWM.set_duty_cycle(Pconst.PWM_RR, 0)
-			elif rightMotor<0:
 				PWM.set_duty_cycle(Pconst.PWM_RF, 0)
 				PWM.set_duty_cycle(Pconst.PWM_RR, percentageR)
+			elif rightMotor<0:
+				PWM.set_duty_cycle(Pconst.PWM_RF, percentageR)
+				PWM.set_duty_cycle(Pconst.PWM_RR, 0)
 			elif rightMotor==0:
 				PWM.set_duty_cycle(Pconst.PWM_RF, 0)
 				PWM.set_duty_cycle(Pconst.PWM_RR, 0)
 
 			if leftMotor>0:
-				PWM.set_duty_cycle(Pconst.PWM_LF, percentageL)
-				PWM.set_duty_cycle(Pconst.PWM_LR, 0)
-			elif leftMotor<0:
 				PWM.set_duty_cycle(Pconst.PWM_LF, 0)
 				PWM.set_duty_cycle(Pconst.PWM_LR, percentageL)
+			elif leftMotor<0:
+				PWM.set_duty_cycle(Pconst.PWM_LF, percentageL)
+				PWM.set_duty_cycle(Pconst.PWM_LR, 0)
 			elif leftMotor==0:
 				PWM.set_duty_cycle(Pconst.PWM_LF, 0)
 				PWM.set_duty_cycle(Pconst.PWM_LR, 0)
