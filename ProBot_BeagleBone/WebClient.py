@@ -16,11 +16,39 @@ Pub_Sub = SocketCommunication.publisher_and_subscriber()
 
 class EchoClientProtocol(WebSocketClientProtocol):
 
+
+    def onConnect(self, response):
+        print("Server connected: {0}".format(response.peer))
+
+    def onOpen(self):
+        print("WebSocket connection open.")
+
+        def sendMessage():
+
+    	    # Readings from the WebPage
+            subscriber = Pub_Sub.subscriber()
+
+            if subscriber is None:
+                subscriber = 0
+
+            else:
+		typeMsg=subscriber.encode('utf8')[0:5]
+		if typeMsg=="info ":  
+			self.sendMessage(subscriber.encode('utf8'))
+
+            self.factory.reactor.callLater(5, sendMessage)
+
+        # start sending messages every second ..
+        sendMessage()
+
     def onMessage(self, payload, isBinary):
-        if not isBinary:
-            publisher=Pub_Sub.publisher(payload.decode('utf8'))
-	    print payload.decode('utf8')
-	
+        if not isBinary:    
+		typeMsg = payload[0:5]
+		if typeMsg=="web  ":        
+			publisher=Pub_Sub.publisher(payload.decode('utf8'))
+			
+
+
 
 class EchoClientFactory(ReconnectingClientFactory, WebSocketClientFactory):
 

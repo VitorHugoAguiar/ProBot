@@ -4,6 +4,7 @@
 import Adafruit_I2C as Adafruit_I2C
 import Adafruit_BBIO.GPIO as GPIO
 import Adafruit_BBIO.PWM as PWM
+import threading
 import sys
 import os
 import math
@@ -20,7 +21,6 @@ import LowPassFilter
 from math import atan, atan2, sqrt,pi
 from MPU6050 import MPU6050
 import Sabertooth
-
 
 # We create a file to store the userChoice (Sabertooth or PWM)
 userChoiceFile = open("userChoice.txt", "r+")
@@ -69,7 +69,7 @@ if userChoice=='2':
 	print "\nSending a PWM signal with a frequency of", Pconst.PWM_Freq, "Hz"
 
 class ProBot():
-    def __init__(self, wheelPositionRef=0, VelocityRef=0, TurnMotorRight=0, TurnMotorLeft=0, lastAccelerometerAngleX=0, LoopTimeRatioSeg=0, sensor=0, filteredX=0):
+    def __init__(self, wheelPositionRef=0, VelocityRef=0, TurnMotorRight=0, TurnMotorLeft=0, lastAccelerometerAngleX=0, LoopTimeRatioSeg=0, sensor=0, filteredX=0, down=0, up=0, left=0, right=0):
 	self.wheelPositionRef = wheelPositionRef
         self.VelocityRef = VelocityRef
         self.TurnMotorRight = TurnMotorRight
@@ -78,19 +78,39 @@ class ProBot():
 	self.LoopTimeRatioSeg=LoopTimeRatioSeg
 	self.sensor=MPU6050(0x68)
 	self.filteredX=filteredX
+	self.up=up
+	self.down=down
+	self.left=left
+	self.right=right
+
+
+    def MsgServer (self, interval, worker_func, iterations = 0):
+      if iterations != 1:
+        threading.Timer (
+          interval,
+          ProBot.MsgServer, [interval, worker_func, 0 if iterations == 0 else iterations-1]
+        ).start ()
+
+      worker_func ()
+
+    def sendMsgServer (self):
+     	# Verification of the voltage from the Beaglebone and motors batteries
+	batteryValue=str('{0:.2f}'.format(Battery.VoltageValue('LiPo')))
+	info="info " + batteryValue +  "87000" +  "87000" +   "87000" 
+        publisher=Pub_Sub.publisher(info)
+	#print info
 
     def MPU6050Readings(self):
     	# Readings from the MPU6050
         accel_data = self.sensor.get_accel_data()
     	gyro_data = self.sensor.get_gyro_data()
   
-	RAD_TO_DEG = 57.29578	
- 	AccXangle = ((atan2(accel_data['y'],accel_data['z'])+pi)*RAD_TO_DEG)-180
+ 	AccXangle = ((atan2(accel_data['y'],accel_data['z'])+pi)*Pconst.rad_to_deg)-180
 	
 	# Complementary filter
     	self.filteredX = float(0.98 * (self.lastAccelerometerAngleX+self.LoopTimeRatioSeg*gyro_data['x']) + (1 - 0.98) * AccXangle)
     	self.lastAccelerometerAngleX=self.filteredX
-	self.filteredX=self.filteredX+2.3				# Angle offset
+	self.filteredX=self.filteredX+Pconst.Angle_offset				# Angle offset
 	return self.filteredX
 
     def Calibration_MPU6050(self):
@@ -129,12 +149,19 @@ class ProBot():
             subscriber = 0
 
         else:
-            WebPage, up, down, left, right  = subscriber.split()
-	    
-	    Forward = float(decimal.Decimal(up))
-	    Reverse = -float(decimal.Decimal(down))
-	    Left = float(decimal.Decimal(left))
-	    Right = -float(decimal.Decimal(right))
+	    typeMsg = subscriber[0:5]
+
+	    if typeMsg=="web  ":
+		self.up = subscriber[6:11]
+		self.down = subscriber[12:17]
+		self.left = subscriber[18:23]
+		self.right = subscriber[24:29]
+		#print typeMsg, self.up, self.down, self.left, self.right
+
+	    Forward = float(decimal.Decimal(self.up))
+	    Reverse = -float(decimal.Decimal(self.down))
+	    Left = float(decimal.Decimal(self.left))
+	    Right = -float(decimal.Decimal(self.right))
 
 	    ForwardReverse=Forward+Reverse
 	    LeftRight=Left+Right
@@ -177,17 +204,16 @@ class ProBot():
 	ProBot.Calibration_MPU6050()
 	GPIO.output(Pconst.BlueLED, GPIO.LOW)
 	GPIO.output(Pconst.GreenLED, GPIO.HIGH)
+	ProBot.MsgServer (5, ProBot.sendMsgServer)
 	time.sleep(0.5)
+
         while True:
             try:
 		LoopTime=datetime.datetime.now()
 
-		# Verification of the voltage from the Beaglebone and motors batteries
-                Battery.VoltageValue('LiPo')
-		
 		# Reading the MPU6050 values
 		ProBot.MPU6050Readings()
-		
+
 		# Readings from the encoders
                 Encoders = Enc.EncodersValues()
 		wheelVelocity1  = Encoders [0]               
@@ -216,9 +242,7 @@ class ProBot():
 			# Sending the values to the PWM controller that is connected to the motors
 			percentageR=math.fabs(rightMotor)
 			percentageL=math.fabs(leftMotor)
-			percentageR = max(0, min(percentageR, 100))
-			percentageL = max(0, min(percentageL, 100))
-		
+
 			if rightMotor>0:
 				PWM.set_duty_cycle(Pconst.PWM_RF, percentageR)
 				PWM.set_duty_cycle(Pconst.PWM_RR, 0)
@@ -247,6 +271,8 @@ class ProBot():
 	    except ValueError:
     		print("Could not convert data to an integer.")			
             except:
+		if 'threading' in sys.modules:
+    		    del sys.modules['threading']
                 PC.stopAndReset()
 		PWM.stop(Pconst.PWM_RF)
 		PWM.stop(Pconst.PWM_RR)
