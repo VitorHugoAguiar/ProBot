@@ -16,7 +16,7 @@ class Constants():
         self.GreenLED = "P8_9"
 	self.BlueLED = "P8_11"
 	self.rad_to_deg = 57.29578
-	self.Angle_offset = 2.3
+	self.Angle_offset = 3.5
         self.SaberTooth_KpV = 280
         self.SaberTooth_KiV = 0.6
         self.SaberTooth_KdV = 12

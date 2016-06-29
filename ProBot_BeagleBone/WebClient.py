@@ -36,7 +36,7 @@ class EchoClientProtocol(WebSocketClientProtocol):
 		if typeMsg=="info ":  
 			self.sendMessage(subscriber.encode('utf8'))
 
-            self.factory.reactor.callLater(5, sendMessage)
+            self.factory.reactor.callLater(0.1, sendMessage)
 
         # start sending messages every second ..
         sendMessage()

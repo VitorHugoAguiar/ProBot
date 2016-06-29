@@ -83,22 +83,11 @@ class ProBot():
 	self.left=left
 	self.right=right
 
-
-    def MsgServer (self, interval, worker_func, iterations = 0):
-      if iterations != 1:
-        threading.Timer (
-          interval,
-          ProBot.MsgServer, [interval, worker_func, 0 if iterations == 0 else iterations-1]
-        ).start ()
-
-      worker_func ()
-
-    def sendMsgServer (self):
-     	# Verification of the voltage from the Beaglebone and motors batteries
-	batteryValue=str('{0:.2f}'.format(Battery.VoltageValue('LiPo')))
-	info="info " + batteryValue +  "87000" +  "87000" +   "87000" 
-        publisher=Pub_Sub.publisher(info)
-	#print info
+    def Calibration_MPU6050(self):
+    	# Calibration of the MPU6050, on the begginer of the program
+	ProBot.MPU6050Readings()
+	while self.filteredX<-0.2 or self.filteredX>0.2:
+		ProBot.MPU6050Readings()
 
     def MPU6050Readings(self):
     	# Readings from the MPU6050
@@ -113,12 +102,6 @@ class ProBot():
 	self.filteredX=self.filteredX+Pconst.Angle_offset				# Angle offset
 	return self.filteredX
 
-    def Calibration_MPU6050(self):
-    	# Calibration of the MPU6050, on the begginer of the program
-	ProBot.MPU6050Readings()
-	while self.filteredX<-0.2 or self.filteredX>0.2:
-		ProBot.MPU6050Readings()
-	
     def SabertoothCommunication_initialization(self):
     	# Starting the communication with Sabertooth
         GPIO.output(Pconst.RedLED, GPIO.HIGH)
@@ -139,7 +122,6 @@ class ProBot():
 
 	GPIO.output(Pconst.RedLED, GPIO.LOW)
 	GPIO.output(Pconst.BlueLED, GPIO.HIGH)
-        
 
     def WebPage(self):
     	# Readings from the WebPage
@@ -174,6 +156,24 @@ class ProBot():
 	    #print self.VelocityRef, self.TurnMotorRight, selfTurnMotorLeft
 	    return  self.VelocityRef,  self.TurnMotorRight, self.TurnMotorLeft
 
+    def MsgServer (self, interval, worker_func, iterations = 0):
+      if iterations != 1:
+        threading.Timer (
+          interval,
+          ProBot.MsgServer, [interval, worker_func, 0 if iterations == 0 else iterations-1]
+        ).start ()
+
+      worker_func ()
+
+    def sendMsgServer (self):
+     	# Verification of the voltage from the Beaglebone and motors batteries
+	batteryValue=str('{0:.2f}'.format(Battery.VoltageValue('LiPo')))
+	info="info " + batteryValue +  "87000" +  "87000" +   "87000" 
+        publisher=Pub_Sub.publisher(info)
+	#print info
+
+
+
     def RestartProgram(self):
     	# Routine called when the angle is out of range and we need to restart the program
 	PC.stopAndReset()
@@ -198,14 +198,45 @@ class ProBot():
    	python = sys.executable
     	os.execl(python, python, * sys.argv)
 
+    def motorsControl(self, rightMotor, leftMotor):
+	if userChoice=='1':
+		# Sending the values to the Sabertooth that is connected to the motors
+		PC.drive(Pconst.addr, 1, int(rightMotor))
+	        PC.drive(Pconst.addr, 2, int(leftMotor))
+
+	if userChoice=='2':
+		# Sending the values to the PWM controller that is connected to the motors
+		percentageR=math.fabs(rightMotor)
+		percentageL=math.fabs(leftMotor)
+
+		if rightMotor>0:
+			PWM.set_duty_cycle(Pconst.PWM_RF, 0)
+			PWM.set_duty_cycle(Pconst.PWM_RR, percentageR)
+		elif rightMotor<0:
+			PWM.set_duty_cycle(Pconst.PWM_RF, percentageR)
+			PWM.set_duty_cycle(Pconst.PWM_RR, 0)
+		elif rightMotor==0:
+			PWM.set_duty_cycle(Pconst.PWM_RF, 0)
+			PWM.set_duty_cycle(Pconst.PWM_RR, 0)
+
+		if leftMotor>0:
+			PWM.set_duty_cycle(Pconst.PWM_LF, 0)
+			PWM.set_duty_cycle(Pconst.PWM_LR, percentageL)
+		elif leftMotor<0:
+			PWM.set_duty_cycle(Pconst.PWM_LF, percentageL)
+			PWM.set_duty_cycle(Pconst.PWM_LR, 0)
+		elif leftMotor==0:
+			PWM.set_duty_cycle(Pconst.PWM_LF, 0)
+			PWM.set_duty_cycle(Pconst.PWM_LR, 0)
 
     def mainRoutine(self):
     	# Starting the main program
 	ProBot.Calibration_MPU6050()
 	GPIO.output(Pconst.BlueLED, GPIO.LOW)
 	GPIO.output(Pconst.GreenLED, GPIO.HIGH)
-	ProBot.MsgServer (5, ProBot.sendMsgServer)
+	ProBot.MsgServer (0.5, ProBot.sendMsgServer)
 	time.sleep(0.5)
+
 
         while True:
             try:
@@ -233,35 +264,7 @@ class ProBot():
 		rightMotor = PID.standardPID(VelocityController1, self.filteredX, 'Angle1', userChoice)
                 leftMotor = PID.standardPID(VelocityController2, self.filteredX, 'Angle2', userChoice)
  
-		if userChoice=='1':
-			# Sending the values to the Sabertooth that is connected to the motors
-			PC.drive(Pconst.addr, 1, int(rightMotor))
-	                PC.drive(Pconst.addr, 2, int(leftMotor))
-
-		if userChoice=='2':
-			# Sending the values to the PWM controller that is connected to the motors
-			percentageR=math.fabs(rightMotor)
-			percentageL=math.fabs(leftMotor)
-
-			if rightMotor>0:
-				PWM.set_duty_cycle(Pconst.PWM_RF, 0)
-				PWM.set_duty_cycle(Pconst.PWM_RR, percentageR)
-			elif rightMotor<0:
-				PWM.set_duty_cycle(Pconst.PWM_RF, percentageR)
-				PWM.set_duty_cycle(Pconst.PWM_RR, 0)
-			elif rightMotor==0:
-				PWM.set_duty_cycle(Pconst.PWM_RF, 0)
-				PWM.set_duty_cycle(Pconst.PWM_RR, 0)
-
-			if leftMotor>0:
-				PWM.set_duty_cycle(Pconst.PWM_LF, 0)
-				PWM.set_duty_cycle(Pconst.PWM_LR, percentageL)
-			elif leftMotor<0:
-				PWM.set_duty_cycle(Pconst.PWM_LF, percentageL)
-				PWM.set_duty_cycle(Pconst.PWM_LR, 0)
-			elif leftMotor==0:
-				PWM.set_duty_cycle(Pconst.PWM_LF, 0)
-				PWM.set_duty_cycle(Pconst.PWM_LR, 0)
+		ProBot.motorsControl(rightMotor, leftMotor)
 
 		LoopTime2 = datetime.datetime.now()
 		LoopTimeRatio=LoopTime2-LoopTime
@@ -271,6 +274,9 @@ class ProBot():
 	    except ValueError:
     		print("Could not convert data to an integer.")			
             except:
+		info="info " + "off  " +  "87000" +  "87000" +   "87000" 
+
+        	publisher=Pub_Sub.publisher(info)
 		if 'threading' in sys.modules:
     		    del sys.modules['threading']
                 PC.stopAndReset()
