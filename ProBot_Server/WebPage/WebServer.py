@@ -11,13 +11,6 @@ from autobahn.twisted.websocket import WebSocketServerFactory, \
 
 class BroadcastServerProtocol(WebSocketServerProtocol):
 
-    directionUp=0
-    directionDown=0
-    ValuesFR=0
-    ValuesLR=0
-    maxValFR=0
-    maxValLR=0
-
     def onOpen(self):
         self.factory.register(self)
 
