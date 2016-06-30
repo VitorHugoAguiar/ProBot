@@ -22,21 +22,17 @@ class BroadcastServerProtocol(WebSocketServerProtocol):
         self.factory.register(self)
 
     def onMessage(self, payload, isBinary):
+		
+	typeMsg = payload[0:5]
+	up = payload[5:10]
+	down = payload[10:15]
+	left = payload[15:20]
+	right = payload[20:25]
 
-	direction=float(decimal.Decimal(payload.decode('utf8')))
-	if direction==0:
-		BroadcastServerProtocol.ValuesFR=0
-		BroadcastServerProtocol.ValuesLR=0
-        if (direction>=100 and direction<=300):
-		direction=(direction-200)*0.01
-	  	BroadcastServerProtocol.ValuesFR=direction
-	if direction>=400 and direction<=600:
-           	direction=(direction-500)*0.01
-	   	BroadcastServerProtocol.ValuesLR=direction
-
-        msg = "{0} {1:.3f} {2:.3f}".format("msg", BroadcastServerProtocol.ValuesFR, BroadcastServerProtocol.ValuesLR)
-        factory.broadcast(msg)
-
+	msg = typeMsg +" "+ up +" "+ down +" "+ left +" "+ right
+		
+	factory.broadcast(msg)
+	
     def connectionLost(self, reason):
         WebSocketServerProtocol.connectionLost(self, reason)
         self.factory.unregister(self)
@@ -49,8 +45,8 @@ class BroadcastServerFactory(WebSocketServerFactory):
     currently connected clients.
     """
 
-    def __init__(self, url, debug=False, debugCodePaths=False):
-        WebSocketServerFactory.__init__(self, url, debug=debug, debugCodePaths=debugCodePaths)
+    def __init__(self, url):
+        WebSocketServerFactory.__init__(self, url)
         self.clients = []
 
     def register(self, client):
@@ -77,9 +73,7 @@ if __name__ == '__main__':
         debug = False
 
     ServerFactory = BroadcastServerFactory
-    factory = ServerFactory(u"ws://139.162.157.96:9000",
-                            debug=debug,
-                            debugCodePaths=debug)
+    factory = ServerFactory(u"ws://192.168.10.236:9000")
 
     factory.protocol = BroadcastServerProtocol
     listenWS(factory)
