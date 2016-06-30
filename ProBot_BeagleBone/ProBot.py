@@ -173,7 +173,6 @@ class ProBot():
 	#print info
 
 
-
     def RestartProgram(self):
     	# Routine called when the angle is out of range and we need to restart the program
 	PC.stopAndReset()
@@ -230,11 +229,12 @@ class ProBot():
 			PWM.set_duty_cycle(Pconst.PWM_LR, 0)
 
     def mainRoutine(self):
+
     	# Starting the main program
 	ProBot.Calibration_MPU6050()
 	GPIO.output(Pconst.BlueLED, GPIO.LOW)
 	GPIO.output(Pconst.GreenLED, GPIO.HIGH)
-	ProBot.MsgServer (0.5, ProBot.sendMsgServer)
+	ProBot.MsgServer (0.1, ProBot.sendMsgServer)
 	time.sleep(0.5)
 
 
@@ -247,8 +247,8 @@ class ProBot():
 
 		# Readings from the encoders
                 Encoders = Enc.EncodersValues()
-		wheelVelocity1  = Encoders [0]               
-		wheelVelocity2 = Encoders[1]
+		wheelPosition1_Wheel  = Encoders [0]               
+		wheelPosition1_Wheel = Encoders[1]
 		
 		# Checking if the angle is out of range
 		if self.filteredX<-20 or self.filteredX>20:
@@ -258,39 +258,46 @@ class ProBot():
                 WebPage = ProBot.WebPage()
 
                 # With the values from the midi devices or WebPage, we can calculate the outputs from the controllers
-                VelocityController1 = PID.standardPID((self.VelocityRef+self.TurnMotorRight), wheelVelocity1, 'Velocity1', userChoice)
-                VelocityController2 = PID.standardPID((self.VelocityRef+self.TurnMotorLeft), wheelVelocity2, 'Velocity2', userChoice)
+                wheelPosition1_Wheel = PID.standardPID((self.VelocityRef+self.TurnMotorRight), wheelPosition1_Wheel, 'Position1', userChoice)
+                wheelPosition1_Wheel = PID.standardPID((self.VelocityRef+self.TurnMotorLeft), wheelPosition1_Wheel, 'Position2', userChoice)
                 
-		rightMotor = PID.standardPID(VelocityController1, self.filteredX, 'Angle1', userChoice)
-                leftMotor = PID.standardPID(VelocityController2, self.filteredX, 'Angle2', userChoice)
+		rightMotor = PID.standardPID(wheelPosition1_Wheel, self.filteredX, 'Angle1', userChoice)
+                leftMotor = PID.standardPID(wheelPosition1_Wheel, self.filteredX, 'Angle2', userChoice)
  
 		ProBot.motorsControl(rightMotor, leftMotor)
 
 		LoopTime2 = datetime.datetime.now()
 		LoopTimeRatio=LoopTime2-LoopTime
 		self.LoopTimeRatioSeg=(LoopTimeRatio.microseconds*0.001)/1000
+
+
 	    except OSError as err:
     		print("OS error: {0}".format(err))
 	    except ValueError:
     		print("Could not convert data to an integer.")			
             except:
-		info="info " + "off  " +  "87000" +  "87000" +   "87000" 
 
+		info="info " + "off  " +  "87000" +  "87000" +   "87000" 
         	publisher=Pub_Sub.publisher(info)
 		if 'threading' in sys.modules:
     		    del sys.modules['threading']
+
                 PC.stopAndReset()
 		PWM.stop(Pconst.PWM_RF)
 		PWM.stop(Pconst.PWM_RR)
 		PWM.stop(Pconst.PWM_LF)
 		PWM.stop(Pconst.PWM_LR)
 		PWM.cleanup()
+
 		userChoiceFile = open("userChoice.txt", "wb")
 		userChoiceFile.write("0");
 		userChoiceFile.close()
+
  		print("Unexpected error:\n", sys.exc_info()[0])
 		sys.exit('\n\nPROGRAM STOPPED!!!\n')
                 raise
+
+
 
     def main(self):
 	if userChoice=='1':

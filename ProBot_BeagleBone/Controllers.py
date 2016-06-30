@@ -37,8 +37,8 @@ class PIDControllers():
 
 	# Loading the variables for the controllers
         typeController = { 
-	  'Velocity1': [KpV, KiV, KdV, Pconst.limitV, Pconst.integrated_error_V1, Pconst.last_error_V1],
-          'Velocity2': [KpV, KiV, KdV, Pconst.limitV, Pconst.integrated_error_V2, Pconst.last_error_V2],
+	  'Position1': [KpV, KiV, KdV, Pconst.limitV, Pconst.integrated_error_V1, Pconst.last_error_V1],
+          'Position2': [KpV, KiV, KdV, Pconst.limitV, Pconst.integrated_error_V2, Pconst.last_error_V2],
           'Angle1': [KpA, KiA, KdA, Pconst.limitA, Pconst.integrated_error_A1, Pconst.last_error_A1],
           'Angle2': [KpA, KiA, KdA, Pconst.limitA, Pconst.integrated_error_A2, Pconst.last_error_A2]}
 
@@ -58,11 +58,11 @@ class PIDControllers():
         PID_result = float(pTerm + iTerm + dTerm)
 
 	# Updating the integrated error	and the last error for the next loop
-        if(type is 'Velocity1'):
+        if(type is 'Position1'):
             Pconst.integrated_error_V1 = controllerVar[4]
             Pconst.last_error_V1= controllerVar[5]
 
-        if(type is 'Velocity2'):
+        if(type is 'Position2'):
             Pconst.integrated_error_V2 = controllerVar[4]
             Pconst.last_error_V2= controllerVar[5]
 

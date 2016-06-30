@@ -26,11 +26,11 @@ class EncodersReadings():
         wheelPosition1_m = (float(wheelPosition1)) / Pconst.ticks * math.pi * Pconst.wheelDiameter	# First wheel distance travelled 
         wheelPosition2_m = (float(wheelPosition2)) / Pconst.ticks * math.pi * Pconst.wheelDiameter	# Second wheel distance travelled
 
-        wheelVelocity1 = float(wheelPosition1_m - self.LastwheelPosition1)				# Wheel velocity
-	wheelVelocity2 = float(wheelPosition2_m - self.LastwheelPosition2)   		
+        wheelPosition1_Wheel = float(wheelPosition1_m - self.LastwheelPosition1)				# Wheel velocity
+	wheelPosition2_Wheel = float(wheelPosition2_m - self.LastwheelPosition2)   		
 
  
-	self.LastwheelPosition1 = wheelPosition1_m   
-	self.LastwheelPosition2 = wheelPosition2_m
+	self.LastwheelPosition1 = wheelPosition1_Wheel   
+	self.LastwheelPosition2 = wheelPosition2_Wheel
 
-        return wheelVelocity1, wheelVelocity2
+        return wheelPosition1_Wheel, wheelPosition2_Wheel
