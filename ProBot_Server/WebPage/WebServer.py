@@ -23,8 +23,7 @@ class BroadcastServerProtocol(WebSocketServerProtocol):
 	right = payload[20:25]
 	msg = typeMsg +" "+ up +" "+ down +" "+ left +" "+ right
 	print(msg)
-	if typeMsg=="web  ":
-		factory.broadcast(msg)
+	factory.broadcast(msg)
 	
     def connectionLost(self, reason):
         WebSocketServerProtocol.connectionLost(self, reason)
