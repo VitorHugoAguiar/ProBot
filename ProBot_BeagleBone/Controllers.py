@@ -20,25 +20,25 @@ class PIDControllers():
 	
 	# Load the right values for the controllers,  depending on if we are using Sabertooth of PWM controller
 	if userChoice=='1':	
-		KpV=Pconst.SaberTooth_KpV
-		KiV=Pconst.SaberTooth_KiV
-		KdV=Pconst.SaberTooth_KdV
+		KpP=Pconst.SaberTooth_KpP
+		KiP=Pconst.SaberTooth_KiP
+		KdP=Pconst.SaberTooth_KdP
 		KpA=Pconst.SaberTooth_KpA
 		KiA=Pconst.SaberTooth_KiA
 		KdA=Pconst.SaberTooth_KdA
 
 	if userChoice=='2':
-		KpV=Pconst.PWM_KpV
-		KiV=Pconst.PWM_KiV
-		KdV=Pconst.PWM_KdV
+		KpP=Pconst.PWM_KpP
+		KiP=Pconst.PWM_KiP
+		KdP=Pconst.PWM_KdP
 		KpA=Pconst.PWM_KpA
 		KiA=Pconst.PWM_KiA
 		KdA=Pconst.PWM_KdA
 
 	# Loading the variables for the controllers
         typeController = { 
-	  'Position1': [KpV, KiV, KdV, Pconst.limitV, Pconst.integrated_error_V1, Pconst.last_error_V1],
-          'Position2': [KpV, KiV, KdV, Pconst.limitV, Pconst.integrated_error_V2, Pconst.last_error_V2],
+	  'Position1': [KpP, KiP, KdP, Pconst.limitP, Pconst.integrated_error_P1, Pconst.last_error_P1],
+          'Position2': [KpP, KiP, KdP, Pconst.limitP, Pconst.integrated_error_P2, Pconst.last_error_P2],
           'Angle1': [KpA, KiA, KdA, Pconst.limitA, Pconst.integrated_error_A1, Pconst.last_error_A1],
           'Angle2': [KpA, KiA, KdA, Pconst.limitA, Pconst.integrated_error_A2, Pconst.last_error_A2]}
 
@@ -59,12 +59,12 @@ class PIDControllers():
 
 	# Updating the integrated error	and the last error for the next loop
         if(type is 'Position1'):
-            Pconst.integrated_error_V1 = controllerVar[4]
-            Pconst.last_error_V1= controllerVar[5]
+            Pconst.integrated_error_P1 = controllerVar[4]
+            Pconst.last_error_P1= controllerVar[5]
 
         if(type is 'Position2'):
-            Pconst.integrated_error_V2 = controllerVar[4]
-            Pconst.last_error_V2= controllerVar[5]
+            Pconst.integrated_error_P2 = controllerVar[4]
+            Pconst.last_error_P2= controllerVar[5]
 
 	if(type is 'Angle1'):
             Pconst.integrated_error_A1 = controllerVar[4]

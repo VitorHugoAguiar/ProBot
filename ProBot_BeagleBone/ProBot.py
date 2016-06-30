@@ -69,9 +69,9 @@ if userChoice=='2':
 	print "\nSending a PWM signal with a frequency of", Pconst.PWM_Freq, "Hz"
 
 class ProBot():
-    def __init__(self, wheelPositionRef=0, VelocityRef=0, TurnMotorRight=0, TurnMotorLeft=0, lastAccelerometerAngleX=0, LoopTimeRatioSeg=0, sensor=0, filteredX=0, down=0, up=0, left=0, right=0):
+    def __init__(self, wheelPositionRef=0, PositionRef=0, TurnMotorRight=0, TurnMotorLeft=0, lastAccelerometerAngleX=0, LoopTimeRatioSeg=0, sensor=0, filteredX=0, down=0, up=0, left=0, right=0):
 	self.wheelPositionRef = wheelPositionRef
-        self.VelocityRef = VelocityRef
+        self.PositionRef = PositionRef
         self.TurnMotorRight = TurnMotorRight
         self.TurnMotorLeft = TurnMotorLeft
 	self.lastAccelerometerAngleX=lastAccelerometerAngleX
@@ -150,11 +150,11 @@ class ProBot():
 
 	    ForwardReverse=LPF.lowPassFilterFR(ForwardReverse)
 	    LeftRight=LPF.lowPassFilterLR(LeftRight)
-	    self.VelocityRef = -float(ForwardReverse*Pconst.ajustFR)
+	    self.PositionRef = -float(ForwardReverse*Pconst.ajustFR)
 	    self.TurnMotorRight = float(LeftRight*Pconst.ajustLR)
 	    self.TurnMotorLeft = -float(LeftRight*Pconst.ajustLR)
-	    #print self.VelocityRef, self.TurnMotorRight, selfTurnMotorLeft
-	    return  self.VelocityRef,  self.TurnMotorRight, self.TurnMotorLeft
+	    #print self.PositionRef, self.TurnMotorRight, selfTurnMotorLeft
+	    return  self.PositionRef,  self.TurnMotorRight, self.TurnMotorLeft
 
     def MsgServer (self, interval, worker_func, iterations = 0):
       if iterations != 1:
@@ -247,8 +247,8 @@ class ProBot():
 
 		# Readings from the encoders
                 Encoders = Enc.EncodersValues()
-		wheelPosition1_Wheel  = Encoders [0]               
-		wheelPosition1_Wheel = Encoders[1]
+		wheelPosition1  = Encoders [0]               
+		wheelPosition2 = Encoders[1]
 		
 		# Checking if the angle is out of range
 		if self.filteredX<-20 or self.filteredX>20:
@@ -258,11 +258,11 @@ class ProBot():
                 WebPage = ProBot.WebPage()
 
                 # With the values from the midi devices or WebPage, we can calculate the outputs from the controllers
-                wheelPosition1_Wheel = PID.standardPID((self.VelocityRef+self.TurnMotorRight), wheelPosition1_Wheel, 'Position1', userChoice)
-                wheelPosition1_Wheel = PID.standardPID((self.VelocityRef+self.TurnMotorLeft), wheelPosition1_Wheel, 'Position2', userChoice)
+                PositionController1 = PID.standardPID((self.PositionRef+self.TurnMotorRight), wheelPosition1, 'Position1', userChoice)
+                PositionController2 = PID.standardPID((self.PositionRef+self.TurnMotorLeft), wheelPosition2, 'Position2', userChoice)
                 
-		rightMotor = PID.standardPID(wheelPosition1_Wheel, self.filteredX, 'Angle1', userChoice)
-                leftMotor = PID.standardPID(wheelPosition1_Wheel, self.filteredX, 'Angle2', userChoice)
+		rightMotor = PID.standardPID(PositionController1, self.filteredX, 'Angle1', userChoice)
+                leftMotor = PID.standardPID(PositionController2, self.filteredX, 'Angle2', userChoice)
  
 		ProBot.motorsControl(rightMotor, leftMotor)
 
