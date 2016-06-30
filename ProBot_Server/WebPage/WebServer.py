@@ -11,13 +11,6 @@ from autobahn.twisted.websocket import WebSocketServerFactory, \
 
 class BroadcastServerProtocol(WebSocketServerProtocol):
 
-    directionUp=0
-    directionDown=0
-    ValuesFR=0
-    ValuesLR=0
-    maxValFR=0
-    maxValLR=0
-
     def onOpen(self):
         self.factory.register(self)
 
@@ -28,10 +21,10 @@ class BroadcastServerProtocol(WebSocketServerProtocol):
 	down = payload[10:15]
 	left = payload[15:20]
 	right = payload[20:25]
-
 	msg = typeMsg +" "+ up +" "+ down +" "+ left +" "+ right
-		
-	factory.broadcast(msg)
+	print(msg)
+	if typeMsg=="web  ":
+		factory.broadcast(msg)
 	
     def connectionLost(self, reason):
         WebSocketServerProtocol.connectionLost(self, reason)
@@ -60,7 +53,6 @@ class BroadcastServerFactory(WebSocketServerFactory):
             self.clients.remove(client)
 
     def broadcast(self, msg):
-        print(msg)
         for c in self.clients:
             c.sendMessage(msg.encode('utf8'))
 
