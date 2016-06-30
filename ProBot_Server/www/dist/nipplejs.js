@@ -5,33 +5,19 @@
 var socket = null;
 var isopen = false;
 var direction1=0;
-var directionX1=0
-var directionY1=0
 var directionValue2=0
 var directionValue1=0;
 var joystickID=0;
-socket = new WebSocket("ws://139.162.157.96:9000");
+var up = 0;
+var down = 0;
+var left = 0;
+var right = 0;
+socket = new WebSocket("ws://192.168.10.236:9000");
 
 socket.onopen = function() {
   console.log("Connected!");
   isopen = true;
 }
-
-var noclicks=0;
-
-function checkVariable(){
-  
-
-  setTimeout(function(){
-      socket.send(noclicks);
-      checkVariable();
-
-    }, 100);
-
-}
-
-window.onload=checkVariable;
-
 
 
 // Constants
@@ -671,8 +657,8 @@ Nipple.prototype.computeDirection = function (obj) {
     
   
         direction1=direction;
-	directionX1=directionX;
-	directionY1=directionY;
+        direction2=directionX;
+        direction3=directionY;
 
 
         var same = {};
@@ -1108,44 +1094,42 @@ Collection.prototype.processOnMove = function (evt) {
 
     if (joystickID==0){
 
-    if (direction1=='up' && directionY1=='up'){
+    if (direction1=='up'){
 
-        directionValue1=toSend.distance+200
-        if (isopen) {
-            socket.send(directionValue1);
+        up=toSend.distance/100;
+        if (isopen) { 
+            socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
  
         }
  
     }
 
-    if (direction1=='down'&& directionY1=='down'){
-        directionValue1=-toSend.distance+200
+    if (direction1=='down'){
+        down=toSend.distance/100;
         if (isopen) {
-            socket.send(directionValue1);
-
+             socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
         }
 
     }
 }
 
     if (joystickID==1){
-    if (direction1=='left' && directionX1=='left'){
-        directionValue2=toSend.distance+500
-        if (isopen) {
-            socket.send(directionValue2);
+    if (direction1=='left'){
+        left=toSend.distance/100;
+                if (isopen) {
+            socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
 
         }
     }
 
-    if (direction1=='right' && directionX1=='right'){
-        directionValue2=-toSend.distance+500
+    if (direction1=='right'){
+        right=toSend.distance/100;
         if (isopen) {
-        socket.send(directionValue2);
-
-    	}
+            socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
+    }
     }
 }
-    noclicks=1;
+
     console.log(joystickID);
     
 
@@ -1201,15 +1185,14 @@ Collection.prototype.processOnEnd = function (evt) {
     // Send everything to everyone.
     nipple.trigger('move', toSend);
     self.trigger('move ' + identifier + ':move', toSend);
-
-     if (isopen) {
-        socket.send(0);
-
-    }
-    noclicks=0;
-
-
-
+    up=0;
+    down=0;
+    left=0;
+    right=0;
+    
+    if (isopen) {
+            socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
+	}
 
     // Clear the pressure interval reader
     clearInterval(self.pressureIntervals[identifier]);
