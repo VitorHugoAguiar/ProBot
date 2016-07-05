@@ -32,19 +32,21 @@ class EchoClientProtocol(WebSocketClientProtocol):
                 subscriber = 0
 
             else:
-		typeMsg=subscriber.encode('utf8')[0:5]
-		if typeMsg=="info ":  
+		sendingMsg = (subscriber.encode('utf8')).split(" ")
+		typeMsg=sendingMsg [0]
+		if typeMsg=="ProBot2_info":  
 			self.sendMessage(subscriber.encode('utf8'))
 
             self.factory.reactor.callLater(0.1, sendMessage)
 
-        # start sending messages every second ..
+        # start sending messages ..
         sendMessage()
 
     def onMessage(self, payload, isBinary):
         if not isBinary:    
-		typeMsg = payload[0:5]
-		if typeMsg=="web  ":        
+		incomingMsg = payload.split(" ")
+		typeMsg = incomingMsg [0]
+		if typeMsg=="web":        
 			publisher=Pub_Sub.publisher(payload.decode('utf8'))
 			
 

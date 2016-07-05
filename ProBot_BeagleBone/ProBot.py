@@ -131,14 +131,14 @@ class ProBot():
             subscriber = 0
 
         else:
-	    typeMsg = subscriber[0:5]
+	    incomingMsg = subscriber.split(" ")
 
-	    if typeMsg=="web  ":
-		self.up = subscriber[6:11]
-		self.down = subscriber[12:17]
-		self.left = subscriber[18:23]
-		self.right = subscriber[24:29]
-		#print typeMsg, self.up, self.down, self.left, self.right
+	    if incomingMsg[0]=="web":
+		self.up = incomingMsg[1]
+		self.down = incomingMsg[2]
+		self.left = incomingMsg[3]
+		self.right = incomingMsg[4]
+		# print incomingMsg[0], self.up, self.down, self.left, self.right
 
 	    Forward = float(decimal.Decimal(self.up))
 	    Reverse = -float(decimal.Decimal(self.down))
@@ -158,17 +158,16 @@ class ProBot():
 
     def MsgServer (self, interval, worker_func, iterations = 0):
       if iterations != 1:
-        threading.Timer (
-          interval,
-          ProBot.MsgServer, [interval, worker_func, 0 if iterations == 0 else iterations-1]
-        ).start ()
+        threading.Timer (interval, ProBot.MsgServer, [interval, worker_func, 0 if iterations == 0 else iterations-1]).start ()
 
       worker_func ()
 
     def sendMsgServer (self):
      	# Verification of the voltage from the Beaglebone and motors batteries
+	t = threading.Timer(1, ProBot.sendMsgServer)
+	t.start() 
 	batteryValue=str('{0:.2f}'.format(Battery.VoltageValue('LiPo')))
-	info="info " + batteryValue +  "87000" +  "87000" +   "87000" 
+	info="ProBot2_info" + " " + batteryValue
         publisher=Pub_Sub.publisher(info)
 	#print info
 
@@ -234,7 +233,10 @@ class ProBot():
 	ProBot.Calibration_MPU6050()
 	GPIO.output(Pconst.BlueLED, GPIO.LOW)
 	GPIO.output(Pconst.GreenLED, GPIO.HIGH)
-	ProBot.MsgServer (0.1, ProBot.sendMsgServer)
+	ProBot.sendMsgServer()
+	#ProBot.MsgServer (0.1, ProBot.sendMsgServer)
+	
+
 	time.sleep(0.5)
 
 
@@ -270,15 +272,15 @@ class ProBot():
 		LoopTimeRatio=LoopTime2-LoopTime
 		self.LoopTimeRatioSeg=(LoopTimeRatio.microseconds*0.001)/1000
 
-
 	    except OSError as err:
     		print("OS error: {0}".format(err))
 	    except ValueError:
     		print("Could not convert data to an integer.")			
             except:
 
-		info="info " + "off  " +  "87000" +  "87000" +   "87000" 
+		info="ProBot2_info" + " " + "off"
         	publisher=Pub_Sub.publisher(info)
+
 		if 'threading' in sys.modules:
     		    del sys.modules['threading']
 
