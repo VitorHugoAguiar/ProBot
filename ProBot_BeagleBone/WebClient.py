@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import sys
 import zmq
-import SocketCommunication
+import SocketFile
 
 from twisted.internet import reactor
 from twisted.internet.protocol import ReconnectingClientFactory
@@ -12,7 +12,7 @@ from autobahn.twisted.websocket import WebSocketClientFactory, \
     connectWS
 
 # Initialization of classes from local files
-Pub_Sub = SocketCommunication.publisher_and_subscriber()
+Pub_Sub = SocketFile.SocketClass()
 
 class EchoClientProtocol(WebSocketClientProtocol):
 

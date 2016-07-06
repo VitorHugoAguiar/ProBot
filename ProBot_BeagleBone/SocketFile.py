@@ -17,7 +17,7 @@ publisher.connect("tcp://localhost:5579")
 publisher.sndhwm = 1100000
 
 
-class publisher_and_subscriber():
+class SocketClass():
 
     def subscriber(self):
 

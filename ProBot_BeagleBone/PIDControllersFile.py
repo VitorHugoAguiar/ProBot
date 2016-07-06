@@ -2,15 +2,15 @@
 
 # Python Standard Library Imports
 import math
-import ProBotConstants
+import ProBotConstantsFile
 import decimal
 import time
 
 # Initialization of classes from local files
-Pconst = ProBotConstants.Constants()
+Pconst = ProBotConstantsFile.Constants()
 
 # PID functions
-class PIDControllers():
+class PIDControllersClass():
     # Build a constructor
     def __init__(self, error=0):
         self.error = error

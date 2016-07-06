@@ -6,9 +6,21 @@ Copyright 2015
 """
 
 import smbus
+import math
+import ProBotConstantsFile
+import Adafruit_BBIO.GPIO as GPIO
+Pconst = ProBotConstantsFile.Constants()
+
+
+# Configuration the type of GPIO's
+GPIO.setup(Pconst.RedLED, GPIO.OUT)
+GPIO.setup(Pconst.GreenLED, GPIO.OUT)
+GPIO.setup(Pconst.BlueLED, GPIO.OUT)
 
 class MPU6050:
-
+    filteredX=0
+    lastAccelerometerAngleX=0
+    
     # Global Variables
     GRAVITIY_MS2 = 9.80665
     address = None
@@ -258,6 +270,29 @@ class MPU6050:
         gyro = get_gyro_data()
 
         return [accel, gyro, temp]
+    
+    def Calibration_MPU6050(self):
+    	# Calibration of the MPU6050
+	self.Complementary_filter(0)
+	while self.filteredX<-0.2 or self.filteredX>0.2:
+	    self.Complementary_filter(0)
+	
+	GPIO.output(Pconst.BlueLED, GPIO.LOW)
+	GPIO.output(Pconst.GreenLED, GPIO.HIGH)
+
+    def Complementary_filter(self, LoopTimeRatioSeg):
+    	# Readings from the MPU6050
+        accel_data = self.get_accel_data()
+        gyro_data = self.get_gyro_data()
+ 	AccXangle = ((math.atan2(accel_data['y'],accel_data['z'])+math.pi)*Pconst.rad_to_deg)-180
+ 
+ 	# Complementary filter
+    	self.filteredX = float(0.98 * (self.lastAccelerometerAngleX+LoopTimeRatioSeg*gyro_data['x']) + (1 - 0.98) * AccXangle)
+    	self.lastAccelerometerAngleX=self.filteredX
+	self.filteredX=self.filteredX+Pconst.Angle_offset
+
+	return self.filteredX
+    
 
 if __name__ == "__main__":
     mpu = MPU6050(0x68)

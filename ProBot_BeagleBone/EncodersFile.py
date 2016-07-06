@@ -3,17 +3,17 @@
 # Python Standard Library Imports
 import eqep
 import math
-import ProBotConstants
+import ProBotConstantsFile
 
 # Initialization of classes from local files
-Pconst = ProBotConstants.Constants()
+Pconst = ProBotConstantsFile.Constants()
 
 # Instantiate an instance of the driver for encoder of the motor 1
 encoder1 = eqep.eQEP("/sys/devices/ocp.3/48302000.epwmss/48302180.eqep", eqep.eQEP.MODE_ABSOLUTE)
 # Instantiate an instance of the driver for encoder of the motor 2
 encoder2 = eqep.eQEP("/sys/devices/ocp.3/48304000.epwmss/48304180.eqep", eqep.eQEP.MODE_ABSOLUTE)
 
-class EncodersReadings():
+class EncodersClass():
     def __init__(self, LastwheelPosition1=0, LastwheelPosition2=0):
         self.LastwheelPosition1 = LastwheelPosition1
 	self.LastwheelPosition2 = LastwheelPosition2

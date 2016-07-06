@@ -3,16 +3,16 @@
 # Python Standart Library Imports
 import Adafruit_BBIO.ADC as ADC
 import Adafruit_BBIO.GPIO as GPIO
-import ProBotConstants
+import ProBotConstantsFile
 
 # Initialization of classes from local files
-Pconst = ProBotConstants.Constants()
+Pconst = ProBotConstantsFile.Constants()
 
 # Start the ADC
 ADC.setup()
 
 # Battery measurement
-class BatteryVoltage():
+class BatteryMonitorClass():
 
         def VoltageValue(self, type):
             # Reading the voltage from the LiPo battery
