@@ -30,7 +30,7 @@ sudo sh -c \
   /etc/apt/sources.list.d/machinekit.list"
 
 sudo apt-get update
-
+sudo apt-get install -y xauth
 sudo apt-get install -y linux-image-3.8.13-xenomai-r78
 sudo apt-get install -y linux-headers-3.8.13-xenomai-r78
 sudo apt-get install -y machinekit-xenomai machinekit-dev
