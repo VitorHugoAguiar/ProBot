@@ -31,57 +31,15 @@ export LC_TYPE=en_US.UTF-8
 (sudo crontab -l ; echo "@reboot sh $(pwd -P)/EnableEncoders.sh") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (sudo crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_Client.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 
-sudo sh -c \
-"echo 'Package: *
-Pin: release a=stable
-Pin-Priority: 900
+cd Machinekit
+sudo sh install_Machinekit.sh
 
-Package: *
-Pin: release o=Debian
-Pin-Priority: -10' > \
-/etc/apt/preferences.d/sid;"
-
-sudo grep -q -F 'deb http://ftp.nl.debian.org/debian/ jessie main' /etc/apt/sources.list || echo 'deb http://ftp.nl.debian.org/debian/ jessie main' >> /etc/apt/sources.list
-sudo grep -q -F 'deb-src http://ftp.nl.debian.org/debian/ jessie main' /etc/apt/sources.list || echo 'deb-src http://ftp.nl.debian.org/debian/ jessie main' >> /etc/apt/sources.list
-sudo grep -q -F 'deb http://ftp.nl.debian.org/debian/ sid main' /etc/apt/sources.list || echo 'deb http://ftp.nl.debian.org/debian/ sid main' >> /etc/apt/sources.list
-sudo grep -q -F 'deb-src http://ftp.nl.debian.org/debian/ sid main' /etc/apt/sources.list || echo 'deb-src http://ftp.nl.debian.org/debian/ sid main' >> /etc/apt/sources.list
-
-sudo apt-get update
-
-sudo apt-get install -y -t sid libczmq-dev
-
-sudo rm -rf /etc/apt/apt.conf.d/02compress-indexes 
-sudo apt-get update
-sudo apt-get install -y apt-show-versions
-
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 43DDF224
-sudo sh -c \
-  "echo 'deb http://deb.machinekit.io/debian jessie main' > \
-  /etc/apt/sources.list.d/machinekit.list"
-  
-sudo apt-get update
-
-sudo apt-get install -y linux-headers-3.8.13-xenomai-r78
-sudo apt-get install -y linux-image-3.8.13-xenomai-r78 
-sudo apt-get install -y machinekit-xenomai machinekit-dev
-
-sudo apt-get -y install network-manager
-sudo apt-get -y install firmware-ralink 
-
+cd ..
 cd Encoders
-sudo cp bone_eqep0-00A0.dtbo /lib/firmware
-sudo cp bone_eqep1-00A0.dtbo /lib/firmware
-sudo cp bone_eqep2-00A0.dtbo /lib/firmware
-sudo cp bone_eqep2b-00A0.dtbo /lib/firmware
+sudo sh install_Encoders.sh
 
 cd ..
 cd Crossbar
-sudo apt-get install -y build-essential libssl-dev libffi-dev python-dev python-smbus
-sudo python get-pip.py
-sudo pip install --upgrade six
-sudo pip install --upgrade setuptools
+sudo sh install_Crossbar.sh
 
-git clone https://github.com/crossbario/crossbar.git
-cd crossbar
-sudo pip install --upgrade -e .
 sudo shutdown -h now
