@@ -1,23 +1,53 @@
-(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.nipplejs = f()}})(function(){var define,module,exports;
+(function(f){
+if(typeof exports==="object"&&typeof module!=="undefined"){
+	module.exports=f()}
+else if(typeof define==="function"&&define.amd){
+	define([],f)}
+else{
+	var g;
+if(typeof window!=="undefined"){
+	g=window}
+else if(typeof global!=="undefined"){
+	g=global}else if(typeof self!=="undefined"){
+	g=self}
+else{
+	g=this}g.nipplejs = f()}})
+(function(){
+var define,module,exports;
 'use strict';
 
 
 var socket = null;
 var isopen = false;
 var direction1=0;
-var directionValue2=0
-var directionValue1=0;
 var joystickID=0;
 var up = 0;
 var down = 0;
 var left = 0;
 var right = 0;
-socket = new WebSocket("ws://192.168.10.236:9000");
+var incomingMsg=0;
+var res=0;
+
+socket = new WebSocket("ws://89.109.64.175:9000");
 
 socket.onopen = function() {
-  console.log("Connected!");
-  isopen = true;
-}
+	console.log("Connected!");
+  	isopen = true;
+	}
+
+        socket.onmessage = function (evt) 
+           { 
+           var received_msg = evt.data;
+	   var res = received_msg.split(" ");
+	   if (res[0]=="ProBot2_info"){
+		res1= "Bat. : " + res[1] + " V"; 
+		}
+	    
+	   console.log(res);
+	   document.getElementById("logId").value=res1;
+	   
+            };
+
 
 
 // Constants
@@ -1090,50 +1120,35 @@ Collection.prototype.processOnMove = function (evt) {
     nipple.trigger('move', toSend);
     self.trigger('move ' + identifier + ':move', toSend);
     
-    joystickID=self.id;
 
-    if (joystickID==0){
-
+    if (self.id==0){
     if (direction1=='up'){
 
         up=toSend.distance/100;
-        if (isopen) { 
-            socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
- 
-        }
- 
+	down=0;
     }
 
     if (direction1=='down'){
+	up=0;
         down=toSend.distance/100;
-        if (isopen) {
-             socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
         }
-
     }
-}
 
-    if (joystickID==1){
+    if (self.id==1){
     if (direction1=='left'){
         left=toSend.distance/100;
-                if (isopen) {
-            socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
-
-        }
+	right=0;
     }
 
     if (direction1=='right'){
-        right=toSend.distance/100;
-        if (isopen) {
-            socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
+	left=0;
+        right=toSend.distance/100;  
+    	}
     }
-    }
-}
 
-    console.log(joystickID);
-    
-
-
+    if (isopen) {
+	socket.send("web" + " " + up.toFixed(3) +" " + down.toFixed(3) + " " + left.toFixed(3) + " " + right.toFixed(3));
+    	}
 };
 
 Collection.prototype.processOnEnd = function (evt) {
@@ -1159,40 +1174,24 @@ Collection.prototype.processOnEnd = function (evt) {
             });
     }
 
-// Prepare event's datas.
-    var toSend = {
-        identifier: nipple.identifier,
-        position: 0,
-        force: 0,
-        pressure: 0 || 0 || 0 || 0,
-        distance: 0,
-        angle: {
-            radian: 0,
-            degree: 0
-        },
-        instance: nipple
-    };
 
-    // Compute the direction's datas.
-    toSend = nipple.computeDirection(toSend);
 
-    // Offset angles to follow units circle.
-    toSend.angle = {
-        radian: 0,
-        degree: 0
-    };
-
-    // Send everything to everyone.
-    nipple.trigger('move', toSend);
-    self.trigger('move ' + identifier + ':move', toSend);
-    up=0;
-    down=0;
-    left=0;
-    right=0;
+    if (self.id==0){
+        up=0;
+	down=0;
+    }
+    
+    if (self.id==1){
+	left=0;
+	right=0;
+    } 
     
     if (isopen) {
-            socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
-	}
+        socket.send("web" + " " + up.toFixed(3) +" " + down.toFixed(3) + " " + left.toFixed(3) + " " + right.toFixed(3));
+    }
+
+
+
 
     // Clear the pressure interval reader
     clearInterval(self.pressureIntervals[identifier]);
