@@ -62,7 +62,7 @@
     	</div>
 
     	<div style=" top: 10%; margin-left: 10%; width:80%; height:600px" id = 'main' class='main' >
-        	<iframe src="https://videolink2.me/o/b5e7c982" frameborder="0" scrolling="yes"></iframe>    
+        	<iframe src="https://videolink2.me/probot1" frameborder="0" scrolling="yes"></iframe>    
     	</div>
 
     	<div style="top:70%;text-align: center; position:relative; width: 100%; border-width: 1px 0 0 0; ">
@@ -70,10 +70,10 @@
         	<button id="keyboard" onclick="keyboardHandler()">Keyboard</button>
         	<button id="joystick" onclick="joystickHandler()">Joystick</button>
     	</div>
-<div style="top:75%;text-align: center; position:relative; width: 100%; border-width: 1px 0 0 0; ">
-<input type="text" id="logId" />
+	<div style="top:75%;text-align: center; position:relative; width: 100%; border-width: 1px 0 0 0; ">
+		<input type="text" id="logId" />
+	</div>
 
-</div>
 	<script type="text/javascript">
 
 	var socket = null;
@@ -84,8 +84,11 @@
 	var right = 0;
 	var keys = [];
 	var res1=0;
+	var positionLatitude=0;
+	var positionLongitude=0;
 
-	socket = new WebSocket("ws://192.168.10.236:9000");
+
+	socket = new WebSocket("ws://89.109.64.175:9000");
 
 	socket.onopen = function() {
   		console.log("Connected!");
@@ -95,8 +98,14 @@
            { 
            var received_msg = evt.data;
 	   var res = received_msg.split(" ");
-	   if (res[0]=="info"){
-		res1= "Battery Voltage: " + res[2] + " V"; 
+	   if (res[0]=="ProBot2_info"){
+		res1= "Battery Voltage: " + res[1] + " V"; 
+		}
+	    if (res[0]=="GPSProBot2"){
+		positionLatitude = res[1]; 
+		positionLongitude = res[2]; 
+		console.log(positionLatitude)
+		console.log(positionLongitude)
 		}
 
 	   console.log(res);
@@ -129,7 +138,7 @@
 					{
 						left = 0.750;
 					}
-					socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
+					socket.send("web" + " " + up.toFixed(3) +" " + down.toFixed(3) + " " + left.toFixed(3) + " " + right.toFixed(3));
 				}
 				if(keys[38] && keys[39])	//FRENTE E DIREITA
 				{
@@ -143,7 +152,7 @@
 					{
 						right = 0.750;
 					}
-					socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
+					socket.send("web" + " " + up.toFixed(3) +" " + down.toFixed(3) + " " + left.toFixed(3) + " " + right.toFixed(3));
 				}
 				if(keys[40] && keys[37])	//ATRAS E ESQUERDA
 				{
@@ -157,7 +166,7 @@
 					{
 						left = 0.750;
 					}
-					socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
+					socket.send("web" + " " + up.toFixed(3) +" " + down.toFixed(3) + " " + left.toFixed(3) + " " + right.toFixed(3));
 				}
 				if(keys[40] && keys[39])	//ATRAS E DIREITA
 				{
@@ -171,7 +180,7 @@
 					{
 						right = 0.750;
 					}
-					socket.send("" + "web  " + up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
+					socket.send("web" + " " + up.toFixed(3) +" " + down.toFixed(3) + " " + left.toFixed(3) + " " + right.toFixed(3));
 				}
 				if(e.keyCode == 38) //FRENTE
 				{
@@ -180,7 +189,7 @@
 					{
 						up = 0.750;
 					}
-					socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
+					socket.send("web" + " " + up.toFixed(3) +" " + down.toFixed(3) + " " + left.toFixed(3) + " " + right.toFixed(3));
 				}
 				if(e.keyCode == 40) //TRAS
 				{
@@ -189,7 +198,7 @@
 					{
 						down = 0.750;
 					}	
-					socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));					
+					socket.send("web" + " " + up.toFixed(3) +" " + down.toFixed(3) + " " + left.toFixed(3) + " " + right.toFixed(3));				
 				}
 				if(e.keyCode == 37) //ESQUERDA
 				{
@@ -198,7 +207,7 @@
 					{
 						left = 0.750;
 					}
-					socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
+					socket.send("web" + " " + up.toFixed(3) +" " + down.toFixed(3) + " " + left.toFixed(3) + " " + right.toFixed(3));
 				}
 				if(e.keyCode == 39) //DIREITA
 				{
@@ -207,7 +216,7 @@
 					{
 						right = 0.750;
 					}
-					socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
+					socket.send("web" + " " + up.toFixed(3) +" " + down.toFixed(3) + " " + left.toFixed(3) + " " + right.toFixed(3));
 				}
 			}		
 		}
@@ -224,22 +233,22 @@
 				if(!keys[38])	//FRENTE
 				{
 					up = 0;
-					socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
+					socket.send("web" + " " + up.toFixed(3) +" " + down.toFixed(3) + " " + left.toFixed(3) + " " + right.toFixed(3));
 				}			
 				if(!keys[40])	//TRAS
 				{
 					down = 0;
-					socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
+					socket.send("web" + " " + up.toFixed(3) +" " + down.toFixed(3) + " " + left.toFixed(3) + " " + right.toFixed(3));
 				}
 				if(!keys[37])	//ESQUERDA
 				{
 					left = 0;
-					socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
+					socket.send("web" + " " + up.toFixed(3) +" " + down.toFixed(3) + " " + left.toFixed(3) + " " + right.toFixed(3));
 				}
 				if(!keys[39])	//DIREITA
 				{
 					right = 0;
-					socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
+					socket.send("web" + " " + up.toFixed(3) +" " + down.toFixed(3) + " " + left.toFixed(3) + " " + right.toFixed(3));
 				}			
 			}
 		}		
@@ -309,7 +318,7 @@
 						left = 0;
 					}
 					
-					socket.send("" + "web  "+ up.toFixed(3) + down.toFixed(3) + left.toFixed(3) + right.toFixed(3));
+					socket.send("web" + " " + up.toFixed(3) +" " + down.toFixed(3) + " " + left.toFixed(3) + " " + right.toFixed(3));
 				}            
 			}
 			
