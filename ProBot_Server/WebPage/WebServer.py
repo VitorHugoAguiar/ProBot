@@ -16,14 +16,20 @@ class BroadcastServerProtocol(WebSocketServerProtocol):
 
     def onMessage(self, payload, isBinary):
 		
-	typeMsg = payload[0:5]
-	up = payload[5:10]
-	down = payload[10:15]
-	left = payload[15:20]
-	right = payload[20:25]
-	msg = typeMsg +" "+ up +" "+ down +" "+ left +" "+ right
-	print(msg)
+
+	incomingMsg = payload.split(" ")
+	typeMsg=incomingMsg[0]
+	if typeMsg=="web":
+		msg = incomingMsg[0] +" "+ incomingMsg[1] +" "+ incomingMsg[2] +" "+ incomingMsg[3] +" "+ incomingMsg[4]
+	if typeMsg=="ProBot2_info":	
+		msg = incomingMsg[0] +" "+ incomingMsg[1]
+	if typeMsg=="GPSProBot2":
+		msg = incomingMsg[0] +" "+ incomingMsg[1] +" "+ incomingMsg[2]
+	print (msg)
+
 	factory.broadcast(msg)
+
+
 	
     def connectionLost(self, reason):
         WebSocketServerProtocol.connectionLost(self, reason)
