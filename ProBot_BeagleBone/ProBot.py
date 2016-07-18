@@ -88,7 +88,7 @@ class ProBot():
     		print("Could not convert data to an integer.")			
             except:
 		
-		InitProgram.StopProgram()
+		InitProgram.StopProgram(1)
 
  		print("Unexpected error:\n", sys.exc_info()[0])
 		sys.exit('\n\nPROGRAM STOPPED!!!\n')

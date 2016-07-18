@@ -2,14 +2,17 @@
 
 # Python Standard Library Imports
 import Adafruit_BBIO.UART as UART
+import sys
 import serial
 import struct
 import time
 import ProBotConstantsFile
 import Adafruit_BBIO.GPIO as GPIO
 
+
 # Initialization of classes from local files
 Pconst = ProBotConstantsFile.Constants()
+#InitProgram=StartFile.StartFileClass()
 
 # Configuration the type of GPIO's
 GPIO.setup(Pconst.RedLED, GPIO.OUT)
@@ -63,16 +66,24 @@ class SabertoothClass():
         self.ser.flush()	
         
     def CommunicationStart(self):
-        # Starting the communication with Sabertooth
-        GPIO.output(Pconst.RedLED, GPIO.HIGH)
-        self.set_baud(Pconst.addr, Pconst.baud)
-        time.sleep(3)												# Wait to stabilize the communication
+        try:
+	    import StartFile
+            InitProgram=StartFile.StartFileClass()
+	    # Starting the communication with Sabertooth
+            GPIO.output(Pconst.RedLED, GPIO.HIGH)
+            self.set_baud(Pconst.addr, Pconst.baud)
+            time.sleep(3)												# Wait to stabilize the communication
 
-        self.stopAndReset()
+            self.stopAndReset()
 
-	GPIO.output(Pconst.RedLED, GPIO.LOW)
-	GPIO.output(Pconst.BlueLED, GPIO.HIGH)
-   
+	    GPIO.output(Pconst.RedLED, GPIO.LOW)
+	    GPIO.output(Pconst.BlueLED, GPIO.HIGH)
+
+        except:
+	    InitProgram.StopProgram(0)
+	    print("Unexpected error:\n", sys.exc_info()[0])
+	    sys.exit('\n\nPROGRAM STOPPED!!!\n')
+            raise
    
    
    

@@ -6,11 +6,13 @@ Copyright 2015
 """
 
 import smbus
+import sys
 import math
 import ProBotConstantsFile
 import Adafruit_BBIO.GPIO as GPIO
+import StartFile
 Pconst = ProBotConstantsFile.Constants()
-
+InitProgram=StartFile.StartFileClass()
 
 # Configuration the type of GPIO's
 GPIO.setup(Pconst.RedLED, GPIO.OUT)
@@ -272,13 +274,20 @@ class MPU6050:
         return [accel, gyro, temp]
     
     def Calibration_MPU6050(self):
-    	# Calibration of the MPU6050
-	self.Complementary_filter(0)
-	while self.filteredX<-0.2 or self.filteredX>0.2:
+    	try:
+	    # Calibration of the MPU6050
 	    self.Complementary_filter(0)
+	    while self.filteredX<-0.2 or self.filteredX>0.2:
+	        self.Complementary_filter(0)
 	
-	GPIO.output(Pconst.BlueLED, GPIO.LOW)
-	GPIO.output(Pconst.GreenLED, GPIO.HIGH)
+	    GPIO.output(Pconst.BlueLED, GPIO.LOW)
+	    GPIO.output(Pconst.GreenLED, GPIO.HIGH)
+
+        except:
+	    InitProgram.StopProgram(0)
+	    print("Unexpected error:\n", sys.exc_info()[0])
+	    sys.exit('\n\nPROGRAM STOPPED!!!\n')
+            raise
 
     def Complementary_filter(self, LoopTimeRatioSeg):
     	# Readings from the MPU6050

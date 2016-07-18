@@ -56,7 +56,7 @@ class EchoClientFactory(ReconnectingClientFactory, WebSocketClientFactory):
 
     protocol = EchoClientProtocol
 
-    maxDelay = 10
+    maxDelay = 1
 
 
     def startedConnecting(self, connector):
