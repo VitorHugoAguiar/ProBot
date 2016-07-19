@@ -30,7 +30,7 @@ class WebPageClass():
  
         else:
 	    incomingMsg = subscriber.split(" ") 
-
+	    
 	    if incomingMsg[0]=="web":
 		self.up = incomingMsg[1]
 		self.down = incomingMsg[2]
