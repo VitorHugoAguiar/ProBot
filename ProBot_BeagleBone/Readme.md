@@ -16,7 +16,7 @@ Note: The Probot Project is working on a BeagleBone Black with debian 8.2 (jessi
 
 4  - Go to ProBot_BeagleBone with::
 	
-	cd ProBot/ProBot_BeagleBone/Requirements
+	cd ProBot/ProBot_BeagleBone/InstallEverything
 and:
 
 4.1 - To install everything that it's required to run ProBot's program, for debian images (jessie), just type:
