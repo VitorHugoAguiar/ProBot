@@ -31,6 +31,8 @@ export LC_TYPE=en_US.UTF-8
 (sudo crontab -l ; echo "@reboot sh $(pwd -P)/EnableEncoders.sh") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (sudo crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_Client.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 
+cd ..
+
 cd Machinekit
 sudo sh install_Machinekit.sh
 
@@ -38,7 +40,10 @@ cd ..
 cd Encoders
 sudo sh install_Encoders.sh
 
-cd ..
 sudo pip install crossbar
+
+cd ..
+cd SaltMinion
+sudo sh installSaltMinion.sh
 
 sudo shutdown -h now
