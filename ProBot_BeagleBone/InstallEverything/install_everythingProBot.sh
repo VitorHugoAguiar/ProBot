@@ -28,6 +28,8 @@ export LANG=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
 
 sudo apt-get install -y python-smbus
+sudo apt-get -y install network-manager
+sudo apt-get -y install firmware-ralink 
 
 cd..
 (sudo crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/WebClient.py ws://$input_variable:$input_variable2") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
