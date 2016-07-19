@@ -32,7 +32,6 @@ export LC_TYPE=en_US.UTF-8
 (sudo crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_Client.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 
 cd ..
-
 cd Machinekit
 sudo sh install_Machinekit.sh
 
@@ -40,7 +39,9 @@ cd ..
 cd Encoders
 sudo sh install_Encoders.sh
 
-sudo pip install crossbar
+cd ..
+cd Crossbar
+sudo sh install_Crossbar.sh
 
 cd ..
 cd SaltMinion
