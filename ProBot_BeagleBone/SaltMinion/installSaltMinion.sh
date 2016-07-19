@@ -6,6 +6,6 @@ sudo echo 'deb http://httpredir.debian.org/debian stretch main' >> /etc/apt/sour
 sudo echo 'APT::Default-Release "jessie";' > /etc/apt/apt.conf.d/10apt
 
 sudo apt-get update
-sudo apt-get install python-zmq python-tornado/jessie-backports salt-common/stretch
+sudo apt-get install -y python-zmq python-tornado/jessie-backports salt-common/stretch
 
-sudo apt-get install salt-minion/stretch
+sudo apt-get install -y salt-minion/stretch
