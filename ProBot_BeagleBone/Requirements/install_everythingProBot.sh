@@ -39,7 +39,6 @@ cd Encoders
 sudo sh install_Encoders.sh
 
 cd ..
-cd Crossbar
-sudo sh install_Crossbar.sh
+sudo pip install crossbar
 
 sudo shutdown -h now

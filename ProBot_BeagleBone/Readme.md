@@ -3,7 +3,7 @@ How to configure the ProBot BeagleBone:
 1 - Install the lastest debian image [from here]
 (https://beagleboard.org/latest-images). 
 
-Note: The Probot Project is working on a beaglebone black with debian 8.2 (jessie). 
+Note: The Probot Project is working on a BeagleBone Black with debian 8.2 (jessie). 
 
 2 - The HDMI port causes interference on the functioning of the USB port and some Encoders GPIO's. To disable it, remove the # in front of the cape_disable command on the /boot/uEnv.txt so it looks like: 
 
@@ -16,7 +16,7 @@ Note: The Probot Project is working on a beaglebone black with debian 8.2 (jessi
 
 4  - Go to ProBot_BeagleBone with::
 	
-	cd ProBot/ProBot_BeagleBone
+	cd ProBot/ProBot_BeagleBone/Requirements
 and:
 
 4.1 - To install everything that it's required to run ProBot's program, for debian images (jessie), just type:
@@ -30,30 +30,30 @@ This file is gonna install:
 	Encoders
 	Crossbar
 
-5 - Restart BeagleBone
+Note: After the installation the BeagleBone is gonna shutdown.
 
-6 - To configure the networks and the BeagleBone's ip, type.
+5 - To configure the networks and the BeagleBone's ip, type.
 
 	sudo nmtui	
 
-7 - Go again to ProBot/ProBot_BeagleBone and run ProBot.py to initialize the program:
+6 - Go again to ProBot/ProBot_BeagleBone and run ProBot.py to initialize the program:
 
 	cd ProBot/ProBot_BeagleBone
 	sudo python ProBot.py
 	
 If you just want to install some files or libraries, follow the next instructions:
 
-8 - Go to:
+7 - Go to:
 
 	cd ProBot/ProBot_BeagleBone
 
 and:
 
-8.1 - To install just machinekit, for debian images (jessie), type:
+7.1 - To install just machinekit, for debian images (jessie), type:
 	
 	sudo sh install_machinekit.sh
 
-8.2 - To Install network-manager, run:
+7.2 - To Install network-manager, run:
 
 	sudo apt-get -y install network-manager
 
@@ -63,10 +63,10 @@ Note: After network manager been installed, type:
 	
 and configure the networks and the BeagleBone's ip.
 
-8.3 -  Install the encoders running the following command:
+7.3 -  Install the encoders running the following command:
 
 	sudo sh install_Encoders.sh
 	
-8.4 -  Install crossbar running:
+7.4 -  Install crossbar running:
 
-	sudo sh install_Crossbar.sh
+	sudo pip install crossbar
