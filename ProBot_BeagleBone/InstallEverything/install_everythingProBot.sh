@@ -45,6 +45,6 @@ sudo sh install_Crossbar.sh
 
 cd ..
 cd SaltMinion
-sudo sh installSaltMinion.sh
+sudo sh install_SaltMinion.sh
 
 sudo shutdown -h now
