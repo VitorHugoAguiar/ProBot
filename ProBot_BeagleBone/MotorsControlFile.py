@@ -1,5 +1,6 @@
 #!/usr/bin/python
  
+# Python Standart Library Imports
 import SabertoothFile
 import PWMFile
 import ProBotConstantsFile
@@ -18,4 +19,5 @@ class MotorsControlClass():
 	        Sabertooth.drive(Pconst.addr, 2, int(leftMotor))
 
 	if userChoice=='2':
+		# Sending the values to the pwm controller that is connected to the motors
 		PWM.PWM_Signals(int(rightMotor), int(leftMotor))
