@@ -8,6 +8,7 @@ import ProBotConstantsFile
 import Adafruit_BBIO.GPIO as GPIO
 import StartFile
 
+# Initialization of classes from local files
 Pconst = ProBotConstantsFile.Constants()
 InitProgram=StartFile.StartFileClass()
 
@@ -17,13 +18,13 @@ GPIO.setup(Pconst.GreenLED, GPIO.OUT)
 GPIO.setup(Pconst.BlueLED, GPIO.OUT)
 
 class MPU6050:
-    filteredX=0
-    lastAccelerometerAngleX=0
     
     # Global Variables
     GRAVITIY_MS2 = 9.80665
     address = None
     bus = smbus.SMBus(1)
+    filteredX=0
+    lastAccelerometerAngleX=0
 
     # Scale Modifiers
     ACCEL_SCALE_MODIFIER_2G = 16384.0
