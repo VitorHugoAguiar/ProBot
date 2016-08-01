@@ -11,7 +11,6 @@ Pconst = ProBotConstantsFile.Constants()
 
 class MotorsControlClass():
     
-    
     def MotorsControl(self,rightMotor, leftMotor, userChoice):
 	if userChoice=='1':
 		# Sending the values to the Sabertooth that is connected to the motors
@@ -19,4 +18,4 @@ class MotorsControlClass():
 	        Sabertooth.drive(Pconst.addr, 2, int(leftMotor))
 
 	if userChoice=='2':
-		PWM.PWM_Signals(rightMotor, leftMotor)
+		PWM.PWM_Signals(int(rightMotor), int(leftMotor))
