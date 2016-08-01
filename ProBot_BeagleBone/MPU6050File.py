@@ -1,9 +1,3 @@
-"""This program handles the communication over I2C
-between a Raspberry Pi and a MPU-6050 Gyroscope / Accelerometer combo.
-Made by: MrTijn/Tijndagamer
-Released under the MIT License
-Copyright 2015
-"""
 
 import smbus
 import sys
