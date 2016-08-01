@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+# Python Standart Library Imports
 import smbus
 import sys
 import math
