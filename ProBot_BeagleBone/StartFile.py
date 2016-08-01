@@ -36,7 +36,7 @@ class StartFileClass():
         if userChoice=='0':
 	  print ('\nChoose the type of control of the ProBots motors:')
 	  print ('\n1 - Sabertooth 2x25A')
-	  print ('2 - PWM Controller OSMC3-2')
+	  print ('2 - Cytron 5-25V')
 	  userChoice=input('\nYour choice is: ')
 	  userChoice=str(userChoice)
 
