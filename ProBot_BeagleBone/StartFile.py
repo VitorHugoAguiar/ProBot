@@ -77,21 +77,15 @@ class StartFileClass():
       worker_func ()
 
     def sendMsgServer (self):
-     	# Verification of the voltage from the Beaglebone and motors batteries
+     	# Verification of the voltage from the battery
 	self.thread = threading.Timer(1, self.sendMsgServer)
 	self.thread.start() 
-	#t.join(1)
 	batteryValue=str('{0:.2f}'.format(Battery.VoltageValue('LiPo')))
 	info="ProBot2_info" + " " + batteryValue
         publisher=Pub_Sub.publisher(info)
-        #self.terminate_thread(thread)
 
     def terminate_thread(self, thread):
-    	"""Terminates a python thread from another thread.
 
-    	:param thread: a threading.Thread instance
-    	"""
-    	
     	if not thread.isAlive():
     	    return
 
@@ -101,7 +95,5 @@ class StartFileClass():
     	if res == 0:
     	    raise ValueError("nonexistent thread id")
     	elif res > 1:
-    	    # """if it returns a number greater than one, you're in trouble,
-      	  # and you should call it again with exc=NULL to revert the effect"""
-        	ctypes.pythonapi.PyThreadState_SetAsyncExc(thread.ident, None)
-        	raise SystemError("PyThreadState_SetAsyncExc failed")
+            ctypes.pythonapi.PyThreadState_SetAsyncExc(thread.ident, None)
+            raise SystemError("PyThreadState_SetAsyncExc failed")
