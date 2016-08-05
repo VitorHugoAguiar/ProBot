@@ -25,8 +25,7 @@ class StartFileClass():
 	  userChoiceFile = open("userChoice.txt", "wb")
 	  userChoiceFile.write(userChoice);
 	  userChoiceFile.close()
-	
-  
+	  
         # We create a file to store the userChoice (Sabertooth or PWM)
         userChoiceFile = open("userChoice.txt", "r+")
         userChoice = userChoiceFile.read(1);
@@ -57,8 +56,6 @@ class StartFileClass():
         raise
 		
     def StopProgram(self, final):
-      #GPIO.output(Pconst.GreenLED, GPIO.HIGH)
-      #GPIO.output(Pconst.RedLED, GPIO.HIGH)
       PWM.PWMStop()
       Sabertooth.stopAndReset()
       userChoiceFile = open("userChoice.txt", "wb")

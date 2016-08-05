@@ -39,7 +39,6 @@ class AppSession(ApplicationSession):
     def onJoin(self, details):
 
         ## SUBSCRIBE to a topic and receive events
-        ##
         def probot2Web(msg):
             self.log.info("event from 'probot2Web' received: {msg}", msg=msg)
 
@@ -55,16 +54,11 @@ class AppSession(ApplicationSession):
 
 
        ## PUBLISH and CALL every second .. forever
-        ##
-        
         while True:
             try:
                    ## PUBLISH an event
-                   ##
-
                    self.publish('probot2beagle', Battery.VoltageValue('LiPo'))
                    self.log.info("published on probot2beagle: {msg}", msg=Battery.VoltageValue('LiPo'))
-
                    yield sleep(1)
             except:	
                    python = sys.executable
