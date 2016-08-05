@@ -37,7 +37,7 @@ class WebPageClass():
 	    self.down = incomingMsg4[1]
 	    self.left = incomingMsg4[2]
 	    self.right = incomingMsg4[3]
-	    		
+	    	    		
 	    Forward = float(decimal.Decimal(self.up))
 	    Reverse = -float(decimal.Decimal(self.down))
 	    Left = float(decimal.Decimal(self.left))

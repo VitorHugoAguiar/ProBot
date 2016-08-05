@@ -1,16 +1,14 @@
-"""This program handles the communication over I2C
-between a Raspberry Pi and a MPU-6050 Gyroscope / Accelerometer combo.
-Made by: MrTijn/Tijndagamer
-Released under the MIT License
-Copyright 2015
-"""
+#!/usr/bin/python
 
+# Python Standart Library Imports
 import smbus
 import sys
 import math
 import ProBotConstantsFile
 import Adafruit_BBIO.GPIO as GPIO
 import StartFile
+
+# Initialization of classes from local files
 Pconst = ProBotConstantsFile.Constants()
 InitProgram=StartFile.StartFileClass()
 
@@ -20,13 +18,13 @@ GPIO.setup(Pconst.GreenLED, GPIO.OUT)
 GPIO.setup(Pconst.BlueLED, GPIO.OUT)
 
 class MPU6050:
-    filteredX=0
-    lastAccelerometerAngleX=0
     
     # Global Variables
     GRAVITIY_MS2 = 9.80665
     address = None
     bus = smbus.SMBus(1)
+    filteredX=0
+    lastAccelerometerAngleX=0
 
     # Scale Modifiers
     ACCEL_SCALE_MODIFIER_2G = 16384.0
