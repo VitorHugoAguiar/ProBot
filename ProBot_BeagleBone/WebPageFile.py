@@ -29,19 +29,20 @@ class WebPageClass():
             subscriber = 0
  
         else:
-	    incomingMsg = subscriber.split(" ") 
-	    
-	    if incomingMsg[0]=="web":
-		self.up = incomingMsg[1]
-		self.down = incomingMsg[2]
-		self.left = incomingMsg[3]
-		self.right = incomingMsg[4]
-		
+	    incomingMsg1 = subscriber.replace("[", "")
+	    incomingMsg2 = incomingMsg1.replace("'", "")
+	    incomingMsg3 = incomingMsg2.replace("]", "") 
+	    incomingMsg4 = incomingMsg3.split(",")
+	    self.up = incomingMsg4[0]
+	    self.down = incomingMsg4[1]
+	    self.left = incomingMsg4[2]
+	    self.right = incomingMsg4[3]
+	    		
 	    Forward = float(decimal.Decimal(self.up))
 	    Reverse = -float(decimal.Decimal(self.down))
 	    Left = float(decimal.Decimal(self.left))
 	    Right = -float(decimal.Decimal(self.right))
-
+	    #print Forward, Reverse, Left, Right
 	    ForwardReverse=Forward+Reverse
 	    LeftRight=Left+Right
 
@@ -51,5 +52,5 @@ class WebPageClass():
 	    self.TurnMotorRight = float(LeftRight*Pconst.ajustLR)
 	    self.TurnMotorLeft = -float(LeftRight*Pconst.ajustLR)
 
-
+        #print self.up, self.down, self.left, self.right
         return  round(self.PositionRef, 5), round (self.TurnMotorRight, 5), round(self.TurnMotorLeft, 5)

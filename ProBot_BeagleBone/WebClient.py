@@ -1,85 +1,89 @@
 #!/usr/bin/python
+
+
+from __future__ import print_function
+from os import environ
+
+from twisted.internet.defer import inlineCallbacks
+from autobahn.twisted.util import sleep
+
+from autobahn.twisted.wamp import ApplicationSession, ApplicationRunner
+from twisted.logger import Logger
+
 import sys
-import zmq
+import os
+
 import SocketFile
-
-from twisted.internet import reactor
-from twisted.internet.protocol import ReconnectingClientFactory
-from twisted.python import log
-
-from autobahn.twisted.websocket import WebSocketClientFactory, \
-    WebSocketClientProtocol, \
-    connectWS
+import BatteryMonitorFile
 
 # Initialization of classes from local files
 Pub_Sub = SocketFile.SocketClass()
+Battery = BatteryMonitorFile.BatteryMonitorClass()
 
-class EchoClientProtocol(WebSocketClientProtocol):
+class AppSession(ApplicationSession):
 
+    log = Logger()
 
-    def onConnect(self, response):
-        print("Server connected: {0}".format(response.peer))
+    def __init__(self, config = None):
+        ApplicationSession.__init__(self, config)
+        print("component created")
 
-    def onOpen(self):
-        print("WebSocket connection open.")
+    def onConnect(self):
+         print("transport connected")
+         self.join(self.config.realm)
 
-        def sendMessage():
+    def onChallenge(self, challenge):
+         print("authentication challenge received")
 
-    	    # Readings from the WebPage
-            subscriber = Pub_Sub.subscriber()
+    @inlineCallbacks
+    def onJoin(self, details):
 
-            if subscriber is None:
-                subscriber = 0
+        ## SUBSCRIBE to a topic and receive events
+        ##
+        def probot2Web(msg):
+            self.log.info("event from 'probot2Web' received: {msg}", msg=msg)
 
-            else:
-		sendingMsg = (subscriber.encode('utf8')).split(" ")
-		typeMsg=sendingMsg [0]
-		if typeMsg=="ProBot2_info":  
-			self.sendMessage(subscriber.encode('utf8'))
+            
+            msg2=[msg.encode('utf-8') for msg in msg]
+            
 
-            self.factory.reactor.callLater(0.1, sendMessage)
+            publisher=Pub_Sub.publisher(msg2)
+            print (msg2[0], msg2[1], msg2[2], msg2[3]) 
 
-        # start sending messages ..
-        sendMessage()
-
-    def onMessage(self, payload, isBinary):
-        if not isBinary:    
-		incomingMsg = payload.split(" ")
-		typeMsg = incomingMsg [0]
-		if typeMsg=="web":        
-			publisher=Pub_Sub.publisher(payload.decode('utf8'))
-			
+        sub = yield self.subscribe(probot2Web, 'probot2Web')
+        self.log.info("subscribed to topic 'probot2Web'")
 
 
+       ## PUBLISH and CALL every second .. forever
+        ##
+        
+        while True:
+            try:
+                   ## PUBLISH an event
+                   ##
 
-class EchoClientFactory(ReconnectingClientFactory, WebSocketClientFactory):
+                   self.publish('probot2beagle', Battery.VoltageValue('LiPo'))
+                   self.log.info("published on probot2beagle: {msg}", msg=Battery.VoltageValue('LiPo'))
 
-    protocol = EchoClientProtocol
+                   yield sleep(1)
+            except:	
+                   python = sys.executable
+                   os.execl(python, python, * sys.argv)
 
-    maxDelay = 1
+    def onLeave(self, details):
+         print("session left")
 
-
-    def startedConnecting(self, connector):
-        print('Started to connect.')
-
-
-    def clientConnectionLost(self, connector, reason):
-        ReconnectingClientFactory.clientConnectionLost(self, connector, reason)
-
-
-    def clientConnectionFailed(self, connector, reason):
-        ReconnectingClientFactory.clientConnectionFailed(self, connector, reason)
-
+    def onDisconnect(self):
+         print("transport disconnected")
 
 if __name__ == '__main__':
+        runner = ApplicationRunner(
+            environ.get("AUTOBAHN_DEMO_ROUTER", u"ws://89.109.64.175:8080/ws"),
+                    u"realm1",
+                    extra=dict(max_events=5,  # [A] pass in additional configuration
+                    ),
+            )
+        runner.run(AppSession, auto_reconnect=True)
 
-    if len(sys.argv) < 2:
-        print("Need the WebSocket server address, i.e. ws://139.162.157.96:9000")
-        sys.exit(1)
 
-    log.startLogging(sys.stdout)
 
-    factory = EchoClientFactory(sys.argv[1])
-    connectWS(factory)
-
-    reactor.run()

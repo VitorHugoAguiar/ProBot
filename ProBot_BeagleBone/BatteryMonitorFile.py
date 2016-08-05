@@ -11,10 +11,14 @@ Pconst = ProBotConstantsFile.Constants()
 # Start the ADC
 ADC.setup()
 
+GPIO.setup(Pconst.GreenLED, GPIO.OUT)
+GPIO.setup(Pconst.RedLED, GPIO.OUT)
+
 # Battery measurement
 class BatteryMonitorClass():
 
         def VoltageValue(self, type):
+            
             # Reading the voltage from the LiPo battery
             options = {'LiPo': [Pconst.AnalogPinLiPo, Pconst.mLiPo, Pconst.MinRedLiPo, Pconst.GreenLED, Pconst.RedLED]}
             voltageVar = options[type]
