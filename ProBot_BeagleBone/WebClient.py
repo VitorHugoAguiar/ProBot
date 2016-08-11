@@ -40,26 +40,27 @@ class AppSession(ApplicationSession):
 
         ## SUBSCRIBE to a topic and receive events
         def probot2Web(msg):
-            self.log.info("event from 'probot2Web' received: {msg}", msg=msg)
+            #self.log.info("event from 'probot2Web' received: {msg}", msg=msg)
 
             
             msg2=[msg.encode('utf-8') for msg in msg]
             
 
             publisher=Pub_Sub.publisher(msg2)
-            print (msg2[0], msg2[1], msg2[2], msg2[3]) 
+            #print (msg2[0], msg2[1], msg2[2], msg2[3]) 
 
         sub = yield self.subscribe(probot2Web, 'probot2Web')
         self.log.info("subscribed to topic 'probot2Web'")
 
 
-       ## PUBLISH and CALL every second .. forever
+        ## PUBLISH and CALL every second .. forever
         while True:
             try:
                    ## PUBLISH an event
                    self.publish('probot2beagle', Battery.VoltageValue('LiPo'))
-                   self.log.info("published on probot2beagle: {msg}", msg=Battery.VoltageValue('LiPo'))
+                   #self.log.info("published on probot2beagle: {msg}", msg=Battery.VoltageValue('LiPo'))
                    yield sleep(1)
+		   
             except:	
                    python = sys.executable
                    os.execl(python, python, * sys.argv)
