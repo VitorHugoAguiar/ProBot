@@ -73,7 +73,7 @@ class AppSession(ApplicationSession):
 
 if __name__ == '__main__':
         runner = ApplicationRunner(
-            environ.get("AUTOBAHN_DEMO_ROUTER", u"ws://89.109.64.175:8080/ws"),
+            environ.get("AUTOBAHN_DEMO_ROUTER", u"ws://ip_server:8080/ws"),
                     u"realm1",
                     extra=dict(max_events=5,  # [A] pass in additional configuration
                     ),
