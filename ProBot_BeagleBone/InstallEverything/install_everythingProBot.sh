@@ -22,6 +22,16 @@ else
 fi
 
 cd ..
+f = open(WebClient.py,'r')
+filedata = f.read()
+f.close()
+
+newdata = filedata.replace("ip",$input_variable)
+
+f = open(fileout,'w')
+f.write(newdata)
+f.close()
+
 (sudo crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/WebClient.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (sudo crontab -l ; echo "@reboot sh $(pwd -P)/EnableEncoders.sh") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (sudo crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_Client.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
