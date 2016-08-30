@@ -22,15 +22,17 @@ else
 fi
 
 cd ..
-f = open(WebClient.py,'r')
-filedata = f.read()
-f.close()
+# Read in the file
+filedata = None
+with open('WebClient.py', 'r') as file :
+  filedata = file.read()
 
-newdata = filedata.replace("ip_server",$input_variable)
+# Replace the target string
+filedata = filedata.replace('ip_server', 'abcd')
 
-f = open(fileout,'w')
-f.write(newdata)
-f.close()
+# Write the file out again
+with open('WebClient', 'w') as file:
+  file.write(filedata)
 
 (sudo crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/WebClient.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (sudo crontab -l ; echo "@reboot sh $(pwd -P)/EnableEncoders.sh") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
