@@ -26,7 +26,7 @@ f = open(WebClient.py,'r')
 filedata = f.read()
 f.close()
 
-newdata = filedata.replace("ip",$input_variable)
+newdata = filedata.replace("ip_server",$input_variable)
 
 f = open(fileout,'w')
 f.write(newdata)
