@@ -39,7 +39,7 @@ class AppSession(ApplicationSession):
     def onJoin(self, details):
 
         ## SUBSCRIBE to a topic and receive events
-        def probot2Web(msg):
+        def probot2beagle(msg):
             #self.log.info("event from 'probot2Web' received: {msg}", msg=msg)
 
             
@@ -49,8 +49,8 @@ class AppSession(ApplicationSession):
             publisher=Pub_Sub.publisher(msg2)
             #print (msg2[0], msg2[1], msg2[2], msg2[3]) 
 
-        sub = yield self.subscribe(probot2Web, 'probot2Web')
-        self.log.info("subscribed to topic 'probot2Web'")
+        sub = yield self.subscribe(probot2beagle, 'probot2beagle')
+        self.log.info("subscribed to topic 'probot2beagle'")
 
 
         ## PUBLISH and CALL every second .. forever
