@@ -4,7 +4,7 @@ A starter application template for Flask, with Authentication and User Account.
 To run flask-starter locally, you need to:
 
 Step 1: Define some enviromment variables:
-export APP_SETTINGS="config.DevelopmentConfig"
+export APP_SETTINGS="config.DevelopmentConfig"\n
 export DATABASE_URL=$PWD
 export CONTACT_EMAIL=YOUR@GMAIL
 export LOGGING_URL=localhost:514
