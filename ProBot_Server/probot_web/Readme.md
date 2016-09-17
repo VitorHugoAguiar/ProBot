@@ -1,4 +1,4 @@
-How to configure the ProBot BeagleBone:
+# flask-starter
 
 1 - Install the lastest debian image [from here]
 (https://beagleboard.org/latest-images). 
