@@ -3,6 +3,7 @@
 # We need OS operations for this
 import os, select
 
+
 class eQEP(object):
     # Modes
     MODE_ABSOLUTE = 0
