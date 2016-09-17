@@ -1,6 +1,6 @@
 # Crossbar.io
 
-For the communication between the Probot's and the webpage, we use [Crossbar.io](http://http://crossbar.io/). 
+For the communication between the Probot's and the webpage, we use [Crossbar.io](http://crossbar.io/). 
 
 1 Step: Intall Crossbar.io on the server
 	
