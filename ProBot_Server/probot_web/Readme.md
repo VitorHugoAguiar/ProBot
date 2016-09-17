@@ -1,23 +1,17 @@
 # flask-starter
 
-1 - Install the lastest debian image [from here]
-(https://beagleboard.org/latest-images). 
+A starter application template for Flask, with Authentication and User Account.
 
-Note: The Probot Project is working on a BeagleBone Black with debian 8.2 (jessie). 
+To run flask-starter locally, you need to:
 
-2 - The HDMI port causes interference on the functioning of the USB port and some Encoders GPIO's. To disable it, remove the # in front of the cape_disable command on the /boot/uEnv.txt so it looks like: 
+Step 1: Define some enviromment variables:
 
-    ##Disable HDMI
-    cape_disable=capemgr.disable_partno=BB-BONELT-HDMI,BB-BONELT-HDMIN
-
-3 - Use git clone to download the ProBot's files.
-	
-	git clone https://github.com/VitorHugoAguiar/ProBot.git
-
-4  - Go to ProBot_BeagleBone with::
-	
-	cd ProBot/ProBot_BeagleBone/InstallEverything
-and:
+	export APP_SETTINGS="config.DevelopmentConfig"
+	export DATABASE_URL=$PWD
+	export CONTACT_EMAIL=YOUR@GMAIL
+	export LOGGING_URL=localhost:514
+	export APP_MAIL_USERNAME=YOURGMAILUSERNAME
+	export APP_MAIL_PASSWORD=YOURGMAILPASS
 
 4.1 - To install everything that it's required to run ProBot's program, for debian images (jessie), just type:
 
