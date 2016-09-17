@@ -39,26 +39,26 @@ class AppSession(ApplicationSession):
     def onJoin(self, details):
 
         ## SUBSCRIBE to a topic and receive events
-        def probot2beagle(msg):
-            #self.log.info("event from 'probot2Web' received: {msg}", msg=msg)
-
-            
+        def probot_topic_2(msg):
+                
             msg2=[msg.encode('utf-8') for msg in msg]
             
-
             publisher=Pub_Sub.publisher(msg2)
-            #print (msg2[0], msg2[1], msg2[2], msg2[3]) 
+             
 
-        sub = yield self.subscribe(probot2beagle, 'probot2beagle')
-        self.log.info("subscribed to topic 'probot2beagle'")
+        sub = yield self.subscribe(probot_topic_2, 'probot-topic-2')
+        self.log.info("subscribed to topic 'probot-topic-2'")
+
+	self.publish('general-topic', "B-2")
 
 
         ## PUBLISH and CALL every second .. forever
         while True:
             try:
                    ## PUBLISH an event
-                   self.publish('probot2beagle', Battery.VoltageValue('LiPo'))
-                   #self.log.info("published on probot2beagle: {msg}", msg=Battery.VoltageValue('LiPo'))
+		   Bat_perc= int(((Battery.VoltageValue('LiPo'))*15.385)-287.673)
+                   self.publish('probot-bat-2', Bat_perc)
+                   self.log.info("published on probot-bat-2: {msg}", msg=Bat_perc)
                    yield sleep(1)
 		   
             except:	
@@ -73,7 +73,7 @@ class AppSession(ApplicationSession):
 
 if __name__ == '__main__':
         runner = ApplicationRunner(
-            environ.get("AUTOBAHN_DEMO_ROUTER", u"ws://ip_server:8080/ws"),
+            environ.get("AUTOBAHN_DEMO_ROUTER", u"ws://89.109.64.175:8080/ws"),
                     u"realm1",
                     extra=dict(max_events=5,  # [A] pass in additional configuration
                     ),

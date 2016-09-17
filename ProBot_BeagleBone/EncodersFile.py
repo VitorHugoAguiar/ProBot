@@ -1,17 +1,12 @@
 #!/usr/bin/python
 
 # Python Standard Library Imports
-import eqep
 import math
 import ProBotConstantsFile
 
 # Initialization of classes from local files
 Pconst = ProBotConstantsFile.Constants()
 
-# Instantiate an instance of the driver for encoder of the motor 1
-encoder1 = eqep.eQEP("/sys/devices/ocp.3/48302000.epwmss/48302180.eqep", eqep.eQEP.MODE_ABSOLUTE)
-# Instantiate an instance of the driver for encoder of the motor 2
-encoder2 = eqep.eQEP("/sys/devices/ocp.3/48304000.epwmss/48304180.eqep", eqep.eQEP.MODE_ABSOLUTE)
 
 class EncodersClass():
     def __init__(self, LastwheelPosition1=0, LastwheelPosition2=0):
@@ -20,13 +15,13 @@ class EncodersClass():
 
     def EncodersValues(self):
 
-        wheelTicks1 = encoder1.get_position()					# Get position from the first encoder
-        wheelTicks2 = encoder2.get_position()					# Get position from the second encoder
-
+        wheelTicks1 = Pconst.encoder1.get_position()					# Get position from the first encoder
+        wheelTicks2 = Pconst.encoder2.get_position()					# Get position from the second encoder
+		
         wheelPosition1_m = (float(wheelTicks1)) / Pconst.ticks * math.pi * Pconst.wheelDiameter	# First wheel distance travelled 
         wheelPosition2_m = (float(wheelTicks2)) / Pconst.ticks * math.pi * Pconst.wheelDiameter	# Second wheel distance travelled
 
-        wheelPosition1 = float(wheelPosition1_m - self.LastwheelPosition1)				# Wheel velocity
+        wheelPosition1 = float(wheelPosition1_m - self.LastwheelPosition1)				# Wheel position diference
 	wheelPosition2 = float(wheelPosition2_m - self.LastwheelPosition2)   		
 
  

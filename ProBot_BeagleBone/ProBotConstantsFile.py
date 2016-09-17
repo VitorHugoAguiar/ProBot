@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+import eqep
+
 # Constants used in the algorithm
 class Constants():
     def __init__(self):
@@ -44,3 +46,5 @@ class Constants():
         self.AnalogPinLiPo = "P9_40"
         self.ajustFR = 0.0085
         self.ajustLR = 0.003
+	self.encoder1 = eqep.eQEP("/sys/devices/ocp.3/48302000.epwmss/48302180.eqep", eqep.eQEP.MODE_ABSOLUTE)
+	self.encoder2 = eqep.eQEP("/sys/devices/ocp.3/48304000.epwmss/48304180.eqep", eqep.eQEP.MODE_ABSOLUTE)

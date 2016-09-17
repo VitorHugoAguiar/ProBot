@@ -15,8 +15,6 @@ GPIO.output(Pconst.RedLED, GPIO.LOW)
 GPIO.output(Pconst.BlueLED, GPIO.LOW)
 PWM.PWMStop()
 Sabertooth.stopAndReset()
-info="ProBot2_info" + " " + "off"
-publisher=Pub_Sub.publisher(info)
 userChoiceFile = open("userChoice.txt", "wb")
 userChoiceFile.write("0")
 userChoiceFile.close()
