@@ -65,10 +65,10 @@
                         "type": "websocket",
                         "endpoint": {
                             "type": "tcp",
-                            "host": "89.109.64.175",
+                            "host": "server_ip",
                             "port": 8080
                         },
-                        "url": "ws://89.109.64.175:8080/ws"
+                        "url": "ws://server_ip:8080/ws"
                     }
                 },
                 {
@@ -78,7 +78,7 @@
                     "extra": {
                         "subscriptions": [
                             {
-                                "url": "http://robotcommander.m-iti.org/bridge",
+                                "url": "http://server_ip/bridge",
                                 "topic": "bridge-topic"
                             }
                         ],
@@ -90,10 +90,10 @@
                         "type": "websocket",
                         "endpoint": {
                             "type": "tcp",
-                            "host": "89.109.64.175",
+                            "host": "server_ip",
                             "port": 8080
                         },
-                        "url": "ws://89.109.64.175:8080/ws"
+                        "url": "ws://server_ip:8080/ws"
                     }
                 }
             ]
