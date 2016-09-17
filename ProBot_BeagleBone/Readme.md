@@ -1,3 +1,5 @@
+# Probot BeagleBone
+
 How to configure the ProBot BeagleBone:
 
 1 - Install the lastest debian image [from here]
