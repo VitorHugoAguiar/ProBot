@@ -1,0 +1,17 @@
+nav, main {
+	border: 1px solid #efefef;
+  margin: 0px auto;
+  padding: 10px;
+  width: 400px;
+}
+
+.info {
+  background: #4c8ecb;
+}
+.success {
+  background: #7FC21B;
+}
+.warning {
+  background: red;
+}
+

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+	
+{% if available_probot == False %}	
+	<p>Sorry, there are no ProBots available.</p>
+{% else %}
+	
+	{% from "_formhelpers.html" import render_field %}
+
+	<form method=post action="{{ url_for('probots') }}">
+
+		{{ render_field(form.probot) }}
+
+	<p><input type=submit value=Select>
+	</form>
+{% endif %}
+	
+
+
+{% endblock %}
+
+
+

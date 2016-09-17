@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style_video_template.css' )}}">
+
+	<link rel="stylesheet" href="http://yoannmoinet.github.io/nipplejs/stylesheets/styles.css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="http://yoannmoinet.github.io/nipplejs/stylesheets/github-light.css" media="screen" title="no title" charset="utf-8">
+	<script src="jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script>AUTOBAHN_DEBUG = true;</script>
+	<script src="http://autobahn.s3.amazonaws.com/autobahnjs/latest/autobahn.min.jgz"></script>
+	<script type="text/javascript" probot_id="{{ chosen_probot_id }}" src="{{ url_for('static', filename='js/nipplejs.js' )}}"></script>
+</head>
+
+<body>
+
+	<div style=" top: 10%; margin-left: 10%; width:80%; height:600px" id = 'main' class='main' >
+    	<iframe src="https://videolink2.me/probot{{ chosen_probot_id }}" frameborder="0" scrolling="yes"></iframe>    
+	</div>
+
+	<div style=" top: 60%; margin-left: 5%; width:20%; height:20%" id = 'main' class='main'>
+    		<div id="left"></div>    
+	</div>
+
+
+	<div style=" top: 60%; margin-left: 73.5%; width:20%; height:20%" id = 'main' class='main'>
+    		<div id="right"></div>  
+	</div>
+
+	<div style="top:75%;text-align: center; position:relative; width: 100%; border-width: 1px 0 0 0; ">
+		<input type="text" id="battery" />
+	</div>
+	
+	<script>
+
+	var joystickL = nipplejs.create({
+    		zone: document.getElementById('left'),
+    		mode: 'static',
+    		position: { left: '50%', top: '84%' },
+    		color: 'green',
+    		size: 150
+	});
+
+
+	var joystickR = nipplejs.create({
+    		zone: document.getElementById('right'),
+    		mode: 'static',
+    		position: { left: '50%', top: '84%' },
+    		color: 'red',
+    		size: 150
+	});
+       
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style_video_template.css' )}}">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script>AUTOBAHN_DEBUG = true;</script>
+	<script src="http://autobahn.s3.amazonaws.com/autobahnjs/latest/autobahn.min.jgz"></script>
+	<script type="text/javascript" probot_id="{{ chosen_probot_id }}" src="{{ url_for('static', filename='js/keyjoy.js' )}}"></script>
+
+</head>
+<body>
+	<div style=" top: 10%; margin-left: 10%; width:80%; height:600px" id = 'main' class='main' >
+		<iframe src="https://videolink2.me/probot{{ chosen_probot_id }}" frameborder="0" scrolling="yes"></iframe>    
+	</div>
+
+	<div style="top:70%;text-align: center; position:relative; width: 100%; border-width: 1px 0 0 0; ">
+	
+		<h3><p>Choose the device that you want to control the ProBot. To change your choice, refresh the Webpage.</p></h3>
+		<button id="keyboard" onclick="chooseControl(this.id)">Keyboard</button>
+		<button id="joystick" onclick="chooseControl(this.id)">Joystick</button>
+		
+	</div>
+	<div style="top:75%;text-align: center; position:relative; width: 100%; border-width: 1px 0 0 0; ">
+		<input type="text" id="battery" />
+	</div>
+
+</body> 	
+</html>
+

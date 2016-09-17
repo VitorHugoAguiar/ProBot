@@ -1,0 +1,68 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {% block title %}
+    <title>Probot Project</title>
+    {% endblock %}
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/bootstrap-responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    {% endblock %}	
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+	
+   <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css' )}}">
+
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- navigation -->
+    <nav>
+      <a href="{{ url_for('index') }}">Home</a>
+      {% if g.user.is_authenticated %}
+      <a href="{{ url_for('probots') }}">ProBots</a>
+      <a href="{{ url_for('auth.logout') }}">Logout</a>
+      <a href="{{ url_for('auth.reset_password') }}">Change Password</a>
+      {% else %}
+      <a href="{{ url_for('auth.register') }}">Register</a>
+      <a href="{{ url_for('auth.login') }}">Login</a>
+      {% endif %}
+    </nav>
+    <!-- / navigation -->
+    
+    <!-- messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div>
+      {% for category, message in messages %}
+        <div class="message-card {{ category }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+    <!-- / messages -->
+    
+    <!-- main content -->
+    <main>
+    {% block content %}
+    {% endblock %}
+    </main>
+    <!-- / main content -->
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+        window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+        ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+  </body>
+</html>
