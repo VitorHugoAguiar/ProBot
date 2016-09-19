@@ -25,7 +25,7 @@ Step 3: You should be able to run
 	python manage.py runserver and it should run on http://127.0.0.1:5000.
 
 
-To run flask-starter on the server, we use you [dokku](http://dokku.viewdocs.io/dokku). To deploy the application. you need to:
+To run flask-starter on the server, we use you [dokku](http://dokku.viewdocs.io/dokku). To deploy the application you need to:
 
 
 On the server
