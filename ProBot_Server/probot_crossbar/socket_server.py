@@ -30,12 +30,17 @@ class AppSession(ApplicationSession):
     def onJoin(self, details):
         probotid = None
         lastBat = None
-        
+        ProBotTimerBat={}
+        ProBotTimerWeb={}
+	
         def receive_id(probot_id):
-        
+            
             if "B-" in probot_id:
                 probotid=probot_id.split('-')[1]
-                self.log.info("initializing subscribers for id {probotid}", probotid=probotid)
+		if int(probotid)>=len(ProBotTimerBat):
+			ProBotTimerBat[int(probotid)]=0
+			
+		self.log.info("initializing subscribers for id {probotid}", probotid=probotid)
                 topic = "probot-bat-{}".format(probotid)
                                 
                 def battery_timeout():
@@ -43,18 +48,17 @@ class AppSession(ApplicationSession):
                     self.publish('bridge-topic', probotid, 0, "BATTERY TIMEOUT") # to publish on the bridge
                     print("BATTERY TIMEOUT")
                     self.publish(topic, "error")
-                    
-                self.bat_alive_timer = Timer(30, battery_timeout,())
-                self.bat_alive_timer.start()
-                               
+		
+		ProBotTimerBat[int(probotid)]=Timer(30, battery_timeout,())
+                ProBotTimerBat[int(probotid)].start()
+               
                 if probotid != None:                
                     def receive_bat(bat_value):
-                        print(bat_value)
                         self.log.info("last battery from {topic}: {bat_value}", topic=topic, bat_value=bat_value)
                         self.publish('bridge-topic', probotid, bat_value, "UPDATE") # to publish on the bridge
-                        self.bat_alive_timer.cancel()
-                        self.bat_alive_timer = Timer(30, battery_timeout,())
-                        self.bat_alive_timer.start()                        
+			ProBotTimerBat[int(probotid)].cancel()
+			ProBotTimerBat[int(probotid)]=Timer(30, battery_timeout,())
+	                ProBotTimerBat[int(probotid)].start()
                     self.subscribe(receive_bat, topic)                                                   
                             
             else:
@@ -63,7 +67,8 @@ class AppSession(ApplicationSession):
                 topic = "probot-topic-{}".format(probotid)
                 keepalive_topic = "keepalive-{}".format(probotid)
                 if probotid != None:
-                    print(probotid)
+                    if int(probotid)>=len(ProBotTimerWeb):
+			ProBotTimerWeb[int(probotid)]=0
                     def receive_msg(msg):
                         self.log.info("event from {topic} received: {msg}", topic=topic, msg=msg)
                 self.subscribe(receive_msg, topic)    
@@ -72,14 +77,15 @@ class AppSession(ApplicationSession):
                     self.log.info("keepalive not received from probot {probotid}", probotid=probotid)
                     self.publish('bridge-topic', probotid, 0, "WEB TIMEOUT") # to publish on the bridge
                     print("WEB TIMEOUT")
-        
-                self.keep_alive_timer = Timer(30, webclient_timeout,())
-                self.keep_alive_timer.start()
+		
+		ProBotTimerWeb[int(probotid)]=Timer(30, webclient_timeout,())
+                ProBotTimerWeb[int(probotid)].start()
+
         
                 def reset_timer():
-                    self.keep_alive_timer.cancel()
-                    self.keep_alive_timer = Timer(30, webclient_timeout,())
-                    self.keep_alive_timer.start()
+			ProBotTimerWeb[int(probotid)].cancel()
+			ProBotTimerWeb[int(probotid)]=Timer(30, webclient_timeout,())
+	                ProBotTimerWeb[int(probotid)].start()
             
                 self.subscribe(reset_timer, keepalive_topic)
             
