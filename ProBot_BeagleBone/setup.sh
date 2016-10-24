@@ -13,7 +13,6 @@ while true; do
     esac
 done
 
-
 (crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/WebClient.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (crontab -l ; echo "@reboot sh $(pwd -P)/EnableEncoders.sh") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_Client.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
@@ -26,8 +25,7 @@ NetworkManager(){
 echo "--> Installing Network-Manager"
 apt-get update -qq > /dev/null
 apt-get -qq -y install network-manager firmware-ralink
-echo "--> Done"
-
+echo "    Done"
 
 }	
 	
@@ -55,7 +53,7 @@ apt-get update -qq > /dev/null
 apt-get install -qq -y -t sid libczmq-dev
 apt-get install -qq -y apt-show-versions
 
-apt-key adv --keyserver keyserver.ubuntu.com --recv 43DDF224
+apt-key adv --keyserver -qq keyserver.ubuntu.com --recv 43DDF224
 sh -c \
   "echo 'deb http://deb.machinekit.io/debian jessie main' > \
   /etc/apt/sources.list.d/machinekit.list"
@@ -63,6 +61,7 @@ sh -c \
 apt-get update -qq > /dev/null
 apt-get install -qq -y xauth linux-image-3.8.13-xenomai-r78 linux-headers-3.8.13-xenomai-r78 machinekit-xenomai machinekit-dev
 echo "--> Done"	
+
 }
 
 Encoders(){
@@ -72,7 +71,8 @@ mv bone_eqep0-00A0.dtbo /lib/firmware
 mv bone_eqep1-00A0.dtbo /lib/firmware
 mv bone_eqep2-00A0.dtbo /lib/firmware
 mv bone_eqep2b-00A0.dtbo /lib/firmware
-echo "--> Done"		
+echo "    Done"	
+
 }	
 
 
@@ -85,10 +85,12 @@ rm -rf get-pip.py
 pip install --upgrade six
 pip install --upgrade setuptools
 pip install  crossbar
-echo "--> Done"
+echo "    Done"
+
 }
 
 Salt-minion(){
+	
 echo "--> Installing Salt-Minion"
 grep -q -F 'deb http://httpredir.debian.org/debian jessie-backports main' /etc/apt/sources.list || echo 'deb http://httpredir.debian.org/debian jessie-backports main' >> /etc/apt/sources.list
 grep -q -F 'deb http://httpredir.debian.org/debian stretch main'  /etc/apt/sources.list || echo 'deb http://httpredir.debian.org/debian stretch main' >> /etc/apt/sources.list
@@ -97,7 +99,8 @@ grep -q -F 'APT::Default-Release "jessie";' /etc/apt/apt.conf.d/10apt || echo 'A
 apt-get update
 apt-get install -y python-zmq python-tornado/jessie-backports salt-common/stretch
 apt-get install -y salt-minion/stretch
-echo "--> Done"
+echo "    Done"
+
 }
 
 
