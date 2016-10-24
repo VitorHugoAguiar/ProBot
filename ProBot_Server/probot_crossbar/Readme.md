@@ -2,13 +2,13 @@
 
 For the communication between the Probot's and the webpage, we use [Crossbar.io](http://crossbar.io/). 
 
-1 Step: Intall Crossbar.io on the server
+Step 1: Install Crossbar.io on the server
 	
 	sudo pip install crossbar
 
-2 Step - You need to go to the .crossbar directory and change the put the server ip on the config.json file.
+Step 2 - You need to go to the .crossbar directory and change the server ip on the config.json file.
 
-3 Step - Just type
+Step 3 - Just type:
 	
 	crossbar init
 	crossbar start
