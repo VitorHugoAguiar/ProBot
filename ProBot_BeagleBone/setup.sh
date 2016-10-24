@@ -33,10 +33,13 @@ echo "    Done"
 Machinekit(){
 
 echo "--> Installing Machinekit"
+apt-get update -qq > /dev/null
+
 sh -c \
 "echo 'Package: *
 Pin: release a=stable
 Pin-Priority: 900
+
 Package: *
 Pin: release o=Debian
 Pin-Priority: -10' > \
@@ -54,13 +57,14 @@ apt-get update -qq > /dev/null
 apt-get install -qq -y -t sid libczmq-dev
 apt-get install -qq -y apt-show-versions
 
-apt-key adv --keyserver -qq keyserver.ubuntu.com --recv 43DDF224
+apt-key adv --keyserver keyserver.ubuntu.com --recv 43DDF224
 sh -c \
   "echo 'deb http://deb.machinekit.io/debian jessie main' > \
   /etc/apt/sources.list.d/machinekit.list"
 
-apt-get update -qq > /dev/null
-apt-get install -qq -y xauth linux-image-3.8.13-xenomai-r78 linux-headers-3.8.13-xenomai-r78 machinekit-xenomai machinekit-dev
+apt-get update
+apt-get install -qq -y  xauth linux-image-3.8.13-xenomai-r78 linux-headers-3.8.13-xenomai-r78 machinekit-xenomai machinekit-dev
+
 echo "--> Done"	
 
 }
