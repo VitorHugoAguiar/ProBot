@@ -26,8 +26,6 @@ and:
 
 It's going to be install [Machinekit] (http://www.machinekit.io/), [Network-Manager] (https://wiki.debian.org/NetworkManager) and [Crossbar] (http://crossbar.io/).
 
-Note: After the installation the BeagleBone is gonna shutdown.
-
 5 - To configure the networks and the BeagleBone's ip, type.
 
 	sudo nmtui	
