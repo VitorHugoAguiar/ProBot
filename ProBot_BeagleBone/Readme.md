@@ -24,11 +24,11 @@ and:
 
 	sudo sh setup.sh
 
-This file is gonna install:
+It's going to be install:
 
-	[Machinekit] (http://www.machinekit.io/)
-	[Network-Manager] (https://wiki.debian.org/NetworkManager)
-	[Crossbar] (http://crossbar.io/)
+[Machinekit] (http://www.machinekit.io/)
+[Network-Manager] (https://wiki.debian.org/NetworkManager)
+[Crossbar] (http://crossbar.io/)
 
 Note: After the installation the BeagleBone is gonna shutdown.
 
