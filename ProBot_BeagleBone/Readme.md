@@ -26,7 +26,7 @@ and:
 
 This file is gonna install:
 
-	[Machinekit] (http://www.machinekit.io/).
+	[Machinekit] (http://www.machinekit.io/)
 	[Network-Manager] (https://wiki.debian.org/NetworkManager)
 	[Crossbar] (http://crossbar.io/)
 
