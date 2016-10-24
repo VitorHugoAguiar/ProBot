@@ -2,8 +2,7 @@
 
 How to configure the ProBot BeagleBone:
 
-1 - Install the lastest debian image [from here]
-(https://beagleboard.org/latest-images). 
+1 - Install the lastest debian image [from here] (https://beagleboard.org/latest-images). 
 
 Note: The Probot Project is working on a BeagleBone Black with debian 8.2 (jessie). 
 
