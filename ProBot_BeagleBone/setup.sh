@@ -2,6 +2,7 @@
 set -eo pipefail; [[ $TRACE ]] && set -x
 
 Server-IPconfiguration() {
+echo ""
 read -p "--> Please enter the ProBot Server ip: " server_ip
 
 while true; do
