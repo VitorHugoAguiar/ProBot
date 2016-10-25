@@ -10,3 +10,7 @@ There are also two inputs for the encoders with the usual order A, Vcc, B, empty
 This shield is ready to put the MPU6050 acelerometer.
 
 For future work, we are thinking to incorporate a LiPo battery monitor with the TI BQ76930 and BQ78350 devices, and change it all to SMD circuit, integrating the MPU6050.
+
+Here is a table with the gpio's used on this shield.
+
+![alt tag](beagle_cape_gpios.png)
