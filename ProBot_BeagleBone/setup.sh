@@ -72,7 +72,6 @@ mv bone_eqep2b-00A0.dtbo /lib/firmware
 echo "    Done"	
 }	
 
-
 Crossbar(){
 echo ""
 echo "--> Installing Crossbar"
@@ -97,7 +96,6 @@ apt-get install -y python-zmq python-tornado/jessie-backports salt-common/stretc
 apt-get install -y salt-minion/stretch
 echo "    Done"
 }
-
 
 main() {
 Server-IPconfiguration
