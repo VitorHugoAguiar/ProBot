@@ -65,10 +65,10 @@ echo "--> Done"
 Encoders(){
 echo ""
 echo "--> Installing Encoders"
-mv bone_eqep0-00A0.dtbo /lib/firmware
-mv bone_eqep1-00A0.dtbo /lib/firmware
-mv bone_eqep2-00A0.dtbo /lib/firmware
-mv bone_eqep2b-00A0.dtbo /lib/firmware
+cp bone_eqep0-00A0.dtbo /lib/firmware
+cp bone_eqep1-00A0.dtbo /lib/firmware
+cp bone_eqep2-00A0.dtbo /lib/firmware
+cp bone_eqep2b-00A0.dtbo /lib/firmware
 echo "    Done"	
 }	
 
@@ -77,7 +77,6 @@ echo ""
 echo "--> Installing Crossbar"
 apt-get install -qq -y build-essential libssl-dev libffi-dev python-dev python-smbus
 python get-pip.py
-rm -rf get-pip.py
 pip install --upgrade six
 pip install --upgrade setuptools
 pip install  crossbar
