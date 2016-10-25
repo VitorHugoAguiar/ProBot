@@ -22,7 +22,7 @@ and:
 
 Step 4.1 - To install everything that it's required to run ProBot's program, for debian images (jessie), just type:
 
-	sudo sh setup.sh
+	sudo ./setup.sh
 
 It's going to be install [Machinekit] (http://www.machinekit.io/), [Network-Manager] (https://wiki.debian.org/NetworkManager) and [Crossbar] (http://crossbar.io/).
 
