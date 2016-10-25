@@ -16,7 +16,6 @@ done
 (crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/WebClient.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (crontab -l ; echo "@reboot sh $(pwd -P)/EnableEncoders.sh") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_Client.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-
 }
 	
 NetworkManager(){
@@ -25,7 +24,6 @@ echo "--> Installing Network-Manager"
 apt-get update -qq > /dev/null
 apt-get -qq -y install network-manager firmware-ralink
 echo "    Done"
-
 }	
 	
 Machinekit(){
@@ -62,7 +60,6 @@ apt-get update
 apt-get install -qq -y  xauth linux-image-3.8.13-xenomai-r78 linux-headers-3.8.13-xenomai-r78 machinekit-xenomai machinekit-dev
 
 echo "--> Done"	
-
 }
 
 Encoders(){
@@ -73,7 +70,6 @@ mv bone_eqep1-00A0.dtbo /lib/firmware
 mv bone_eqep2-00A0.dtbo /lib/firmware
 mv bone_eqep2b-00A0.dtbo /lib/firmware
 echo "    Done"	
-
 }	
 
 
@@ -87,7 +83,6 @@ pip install --upgrade six
 pip install --upgrade setuptools
 pip install  crossbar
 echo "    Done"
-
 }
 
 Salt-minion(){
@@ -101,7 +96,6 @@ apt-get update
 apt-get install -y python-zmq python-tornado/jessie-backports salt-common/stretch
 apt-get install -y salt-minion/stretch
 echo "    Done"
-
 }
 
 
