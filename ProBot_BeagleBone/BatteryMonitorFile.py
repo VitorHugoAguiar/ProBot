@@ -25,9 +25,9 @@ class BatteryMonitorClass():
             voltageVar = options[type]
 
             BatteryVoltageVal = ADC.read(voltageVar[0])                                 # ADC readings from the battery
-            BatteryRealValue = float((voltageVar[1]*BatteryVoltageVal))          		# Real voltage from the LiPo battery
+            BatteryRealValue = float((voltageVar[1]*BatteryVoltageVal))          	# Real voltage from the LiPo battery
 	    
-            if BatteryRealValue < voltageVar[2]:					        			# Definition of the Red region for the battery
+            if BatteryRealValue < voltageVar[2]:					# Definition of the Red region for the battery
                 GPIO.output(voltageVar[3], GPIO.HIGH)
                 GPIO.output(voltageVar[4], GPIO.HIGH)
 	    else:
