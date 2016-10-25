@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -eo pipefail; [[ $TRACE ]] && set -x
+set -x
 
 Server-IPconfiguration() {
 echo ""
@@ -116,5 +116,3 @@ echo "Installation finished"
 echo "Beaglebone is gonna shutdown"
 shutdown -h now
 }
-
-main "$@"
