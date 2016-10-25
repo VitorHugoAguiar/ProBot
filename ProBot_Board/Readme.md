@@ -14,4 +14,4 @@ For future work, we are thinking to incorporate a LiPo battery monitor with the 
 Here is a table with the gpio's used on this shield.
 
 
-![alt tag](beagle_cape_gpios.png)
+![alt tag](beagle.png)
