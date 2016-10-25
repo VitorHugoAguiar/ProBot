@@ -4,7 +4,6 @@ set -eo pipefail; [[ $TRACE ]] && set -x
 Server-IPconfiguration() {
 echo ""
 read -p "--> Please enter the ProBot Server ip: " server_ip
-
 while true; do
     read -p "    Confirm (Y/N)? " yn
     case $yn in
@@ -20,9 +19,8 @@ done
 
 }
 	
-
 NetworkManager(){
-
+echo ""
 echo "--> Installing Network-Manager"
 apt-get update -qq > /dev/null
 apt-get -qq -y install network-manager firmware-ralink
@@ -31,7 +29,7 @@ echo "    Done"
 }	
 	
 Machinekit(){
-
+echo ""
 echo "--> Installing Machinekit"
 apt-get update -qq > /dev/null
 
@@ -51,9 +49,7 @@ grep -q -F 'deb http://ftp.nl.debian.org/debian/ sid main' /etc/apt/sources.list
 grep -q -F 'deb-src http://ftp.nl.debian.org/debian/ sid main' /etc/apt/sources.list || echo 'deb-src http://ftp.nl.debian.org/debian/ sid main' >> /etc/apt/sources.list
 
 rm -rf /etc/apt/apt.conf.d/02compress-indexes
-
 apt-get update -qq > /dev/null
-
 apt-get install -qq -y -t sid libczmq-dev
 apt-get install -qq -y apt-show-versions
 
@@ -70,7 +66,7 @@ echo "--> Done"
 }
 
 Encoders(){
-
+echo ""
 echo "--> Installing Encoders"
 mv bone_eqep0-00A0.dtbo /lib/firmware
 mv bone_eqep1-00A0.dtbo /lib/firmware
@@ -82,7 +78,7 @@ echo "    Done"
 
 
 Crossbar(){
-
+echo ""
 echo "--> Installing Crossbar"
 apt-get install -qq -y build-essential libssl-dev libffi-dev python-dev python-smbus
 python get-pip.py
@@ -95,7 +91,7 @@ echo "    Done"
 }
 
 Salt-minion(){
-	
+echo ""	
 echo "--> Installing Salt-Minion"
 grep -q -F 'deb http://httpredir.debian.org/debian jessie-backports main' /etc/apt/sources.list || echo 'deb http://httpredir.debian.org/debian jessie-backports main' >> /etc/apt/sources.list
 grep -q -F 'deb http://httpredir.debian.org/debian stretch main'  /etc/apt/sources.list || echo 'deb http://httpredir.debian.org/debian stretch main' >> /etc/apt/sources.list
