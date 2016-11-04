@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
-set -x
 
-Server-IPconfiguration() {
+ServerIPconfiguration() {
 echo ""
 read -p "--> Please enter the ProBot Server ip: " server_ip
 while true; do
@@ -65,10 +64,10 @@ echo "--> Done"
 Encoders(){
 echo ""
 echo "--> Installing Encoders"
-mv bone_eqep0-00A0.dtbo /lib/firmware
-mv bone_eqep1-00A0.dtbo /lib/firmware
-mv bone_eqep2-00A0.dtbo /lib/firmware
-mv bone_eqep2b-00A0.dtbo /lib/firmware
+cp bone_eqep0-00A0.dtbo /lib/firmware
+cp bone_eqep1-00A0.dtbo /lib/firmware
+cp bone_eqep2-00A0.dtbo /lib/firmware
+cp bone_eqep2b-00A0.dtbo /lib/firmware
 echo "    Done"	
 }	
 
@@ -77,14 +76,13 @@ echo ""
 echo "--> Installing Crossbar"
 apt-get install -qq -y build-essential libssl-dev libffi-dev python-dev python-smbus
 python get-pip.py
-rm -rf get-pip.py
 pip install --upgrade six
 pip install --upgrade setuptools
 pip install  crossbar
 echo "    Done"
 }
 
-Salt-minion(){
+SaltMinion(){
 echo ""	
 echo "--> Installing Salt-Minion"
 grep -q -F 'deb http://httpredir.debian.org/debian jessie-backports main' /etc/apt/sources.list || echo 'deb http://httpredir.debian.org/debian jessie-backports main' >> /etc/apt/sources.list
@@ -98,13 +96,14 @@ echo "    Done"
 }
 
 main() {
-Server-IPconfiguration
+ServerIPconfiguration
 NetworkManager
 Machinekit
 Encoders
 Crossbar
-Salt-minion
+SaltMinion
 echo "Installation finished"
 echo "Beaglebone is gonna shutdown"
 shutdown -h now
 }
+main "$@"
