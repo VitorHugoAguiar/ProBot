@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
-set -x
 
-Server-IPconfiguration() {
+ServerIPconfiguration() {
 echo ""
 read -p "--> Please enter the ProBot Server ip: " server_ip
 while true; do
@@ -83,7 +82,7 @@ pip install  crossbar
 echo "    Done"
 }
 
-Salt-minion(){
+SaltMinion(){
 echo ""	
 echo "--> Installing Salt-Minion"
 grep -q -F 'deb http://httpredir.debian.org/debian jessie-backports main' /etc/apt/sources.list || echo 'deb http://httpredir.debian.org/debian jessie-backports main' >> /etc/apt/sources.list
@@ -97,13 +96,14 @@ echo "    Done"
 }
 
 main() {
-Server-IPconfiguration
+ServerIPconfiguration
 NetworkManager
 Machinekit
 Encoders
 Crossbar
-Salt-minion
+SaltMinion
 echo "Installation finished"
 echo "Beaglebone is gonna shutdown"
 shutdown -h now
 }
+main "$@"
