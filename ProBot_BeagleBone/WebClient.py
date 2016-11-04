@@ -20,10 +20,11 @@ import BatteryMonitorFile
 Pub_Sub = SocketFile.SocketClass()
 Battery = BatteryMonitorFile.BatteryMonitorClass()
 
+
 class AppSession(ApplicationSession):
 
     log = Logger()
-
+    
     def __init__(self, config = None):
         ApplicationSession.__init__(self, config)
         print("component created")
@@ -75,7 +76,8 @@ if __name__ == '__main__':
         runner = ApplicationRunner(
             environ.get("AUTOBAHN_DEMO_ROUTER", u"ws://89.109.64.175:8080/ws"),
                     u"realm1",
-                    extra=dict(max_events=5,  # [A] pass in additional configuration
+                    extra=dict(
+				max_events=5, # [A] pass in additional configuration
                     ),
             )
         runner.run(AppSession, auto_reconnect=True)

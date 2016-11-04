@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import Adafruit_BBIO.GPIO as GPIO
 import sys
 import PWMFile
@@ -19,3 +18,5 @@ Sabertooth.stopAndReset()
 userChoiceFile = open("userChoice.txt", "wb")
 userChoiceFile.write("0")
 userChoiceFile.close()
+sys.exit('\n\nPROGRAM STOPPED!!!\n')
+raise

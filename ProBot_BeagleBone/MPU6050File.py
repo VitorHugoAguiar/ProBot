@@ -297,7 +297,7 @@ class MPU6050:
     	self.filteredX = float(0.98 * (self.lastAccelerometerAngleX+LoopTimeRatioSeg*gyro_data['x']) + (1 - 0.98) * AccXangle)
     	self.lastAccelerometerAngleX=self.filteredX
 	self.filteredX=self.filteredX+Pconst.Angle_offset
-
+	#print self.filteredX
 	return self.filteredX
     
 

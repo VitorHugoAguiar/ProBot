@@ -17,11 +17,11 @@ class EncodersClass():
 
         wheelTicks1 = Pconst.encoder1.get_position()					# Get position from the first encoder
         wheelTicks2 = Pconst.encoder2.get_position()					# Get position from the second encoder
-		
+	#print wheelTicks1, wheelTicks2			
         wheelPosition1_m = (float(wheelTicks1)) / Pconst.ticks * math.pi * Pconst.wheelDiameter	# First wheel distance travelled 
         wheelPosition2_m = (float(wheelTicks2)) / Pconst.ticks * math.pi * Pconst.wheelDiameter	# Second wheel distance travelled
 
-        wheelPosition1 = float(wheelPosition1_m - self.LastwheelPosition1)			# Wheel position diference
+        wheelPosition1 = float(wheelPosition1_m - self.LastwheelPosition1)				# Wheel position diference
 	wheelPosition2 = float(wheelPosition2_m - self.LastwheelPosition2)   		
 
  

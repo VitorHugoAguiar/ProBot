@@ -1,4 +1,4 @@
-# Low Pass Filter used to obtain a smooth response from the joystick the keyboard.
+# Low Pass Filter used to obtain a smooth response from the joystick's potenciomenters and the keyboard's arrows
 filteredDataFR=[0,0,0,0]
 filteredDataLR=[0,0,0,0]
 LPFgainFR=0.9

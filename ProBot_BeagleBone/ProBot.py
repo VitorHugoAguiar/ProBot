@@ -58,7 +58,7 @@ class ProBot():
                 EncodersReadings = Encoders.EncodersValues()
 		wheelPosition1  = EncodersReadings [0]               
 		wheelPosition2 = EncodersReadings [1]
-		
+		#print MPU6050.filteredX
 		# Checking if the angle is out of range
 		if MPU6050.filteredX<-20 or MPU6050.filteredX>20:
 			RestartProgram.RestartProgramRoutine(userChoice)
