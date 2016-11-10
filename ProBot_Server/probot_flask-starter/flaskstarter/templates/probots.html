@@ -1,8 +1,11 @@
 {% extends "base.html" %}
+
+{% block metadata %}
+	<meta http-equiv="refresh" content="10">
+{% endblock %}
+
 {% block content %}
 
-
-	
 {% if available_probot == False %}	
 	<p>Sorry, there are no ProBots available.</p>
 {% else %}

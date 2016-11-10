@@ -23,6 +23,14 @@ body{
 	height:100%;
 }
 
+#main2{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
 #strip{
 	position:fixed;
 	top:0;
@@ -50,6 +58,17 @@ body{
 	left:0;
 }
 .main{
+	width:100%;
+	height:100%;
+}
+
+
+#main2{
+	position:absolute;
+	top:0;
+	left:0;
+}
+.main2{
 	width:100%;
 	height:100%;
 }
