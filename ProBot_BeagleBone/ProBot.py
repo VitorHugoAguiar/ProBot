@@ -1,3 +1,4 @@
+
 #!/usr/bin/python
 
 # Python Standard Library Imports
@@ -18,7 +19,7 @@ import RestartProgramFile
 import MotorsControlFile
 import StartFile
 import MPU6050File
-import BatteryMonitorFile
+
 
 # Initialization of classes from local files
 InitProgram=StartFile.StartFileClass()
@@ -31,7 +32,7 @@ MPU6050 = MPU6050File.MPU6050(0x68)
 PWM = PWMFile.PWMClass()
 WebPage = WebPageFile.WebPageClass()
 MotorsControlSignals=MotorsControlFile.MotorsControlClass()
-Battery = BatteryMonitorFile.BatteryMonitorClass()
+
 
 InitParameters=InitProgram.StartProgram()
 userChoice=InitParameters[0]
@@ -50,7 +51,7 @@ class ProBot():
         while True:
             try:
 		LoopTime=datetime.datetime.now()
-		Battery.VoltageValue('LiPo')
+		#Battery.VoltageValue('LiPo')
 		# Reading the MPU6050 values and use the complementary filter to get better values
 		MPU6050.Complementary_filter(self.LoopTimeRatioSeg)
 
@@ -106,3 +107,4 @@ class ProBot():
 if __name__ == '__main__':
     ProBot = ProBot()
     ProBot.main()
+

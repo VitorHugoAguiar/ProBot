@@ -14,12 +14,9 @@ import sys
 import os
 
 import SocketFile
-import BatteryMonitorFile
 
 # Initialization of classes from local files
 Pub_Sub = SocketFile.SocketClass()
-Battery = BatteryMonitorFile.BatteryMonitorClass()
-
 
 class AppSession(ApplicationSession):
 
@@ -28,6 +25,7 @@ class AppSession(ApplicationSession):
     def __init__(self, config = None):
         ApplicationSession.__init__(self, config)
         print("component created")
+	
 
     def onConnect(self):
          print("transport connected")
@@ -42,9 +40,9 @@ class AppSession(ApplicationSession):
         ## SUBSCRIBE to a topic and receive events
         def probot_topic_2(msg):
                 
-            msg2=[msg.encode('utf-8') for msg in msg]
+        	msg2=[msg.encode('utf-8') for msg in msg]
             
-            publisher=Pub_Sub.publisher(msg2)
+        	publisher=Pub_Sub.publisher(msg2)
              
 
         sub = yield self.subscribe(probot_topic_2, 'probot-topic-2')
@@ -55,16 +53,24 @@ class AppSession(ApplicationSession):
 
         ## PUBLISH and CALL every second .. forever
         while True:
-            try:
-                   ## PUBLISH an event
-		   Bat_perc= int(((Battery.VoltageValue('LiPo'))*15.385)-287.673)
-                   self.publish('probot-bat-2', Bat_perc)
-                   self.log.info("published on probot-bat-2: {msg}", msg=Bat_perc)
-                   yield sleep(1)
-		   
-            except:	
-                   python = sys.executable
-                   os.execl(python, python, * sys.argv)
+		try:
+            		## PUBLISH an event
+        		subscriber = Pub_Sub.subscriber()
+			if subscriber is None:
+				subscriber=0
+				Bat_perc=0
+        		else:
+				if 'Bat-' in subscriber:
+            				bat=subscriber.split('-')[1]			
+					Bat_perc=((int(bat)*15.385)-287.673)
+		
+			self.publish('probot-bat-2', int(Bat_perc))
+            	    	self.log.info("published on probot-bat-2: {msg}", msg=int(Bat_perc))
+                	yield sleep(1)
+		except:	
+                	python = sys.executable
+                	os.execl(python, python, * sys.argv)
+	
 
     def onLeave(self, details):
          print("session left")
@@ -76,9 +82,7 @@ if __name__ == '__main__':
         runner = ApplicationRunner(
             environ.get("AUTOBAHN_DEMO_ROUTER", u"ws://89.109.64.175:8080/ws"),
                     u"realm1",
-                    extra=dict(
-				max_events=5, # [A] pass in additional configuration
-                    ),
+                   
             )
         runner.run(AppSession, auto_reconnect=True)
 

@@ -25,29 +25,32 @@ class WebPageClass():
         # Readings from the WebPage
         subscriber = Pub_Sub.subscriber()
 
-        if subscriber is None:
-            subscriber = 0
- 
+ 	if subscriber is None:
+		subscriber=0
+		
         else:
-	    incomingMsg1 = subscriber.replace("[", "")
-	    incomingMsg2 = incomingMsg1.replace("'", "")
-	    incomingMsg3 = incomingMsg2.replace("]", "") 
-	    incomingMsg4 = incomingMsg3.split(",")
-	    self.up = incomingMsg4[0]
-	    self.down = incomingMsg4[1]
-	    self.left = incomingMsg4[2]
-	    self.right = incomingMsg4[3]    	    		
-	    Forward = float(decimal.Decimal(self.up))
-	    Reverse = -float(decimal.Decimal(self.down))
-	    Left = float(decimal.Decimal(self.left))
-	    Right = -float(decimal.Decimal(self.right))
-	    ForwardReverse=Forward+Reverse
-	    LeftRight=Left+Right
-	    #print ForwardReverse
-	    ForwardReverse=LPF.lowPassFilterFR(ForwardReverse)
-	    LeftRight=LPF.lowPassFilterLR(LeftRight)
-	    self.PositionRef = -float(ForwardReverse*Pconst.ajustFR)
-	    self.TurnMotorRight = float(LeftRight*Pconst.ajustLR)
-	    self.TurnMotorLeft = -float(LeftRight*Pconst.ajustLR)
+		if 'Bat-' in subscriber:
+			subscriber=0 
+		else:        
+	    		incomingMsg1 = subscriber.replace("[", "")
+	    		incomingMsg2 = incomingMsg1.replace("'", "")
+	    		incomingMsg3 = incomingMsg2.replace("]", "") 
+	    		incomingMsg4 = incomingMsg3.split(",")
+	    		self.up = incomingMsg4[0]
+	    		self.down = incomingMsg4[1]
+	    		self.left = incomingMsg4[2]
+	    		self.right = incomingMsg4[3]    	    		
+	    		Forward = float(decimal.Decimal(self.up))
+	    		Reverse = -float(decimal.Decimal(self.down))
+	    		Left = float(decimal.Decimal(self.left))
+	    		Right = -float(decimal.Decimal(self.right))
+	    		ForwardReverse=Forward+Reverse
+	    		LeftRight=Left+Right
+	    		print ForwardReverse, LeftRight
+	    		ForwardReverse=LPF.lowPassFilterFR(ForwardReverse)
+	    		LeftRight=LPF.lowPassFilterLR(LeftRight)
+	    		self.PositionRef = -float(ForwardReverse*Pconst.ajustFR)
+	    		self.TurnMotorRight = float(LeftRight*Pconst.ajustLR)
+	    		self.TurnMotorLeft = -float(LeftRight*Pconst.ajustLR)
 
         return  round(self.PositionRef, 5), round (self.TurnMotorRight, 5), round(self.TurnMotorLeft, 5)
