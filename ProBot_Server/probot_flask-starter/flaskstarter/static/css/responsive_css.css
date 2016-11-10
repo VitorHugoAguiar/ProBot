@@ -1,0 +1,10 @@
+#container2 {
+width: 960px; 
+position: relative;
+margin:0 auto;
+line-height: 1.4em;
+}
+
+@media only screen and (max-width: 479px){
+    #container2 { width: 90%; }
+}
