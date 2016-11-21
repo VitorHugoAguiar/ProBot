@@ -9,7 +9,7 @@ Most robotics technologies are first implemented in military applications, most 
 	
 Any protester can control the robot while sitting in the caffee or at their gardens anywhere in the work by simply using a web page to control it, but also watch, hear and speak through it.
 	
-That’s why we created a self-balancing robot, with a rigid sturdy frame, with a megaphone on the top as a symbol of protest and also as a way to talk to people.
+That’s why we created a self-balancing robot, with a rigid sturdy frame, a megaphone on the top as a symbol of protest and also as a way to talk to people.
 	
 This robot is 1,60m (5’/3’’) tall that self-balances in 2 wheels, driven by two EMG49 DC motors direct drive, and controlled by a Sabertooth 2X25A or Cytron 13A, 5-25V Motor Controller. The brain of the operation is a beaglebone black with an MPU6050 accelerometer and gyroscope and also optical encoders on each motor.
 	
