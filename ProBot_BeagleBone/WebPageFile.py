@@ -46,7 +46,7 @@ class WebPageClass():
 	    		Right = -float(decimal.Decimal(self.right))
 	    		ForwardReverse=Forward+Reverse
 	    		LeftRight=Left+Right
-	    		print ForwardReverse, LeftRight
+	    		#print ForwardReverse, LeftRight
 	    		ForwardReverse=LPF.lowPassFilterFR(ForwardReverse)
 	    		LeftRight=LPF.lowPassFilterLR(LeftRight)
 	    		self.PositionRef = -float(ForwardReverse*Pconst.ajustFR)
