@@ -21,18 +21,6 @@ Pub_Sub = SocketFile.SocketClass()
 class AppSession(ApplicationSession):
 
     log = Logger()
-    
-    def __init__(self, config = None):
-        ApplicationSession.__init__(self, config)
-        print("component created")
-	
-
-    def onConnect(self):
-         print("transport connected")
-         self.join(self.config.realm)
-
-    def onChallenge(self, challenge):
-         print("authentication challenge received")
 
     @inlineCallbacks
     def onJoin(self, details):
@@ -53,36 +41,25 @@ class AppSession(ApplicationSession):
 
         ## PUBLISH and CALL every second .. forever
         while True:
-		try:
-            		## PUBLISH an event
-        		subscriber = Pub_Sub.subscriber()
-			if subscriber is None:
-				subscriber=0
-				Bat_perc=0
-        		else:
-				if 'Bat-' in subscriber:
-            				bat=subscriber.split('-')[1]			
-					Bat_perc=((int(bat)*15.385)-287.673)
+
+		## PUBLISH an event
+        	subscriber = Pub_Sub.subscriber()
+		if subscriber is None:
+			subscriber=0
+			Bat_perc=0
+        	else:
+			if 'Bat-' in subscriber:
+            			bat=subscriber.split('-')[1]			
+				Bat_perc=((int(bat)*15.385)-287.673)
 		
-			self.publish('probot-bat-2', int(Bat_perc))
-            	    	self.log.info("published on probot-bat-2: {msg}", msg=int(Bat_perc))
-                	yield sleep(1)
-		except:	
-                	python = sys.executable
-                	os.execl(python, python, * sys.argv)
-	
-
-    def onLeave(self, details):
-         print("session left")
-
-    def onDisconnect(self):
-         print("transport disconnected")
+		self.publish('probot-bat-2', int(Bat_perc))
+		self.log.info("published on probot-bat-2: {msg}", msg=int(Bat_perc))
+                yield sleep(1)
 
 if __name__ == '__main__':
         runner = ApplicationRunner(
             environ.get("AUTOBAHN_DEMO_ROUTER", u"ws://89.109.64.175:8080/ws"),
-                    u"realm1",
-                   
+                    u"realm1",       
             )
         runner.run(AppSession, auto_reconnect=True)
 
