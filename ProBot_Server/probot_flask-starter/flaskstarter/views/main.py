@@ -29,7 +29,7 @@ def probots():
 		
 	else:							#At least one probot available
 
-		form.probot.choices = [(probot.id, probot.botname+" "+"["+ str(probot.battery) +"%]") 
+		form.probot.choices = [(probot.id, probot.botname) 
 			for probot in probots_available_q]	#Fills the form with a radio button for each available probot
 
 		if request.method == 'POST' and form.validate() == False:	#NO radio button checked

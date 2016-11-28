@@ -8,7 +8,7 @@
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 	<script>AUTOBAHN_DEBUG = true;</script>
 	<script src="//autobahn.s3.amazonaws.com/autobahnjs/latest/autobahn.min.jgz"></script>
-	<script type="text/javascript" probot_id="{{ chosen_probot_id }}" src="{{ url_for('static', filename='js/nipplejs85.js' )}}"></script>
+	<script type="text/javascript" probot_id="{{ chosen_probot_id }}" src="{{ url_for('static', filename='js/nipplejs8.js' )}}"></script>
 	
 	
 <style type="text/css">
@@ -28,14 +28,15 @@
 <body>
 <div id="wrapper">
 
-		<div style="top:10%; right:12%; text-align:right; position:relative; " id = 'main'>
+	<div style="top:10%; right:12%; text-align:right; position:relative; " id = 'main'>
 		<div style="color:black;font-size:200%;" id="battery"></div>
-		</div>
+	</div>
 		
 	<div style=" top: 1%; margin-left: 5%; width:90%; height:100%" id = 'main'>
 	<div id ="main2" style=" top: 1%; margin-left: 5%; width:90%; height:100%">
-    	<iframe   src="//appr.tc/r/probot{{ chosen_probot_id }}" frameborder="0" allowfullscreen></iframe>  
-    	</div>  
+    		<iframe   src="//www.gruveo.com/embed/?code=probot{{ chosen_probot_id }}" frameborder="0" allowfullscreen></iframe> 
+    </div>  
+	
 	</div>
 
 	<div style=" top: 60%; margin-left: 5%; width:20%; height:20%" id = 'main' class='main'>
@@ -46,18 +47,17 @@
 	<div style=" top: 60%; margin-left: 73.5%; width:20%; height:20%" id = 'main' class='main'>
     		<div id="right"></div>  
 	</div>
-<div style=" top: 85%; margin-left: 32%; width:20%; height:20%" id = 'main' class='main'>
- <input  type="button" id="lockButton" onclick="setColor()" value="Disable/Enable zoom and scroll" style="font-size: 30px;background-color:red;" />
+
+	<div style=" top: 85%; margin-left: 32%; width:20%; height:20%" id = 'main' class='main'>
+ 		<input  type="button" id="lockButton" onclick="setColor()" value="Disable/Enable zoom and scroll" style="font-size: 30px;background-color:red;" />
+	</div>
+
 
 </div>
 
-
-</div>
 <div id="warning-message" style="text-align: center; position:relative; top:50%;color:black;font-size:300%;">
    <strong> For a better experience, please put your smartphone/tablet on landscape mode.</strong>
 </div>
-
-
 
 	<script>
 
@@ -141,6 +141,26 @@ window.time = new Date().getTime();
      }
 
     		timer1=setTimeout('refresh()', 10000);
+
+function getTime() {
+    return (new Date()).getTime();
+}
+
+var lastInterval = getTime();
+
+function intervalHeartbeat() {
+    var now = getTime();
+    var diff = now - lastInterval;
+    var offBy = diff - 1000; // 1000 = the 1 second delay I was expecting
+    lastInterval = now;
+
+    if(offBy > 500) { // don't trigger on small stutters less than 100ms
+        console.log('interval heartbeat - off by ' + offBy + 'ms');
+        window.location = window.location.href.split("#")[0];
+    }
+}
+
+setInterval(intervalHeartbeat, 1000);
 
 	</script>
 	

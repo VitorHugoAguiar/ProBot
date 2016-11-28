@@ -1,59 +1,82 @@
 <!doctype html>
-<html class="no-js" lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    {% block title %}
-    <title>Probot Project</title>
-    {% endblock %}
-    <meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	{% block css %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/normalize.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/bootstrap-responsive.css') }}">
-	{% block metadata %}{% endblock %}
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
 
-    {% endblock %}	
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
-	
-   <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css' )}}">
+  <title>{% block page_title %}ProBot Project{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{% endblock %}">
+  <meta name="author" content="{% block meta_author %}{% endblock %}">
 
-  </head>
-  <body>
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width">
+  {% block metadata %}{% endblock %}
 
-    <nav>
-      <a href="{{ url_for('index') }}">Home</a>
-      {% if g.user.is_authenticated %}
-      <a href="{{ url_for('probots') }}">ProBots</a>
-      <a href="{{ url_for('auth.logout') }}">Logout</a>
-      <a href="{{ url_for('auth.reset_password') }}">Change Password</a>
-      {% else %}
-      <a href="{{ url_for('auth.register') }}">Register</a>
-      <a href="{{ url_for('auth.login') }}">Login</a>
-      {% endif %}
-    </nav>
+  <link rel="stylesheet" href="{{ url_for('static', filename='libs/bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='libs/bootstrap/css/bootstrap-responsive.min.css') }}">
 
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  {% block js %}{% endblock %}
+  {% block css %}{% endblock %}
+
+
+</head>
+<body class="{% block body_class %}{% endblock %}">
+
+{% block body %}
+{% block body2 %}{% endblock %}
+
+{% include "nav.html" %}
+
+<header>{% block header %}{% endblock %}</header>
+
+<div class="{% block content_class %}container{% endblock content_class %}">
+
+  <div role="main">
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
-    <div>
-      {% for category, message in messages %}
-        <div class="message-card {{ category }}">{{ message }}</div>
-      {% endfor %}
-    </div>
-    {% endif %}
+    <div class="row">
+      <div class="span12">
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+          <a class="close" title="Close" href="#" data-dismiss="alert">&times;</a>
+         {{message}}
+        </div><!-- end .alert -->
+        {% endfor %}
+      </div><!-- end span -->
+    </div><!-- end row -->
+        {% endif %}
     {% endwith %}
 
-    <main>
-    {% block content %}
-    {% endblock %}
-    </main>
+    {% block content %}{% endblock %}
+  </div>
 
-    <script>
-        window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-        ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
-    </script>
-    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-  </body>
+</div><!-- end container -->
+
+
+{% block js2 %}{% endblock %}
+
+{% include "footer.html" %}
+<!-- JavaScript at the bottom for fast page loading -->
+<script src="{{ url_for('static', filename='libs/jquery/jquery-2.0.3.min.js') }}"></script>
+<script src="{{ url_for('static', filename='libs/bootstrap/js/bootstrap.min.js') }}"></script>
+
+
+<script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+<!-- end scripts -->
+<!-- Google Analytics snippet. Change UA-XXXXXX-X to your site's ID -->
+<script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+{% endblock %}
+</body>
 </html>

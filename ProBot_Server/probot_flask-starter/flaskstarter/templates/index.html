@@ -1,22 +1,23 @@
-{% extends 'base.html' %}
-
+{% extends "base.html" %}
 {% block content %}
+  <div class="hero-unit">
+    <h1>What is ProBot?</h1>
+    <p align="justify"><br>	   Most robotics technologies are first implemented in military applications, most of the rest for business. Following on a history of related work, Probots are inexpensive, human-sized protest robots. No one has lost money by replacing human labor with machines, efficient devils, so the unemployment has been rising, and newly graduated Spanish students that are out of work stay too much time drinking calimocho and protesting. The indignados are unorganized and inneficient! So it is time to automate them, send robots for protests, unemploying them twice.<br><br>
+    That’s why we created the ProBot's, a self-balancing robot, with a rigid sturdy frame, a megaphone on the top as a symbol of protest and also as a way to talk to people!
 
-  <p><b>Self balancing robot with Beaglebone Black</b></p>
-  
-  <p align="justify">Most robotics technologies are first implemented in military applications, most of the rest for business. Following on a history of related work, Probots are inexpensive, human-sized protest robots. No one has lost money by replacing human labor with machines, efficient devils, so the unemployment has been rising, and newly graduated Spanish students that are out of work stay too much time drinking calimocho and protesting. The indignados are unorganized and inneficient! So it is time to automate them, send robots for protests, unemploying them twice.</p>
+</p>
 
-  <p align="justify">Any protester can control the robot while sitting in the caffee or at their gardens anywhere in the work by simply using a web page to control it, but also watch, hear and speak through it.</p>
+    </div>
 
-  <p align="justify">That’s why we created a self-balancing robot, with a rigid sturdy frame, with a megaphone on the top as a symbol of protest and also as a way to talk to people.</p>
-
-  <p align="justify">This robot is 1,60m (5’/3’’) tall that self-balances in 2 wheels, driven by two EMG49 DC motors direct drive, and controlled by a Sabertooth 2X25A or Cytron 13A, 5-25V Motor Controller. The brain of the operation is a beaglebone black with an MPU6050 accelerometer and gyroscope and also optical encoders on each motor.</p>
-
-  <p align="justify">The system can be controlled remotely through wifi, using a cellphone hotspot connected to 3G or 4G network. It was also created an interface where you can control the robot over web page or a gamepad or even a keyboard.</p>
-
-  <p align="justify">The files for this project are avaible on github:</p>
-  <p align="justify"><a href="https://github.com/VitorHugoAguiar/ProBot">https://github.com/VitorHugoAguiar/ProBot</a></p>
-  
-  <img src="../static/IMG_4446.jpg" >
-
+    <div class="row">
+      <div class="span4">
+		<img src="../static/images/IMG_4446.jpg" >
+      </div>
+      <div class="span4">
+		<img src="../static/images/IMG_4456.jpg" >
+      </div>
+      <div class="span4">
+		<img src="../static/images/IMG_8586.jpg" >
+      </div>
+    </div><!-- end row -->
 {% endblock %}

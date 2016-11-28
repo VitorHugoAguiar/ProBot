@@ -6,21 +6,43 @@
 
 {% block content %}
 
-{% if available_probot == False %}	
-	<p>Sorry, there are no ProBots available.</p>
-{% else %}
+<h4 align="justify">We have tree diferent types of ProBot's, each one with some body construction differences, but all have the same objective:<br></h4>
+<h4 align="center">Protest!</h4>
+<br>
+    <div class="row">
+      <div class="span4">
+		<img src="../static/images/IMG_4464.jpg">
+
+      </div>
+      <div class="span4">
+		<img src="../static/images/IMG_8585.jpg" >
+
+      </div>
+      <div class="span4">
+		<img src="../static/images/P_20161119_111859.jpg"  >
+
+      </div>
+    </div><!-- end row -->
+    
+<div align="center">
+<br>
+
+	<h4>To control a ProBot, please choose one that is available:</h4>
+	{% if available_probot == False %}	
+	<h4>Sorry, no ProBots available.</h4>
+	{% else %}
 	
 	{% from "_formhelpers.html" import render_field %}
 
 	<form method=post action="{{ url_for('probots') }}">
+	
 
-		{{ render_field(form.probot) }}
+	{{ render_field(form.probot) }}
 
 	<p><input type=submit value=Select>
 	</form>
 {% endif %}
-	
-
+</div>
 
 {% endblock %}
 

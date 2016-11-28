@@ -1,0 +1,36 @@
+
+<header class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a href="{{ url_for('index') }}" class="brand" href="#">ProBot Project</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          {% if g.user.is_authenticated %}
+          <li><a href="{{ url_for('probots') }}">ProBots</a></li>
+          <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+          <li><a href="{{ url_for('auth.reset_password') }}">Change Password</a></li>
+          {% else %}
+          <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+          <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+          {% endif %}
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</header>
+
+
+      
+      
+     
+
+      
+      
+      
+      
