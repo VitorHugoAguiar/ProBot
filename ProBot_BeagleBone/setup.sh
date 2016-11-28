@@ -15,6 +15,8 @@ done
 (crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/WebClient.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (crontab -l ; echo "@reboot sh $(pwd -P)/EnableEncoders.sh") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_Client.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+(crontab -l ; echo "@reboot python $(pwd -P)/BatteryMonitorFile.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+
 }
 	
 NetworkManager(){

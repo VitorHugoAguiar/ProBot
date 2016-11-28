@@ -6,11 +6,11 @@ import sys
 import os
 import ProBotConstantsFile
 import SabertoothFile
-import MPU6050File
+import mpu6050File
 import PWMFile
 
 PWM = PWMFile.PWMClass()
-MPU6050 = MPU6050File.MPU6050(0x68)
+mpu6050 = mpu6050File.mpu6050Class()
 Pconst = ProBotConstantsFile.Constants()
 Sabertooth = SabertoothFile.SabertoothClass()
 
@@ -28,8 +28,10 @@ class RestartProgramClass():
 	print "\nProBot angle's out of range!!!"
 	print "\nPut ProBot at 90 degrees!!!"
 	
-	while MPU6050.filteredX<-0.2 or MPU6050.filteredX>0.2:
-		MPU6050.Complementary_filter(self.LoopTimeRatioSeg)
+	filteredX=mpu6050.Complementary_filter(0)
+	
+	while filteredX<-0.2 or filteredX>0.2:
+		filteredX=mpu6050.Complementary_filter(0)
 
 	GPIO.output(Pconst.BlueLED, GPIO.LOW)	
 	print "\nRestarting the Program..."
