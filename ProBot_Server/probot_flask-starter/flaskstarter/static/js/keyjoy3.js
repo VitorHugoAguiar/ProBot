@@ -216,10 +216,9 @@ function joystickHandler(session, topic)
 	document.getElementById("keyboard").disabled = true;	
 }
 
-// the WAMP connection to the Router
-
+// the URL of the WAMP Router (Crossbar.io)
 var connection = new autobahn.Connection({
-		url: "ws://89.109.64.175:8080/ws",
+		url: "wss://89.109.64.175:8080/ws",
 		realm: "realm1"
 });
 

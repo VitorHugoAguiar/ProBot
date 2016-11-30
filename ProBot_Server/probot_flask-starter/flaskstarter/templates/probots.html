@@ -6,9 +6,14 @@
 
 {% block content %}
 
-<h4 align="justify">We have tree diferent types of ProBot's, each one with some body construction differences, but all have the same objective:<br></h4>
-<h4 align="center">Protest!</h4>
+<h4 align="justify">We have tree diferent types of ProBot's, each one with some body construction differences, but all have the same objective:Protest!</h4>
 <br>
+<div align="center">
+<h4 align="justify">Note: In order to control a ProBot, you have to allow yours certificates. Please click on the button and add a exception on your browser. You just need to do this one time on a specific browser.</h4>
+	<button onclick="location.href='https://89.109.64.175:8080'" type="button">Add a exception!</button>
+
+</div>
+	<br>
     <div class="row">
       <div class="span4">
 		<img src="../static/images/IMG_4464.jpg">
@@ -27,6 +32,7 @@
 <div align="center">
 <br>
 
+	
 	<h4>To control a ProBot, please choose one that is available:</h4>
 	{% if available_probot == False %}	
 	<h4>Sorry, no ProBots available.</h4>

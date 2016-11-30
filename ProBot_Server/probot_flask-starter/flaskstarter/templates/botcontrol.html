@@ -5,7 +5,7 @@
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 	<script>AUTOBAHN_DEBUG = true;</script>
 	<script src="//autobahn.s3.amazonaws.com/autobahnjs/latest/autobahn.min.jgz"></script>
-	<script type="text/javascript" probot_id="{{ chosen_probot_id }}" src="{{ url_for('static', filename='js/keyjoy30.js' )}}"></script>
+	<script type="text/javascript" probot_id="{{ chosen_probot_id }}" src="{{ url_for('static', filename='js/keyjoy3.js' )}}"></script>
 	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/responsive_css.css' )}}">
 
 </head>
@@ -36,8 +36,6 @@
      $(document.body).bind("mousemove keypress", function(e) {
          window.time = new Date().getTime();
      });
-
-
      function refresh() {
          if(new Date().getTime() - window.time >= 300000){
          	console.log(new Date().getTime() - window.time); 
@@ -46,7 +44,6 @@
          else {
             timer1=setTimeout('refresh()', 10000);}
      }
-
     		timer1=setTimeout('refresh()', 10000);
     
 	
