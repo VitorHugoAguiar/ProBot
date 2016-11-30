@@ -11,7 +11,7 @@ main = Blueprint('main', __name__)
 def index():
 	"""Index."""
 	return render_template('index.html')
-    
+	
 @app.route('/probots', methods=['GET', 'POST'])
 @login_required
 def probots():

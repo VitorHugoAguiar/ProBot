@@ -1,0 +1,19 @@
+{
+    "pid": 20957, 
+    "options": {
+        "reactor": null, 
+        "cdc": false, 
+        "loglevel": "info", 
+        "logtofile": false, 
+        "logformat": "standard", 
+        "command": "start", 
+        "logdir": null, 
+        "config": "config.json", 
+        "colour": "auto", 
+        "cbdir": "/home/robot/probot_crossbar/.crossbar"
+    }, 
+    "argv": [
+        "/usr/local/bin/crossbar", 
+        "start"
+    ]
+}

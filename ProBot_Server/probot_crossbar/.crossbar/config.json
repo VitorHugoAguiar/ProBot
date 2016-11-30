@@ -31,12 +31,20 @@
                 }
             ],
             "transports": [
+
                 {
                     "type": "web",
                     "endpoint": {
                         "type": "tcp",
-                        "port": 8080
-                    },
+                        "port": 8080,
+                        "tls": {
+                            "key": "server.key",
+                            "certificate": "server.crt",
+                            "dhparam": "dhparam.pem",
+                            "ciphers": "ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AES:RSA+3DES:!ADH:!AECDH:!MD5:!DSS"
+
+                        }
+		     },
                     "paths": {
                         "/": {
                             "type": "static",
@@ -44,8 +52,8 @@
                         },
                         "ws": {
                             "type": "websocket"
-                        }
-                    }
+                    	}
+		    }
                 }
             ]
         },
@@ -65,12 +73,19 @@
                         "type": "websocket",
                         "endpoint": {
                             "type": "tcp",
-                            "host": "server_ip",
-                            "port": 8080
+                            "host": "89.109.64.175",
+                            "port": 8080,
+                            "tls": {
+                                "hostname": "robotcommander.m-iti.org",
+                                "ca_certificates": [
+                                    "server.crt"
+                                ]
+                            }
                         },
-                        "url": "ws://server_ip:8080/ws"
+                       "url": "wss://89.109.64.175:8080/ws"
                     }
                 },
+
                 {
                     "type": "class",
                     "classname": "crossbar.adapter.rest.MessageForwarder",
@@ -78,7 +93,7 @@
                     "extra": {
                         "subscriptions": [
                             {
-                                "url": "http://server_ip/bridge",
+                                "url": "https://robotcommander.m-iti.org/bridge",
                                 "topic": "bridge-topic"
                             }
                         ],
@@ -90,10 +105,17 @@
                         "type": "websocket",
                         "endpoint": {
                             "type": "tcp",
-                            "host": "server_ip",
-                            "port": 8080
+                            "host": "89.109.64.175",
+                            "port": 8080,
+                            "tls": {
+                                "hostname": "robotcommander.m-iti.org",
+                                "ca_certificates": [
+                                    "server.crt"
+                                ]
+                            }
+
                         },
-                        "url": "ws://server_ip:8080/ws"
+                        "url": "wss://89.109.64.175:8080/ws"
                     }
                 }
             ]

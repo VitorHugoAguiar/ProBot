@@ -1,7 +1,12 @@
 from __future__ import print_function
 from os import environ
+import six
 
+from twisted.internet import reactor
 from twisted.internet.defer import inlineCallbacks
+from twisted.internet._sslverify import OpenSSLCertificateAuthorities
+from twisted.internet.ssl import CertificateOptions
+from OpenSSL import crypto
 from autobahn.twisted.util import sleep
 
 from autobahn.twisted.wamp import ApplicationSession, ApplicationRunner
@@ -12,17 +17,6 @@ from threading import Timer
 class AppSession(ApplicationSession):
 
     log = Logger()
-
-    def __init__(self, config = None):
-        ApplicationSession.__init__(self, config)
-        print("component created")
-
-    def onConnect(self):
-         print("transport connected")
-         self.join(self.config.realm)
-
-    def onChallenge(self, challenge):
-         print("authentication challenge received")
 
     @inlineCallbacks
     def onJoin(self, details):
@@ -47,7 +41,7 @@ class AppSession(ApplicationSession):
                     print("BATTERY TIMEOUT")
                     self.publish(topic, "error")
 
-		ProBotTimerBat[int(probotid)]=Timer(15, battery_timeout,())
+		ProBotTimerBat[int(probotid)]=Timer(30, battery_timeout,())
                 ProBotTimerBat[int(probotid)].start()
 
                 if (probotid != None):
@@ -55,7 +49,7 @@ class AppSession(ApplicationSession):
                         self.log.info("last battery from {topic}: {bat_value}", topic=topic, bat_value=bat_value)
                         self.publish('bridge-topic', probotid, bat_value, "UPDATE") # to publish on the bridge
 			ProBotTimerBat[int(probotid)].cancel()
-			ProBotTimerBat[int(probotid)]=Timer(15, battery_timeout,())
+			ProBotTimerBat[int(probotid)]=Timer(30, battery_timeout,())
 	                ProBotTimerBat[int(probotid)].start()
                     self.subscribe(receive_bat, topic)
 
@@ -98,16 +92,10 @@ class AppSession(ApplicationSession):
          print("session left")
 
     def onDisconnect(self):
-         print("transport disconnected")
+	print("transport disconnected")
+	if reactor.running:
+		reactor.stop()
 
-if __name__ == '__main__':
-        runner = ApplicationRunner(
-            environ.get("AUTOBAHN_DEMO_ROUTER", u"ws://89.109.64.175:8080/ws"),
-                    u"realm1",
-                    extra=dict(
-                               max_events=5,  # [A] pass in additional configuration
-                    ),
-            )
-        runner.run(AppSession, auto_reconnect=True)
+
 
 
