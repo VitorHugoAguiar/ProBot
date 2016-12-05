@@ -35,18 +35,19 @@ userChoice=InitParameters[0]
 
 
 class ProBot():
-    def __init__(self,  LoopTimeRatioSeg=0):
-	self.LoopTimeRatioSeg=LoopTimeRatioSeg
-
+   
+    def __init__(self,  LoopTimeResult=0):
+	self.LoopTimeResult=LoopTimeResult
 
     def mainRoutine(self):
-    	# Starting the main program
+	# Calibration of mpu6050
 	mpu6050.Calibration()
 	time.sleep(0.5)
 
         while True:
             try:
-		LoopTime=datetime.datetime.now()
+
+		LoopTime=time.time()
 		
 		# Readings from the encoders
                 EncodersReadings = Encoders.EncodersValues()
@@ -60,8 +61,11 @@ class ProBot():
                 TurnMotorLeft = WebPage_info [2]
 		
 		# Reading the MPU6050 values and use the complementary filter to get better values
-		filteredX=mpu6050.Complementary_filter(self.LoopTimeRatioSeg)
-		
+		AccAndGyr = mpu6050.Accx_Gyro()
+                AccXangle = AccAndGyr[0]
+                GYRx = AccAndGyr[1]
+		filteredX=mpu6050.Complementary_filter(AccXangle, GYRx, self.LoopTimeResult)
+				
 		# Checking if the angle is out of range
 		if filteredX<-20 or filteredX>20:
 			RestartProgram.RestartProgramRoutine(userChoice)
@@ -75,11 +79,10 @@ class ProBot():
  		
  		# Sending the right values to the Sabertooth or the PWM controller
 		MotorsControlSignals.MotorsControl(rightMotor, leftMotor, userChoice)
-
-		LoopTime2 = datetime.datetime.now()
-		LoopTimeRatio=LoopTime2-LoopTime
-		self.LoopTimeRatioSeg=(LoopTimeRatio.microseconds*0.001)/1000
-
+		
+		LoopTime2=time.time()
+		self.LoopTimeResult=LoopTime2-LoopTime
+		
 	    except OSError as err:
     		print("OS error: {0}".format(err))
 	    except ValueError:

@@ -8,9 +8,11 @@ import ProBotConstantsFile
 import SabertoothFile
 import mpu6050File
 import PWMFile
+import Kalman
 
 PWM = PWMFile.PWMClass()
 mpu6050 = mpu6050File.mpu6050Class()
+KF = Kalman.KalmanFilterClass()
 Pconst = ProBotConstantsFile.Constants()
 Sabertooth = SabertoothFile.SabertoothClass()
 
@@ -28,10 +30,16 @@ class RestartProgramClass():
 	print "\nProBot angle's out of range!!!"
 	print "\nPut ProBot at 90 degrees!!!"
 	
-	filteredX=mpu6050.Complementary_filter(0)
-	
-	while filteredX<-0.2 or filteredX>0.2:
-		filteredX=mpu6050.Complementary_filter(0)
+	AccAndGyr=mpu6050.Accx_Gyro()
+        AccXangle=AccAndGyr[0]
+        gyro_xout_scaled=AccAndGyr[1]
+        filteredX=mpu6050.Complementary_filter(AccXangle,gyro_xout_scaled,0)
+        while (filteredX<-0.5 or filteredX>0.5):
+       		AccAndGyr=mpu6050.Accx_Gyro()
+                AccXangle=AccAndGyr[0]
+                gyro_xout_scaled=AccAndGyr[1]
+                filteredX=mpu6050.Complementary_filter(AccXangle,gyro_xout_scaled,0)
+		
 
 	GPIO.output(Pconst.BlueLED, GPIO.LOW)	
 	print "\nRestarting the Program..."

@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-
 from __future__ import print_function
 from os import environ
 import six
@@ -45,12 +44,12 @@ class AppSession(ApplicationSession):
 
         ## PUBLISH and CALL every second .. forever
         while True:
-
+		
 		## PUBLISH an event
         	subscriber = Pub_Sub.subscriber()
 		if subscriber is None:
 			subscriber=0
-			Bat_perc=0
+			Bat_perc=0	
         	else:
 			if 'Bat-' in subscriber:
             			bat=subscriber.split('-')[1]			
@@ -64,7 +63,7 @@ if __name__ == '__main__':
     # load the self-signed cert the server is using
     cert = crypto.load_certificate(
         crypto.FILETYPE_PEM,
-        six.u(open('./server.crt', 'r').read())
+        six.u(open('/home/machinekit/ProBot/ProBot_BeagleBone/server.crt', 'r').read())
     )
     # tell Twisted to use just the one certificate we loaded to verify connections
     options = CertificateOptions(
@@ -76,4 +75,4 @@ if __name__ == '__main__':
         u"realm1",
         ssl=options,  # try removing this, but still use self-signed cert
     )
-runner.run(AppSession)
+    runner.run(AppSession, auto_reconnect=True)
