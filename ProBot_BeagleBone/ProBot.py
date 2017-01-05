@@ -41,58 +41,56 @@ class ProBot():
 	self.LoopTimeResult=LoopTimeResult
 
     def mainRoutine(self):
-	# Calibration of mpu6050
-	mpu6050.Calibration()
-	time.sleep(0.5)
+	try:
+		# Calibration of mpu6050
+		mpu6050.Calibration()
+		time.sleep(0.5)
 
-        while True:
-            try:
-
-		LoopTime=time.time()
+        	while True:
+            
+			LoopTime=time.time()
 		
-		# Readings from the encoders
-                EncodersReadings = Encoders.EncodersValues()
-		wheelPosition1  = EncodersReadings [0]               
-		wheelPosition2 = EncodersReadings [1]
+			# Readings from the encoders
+                	EncodersReadings = Encoders.EncodersValues()
+			wheelPosition1  = EncodersReadings [0]               
+			wheelPosition2 = EncodersReadings [1]
 		
-		# Reading the values from the webpage
-                WebPage_info = WebPage.WebPage_Values()
-                PositionRef = WebPage_info [0]
-                TurnMotorRight = WebPage_info [1]
-                TurnMotorLeft = WebPage_info [2]
+			# Reading the values from the webpage
+                	WebPage_info = WebPage.WebPage_Values()
+                	PositionRef = WebPage_info [0]
+                	TurnMotorRight = WebPage_info [1]
+               		TurnMotorLeft = WebPage_info [2]
 		
-		# Reading the MPU6050 values and use the complementary filter to get better values
-		AccAndGyr = mpu6050.Accx_Gyro()
-                AccXangle = AccAndGyr[0]
-                GYRx = AccAndGyr[1]
-		filteredX=mpu6050.Complementary_filter(AccXangle, GYRx, self.LoopTimeResult)
-		#filteredX = KF.getKalmanAngle(AccXangle, GYRx, self.LoopTimeResult)			
-		#print filteredX
-		# Checking if the angle is out of range
-		if filteredX<-20 or filteredX>20:
-			RestartProgram.RestartProgramRoutine(userChoice)
+			# Reading the MPU6050 values and use the complementary filter to get better values
+			AccAndGyr = mpu6050.Accx_Gyro()
+                	AccXangle = AccAndGyr[0]
+                	GYRx = AccAndGyr[1]
+			filteredX=mpu6050.Complementary_filter(AccXangle, GYRx, self.LoopTimeResult)
+			#filteredX = KF.getKalmanAngle(AccXangle, GYRx, self.LoopTimeResult)			
+			#print filteredX
+			# Checking if the angle is out of range
+			if filteredX<-20 or filteredX>20:
+				RestartProgram.RestartProgramRoutine(userChoice)
 		
-                # With the values from the WebPage, we can calculate the outputs from the controllers
-                PositionController1 = PID.standardPID((PositionRef+TurnMotorRight), wheelPosition1, 'Position1', userChoice)
-                PositionController2 = PID.standardPID((PositionRef+TurnMotorLeft), wheelPosition2, 'Position2', userChoice)
+                	# With the values from the WebPage, we can calculate the outputs from the controllers
+                	PositionController1 = PID.standardPID((PositionRef+TurnMotorRight), wheelPosition1, 'Position1', userChoice)
+               		PositionController2 = PID.standardPID((PositionRef+TurnMotorLeft), wheelPosition2, 'Position2', userChoice)
                 
-		rightMotor = PID.standardPID(PositionController1, filteredX, 'Angle1', userChoice)
-                leftMotor = PID.standardPID(PositionController2, filteredX, 'Angle2', userChoice)
+			rightMotor = PID.standardPID(PositionController1, filteredX, 'Angle1', userChoice)
+                	leftMotor = PID.standardPID(PositionController2, filteredX, 'Angle2', userChoice)
  		
- 		# Sending the right values to the Sabertooth or the PWM controller
-		MotorsControlSignals.MotorsControl(rightMotor, leftMotor, userChoice)
+ 			# Sending the right values to the Sabertooth or the PWM controller
+			MotorsControlSignals.MotorsControl(rightMotor, leftMotor, userChoice)
 		
-		LoopTime2=time.time()
-		self.LoopTimeResult=LoopTime2-LoopTime
+			LoopTime2=time.time()
+			self.LoopTimeResult=LoopTime2-LoopTime
 		
-	    except OSError as err:
+	except OSError as err:
     		print("OS error: {0}".format(err))
-	    except ValueError:
+	except ValueError:
     		print("Could not convert data to an integer.")			
-            except:
-		
+	except:
 		InitProgram.StopProgram()
-
  		print("Unexpected error:\n", sys.exc_info()[0])
 		sys.exit('\n\nPROGRAM STOPPED!!!\n')
                 raise
