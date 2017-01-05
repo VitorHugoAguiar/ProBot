@@ -55,7 +55,7 @@ class StartFileClass():
         sys.exit('\n\nPROGRAM STOPPED!!!\n')
         raise
 		
-    def StopProgram(self, final):
+    def StopProgram(self):
       PWM.PWMStop()
       Sabertooth.stopAndReset()
       userChoiceFile = open("userChoice.txt", "wb")

@@ -33,9 +33,9 @@ class PWMClass ():
 	        GPIO.output(Pconst.BlueLED, GPIO.HIGH)
 
             except:
-	        InitProgram.StopProgram(0)
-	        print("Unexpected error:\n", sys.exc_info()[0])
-	        sys.exit('\n\nPROGRAM STOPPED!!!\n')
+	        InitProgram.StopProgram()
+                print("Unexpected error:\n", sys.exc_info()[0])
+                sys.exit('\n\nPROGRAM STOPPED!!!\n')
                 raise
 
 	def PWM_Signals(self, rightMotor, leftMotor):
