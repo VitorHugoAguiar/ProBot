@@ -1,5 +1,5 @@
 {
-    "pid": 20957, 
+    "pid": 7514, 
     "options": {
         "reactor": null, 
         "cdc": false, 
@@ -14,6 +14,7 @@
     }, 
     "argv": [
         "/usr/local/bin/crossbar", 
-        "start"
+        "start", 
+        "--cbdir=/home/robot/probot_crossbar/.crossbar"
     ]
 }

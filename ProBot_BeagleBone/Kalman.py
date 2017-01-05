@@ -21,9 +21,9 @@ class KalmanFilterClass():
         self.Q_gyro = Q_gyro
         self.R_angle = R_angle
 
-    def getKalmanAngle(self, newAngle, newRate, LoopTime):
-        currtm = time.time()
-        dt = float(currtm-LoopTime)
+    def getKalmanAngle(self, newAngle, newRate, dt):
+        #currtm = time.time()
+        #dt = float(currtm-LoopTime)
 
         #/* Step 1/ *
         self.angle += dt * (newRate - self.bias)

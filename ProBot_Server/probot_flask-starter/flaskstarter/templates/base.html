@@ -14,12 +14,20 @@
   <!-- Mobile viewport optimized: h5bp.com/viewport -->
   <meta name="viewport" content="width=device-width">
   {% block metadata %}{% endblock %}
-
+  
+  {% block js %}{% endblock %}
+  
   <link rel="stylesheet" href="{{ url_for('static', filename='libs/bootstrap/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='libs/bootstrap/css/bootstrap-responsive.min.css') }}">
-
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  {% block js %}{% endblock %}
+
+  <style type="text/css">  
+  body { padding-top: 70px; }
+	@media screen and (max-width: 979px) {
+    body { padding-top: 0px; }
+	}
+ </style>
+  
   {% block css %}{% endblock %}
 
 
@@ -27,7 +35,6 @@
 <body class="{% block body_class %}{% endblock %}">
 
 {% block body %}
-{% block body2 %}{% endblock %}
 
 {% include "nav.html" %}
 
@@ -57,7 +64,7 @@
 </div><!-- end container -->
 
 
-{% block js2 %}{% endblock %}
+{% block js_footer %}{% endblock %}
 
 {% include "footer.html" %}
 <!-- JavaScript at the bottom for fast page loading -->

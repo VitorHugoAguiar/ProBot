@@ -18,6 +18,7 @@ import RestartProgramFile
 import MotorsControlFile
 import StartFile
 import mpu6050File
+#import Kalman
 
 # Initialization of classes from local files
 InitProgram=StartFile.StartFileClass()
@@ -32,7 +33,7 @@ MotorsControlSignals=MotorsControlFile.MotorsControlClass()
 mpu6050=mpu6050File.mpu6050Class()
 InitParameters=InitProgram.StartProgram()
 userChoice=InitParameters[0]
-
+#KF = Kalman.KalmanFilterClass()
 
 class ProBot():
    
@@ -65,7 +66,8 @@ class ProBot():
                 AccXangle = AccAndGyr[0]
                 GYRx = AccAndGyr[1]
 		filteredX=mpu6050.Complementary_filter(AccXangle, GYRx, self.LoopTimeResult)
-				
+		#filteredX = KF.getKalmanAngle(AccXangle, GYRx, self.LoopTimeResult)			
+		#print filteredX
 		# Checking if the angle is out of range
 		if filteredX<-20 or filteredX>20:
 			RestartProgram.RestartProgramRoutine(userChoice)

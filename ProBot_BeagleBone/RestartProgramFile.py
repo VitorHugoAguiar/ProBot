@@ -32,15 +32,12 @@ class RestartProgramClass():
 	
 	AccAndGyr=mpu6050.Accx_Gyro()
         AccXangle=AccAndGyr[0]
-        gyro_xout_scaled=AccAndGyr[1]
-        filteredX=mpu6050.Complementary_filter(AccXangle,gyro_xout_scaled,0)
-        while (filteredX<-0.5 or filteredX>0.5):
-       		AccAndGyr=mpu6050.Accx_Gyro()
-                AccXangle=AccAndGyr[0]
-                gyro_xout_scaled=AccAndGyr[1]
-                filteredX=mpu6050.Complementary_filter(AccXangle,gyro_xout_scaled,0)
-		
+        
+	while (AccXangle<-0.5 or AccXangle>0.5):
+        	AccAndGyr=mpu6050.Accx_Gyro()
+               	AccXangle=AccAndGyr[0]
 
+		
 	GPIO.output(Pconst.BlueLED, GPIO.LOW)	
 	print "\nRestarting the Program..."
       	

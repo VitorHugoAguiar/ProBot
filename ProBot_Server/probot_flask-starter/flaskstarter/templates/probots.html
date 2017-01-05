@@ -1,54 +1,411 @@
 {% extends "base.html" %}
 
-{% block metadata %}
-	<meta http-equiv="refresh" content="10">
+
+{% block js %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>AUTOBAHN_DEBUG = true;</script>
+	<script src="//autobahn.s3.amazonaws.com/autobahnjs/latest/autobahn.min.jgz"></script>
+	
+{% endblock %}
+
+
+{% block css %}
+<style type="text/css">
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  #my-content { display: none; }  /* show it on small screens */
+  #my-contentMobile { display: block; }  /* hide it elsewhere */ 
+}
+
+@media screen and (min-width: 768px) {
+  #my-content { display: block; } 
+  #my-contentMobile { display: none; }  /* hide it elsewhere */ 
+}
+.chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+}
+
+.chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+input[type=radio]:checked + label>img {
+  border: 1px solid black;
+  box-shadow: 0 0 3px 3px black;
+}
+
+
+.thumbnail{
+	display:block;
+	padding:4px;
+	line-height:20px;
+	border:1px solid #ddd;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.055);
+	-moz-box-shadow:0 1px 3px rgba(0,0,0,0.055);
+	box-shadow:0 1px 3px rgba(0,0,0,0.055);
+	-webkit-transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out
+}a.thumbnail:hover,a.thumbnail:focus{
+	border-color:black;
+	border: 5px solid black;
+	-webkit-box-shadow:0 1px 4px rgba(0,105,214,0.25);
+	-moz-box-shadow:0 3px 3px black;
+	box-shadow:0 3px 3px black
+}.thumbnail>img{
+	display:block;max-width:100%;margin-right:auto;margin-left:auto
+}.thumbnail .caption{padding:9px;color:#555}
+
+
+/* Removes the default 20px margin and creates some padding space for the indicators and controls */
+.carousel {
+    margin-bottom: 0;
+	padding: 0 40px 30px 40px;
+}
+/* Reposition the controls slightly */
+.carousel-control {
+	left: -12px;
+}
+.carousel-control.right {
+	right: -12px;
+}
+/* Changes the position of the indicators */
+.carousel-indicators {
+	right: 50%;
+	top: auto;
+	bottom: 0px;
+	margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.carousel-indicators li {
+	background: #c0c0c0;
+}
+.carousel-indicators .active {
+background: #333333;
+}
+
+</style>
+
 {% endblock %}
 
 {% block content %}
 
-<h4 align="justify">We have tree diferent types of ProBot's, each one with some body construction differences, but all have the same objective:Protest!</h4>
-<br>
-<div align="center">
-<h4 align="justify">Note: In order to control a ProBot, you have to allow yours certificates. Please click on the button and add a exception on your browser. You just need to do this one time on a specific browser.</h4>
-	<button onclick="location.href='https://89.109.64.175:8080'" type="button">Add a exception!</button>
 
+<div align="center" style="display:none;" id="exception">
+<h4 align="justify">To control one of the ProBots. please click on the button and add the exception to your browser. You just need to do this one time on a specific browser. If you already done this process and still can't see a online ProBot, maybe the server is offline.... </h4>
+	<input type="button" value="Add the exception!" onclick="location.href='https://89.109.64.175:8080'">
 </div>
 	<br>
-    <div class="row">
-      <div class="span4">
-		<img src="../static/images/IMG_4464.jpg">
-
-      </div>
-      <div class="span4">
-		<img src="../static/images/IMG_8585.jpg" >
-
-      </div>
-      <div class="span4">
-		<img src="../static/images/P_20161119_111859.jpg"  >
-
-      </div>
-    </div><!-- end row -->
-    
 <div align="center">
+<h4> Please choose a ProBot by clicking on the respectively image: </h4>
+</div>
+<br>
 <br>
 
-	
-	<h4>To control a ProBot, please choose one that is available:</h4>
-	{% if available_probot == False %}	
-	<h4>Sorry, no ProBots available.</h4>
-	{% else %}
-	
-	{% from "_formhelpers.html" import render_field %}
+<div align="center" id="my-content">		
+<form name="formName" action="{{ url_for('probots') }}" method="POST">		
+<div class="container">
+	<div class="row">
+		<div class="span12">
+    	    <div class="well"> 
+                <div id="myCarousel" class="carousel slide">
+                 
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
 
-	<form method=post action="{{ url_for('probots') }}">
-	
+                </ol>
+                 
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    
+                <div class="item active">
+                	<div class="row-fluid">
+                	  <div class="span4"><a class="thumbnail"><input type="radio" name="options" value="1" id="probot1" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot1"><img src="../static/images/IMG_4464.jpg" /></label></a><p>
+                	  <div class="chip" ><img src="../static/images/offline.png"  id="chip1">ProBot 1</div></div>
+                	  
+                	  <div class="span4"><a class="thumbnail"><input type="radio" name="options" value="2" id="probot2" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot2"><img src="../static/images/IMG_8585.jpg" /></label></a><p>
+                	  <div class="chip"><img src="../static/images/offline.png" id="chip2">ProBot 2</div></div>
+                	  
+                	  
+                	  <div class="span4"><a class="thumbnail"><input type="radio" name="options" value="3" id="probot3" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot3"><img src="../static/images/P_20161119_111859.jpg" /></label></a><p>
+                	  <div class="chip"><img src="../static/images/offline.png"  id="chip3">ProBot 3</div></div>
 
-	{{ render_field(form.probot) }}
+                	</div><!--/row-fluid-->
+                </div><!--/item-->
+                 
+                <div class="item">
+                	<div class="row-fluid">
+                	  <div class="span4"><a class="thumbnail"><input type="radio" name="options" value="4" id="probot4" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot4"><img src="../static/images/Website-Under-Construction.jpg" /></label></a><p>
+                	  <div class="chip"><img src="../static/images/offline.png"  id="chip4">ProBot 4</div></div>
+                	  
+                	  <div class="span4"><a class="thumbnail"><input type="radio" name="options" value="5" id="probot5" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot5"><img src="../static/images/Website-Under-Construction.jpg" /></label></a><p>
+                	  <div class="chip"><img src="../static/images/offline.png"  id="chip5">ProBot 5</div></div>
+                	  
+                	  
+                	  <div class="span4"><a class="thumbnail"><input type="radio" name="options" value="6" id="probot6" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot6"><img src="../static/images/Website-Under-Construction.jpg" /></label></a><p>
+                	  <div class="chip"><img src="../static/images/offline.png"  id="chip6">ProBot 6</div></div>
 
-	<p><input type=submit value=Select>
-	</form>
-{% endif %}
+                	</div><!--/row-fluid-->
+                </div><!--/item-->
+                 
+                </div><!--/carousel-inner-->
+                 
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+                </div><!--/myCarousel-->
+                 
+            </div><!--/well-->   
+		</div>
+	</div>
 </div>
+		
+</div>
+
+
+<div align="center" id="my-contentMobile">		
+	
+<div class="container">
+	<div class="row">
+		<div class="span12">
+    	    <div class="well"> 
+                <div id="myCarouselMobile" class="carousel slide">
+                 
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li> 
+                    <li data-target="#myCarousel" data-slide-to="5"></li>                     
+
+                </ol>
+                 
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    
+                <div class="item active">
+                	<div class="row-fluid">
+                	  <div class="span6"><a class="thumbnail"><input type="radio" name="options" value="1" id="probot1" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot1"><img src="../static/images/IMG_4464.jpg" /></label></a><p>
+                	  <div class="chip"><img src="../static/images/offline.png" id="chipM1">ProBot 1</div></div>
+                	</div><!--/row-fluid-->
+                </div><!--/item-->        
+                       	  
+                <div class="item">
+                	<div class="row-fluid">                
+                	  <div class="span6"><a class="thumbnail"><input type="radio" name="options" value="2" id="probot2" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot2"><img src="../static/images/IMG_8585.jpg" /></label></a><p>
+                	  <div class="chip"><img src="../static/images/offline.png" id="chipM2">ProBot 2</div></div>  
+                	</div><!--/row-fluid-->
+                </div><!--/item-->   
+                
+                <div class="item">
+                	<div class="row-fluid">                             	  
+                	  <div class="span6"><a class="thumbnail"><input type="radio" name="options" value="3" id="probot3" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot3"><img src="../static/images/P_20161119_111859.jpg" /></label></a><p>
+                	  <div class="chip"><img src="../static/images/offline.png"  id="chipM3">ProBot 3</div></div>
+                	</div><!--/row-fluid-->
+                </div><!--/item-->
+                 
+                <div class="item">
+                	<div class="row-fluid">
+                	  <div class="span6"><a class="thumbnail"><input type="radio" name="options" value="4" id="probot4" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot4"><img src="../static/images/Website-Under-Construction.jpg" /></label></a><p>
+                	  <div class="chip"><img src="../static/images/offline.png"  id="chipM4">ProBot 4</div></div>
+                	</div><!--/row-fluid-->
+                </div><!--/item-->     
+                	  
+                <div class="item">
+                	<div class="row-fluid">
+                	  <div class="span6"><a class="thumbnail"><input type="radio" name="options" value="5" id="probot5" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot5"><img src="../static/images/Website-Under-Construction.jpg" /></label></a><p>
+                	  <div class="chip"><img src="../static/images/offline.png"  id="chipM5">ProBot 5</div></div>
+                	</div><!--/row-fluid-->
+                </div><!--/item--> 
+                                  	  
+                <div class="item">
+                	<div class="row-fluid">  	  
+                	  <div class="span6"><a class="thumbnail"><input type="radio" name="options" value="6" id="probot6" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot6"><img src="../static/images/Website-Under-Construction.jpg" /></label></a><p>
+                	  <div class="chip"><img src="../static/images/offline.png"  id="chipM6">ProBot 6</div></div>
+
+                	</div><!--/row-fluid-->
+                </div><!--/item-->
+                 
+                </div><!--/carousel-inner-->
+                 
+                <a class="left carousel-control" href="#myCarouselMobile" data-slide="prev">‹</a>
+                <a class="right carousel-control" href="#myCarouselMobile" data-slide="next">›</a>
+                </div><!--/myCarousel-->
+                 
+            </div><!--/well-->   
+		</div>
+	</div>
+</div>
+</form> 		
+</div>
+
+
+{% endblock %}
+
+{% block js_footer %}
+
+<script>
+
+$(document).ready(function() {
+    $('#myCarousel').carousel({
+	    interval: false
+	})
+    $('#my-contentMobile').carousel({
+	    interval: false
+	})
+});
+
+
+var availableProBots=[];
+var availableProBots1=[];
+var probotOnline=[];
+var numberProbots=6;
+var enable=0;
+
+function update_values() {
+            $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+            $.getJSON($SCRIPT_ROOT+"/checkProbotOnline",
+                function(data) {
+                    $("#available_probot").text(data.available_probot);
+                    availableProBots=data.available_probot;
+                    $('#probot1').load(document.URL + ' #probot1');
+                    $('#probot2').load(document.URL + ' #probot2');
+                    $('#probot3').load(document.URL + ' #probot3');
+                    $('#probot4').load(document.URL + ' #probot4');
+                    $('#probot5').load(document.URL + ' #probot5');
+                    $('#probot6').load(document.URL + ' #probot6');
+                    checkOnline();
+                 
+                    
+                });
+        }
+setInterval(update_values, 1000)
+
+function checkform(value) {
+	
+	if(enable==1) {
+		alert("Please add the exception. If you stil don't see a online ProBot, maybe the server is offline...");
+		return false;
+		
+	}
+    if(availableProBots1[value]!=1) {
+        alert("This ProBot is offline. Please choose another one");
+        return false;
+    } else {
+    	
+        if (confirm("Are you sure?") == true) {
+                document.formName.submit();
+        }
+        else {
+        return false;
+    }
+    }
+}
+
+function checkOnline() {
+
+
+if(availableProBots.length==undefined){
+for(var i = 1; i < numberProbots; i++)
+{
+var chip="chip"+i;
+document.getElementById(chip).src = "../static/images/offline.png";
+}
+
+}else{
+for(var i = 0; i < availableProBots.length; i++)
+{
+
+for(var i = 1; i < numberProbots; i++)
+{	
+	var chip="chip"+ i;
+	var chipM="chipM"+ i;
+	probotOnline[i]=availableProBots.indexOf(i) >= 0;
+	if(probotOnline[i]===false){
+		document.getElementById(chip).src = "../static/images/offline.png";
+		document.getElementById(chipM).src = "../static/images/offline.png";
+		availableProBots1[i]=0;
+		
+	}else{
+		
+		document.getElementById(chip).src = "../static/images/online.png";
+		document.getElementById(chipM).src = "../static/images/online.png";
+		availableProBots1[i]=1;	
+	}
+}}}}
+
+
+
+// the URL of the WAMP Router (Crossbar.io)
+var connection = new autobahn.Connection({
+	url: "wss://89.109.64.175:8080/ws",
+	realm: "realm1"
+});
+
+// fired when connection is established and session attached
+connection.onopen = function (session, details){
+	console.log("Connected");
+	document.getElementById('exception').style.display = "none";
+	
+	for(var i = 1; i < numberProbots; i++)
+{	
+	var chip="chip"+ i;
+	var chipM="chipM"+ i;
+	document.getElementById(chip).style.display = "block";
+	document.getElementById(chipM).style.display = "block";
+}
+
+	enable=0;
+};
+
+// fired when connection was lost (or could not be established)s
+connection.onclose = function (reason, details){
+	console.log("Connection lost: " + reason);
+	document.getElementById('exception').style.display = "block";
+	for(var i = 1; i < numberProbots; i++)
+{	
+	var chip="chip"+ i;
+	var chipM="chipM"+ i;
+	document.getElementById(chip).style.display = "none";
+	document.getElementById(chipM).style.display = "none";
+}
+	enable=1;
+};
+
+
+// now actually open the connection
+connection.open();
+
+</script>
 
 {% endblock %}
 

@@ -3,6 +3,7 @@
 import smbus
 import math
 import sys
+import time
 import ProBotConstantsFile
 import Adafruit_BBIO.GPIO as GPIO
 import StartFile
@@ -36,8 +37,9 @@ class mpu6050Class():
 	accel_scale_modifier=ACCEL_SCALE_MODIFIER_2G
 	gyro_scale_modifier=GYRO_SCALE_MODIFIER_250DEG
 
-    	def __init__(self, address=0x68, lastAccelerometerAngleX=0):
-		self.lastAccelerometerAngleX=lastAccelerometerAngleX	
+    	def __init__(self, address=0x68, lastAccelerometerAngleX=0, LoopTimeResult=0):
+		self.lastAccelerometerAngleX=lastAccelerometerAngleX
+		self.LoopTimeResult=LoopTimeResult	
 		self.address = address
 		# Now wake up the MPU6050 as it starts in sleep mode
 		self.bus.write_byte_data(self.address, self.power_mgmt_1, 0)
@@ -74,16 +76,14 @@ class mpu6050Class():
 		AccAndGyr=self.Accx_Gyro()
 		AccXangle=AccAndGyr[0]
 		gyro_xout_scaled=AccAndGyr[1]
-    		filteredX=self.Complementary_filter(AccXangle,gyro_xout_scaled,0)
-		
-		while (filteredX<-0.5 or filteredX>0.5):
+	
+		while (AccXangle<-0.5 or AccXangle>0.5):
                 	AccAndGyr=self.Accx_Gyro()
                 	AccXangle=AccAndGyr[0]
-                	gyro_xout_scaled=AccAndGyr[1]
-			filteredX=self.Complementary_filter(AccXangle,gyro_xout_scaled,0)
-			
+                	
 		GPIO.output(Pconst.BlueLED, GPIO.LOW)
 	    	GPIO.output(Pconst.GreenLED, GPIO.HIGH)
+		filteredX=AccXangle
 		return filteredX
 
 

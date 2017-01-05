@@ -1,5 +1,5 @@
 """Forms.py."""
-from wtforms import Form, PasswordField, TextField, RadioField, validators, SelectField
+from wtforms import Form, PasswordField, TextField, RadioField, validators, SelectField, TextField, HiddenField
 
 
 class RegistrationForm(Form):
@@ -54,22 +54,9 @@ class ConfirmResetPasswordForm(Form):
     confirm = PasswordField((u'Repeat Password'))
     
     
-class SelectProBotForm(Form):
-	
-	probot = SelectField('', validators = [validators.Required()], choices=[], coerce=int)
-	
+class TestForm(Form):
+  fld1 = TextField("")
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+

@@ -190,13 +190,13 @@ function joystickHandler(session, topic)
 			$(window).on("gamepadconnected", function() {
 				hasGP = true;
 				$("gamepadPrompt").text("Gamepad connected!");
-				console.log("connection event");
+				console.log("Gamepad connected!");
 				repGP = window.setInterval(reportOnGamepad,200);
 				
 			});
 
 			$(window).on("gamepaddisconnected", function() {
-				console.log("disconnection event");
+				console.log("Gamepad disconnected!");
 				$("gamepadPrompt").text("Gamepad disconnected!");
 				window.clearInterval(repGP);
 				
@@ -204,7 +204,7 @@ function joystickHandler(session, topic)
 
 			//setup an interval for Chrome
 			var checkGP = window.setInterval(function() {
-				console.log('checkGP');
+				//console.log('checkGP');
 				if(navigator.getGamepads()[0])
 				{
 					if(!hasGP) $(window).trigger("gamepadconnected");
@@ -236,7 +236,7 @@ connection.onopen = function (session, details){
 console.log("Connected");
 	
 session.publish("general-topic", [probot_id]);
-console.log("Published Probot_id to general-topic, id: " + probot_id);
+//console.log("Published Probot_id to general-topic, id: " + probot_id);
 	
 var probot_topic = "probot-topic-" + probot_id;
 var keepalive_topic = "keepalive-" + probot_id;
@@ -244,30 +244,49 @@ var probot_bat = "probot-bat-" + probot_id;
 	
 window.setInterval(function (){
 		session.publish(keepalive_topic, []);
-		console.log("keepalive");
+		//console.log("keepalive");
 }, 1000); // MILISEGUNDOS
 	
-function receiveBattery(args)
-{
-	var dataReceived = args[0];
-	if(dataReceived == "error")
-	{
-		console.log("Stopped receiving battery");
-		if(!alert('Looks like the ProBot'+ probot_id+' it is not responding. Please click OK and choose another ProBot.'))
-			{window.location = window.location.href.split("#")[0];}
-
-	}
-	else
-	{
-			console.log("battery voltage: " + dataReceived+"%");
-			battery=dataReceived+"%";
-			document.getElementById('battery').innerHTML = battery;
-			if(dataReceived < 20)
+		function receiveBattery(args)
 		{
-			document.getElementById("battery").style.color = "red"
+			var dataReceived = args[0];
+			var a;
+			a = document.getElementById("battery");
+			if(dataReceived == "error")
+			{
+				//console.log("Stopped receiving battery");
+				if(!alert('Looks like the ProBot'+ probot_id+' it is not responding. Please click OK and choose another ProBot.'))
+			{window.location=window.location;
+			}
+			}
+			else
+			{
+			//console.log("battery voltage: " + dataReceived+"%");
+			
+			
+			if (dataReceived>=0 && dataReceived<=40){
+				if(!alert('The Probot'+ probot_id+' battery is too low. Please click OK and choose another ProBot.'))
+			{window.location=window.location;
+			}
+      		}			
+			
+			if (dataReceived>40 && dataReceived<=50){
+      			a.innerHTML = "&#xf243;";
+      			a.style.color = 'red';
+      		}
+
+    		if (dataReceived>50 && dataReceived<=70){
+      			a.innerHTML = "&#xf242;";
+      			a.style.color = 'orange';
+			}
+	
+    		if (dataReceived>70 && dataReceived<=100){
+      			a.innerHTML = "&#xf240;";
+      			a.style.color = 'green';
+			}
+
+			}
 		}
-	}
-}
 	
 session.subscribe(probot_bat, receiveBattery).then(
 	function (sub)
@@ -302,7 +321,6 @@ chooseControl = function (control_id)
 }
 	
 };
-
 
 // fired when connection was lost (or could not be established)s
 connection.onclose = function (reason, details){

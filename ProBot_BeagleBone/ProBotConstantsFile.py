@@ -24,7 +24,7 @@ class Constants():
         self.SaberTooth_KdP = 20#20
         self.SaberTooth_KpA = 16#16
         self.SaberTooth_KiA = 1.7#1.7
-        self.SaberTooth_KdA = -2#-2
+        self.SaberTooth_KdA = -0.5#-2
         self.PWM_KpP = 220
         self.PWM_KiP = 2
         self.PWM_KdP = 8

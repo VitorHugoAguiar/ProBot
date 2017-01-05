@@ -41,7 +41,7 @@ class AppSession(ApplicationSession):
                     print("BATTERY TIMEOUT")
                     self.publish(topic, "error")
 
-		ProBotTimerBat[int(probotid)]=Timer(30, battery_timeout,())
+		ProBotTimerBat[int(probotid)]=Timer(60, battery_timeout,())
                 ProBotTimerBat[int(probotid)].start()
 
                 if (probotid != None):
@@ -49,7 +49,7 @@ class AppSession(ApplicationSession):
                         self.log.info("last battery from {topic}: {bat_value}", topic=topic, bat_value=bat_value)
                         self.publish('bridge-topic', probotid, bat_value, "UPDATE") # to publish on the bridge
 			ProBotTimerBat[int(probotid)].cancel()
-			ProBotTimerBat[int(probotid)]=Timer(30, battery_timeout,())
+			ProBotTimerBat[int(probotid)]=Timer(60, battery_timeout,())
 	                ProBotTimerBat[int(probotid)].start()
                     self.subscribe(receive_bat, topic)
 
@@ -68,13 +68,13 @@ class AppSession(ApplicationSession):
                     self.publish('bridge-topic', probotid, 0, "WEB TIMEOUT") # to publish on the bridge
                     print("WEB TIMEOUT")
 
-                ProBotTimerWeb[int(probotid)]=Timer(30, webclient_timeout,())
+                ProBotTimerWeb[int(probotid)]=Timer(10, webclient_timeout,())
                 ProBotTimerWeb[int(probotid)].start()
 		ProBotTimerWeb[int(probotid)].cancel()
 
                 def reset_timer():
                         ProBotTimerWeb[int(probotid)].cancel()
-                        ProBotTimerWeb[int(probotid)]=Timer(30, webclient_timeout,())
+                        ProBotTimerWeb[int(probotid)]=Timer(10, webclient_timeout,())
                         ProBotTimerWeb[int(probotid)].start()
 
                 self.subscribe(reset_timer, keepalive_topic)
