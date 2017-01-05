@@ -80,7 +80,7 @@ class SabertoothClass():
 	    GPIO.output(Pconst.BlueLED, GPIO.HIGH)
 
         except:
-	    InitProgram.StopProgram(0)
+	    InitProgram.StopProgram()
 	    print("Unexpected error:\n", sys.exc_info()[0])
 	    sys.exit('\n\nPROGRAM STOPPED!!!\n')
             raise

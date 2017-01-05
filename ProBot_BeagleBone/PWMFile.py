@@ -2,6 +2,7 @@
 
 import time
 import math
+import sys
 import Adafruit_BBIO.GPIO as GPIO
 import Adafruit_BBIO.PWM as PWM
 import ProBotConstantsFile
@@ -18,14 +19,23 @@ PWM.start(Pconst.PWM_LF, 100, Pconst.PWM_Freq) #pwm
 class PWMClass ():
 	
 	def PWMStart(self):
-    	    # Starting the communication with the PWM controller
-            GPIO.output(Pconst.RedLED, GPIO.HIGH)
+    	    try:
+		import StartFile
+	    	InitProgram=StartFile.StartFileClass()
 
-            time.sleep(3)									# Wait to stabilize the communication
+	    	# Starting the communication with the PWM controller
+            	GPIO.output(Pconst.RedLED, GPIO.HIGH)
 
-	    GPIO.output(Pconst.RedLED, GPIO.LOW)
-	    GPIO.output(Pconst.BlueLED, GPIO.HIGH)
-	    
+            	time.sleep(3)									# Wait to stabilize the communication
+
+	    	GPIO.output(Pconst.RedLED, GPIO.LOW)
+	    	GPIO.output(Pconst.BlueLED, GPIO.HIGH)
+	    except:
+            	InitProgram.StopProgram()
+            	print("Unexpected error:\n", sys.exc_info()[0])
+            	sys.exit('\n\nPROGRAM STOPPED!!!\n')
+            	raise
+
 	def PWM_Signals(self, rightMotor, leftMotor):
 
 	    # Sending the values to the PWM controller that is connected to the motors

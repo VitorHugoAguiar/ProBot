@@ -18,7 +18,6 @@ import RestartProgramFile
 import MotorsControlFile
 import StartFile
 import mpu6050File
-#import Kalman
 
 # Initialization of classes from local files
 InitProgram=StartFile.StartFileClass()
@@ -33,7 +32,6 @@ MotorsControlSignals=MotorsControlFile.MotorsControlClass()
 mpu6050=mpu6050File.mpu6050Class()
 InitParameters=InitProgram.StartProgram()
 userChoice=InitParameters[0]
-#KF = Kalman.KalmanFilterClass()
 
 class ProBot():
    
