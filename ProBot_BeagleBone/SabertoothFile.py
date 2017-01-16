@@ -12,7 +12,6 @@ import Adafruit_BBIO.GPIO as GPIO
 
 # Initialization of classes from local files
 Pconst = ProBotConstantsFile.Constants()
-#InitProgram=StartFile.StartFileClass()
 
 # Configuration the type of GPIO's
 GPIO.setup(Pconst.RedLED, GPIO.OUT)
@@ -79,7 +78,7 @@ class SabertoothClass():
 	    GPIO.output(Pconst.RedLED, GPIO.LOW)
 	    GPIO.output(Pconst.BlueLED, GPIO.HIGH)
 
-        except:
+       	except:
 	    InitProgram.StopProgram()
 	    print("Unexpected error:\n", sys.exc_info()[0])
 	    sys.exit('\n\nPROGRAM STOPPED!!!\n')

@@ -18,11 +18,12 @@ import os
 import time
 import SocketFile
 import SocketFile2
+
 # Initialization of classes from local files
 Pub_Sub = SocketFile.SocketClass()
 Pub_Sub2 = SocketFile2.SocketClass()
 class AppSession(ApplicationSession):
-    Bat_perc=0
+
     log = Logger()
 
     @inlineCallbacks
@@ -49,15 +50,15 @@ class AppSession(ApplicationSession):
        		subscriber = Pub_Sub2.subscriber()	
 		if subscriber is None:
 			subscriber=0
-			self.Bat_perc=0	
+			Bat_perc=0	
        		else:
 			if 'Bat-' in subscriber:
             			bat=subscriber.split('-')[1]			
-				self.Bat_perc=bat
+				Bat_perc=bat
 		
 		
-		self.publish('probot-bat-2', self.Bat_perc)
-		self.log.info("published on probot-bat-2: {msg}", msg=self.Bat_perc)
+		self.publish('probot-bat-2', Bat_perc)
+		self.log.info("published on probot-bat-2: {msg}", msg=Bat_perc)
         	yield sleep(1)
 
 if __name__ == '__main__':
