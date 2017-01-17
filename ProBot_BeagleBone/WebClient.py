@@ -8,6 +8,7 @@ from twisted.internet.defer import inlineCallbacks
 from autobahn.twisted.util import sleep
 
 from autobahn.twisted.wamp import ApplicationSession, ApplicationRunner
+
 from twisted.logger import Logger
 from twisted.internet._sslverify import OpenSSLCertificateAuthorities
 from twisted.internet.ssl import CertificateOptions
