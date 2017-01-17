@@ -17,12 +17,13 @@ from OpenSSL import crypto
 import sys
 import os
 import time
-import SocketFile
-import SocketFile2
+import SocketWebPageFile
+import SocketBatteryFile
 
 # Initialization of classes from local files
-Pub_Sub = SocketFile.SocketClass()
-Pub_Sub2 = SocketFile2.SocketClass()
+Pub_Sub = SocketWebPageFile.SocketClass()
+Pub_Sub2 = SocketBatteryFile.SocketClass()
+
 class AppSession(ApplicationSession):
 
     log = Logger()
@@ -54,9 +55,7 @@ class AppSession(ApplicationSession):
 			Bat_perc=0	
        		else:
 			if 'Bat-' in subscriber:
-            			bat=subscriber.split('-')[1]			
-				Bat_perc=bat
-		
+            			Bat_perc=subscriber.split('-')[1]			
 		
 		self.publish('probot-bat-2', Bat_perc)
 		self.log.info("published on probot-bat-2: {msg}", msg=Bat_perc)

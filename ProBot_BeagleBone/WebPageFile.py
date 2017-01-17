@@ -1,12 +1,12 @@
 #!/usr/bin/python
 
 # Python Standart Library Imports
-import SocketFile
+import SocketFileWebPage
 import LowPassFilter
 import ProBotConstantsFile
 import decimal
 
-Pub_Sub = SocketFile.SocketClass()
+Pub_Sub = SocketFileWebPage.SocketClass()
 LPF = LowPassFilter.LowPassFilter()
 Pconst = ProBotConstantsFile.Constants()
 

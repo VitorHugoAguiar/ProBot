@@ -5,12 +5,12 @@ import Adafruit_BBIO.ADC as ADC
 import Adafruit_BBIO.GPIO as GPIO
 import ProBotConstantsFile
 import time
-import SocketFile2
+import SocketBatteryFile
 import sys
 
 # Initialization of classes from local files
 Pconst = ProBotConstantsFile.Constants()
-Pub_Sub = SocketFile2.SocketClass()
+Pub_Sub = SocketBatteryFile.SocketClass()
 
 # Start the ADC
 ADC.setup()
