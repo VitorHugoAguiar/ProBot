@@ -4,7 +4,7 @@ import sys
 import threading
 import ctypes
 import ProBotConstantsFile
-import SocketFile
+import SocketWebPageFile
 import PWMFile
 import SabertoothFile
 import BatteryMonitorFile
@@ -12,7 +12,7 @@ import BatteryMonitorFile
 Sabertooth = SabertoothFile.SabertoothClass()
 PWM = PWMFile.PWMClass()
 Pconst = ProBotConstantsFile.Constants()
-Pub_Sub = SocketFile.SocketClass()
+Pub_Sub = SocketWebPageFile.SocketClass()
 Battery = BatteryMonitorFile.BatteryMonitorClass()
 
 
