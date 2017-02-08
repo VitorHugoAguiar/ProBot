@@ -20,18 +20,19 @@ import StartFile
 import mpu6050File
 
 # Initialization of classes from local files
-InitProgram = StartFile.StartFileClass()
-RestartProgram = RestartProgramFile.RestartProgramClass()
+InitProgram=StartFile.StartFileClass()
+RestartProgram=RestartProgramFile.RestartProgramClass()
 Sabertooth = SabertoothFile.SabertoothClass()
 PID = PIDControllersFile.PIDControllersClass()
 Encoders = EncodersFile.EncodersClass()
 Pconst = ProBotConstantsFile.Constants()
 PWM = PWMFile.PWMClass()
 WebPage = WebPageFile.WebPageClass()
-MotorsControlSignals = MotorsControlFile.MotorsControlClass()
-mpu6050 = mpu6050File.mpu6050Class() 
-InitParameters = InitProgram.StartProgram()
-userChoice = InitParameters[0]
+MotorsControlSignals=MotorsControlFile.MotorsControlClass()
+mpu6050=mpu6050File.mpu6050Class()
+
+InitParameters=InitProgram.StartProgram()
+userChoice=InitParameters[0]
 
 class ProBot():
    
@@ -64,7 +65,8 @@ class ProBot():
                 	AccXangle = AccAndGyr[0]
                 	GYRx = AccAndGyr[1]
 			filteredX=mpu6050.Complementary_filter(AccXangle, GYRx, self.LoopTimeResult)
-			
+			#filteredX = KF.getKalmanAngle(AccXangle, GYRx, self.LoopTimeResult)			
+			#print filteredX
 			# Checking if the angle is out of range
 			if filteredX<-20 or filteredX>20:
 				RestartProgram.RestartProgramRoutine(userChoice)
@@ -81,7 +83,7 @@ class ProBot():
 		
 			LoopTime2=time.time()
 			self.LoopTimeResult=LoopTime2-LoopTime
-			
+		
 	except OSError as err:
     		print("OS error: {0}".format(err))
 	except ValueError:

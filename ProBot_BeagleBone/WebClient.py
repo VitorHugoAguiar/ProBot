@@ -19,10 +19,12 @@ import os
 import time
 import SocketWebPageFile
 import SocketBatteryFile
+import SocketAngleFile
 
 # Initialization of classes from local files
 Pub_Sub = SocketWebPageFile.SocketClass()
 Pub_Sub2 = SocketBatteryFile.SocketClass()
+Pub_Sub3=SocketAngleFile.SocketClass()
 
 class AppSession(ApplicationSession):
 
@@ -42,23 +44,24 @@ class AppSession(ApplicationSession):
         sub = yield self.subscribe(probot_topic_2, 'probot-topic-2')
         self.log.info("subscribed to topic 'probot-topic-2'")
 
-	self.publish('general-topic', "B-2")
+	self.publish('general-topic', "probot-2")
 
 
         ## PUBLISH and CALL every second .. forever
-        while True:
+       	while True:
 		
 		## PUBLISH an event
-       		subscriber = Pub_Sub2.subscriber()	
-		if subscriber is None:
-			subscriber=0
-			Bat_perc=0	
-       		else:
-			if 'Bat-' in subscriber:
-            			Bat_perc=subscriber.split('-')[1]			
-		
-		self.publish('probot-bat-2', Bat_perc)
-		self.log.info("published on probot-bat-2: {msg}", msg=Bat_perc)
+       		Bat = Pub_Sub2.subscriber()
+		Angle= Pub_Sub3.subscriber()
+		if Bat==None:
+			Bat=0	
+		if Angle==None:
+			Angle=90
+
+		self.publish('probot-bat-2', Bat)
+		self.publish('probot-angle-2', Angle)
+		self.log.info("published on probot-bat-2: {msg}", msg=Bat)
+		self.log.info("published on probot-angle-2: {msg}", msg=Angle)
         	yield sleep(1)
 
 if __name__ == '__main__':

@@ -8,13 +8,13 @@ subscriber = contextS.socket(zmq.SUB)
 subscriber.setsockopt(zmq.SUBSCRIBE, "")
 poller = zmq.Poller()
 poller.register(subscriber, zmq.POLLIN)
-subscriber.connect('tcp://localhost:5582')
+subscriber.connect('tcp://localhost:5584')
 
 # Connection to our publisher socket
 contextP = zmq.Context()
 publisher = contextP.socket(zmq.PUB)
-publisher.connect("tcp://localhost:5581")
-publisher.sndhwm = 1100000
+publisher.connect("tcp://localhost:5583")
+publisher.sndhwm = 1000000000
 
 
 class SocketClass():
@@ -32,6 +32,9 @@ class SocketClass():
 
     def publisher(self, var1):
 	publisher.send_string('{}'.format(var1),zmq.NOBLOCK)
+
+
+
 
 
 

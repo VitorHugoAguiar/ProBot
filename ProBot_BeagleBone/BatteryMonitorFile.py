@@ -10,7 +10,7 @@ import sys
 
 # Initialization of classes from local files
 Pconst = ProBotConstantsFile.Constants()
-Pub_Sub = SocketBatteryFile.SocketClass()
+Pub_Sub2 = SocketBatteryFile.SocketClass()
 
 # Start the ADC
 ADC.setup()
@@ -33,17 +33,17 @@ class BatteryMonitorClass():
 				
 				BatteryRealValue=BatteryVoltageVal*1.8
 				BatteryRealValue=BatteryRealValue*(107200/7200)
-				percentage=(14.2857*BatteryRealValue)-265.714
+				BatteryPercentage=int((14.2857*BatteryRealValue)-265.714)
 								
-            			if percentage < voltageVar[2]:					        			# Definition of the Red region for the battery
+            			if BatteryPercentage < voltageVar[2]:					        			# Definition of the Red region for the battery
                 			GPIO.output(voltageVar[3], GPIO.HIGH)
                 			GPIO.output(voltageVar[4], GPIO.HIGH)
 	    			else:
 
 					GPIO.output(voltageVar[4], GPIO.LOW)
-				
-				publisher=Pub_Sub.publisher("Bat-"+str(int(percentage)))
-				print str(int(percentage))
+							
+				publisher=Pub_Sub2.publisher(BatteryPercentage)
+				print BatteryPercentage
 				time.sleep(1)
             			
                		except OSError as err:
