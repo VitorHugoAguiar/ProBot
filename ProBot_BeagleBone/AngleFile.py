@@ -93,10 +93,8 @@ class mpu6050Class():
     				filteredX = float(0.98 * (self.lastAccelerometerAngleX+0.016*gyro_xout_scaled) + (1 - 0.98) * AccXangle)
     				self.lastAccelerometerAngleX=filteredX
 				filteredX=filteredX+Pconst.Angle_offset
-				print(round(filteredX, 2))
-				publisher=Pub_Sub3.publisher(round(filteredX, 2))
-                                
-				time.sleep(1)
+				print(round(AccXangle, 2))
+				publisher=Pub_Sub3.publisher(round(AccXangle, 2))
 			except OSError as err:
                                 print("OS error: {0}".format(err))
                         except ValueError:

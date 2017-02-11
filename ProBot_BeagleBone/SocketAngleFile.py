@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import sys
 import zmq
+import time
 
 # Connection to our subscriber socket
 contextS = zmq.Context()
@@ -14,7 +15,7 @@ subscriber.connect('tcp://localhost:5584')
 contextP = zmq.Context()
 publisher = contextP.socket(zmq.PUB)
 publisher.connect("tcp://localhost:5583")
-publisher.sndhwm = 1000000000
+publisher.sndhwm = 1100000
 
 
 class SocketClass():
@@ -32,7 +33,7 @@ class SocketClass():
 
     def publisher(self, var1):
 	publisher.send_string('{}'.format(var1),zmq.NOBLOCK)
-
+	time.sleep(1)
 
 
 

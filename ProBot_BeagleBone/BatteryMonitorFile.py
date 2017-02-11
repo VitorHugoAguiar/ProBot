@@ -44,7 +44,7 @@ class BatteryMonitorClass():
 							
 				publisher=Pub_Sub2.publisher(BatteryPercentage)
 				print BatteryPercentage
-				time.sleep(1)
+				
             			
                		except OSError as err:
     				print("OS error: {0}".format(err))
