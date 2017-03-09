@@ -2,6 +2,7 @@
 import sys
 import zmq
 
+
 # Connection to our subscriber socket
 contextS = zmq.Context()
 subscriber = contextS.socket(zmq.SUB)
