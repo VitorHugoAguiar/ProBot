@@ -15,6 +15,10 @@ Pconst = ProBotConstantsFile.Constants()
 Pub_Sub = SocketWebPageFile.SocketClass()
 Battery = BatteryMonitorFile.BatteryMonitorClass()
 
+GPIO.setup(Pconst.GreenLED, GPIO.OUT)
+GPIO.setup(Pconst.RedLED, GPIO.OUT)
+GPIO.setup(Pconst.BlueLED, GPIO.OUT)
+
 
 class StartFileClass():
 
@@ -58,6 +62,9 @@ class StartFileClass():
     def StopProgram(self):
       PWM.PWMStop()
       Sabertooth.stopAndReset()
+      GPIO.output(Pconst.GreenLED, GPIO.LOW)
+      GPIO.output(Pconst.RedLED, GPIO.LOW)
+      GPIO.output(Pconst.BlueLED, GPIO.LOW)
       userChoiceFile = open("userChoice.txt", "wb")
       userChoiceFile.write("0")
       userChoiceFile.close()

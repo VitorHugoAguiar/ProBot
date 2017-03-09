@@ -6,13 +6,16 @@ import sys
 import os
 import ProBotConstantsFile
 import SabertoothFile
-import mpu6050File
 import PWMFile
+import math
+#from MPU6050 import MPU6050
+import mpu6050File
 
+#sensor=MPU6050(0x68)
 PWM = PWMFile.PWMClass()
-mpu6050 = mpu6050File.mpu6050Class()
 Pconst = ProBotConstantsFile.Constants()
 Sabertooth = SabertoothFile.SabertoothClass()
+mpu6050=mpu6050File.mpu6050Class()
 
 class RestartProgramClass():
 
@@ -29,13 +32,18 @@ class RestartProgramClass():
 
 		print "\nProBot angle's out of range!!!"
 		print "\nPut ProBot at 90 degrees!!!"
-	
-		AccAndGyr=mpu6050.Accx_Gyro()
-        	AccXangle=AccAndGyr[0]
-        
-		while (AccXangle<-0.5 or AccXangle>0.5):
-        		AccAndGyr=mpu6050.Accx_Gyro()
-               		AccXangle=AccAndGyr[0]
+        	
+		#while (True):
+		mpu6050.Calibration()		
+			#Acc_Data = sensor.set_accel_range(0x18)
+               		#sensor.set_gyro_range(0x18)
+		        #if Acc_Data>-0.5 or Acc_Data<0.5:
+			#	break
+		       	
+			# Calibration of mpu6050
+               		#sensor.Calibration()
+                	#break
+
 
 		
 		GPIO.output(Pconst.BlueLED, GPIO.LOW)	

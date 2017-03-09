@@ -21,9 +21,9 @@ class mpu6050Class():
 	# Power management registers
 	power_mgmt_1 = 0x6b
 	power_mgmt_2 = 0x6c
-	bus = smbus.SMBus(1) # or bus = smbus.SMBus(1) for Revision 2 boards
-		
+	bus = smbus.SMBus(1) # or bus = smbus.SMBus(1) for Revision 2 boards	
 	# Scale Modifiers
+
     	ACCEL_SCALE_MODIFIER_2G = 16384.0
     	ACCEL_SCALE_MODIFIER_4G = 8192.0
     	ACCEL_SCALE_MODIFIER_8G = 4096.0
@@ -37,15 +37,18 @@ class mpu6050Class():
 	accel_scale_modifier=ACCEL_SCALE_MODIFIER_2G
 	gyro_scale_modifier=GYRO_SCALE_MODIFIER_250DEG
 
-    	def __init__(self, address=0x68, lastAccelerometerAngleX=0, LoopTimeResult=0):
+    	def __init__(self, address=0x68, lastAccelerometerAngleX=0):
 		self.lastAccelerometerAngleX=lastAccelerometerAngleX
-		self.LoopTimeResult=LoopTimeResult	
 		self.address = address
 		# Now wake up the MPU6050 as it starts in sleep mode
+		self.bus.write_byte(self.address, 0)
 		self.bus.write_byte_data(self.address, self.power_mgmt_1, 0)
+		time.sleep(0.5)		
+
 		
 	def read_byte(self, adr):
-    		return self.bus.read_byte_data(self.address, adr)
+		return self.bus.read_byte_data(self.address, adr)
+		
 
 	def read_word(self,adr):
     		high = self.bus.read_byte_data(self.address, adr)
@@ -73,49 +76,55 @@ class mpu6050Class():
 
 
 	def Calibration(self):
-		AccAndGyr=self.Accx_Gyro()
-		AccXangle=AccAndGyr[0]
-		gyro_xout_scaled=AccAndGyr[1]
-	
-		while (AccXangle<-0.5 or AccXangle>0.5):
-                	AccAndGyr=self.Accx_Gyro()
-                	AccXangle=AccAndGyr[0]
-                	
+		while True:
+			Roll, gyro_xout_scaled=self.RollPitch()
+			
+			if Roll>-0.5 and Roll<0.5:
+				break
+                	                	
 		GPIO.output(Pconst.BlueLED, GPIO.LOW)
 	    	GPIO.output(Pconst.GreenLED, GPIO.HIGH)
-		filteredX=AccXangle
-		return filteredX
-
-
-
-	def Accx_Gyro(self):
 		
-                gyro_xout = self.read_word_2c(0x43)
-		gyro_yout = self.read_word_2c(0x45)
-                gyro_zout = self.read_word_2c(0x47)
+		return Roll
 
-                gyro_xout_scaled = gyro_xout/self.gyro_scale_modifier
-                gyro_yout_scaled = gyro_yout/self.gyro_scale_modifier
-                gyro_zout_scaled = gyro_zout/self.gyro_scale_modifier
 
-                accel_xout = self.read_word_2c(0x3b)
-                accel_yout = self.read_word_2c(0x3d)
-                accel_zout = self.read_word_2c(0x3f)
 
-                accel_xout_scaled = accel_xout /self.accel_scale_modifier
-                accel_yout_scaled = accel_yout /self.accel_scale_modifier 
-                accel_zout_scaled = accel_zout /self.accel_scale_modifier
+	def RollPitch(self):
+		while True:
+			try:
+                		gyro_xout = self.read_word_2c(0x43)
+				gyro_yout = self.read_word_2c(0x45)
+                		gyro_zout = self.read_word_2c(0x47)
 
-                AccXangle=self.get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
-		
-		return AccXangle, gyro_xout_scaled
+                		gyro_xout_scaled = gyro_xout/self.gyro_scale_modifier
+                		gyro_yout_scaled = gyro_yout/self.gyro_scale_modifier
+                		gyro_zout_scaled = gyro_zout/self.gyro_scale_modifier
+
+                		accel_xout = self.read_word_2c(0x3b)
+                		accel_yout = self.read_word_2c(0x3d)
+                		accel_zout = self.read_word_2c(0x3f)
+
+                		accel_xout_scaled = accel_xout /self.accel_scale_modifier
+                		accel_yout_scaled = accel_yout /self.accel_scale_modifier 
+                		accel_zout_scaled = accel_zout /self.accel_scale_modifier
+
+                		Roll = self.get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
+				Roll+=Pconst.Angle_offset
+				gyro_xout_scaled+=Pconst.GYR_offset
+				break
+			
+			except IOError, err:
+        			continue
+						
+		return [Roll, gyro_xout_scaled]
 	
 	
-	def Complementary_filter(self, AccX, GYRx, LoopTimeRatioSeg):
+	def Complementary_filter(self, LoopTimeRatioSeg):
+		Roll, gyro_xout_scaled=self.RollPitch()
 
 		# Complementary filter
-    		filteredX = float(0.98 * (self.lastAccelerometerAngleX+LoopTimeRatioSeg*GYRx) + (1 - 0.98) * AccX)
-    		self.lastAccelerometerAngleX=filteredX
-		filteredX=filteredX+Pconst.Angle_offset
-
-		return filteredX
+    		ComplementaryAngle = float (0.98 * (self.lastAccelerometerAngleX+LoopTimeRatioSeg*gyro_xout_scaled) + (1 - 0.98) * Roll)
+    		self.lastAccelerometerAngleX=ComplementaryAngle
+		
+		
+		return ComplementaryAngle

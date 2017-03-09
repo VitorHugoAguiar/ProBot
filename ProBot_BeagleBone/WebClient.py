@@ -43,12 +43,12 @@ class AppSession(ApplicationSession):
 
         sub = yield self.subscribe(probot_topic_2, 'probot-topic-2')
         self.log.info("subscribed to topic 'probot-topic-2'")
-
 	self.publish('general-topic', "probot-2")
-
 
         ## PUBLISH and CALL every second .. forever
        	while True:
+
+		#self.publish('general-topic', "probot-1")	
 		
 		## PUBLISH an event
        		Bat = Pub_Sub2.subscriber()

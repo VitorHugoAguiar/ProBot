@@ -41,7 +41,7 @@ class BatteryMonitorClass():
 	    			else:
 
 					GPIO.output(voltageVar[4], GPIO.LOW)
-							
+											
 				publisher=Pub_Sub2.publisher(BatteryPercentage)
 				print BatteryPercentage
 				

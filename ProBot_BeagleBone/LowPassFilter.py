@@ -1,7 +1,7 @@
 # Low Pass Filter used to obtain a smooth response from the joystick's potenciomenters and the keyboard's arrows
 filteredDataFR=[0,0,0,0]
 filteredDataLR=[0,0,0,0]
-LPFgainFR=0.9
+LPFgainFR=0.5
 LPFgainLR=1
 
 # We use two filters, one to Forward/Reverse situation and one for the Turn situation
