@@ -58,9 +58,9 @@ Step 4: Config the enviromment variables
 
 Step 5: Create the database
 
-	dokku run <app_name_storage> python manage.py db init    --directory '/storage/migrations'
-	dokku run <app_name_storage> python manage.py db migrate --directory '/storage/migrations'
-	dokku run <app_name_storage> python manage.py db upgrade --directory '/storage/migrations'
+	dokku run <app_name> python manage.py db init    --directory '/storage/migrations'
+	dokku run <app_name> python manage.py db migrate --directory '/storage/migrations'
+	dokku run <app_name> python manage.py db upgrade --directory '/storage/migrations'
 
 
 On the client
