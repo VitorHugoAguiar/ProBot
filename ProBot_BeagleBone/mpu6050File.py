@@ -90,41 +90,36 @@ class mpu6050Class():
 
 
 	def RollPitch(self):
-		while True:
-			try:
-                		gyro_xout = self.read_word_2c(0x43)
-				gyro_yout = self.read_word_2c(0x45)
-                		gyro_zout = self.read_word_2c(0x47)
+		
+                gyro_xout = self.read_word_2c(0x43)
+		gyro_yout = self.read_word_2c(0x45)
+                gyro_zout = self.read_word_2c(0x47)
 
-                		gyro_xout_scaled = gyro_xout/self.gyro_scale_modifier
-                		gyro_yout_scaled = gyro_yout/self.gyro_scale_modifier
-                		gyro_zout_scaled = gyro_zout/self.gyro_scale_modifier
+                gyro_xout_scaled = gyro_xout/self.gyro_scale_modifier
+                gyro_yout_scaled = gyro_yout/self.gyro_scale_modifier
+                gyro_zout_scaled = gyro_zout/self.gyro_scale_modifier
 
-                		accel_xout = self.read_word_2c(0x3b)
-                		accel_yout = self.read_word_2c(0x3d)
-                		accel_zout = self.read_word_2c(0x3f)
+                accel_xout = self.read_word_2c(0x3b)
+                accel_yout = self.read_word_2c(0x3d)
+                accel_zout = self.read_word_2c(0x3f)
 
-                		accel_xout_scaled = accel_xout /self.accel_scale_modifier
-                		accel_yout_scaled = accel_yout /self.accel_scale_modifier 
-                		accel_zout_scaled = accel_zout /self.accel_scale_modifier
+                accel_xout_scaled = accel_xout /self.accel_scale_modifier
+                accel_yout_scaled = accel_yout /self.accel_scale_modifier 
+                accel_zout_scaled = accel_zout /self.accel_scale_modifier
 
-                		Roll = self.get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
-				Roll+=Pconst.Angle_offset
-				gyro_xout_scaled+=Pconst.GYR_offset
-				break
-			
-			except IOError, err:
-        			continue
-						
+                Roll = self.get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
+		Roll+=Pconst.Angle_offset
+		gyro_xout_scaled+=Pconst.GYR_offset
+								
 		return [Roll, gyro_xout_scaled]
 	
 	
 	def Complementary_filter(self, LoopTimeRatioSeg):
+		
 		Roll, gyro_xout_scaled=self.RollPitch()
 
 		# Complementary filter
     		ComplementaryAngle = float (0.98 * (self.lastAccelerometerAngleX+LoopTimeRatioSeg*gyro_xout_scaled) + (1 - 0.98) * Roll)
     		self.lastAccelerometerAngleX=ComplementaryAngle
-		
 		
 		return ComplementaryAngle

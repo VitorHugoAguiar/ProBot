@@ -3,7 +3,7 @@
 import eqep
 
 # Constants used in the algorithm
-class Constants():
+class Constants:
     def __init__(self):
 	self.baud=38400
 	self.addr=128
@@ -42,7 +42,6 @@ class Constants():
         self.last_error_P2 = 0
         self.last_error_A1 = 0
         self.last_error_A2 = 0
-        self.mLiPo = 25.2951
         self.MinRedLiPo = 20
         self.AnalogPinLiPo = "P9_40"
         self.ajustFR = 0.0065

@@ -39,7 +39,7 @@ class AppSession(ApplicationSession):
         	msg2=[msg.encode('utf-8') for msg in msg]
             
         	publisher=Pub_Sub.publisher(msg2)
-             
+         	    
 
         sub = yield self.subscribe(probot_topic_2, 'probot-topic-2')
         self.log.info("subscribed to topic 'probot-topic-2'")
@@ -63,6 +63,11 @@ class AppSession(ApplicationSession):
 		self.log.info("published on probot-bat-2: {msg}", msg=Bat)
 		self.log.info("published on probot-angle-2: {msg}", msg=Angle)
         	yield sleep(1)
+
+    def onDisconnect(self):
+        print("disconnected")
+	publisher=Pub_Sub.publisher("['0.000', '0.000', '0.000', '0.000']")        
+
 
 if __name__ == '__main__':
     # load the self-signed cert the server is using

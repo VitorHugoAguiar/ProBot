@@ -48,19 +48,13 @@ class ProBot():
         	
 		while True:
 		
-		    
-		    LoopTime=time.time()
+		    LoopTimeStart=time.time()
 		
 		    # Readings from the encoders
-                    EncodersReadings = Encoders.EncodersValues()
-		    wheelPosition1  = EncodersReadings [0]               
-		    wheelPosition2 = EncodersReadings [1]
-		
+		    wheelPosition1, wheelPosition2  = Encoders.EncodersValues()               
+		    		
 		    # Reading the values from the webpage
-                    WebPage_info = WebPage.WebPage_Values()
-                    PositionRef = WebPage_info [0]
-                    TurnMotorRight = WebPage_info [1]
-               	    TurnMotorLeft = WebPage_info [2]		
+                    PositionRef, TurnMotorRight, TurnMotorLeft = WebPage.WebPage_Values()
 		
 		    # Reading the MPU6050 values and use the complementary filter to get better values 
 		    ComplementaryAngle=mpu6050.Complementary_filter(self.LoopTimeResult)
@@ -73,15 +67,15 @@ class ProBot():
 		    # With the values from the WebPage, we can calculate the outputs from the controllers
                	    PositionController1 = PID.standardPID((PositionRef+TurnMotorRight), wheelPosition1, 'Position1', userChoice)
                     PositionController2 = PID.standardPID((PositionRef+TurnMotorLeft), wheelPosition2, 'Position2', userChoice)
-		    #print PositionController1                
+		                    
 		    rightMotor = PID.standardPID(PositionController1, ComplementaryAngle, 'Angle1', userChoice)
                     leftMotor = PID.standardPID(PositionController2, ComplementaryAngle, 'Angle2', userChoice)
  		
  		    # Sending the right values to the Sabertooth or the PWM controller
 	            MotorsControlSignals.MotorsControl(rightMotor, leftMotor, userChoice)
 		
-		    LoopTime2=time.time()
-	            self.LoopTimeResult=LoopTime2-LoopTime	
+		    LoopTimeEnd=time.time()
+	            self.LoopTimeResult=LoopTimeEnd-LoopTimeStart	
 
 	except:
 		    InitProgram.StopProgram()
