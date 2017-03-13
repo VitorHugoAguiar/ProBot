@@ -31,8 +31,8 @@ class SocketClass():
             else:
                 print "error:message timeout"
 
-    def publisher(self, var1):
-	publisher.send_string('{}'.format(var1),zmq.NOBLOCK)
+    def publisher(self, angle):
+	publisher.send_string('{}'.format(angle),zmq.NOBLOCK)
 	time.sleep(1)
 
 
