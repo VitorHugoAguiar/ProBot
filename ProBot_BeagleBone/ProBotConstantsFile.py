@@ -18,7 +18,7 @@ class Constants:
         self.GreenLED = "P8_9"
 	self.BlueLED = "P8_11"
 	self.rad_to_deg = 57.29578
-	self.Angle_offset = 0.5
+	self.Angle_offset = -1
 	self.GYR_offset=2.7
         self.SaberTooth_KpP = 280
         self.SaberTooth_KiP = 0.6
@@ -26,7 +26,7 @@ class Constants:
         self.SaberTooth_KpA = 18
         self.SaberTooth_KiA = 2.2
         self.SaberTooth_KdA = -2
-        self.PWM_KpP = 320
+        self.PWM_KpP = 340
         self.PWM_KiP = 1
         self.PWM_KdP = 100
         self.PWM_KpA = 5
