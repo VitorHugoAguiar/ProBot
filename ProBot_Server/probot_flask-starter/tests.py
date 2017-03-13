@@ -8,9 +8,6 @@ from flask.ext.testing import TestCase
 # Note: can run individual tests:
 # nosetests -s flaskstarter.tests.tests:FountainTestCase
 
-
-
-
 class BaseTestCase(TestCase):
     """Abstract Base TestCase."""
 

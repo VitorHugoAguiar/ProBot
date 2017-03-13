@@ -4,43 +4,48 @@
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 	<script>AUTOBAHN_DEBUG = true;</script>
 	<script src="//autobahn.s3.amazonaws.com/autobahnjs/latest/autobahn.min.jgz"></script>
-	<script type="text/javascript" probot_id="{{ chosen_probot_id }}" src="{{ url_for('static', filename='js/keyjoy9.js' )}}"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<script type="text/javascript" probot_id="{{ chosen_probot_id }}" src="{{ url_for('static', filename='js/keyjoy212.js' )}}"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['gauge']}]}"></script>
 {% endblock %}
-
+1
 {% block css %}
 <style type="text/css">
 
 #battery {
   font-size:200%;
 } 
+
+
 </style>
 
 {% endblock %}
 
 {% block content %}
-
-		<div class="fa" style="left:95%; top:5%; position:relative;" id="battery"></div>
+	 
+	<div class="fa" style="left:95%; position:relative;" id="battery"></div>
 		
-	    <div class="videoWrapper" align="center">
-			<iframe src="https://www.gruveo.com/embed/?code=probot{{ chosen_probot_id }}&language=en" frameborder="0" allowfullscreen></iframe>
-		</div>
+	<div class="videoWrapper" align="center">
+	    <iframe src="https://www.gruveo.com/embed/?code=probot{{ chosen_probot_id }}&language=en" frameborder="0" allowfullscreen></iframe>
 	
-		<div style="text-align:center; position:relative; color:black;">
-	
-		<h3><p>Select the device you want use to control remotely the ProBot{{ chosen_probot_id }}.</p></h3>
-		
-		<button id="keyboard" onclick="chooseControl(this.id)">Keyboard</button>
-		<button id="joystick" onclick="chooseControl(this.id)" >Gamepad Analog</button>
-		<br><br>
-		<gamepadPrompt style="color:black;"> </ gamepadPrompt>
-		
+	 <div style="position:absolute; top:0%; left:1.5%;" id="chart_div"></div>
 	</div>
+	
+	<div style="text-align:center; position:relative; color:black;">
+	
+	    <h4><p>Select the device you want use to control remotely the ProBot{{ chosen_probot_id }}.</p></h4>
+		
+	        <button id="keyboard" onclick="chooseControl(this.id)">Keyboard</button>
+	        <button id="joystick" onclick="chooseControl(this.id)" >Gamepad Analog</button>
+	            <h5><gamepadPrompt style="color:black;"> </ gamepadPrompt></h5>
+	</div>
+
 {% endblock %}
 
 {% block js_footer %}
-	<script>
-	
+
+     <script>
+
      window.time = new Date().getTime();
      $(document.body).bind("mousemove keypress", function(e) {
          window.time = new Date().getTime();
@@ -48,9 +53,12 @@
      
      function refresh() {
          if(new Date().getTime() - window.time >= 300000){ 
-		 	if(!alert('Too much time without activity. Click OK and try again'))
-		 		{window.location=window.location;
-		 		}
+			if(window.stopAlerts!=1){
+			window.stopAlerts=1;
+		
+		 	alert('Too much time without activity. Click OK and try again');
+		 	window.location=window.location;}
+
 		 	} else {
             setTimeout(refresh, 10000);
             	}

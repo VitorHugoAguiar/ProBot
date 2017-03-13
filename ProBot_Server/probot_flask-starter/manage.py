@@ -9,6 +9,7 @@ manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
 
+
 #  Alchemy Dumps
 alchemydumps = AlchemyDumps(app, db)
 manager.add_command('alchemydumps', AlchemyDumpsCommand)
