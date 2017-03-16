@@ -1,0 +1,5 @@
+*.pyc
+__database.db
+venv
+migrations
+

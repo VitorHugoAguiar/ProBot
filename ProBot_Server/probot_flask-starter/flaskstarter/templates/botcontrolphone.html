@@ -4,8 +4,10 @@
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 	<script>AUTOBAHN_DEBUG = true;</script>
 	<script src="//autobahn.s3.amazonaws.com/autobahnjs/latest/autobahn.min.jgz"></script>
-	<script type="text/javascript" probot_id="{{ chosen_probot_id }}" src="{{ url_for('static', filename='js/nipplejs9.js' )}}"></script>
+	<script type="text/javascript" probot_id="{{ chosen_probot_id }}" src="{{ url_for('static', filename='js/nipplejs15.js' )}}"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['gauge']}]}"></script>
+
 {% endblock %}	
 
 {% block css %}		
@@ -47,6 +49,7 @@ body, html { overflow-x:hidden; }
 	
 	<div align="center" class="videoWrapperMobile">
 		<iframe src="https://www.gruveo.com/embed/?code=probot{{ chosen_probot_id }}&language=en" frameborder="0" allowfullscreen></iframe>
+	 <div style="position:absolute; top:0%; left:1.5%;" id="chart_div"></div>
 	</div>
 	
     		<div id="left"></div>    
@@ -64,6 +67,8 @@ body, html { overflow-x:hidden; }
 
 {% block js_footer %}
 <script>
+
+
 
 	var joystickL = nipplejs.create({
     		zone: document.getElementById('left'),
@@ -98,15 +103,17 @@ window.time = new Date().getTime();
 
      function refresh() {
          if(new Date().getTime() - window.time >= 300000){
-         	//console.log(new Date().getTime() - window.time); 
-		 	if(!alert('Too much time without activity. Click OK and try again'))
-		 		{window.location=window.location;
-		 		}}
-         else {
-            timer1=setTimeout('refresh()', 10000);}
+			if(window.stopAlerts!=1){
+			window.stopAlerts=1;
+		
+		 	alert('Too much time without activity. Click OK and try again');
+		 	window.location=window.location;}
+
+		 	} else {
+            	setTimeout('refresh()', 10000);}
      }
 
-    		timer1=setTimeout('refresh()', 10000);
+    		setTimeout('refresh()', 10000);
 
 var isChromium = window.chrome,
     winNav = window.navigator,
@@ -137,8 +144,10 @@ if(isIOSChrome){
 })();
 
 addEventListener("resume", function() {
+if(window.stopAlerts!=1){
+window.stopAlerts=1;
     alert('The screen of your smartphone/tablet was turn off');
-    window.location=window.location;
+    window.location=window.location;}
 });
 }
 

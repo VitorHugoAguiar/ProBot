@@ -66,16 +66,16 @@ def message():
     if body["args"][2] == "UPDATE":
         probot.battery = int((body["args"][1]))
         
-        if probot.is_available == 2:
-            probot.is_available = 0   
-        elif probot.is_available == 3:
+        #if probot.is_available == 2:
+        #    probot.is_available = 0   
+        if probot.is_available == 3:
             probot.is_available = 1
             
     elif body["args"][2] == "BATTERY TIMEOUT":
-        if probot.is_available == 0:
-            probot.is_available = 2
-        elif probot.is_available == 1:
+        if probot.is_available == 0 or probot.is_available == 1:
             probot.is_available = 3
+        #elif probot.is_available == 1:
+        #    probot.is_available = 3
 
     elif body["args"][2] == "WEB TIMEOUT":
         if probot.is_available == 0:

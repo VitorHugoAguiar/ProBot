@@ -6,7 +6,6 @@ fabfile.py.
 This file configures and controls remote operations on the
 Staging and Production servers.
 """
-
 from fabric.api import *
 
 # declare our hosts

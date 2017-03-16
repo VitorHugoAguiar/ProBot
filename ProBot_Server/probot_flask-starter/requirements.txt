@@ -50,14 +50,12 @@ pyasn1-modules==0.0.8
 pycparser==2.14
 pycrypto==2.6.1
 Pygments==2.1.3
-pyOpenSSL==16.0.0
 python-editor==0.5
 PyTrie==0.2
 pytz==2016.4
 PyYAML==3.11
 requests==2.10.0
 sdnotify==0.3.1
-service-identity==16.0.0
 setproctitle==1.1.10
 shutilwhich==1.1.0
 simplegeneric==0.8.1
@@ -68,7 +66,6 @@ SQLAlchemy-Utils==0.31.6
 sqlparse==0.1.18
 Tempita==0.5.2
 traitlets==4.2.2
-treq==15.1.0
 Twisted==16.3.0
 txaio==2.5.1
 u-msgpack-python==2.1

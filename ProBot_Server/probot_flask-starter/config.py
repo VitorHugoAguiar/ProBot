@@ -36,11 +36,10 @@ class Config(object):
     #  remote logging
     LOGGING_URL = os.environ['LOGGING_URL']
 
-
 class DevelopmentConfig(Config):
     DEBUG = True
     TESTING = False
-    ROOT_URL = 'http://127.0.0.1:5000'
+    ROOT_URL = 'https://robotcommander.m-iti.org'
     DATABASE = '/storage/__database.db'
     DATABASE_PATH = os.path.join(basedir, DATABASE)
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + DATABASE_PATH
@@ -59,7 +58,7 @@ class StagingConfig(Config):
 class TestingConfig(Config):
     DEBUG = True
     TESTING = True
-    ROOT_URL = 'http://127.0.0.1:5000'
+    ROOT_URL = 'https://robotcommander.m-iti.org'
     DATABASE = 'tests.db'
     DATABASE_PATH = os.path.join(basedir, DATABASE)
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + DATABASE_PATH

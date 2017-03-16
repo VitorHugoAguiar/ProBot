@@ -2,6 +2,7 @@ from __future__ import print_function
 from os import environ
 import six
 
+
 from twisted.internet import reactor
 from twisted.internet.defer import inlineCallbacks
 from twisted.internet._sslverify import OpenSSLCertificateAuthorities
@@ -11,48 +12,59 @@ from autobahn.twisted.util import sleep
 
 from autobahn.twisted.wamp import ApplicationSession, ApplicationRunner
 from twisted.logger import Logger
-
-from threading import Timer
+from twisted.web import client
+from threading import Timer,Thread,Event
+import threading
+from time import sleep
 
 class AppSession(ApplicationSession):
-
+    client._HTTP11ClientFactory.noisy = False
     log = Logger()
-
+    
     @inlineCallbacks
     def onJoin(self, details):
         probotid = None
         lastBat = None
-        ProBotTimerBat={}
+	ProBotTimerBat={}
         ProBotTimerWeb={}
-
+	timerBatInterval=3
+	timerWebInterval=2
         def receive_id(probot_id):
-
-            if "B-" in probot_id:
+            if "probot-" in probot_id:
                 probotid=probot_id.split('-')[1]
 		if int(probotid)>=len(ProBotTimerBat):
-			ProBotTimerBat[int(probotid)]=0
-
+		    ProBotTimerBat[int(probotid)]=0
+		
 		self.log.info("initializing subscribers for id {probotid}", probotid=probotid)
                 topic = "probot-bat-{}".format(probotid)
 
-                def battery_timeout():
-                    self.log.info("battery not received from probot {probotid}", probotid=probotid)
-                    self.publish('bridge-topic', probotid, 0, "BATTERY TIMEOUT") # to publish on the bridge
-                    print("BATTERY TIMEOUT")
-                    self.publish(topic, "error")
+		def start_timer():
+		    ProBotTimerBat[int(probotid)]=Timer(timerBatInterval, battery_timeout)
+                    ProBotTimerBat[int(probotid)].start()
 
-		ProBotTimerBat[int(probotid)]=Timer(60, battery_timeout,())
-                ProBotTimerBat[int(probotid)].start()
+		def cancel_timer():
+		    ProBotTimerBat[int(probotid)].cancel()
+                    ProBotTimerBat[int(probotid)].join()
+
+		def battery_timeout():
+		    while (True):
+		    	self.log.info("battery not received from probot {probotid}", probotid=probotid)
+                    	self.publish('bridge-topic', probotid, 0, "BATTERY TIMEOUT") # to publish on the bridge
+                    	print("BATTERY TIMEOUT")
+                    	self.publish(topic, "error")
+			break
+
+		start_timer()
 
                 if (probotid != None):
                     def receive_bat(bat_value):
-                        self.log.info("last battery from {topic}: {bat_value}", topic=topic, bat_value=bat_value)
-                        self.publish('bridge-topic', probotid, bat_value, "UPDATE") # to publish on the bridge
-			ProBotTimerBat[int(probotid)].cancel()
-			ProBotTimerBat[int(probotid)]=Timer(60, battery_timeout,())
-	                ProBotTimerBat[int(probotid)].start()
-                    self.subscribe(receive_bat, topic)
-
+			cancel_timer()
+			start_timer()
+			self.log.info("last battery from {topic}: {bat_value}", topic=topic, bat_value=bat_value)
+			self.publish('bridge-topic', probotid, bat_value, "UPDATE") # to publish on the bridge
+		    
+		    self.subscribe(receive_bat, topic)
+		   
             else:
                 probotid=probot_id
                 if int(probotid)>=len(ProBotTimerWeb):
@@ -68,13 +80,13 @@ class AppSession(ApplicationSession):
                     self.publish('bridge-topic', probotid, 0, "WEB TIMEOUT") # to publish on the bridge
                     print("WEB TIMEOUT")
 
-                ProBotTimerWeb[int(probotid)]=Timer(10, webclient_timeout,())
+                ProBotTimerWeb[int(probotid)]=Timer(timerWebInterval, webclient_timeout,())
                 ProBotTimerWeb[int(probotid)].start()
 		ProBotTimerWeb[int(probotid)].cancel()
 
                 def reset_timer():
                         ProBotTimerWeb[int(probotid)].cancel()
-                        ProBotTimerWeb[int(probotid)]=Timer(10, webclient_timeout,())
+                        ProBotTimerWeb[int(probotid)]=Timer(timerWebInterval, webclient_timeout,())
                         ProBotTimerWeb[int(probotid)].start()
 
                 self.subscribe(reset_timer, keepalive_topic)
