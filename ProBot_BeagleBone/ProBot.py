@@ -47,37 +47,40 @@ class ProBot():
 		time.sleep(1)
         	
 		while True:
+		    try:
+		    	LoopTimeStart=time.time()
 		
-		    LoopTimeStart=time.time()
-		
-		    # Readings from the encoders
-		    wheelPosition1, wheelPosition2  = Encoders.EncodersValues()               
+		    	# Readings from the encoders
+		    	wheelPosition1, wheelPosition2  = Encoders.EncodersValues()               
 		    		
-		    # Reading the values from the webpage
-                    PositionRef, TurnMotorRight, TurnMotorLeft = WebPage.WebPage_Values()
+		    	# Reading the values from the webpage
+                    	PositionRef, TurnMotorRight, TurnMotorLeft = WebPage.WebPage_Values()
 		
-		    # Reading the MPU6050 values and use the complementary filter to get better values 
-		    ComplementaryAngle=mpu6050.Complementary_filter(self.LoopTimeResult)
+		   	# Reading the MPU6050 values and use the complementary filter to get better values 
+		    	ComplementaryAngle=mpu6050.Complementary_filter(self.LoopTimeResult)
 			   
-		    # Checking if the angle is out of range
-		    if ComplementaryAngle<-20 or ComplementaryAngle>20:
-			RestartProgram.RestartProgramRoutine(userChoice)
+		    	# Checking if the angle is out of range
+		    	if ComplementaryAngle<-20 or ComplementaryAngle>20:
+				RestartProgram.RestartProgramRoutine(userChoice)
 			    
 		  	    
-		    # With the values from the WebPage, we can calculate the outputs from the controllers
-               	    PositionController1 = PID.standardPID((PositionRef+TurnMotorRight), wheelPosition1, 'Position1', userChoice)
-                    PositionController2 = PID.standardPID((PositionRef+TurnMotorLeft), wheelPosition2, 'Position2', userChoice)
+		    	# With the values from the WebPage, we can calculate the outputs from the controllers
+               	    	PositionController1 = PID.standardPID((PositionRef+TurnMotorRight), wheelPosition1, 'Position1', userChoice)
+                    	PositionController2 = PID.standardPID((PositionRef+TurnMotorLeft), wheelPosition2, 'Position2', userChoice)
 		                    
-		    rightMotor = PID.standardPID(PositionController1, ComplementaryAngle, 'Angle1', userChoice)
-                    leftMotor = PID.standardPID(PositionController2, ComplementaryAngle, 'Angle2', userChoice)
+		    	rightMotor = PID.standardPID(PositionController1, ComplementaryAngle, 'Angle1', userChoice)
+                    	leftMotor = PID.standardPID(PositionController2, ComplementaryAngle, 'Angle2', userChoice)
  		
- 		    # Sending the right values to the Sabertooth or the PWM controller
-	            MotorsControlSignals.MotorsControl(rightMotor, leftMotor, userChoice)
+ 		    	# Sending the right values to the Sabertooth or the PWM controller
+	            	MotorsControlSignals.MotorsControl(rightMotor, leftMotor, userChoice)
 		
-		    LoopTimeEnd=time.time()
-	            self.LoopTimeResult=LoopTimeEnd-LoopTimeStart	
+		    	LoopTimeEnd=time.time()
+	            	self.LoopTimeResult=LoopTimeEnd-LoopTimeStart
+	
+		    except IOError, err:
+                    	continue
 
-	except:
+	except KeyboardInterrupt:
 		    InitProgram.StopProgram()
  		    print("Unexpected error:\n", sys.exc_info()[0])
 		    sys.exit('\n\nPROGRAM STOPPED!!!\n')

@@ -57,7 +57,7 @@ class AppSession(ApplicationSession):
 			Bat=0	
 		if Angle==None:
 			Angle=90
-
+		
 		self.publish('probot-bat-2', Bat)
 		self.publish('probot-angle-2', Angle)
 		self.log.info("published on probot-bat-2: {msg}", msg=Bat)
