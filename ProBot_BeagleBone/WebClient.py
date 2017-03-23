@@ -34,16 +34,16 @@ class AppSession(ApplicationSession):
     def onJoin(self, details):
 
         ## SUBSCRIBE to a topic and receive events
-        def probot_topic_1(msg):
+        def probot_topic_probot_id(msg):
                 
         	msg2=[msg.encode('utf-8') for msg in msg]
             
         	publisher=Pub_Sub.publisher(msg2)
          	    
 
-        sub = yield self.subscribe(probot_topic_1, 'probot-topic-1')
-        self.log.info("subscribed to topic 'probot-topic-1'")
-	self.publish('general-topic', "probot-1")
+        sub = yield self.subscribe(probot_topic_probot_id, 'probot-topic-probot_id')
+        self.log.info("subscribed to topic 'probot-topic-probot_id'")
+	self.publish('general-topic', "probot-probot_id")
 
        	while True:
 
@@ -55,10 +55,10 @@ class AppSession(ApplicationSession):
 		if Angle==None:
 			Angle=90
 
-		self.publish('probot-bat-1', Bat)
-		self.publish('probot-angle-1', Angle)
-		self.log.info("published on probot-bat-1: {msg}", msg=Bat)
-		self.log.info("published on probot-angle-1: {msg}", msg=Angle)
+		self.publish('probot-bat-probot_id', Bat)
+		self.publish('probot-angle-probot_id', Angle)
+		self.log.info("published on probot-bat-probot_id: {msg}", msg=Bat)
+		self.log.info("published on probot-angle-probot_id: {msg}", msg=Angle)
         	yield sleep(1)
 
     def onDisconnect(self):
@@ -78,7 +78,7 @@ if __name__ == '__main__':
     )
     # ...which we pass as "ssl=" to ApplicationRunner (passed to SSL4ClientEndpoint)
     runner = ApplicationRunner(
-        environ.get("AUTOBAHN_DEMO_ROUTER", u"wss://89.109.64.175:8080/ws"),
+        environ.get("AUTOBAHN_DEMO_ROUTER", u"wss://server_ip:8080/ws"),
         u"realm1",
         ssl=options,  # try removing this, but still use self-signed cert
     )
