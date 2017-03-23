@@ -34,14 +34,14 @@ class AppSession(ApplicationSession):
     def onJoin(self, details):
 
         ## SUBSCRIBE to a topic and receive events
-        def probot_topic_probot_id(msg):
+        def probot_topic(msg):
                 
         	msg2=[msg.encode('utf-8') for msg in msg]
             
         	publisher=Pub_Sub.publisher(msg2)
          	    
 
-        sub = yield self.subscribe(probot_topic_probot_id, 'probot-topic-probot_id')
+        sub = yield self.subscribe(probot_topic, 'probot-topic_probot_id')
         self.log.info("subscribed to topic 'probot-topic-probot_id'")
 	self.publish('general-topic', "probot-probot_id")
 
