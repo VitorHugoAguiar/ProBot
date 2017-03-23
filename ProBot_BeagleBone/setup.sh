@@ -12,6 +12,15 @@ while true; do
     esac
 done
 
+(crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/WebClient.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+(crontab -l ; echo "@reboot sh $(pwd -P)/EnableEncoders.sh") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+(crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_WebPage.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+(crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_Battery.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+(crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_Angle.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+(crontab -l ; echo "@reboot python $(pwd -P)/BatteryMonitorFile.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+(crontab -l ; echo "@reboot python $(pwd -P)/AngleFile.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+}
+
 ProBot_ID() {
 echo ""
 read -p "--> Please enter the ProBot ID: " probot_id
@@ -22,19 +31,9 @@ while true; do
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
-done
+done	
+}	
 
-
-
-(crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/WebClient.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot sh $(pwd -P)/EnableEncoders.sh") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_WebPage.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_Battery.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_Angle.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot python $(pwd -P)/BatteryMonitorFile.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot python $(pwd -P)/AngleFile.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-}
-	
 NetworkManager(){
 echo ""
 echo "--> Installing Network-Manager"
