@@ -114,6 +114,7 @@ echo "    Done"
 
 main() {
 ServerIPconfiguration
+ProBot_ID
 NetworkManager
 Machinekit
 Encoders
