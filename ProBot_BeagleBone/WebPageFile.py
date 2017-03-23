@@ -29,7 +29,6 @@ class WebPageClass():
 		subscriber=0
 		
         else:
-	        
 	    	incomingMsg1 = subscriber.replace("[", "")
 	    	incomingMsg2 = incomingMsg1.replace("'", "")
 	    	incomingMsg3 = incomingMsg2.replace("]", "") 
@@ -50,4 +49,4 @@ class WebPageClass():
 	    	self.TurnMotorRight = float(LeftRight*Pconst.ajustLR)
 	    	self.TurnMotorLeft = -float(LeftRight*Pconst.ajustLR)
 				
-        return  [round(self.PositionRef, 5), round (self.TurnMotorRight, 5), round(self.TurnMotorLeft, 5)]
+        return  [round(self.PositionRef, 2), round (self.TurnMotorRight, 2), round(self.TurnMotorLeft, 2)]

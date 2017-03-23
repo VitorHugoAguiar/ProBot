@@ -1,19 +1,15 @@
 #!/usr/bin/python
 import Adafruit_BBIO.GPIO as GPIO
 import sys
-import threading
-import ctypes
 import ProBotConstantsFile
 import SocketWebPageFile
 import PWMFile
 import SabertoothFile
-import BatteryMonitorFile
 
 Sabertooth = SabertoothFile.SabertoothClass()
 PWM = PWMFile.PWMClass()
 Pconst = ProBotConstantsFile.Constants()
 Pub_Sub = SocketWebPageFile.SocketClass()
-Battery = BatteryMonitorFile.BatteryMonitorClass()
 
 GPIO.setup(Pconst.GreenLED, GPIO.OUT)
 GPIO.setup(Pconst.RedLED, GPIO.OUT)

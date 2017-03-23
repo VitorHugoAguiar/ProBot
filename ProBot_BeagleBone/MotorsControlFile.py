@@ -20,4 +20,4 @@ class MotorsControlClass():
 
 	if userChoice=='2':
 		# Sending the values to the pwm controller that is connected to the motors
-		PWM.PWM_Signals(int(rightMotor), int(leftMotor))
+		PWM.PWM_Signals(round(rightMotor, 2), round(leftMotor, 2))

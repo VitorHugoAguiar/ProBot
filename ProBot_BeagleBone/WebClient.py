@@ -34,16 +34,16 @@ class AppSession(ApplicationSession):
     def onJoin(self, details):
 
         ## SUBSCRIBE to a topic and receive events
-        def probot_topic_2(msg):
+        def probot_topic_1(msg):
                 
         	msg2=[msg.encode('utf-8') for msg in msg]
             
         	publisher=Pub_Sub.publisher(msg2)
          	    
 
-        sub = yield self.subscribe(probot_topic_2, 'probot-topic-2')
-        self.log.info("subscribed to topic 'probot-topic-2'")
-	self.publish('general-topic', "probot-2")
+        sub = yield self.subscribe(probot_topic_1, 'probot-topic-1')
+        self.log.info("subscribed to topic 'probot-topic-1'")
+	self.publish('general-topic', "probot-1")
 
         ## PUBLISH and CALL every second .. forever
        	while True:
@@ -57,11 +57,11 @@ class AppSession(ApplicationSession):
 			Bat=0	
 		if Angle==None:
 			Angle=90
-		
-		self.publish('probot-bat-2', Bat)
-		self.publish('probot-angle-2', Angle)
-		self.log.info("published on probot-bat-2: {msg}", msg=Bat)
-		self.log.info("published on probot-angle-2: {msg}", msg=Angle)
+
+		self.publish('probot-bat-1', Bat)
+		self.publish('probot-angle-1', Angle)
+		self.log.info("published on probot-bat-1: {msg}", msg=Bat)
+		self.log.info("published on probot-angle-1: {msg}", msg=Angle)
         	yield sleep(1)
 
     def onDisconnect(self):

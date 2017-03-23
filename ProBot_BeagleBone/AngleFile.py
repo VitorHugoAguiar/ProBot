@@ -74,13 +74,13 @@ class mpu6050Class():
 	def RollPitch(self):
 		while True:		
                 	try:
-				gyro_xout = self.read_word_2c(0x43)
-				gyro_yout = self.read_word_2c(0x45)
-                		gyro_zout = self.read_word_2c(0x47)
+				#gyro_xout = self.read_word_2c(0x43)
+				#gyro_yout = self.read_word_2c(0x45)
+                		#gyro_zout = self.read_word_2c(0x47)
 
-                		gyro_xout_scaled = gyro_xout/self.gyro_scale_modifier
-                		gyro_yout_scaled = gyro_yout/self.gyro_scale_modifier
-                		gyro_zout_scaled = gyro_zout/self.gyro_scale_modifier
+                		#gyro_xout_scaled = gyro_xout/self.gyro_scale_modifier
+                		#gyro_yout_scaled = gyro_yout/self.gyro_scale_modifier
+                		#gyro_zout_scaled = gyro_zout/self.gyro_scale_modifier
 
                 		accel_xout = self.read_word_2c(0x3b)
                 		accel_yout = self.read_word_2c(0x3d)
@@ -90,10 +90,10 @@ class mpu6050Class():
                 		accel_yout_scaled = accel_yout /self.accel_scale_modifier 
                 		accel_zout_scaled = accel_zout /self.accel_scale_modifier
 
-                		Roll = self.get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
-				Roll+=Pconst.Angle_offset
-				print Roll
-				publisher=Pub_Sub3.publisher(Roll)
+                		Pitch = self.get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
+				Pitch+=Pconst.Angle_offset
+				print Pitch
+				publisher=Pub_Sub3.publisher(Pitch)
 
     			except IOError, err:
         			continue

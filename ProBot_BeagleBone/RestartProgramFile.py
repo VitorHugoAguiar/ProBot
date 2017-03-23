@@ -31,11 +31,10 @@ class RestartProgramClass():
 		print "\nProBot angle's out of range!!!"
 		print "\nPut ProBot at 90 degrees!!!"
         	
-		Roll, gyro_xout_scaled = mpu6050.RollPitch()
+		Pitch, gyro_yout_scaled = mpu6050.RollPitch()
 
-		while Roll<-0.5 or Roll>0.5:
-			Roll, gyro_xout_scaled = mpu6050.RollPitch()
-
+		while Pitch<-0.5 or Pitch>0.5:
+			Pitch, gyro_yout_scaled = mpu6050.RollPitch()		
 		
 		GPIO.output(Pconst.BlueLED, GPIO.LOW)	
 		print "\nRestarting the Program..."

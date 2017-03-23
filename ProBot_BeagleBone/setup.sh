@@ -6,7 +6,7 @@ read -p "--> Please enter the ProBot Server ip: " server_ip
 while true; do
     read -p "    Confirm (Y/N)? " yn
     case $yn in
-        [Yy]* ) echo "    OK"; sed -i "s/\bserver_ip=\b/&$server_ip/" WebClient.py; break;;
+        [Yy]* ) echo "    OK"; sed -i "s/server_ip/${server_ip}/g" WebClient.py; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
@@ -20,7 +20,20 @@ done
 (crontab -l ; echo "@reboot python $(pwd -P)/BatteryMonitorFile.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (crontab -l ; echo "@reboot python $(pwd -P)/AngleFile.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 }
-	
+
+ProBot_ID() {
+echo ""
+read -p "--> Please enter the ProBot ID: " probot_id
+while true; do
+    read -p "    Confirm (Y/N)? " yn
+    case $yn in
+        [Yy]* ) echo "    OK"; sed -i "s/probot_id/${probot_id}/g" WebClient.py; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done	
+}	
+
 NetworkManager(){
 echo ""
 echo "--> Installing Network-Manager"
@@ -38,7 +51,6 @@ sh -c \
 "echo 'Package: *
 Pin: release a=stable
 Pin-Priority: 900
-
 Package: *
 Pin: release o=Debian
 Pin-Priority: -10' > \
@@ -101,6 +113,7 @@ echo "    Done"
 
 main() {
 ServerIPconfiguration
+ProBot_ID
 NetworkManager
 Machinekit
 Encoders
