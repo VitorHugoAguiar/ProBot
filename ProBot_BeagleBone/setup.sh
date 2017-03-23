@@ -6,7 +6,7 @@ read -p "--> Please enter the ProBot Server ip: " server_ip
 while true; do
     read -p "    Confirm (Y/N)? " yn
     case $yn in
-        [Yy]* ) echo "    OK"; sed -i "s/\bserver_ip=\b/&$server_ip/" WebClient.py; break;;
+        [Yy]* ) echo "    OK"; sed -i "s/server_ip/${server_ip}/g" WebClient.py; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
@@ -18,7 +18,7 @@ read -p "--> Please enter the ProBot ID: " probot_id
 while true; do
     read -p "    Confirm (Y/N)? " yn
     case $yn in
-        [Yy]* ) echo "    OK"; sed -i "s/\bprobot_id=\b/&$probot_id/" WebClient.py; break;;
+        [Yy]* ) echo "    OK"; sed -i "s/probot_id/${probot_id}/g" WebClient.py; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
