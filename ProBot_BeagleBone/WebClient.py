@@ -34,19 +34,18 @@ class AppSession(ApplicationSession):
     def onJoin(self, details):
 
         ## SUBSCRIBE to a topic and receive events
-        def probot_topic_1(msg):
+        def probot_topic(msg):
                 
         	msg2=[msg.encode('utf-8') for msg in msg]
             
         	publisher=Pub_Sub.publisher(msg2)
          	    
 
-        sub = yield self.subscribe(probot_topic_1, 'probot-topic-1')
+        sub = yield self.subscribe(probot_topic, 'probot-topic-1')
         self.log.info("subscribed to topic 'probot-topic-1'")
 	self.publish('general-topic', "probot-1")
 
        	while True:
-
 		## PUBLISH an event
        		Bat = Pub_Sub2.subscriber()
 		Angle= Pub_Sub3.subscriber()

@@ -61,12 +61,13 @@ class PIDControllersClass():
         if(type is 'Position1'):
             Pconst.integrated_error_P1 = controllerVar[4]
             Pconst.last_error_P1= controllerVar[5]
-	    PID_result = max(-18, min(PID_result, 18))
-	     
+	    PID_result = max(-18, min(PID_result, 18)) 
+
         if(type is 'Position2'):
             Pconst.integrated_error_P2 = controllerVar[4]
  	    Pconst.last_error_P2= controllerVar[5]           
-	    PID_result = max(-18, min(PID_result, 18))
+	    PID_result = max(-18, min(PID_result, 18)) 
+            
 
 	if(type is 'Angle1'):
             Pconst.integrated_error_A1 = controllerVar[4]

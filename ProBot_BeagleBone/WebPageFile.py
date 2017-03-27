@@ -48,5 +48,5 @@ class WebPageClass():
 	    	self.PositionRef = -float(ForwardReverse*Pconst.ajustFR)
 	    	self.TurnMotorRight = float(LeftRight*Pconst.ajustLR)
 	    	self.TurnMotorLeft = -float(LeftRight*Pconst.ajustLR)
-				
-        return  [round(self.PositionRef, 2), round (self.TurnMotorRight, 2), round(self.TurnMotorLeft, 2)]
+						
+        return  [round(self.PositionRef, 5), round (self.TurnMotorRight, 5), round(self.TurnMotorLeft, 5)]

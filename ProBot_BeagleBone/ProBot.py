@@ -44,8 +44,7 @@ class ProBot():
 	try:
 		# Calibration of MPU6050
 		mpu6050.Calibration()
-		time.sleep(1)
-        	
+        	time.sleep(1)
 		while True:
 		    try:
 		    	LoopTimeStart=time.time()
@@ -58,18 +57,18 @@ class ProBot():
 		
 		   	# Reading the MPU6050 values and use the complementary filter to get better values 
 		    	ComplementaryAngle=mpu6050.Complementary_filter(self.LoopTimeResult)
-			   
+   
 		    	# Checking if the angle is out of range
 		    	if ComplementaryAngle<-20 or ComplementaryAngle>20:
 				RestartProgram.RestartProgramRoutine(userChoice)
-			     		  	    
+						     		  	    
 		    	# With the values from the WebPage, we can calculate the outputs from the controllers
                	    	PositionController1 = PID.standardPID((PositionRef+TurnMotorRight), wheelPosition1, 'Position1', userChoice)
                     	PositionController2 = PID.standardPID((PositionRef+TurnMotorLeft), wheelPosition2, 'Position2', userChoice)
 					                    
 		    	rightMotor = PID.standardPID(round (PositionController1, 2), ComplementaryAngle, 'Angle1', userChoice)
                     	leftMotor = PID.standardPID(round (PositionController2, 2), ComplementaryAngle, 'Angle2', userChoice)
- 		
+ 			#print PositionController1, rightMotor
  		    	# Sending the right values to the Sabertooth or the PWM controller
 	            	MotorsControlSignals.MotorsControl(rightMotor, leftMotor, userChoice)
 

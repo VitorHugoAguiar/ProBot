@@ -37,12 +37,11 @@ class mpu6050Class():
 	accel_scale_modifier=ACCEL_SCALE_MODIFIER_2G
 	gyro_scale_modifier=GYRO_SCALE_MODIFIER_250DEG
 
-    	def __init__(self, address=0x68, lastAccelerometerAngleX=0):
-		self.lastAccelerometerAngleX=lastAccelerometerAngleX
+    	def __init__(self, address=0x68, lastAccelerometerAngle=0):
+		self.lastAccelerometerAngle=lastAccelerometerAngle
 		self.address = address
 		# Now wake up the MPU6050 as it starts in sleep mode
-		self.bus.write_byte(self.address, 0)
-		self.bus.write_byte(self.address, 0xAA)
+                self.bus.write_byte_data(self.address, self.power_mgmt_1, 0x80)
 		self.bus.write_byte_data(self.address, self.power_mgmt_1, 0)
 		time.sleep(1)
 				
@@ -92,13 +91,13 @@ class mpu6050Class():
 
 	def RollPitch(self):
 		
-                #gyro_xout = self.read_word_2c(0x43)
+                gyro_xout = self.read_word_2c(0x43)
 		gyro_yout = self.read_word_2c(0x45)
-                #gyro_zout = self.read_word_2c(0x47)
+                gyro_zout = self.read_word_2c(0x47)
 
-                #gyro_xout_scaled = gyro_xout/self.gyro_scale_modifier
+                gyro_xout_scaled = gyro_xout/self.gyro_scale_modifier
                 gyro_yout_scaled = gyro_yout/self.gyro_scale_modifier
-                #gyro_zout_scaled = gyro_zout/self.gyro_scale_modifier
+                gyro_zout_scaled = gyro_zout/self.gyro_scale_modifier
 
                 accel_xout = self.read_word_2c(0x3b)
                 accel_yout = self.read_word_2c(0x3d)
@@ -109,9 +108,10 @@ class mpu6050Class():
                 accel_zout_scaled = accel_zout /self.accel_scale_modifier
 
                 Pitch = self.get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
+		#print Pitch, gyro_yout_scaled		
 		Pitch+=Pconst.Angle_offset
 		gyro_yout_scaled+=Pconst.GYR_offset
-								
+		#print Pitch, gyro_yout_scaled						
 		return [Pitch, gyro_yout_scaled]
 	
 	
@@ -120,7 +120,7 @@ class mpu6050Class():
 		Pitch, gyro_yout_scaled=self.RollPitch()
 
 		# Complementary filter
-    		ComplementaryAngle = float (0.98 * (self.lastAccelerometerAngleX+LoopTimeRatioSeg*gyro_yout_scaled) + (1 - 0.98) * Pitch)
-    		self.lastAccelerometerAngleX=ComplementaryAngle
+    		ComplementaryAngle = float (0.98 * (self.lastAccelerometerAngle+LoopTimeRatioSeg*gyro_yout_scaled) + (1 - 0.98) * Pitch)
+    		self.lastAccelerometerAngle=ComplementaryAngle
 		
 		return ComplementaryAngle

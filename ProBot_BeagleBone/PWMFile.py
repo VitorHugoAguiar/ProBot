@@ -8,10 +8,6 @@ import ProBotConstantsFile
 
 Pconst = ProBotConstantsFile.Constants()
 
-# Start the GPIO's
-GPIO.setup(Pconst.BlueLED, GPIO.OUT)
-GPIO.setup(Pconst.RedLED, GPIO.OUT)
-
 #PWM.start(channel, duty, freq, polarity)
 PWM.start(Pconst.PWM_R_DIR, 50, Pconst.PWM_Freq)
 PWM.start(Pconst.PWM_R_PWM, 0, Pconst.PWM_Freq) #pwm
@@ -33,33 +29,29 @@ class PWMClass ():
 	def PWM_Signals(self, rightMotor, leftMotor):
 
 	    # Sending the values to the PWM controller that is connected to the motors
-	    percentageR=round(math.fabs(rightMotor), 2)
-	    percentageL=round(math.fabs(leftMotor), 2)
-
-	    if rightMotor<0:
-		PWM.set_duty_cycle(Pconst.PWM_R_DIR,  0)
+	    percentageR=int(math.fabs(rightMotor))
+	    percentageL=int(math.fabs(leftMotor))
+	    #print int(percentageR), int(percentageL)
+	    #print int(rightMotor), int(leftMotor)
+	    
+	    if rightMotor>0:
+		PWM.set_duty_cycle(Pconst.PWM_R_DIR, 100)
 		PWM.set_duty_cycle(Pconst.PWM_R_PWM, percentageR)
-		time.sleep(0.002)
-	    elif rightMotor>0:
-		PWM.set_duty_cycle(Pconst.PWM_R_DIR,  100)
+	    elif rightMotor<0:
+		PWM.set_duty_cycle(Pconst.PWM_R_DIR,  0)
 		PWM.set_duty_cycle(Pconst.PWM_R_PWM,  percentageR)
-		time.sleep(0.002)
 	    elif rightMotor==0:
-                PWM.set_duty_cycle(Pconst.PWM_R_DIR, 50) #pwm
-		PWM.set_duty_cycle(Pconst.PWM_R_PWM, 0)		
-		time.sleep(0.002)
-    	    if leftMotor<0:
-	        PWM.set_duty_cycle(Pconst.PWM_L_DIR, 100)
+		PWM.set_duty_cycle(Pconst.PWM_R_PWM, 0)
+		
+    	    if leftMotor>0:
+	        PWM.set_duty_cycle(Pconst.PWM_L_DIR, 0)
 	        PWM.set_duty_cycle(Pconst.PWM_L_PWM, percentageL)
-		time.sleep(0.002)
-	    elif leftMotor>0:
-	    	PWM.set_duty_cycle(Pconst.PWM_L_DIR, 0)
+	    elif leftMotor<0:
+	    	PWM.set_duty_cycle(Pconst.PWM_L_DIR, 100)
       	    	PWM.set_duty_cycle(Pconst.PWM_L_PWM, percentageL)
-		time.sleep(0.002)
     	    elif leftMotor==0:
-		PWM.set_duty_cycle(Pconst.PWM_L_DIR, 50)
-		PWM.set_duty_cycle(Pconst.PWM_L_PWM, 0) #pwm
-		time.sleep(0.002)
+	   	PWM.set_duty_cycle(Pconst.PWM_L_PWM, 0)
+
 			
 	def PWMStop(self):
 	    	PWM.stop(Pconst.PWM_R_PWM)
@@ -67,4 +59,5 @@ class PWMClass ():
 		PWM.stop(Pconst.PWM_L_PWM)
 		PWM.stop(Pconst.PWM_L_DIR)
 		PWM.cleanup()
+		
 		
