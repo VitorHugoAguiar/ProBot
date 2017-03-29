@@ -1,5 +1,6 @@
-import zmq
+#!/usr/bin/python
 
+import zmq
 
 def main():
     try:
