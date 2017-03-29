@@ -50,6 +50,7 @@ class StartFileClass():
 	  print "\nSending a PWM signal with a frequency of", Pconst.PWM_Freq, "Hz"
 		
         return userChoice
+
       except:
         print("Unexpected error:\n", sys.exc_info()[0])
         sys.exit('\n\nPROGRAM STOPPED!!!\n')
