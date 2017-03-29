@@ -22,8 +22,7 @@ class WebPageClass():
 	self.right=right
 
     def WebPage_Values(self):
-        # Readings from the WebPage
-        subscriber = Pub_Sub.subscriber()
+        subscriber = Pub_Sub.subscriber() # Readings from the WebPage
 
  	if subscriber is None:
 		subscriber=0
