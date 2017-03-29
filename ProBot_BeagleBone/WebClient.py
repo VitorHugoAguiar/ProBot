@@ -1,22 +1,21 @@
 #!/usr/bin/python
 
+import sys
+import os
+import time
+
+
 from __future__ import print_function
 from os import environ
 import six
-
 from twisted.internet.defer import inlineCallbacks
 from autobahn.twisted.util import sleep
-
 from autobahn.twisted.wamp import ApplicationSession, ApplicationRunner
-
 from twisted.logger import Logger
 from twisted.internet._sslverify import OpenSSLCertificateAuthorities
 from twisted.internet.ssl import CertificateOptions
 from OpenSSL import crypto
 
-import sys
-import os
-import time
 import SocketWebPageFile
 import SocketBatteryFile
 import SocketAngleFile
@@ -35,12 +34,9 @@ class AppSession(ApplicationSession):
 
         ## SUBSCRIBE to a topic and receive events
         def probot_topic(msg):
-                
         	msg2=[msg.encode('utf-8') for msg in msg]
-            
         	publisher=Pub_Sub.publisher(msg2)
          	    
-
         sub = yield self.subscribe(probot_topic, 'probot-topic-1')
         self.log.info("subscribed to topic 'probot-topic-1'")
 	self.publish('general-topic', "probot-1")
