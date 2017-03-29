@@ -2,6 +2,7 @@
 
 import eqep
 
+
 # Constants used in the algorithm
 class Constants:
     def __init__(self):
