@@ -21,13 +21,11 @@ publisher.sndhwm = 1100000
 class SocketClass():
 
     def subscriber(self):
-
         socks = dict(poller.poll(0))
         if socks:
             if socks.get(subscriber) == zmq.POLLIN:
                 string = subscriber.recv(zmq.NOBLOCK)
                 return string
-
             else:
                 print "error:message timeout"
 
