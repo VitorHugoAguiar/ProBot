@@ -8,6 +8,10 @@ import ProBotConstantsFile
 
 Pconst = ProBotConstantsFile.Constants()
 
+# Start the GPIO's
+GPIO.setup(Pconst.RedLED, GPIO.OUT)
+GPIO.setup(Pconst.BlueLED, GPIO.OUT)
+
 #PWM.start(channel, duty, freq, polarity)
 PWM.start(Pconst.PWM_R_DIR, 50, Pconst.PWM_Freq)
 PWM.start(Pconst.PWM_R_PWM, 0, Pconst.PWM_Freq) #pwm
