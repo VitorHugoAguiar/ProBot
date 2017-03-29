@@ -87,8 +87,6 @@ class mpu6050Class():
 		
 		return Pitch
 
-
-
 	def RollPitch(self):
 		
                 gyro_xout = self.read_word_2c(0x43)
@@ -107,11 +105,10 @@ class mpu6050Class():
                 accel_yout_scaled = accel_yout /self.accel_scale_modifier 
                 accel_zout_scaled = accel_zout /self.accel_scale_modifier
 
-                Pitch = self.get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
-		#print Pitch, gyro_yout_scaled		
+                Pitch = self.get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)	
 		Pitch+=Pconst.Angle_offset
 		gyro_yout_scaled+=Pconst.GYR_offset
-		#print Pitch, gyro_yout_scaled						
+		
 		return [Pitch, gyro_yout_scaled]
 	
 	
