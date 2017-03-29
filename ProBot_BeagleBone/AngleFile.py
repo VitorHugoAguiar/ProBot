@@ -74,13 +74,13 @@ class mpu6050Class():
 	def RollPitch(self):
 		while True:		
                 	try:
-				#gyro_xout = self.read_word_2c(0x43)
-				#gyro_yout = self.read_word_2c(0x45)
-                		#gyro_zout = self.read_word_2c(0x47)
+				gyro_xout = self.read_word_2c(0x43)
+				gyro_yout = self.read_word_2c(0x45)
+                		gyro_zout = self.read_word_2c(0x47)
 
-                		#gyro_xout_scaled = gyro_xout/self.gyro_scale_modifier
-                		#gyro_yout_scaled = gyro_yout/self.gyro_scale_modifier
-                		#gyro_zout_scaled = gyro_zout/self.gyro_scale_modifier
+                		gyro_xout_scaled = gyro_xout/self.gyro_scale_modifier
+                		gyro_yout_scaled = gyro_yout/self.gyro_scale_modifier
+                		gyro_zout_scaled = gyro_zout/self.gyro_scale_modifier
 
                 		accel_xout = self.read_word_2c(0x3b)
                 		accel_yout = self.read_word_2c(0x3d)
