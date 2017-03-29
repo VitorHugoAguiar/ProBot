@@ -32,10 +32,3 @@ class SocketClass():
     def publisher(self, angle):
 	publisher.send_string('{}'.format(angle),zmq.NOBLOCK)
 	time.sleep(1)
-
-
-
-
-
-
-
