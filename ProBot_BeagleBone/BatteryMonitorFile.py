@@ -27,9 +27,9 @@ class BatteryMonitorClass():
             	# Reading the voltage from the LiPo battery
 		while True:
             		try:	
-				BatteryVoltageVal = ADC.read(Pconst.AnalogPinLiPo)                                 # ADC readings from the battery
+				BatteryVoltageVal = ADC.read(Pconst.AnalogPinLiPo)          # ADC readings from the battery
 				BatteryRealValue=(BatteryVoltageVal*1.8)*(107200/7200)
-				BatteryPercentage=int((14.2857*BatteryRealValue)-265.714)
+				BatteryPercentage=int((14.2857*BatteryRealValue)-265.714)   
 								
             			if BatteryPercentage < Pconst.MinRedLiPo:					        			# Definition of the Red region for the battery
                 			GPIO.output(Pconst.GreenLED, GPIO.HIGH)
