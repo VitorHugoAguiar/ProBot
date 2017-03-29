@@ -21,7 +21,7 @@ class PWMClass ():
     	    # Starting the communication with the PWM controller
             GPIO.output(Pconst.RedLED, GPIO.HIGH)
 
-            time.sleep(3)									# Wait to stabilize the communication
+            time.sleep(3)						# Wait to stabilize the communication
 
 	    GPIO.output(Pconst.RedLED, GPIO.LOW)
 	    GPIO.output(Pconst.BlueLED, GPIO.HIGH)
@@ -29,10 +29,8 @@ class PWMClass ():
 	def PWM_Signals(self, rightMotor, leftMotor):
 
 	    # Sending the values to the PWM controller that is connected to the motors
-	    percentageR=int(math.fabs(rightMotor))
-	    percentageL=int(math.fabs(leftMotor))
-	    #print int(percentageR), int(percentageL)
-	    #print int(rightMotor), int(leftMotor)
+	    percentageR=math.fabs(rightMotor)
+	    percentageL=math.fabs(leftMotor)
 	    
 	    if rightMotor>0:
 		PWM.set_duty_cycle(Pconst.PWM_R_DIR, 100)
