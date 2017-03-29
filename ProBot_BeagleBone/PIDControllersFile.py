@@ -73,17 +73,16 @@ class PIDControllersClass():
             Pconst.integrated_error_A1 = controllerVar[4]
             Pconst.last_error_A1= controllerVar[5]
             if userChoice=='1':
-            	PID_result = max(-127, min(PID_result, 127)) 			#Limiting the PID values because of the Sabertooth range (-127, 127)
+            	PID_result = max(-127, min(PID_result, 127)) 	#Limiting the PID values because of the Sabertooth range (-127, 127)
             if userChoice=='2':
-		PID_result = max(-100, min(PID_result, 100))			#Limiting the percentage of the PWM
+		PID_result = max(-100, min(PID_result, 100))	#Limiting the percentage of the PWM
 		
 	if(type is 'Angle2'):
             Pconst.integrated_error_A2 = controllerVar[4]			
             Pconst.last_error_A2= controllerVar[5]
-            if userChoice=='1':							#Limiting the PID values because of the Sabertooth range (-127, 127)	
+            if userChoice=='1':					#Limiting the PID values because of the Sabertooth range (-127, 127)	
             	PID_result = max(-127, min(PID_result, 127))			
             if userChoice=='2':
-		PID_result = max(-100, min(PID_result, 100))			#Limiting the percentage of the PWM					
-
+		PID_result = max(-100, min(PID_result, 100))	#Limiting the percentage of the PWM					
 
         return -PID_result
