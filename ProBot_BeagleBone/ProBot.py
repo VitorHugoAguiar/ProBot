@@ -20,18 +20,19 @@ import StartFile
 import mpu6050File
 
 # Initialization of classes from local files
-InitProgram = StartFile.StartFileClass()
-RestartProgram = RestartProgramFile.RestartProgramClass()
 Sabertooth = SabertoothFile.SabertoothClass()
 PID = PIDControllersFile.PIDControllersClass()
 Encoders = EncodersFile.EncodersClass()
 Pconst = ProBotConstantsFile.Constants()
 PWM = PWMFile.PWMClass()
 WebPage = WebPageFile.WebPageClass()
+RestartProgram = RestartProgramFile.RestartProgramClass()
 MotorsControlSignals = MotorsControlFile.MotorsControlClass()
+InitProgram = StartFile.StartFileClass()
+mpu6050=mpu6050File.mpu6050Class()
+
 InitParameters = InitProgram.StartProgram()
 userChoice = InitParameters[0]
-mpu6050=mpu6050File.mpu6050Class()
 
 
 class ProBot():
@@ -68,7 +69,7 @@ class ProBot():
 					                    
 		    	rightMotor = PID.standardPID(round (PositionController1, 2), ComplementaryAngle, 'Angle1', userChoice)
                     	leftMotor = PID.standardPID(round (PositionController2, 2), ComplementaryAngle, 'Angle2', userChoice)
- 			#print PositionController1, rightMotor
+
  		    	# Sending the right values to the Sabertooth or the PWM controller
 	            	MotorsControlSignals.MotorsControl(rightMotor, leftMotor, userChoice)
 
