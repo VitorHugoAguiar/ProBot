@@ -15,11 +15,9 @@ class LowPassFilter():
 
 		return filteredDataFR[0]
 
-
 	def lowPassFilterLR(self, directionLeftRight):
 
 		filteredDataLR[0]=directionLeftRight*LPFgainLR+filteredDataLR[1]*(1-LPFgainLR)
 		filteredDataLR[1]=filteredDataLR[0]
 
 		return filteredDataLR[0]
-
