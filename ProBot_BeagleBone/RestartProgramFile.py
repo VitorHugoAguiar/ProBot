@@ -51,4 +51,3 @@ class RestartProgramClass():
                 print("Unexpected error:\n", sys.exc_info()[0])
                 sys.exit('\n\nPROGRAM STOPPED!!!\n')
                 raise
-
