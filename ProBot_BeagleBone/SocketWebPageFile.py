@@ -33,11 +33,3 @@ class SocketClass():
 
     def publisher(self, directions):
 	publisher.send_string('{}'.format(directions),zmq.NOBLOCK)
-
-
-
-
-
-
-
-
