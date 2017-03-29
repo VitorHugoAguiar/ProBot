@@ -9,7 +9,6 @@ import time
 import ProBotConstantsFile
 import Adafruit_BBIO.GPIO as GPIO
 
-
 # Initialization of classes from local files
 Pconst = ProBotConstantsFile.Constants()
 
@@ -83,6 +82,3 @@ class SabertoothClass():
 	    print("Unexpected error:\n", sys.exc_info()[0])
 	    sys.exit('\n\nPROGRAM STOPPED!!!\n')
             raise
-   
-   
-   
