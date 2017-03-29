@@ -37,9 +37,10 @@ class BatteryMonitorClass():
 	    			else:
 
 					GPIO.output(Pconst.RedLED, GPIO.LOW)
-											
+					
+				print BatteryPercentage											
 				publisher=Pub_Sub2.publisher(BatteryPercentage)
-				print BatteryPercentage
+
 							
             		except:
 				print("Unexpected error:\n", sys.exc_info()[0])
