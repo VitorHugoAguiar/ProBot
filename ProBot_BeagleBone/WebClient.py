@@ -1,10 +1,10 @@
 #!/usr/bin/python
 
+from __future__ import print_function
 import sys
 import os
 import time
 
-from __future__ import print_function
 from os import environ
 import six
 from twisted.internet.defer import inlineCallbacks

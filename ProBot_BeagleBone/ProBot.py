@@ -7,6 +7,7 @@ import math
 import decimal
 import time
 import datetime
+import threading
 
 import SabertoothFile
 import PIDControllersFile
@@ -19,42 +20,57 @@ import MotorsControlFile
 import StartFile
 import mpu6050File
 
+
 # Initialization of classes from local files
+InitProgram = StartFile.StartFileClass()
+RestartProgram = RestartProgramFile.RestartProgramClass()
 Sabertooth = SabertoothFile.SabertoothClass()
 PID = PIDControllersFile.PIDControllersClass()
 Encoders = EncodersFile.EncodersClass()
 Pconst = ProBotConstantsFile.Constants()
 PWM = PWMFile.PWMClass()
 WebPage = WebPageFile.WebPageClass()
-RestartProgram = RestartProgramFile.RestartProgramClass()
 MotorsControlSignals = MotorsControlFile.MotorsControlClass()
-InitProgram = StartFile.StartFileClass()
-mpu6050=mpu6050File.mpu6050Class()
-
 InitParameters = InitProgram.StartProgram()
 userChoice = InitParameters[0]
+mpu6050=mpu6050File.mpu6050Class()
 
 
 class ProBot():
    
-    def __init__(self,  LoopTimeResult=0):
+    def __init__(self,  LoopTimeResult=0, wheelVelocity1=0, wheelVelocity2=0 ,EncodersTimeout=0.01):
 	self.LoopTimeResult=LoopTimeResult
-	
+	self.wheelVelocity1=wheelVelocity1
+	self.wheelVelocity2=wheelVelocity2
+	self.EncodersTimeout=EncodersTimeout    
 
+    def EncodersTimer(self):
+	if Encoders==None:
+		pass
+	else:
+		self.wheelVelocity1, self.wheelVelocity2  = Encoders.EncodersValues()	
+		t = threading.Timer(self.EncodersTimeout, ProBot.EncodersTimer)
+		t.daemon=True
+     		t.start()
+	
+	return self.wheelVelocity1, self.wheelVelocity2 
+ 
     def mainRoutine(self):
 	try:
+
 		# Calibration of MPU6050
 		mpu6050.Calibration()
         	time.sleep(1)
+		t = threading.Timer(self.EncodersTimeout, ProBot.EncodersTimer)
+		t.daemon=True
+		t.start()
+
 		while True:
 		    try:
-		    	LoopTimeStart=time.time()
-		
-		    	# Readings from the encoders
-		    	wheelPosition1, wheelPosition2  = Encoders.EncodersValues()               
+		    	LoopTimeStart=time.time()             
 		    		
 		    	# Reading the values from the webpage
-                    	PositionRef, TurnMotorRight, TurnMotorLeft = WebPage.WebPage_Values()
+                    	VelocityRef, TurnMotorRight, TurnMotorLeft = WebPage.WebPage_Values()
 		
 		   	# Reading the MPU6050 values and use the complementary filter to get better values 
 		    	ComplementaryAngle=mpu6050.Complementary_filter(self.LoopTimeResult)
@@ -64,28 +80,30 @@ class ProBot():
 				RestartProgram.RestartProgramRoutine(userChoice)
 						     		  	    
 		    	# With the values from the WebPage, we can calculate the outputs from the controllers
-               	    	PositionController1 = PID.standardPID((PositionRef+TurnMotorRight), wheelPosition1, 'Position1', userChoice)
-                    	PositionController2 = PID.standardPID((PositionRef+TurnMotorLeft), wheelPosition2, 'Position2', userChoice)
+               	    	VelocityController1 = PID.standardPID((VelocityRef+TurnMotorRight), self.wheelVelocity1, 'Velocity1', userChoice)
+                    	VelocityController2 = PID.standardPID((VelocityRef+TurnMotorLeft), self.wheelVelocity2, 'Velocity2', userChoice)
 					                    
-		    	rightMotor = PID.standardPID(round (PositionController1, 2), ComplementaryAngle, 'Angle1', userChoice)
-                    	leftMotor = PID.standardPID(round (PositionController2, 2), ComplementaryAngle, 'Angle2', userChoice)
+		    	rightMotor = PID.standardPID(round (VelocityController1, 2), ComplementaryAngle, 'Angle1', userChoice)
+                    	leftMotor = PID.standardPID(round (VelocityController2, 2), ComplementaryAngle, 'Angle2', userChoice)
 
  		    	# Sending the right values to the Sabertooth or the PWM controller
 	            	MotorsControlSignals.MotorsControl(rightMotor, leftMotor, userChoice)
 
 		    	LoopTimeEnd=time.time()
 	            	self.LoopTimeResult=LoopTimeEnd-LoopTimeStart
-		
-		
+				
 		    except IOError, err:
 			print(IOError, err)
                     	continue
 
 	except KeyboardInterrupt:
+		    if not t.isAlive():
+			t.cancel()
+                    	t.join(0)
 		    InitProgram.StopProgram()
- 		    print("Unexpected error:\n", sys.exc_info()[0])
+		    print("Unexpected error:\n", sys.exc_info()[0])
 		    sys.exit('\n\nPROGRAM STOPPED!!!\n')
-                    raise
+		    raise
 
 
     def main(self):

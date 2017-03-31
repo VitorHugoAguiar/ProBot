@@ -20,25 +20,25 @@ class PIDControllersClass():
 	
 	# Load the right values for the controllers,  depending on if we are using Sabertooth of PWM controller
 	if userChoice=='1':	
-		KpP=Pconst.SaberTooth_KpP
-		KiP=Pconst.SaberTooth_KiP
-		KdP=Pconst.SaberTooth_KdP
+		KpV=Pconst.SaberTooth_KpV
+		KiV=Pconst.SaberTooth_KiV
+		KdV=Pconst.SaberTooth_KdV
 		KpA=Pconst.SaberTooth_KpA
 		KiA=Pconst.SaberTooth_KiA
 		KdA=Pconst.SaberTooth_KdA
 
 	if userChoice=='2':
-		KpP=Pconst.PWM_KpP
-		KiP=Pconst.PWM_KiP
-		KdP=Pconst.PWM_KdP
+		KpV=Pconst.PWM_KpV
+		KiV=Pconst.PWM_KiV
+		KdV=Pconst.PWM_KdV
 		KpA=Pconst.PWM_KpA
 		KiA=Pconst.PWM_KiA
 		KdA=Pconst.PWM_KdA
 
 	# Loading the variables for the controllers
         typeController = { 
-	  'Position1': [KpP, KiP, KdP, Pconst.limitP, Pconst.integrated_error_P1, Pconst.last_error_P1],
-          'Position2': [KpP, KiP, KdP, Pconst.limitP, Pconst.integrated_error_P2, Pconst.last_error_P2],
+	  'Velocity1': [KpV, KiV, KdV, Pconst.limitV, Pconst.integrated_error_V1, Pconst.last_error_V1],
+          'Velocity2': [KpV, KiV, KdV, Pconst.limitV, Pconst.integrated_error_V2, Pconst.last_error_V2],
           'Angle1': [KpA, KiA, KdA, Pconst.limitA, Pconst.integrated_error_A1, Pconst.last_error_A1],
           'Angle2': [KpA, KiA, KdA, Pconst.limitA, Pconst.integrated_error_A2, Pconst.last_error_A2]}
 
@@ -58,14 +58,14 @@ class PIDControllersClass():
         PID_result = float(pTerm + iTerm + dTerm)
 
 	# Updating the integrated error	and the last error for the next loop
-        if(type is 'Position1'):
-            Pconst.integrated_error_P1 = controllerVar[4]
-            Pconst.last_error_P1= controllerVar[5]
+        if(type is 'Velocity1'):
+            Pconst.integrated_error_V1 = controllerVar[4]
+            Pconst.last_error_V1= controllerVar[5]
 	    PID_result = max(-18, min(PID_result, 18)) 
 
-        if(type is 'Position2'):
-            Pconst.integrated_error_P2 = controllerVar[4]
- 	    Pconst.last_error_P2= controllerVar[5]           
+        if(type is 'Velocity2'):
+            Pconst.integrated_error_V2 = controllerVar[4]
+ 	    Pconst.last_error_V2= controllerVar[5]           
 	    PID_result = max(-18, min(PID_result, 18)) 
             
 
@@ -73,16 +73,17 @@ class PIDControllersClass():
             Pconst.integrated_error_A1 = controllerVar[4]
             Pconst.last_error_A1= controllerVar[5]
             if userChoice=='1':
-            	PID_result = max(-127, min(PID_result, 127)) 	#Limiting the PID values because of the Sabertooth range (-127, 127)
+            	PID_result = max(-127, min(PID_result, 127)) 			#Limiting the PID values because of the Sabertooth range (-127, 127)
             if userChoice=='2':
-		PID_result = max(-100, min(PID_result, 100))	#Limiting the percentage of the PWM
+		PID_result = max(-100, min(PID_result, 100))			#Limiting the percentage of the PWM
 		
 	if(type is 'Angle2'):
             Pconst.integrated_error_A2 = controllerVar[4]			
             Pconst.last_error_A2= controllerVar[5]
-            if userChoice=='1':					#Limiting the PID values because of the Sabertooth range (-127, 127)	
+            if userChoice=='1':							#Limiting the PID values because of the Sabertooth range (-127, 127)	
             	PID_result = max(-127, min(PID_result, 127))			
             if userChoice=='2':
-		PID_result = max(-100, min(PID_result, 100))	#Limiting the percentage of the PWM					
+		PID_result = max(-100, min(PID_result, 100))			#Limiting the percentage of the PWM					
+
 
         return -PID_result
