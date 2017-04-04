@@ -38,33 +38,32 @@ mpu6050=mpu6050File.mpu6050Class()
 
 class ProBot():
    
-    def __init__(self,  LoopTimeResult=0, wheelVelocity1=0, wheelVelocity2=0 ,EncodersTimeout=0.01):
+    def __init__(self,  LoopTimeResult=0, wheelVelocity1=0, wheelVelocity2=0, EncodersTimeout=0.01):
 	self.LoopTimeResult=LoopTimeResult
 	self.wheelVelocity1=wheelVelocity1
 	self.wheelVelocity2=wheelVelocity2
 	self.EncodersTimeout=EncodersTimeout    
-
+	
     def EncodersTimer(self):
 	if Encoders==None:
 		pass
 	else:
 		self.wheelVelocity1, self.wheelVelocity2  = Encoders.EncodersValues()	
-		t = threading.Timer(self.EncodersTimeout, ProBot.EncodersTimer)
-		t.daemon=True
-     		t.start()
+		EncodersThread = threading.Timer(self.EncodersTimeout, ProBot.EncodersTimer)
+		EncodersThread.daemon=True
+     		EncodersThread.start()
 	
-	return self.wheelVelocity1, self.wheelVelocity2 
- 
     def mainRoutine(self):
 	try:
 
 		# Calibration of MPU6050
 		mpu6050.Calibration()
         	time.sleep(1)
-		t = threading.Timer(self.EncodersTimeout, ProBot.EncodersTimer)
-		t.daemon=True
-		t.start()
 
+		EncodersThread = threading.Timer(self.EncodersTimeout, ProBot.EncodersTimer)
+		EncodersThread.daemon=True
+		EncodersThread.start()
+		
 		while True:
 		    try:
 		    	LoopTimeStart=time.time()             
@@ -97,9 +96,10 @@ class ProBot():
                     	continue
 
 	except KeyboardInterrupt:
-		    if not t.isAlive():
-			t.cancel()
-                    	t.join(0)
+		    if not EncodersThread.isAlive():
+			EncodersThread.cancel()
+                    	EncodersThread.join(0)
+
 		    InitProgram.StopProgram()
 		    print("Unexpected error:\n", sys.exc_info()[0])
 		    sys.exit('\n\nPROGRAM STOPPED!!!\n')

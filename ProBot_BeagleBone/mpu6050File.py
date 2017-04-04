@@ -108,7 +108,7 @@ class mpu6050Class():
                 Pitch = self.get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)	
 		Pitch+=Pconst.Angle_offset
 		gyro_yout_scaled+=Pconst.GYR_offset
-		
+				
 		return [Pitch, gyro_yout_scaled]
 	
 	
