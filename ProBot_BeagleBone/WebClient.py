@@ -70,7 +70,7 @@ class AppSession(ApplicationSession):
 			MainRoutine="0"
 		
 		self.publish('probot-bat-probot_id', Bat)
-		self.publish('probot-angle-probot_id, Angle)
+		self.publish('probot-angle-probot_id', Angle)
                 self.publish('probot-mainRoutine-probot_id', MainRoutine)		
 		self.log.info("published on probot-bat-probot_id: {msg}", msg=Bat)
 		self.log.info("published on probot-angle-probot_id: {msg}", msg=Angle)
