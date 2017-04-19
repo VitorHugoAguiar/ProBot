@@ -11,7 +11,7 @@
       <div class="nav-collapse collapse">
         <ul class="nav">
           {% if g.user.is_authenticated %}
-          {% if (current_user.email=='hugoaguiar_18@hotmail.com' and current_user.username=='hugoaguiar_18')%}
+          {% if (current_user.email=='admin' and current_user.username=='admin')%}
           <li><a href="{{ url_for('gallery') }}">Photo Gallery</a></li>
 		  <li><a href="{{ url_for('probots_admin') }}">ProBots_Admin</a></li>
 		  {% endif %}
