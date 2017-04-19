@@ -29,8 +29,7 @@ class StartAndStopClass():
 	    		incomingMsg3 = incomingMsg2.replace("]", "") 
                         incomingMsg4 = incomingMsg3.replace(" ", "")
 	    		self.StartAndStopMsg = incomingMsg4.replace(",", "") 		
-			if self.StartAndStopMsg[0]!="s":
-				self.StartAndStopMsg=0			
+			
 		print (self.StartAndStopMsg)
 		
         	with open("/home/machinekit/ProBot/ProBot_BeagleBone/pidProBot.tmp","r") as f:
