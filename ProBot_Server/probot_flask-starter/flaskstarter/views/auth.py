@@ -1,5 +1,6 @@
 """Authentication views blueprint."""
 import datetime
+import os
 from flask import Blueprint, flash, g, redirect, render_template, request, \
     url_for
 from flask.ext.login import LoginManager, current_user, login_required,  \
@@ -40,7 +41,7 @@ def before_request():
 ##############
 #  Register  #
 ##############
-def send_confirm_email(user_email=None, username=None, confirm_url=None):
+def send_confirm_email(admin_email=None, username=None, confirm_url=None, user_email=None):
     """Send confirm email address."""
     if app.config['TESTING']:
         msg = 'Email not sent. You are in TESTING mode!'
@@ -53,9 +54,36 @@ def send_confirm_email(user_email=None, username=None, confirm_url=None):
             'user/activate.html',
             confirm_url=confirm_url,
             username=username,
-            root_url=root_url
+            root_url=root_url,
+            user_email=user_email
         )
-        subject = 'Please confirm your email'
+        subject = 'Register request'
+        try:
+            send_email(admin_email, subject, html)
+            logger.info(
+                'confirmation email sent to {}'.format(admin_email)
+            )
+            return True
+        except Exception as e:
+            logger.error(
+                'confirmation email could not be sent. User {0}. Error {1}'
+                .format(admin_email, e)
+            )
+            return False
+
+def send_confirm_email_to_user(user_email=None):
+    """Send confirm email address."""
+    if app.config['TESTING']:
+        msg = 'Email not sent. You are in TESTING mode!'
+        print(msg)
+        logger.info(msg)
+        return True
+    root_url = app.config.get('ROOT_URL')
+    with app.app_context():
+        html = render_template(
+            'user/activate_user.html'
+        )
+        subject = 'Register confirmation'
         try:
             send_email(user_email, subject, html)
             logger.info(
@@ -95,16 +123,17 @@ def register():
                 _external=True
             )
             send_confirm_email(
-                user_email=user.email,
+                admin_email=os.environ['CONTACT_EMAIL'],
                 confirm_url=confirm_url,
-                username=user.username
+                username=user.username, 
+                user_email=user.email
             )
             logger.info(
                 'new user registered. {}'.format(user)
             )
             flash(
                 'Thanks for registering with us. \
-                A confirmation email has been sent via email.', 'success'
+                Your request is being processed. Please wait for a confirmation email.', 'success'
             )
         except Exception as e:
             # TODO deal with duplicate email addresses
@@ -126,7 +155,7 @@ def unconfirmed():
     """Return unconfirmed template."""
     if hasattr(current_user, 'confirmed') and current_user.confirmed:
         return redirect(url_for('auth.login'))
-    flash('Please confirm your account!', 'warning')
+    flash('Your account have not been confirmed yet!', 'warning')
     return render_template('unconfirmed.html')
 
 
@@ -168,7 +197,11 @@ def confirm_email(token):
                 raise
             finally:
                 db.session.close()
-            flash('You have confirmed your account. Thanks!', 'success')
+            flash('You have confirmed user account.', 'success')
+            send_confirm_email_to_user(
+                user_email=email
+
+            )
     else:
         flash('The confirmation link is invalid or has expired.', 'warning')
     return redirect(url_for('auth.login'))

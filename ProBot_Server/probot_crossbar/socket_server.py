@@ -27,8 +27,8 @@ class AppSession(ApplicationSession):
         lastBat = None
 	ProBotTimerBat={}
         ProBotTimerWeb={}
-	timerBatInterval=3
-	timerWebInterval=2
+	timerBatInterval=5
+	timerWebInterval=3
         def receive_id(probot_id):
             if "probot-" in probot_id:
                 probotid=probot_id.split('-')[1]
@@ -67,37 +67,33 @@ class AppSession(ApplicationSession):
 		   
             else:
                 probotid=probot_id
-                if int(probotid)>=len(ProBotTimerWeb):
-                	ProBotTimerWeb[int(probotid)]=0
-
 		self.log.info("initializing subscribers for id {probotid} (controls)", probotid=probot_id)
 		topic = "probot-topic-{}".format(probotid)
-                keepalive_topic = "keepalive-{}".format(probotid)
+		keepalive_topic = "keepalive-{}".format(probotid)
 		print("KEEPALIVE")
-
+			
                 def webclient_timeout():
-                    self.log.info("keepalive not received from probot {probotid}", probotid=probotid)
-                    self.publish('bridge-topic', probotid, 0, "WEB TIMEOUT") # to publish on the bridge
-                    print("WEB TIMEOUT")
+                	self.log.info("keepalive not received from probot {probotid}", probotid=probotid)
+                    	self.publish('bridge-topic', probotid, 0, "WEB TIMEOUT") # to publish on the bridge
+                    	print("WEB TIMEOUT")
 
                 ProBotTimerWeb[int(probotid)]=Timer(timerWebInterval, webclient_timeout,())
                 ProBotTimerWeb[int(probotid)].start()
 		ProBotTimerWeb[int(probotid)].cancel()
 
                 def reset_timer():
-                        ProBotTimerWeb[int(probotid)].cancel()
-                        ProBotTimerWeb[int(probotid)]=Timer(timerWebInterval, webclient_timeout,())
-                        ProBotTimerWeb[int(probotid)].start()
+                       	ProBotTimerWeb[int(probotid)].cancel()
+                       	ProBotTimerWeb[int(probotid)]=Timer(timerWebInterval, webclient_timeout,())
+                       	ProBotTimerWeb[int(probotid)].start()
 
-                self.subscribe(reset_timer, keepalive_topic)
+               	self.subscribe(reset_timer, keepalive_topic)
 
 		def receive_msg(msg):
-                        self.log.info("event from {topic} received: {msg}", topic=topic, msg=msg)
+                       	self.log.info("event from {topic} received: {msg}", topic=topic, msg=msg)
 		self.subscribe(receive_msg, topic)
 
 
         self.subscribe(receive_id, "general-topic")
-
         yield sleep(1)
 
     def onLeave(self, details):

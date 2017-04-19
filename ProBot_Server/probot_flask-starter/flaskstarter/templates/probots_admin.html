@@ -1,0 +1,680 @@
+{% extends "base.html" %}
+
+
+{% block js %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="{{ url_for('static', filename='js/autobahn.min.js' )}}"></script>
+{% endblock %}
+
+
+{% block css %}
+<style type="text/css">
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  #my-content { display: none; }  /* show it on small screens */
+  #my-contentMobile { display: block; }  /* hide it elsewhere */ 
+}
+
+@media screen and (min-width: 768px) {
+  #my-content { display: block; } 
+  #my-contentMobile { display: none; }  /* hide it elsewhere */ 
+}
+.chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+}
+
+.chip img {
+    float: left;
+    margin: 0 30px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+input[type=radio]:checked + label>img {
+  border: 1px solid black;
+  box-shadow: 0 0 3px 3px black;
+}
+
+
+.thumbnail{
+	display:block;
+	padding:4px;
+	line-height:20px;
+	border:1px solid #ddd;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.055);
+	-moz-box-shadow:0 1px 3px rgba(0,0,0,0.055);
+	box-shadow:0 1px 3px rgba(0,0,0,0.055);
+	-webkit-transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out
+}a.thumbnail:hover,a.thumbnail:focus{
+	border-color:black;
+	border: 5px solid black;
+	-webkit-box-shadow:0 1px 4px rgba(0,105,214,0.25);
+	-moz-box-shadow:0 3px 3px black;
+	box-shadow:0 3px 3px black
+}.thumbnail>img{
+	display:block;max-width:100%;margin-right:auto;margin-left:auto
+}.thumbnail .caption{padding:9px;color:#555}
+
+
+/* Removes the default 20px margin and creates some padding space for the indicators and controls */
+.carousel {
+    margin-bottom: 0;
+	padding: 0 40px 30px 40px;
+}
+/* Reposition the controls slightly */
+.carousel-control {
+	left: -12px;
+}
+.carousel-control.right {
+	right: -12px;
+}
+/* Changes the position of the indicators */
+.carousel-indicators {
+	right: 50%;
+	top: auto;
+	bottom: 0px;
+	margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.carousel-indicators li {
+	background: #c0c0c0;
+}
+.carousel-indicators .active {
+background: #333333;
+}
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div align="center" style="display:none;" id="exception">
+<h4 align="justify">To control one of the ProBots. please click on the button and add the exception to your browser. You just need to do this one time on a specific browser. If you already done this process and still can't see a online ProBot, maybe the server is offline.... </h4>
+	<input type="button" value="Add the exception!" onclick="location.href='https://89.109.64.175:8080'">
+</div>
+	<br>
+<div align="center">
+<h4> Please choose a ProBot by clicking on the respectively image: </h4>
+</div>
+<br>
+<br>
+
+<div align="center" id="my-content">		
+	
+<div class="container">
+	<div class="row">
+		<div class="span12">
+    	    <div class="well"> 
+                <div id="myCarousel" class="carousel slide">
+                 
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+
+                </ol>
+                 
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    
+                <div class="item active">
+                	<div class="row-fluid">
+                	  <div class="span4"><a class="thumbnail"><input type="radio" name="options" value="1" id="probot1" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot1"><img src="../static/images/IMG_4464.jpg" /></label></a><p>
+                	  <div class="chip" ><img src="../static/images/offline.png"  id="chip1"><img src="../static/images/not_available.png" id="chip_Available1"><img src="../static/images/not_executing.png" id="chip_Executing1">ProBot 1</div>
+                	  </div>
+                	  
+                	  <div class="span4"><a class="thumbnail"><input type="radio" name="options" value="2" id="probot2" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot2"><img src="../static/images/IMG_8585.jpg" /></label></a><p>
+                	  <div class="chip"><img src="../static/images/offline.png" id="chip2"><img src="../static/images/not_available.png" id="chip_Available2"><img src="../static/images/not_executing.png" id="chip_Executing2">ProBot 2</div>
+                	  </div>
+                	  
+                	  
+                	  <div class="span4"><a class="thumbnail"><input type="radio" name="options" value="3" id="probot3" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot3"><img src="../static/images/P_20161119_111859.jpg" /></label></a><p>
+                	  <div class="chip"><img src="../static/images/offline.png"  id="chip3"><img src="../static/images/not_available.png" id="chip_Available3"><img src="../static/images/not_executing.png" id="chip_Executing3">ProBot 3</div>
+                	  </div>
+
+                	</div><!--/row-fluid-->
+                </div><!--/item-->
+                 
+                <div class="item">
+                	<div class="row-fluid">
+                	  <div class="span4"><a class="thumbnail"><input type="radio" name="options" value="4" id="probot4" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot4"><img src="../static/images/Website-Under-Construction.jpg" /></label></a><p>
+                	  <div class="chip"><img src="../static/images/offline.png"  id="chip4"><img src="../static/images/not_available.png" id="chip_Available4"><img src="../static/images/not_executing.png" id="chip_Executing4">ProBot 4</div>
+                	  </div>
+                	  
+                	  <div class="span4"><a class="thumbnail"><input type="radio" name="options" value="5" id="probot5" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot5"><img src="../static/images/Website-Under-Construction.jpg" /></label></a><p>
+                	  <div class="chip"><img src="../static/images/offline.png"  id="chip5"><img src="../static/images/not_available.png" id="chip_Available5"><img src="../static/images/not_executing.png" id="chip_Executing5">ProBot 5</div>
+                	  </div>
+                	  
+                	  
+                	  <div class="span4"><a class="thumbnail"><input type="radio" name="options" value="6" id="probot6" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot6"><img src="../static/images/Website-Under-Construction.jpg" /></label></a><p>
+                	  <div class="chip"><img src="../static/images/offline.png"  id="chip6"><img src="../static/images/not_available.png" id="chip_Available6"><img src="../static/images/not_executing.png" id="chip_Executing6">ProBot 6</div>
+                	  </div>
+
+                	</div><!--/row-fluid-->
+                </div><!--/item-->
+                 
+                </div><!--/carousel-inner-->
+                 
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+                </div><!--/myCarousel-->
+                 
+            </div><!--/well-->   
+		</div>
+	</div>
+</div>
+		
+</div>
+
+
+<div align="center" id="my-contentMobile">		
+	
+<div class="container">
+	<div class="row">
+		<div class="span12">
+    	    <div class="well"> 
+                <div id="myCarouselMobile" class="carousel slide">
+                 
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li> 
+                    <li data-target="#myCarousel" data-slide-to="5"></li>                     
+
+                </ol>
+                 
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    
+                <div class="item active">
+                	<div class="row-fluid">
+                	  <div class="span6"><a class="thumbnail"><input type="radio" name="options" value="1" id="probot1" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot1"><img src="../static/images/IMG_4464.jpg" /></label></a><p>
+                	  <div class="chip"><img src="../static/images/offline.png" id="chipM1"><img src="../static/images/not_available.png" id="chip_AvailableM1"><img src="../static/images/not_executing.png" id="chip_ExecutingM1">ProBot 1</div>
+                	  </div>
+                	</div><!--/row-fluid-->
+                </div><!--/item-->        
+                       	  
+                <div class="item">
+                	<div class="row-fluid">                
+                	  <div class="span6"><a class="thumbnail"><input type="radio" name="options" value="2" id="probot2" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot2"><img src="../static/images/IMG_8585.jpg" /></label></a><p>
+					  <div class="chip"><img src="../static/images/offline.png" id="chipM2"><img src="../static/images/not_available.png" id="chip_AvailableM2"><img src="../static/images/not_executing.png" id="chip_ExecutingM2">ProBot 2</div>
+                	  </div>  
+                	</div><!--/row-fluid-->
+                </div><!--/item-->   
+                
+                <div class="item">
+                	<div class="row-fluid">                             	  
+                	  <div class="span6"><a class="thumbnail"><input type="radio" name="options" value="3" id="probot3" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot3"><img src="../static/images/P_20161119_111859.jpg" /></label></a><p>
+					  <div class="chip"><img src="../static/images/offline.png" id="chipM3"><img src="../static/images/not_available.png" id="chip_AvailableM3"><img src="../static/images/not_executing.png" id="chip_ExecutingM3">ProBot 3</div>
+                	  </div>
+                	</div><!--/row-fluid-->
+                </div><!--/item-->
+                 
+                <div class="item">
+                	<div class="row-fluid">
+                	  <div class="span6"><a class="thumbnail"><input type="radio" name="options" value="4" id="probot4" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot4"><img src="../static/images/Website-Under-Construction.jpg" /></label></a><p>
+					  <div class="chip"><img src="../static/images/offline.png" id="chipM4"><img src="../static/images/not_available.png" id="chip_AvailableM4"><img src="../static/images/not_executing.png" id="chip_ExecutingM4">ProBot 4</div>
+                	  </div>
+                	</div><!--/row-fluid-->
+                </div><!--/item-->     
+                	  
+                <div class="item">
+                	<div class="row-fluid">
+                	  <div class="span6"><a class="thumbnail"><input type="radio" name="options" value="5" id="probot5" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot5"><img src="../static/images/Website-Under-Construction.jpg" /></label></a><p>
+					  <div class="chip"><img src="../static/images/offline.png" id="chipM5"><img src="../static/images/not_available.png" id="chip_AvailableM5"><img src="../static/images/not_executing.png" id="chip_ExecutingM5">ProBot 5</div>
+                	  </div>
+                	</div><!--/row-fluid-->
+                </div><!--/item--> 
+                                  	  
+                <div class="item">
+                	<div class="row-fluid">  	  
+                	  <div class="span6"><a class="thumbnail"><input type="radio" name="options" value="6" id="probot6" class="input-hidden" onclick="checkform(this.value);" />
+					  <label for="probot6"><img src="../static/images/Website-Under-Construction.jpg" /></label></a><p>
+					  <div class="chip"><img src="../static/images/offline.png" id="chipM6"><img src="../static/images/not_available.png" id="chip_AvailableM6"><img src="../static/images/not_executing.png" id="chip_ExecutingM6">ProBot 6</div>
+                	  </div>
+
+                	</div><!--/row-fluid-->
+                </div><!--/item-->
+                 
+                </div><!--/carousel-inner-->
+                 
+                <a class="left carousel-control" href="#myCarouselMobile" data-slide="prev">‹</a>
+                <a class="right carousel-control" href="#myCarouselMobile" data-slide="next">›</a>
+                </div><!--/myCarousel-->
+                 
+            </div><!--/well-->   
+		</div>
+	</div>
+</div>
+		
+</div>
+
+{% endblock %}
+
+{% block js_footer %}
+
+<script>
+
+$(document).ready(function() {
+    $('#myCarousel').carousel({
+	    interval: false
+	})
+    $('#my-contentMobile').carousel({
+	    interval: false
+	})
+});
+
+
+var availableProBots=[];
+
+var availableWebProBots=[];
+var availableWebProBots1=[];
+var probotOnline=[];
+var probotAvailableWeb=[];
+var numberProbots=6;
+var enable=0;
+var enableStart=[];
+var chip ="chip";
+var chipM = "chipM";
+var chip_Available ="chip_Available";
+var chip_AvailableM = "chip_AvailableM";
+var chip_Executing ="chip_Executing";
+var chip_ExecutingM = "chip_ExecutingM";
+
+function update_values() {
+            $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+            $.getJSON($SCRIPT_ROOT+"/checkProbotOnline",
+                function(data) {
+                    $("#available_probot").text(data.available_probot);
+                    $("#availableWeb_probot").text(data.availableWeb_probot);
+                    availableProBots=data.available_probot;
+                    availableWebProBots=data.availableWeb_probot;
+                    $('#probot1').load(document.URL + ' #probot1');
+                    $('#probot2').load(document.URL + ' #probot2');
+                    $('#probot3').load(document.URL + ' #probot3');
+                    $('#probot4').load(document.URL + ' #probot4');
+                    $('#probot5').load(document.URL + ' #probot5');
+                    $('#probot6').load(document.URL + ' #probot6');
+                    checkOnline();
+                 
+                    
+                });
+        }
+setInterval(update_values, 1000)
+
+function checkform(value) {
+	if(enable==1) {
+		alert("Please add the exception. If you stil don't see a online ProBot, maybe the server is offline...");
+		return false;
+		
+	}
+	
+    if((enableStart[value]==0) || (enableStart[value]==undefined)) {
+        alert("This ProBot is offline or StartAndStop.py is not working.");
+        return false;
+    } else {
+    	if (enableStart[value]==2){
+        if (confirm("Do you really want to START the main routine?") == true) {
+        		 ProBotTurnOn(value, enableStart[value]);
+                 return false;
+        }
+        else {
+        return false;
+    }}
+    if (enableStart[value]==1){
+    if (confirm("Do you really want to STOP the main routine?") == true) {
+        		 ProBotTurnOn(value, enableStart[value]);
+                 return false;
+        }
+        else {
+        return false;
+        }
+        }}}
+
+
+function checkOnline() {
+
+
+if(availableProBots.length==undefined){
+for(var i = 1; i < numberProbots; i++)
+{
+//when is offline because someone is using it
+chip="chip"+i;
+chipM="chipM"+ i;
+document.getElementById(chip).src = "../static/images/offline.png";
+document.getElementById(chipM).src = "../static/images/offline.png";
+chip_Available="chip_Available"+i;
+chip_AvailableM="chip_AvailableM"+ i;
+document.getElementById(chip_Available).src = "../static/images/not_available.png";
+document.getElementById(chip_AvailableM).src = "../static/images/not_available.png";
+}
+
+}else{
+for(var i = 0; i < availableProBots.length; i++)
+{
+
+for(var i = 1; i <=numberProbots; i++)
+{	
+	chip="chip"+ i;
+	chipM="chipM"+ i;
+	chip_Available="chip_Available"+i;
+	chip_AvailableM="chip_AvailableM"+ i;
+	probotOnline[i]=availableProBots.indexOf(i) >= 0;
+	if(probotOnline[i]===false){
+		//when is offline (turn off)
+		document.getElementById(chip).src = "../static/images/offline.png";
+		document.getElementById(chipM).src = "../static/images/offline.png";		
+		document.getElementById(chip_Available).src = "../static/images/not_available.png";
+		document.getElementById(chip_AvailableM).src = "../static/images/not_available.png";
+		enableStart[i]=0;
+	}else{
+		
+		document.getElementById(chip).src = "../static/images/online.png";
+		document.getElementById(chipM).src = "../static/images/online.png";
+	}
+}}}
+
+
+for(var i = 0; i < availableWebProBots.length; i++)
+{
+
+for(var i = 1; i <=numberProbots; i++)
+{	
+
+	chip_Available="chip_Available"+i;
+	chip_AvailableM="chip_AvailableM"+ i;
+	
+
+	if((availableWebProBots[i-1]==0) || (enableStart[i]==0)){
+		//when is offline (turn off)
+		document.getElementById(chip_Available).src = "../static/images/not_available.png";
+		document.getElementById(chip_AvailableM).src = "../static/images/not_available.png";
+
+	}
+		
+		if(availableWebProBots[i-1]==1) {
+		document.getElementById(chip_Available).src = "../static/images/available.png";
+		document.getElementById(chip_AvailableM).src = "../static/images/available.png";
+}
+
+}}}
+
+
+function ProBotTurnOnSendMsg(session, probot_topic, enableStartValue)
+{	
+if (enableStartValue==1){
+		session.publish(probot_topic, ['stop']);}
+if (enableStartValue==2){
+		session.publish(probot_topic, ['start']);}
+}
+
+
+// the URL of the WAMP Router (Crossbar.io)
+var connection = new autobahn.Connection({
+	url: "wss://89.109.64.175:8080/ws",
+	realm: "realm1"
+});
+
+// fired when connection is established and session attached
+connection.onopen = function (session, details){
+	console.log("Connected");
+	var probot_mainRoutine1 = "probot-mainRoutine-1";
+	var probot_mainRoutine2 = "probot-mainRoutine-2";
+	var probot_mainRoutine3 = "probot-mainRoutine-3";
+	var probot_mainRoutine4 = "probot-mainRoutine-4";
+	var probot_mainRoutine5 = "probot-mainRoutine-5";
+	var probot_mainRoutine6 = "probot-mainRoutine-6";
+
+ProBotTurnOn = function (control_id, enableStartValue)
+{	
+	//session.publish("general-topic", [control_id]);
+	var probot_topic = "probot-StartAndStop-" + control_id;
+	ProBotTurnOnSendMsg(session, probot_topic, enableStartValue);
+
+}	
+			
+	function receiveOnOffMainRoutine1(args)
+	{
+	var dataReceived = args[0];
+	chip_Executing="chip_Executing"+1;
+	chip_ExecutingM="chip_ExecutingM"+ 1;
+	//console.log( dataReceived);
+	if (dataReceived=="start"){
+	document.getElementById(chip_Executing).src = "../static/images/executing.png";
+	enableStart[1]=1;
+	}
+	if (dataReceived=="stopped"){
+	document.getElementById(chip_Executing).src = "../static/images/not_executing.png";
+	enableStart[1]=2;
+	}
+	}
+
+	function receiveOnOffMainRoutine2(args)
+	{
+	var dataReceived = args[0];
+	chip_Executing="chip_Executing"+2;
+	chip_ExecutingM="chip_ExecutingM"+ 2;
+	//console.log( dataReceived);
+	if (dataReceived=="start"){
+	document.getElementById(chip_Executing).src = "../static/images/executing.png";
+	enableStart[2]=1;
+	}
+	if (dataReceived=="stopped"){
+	document.getElementById(chip_Executing).src = "../static/images/not_executing.png";
+	enableStart[2]=2;
+	}
+	}
+	
+	function receiveOnOffMainRoutine3(args)
+	{
+	var dataReceived = args[0];
+	chip_Executing="chip_Executing"+3;
+	chip_ExecutingM="chip_ExecutingM"+ 3;
+	//console.log( dataReceived);
+	if (dataReceived=="start"){
+	document.getElementById(chip_Executing).src = "../static/images/executing.png";
+	enableStart[3]=1;
+	}
+	if (dataReceived=="stopped"){
+	document.getElementById(chip_Executing).src = "../static/images/not_executing.png";
+	enableStart[3]=2;
+	}
+	}
+
+	function receiveOnOffMainRoutine4(args)
+	{
+	var dataReceived = args[0];
+	chip_Executing="chip_Executing"+4;
+	chip_ExecutingM="chip_ExecutingM"+ 4;
+	//console.log( dataReceived);
+	if (dataReceived=="start"){
+	document.getElementById(chip_Executing).src = "../static/images/executing.png";
+	enableStart[4]=1;
+	}
+	if (dataReceived=="stopped"){
+	document.getElementById(chip_Executing).src = "../static/images/not_executing.png";
+	enableStart[4]=2;
+	}
+	}
+	
+	function receiveOnOffMainRoutine5(args)
+	{
+	var dataReceived = args[0];
+	chip_Executing="chip_Executing"+5;
+	chip_ExecutingM="chip_ExecutingM"+ 5;
+	//console.log( dataReceived);
+	if (dataReceived=="start"){
+	document.getElementById(chip_Executing).src = "../static/images/executing.png";
+	enableStart[5]=1;
+	}
+	if (dataReceived=="stopped"){
+	document.getElementById(chip_Executing).src = "../static/images/not_executing.png";
+	enableStart[5]=2;
+	}
+	}
+
+	function receiveOnOffMainRoutine6(args)
+	{
+	var dataReceived = args[0];
+	chip_Executing="chip_Executing"+6;
+	chip_ExecutingM="chip_ExecutingM"+ 6;
+	//console.log( dataReceived);
+	if (dataReceived=="start"){
+	document.getElementById(chip_Executing).src = "../static/images/executing.png";
+	enableStart[6]=1;
+	}
+	if (dataReceived=="stopped"){
+	document.getElementById(chip_Executing).src = "../static/images/not_executing.png";
+	enableStart[6]=2;
+	}
+	}
+	
+	session.subscribe(probot_mainRoutine1, receiveOnOffMainRoutine1).then(
+	function (sub)
+	{
+		console.log("subscribed to topic" + probot_mainRoutine1);
+	},
+	function (err)
+	{
+		console.log('failed to subscribe to topic', err);
+	}
+);
+	
+	session.subscribe(probot_mainRoutine2, receiveOnOffMainRoutine2).then(
+	function (sub)
+	{
+		console.log("subscribed to topic" + probot_mainRoutine2);
+	},
+	function (err)
+	{
+		console.log('failed to subscribe to topic', err);
+	}
+);
+
+	session.subscribe(probot_mainRoutine3, receiveOnOffMainRoutine3).then(
+	function (sub)
+	{
+		console.log("subscribed to topic" + probot_mainRoutine3);
+	},
+	function (err)
+	{
+		console.log('failed to subscribe to topic', err);
+	}
+);
+	
+	session.subscribe(probot_mainRoutine4, receiveOnOffMainRoutine4).then(
+	function (sub)
+	{
+		console.log("subscribed to topic" + probot_mainRoutine4);
+	},
+	function (err)
+	{
+		console.log('failed to subscribe to topic', err);
+	}
+);
+
+	session.subscribe(probot_mainRoutine5, receiveOnOffMainRoutine5).then(
+	function (sub)
+	{
+		console.log("subscribed to topic" + probot_mainRoutine5);
+	},
+	function (err)
+	{
+		console.log('failed to subscribe to topic', err);
+	}
+);
+	
+	session.subscribe(probot_mainRoutine6, receiveOnOffMainRoutine6).then(
+	function (sub)
+	{
+		console.log("subscribed to topic" + probot_mainRoutine6);
+	},
+	function (err)
+	{
+		console.log('failed to subscribe to topic', err);
+	}
+);	
+	
+	document.getElementById('exception').style.display = "none";
+	
+	for(var i = 1; i < numberProbots; i++)
+{	
+	chip="chip"+ i;
+	chipM="chipM"+ i;
+	document.getElementById(chip).style.display = "block";
+	document.getElementById(chipM).style.display = "block";
+	chip_Available="chip_Available"+ i;
+	chip_Available="chip_AvailableM"+ i;
+	document.getElementById(chip_Available).style.display = "block";
+	document.getElementById(chip_AvailableM).style.display = "block";
+	chip_Executing="chip_Executing"+ i;
+	chip_ExecutingM="chip_ExecutingM"+ i;
+	document.getElementById(chip_Executing).style.display = "block";
+	document.getElementById(chip_ExecutingM).style.display = "block";
+}
+
+	enable=0;
+};
+
+// fired when connection was lost (or could not be established)s
+connection.onclose = function (reason, details){
+	console.log("Connection lost: " + reason);
+	document.getElementById('exception').style.display = "block";
+	for(var i = 1; i < numberProbots; i++)
+{	
+	chip="chip"+ i;
+	chipM="chipM"+ i;
+	document.getElementById(chip).style.display = "none";
+	document.getElementById(chipM).style.display = "none";
+	chip_Available="chip_Available"+ i;
+	chip_AvailableM="chip_AvailableM"+ i;
+	document.getElementById(chip_Available).style.display = "none";
+	document.getElementById(chip_AvailableM).style.display = "none";
+	chip_Executing="chip_Executing"+ i;
+	chip_ExecutingM="chip_ExecutingM"+ i;
+	document.getElementById(chip_Executing).style.display = "none";
+	document.getElementById(chip_ExecutingM).style.display = "none";
+
+}
+	enable=1;
+};
+
+
+// now actually open the connection
+connection.open();
+
+</script>
+
+{% endblock %}
+
+
+

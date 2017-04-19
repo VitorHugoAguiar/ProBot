@@ -4,7 +4,10 @@
 {% block js %}
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script>AUTOBAHN_DEBUG = true;</script>
-	<script src="//autobahn.s3.amazonaws.com/autobahnjs/latest/autobahn.min.jgz"></script>
+	<script src="{{ url_for('static', filename='js/autobahn.min.js' )}}"></script>
+	<script>
+	var enable_login=0;
+	</script>
 	
 {% endblock %}
 
@@ -100,9 +103,18 @@ background: #333333;
 
 {% block content %}
 
+{% if g.user.is_authenticated %}
+<script>
+enable_login=1;
+</script>
+{% else %}
+<script>
+enable_login=0;
+</script>
+{% endif %}
 
 <div align="center" style="display:none;" id="exception">
-<h4 align="justify">To control one of the ProBots please click on the button and add the exception to your browser. If you already done this process and still can't see a online ProBot, maybe the server is offline.... </h4>
+<h4 align="justify">To control one of the ProBots please click on the button and add the exception to your browser. If you already done this process and still can't see the ProBot's status, maybe the server is offline.... </h4>
 	<input type="button" value="Add the exception!" onclick="location.href='https://89.109.64.175:8080'">
 </div>
 	<br>
@@ -312,6 +324,12 @@ function checkform(value) {
 		return false;
 		
 	}
+	
+	if (enable_login==0){
+    	alert("To control a ProBot, you need to login first!");
+    }
+    else {
+	
     if(availableProBots1[value]!=1) {
         alert("This ProBot is offline. Please choose another one");
         return false;
@@ -322,7 +340,7 @@ function checkform(value) {
         }
         else {
         return false;
-    }
+    }}
     }
 }
 
@@ -333,13 +351,14 @@ if(availableProBots.length==undefined){
 for(var i = 1; i < numberProbots; i++){
 var chip="chip"+i;
 document.getElementById(chip).src = "../static/images/offline.png";
+availableProBots1[i]=0;
 }
 
 }else{
 for(var i = 0; i < availableProBots.length; i++)
 {
 
-for(var i = 1; i < numberProbots; i++)
+for(var i = 1; i <= numberProbots; i++)
 {	
 	var chip="chip"+ i;
 	var chipM="chipM"+ i;
@@ -386,15 +405,7 @@ connection.onopen = function (session, details){
 connection.onclose = function (reason, details){
 	console.log("Connection lost: " + reason);
 	myFunction();
-//	document.getElementById('exception').style.display = "block";
-//	for(var i = 1; i < numberProbots; i++)
-//{	
-//	var chip="chip"+ i;
-//	var chipM="chipM"+ i;
-//	document.getElementById(chip).style.display = "none";
-//	document.getElementById(chipM).style.display = "none";
-//}
-//	enable=1;
+
 };
 function myFunction() {
 myVar=setTimeout(function(){
@@ -407,7 +418,7 @@ myVar=setTimeout(function(){
         document.getElementById(chipM).style.display = "none";
 }
         enable=1;
-}, 3000);}
+}, 2000);}
 
 // now actually open the connection
 connection.open();

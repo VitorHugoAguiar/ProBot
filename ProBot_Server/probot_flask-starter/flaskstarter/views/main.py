@@ -7,13 +7,21 @@ from flask import jsonify
 main = Blueprint('main', __name__)
 
 available_probot = {}
+available_probot2 = {}
+availableWeb_probot = {}
+availableWeb_probot2 = []
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
 	"""Index."""
 	return render_template('index.html')
+
+@app.route('/gallery', methods=['GET', 'POST'])
+def gallery():
+	"""gallery."""
+	return render_template('gallery.html')
 	
 @app.route('/probots', methods=['GET', 'POST'])
-@login_required
 def probots():
 
 	global available_probot		#variable to control the HTML content, True: Shows the form 
@@ -54,32 +62,55 @@ def probots():
 				return render_template('botcontrol.html', chosen_probot_id=chosen_probot_id) #render the file with the probot control "console"
 
 	return render_template('probots.html', field=available_probot)
+	
+@app.route('/probots_admin', methods=['GET', 'POST'])
+@login_required
+def probots_admin():
+
+	global available_probot2		#variable to control the HTML content, True: Shows the form 
+	probots_available_db = Probot.query.filter((Probot.is_available == 1) or (Probot.is_available == 2)).all()
+
+	if probots_available_db == []:	#NO probots available
+		available_probot = {}
+
+	else:							#At least one probot available
+
+		available_probot2=[(probot.id) 
+			for probot in probots_available_db]
+
+	return render_template('probots_admin.html', field=available_probot2)
+
+
 
 @app.route('/bridge', methods=['POST'])
 def message():
+    global availableWeb_probot
+    global availableWeb_probot2
     probot_id = None
     battery = None
     body = json.loads(request.get_data())
     probot_id = int(body["args"][0])
     probot = Probot.query.filter_by(id = probot_id).first()
-    
+    availableWeb_probot3=[]
+    #ProBots status -> 0 - Not avaiable
+    #				   1 - Avaiable
+    #				   2 - Waiting for the baterry value			
     if body["args"][2] == "UPDATE":
         probot.battery = int((body["args"][1]))
-        
-        #if probot.is_available == 2:
-        #    probot.is_available = 0   
-        if probot.is_available == 3:
+        if probot.is_available == 2:
             probot.is_available = 1
             
     elif body["args"][2] == "BATTERY TIMEOUT":
-        if probot.is_available == 0 or probot.is_available == 1:
-            probot.is_available = 3
-        #elif probot.is_available == 1:
-        #    probot.is_available = 3
-
+		probot.is_available = 2
+		
     elif body["args"][2] == "WEB TIMEOUT":
         if probot.is_available == 0:
-            probot.is_available = 1
+            probot.is_available = 2
+            
+    availableWeb_probot[probot_id]=probot.is_available
+    for index, elem in enumerate(availableWeb_probot):
+        availableWeb_probot3.insert(index, availableWeb_probot[elem])
+    availableWeb_probot2=availableWeb_probot3
     
     try:
         db.session.add(probot)
@@ -97,7 +128,4 @@ def message():
     
 @app.route('/checkProbotOnline', methods= ['GET'])
 def checkProbotOnline():
-    return jsonify(available_probot=available_probot)
-
-
-
+    return jsonify(available_probot=available_probot, availableWeb_probot=availableWeb_probot2)
