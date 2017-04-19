@@ -18,11 +18,16 @@ from OpenSSL import crypto
 import SocketWebPageFile
 import SocketBatteryFile
 import SocketAngleFile
+import SocketStartAndStop
+import SocketStartAndStop2
 
 # Initialization of classes from local files
 Pub_Sub = SocketWebPageFile.SocketClass()
 Pub_Sub2 = SocketBatteryFile.SocketClass()
 Pub_Sub3=SocketAngleFile.SocketClass()
+Pub_Sub4=SocketStartAndStop.SocketClass()
+Pub_Sub5=SocketStartAndStop2.SocketClass()
+
 
 class AppSession(ApplicationSession):
 
@@ -34,25 +39,42 @@ class AppSession(ApplicationSession):
         ## SUBSCRIBE to a topic and receive events
         def probot_topic(msg):
         	msg2=[msg.encode('utf-8') for msg in msg]
-        	publisher=Pub_Sub.publisher(msg2)
+		print(msg2)
+        	publisher1=Pub_Sub.publisher(msg2)
          	    
         sub = yield self.subscribe(probot_topic, 'probot-topic-1')
         self.log.info("subscribed to topic 'probot-topic-1'")
+
+        ## SUBSCRIBE to a topic and receive events
+        def probot_topic_StartAndStop(msg):
+                msg2=[msg.encode('utf-8') for msg in msg]
+                print(msg2)
+                publisher2=Pub_Sub4.publisher(msg2)
+
+        sub = yield self.subscribe(probot_topic_StartAndStop, 'probot-StartAndStop-1')
+        self.log.info("subscribed to topic 'probot-StartAndStop-1'")
+
+
 	self.publish('general-topic', "probot-1")
 
        	while True:
 		## PUBLISH an event
        		Bat = Pub_Sub2.subscriber()
-		Angle= Pub_Sub3.subscriber()
+		Angle = Pub_Sub3.subscriber()
+		MainRoutine = Pub_Sub5.subscriber()
 		if Bat==None:
-			Bat=0	
+			Bat=100	
 		if Angle==None:
 			Angle=90
-
+		if MainRoutine==None:
+			MainRoutine="0"
+		
 		self.publish('probot-bat-1', Bat)
 		self.publish('probot-angle-1', Angle)
+                self.publish('probot-mainRoutine-1', MainRoutine)		
 		self.log.info("published on probot-bat-1: {msg}", msg=Bat)
 		self.log.info("published on probot-angle-1: {msg}", msg=Angle)
+                self.log.info("published on probot-mainRoutine-1: {msg}", msg=MainRoutine)
         	yield sleep(1)
 
     def onDisconnect(self):

@@ -12,7 +12,7 @@ Pconst = ProBotConstantsFile.Constants()
 
 class WebPageClass():
 
-    def __init__(self, PositionRef=0, TurnMotorRight=0, TurnMotorLeft=0, down=0, up=0, left=0, right=0):
+    def __init__(self, PositionRef=0, TurnMotorRight=0, TurnMotorLeft=0, down=0, up=0, left=0, right=0, count=0):
         self.PositionRef = PositionRef
         self.TurnMotorRight = TurnMotorRight
         self.TurnMotorLeft = TurnMotorLeft
@@ -20,19 +20,26 @@ class WebPageClass():
 	self.down=down
 	self.left=left
 	self.right=right
+	self.count=count
 
     def WebPage_Values(self):
-        subscriber = Pub_Sub.subscriber() # Readings from the WebPage
-
+       	subscriber = Pub_Sub.subscriber() # Readings from the WebPage
+	if self.count>=100:
+        	self.PositionRef=0
+       	        self.TurnMotorRight=0
+                self.TurnMotorLeft=0
+		self.count=100
+                
  	if subscriber is None:
 		subscriber=0
-		
+		self.count+=1	
         else:
-	    	incomingMsg1 = subscriber.replace("[", "")
+	    	self.count=0
+		incomingMsg1 = subscriber.replace("[", "")
 	    	incomingMsg2 = incomingMsg1.replace("'", "")
 	    	incomingMsg3 = incomingMsg2.replace("]", "") 
-	    	incomingMsg4 = incomingMsg3.split(",")
-	    	self.up = incomingMsg4[0]
+	    	incomingMsg4 = incomingMsg3.split(",")    
+		self.up = incomingMsg4[0]
 	    	self.down = incomingMsg4[1]
 	    	self.left = incomingMsg4[2]
 	    	self.right = incomingMsg4[3]    	    		
@@ -47,5 +54,5 @@ class WebPageClass():
 	    	self.PositionRef = -float(ForwardReverse*Pconst.ajustFR)
 	    	self.TurnMotorRight = float(LeftRight*Pconst.ajustLR)
 	    	self.TurnMotorLeft = -float(LeftRight*Pconst.ajustLR)
-						
+				
         return  [round(self.PositionRef, 5), round (self.TurnMotorRight, 5), round(self.TurnMotorLeft, 5)]

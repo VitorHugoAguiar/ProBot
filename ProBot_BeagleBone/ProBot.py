@@ -19,7 +19,13 @@ import RestartProgramFile
 import MotorsControlFile
 import StartFile
 import mpu6050File
+import SocketStartAndStop3
+import SocketStartAndStop2
 
+
+pidf = open("/home/machinekit/ProBot/ProBot_BeagleBone/pidProBot.tmp","w")
+pidf.write(str(os.getpid()))
+pidf.close()
 
 # Initialization of classes from local files
 InitProgram = StartFile.StartFileClass()
@@ -34,7 +40,10 @@ MotorsControlSignals = MotorsControlFile.MotorsControlClass()
 InitParameters = InitProgram.StartProgram()
 userChoice = InitParameters[0]
 mpu6050=mpu6050File.mpu6050Class()
+Pub_Sub6 = SocketStartAndStop3.SocketClass()
+Pub_Sub5 = SocketStartAndStop2.SocketClass()
 
+#publisher5=Pub_Sub5.publisher("start")
 
 class ProBot():
    
@@ -67,11 +76,14 @@ class ProBot():
 		while True:
 		    try:
 		    	LoopTimeStart=time.time()             
-		    		
+                        subscriber6 = Pub_Sub6.subscriber() # Readings from the WebPage
+                        if subscriber6=="stop":
+                                raise KeyboardInterrupt()
+
 		    	# Reading the values from the webpage
                     	VelocityRef, TurnMotorRight, TurnMotorLeft = WebPage.WebPage_Values()
-		
-		   	# Reading the MPU6050 values and use the complementary filter to get better values 
+				   		
+			# Reading the MPU6050 values and use the complementary filter to get better values 
 		    	ComplementaryAngle=mpu6050.Complementary_filter(self.LoopTimeResult)
    
 		    	# Checking if the angle is out of range
@@ -99,7 +111,7 @@ class ProBot():
 		    if not EncodersThread.isAlive():
 			EncodersThread.cancel()
                     	EncodersThread.join(0)
-
+		    
 		    InitProgram.StopProgram()
 		    print("Unexpected error:\n", sys.exc_info()[0])
 		    sys.exit('\n\nPROGRAM STOPPED!!!\n')

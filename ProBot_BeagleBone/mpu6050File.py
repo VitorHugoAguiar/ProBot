@@ -7,10 +7,12 @@ import time
 import ProBotConstantsFile
 import Adafruit_BBIO.GPIO as GPIO
 import StartFile
+import SocketStartAndStop3
 
 # Initialization of classes from local files
 Pconst = ProBotConstantsFile.Constants()
 InitProgram=StartFile.StartFileClass()
+Pub_Sub6 = SocketStartAndStop3.SocketClass()
 
 # Configuration the type of GPIO's
 GPIO.setup(Pconst.RedLED, GPIO.OUT)
@@ -77,6 +79,10 @@ class mpu6050Class():
 
 	def Calibration(self):
 		while True:
+                        subscriber6 = Pub_Sub6.subscriber() # Readings from the WebPage
+                        if subscriber6=="stop":
+                                raise KeyboardInterrupt()
+
 			Pitch, gyro_yout_scaled=self.RollPitch()
 			
 			if Pitch>-0.5 and Pitch<0.5:
