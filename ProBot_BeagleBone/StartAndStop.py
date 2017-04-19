@@ -24,7 +24,6 @@ class StartAndStopClass():
 			self.StartAndStopMsg=0
 		
         	else:
-	    		#print(subscriber)
 			incomingMsg1 = subscriber.replace("[", "")
 	    		incomingMsg2 = incomingMsg1.replace("'", "")
 	    		incomingMsg3 = incomingMsg2.replace("]", "") 
@@ -33,11 +32,7 @@ class StartAndStopClass():
 			if self.StartAndStopMsg[0]!="s":
 				self.StartAndStopMsg=0			
 		print (self.StartAndStopMsg)
-		#if self.StartAndStopMsg=="start":
-   		#	subprocess.Popen(['sudo python /home/machinekit/ProBot/ProBot_BeagleBone/ProBot.py 2'],stdout = subprocess.PIPE,stderr = subprocess.PIPE,shell=True)
-		#if self.StartAndStopMsg=="stop":
-		#	publisher6=Pub_Sub6.publisher("stop") 
-       		
+		
         	with open("/home/machinekit/ProBot/ProBot_BeagleBone/pidProBot.tmp","r") as f:
                 	scriptA_pid = f.read()
         	chk_sA = subprocess.Popen(['kill -0 '+str(scriptA_pid)+' > /dev/null 2>&1; echo $?'],stdout=subprocess.PIPE,shell=True)
