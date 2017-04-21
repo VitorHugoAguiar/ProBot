@@ -7,12 +7,12 @@ def main():
         context = zmq.Context(1)
         # Socket facing clients
         frontend = context.socket(zmq.SUB)
-        frontend.bind("tcp://*:5587")
+        frontend.bind("tcp://*:5589")
         frontend.setsockopt(zmq.SUBSCRIBE, "")
 
         # Socket facing services
         backend = context.socket(zmq.PUB)
-        backend.bind("tcp://*:5588")
+        backend.bind("tcp://*:5590")
 
         zmq.device(zmq.FORWARDER, frontend, backend)
     except Exception, e:

@@ -3,14 +3,13 @@
 # Python Standart Library Imports
 import SocketStartAndStop
 import SocketStartAndStop2
-import SocketStartAndStop3
 import subprocess
 import sys
 import os
+import signal
 
-Pub_Sub4 = SocketStartAndStop.SocketClass()
-Pub_Sub5 = SocketStartAndStop2.SocketClass()
-Pub_Sub6 = SocketStartAndStop3.SocketClass()
+Pub_Sub = SocketStartAndStop.SocketClass()
+Pub_Sub2 = SocketStartAndStop2.SocketClass()
 
 class StartAndStopClass():
 
@@ -18,8 +17,8 @@ class StartAndStopClass():
         self.StartAndStopMsg = StartAndStopMsg
 	self.OnlyOnce=OnlyOnce
     def StartAndStop_Value(self):
-	while True:
-        	subscriber = Pub_Sub4.subscriber() # Readings from the WebPage
+
+        	subscriber = Pub_Sub.subscriber() # Readings from the WebPage
 		if subscriber is None:
 			self.StartAndStopMsg=0
 		
@@ -30,31 +29,24 @@ class StartAndStopClass():
                         incomingMsg4 = incomingMsg3.replace(" ", "")
 	    		self.StartAndStopMsg = incomingMsg4.replace(",", "") 		
 			
-		print (self.StartAndStopMsg)
 		
         	with open("/home/machinekit/ProBot/ProBot_BeagleBone/pidProBot.tmp","r") as f:
                 	scriptA_pid = f.read()
-        	chk_sA = subprocess.Popen(['kill -0 '+str(scriptA_pid)+' > /dev/null 2>&1; echo $?'],stdout=subprocess.PIPE,shell=True)
-        	chk_sA.wait()
+        	chk_sA = subprocess.Popen(['kill -0 '+str(scriptA_pid)+' > /dev/null 2>&1; echo $?'],stdout=subprocess.PIPE,shell=True) 
+		chk_sA.wait()
         	sA_status = chk_sA.stdout.read()
 
         	if int(sA_status) == 0:
-                	print("Running")
-                	publisher5=Pub_Sub5.publisher("start")
+                	#Running
                 	if self.StartAndStopMsg=="stop":
-                        	publisher6=Pub_Sub6.publisher("stop")
+                        	publisher2=Pub_Sub2.publisher("stop")
 				self.OnlyOnce=0
+			return "start"
         	else:
-                	print("Not running")
-			publisher5=Pub_Sub5.publisher("stopped")
+                	#Not running
 			if self.OnlyOnce==0:
                 		if self.StartAndStopMsg=="start":
-                        		subprocess.Popen(['python /home/machinekit/ProBot/ProBot_BeagleBone/ProBot.py 2'],stdout = subprocess.PIPE,stderr = subprocess.PIPE,shell=True)
+                        		subprocess.Popen(['python /home/machinekit/ProBot/ProBot_BeagleBone/ProBot.py 2'],stdout = subprocess.PIPE,stderr = subprocess.PIPE,shell=True)										
 					self.OnlyOnce=1
-
-
-
-if __name__ == '__main__':
-    StartAndStopClass = StartAndStopClass()
-    StartAndStopClass.StartAndStop_Value()
-
+			return "stopped"
+			

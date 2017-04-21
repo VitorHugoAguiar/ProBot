@@ -19,9 +19,7 @@ import RestartProgramFile
 import MotorsControlFile
 import StartFile
 import mpu6050File
-import SocketStartAndStop3
 import SocketStartAndStop2
-
 
 pidf = open("/home/machinekit/ProBot/ProBot_BeagleBone/pidProBot.tmp","w")
 pidf.write(str(os.getpid()))
@@ -40,10 +38,7 @@ MotorsControlSignals = MotorsControlFile.MotorsControlClass()
 InitParameters = InitProgram.StartProgram()
 userChoice = InitParameters[0]
 mpu6050=mpu6050File.mpu6050Class()
-Pub_Sub6 = SocketStartAndStop3.SocketClass()
-Pub_Sub5 = SocketStartAndStop2.SocketClass()
-
-#publisher5=Pub_Sub5.publisher("start")
+Pub_Sub2 = SocketStartAndStop2.SocketClass()
 
 class ProBot():
    
@@ -76,8 +71,8 @@ class ProBot():
 		while True:
 		    try:
 		    	LoopTimeStart=time.time()             
-                        subscriber6 = Pub_Sub6.subscriber() # Readings from the WebPage
-                        if subscriber6=="stop":
+                        subscriber2 = Pub_Sub2.subscriber() # Readings from the WebPage
+                        if subscriber2=="stop":
                                 raise KeyboardInterrupt()
 
 		    	# Reading the values from the webpage
@@ -101,8 +96,8 @@ class ProBot():
 	            	MotorsControlSignals.MotorsControl(rightMotor, leftMotor, userChoice)
 
 		    	LoopTimeEnd=time.time()
-	            	self.LoopTimeResult=LoopTimeEnd-LoopTimeStart
-				
+	            	self.LoopTimeResult=LoopTimeEnd-LoopTimeStart				
+
 		    except IOError, err:
 			print(IOError, err)
                     	continue

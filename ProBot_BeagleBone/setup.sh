@@ -12,17 +12,13 @@ while true; do
     esac
 done
 
-(crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_Angle.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_Battery.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_WebPage.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (crontab -l ; echo "@reboot python $(pwd -P)/StartAndStop.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (crontab -l ; echo "@reboot python $(pwd -P)/StartAndStop2.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot python $(pwd -P)/StartAndStop3.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (crontab -l ; echo "@reboot sh $(pwd -P)/EnableEncoders.sh") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/WebClient.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot sleep 50 && python $(pwd -P)/StartAndStop.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot sleep 30 && python $(pwd -P)/AngleFile.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot sleep 30 && python $(pwd -P)/BatteryMonitorFile.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+(crontab -l ; echo "@reboot sleep 50 && python $(pwd -P)/BatteryMonitorFile.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 
 }
 
