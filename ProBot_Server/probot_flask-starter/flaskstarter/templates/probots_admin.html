@@ -4,6 +4,9 @@
 {% block js %}
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="{{ url_for('static', filename='js/autobahn.min.js' )}}"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	
+
 {% endblock %}
 
 
@@ -34,7 +37,7 @@
     margin: 0 30px 0 -25px;
     height: 50px;
     width: 50px;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
 }
 
 .input-hidden {
@@ -116,6 +119,7 @@ background: #333333;
 <br>
 <br>
 
+
 <div align="center" id="my-content">		
 	
 <div class="container">
@@ -137,18 +141,18 @@ background: #333333;
                 	<div class="row-fluid">
                 	  <div class="span4"><a class="thumbnail"><input type="radio" name="options" value="1" id="probot1" class="input-hidden" onclick="checkform(this.value);" />
 					  <label for="probot1"><img src="../static/images/IMG_4464.jpg" /></label></a><p>
-                	  <div class="chip" ><img src="../static/images/offline.png"  id="chip1"><img src="../static/images/not_available.png" id="chip_Available1"><img src="../static/images/not_executing.png" id="chip_Executing1">ProBot 1</div>
+                	  <div class="chip"><img src="../static/images/offline.png" id="chip1"><img src="../static/images/not_available.png" id="chip_Available1"><img src="../static/images/not_executing.png" id="chip_Executing1"><div class="fa" style="right:10%; position:relative; font-size:200%;" id="battery1"></div>ProBot 1</div>
                 	  </div>
                 	  
                 	  <div class="span4"><a class="thumbnail"><input type="radio" name="options" value="2" id="probot2" class="input-hidden" onclick="checkform(this.value);" />
 					  <label for="probot2"><img src="../static/images/IMG_8585.jpg" /></label></a><p>
-                	  <div class="chip"><img src="../static/images/offline.png" id="chip2"><img src="../static/images/not_available.png" id="chip_Available2"><img src="../static/images/not_executing.png" id="chip_Executing2">ProBot 2</div>
+                	  <div class="chip"><img src="../static/images/offline.png" id="chip2"><img src="../static/images/not_available.png" id="chip_Available2"><img src="../static/images/not_executing.png" id="chip_Executing2"><div class="fa" style="right:10%; position:relative; font-size:200%;" id="battery2"></div>ProBot 2</div>
                 	  </div>
                 	  
                 	  
                 	  <div class="span4"><a class="thumbnail"><input type="radio" name="options" value="3" id="probot3" class="input-hidden" onclick="checkform(this.value);" />
 					  <label for="probot3"><img src="../static/images/P_20161119_111859.jpg" /></label></a><p>
-                	  <div class="chip"><img src="../static/images/offline.png"  id="chip3"><img src="../static/images/not_available.png" id="chip_Available3"><img src="../static/images/not_executing.png" id="chip_Executing3">ProBot 3</div>
+                	  <div class="chip"><img src="../static/images/offline.png"  id="chip3"><img src="../static/images/not_available.png" id="chip_Available3"><img src="../static/images/not_executing.png" id="chip_Executing3"><div class="fa" style="right:10%; position:relative; font-size:200%;" id="battery3"></div>ProBot 3</div>
                 	  </div>
 
                 	</div><!--/row-fluid-->
@@ -158,18 +162,18 @@ background: #333333;
                 	<div class="row-fluid">
                 	  <div class="span4"><a class="thumbnail"><input type="radio" name="options" value="4" id="probot4" class="input-hidden" onclick="checkform(this.value);" />
 					  <label for="probot4"><img src="../static/images/Website-Under-Construction.jpg" /></label></a><p>
-                	  <div class="chip"><img src="../static/images/offline.png"  id="chip4"><img src="../static/images/not_available.png" id="chip_Available4"><img src="../static/images/not_executing.png" id="chip_Executing4">ProBot 4</div>
+                	  <div class="chip"><img src="../static/images/offline.png"  id="chip4"><img src="../static/images/not_available.png" id="chip_Available4"><img src="../static/images/not_executing.png" id="chip_Executing4"><div class="fa" style="right:10%; position:relative; font-size:200%;" id="battery4"></div>ProBot 4</div>
                 	  </div>
                 	  
                 	  <div class="span4"><a class="thumbnail"><input type="radio" name="options" value="5" id="probot5" class="input-hidden" onclick="checkform(this.value);" />
 					  <label for="probot5"><img src="../static/images/Website-Under-Construction.jpg" /></label></a><p>
-                	  <div class="chip"><img src="../static/images/offline.png"  id="chip5"><img src="../static/images/not_available.png" id="chip_Available5"><img src="../static/images/not_executing.png" id="chip_Executing5">ProBot 5</div>
+                	  <div class="chip"><img src="../static/images/offline.png"  id="chip5"><img src="../static/images/not_available.png" id="chip_Available5"><img src="../static/images/not_executing.png" id="chip_Executing5"><div class="fa" style="right:10%; position:relative; font-size:200%;" id="battery5"></div>ProBot 5</div>
                 	  </div>
                 	  
                 	  
                 	  <div class="span4"><a class="thumbnail"><input type="radio" name="options" value="6" id="probot6" class="input-hidden" onclick="checkform(this.value);" />
 					  <label for="probot6"><img src="../static/images/Website-Under-Construction.jpg" /></label></a><p>
-                	  <div class="chip"><img src="../static/images/offline.png"  id="chip6"><img src="../static/images/not_available.png" id="chip_Available6"><img src="../static/images/not_executing.png" id="chip_Executing6">ProBot 6</div>
+                	  <div class="chip"><img src="../static/images/offline.png"  id="chip6"><img src="../static/images/not_available.png" id="chip_Available6"><img src="../static/images/not_executing.png" id="chip_Executing6"><div class="fa" style="right:10%; position:relative; font-size:200%;" id="battery6"></div>ProBot 6</div>
                 	  </div>
 
                 	</div><!--/row-fluid-->
@@ -214,7 +218,7 @@ background: #333333;
                 	<div class="row-fluid">
                 	  <div class="span6"><a class="thumbnail"><input type="radio" name="options" value="1" id="probot1" class="input-hidden" onclick="checkform(this.value);" />
 					  <label for="probot1"><img src="../static/images/IMG_4464.jpg" /></label></a><p>
-                	  <div class="chip"><img src="../static/images/offline.png" id="chipM1"><img src="../static/images/not_available.png" id="chip_AvailableM1"><img src="../static/images/not_executing.png" id="chip_ExecutingM1">ProBot 1</div>
+                	  <div class="chip"><img src="../static/images/offline.png" id="chipM1"><img src="../static/images/not_available.png" id="chip_AvailableM1"><img src="../static/images/not_executing.png" id="chip_ExecutingM1"><div class="fa" style="right:10%; position:relative; font-size:200%;" id="batteryM1"></div>ProBot 1</div>
                 	  </div>
                 	</div><!--/row-fluid-->
                 </div><!--/item-->        
@@ -223,7 +227,7 @@ background: #333333;
                 	<div class="row-fluid">                
                 	  <div class="span6"><a class="thumbnail"><input type="radio" name="options" value="2" id="probot2" class="input-hidden" onclick="checkform(this.value);" />
 					  <label for="probot2"><img src="../static/images/IMG_8585.jpg" /></label></a><p>
-					  <div class="chip"><img src="../static/images/offline.png" id="chipM2"><img src="../static/images/not_available.png" id="chip_AvailableM2"><img src="../static/images/not_executing.png" id="chip_ExecutingM2">ProBot 2</div>
+					  <div class="chip"><img src="../static/images/offline.png" id="chipM2"><img src="../static/images/not_available.png" id="chip_AvailableM2"><img src="../static/images/not_executing.png" id="chip_ExecutingM2"><div class="fa" style="right:10%; position:relative; font-size:200%;" id="batteryM2"></div>ProBot 2</div>
                 	  </div>  
                 	</div><!--/row-fluid-->
                 </div><!--/item-->   
@@ -232,7 +236,7 @@ background: #333333;
                 	<div class="row-fluid">                             	  
                 	  <div class="span6"><a class="thumbnail"><input type="radio" name="options" value="3" id="probot3" class="input-hidden" onclick="checkform(this.value);" />
 					  <label for="probot3"><img src="../static/images/P_20161119_111859.jpg" /></label></a><p>
-					  <div class="chip"><img src="../static/images/offline.png" id="chipM3"><img src="../static/images/not_available.png" id="chip_AvailableM3"><img src="../static/images/not_executing.png" id="chip_ExecutingM3">ProBot 3</div>
+					  <div class="chip"><img src="../static/images/offline.png" id="chipM3"><img src="../static/images/not_available.png" id="chip_AvailableM3"><img src="../static/images/not_executing.png" id="chip_ExecutingM3"><div class="fa" style="right:10%; position:relative; font-size:200%;" id="batteryM3"></div>ProBot 3</div>
                 	  </div>
                 	</div><!--/row-fluid-->
                 </div><!--/item-->
@@ -241,7 +245,7 @@ background: #333333;
                 	<div class="row-fluid">
                 	  <div class="span6"><a class="thumbnail"><input type="radio" name="options" value="4" id="probot4" class="input-hidden" onclick="checkform(this.value);" />
 					  <label for="probot4"><img src="../static/images/Website-Under-Construction.jpg" /></label></a><p>
-					  <div class="chip"><img src="../static/images/offline.png" id="chipM4"><img src="../static/images/not_available.png" id="chip_AvailableM4"><img src="../static/images/not_executing.png" id="chip_ExecutingM4">ProBot 4</div>
+					  <div class="chip"><img src="../static/images/offline.png" id="chipM4"><img src="../static/images/not_available.png" id="chip_AvailableM4"><img src="../static/images/not_executing.png" id="chip_ExecutingM4"><div class="fa" style="right:10%; position:relative; font-size:200%;" id="batteryM4"></div>ProBot 4</div>
                 	  </div>
                 	</div><!--/row-fluid-->
                 </div><!--/item-->     
@@ -250,7 +254,7 @@ background: #333333;
                 	<div class="row-fluid">
                 	  <div class="span6"><a class="thumbnail"><input type="radio" name="options" value="5" id="probot5" class="input-hidden" onclick="checkform(this.value);" />
 					  <label for="probot5"><img src="../static/images/Website-Under-Construction.jpg" /></label></a><p>
-					  <div class="chip"><img src="../static/images/offline.png" id="chipM5"><img src="../static/images/not_available.png" id="chip_AvailableM5"><img src="../static/images/not_executing.png" id="chip_ExecutingM5">ProBot 5</div>
+					  <div class="chip"><img src="../static/images/offline.png" id="chipM5"><img src="../static/images/not_available.png" id="chip_AvailableM5"><img src="../static/images/not_executing.png" id="chip_ExecutingM5"><div class="fa" style="right:10%; position:relative; font-size:200%;" id="batteryM5"></div>ProBot 5</div>
                 	  </div>
                 	</div><!--/row-fluid-->
                 </div><!--/item--> 
@@ -259,7 +263,7 @@ background: #333333;
                 	<div class="row-fluid">  	  
                 	  <div class="span6"><a class="thumbnail"><input type="radio" name="options" value="6" id="probot6" class="input-hidden" onclick="checkform(this.value);" />
 					  <label for="probot6"><img src="../static/images/Website-Under-Construction.jpg" /></label></a><p>
-					  <div class="chip"><img src="../static/images/offline.png" id="chipM6"><img src="../static/images/not_available.png" id="chip_AvailableM6"><img src="../static/images/not_executing.png" id="chip_ExecutingM6">ProBot 6</div>
+					  <div class="chip"><img src="../static/images/offline.png" id="chipM6"><img src="../static/images/not_available.png" id="chip_AvailableM6"><img src="../static/images/not_executing.png" id="chip_ExecutingM6"><div class="fa" style="right:10%; position:relative; font-size:200%;" id="batteryM6"></div>ProBot 6</div>
                 	  </div>
 
                 	</div><!--/row-fluid-->
@@ -284,6 +288,9 @@ background: #333333;
 
 <script>
 
+var a;
+
+
 $(document).ready(function() {
     $('#myCarousel').carousel({
 	    interval: false
@@ -295,9 +302,8 @@ $(document).ready(function() {
 
 
 var availableProBots=[];
-
+var BatProBots=[];
 var availableWebProBots=[];
-var availableWebProBots1=[];
 var probotOnline=[];
 var probotAvailableWeb=[];
 var numberProbots=6;
@@ -309,15 +315,22 @@ var chip_Available ="chip_Available";
 var chip_AvailableM = "chip_AvailableM";
 var chip_Executing ="chip_Executing";
 var chip_ExecutingM = "chip_ExecutingM";
+var battery="battery";
+var a;
+var batteryM="batteryM";
+var b;
 
 function update_values() {
             $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
             $.getJSON($SCRIPT_ROOT+"/checkProbotOnline",
                 function(data) {
-                    $("#available_probot").text(data.available_probot);
+                    $("#available_probot").text(data.available_probot3);
                     $("#availableWeb_probot").text(data.availableWeb_probot);
-                    availableProBots=data.available_probot;
+                    $("#BatProBots").text(data.BatProBots);
+                    availableProBots=data.available_probot3;
                     availableWebProBots=data.availableWeb_probot;
+                    BatProBots=data.BatProBots;
+                    
                     $('#probot1').load(document.URL + ' #probot1');
                     $('#probot2').load(document.URL + ' #probot2');
                     $('#probot3').load(document.URL + ' #probot3');
@@ -337,7 +350,7 @@ function checkform(value) {
 		return false;
 		
 	}
-	
+	console.log(enableStart[value])
     if((enableStart[value]==0) || (enableStart[value]==undefined)) {
         alert("This ProBot is offline or StartAndStop.py is not working.");
         return false;
@@ -403,6 +416,17 @@ for(var i = 1; i <=numberProbots; i++)
 	}
 }}}
 
+if(availableWebProBots.length==undefined){
+for(var i = 1; i < numberProbots; i++)
+{
+//when is offline because someone is using it
+chip_Available="chip_Available"+i;
+chip_AvailableM="chip_AvailableM"+ i;
+document.getElementById(chip_Available).src = "../static/images/not_available.png";
+document.getElementById(chip_AvailableM).src = "../static/images/not_available.png";
+}
+
+}else{
 
 for(var i = 0; i < availableWebProBots.length; i++)
 {
@@ -424,9 +448,79 @@ for(var i = 1; i <=numberProbots; i++)
 		if(availableWebProBots[i-1]==1) {
 		document.getElementById(chip_Available).src = "../static/images/available.png";
 		document.getElementById(chip_AvailableM).src = "../static/images/available.png";
+}}
+
+}}
+
+
+if(BatProBots.length==undefined){
+for(var i = 1; i < numberProbots; i++)
+{
+battery="battery"+i;
+a = document.getElementById(battery);
+a.innerHTML = "&#xf243;";
+a.style.color = 'red';
+
+batteryM="batteryM"+i;
+b = document.getElementById(batteryM);
+b.innerHTML = "&#xf243;";
+b.style.color = 'red';
+
 }
 
-}}}
+}else{
+
+for(var i = 0; i < BatProBots.length; i++)
+{
+
+for(var i = 1; i <=numberProbots; i++)
+{	
+
+battery="battery"+i;
+a = document.getElementById(battery);
+
+batteryM="batteryM"+i;
+b = document.getElementById(batteryM);
+
+	if(BatProBots[i-1]==0){
+		//when is offline (turn off)
+		a.innerHTML = "&#xf243;";
+		a.style.color = 'red';
+		b.innerHTML = "&#xf243;";
+		b.style.color = 'red';
+
+	}
+
+	if(BatProBots[i-1]>40 && BatProBots[i-1]<=50){
+		//when is offline (turn off)
+		a.innerHTML = "&#xf243;";
+		a.style.color = 'red';
+		b.innerHTML = "&#xf243;";
+		b.style.color = 'red';
+
+	}
+		
+	if(BatProBots[i-1]>50 && BatProBots[i-1]<=70){
+		a.innerHTML =  "&#xf242;";
+		a.style.color = 'orange';
+		b.innerHTML =  "&#xf242;";
+		b.style.color = 'orange';
+
+}
+
+	if(BatProBots[i-1]>70 && BatProBots[i-1]<=100){
+		a.innerHTML =  "&#xf240;";
+		a.style.color = 'green';	
+		b.innerHTML =  "&#xf240;";
+		b.style.color = 'green';	
+}
+
+}
+
+}}
+
+
+}
 
 
 function ProBotTurnOnSendMsg(session, probot_topic, enableStartValue)
@@ -640,6 +734,14 @@ ProBotTurnOn = function (control_id, enableStartValue)
 	chip_ExecutingM="chip_ExecutingM"+ i;
 	document.getElementById(chip_Executing).style.display = "block";
 	document.getElementById(chip_ExecutingM).style.display = "block";
+	
+	battery="battery"+i;
+	document.getElementById(battery).style.display = "block";
+	
+		
+	batteryM="batteryM"+i;
+	document.getElementById(batteryM).style.display = "block";
+
 }
 
 	enable=0;
@@ -663,6 +765,12 @@ connection.onclose = function (reason, details){
 	chip_ExecutingM="chip_ExecutingM"+ i;
 	document.getElementById(chip_Executing).style.display = "none";
 	document.getElementById(chip_ExecutingM).style.display = "none";
+	
+	battery="battery"+i;
+	document.getElementById(battery).style.display = "none";
+	
+	batteryM="batteryM"+i;
+	document.getElementById(batteryM).style.display = "none";
 
 }
 	enable=1;

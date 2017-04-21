@@ -8,8 +8,8 @@ main = Blueprint('main', __name__)
 
 available_probot = {}
 available_probot2 = {}
-availableWeb_probot = {}
-availableWeb_probot2 = []
+available_probot3 = {}
+BatProBots = {}
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -28,15 +28,12 @@ def probots():
 	probots_available_db = Probot.query.filter((Probot.is_available == 1) & (Probot.battery >= 20)).all()
 
 	if probots_available_db == []:	#NO probots available
-		print("available_probot", available_probot)
 		available_probot = {}
 
 	else:							#At least one probot available
 
 		available_probot=[(probot.id) 
 			for probot in probots_available_db]
-		
-		print("available_probot", available_probot)
 
 		if request.method == 'POST':			#ALL went good
 		
@@ -61,39 +58,54 @@ def probots():
 			else:
 				return render_template('botcontrol.html', chosen_probot_id=chosen_probot_id) #render the file with the probot control "console"
 
-	return render_template('probots.html', field=available_probot)
+	return render_template('probots.html')
 	
 @app.route('/probots_admin', methods=['GET', 'POST'])
 @login_required
 def probots_admin():
 
 	global available_probot2		#variable to control the HTML content, True: Shows the form 
-	probots_available_db = Probot.query.filter((Probot.is_available == 1) or (Probot.is_available == 2)).all()
-
-	if probots_available_db == []:	#NO probots available
-		available_probot = {}
+	global available_probot3		#variable to control the HTML content, True: Shows the form 
+	global BatProBots
+    	
+	probots_available_db2 = Probot.query.filter((Probot.is_available == 1) & (Probot.battery >= 20)).all() # available web
+	probots_available_db3 = Probot.query.filter((Probot.battery > 0)).all() # probots connected to the server
+	probots_available_db4 = Probot.query.filter((Probot.id != 0)).all() # probots connected to the server
+	
+	if probots_available_db2 == []:	#NO probots available
+		available_probot2 = {}
 
 	else:							#At least one probot available
-
 		available_probot2=[(probot.id) 
-			for probot in probots_available_db]
+			for probot in probots_available_db2]
 
-	return render_template('probots_admin.html', field=available_probot2)
+	if probots_available_db3 == []:	#NO probots available
+		available_probot3 = {}
 
+	else:							#At least one probot available
+			
+		available_probot3=[(probot.id) 
+			for probot in probots_available_db3]
 
+	if probots_available_db4 == []:	#NO probots available
+		BatProBots = {}
+
+	else:							#At least one probot available			
+		BatProBots=[(probot.battery) 
+			for probot in probots_available_db4]
+    
+	return render_template('probots_admin.html')
 
 @app.route('/bridge', methods=['POST'])
 def message():
-    global availableWeb_probot
-    global availableWeb_probot2
+
     probot_id = None
     battery = None
     body = json.loads(request.get_data())
     probot_id = int(body["args"][0])
     probot = Probot.query.filter_by(id = probot_id).first()
-    availableWeb_probot3=[]
     #ProBots status -> 0 - Not avaiable
-    #				   1 - Avaiable
+    #				   1 - available
     #				   2 - Waiting for the baterry value			
     if body["args"][2] == "UPDATE":
         probot.battery = int((body["args"][1]))
@@ -102,16 +114,12 @@ def message():
             
     elif body["args"][2] == "BATTERY TIMEOUT":
 		probot.is_available = 2
+		probot.battery=0
 		
     elif body["args"][2] == "WEB TIMEOUT":
         if probot.is_available == 0:
             probot.is_available = 2
-            
-    availableWeb_probot[probot_id]=probot.is_available
-    for index, elem in enumerate(availableWeb_probot):
-        availableWeb_probot3.insert(index, availableWeb_probot[elem])
-    availableWeb_probot2=availableWeb_probot3
-    
+
     try:
         db.session.add(probot)
         db.session.commit()
@@ -128,4 +136,4 @@ def message():
     
 @app.route('/checkProbotOnline', methods= ['GET'])
 def checkProbotOnline():
-    return jsonify(available_probot=available_probot, availableWeb_probot=availableWeb_probot2)
+    return jsonify(available_probot=available_probot, availableWeb_probot=available_probot2, available_probot3=available_probot3, BatProBots=BatProBots)
