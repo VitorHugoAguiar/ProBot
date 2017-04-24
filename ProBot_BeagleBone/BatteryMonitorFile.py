@@ -26,22 +26,20 @@ class BatteryMonitorClass():
 	            
             	# Reading the voltage from the LiPo battery
 		while True:
-            		try:	
-				BatteryVoltageVal = ADC.read(Pconst.AnalogPinLiPo)          # ADC readings from the battery
-				BatteryRealValue=(BatteryVoltageVal*1.8)*(107200/7200)
-				BatteryPercentage=int((14.2857*BatteryRealValue)-265.714)   
-								
-            			if BatteryPercentage < Pconst.MinRedLiPo:					        			# Definition of the Red region for the battery
+            		try:									
+				BatteryVoltage = (1.8 * ADC.read(Pconst.AnalogPinLiPo) * (100 + 7.620)/7.620) + 0.5       # Vout = 1.8 * Vin * (R1+R2/R2) + (adjust value because of the resistor tolerance) 
+							
+            			if BatteryVoltage < Pconst.MinRedLiPo:					        	  # Definition of the Red region for the battery
                 			GPIO.output(Pconst.GreenLED, GPIO.HIGH)
                 			GPIO.output(Pconst.RedLED, GPIO.HIGH)
 	    			else:
 
 					GPIO.output(Pconst.RedLED, GPIO.LOW)
 					
-				print BatteryPercentage											
-				publisher=Pub_Sub2.publisher(BatteryPercentage)
 
-							
+				print round(BatteryVoltage, 2)											
+				publisher=Pub_Sub2.publisher(int(round(BatteryVoltage, 0)))
+
             		except:
 				print("Unexpected error:\n", sys.exc_info()[0])
 				sys.exit('\n\nBattery readings STOPPED!!!\n')

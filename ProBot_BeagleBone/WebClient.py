@@ -53,8 +53,8 @@ class AppSession(ApplicationSession):
 		print(msg2)
         	publisher1=Pub_Sub.publisher(msg2)
          	    
-        sub = yield self.subscribe(probot_topic, 'probot-topic-probot_id')
-        self.log.info("subscribed to topic 'probot-topic-probot_id'")
+        sub = yield self.subscribe(probot_topic, 'probot-topic-1')
+        self.log.info("subscribed to topic 'probot-topic-1'")
 
         ## SUBSCRIBE to a topic and receive events
         def probot_topic_StartAndStop(msg):
@@ -62,33 +62,28 @@ class AppSession(ApplicationSession):
                 print(msg2)
                 publisher2=Pub_Sub3.publisher(msg2)
 
-        sub = yield self.subscribe(probot_topic_StartAndStop, 'probot-StartAndStop-probot_id')
-        self.log.info("subscribed to topic 'probot-StartAndStop-probot_id'")
+        sub = yield self.subscribe(probot_topic_StartAndStop, 'probot-StartAndStop-1')
+        self.log.info("subscribed to topic 'probot-StartAndStop-1'")
 
 
-	self.publish('general-topic', "probot-probot_id")
+	self.publish('general-topic', "probot-1")
 	TimerVariablesToWebPage()
        	while True:
 		## PUBLISH an event
        		Bat = Pub_Sub2.subscriber()
 
 		if Bat==None:
-			Bat=100	
-		if self.AngleValue==None:
-			self.AngleValue=90
-		if self.MainRoutine==None:
-			self.MainRoutine="0"
-
-		self.publish('probot-bat-probot_id', Bat)
-		self.publish('probot-angle-probot_id', self.AngleValue)
-                self.publish('probot-mainRoutine-probot_id', self.MainRoutine)		
-		self.log.info("published on probot-bat-probot_id: {msg}", msg=Bat)
-		self.log.info("published on probot-angle-probot_id: {msg}", msg=self.AngleValue)
-                self.log.info("published on probot-mainRoutine-probot_id: {msg}", msg=self.MainRoutine)
+			Bat=0	
+		
+		self.publish('probot-bat-1', Bat)
+		self.publish('probot-angle-1', self.AngleValue)
+                self.publish('probot-mainRoutine-1', self.MainRoutine)		
+		self.log.info("published on probot-bat-1: {msg}", msg=Bat)
+		self.log.info("published on probot-angle-1: {msg}", msg=self.AngleValue)
+                self.log.info("published on probot-mainRoutine-1: {msg}", msg=self.MainRoutine)
         	yield sleep(1)
 
     def onDisconnect(self):
-	#global t
         print("disconnected")
 	publisher=Pub_Sub.publisher("['0.000', '0.000', '0.000', '0.000']")  
 	if self.timerVariables.isAlive():
@@ -107,7 +102,7 @@ if __name__ == '__main__':
     )
     # ...which we pass as "ssl=" to ApplicationRunner (passed to SSL4ClientEndpoint)
     runner = ApplicationRunner(
-        environ.get("AUTOBAHN_DEMO_ROUTER", u"wss://server_ip:8080/ws"),
+        environ.get("AUTOBAHN_DEMO_ROUTER", u"wss://89.109.64.175:8080/ws"),
         u"realm1",
         ssl=options,  # try removing this, but still use self-signed cert
     )
