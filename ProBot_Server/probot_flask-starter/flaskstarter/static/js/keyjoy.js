@@ -268,7 +268,7 @@ window.setInterval(function (){
 			//console.log("battery voltage: " + dataReceived+"%");
 			
 			
-			if (dataReceived>=0 && dataReceived<=40){
+			if (dataReceived>=0 && dataReceived<=20){
 			if(window.stopAlerts!=1){
 			window.stopAlerts=1;
 			alert('The Probot'+ probot_id+' battery is too low. Please click OK and choose another ProBot.')
@@ -276,17 +276,17 @@ window.setInterval(function (){
 			
       		}			
 			
-			if (dataReceived>40 && dataReceived<=50){
+			if (dataReceived>20 && dataReceived<=21){
       			a.innerHTML = "&#xf243;";
       			a.style.color = 'red';
       		}
 
-    		if (dataReceived>50 && dataReceived<=70){
+    		if (dataReceived>21 && dataReceived<=22){
       			a.innerHTML = "&#xf242;";
       			a.style.color = 'orange';
 			}
 	
-    		if (dataReceived>70 && dataReceived<=100){
+    		if (dataReceived>22){
       			a.innerHTML = "&#xf240;";
       			a.style.color = 'green';
 			}
