@@ -7,6 +7,8 @@ import subprocess
 import sys
 import os
 import signal
+import threading
+import multiprocessing
 
 Pub_Sub = SocketStartAndStop.SocketClass()
 Pub_Sub2 = SocketStartAndStop2.SocketClass()
@@ -16,8 +18,13 @@ class StartAndStopClass():
     def __init__(self, StartAndStopMsg=0, OnlyOnce=0):
         self.StartAndStopMsg = StartAndStopMsg
 	self.OnlyOnce=OnlyOnce
-    def StartAndStop_Value(self):
 
+    def startThread(self):
+	subprocess.Popen(['python /home/machinekit/ProBot/ProBot_BeagleBone/ProBot.py 2'], stdout = subprocess.PIPE, stderr = subprocess.PIPE, shell=True, preexec_fn=os.setpgrp, close_fds=True)
+	return
+
+    def StartAndStop_Value(self):
+		
         	subscriber = Pub_Sub.subscriber() # Readings from the WebPage
 		if subscriber is None:
 			self.StartAndStopMsg=0
@@ -46,7 +53,7 @@ class StartAndStopClass():
                 	#Not running
 			if self.OnlyOnce==0:
                 		if self.StartAndStopMsg=="start":
-                        		subprocess.Popen(['python /home/machinekit/ProBot/ProBot_BeagleBone/ProBot.py 2'],stdout = subprocess.PIPE,stderr = subprocess.PIPE,shell=True)										
+					multiprocessing.Process(target=self.startThread).start()   			
 					self.OnlyOnce=1
 			return "stopped"
 			
