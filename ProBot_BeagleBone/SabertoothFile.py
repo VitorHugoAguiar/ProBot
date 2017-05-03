@@ -67,15 +67,13 @@ class SabertoothClass():
         try:
 	    import StartFile
             InitProgram=StartFile.StartFileClass()
+	    
 	    # Starting the communication with Sabertooth
             GPIO.output(Pconst.RedLED, GPIO.HIGH)
             self.set_baud(Pconst.addr, Pconst.baud)
             time.sleep(3)												# Wait to stabilize the communication
 
             self.stopAndReset()
-
-	    GPIO.output(Pconst.RedLED, GPIO.LOW)
-	    GPIO.output(Pconst.BlueLED, GPIO.HIGH)
 
        	except:
 	    InitProgram.StopProgram()

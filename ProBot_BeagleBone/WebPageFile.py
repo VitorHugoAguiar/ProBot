@@ -1,14 +1,14 @@
 #!/usr/bin/python
 
 # Python Standart Library Imports
-import SocketWebPageFile
 import LowPassFilter
 import ProBotConstantsFile
 import decimal
+import SocketWebPageFile
 
-Pub_Sub = SocketWebPageFile.SocketClass()
 LPF = LowPassFilter.LowPassFilter()
 Pconst = ProBotConstantsFile.Constants()
+Pub_Sub = SocketWebPageFile.SocketClass()
 
 class WebPageClass():
 
@@ -23,7 +23,8 @@ class WebPageClass():
 	self.count=count
 
     def WebPage_Values(self):
-       	subscriber = Pub_Sub.subscriber() # Readings from the WebPage
+	subscriber = Pub_Sub.subscriber()
+		
 	if self.count>=100:
         	self.PositionRef=0
        	        self.TurnMotorRight=0
@@ -34,6 +35,7 @@ class WebPageClass():
 		subscriber=0
 		self.count+=1	
         else:
+		#print subscriber
 	    	self.count=0
 		incomingMsg1 = subscriber.replace("[", "")
 	    	incomingMsg2 = incomingMsg1.replace("'", "")
@@ -54,5 +56,5 @@ class WebPageClass():
 	    	self.PositionRef = -float(ForwardReverse*Pconst.ajustFR)
 	    	self.TurnMotorRight = float(LeftRight*Pconst.ajustLR)
 	    	self.TurnMotorLeft = -float(LeftRight*Pconst.ajustLR)
-				
+								
         return  [round(self.PositionRef, 5), round (self.TurnMotorRight, 5), round(self.TurnMotorLeft, 5)]

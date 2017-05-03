@@ -1,19 +1,18 @@
 #!/usr/bin/python
 
-import Adafruit_BBIO.GPIO as GPIO
 import sys
 import ProBotConstantsFile
-import SocketWebPageFile
 import PWMFile
 import SabertoothFile
+import Adafruit_BBIO.GPIO as GPIO
 
 Sabertooth = SabertoothFile.SabertoothClass()
 PWM = PWMFile.PWMClass()
 Pconst = ProBotConstantsFile.Constants()
-Pub_Sub = SocketWebPageFile.SocketClass()
 
-GPIO.setup(Pconst.GreenLED, GPIO.OUT)
+# Configuration the type of GPIO's
 GPIO.setup(Pconst.RedLED, GPIO.OUT)
+GPIO.setup(Pconst.GreenLED, GPIO.OUT)
 GPIO.setup(Pconst.BlueLED, GPIO.OUT)
 
 
@@ -23,9 +22,28 @@ class StartFileClass():
       try:
         if len(sys.argv) >= 2:
           userChoice=sys.argv[1]
+	  if  ((userChoice!="1") and (userChoice!="2")):
+		print ("\nOption not available. Try again with 'python ProBot.py 1 (or 2)' or 'python ProBot.py 1 (or 2) manual'\n")
+		sys.exit(1)
+                raise
+		
+		
 	  userChoiceFile = open("userChoice.txt", "wb")
 	  userChoiceFile.write(userChoice);
 	  userChoiceFile.close()
+	  if len(sys.argv) == 3:
+          	if  sys.argv[2]!="manual":
+                	print ("\nOption not available. Try again with 'python ProBot.py 1 (or 2)' or 'python ProBot.py 1 (or 2) manual'\n")
+			sys.exit(1)
+	               	raise
+			
+	  	else:
+			StartAndStop="1"
+
+	  	StartAndStopFile = open("StartAndStop.txt", "wb")
+          	StartAndStopFile.write(StartAndStop);
+          	StartAndStopFile.close()
+	
 	  
         # We create a file to store the userChoice (Sabertooth or PWM)
         userChoiceFile = open("userChoice.txt", "r+")
@@ -66,3 +84,8 @@ class StartFileClass():
       userChoiceFile = open("userChoice.txt", "wb")
       userChoiceFile.write("0")
       userChoiceFile.close()
+
+      StartAndStopFile = open("StartAndStop.txt", "wb")
+      StartAndStopFile.write("0");
+      StartAndStopFile.close()
+

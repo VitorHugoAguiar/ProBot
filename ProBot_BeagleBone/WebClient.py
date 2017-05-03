@@ -14,81 +14,76 @@ from twisted.logger import Logger
 from twisted.internet._sslverify import OpenSSLCertificateAuthorities
 from twisted.internet.ssl import CertificateOptions
 from OpenSSL import crypto
-from threading import Timer,Thread,Event
+#from threading import Timer,Thread,Event
+#import multiprocessing
 
-
-import SocketWebPageFile
-import SocketBatteryFile
-import SocketStartAndStop
 import StartAndStop
 import mpu6050File 
+import ProBotConstantsFile
+import Adafruit_BBIO.ADC as ADC
+import SocketWebPageFile
+import SocketStartAndStop
+import SocketStartAndStop2
+
 
 # Initialization of classes from local files
-Pub_Sub = SocketWebPageFile.SocketClass()
-Pub_Sub2 = SocketBatteryFile.SocketClass()
-Pub_Sub3 = SocketStartAndStop.SocketClass()
 StartAndStop = StartAndStop.StartAndStopClass()
 mpu6050=mpu6050File.mpu6050Class()
+Pub_SubWeb = SocketWebPageFile.SocketClass()
+Pub_SubStart = SocketStartAndStop.SocketClass()
+Pub_SubStart2 = SocketStartAndStop2.SocketClass()
+
+Pconst = ProBotConstantsFile.Constants()
+ADC.setup()
 
 class AppSession(ApplicationSession):
     
     log = Logger()
 
     @inlineCallbacks
-    def onJoin(self, details):  	
-	self.MainRoutine=0
-    	self.AngleValue = 0
-    	self.timerVariables=0
-	
-	def TimerVariablesToWebPage():	    
-	    self.MainRoutine = StartAndStop.StartAndStop_Value()
-	    self.AngleValue, gyro_yout_scaled = mpu6050.RollPitch()
-
-	    self.timerVariables = Timer(0.005, TimerVariablesToWebPage)
-	    self.timerVariables.start()	    
-	    
-        ## SUBSCRIBE to a topic and receive events
+    def onJoin(self, details):
+	self.MainRoutine="stopped"  	
+	## subscribe to the web topic (interface controls)
         def probot_topic(msg):
-        	msg2=[msg.encode('utf-8') for msg in msg]
-		print(msg2)
-        	publisher1=Pub_Sub.publisher(msg2)
-         	    
-        sub = yield self.subscribe(probot_topic, 'probot-topic-1')
+		Pub_SubWeb.publisher([msg.encode('utf-8') for msg in msg])
+		                        	    
+       	sub = yield self.subscribe(probot_topic, 'probot-topic-1')
         self.log.info("subscribed to topic 'probot-topic-1'")
 
-        ## SUBSCRIBE to a topic and receive events
+        ## subscribe to the StartAndStop topic
         def probot_topic_StartAndStop(msg):
-                msg2=[msg.encode('utf-8') for msg in msg]
-                print(msg2)
-                publisher2=Pub_Sub3.publisher(msg2)
-
+		Pub_SubStart.publisher(str([msg.encode('utf-8') for msg in msg]).replace("[", "").replace("'", "").replace("]", "").replace(" ", "").replace(",", ""))
+		
         sub = yield self.subscribe(probot_topic_StartAndStop, 'probot-StartAndStop-1')
         self.log.info("subscribed to topic 'probot-StartAndStop-1'")
 
-
 	self.publish('general-topic', "probot-1")
-	TimerVariablesToWebPage()
-       	while True:
-		## PUBLISH an event
-       		Bat = Pub_Sub2.subscriber()
+	       	
+	while True:
+		MainRoutine=Pub_SubStart2.subscriber()		
 
-		if Bat==None:
-			Bat=0	
-		
-		self.publish('probot-bat-1', Bat)
-		self.publish('probot-angle-1', self.AngleValue)
+		if MainRoutine!=None:
+			self.MainRoutine=MainRoutine
+		else:
+			not_executing = StartAndStop.StartAndStopToWeb()
+			if not_executing==0:
+				self.MainRoutine=0
+
+           	AngleValue, gyro_yout_scaled = mpu6050.RollPitch()
+		Battery = (1.8 * ADC.read(Pconst.AnalogPinLiPo) * (100 + 7.620)/7.620) + 0.5
+
+		self.publish('probot-bat-1', int(Battery))
+		self.publish('probot-angle-1', AngleValue)
                 self.publish('probot-mainRoutine-1', self.MainRoutine)		
-		self.log.info("published on probot-bat-1: {msg}", msg=Bat)
-		self.log.info("published on probot-angle-1: {msg}", msg=self.AngleValue)
+		self.log.info("published on probot-bat-1: {msg}", msg=int(Battery))
+		self.log.info("published on probot-angle-1: {msg}", msg=AngleValue)
                 self.log.info("published on probot-mainRoutine-1: {msg}", msg=self.MainRoutine)
-        	yield sleep(1)
+        	yield sleep(0.1)
 
     def onDisconnect(self):
         print("disconnected")
-	publisher=Pub_Sub.publisher("['0.000', '0.000', '0.000', '0.000']")  
-	if self.timerVariables.isAlive():
-		self.timerVariables.cancel()
-		self.timerVariables.join(0)
+	Pub_SubWeb.publisher("['0.000', '0.000', '0.000', '0.000']")  
+	
 
 if __name__ == '__main__':
     # load the self-signed cert the server is using

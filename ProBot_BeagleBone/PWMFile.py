@@ -24,11 +24,7 @@ class PWMClass ():
 	def PWMStart(self):
     	    # Starting the communication with the PWM controller
             GPIO.output(Pconst.RedLED, GPIO.HIGH)
-
             time.sleep(3)						# Wait to stabilize the communication
-
-	    GPIO.output(Pconst.RedLED, GPIO.LOW)
-	    GPIO.output(Pconst.BlueLED, GPIO.HIGH)
 	    
 	def PWM_Signals(self, rightMotor, leftMotor):
 

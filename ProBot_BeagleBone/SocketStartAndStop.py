@@ -29,5 +29,5 @@ class SocketClass():
             else:
                 print "error:message timeout"
 
-    def publisher(self, StartAndStop):
-	publisher.send_string('{}'.format(StartAndStop),zmq.NOBLOCK)
+    def publisher(self, var):
+	publisher.send_string('{}'.format(var),zmq.NOBLOCK)

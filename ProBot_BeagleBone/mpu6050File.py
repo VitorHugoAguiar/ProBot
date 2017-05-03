@@ -7,12 +7,12 @@ import time
 import ProBotConstantsFile
 import Adafruit_BBIO.GPIO as GPIO
 import StartFile
-import SocketStartAndStop2
+import SocketStartAndStop
 
 # Initialization of classes from local files
 Pconst = ProBotConstantsFile.Constants()
 InitProgram=StartFile.StartFileClass()
-Pub_Sub2 = SocketStartAndStop2.SocketClass()
+Pub_SubStart = SocketStartAndStop.SocketClass()
 
 # Configuration the type of GPIO's
 GPIO.setup(Pconst.RedLED, GPIO.OUT)
@@ -78,16 +78,28 @@ class mpu6050Class():
 
 
 	def Calibration(self):
-		while True:
-                        subscriber2 = Pub_Sub2.subscriber() # Readings from the WebPage
-                        if subscriber2=="stop":
-                                raise KeyboardInterrupt()
+		import RestartProgramFile
+		RestartProgram = RestartProgramFile.RestartProgramClass()
 
+		print "\nProBot must be at 90 degrees!!!"
+		GPIO.output(Pconst.RedLED, GPIO.LOW)
+		GPIO.output(Pconst.BlueLED, GPIO.HIGH)
+		
+		while True:
+       
+                	if Pub_SubStart.subscriber()=="stop":
+				StartAndStopFile = open("StartAndStop.txt", "wb")
+                                StartAndStopFile.write("0");
+                                StartAndStopFile.close()
+                                RestartProgram.RestartProgramRoutine()
+				
 			Pitch, gyro_yout_scaled=self.RollPitch()
 			
 			if Pitch>-0.5 and Pitch<0.5:
 				break
-                	                	
+
+		print ("\nBe carefull! The mainRoutine is going START!")                	                	
+
 		GPIO.output(Pconst.BlueLED, GPIO.LOW)
 	    	GPIO.output(Pconst.GreenLED, GPIO.HIGH)
 		

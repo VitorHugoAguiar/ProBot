@@ -15,39 +15,23 @@ Pconst = ProBotConstantsFile.Constants()
 Sabertooth = SabertoothFile.SabertoothClass()
 mpu6050=mpu6050File.mpu6050Class()
 
+# Configuration the type of GPIO's
+GPIO.setup(Pconst.RedLED, GPIO.OUT)
+
+
 class RestartProgramClass():
 
-    def RestartProgramRoutine(self, userChoice):
-    	try:
-		import StartFile
-		# Routine called when the angle is out of range and we need to restart the program
-		Sabertooth.stopAndReset()
-		PWM.PWMStop()
+    def RestartProgramRoutine(self):
+
+	# Routine called when the angle is out of range or the admin stopped the mainRoutine and we need to restart the program
+	Sabertooth.stopAndReset()
+	PWM.PWMStop()
 	
-		GPIO.output(Pconst.GreenLED, GPIO.LOW)
-		GPIO.output(Pconst.RedLED, GPIO.LOW)
-		GPIO.output(Pconst.BlueLED, GPIO.HIGH)
+	GPIO.output(Pconst.GreenLED, GPIO.LOW)
 
-		print "\nProBot angle's out of range!!!"
-		print "\nPut ProBot at 90 degrees!!!"
-        	
-		Pitch, gyro_yout_scaled = mpu6050.RollPitch()
-
-		while Pitch<-0.5 or Pitch>0.5:
-			Pitch, gyro_yout_scaled = mpu6050.RollPitch()		
-		
-		GPIO.output(Pconst.BlueLED, GPIO.LOW)	
-		print "\nRestarting the Program..."
-      	
-		userChoiceFile = open("userChoice.txt", "wb")
-		userChoiceFile.write( userChoice);
-		userChoiceFile.close()
-
-   		python = sys.executable
-    		os.execl(python, python, * sys.argv)
-    	
-	except:
-		InitProgram.StopProgram()
-                print("Unexpected error:\n", sys.exc_info()[0])
-                sys.exit('\n\nPROGRAM STOPPED!!!\n')
-                raise
+	print "\nProBot angle's out of range or the admin stopped the mainRoutine!!!"
+	print "\nRestarting the Program..."
+      			
+   	python = sys.executable
+    	os.execl(python, python, * sys.argv)
+ 
