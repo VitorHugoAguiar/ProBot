@@ -1,155 +1,169 @@
 {% extends "base.html" %}
 
 {% block js %}
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-	<script>AUTOBAHN_DEBUG = true;</script>
-	<script src="{{ url_for('static', filename='js/autobahn.min.js' )}}"></script>
-	<script type="text/javascript" probot_id="{{ chosen_probot_id }}" src="{{ url_for('static', filename='js/nipplejs.js' )}}"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-	<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['gauge']}]}"></script>
-
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script>
+    AUTOBAHN_DEBUG = true;
+</script>
+<script src="{{ url_for('static', filename='js/autobahn.min.js' )}}"></script>
+<script type="text/javascript" probot_id="{{ chosen_probot_id }}" src="{{ url_for('static', filename='js/nipplejs1.js' )}}"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<script type="text/javascript" src="//www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['gauge']}]}"></script>
 {% endblock %}	
 
 {% block css %}		
 <style type="text/css">
-    #warning-message { display: none; }
-    @media only screen and (orientation:portrait){
-        #wrapper { display:none; }
-        #warning-message { display:block; }
+    #warning-message {
+        display: none;
     }
-    @media only screen and (orientation:landscape){
-        #warning-message { display:none; }
-    }  
-    
-        #left {
-            position: absolute;
-            left: 15%;
-            margin-top: -20%;
-            
-        }
-        #right {
-            position: absolute;
-            right: 15%;
-            margin-top: -20%;
-        }
 
-#battery {
-  font-size:200%;
-}        
-  
-body, html { overflow-x:hidden; } 
-        
+    @media only screen and (orientation:portrait) {
+        #wrapper {
+            display: none;
+        }
+        #warning-message {
+            display: block;
+        }
+    }
+
+    @media only screen and (orientation:landscape) {
+        #warning-message {
+            display: none;
+        }
+    }
+
+    #left {
+        position: absolute;
+        left: 15%;
+        margin-top: -20%;
+    }
+
+    #right {
+        position: absolute;
+        right: 15%;
+        margin-top: -20%;
+    }
+
+    #battery {
+        font-size: 200%;
+    }
+
+    body,
+    html {
+        overflow-x: hidden;
+    }
 </style>
 {% endblock %}	
 	
 {% block content %}
 <div id="wrapper">
 
-		<div class="fa" style="left:95%; top:5%; position:relative;" id="battery"></div>
-	
-	<div align="center" class="videoWrapperMobile">
-		<iframe src="https://www.gruveo.com/embed/?code=probot{{ chosen_probot_id }}&language=en" frameborder="0" allowfullscreen></iframe>
-	 <div style="position:absolute; top:0%; left:1.5%;" id="chart_div"></div>
-	</div>
-	
-    		<div id="left"></div>    
+    <div class="fa" style="left:95%; top:5%; position:relative;" id="battery"></div>
 
-    		<div id="right"></div> 
-    		
+    <div align="center" class="videoWrapperMobile">
+        <iframe src="https://www.gruveo.com/embed/?code=probot{{ chosen_probot_id }}&language=en" frameborder="0" allowfullscreen></iframe>
+        <div style="position:absolute; top:0%; left:1.5%;" id="chart_div"></div>
+    </div>
 
-	</div>
+    <div id="left"></div>
 
-<div id="warning-message" style="text-align: center; position:relative; top:50%;color:black;">
-   <strong> For a better experience, please put your smartphone/tablet on landscape mode.</strong>
+    <div id="right"></div>
+
+
 </div>
 
+<div id="warning-message" style="text-align: center; position:relative; top:50%;color:black;">
+    <strong> For a better experience, please put your smartphone/tablet on landscape mode.</strong>
+</div>
 {% endblock %}
 
 {% block js_footer %}
 <script>
+    var joystickL = nipplejs.create({
+        zone: document.getElementById('left'),
+        mode: 'static',
+        position: {
+            left: '50%',
+            top: '50%'
+        },
+        color: 'green',
+        size: 100,
+        restOpacity: 200
+    });
 
+    var joystickR = nipplejs.create({
+        zone: document.getElementById('right'),
+        mode: 'static',
+        position: {
+            left: '50%',
+            top: '50%'
+        },
+        color: 'red',
+        size: 100,
+        restOpacity: 200
+    });
 
+    window.time = new Date().getTime();
 
-	var joystickL = nipplejs.create({
-    		zone: document.getElementById('left'),
-    		mode: 'static',
-    		position: { left: '50%', top: '50%' },
-    		color: 'green',
-    		size: 100,
-    		restOpacity: 200
-	});
+    $(document).bind('touchstart', function(e) {
+        window.time = new Date().getTime();
+    });
 
+    $(document).bind('touchend', function(e) {
+        window.time = new Date().getTime();
+    });
 
-	var joystickR = nipplejs.create({
-    		zone: document.getElementById('right'),
-    		mode: 'static',
-    		position: { left: '50%', top: '50%' },
-    		color: 'red',
-    		size: 100,
-    		restOpacity: 200
-	});
+    function refresh() {
+        if (new Date().getTime() - window.time >= 300000) {
+            if (window.stopAlerts != 1) {
+                window.stopAlerts = 1;
 
+                alert('Too much time without activity. Click OK and try again');
+                window.location = window.location;
+            }
 
-  
-window.time = new Date().getTime();
-
-$(document).bind('touchstart', function (e){
-window.time = new Date().getTime();  
-});
-
-$(document).bind('touchend', function (e){
-window.time = new Date().getTime();
-});
-
-     function refresh() {
-         if(new Date().getTime() - window.time >= 300000){
-			if(window.stopAlerts!=1){
-			window.stopAlerts=1;
-		
-		 	alert('Too much time without activity. Click OK and try again');
-		 	window.location=window.location;}
-
-		 	} else {
-            	setTimeout('refresh()', 10000);}
-     }
-
-    		setTimeout('refresh()', 10000);
-
-var isChromium = window.chrome,
-    winNav = window.navigator,
-    vendorName = winNav.vendor,
-    isOpera = winNav.userAgent.indexOf("OPR") > -1,
-    isIEedge = winNav.userAgent.indexOf("Edge") > -1,
-    isIOSChrome = winNav.userAgent.match("CriOS");
-
-if(isIOSChrome){
-   console.log("is Google Chrome on IOS");
-} else if(isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false && isIEedge == false) {
-   console.log("is Google Chrome");
-} else { 
-   (function() {
-    var timestamp = new Date().getTime();
-
-    function checkResume() {
-        var current = new Date().getTime();
-        if (current - timestamp > 4000) {
-            var event = document.createEvent("Events");
-            event.initEvent("resume", true, true);
-            document.dispatchEvent(event);
+        } else {
+            setTimeout('refresh()', 10000);
         }
-        timestamp = current;
     }
 
-    window.setInterval(checkResume, 1000);
-})();
+    setTimeout('refresh()', 10000);
 
-addEventListener("resume", function() {
-if(window.stopAlerts!=1){
-window.stopAlerts=1;
-    alert('The screen of your smartphone/tablet was turn off');
-    window.location=window.location;}
-});
-}
+    var isChromium = window.chrome,
+        winNav = window.navigator,
+        vendorName = winNav.vendor,
+        isOpera = winNav.userAgent.indexOf("OPR") > -1,
+        isIEedge = winNav.userAgent.indexOf("Edge") > -1,
+        isIOSChrome = winNav.userAgent.match("CriOS");
 
-	</script>
+    if (isIOSChrome) {
+        console.log("is Google Chrome on IOS");
+    } else if (isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false && isIEedge == false) {
+        console.log("is Google Chrome");
+    } else {
+        (function() {
+            var timestamp = new Date().getTime();
+
+            function checkResume() {
+                var current = new Date().getTime();
+                if (current - timestamp > 4000) {
+                    var event = document.createEvent("Events");
+                    event.initEvent("resume", true, true);
+                    document.dispatchEvent(event);
+                }
+                timestamp = current;
+            }
+
+            window.setInterval(checkResume, 1000);
+        })();
+
+        addEventListener("resume", function() {
+            if (window.stopAlerts != 1) {
+                window.stopAlerts = 1;
+                alert('The screen of your smartphone/tablet was turn off');
+                window.location = window.location;
+            }
+        });
+    }
+</script>
 {% endblock %}

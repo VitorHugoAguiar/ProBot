@@ -27,8 +27,10 @@ class AppSession(ApplicationSession):
         lastBat = None
 	ProBotTimerBat={}
         ProBotTimerWeb={}
-	timerBatInterval=5
+	timerBatInterval=15
 	timerWebInterval=3
+	self.BatteryTimeout={}
+
         def receive_id(probot_id):
             if "probot-" in probot_id:
                 probotid=probot_id.split('-')[1]
@@ -38,31 +40,42 @@ class AppSession(ApplicationSession):
 		self.log.info("initializing subscribers for id {probotid}", probotid=probotid)
                 topic = "probot-bat-{}".format(probotid)
 
-		def start_timer():
-		    ProBotTimerBat[int(probotid)]=Timer(timerBatInterval, battery_timeout)
+		def start_timer(enable):
+		    ProBotTimerBat[int(probotid)]=Timer(timerBatInterval, battery_timeout, [enable])
                     ProBotTimerBat[int(probotid)].start()
+		    	
 
 		def cancel_timer():
 		    ProBotTimerBat[int(probotid)].cancel()
                     ProBotTimerBat[int(probotid)].join()
 
-		def battery_timeout():
-		    while (True):
+		def battery_timeout(enable):
+		    print (self.BatteryTimeout, enable)
+		    
+		    if (self.BatteryTimeout[int(probotid)]==enable):
 		    	self.log.info("battery not received from probot {probotid}", probotid=probotid)
                     	self.publish('bridge-topic', probotid, 0, "BATTERY TIMEOUT") # to publish on the bridge
                     	print("BATTERY TIMEOUT")
                     	self.publish(topic, "error")
-			break
+		    	self.BatteryTimeout[int(probotid)]=0	    
 
-		start_timer()
-
+		start_timer(0)
+		self.BatteryTimeout[int(probotid)]=0
+		
                 if (probotid != None):
+		    
                     def receive_bat(bat_value):
 			cancel_timer()
-			start_timer()
+			enable=0
+			enable=self.BatteryTimeout[int(probotid)]
+			if enable>=100:
+				enable=0
+			enable+=1
+			self.BatteryTimeout[int(probotid)]=enable			
+			start_timer(enable)
 			self.log.info("last battery from {topic}: {bat_value}", topic=topic, bat_value=bat_value)
 			self.publish('bridge-topic', probotid, bat_value, "UPDATE") # to publish on the bridge
-		    
+						
 		    self.subscribe(receive_bat, topic)
 		   
             else:
