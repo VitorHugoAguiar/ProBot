@@ -21,7 +21,7 @@ The system can be controlled remotely through wifi, using a smartphone hotspot c
 
 Any person can build a ProBot by just following the instructions available on [instructubles](http://www.instructables.com/id/ProBot-the-Protesting-Robot/).
 
-
+                           |  
 :-------------------------:|:-------------------------:
 ![](IMG_4484.png)  |  ![](IMG_4484.png)
 
