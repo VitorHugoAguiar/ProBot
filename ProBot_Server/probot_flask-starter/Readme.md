@@ -80,8 +80,3 @@ Step 2: Push the apps files to the server
 Step 3: Open the link that is gonna be given where was deployed your application
 
 
-Finally, you need to run  [Crossbar.io](https://github.com/VitorHugoAguiar/ProBot/tree/master/ProBot_Server/probot_crossbar).
-
-
-Note: To make the gruveo, the webpage used for the video-call, you have to install the [https certificates](http://dokku.viewdocs.io/dokku/configuration/ssl/) on the server. Also you have to install the [crossbar certificates](http://crossbar.io/docs/TLS-Certificates/) for the https connection.
-
