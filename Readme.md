@@ -13,7 +13,7 @@ That’s why we created a self-balancing robot, with a rigid sturdy frame, a meg
 	
 This robot is 1,60m (5’/3’’) tall that self-balances in 2 wheels, controlled by a Sabertooth 2X25A or Cytron 13A 5-25V Motor Controller. The brain of the operation is a Beaglebone Black with an MPU6050 accelerometer and gyroscope and also optical encoders on each motor.
 	
-A shield was created to organize the components. A 24V battery power-ups all the system.
+A shield was created to organize the components. The system is power-up by a 24V battery.
 	
 The megaphone is a DH-12, that has a siren and a microphone, that we hacked and placed a wire to connect to a sound jack output, enabling us to connect the megaphone to almost any device (ex: cellphone, MP3 player, laptop, you name it).
 	
