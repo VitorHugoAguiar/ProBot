@@ -43,21 +43,29 @@ You need to define the port for the ProBots (beaglebone) to communicate with the
 	# A full description of the configuration file is at
 	# /usr/share/doc/mosquitto/examples/mosquitto.conf.example
 	
-	# port used between probot and server
-	listener 1883 
+	# ProBot/server communication port
+	listener 1883
 
 	pid_file /var/run/mosquitto.pid
 
 	persistence true
 	persistence_location /var/lib/mosquitto/
 
-	log_dest file /var/log/mosquitto/mosquitto.log
+	log_dest topic
 
-	include_dir /etc/mosquitto/conf.d	
-	
-	# WebSockets
-	listener 9883
+	log_type error
+	log_type warning
+	log_type notice
+	log_type information
+
+	connection_messages true
+	log_timestamp true
+
+	include_dir /etc/mosquitto/conf.d
+
+	# WebSockets ports configuration
+	listener 9001
 	protocol websockets
 
-
-	
+	listener 9883
+	protocol websockets
