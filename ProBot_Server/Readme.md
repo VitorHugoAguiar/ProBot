@@ -1,14 +1,14 @@
 # ProBot Server
 
 # Flask
-To control the Probots  we are using web page build with [Flask](http://flask.pocoo.org/). This code is based on [Flask-Starter](https://github.com/samgclarke/flask-starter).
+To control the Probots we are using a web page built with [Flask](http://flask.pocoo.org/). This code is based on [Flask-Starter] (https://github.com/samgclarke/flask-starter).
 
-With this interface, the user can see the ProBots that are avaiable. After choose one ProBot, the user can see some useful information related to that ProBot like the angle or the battery percentage.
+With this interface, both admin and user can see the ProBots that are available to control. After choosing one ProBot, the user can see every information related to that ProBot, like the angle or the battery percentage.
 
-The admin can also initialize the mainRoutine and shutdown the BeagleBone.
+The admin can initialize the mainRoutine and shutdown the BeagleBone.
 
 # Paho-mqtt and mosquitto
-For the communication between the ProBots (beaglebone) and the server, we are using the [paho-mqtt.](http://www.eclipse.org/paho/) To install paho-mqtt on the server, you need to type:
+The communication between the ProBots (beaglebone) and the server, are made through the [paho-mqtt.](http://www.eclipse.org/paho/) To install paho-mqtt on the server, you need to type:
 	
 	pip install paho-mqtt
 
@@ -16,7 +16,7 @@ The mqtt needs a message broker. For that, we are using [mosquitto.](https://mos
 	
 	apt-get install mosquitto
 	
-After the mosquitto instalion, is necessary to change the mosquitto.conf file. For that, type:
+After the mosquitto installation, is necessary to change the mosquitto.conf file with:
 	
 	nano /etc/mosquitto/mosquitto.conf
 
@@ -36,7 +36,7 @@ The mosquitto.conf file should look like this:
 
 	include_dir /etc/mosquitto/conf.d
 
-You need to include the port used by the ProBots(beaglebone) to communicate with the Server and the port used by the websocket. In the end, the mosquitto.conf should look like:
+You need to define the port for the ProBots (beaglebone) to communicate with the Server and for the websocket. In the end, the mosquitto.conf should look like:
 
 	# Place your local configuration in /etc/mosquitto/conf.d/
 	#
