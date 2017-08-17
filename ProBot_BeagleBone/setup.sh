@@ -89,6 +89,12 @@ cp bone_eqep2b-00A0.dtbo /lib/firmware
 echo "    Done"	
 }	
 
+pahoMqtt(){
+echo ""
+echo "--> Installing paho-Mqtt"
+pip install paho-mqtt
+echo "    Done"	
+}
 
 main() {
 ServerIPconfiguration
@@ -96,6 +102,7 @@ ProBot_ID
 NetworkManager
 Machinekit
 Encoders
+pahoMqtt
 echo "Installation finished"
 echo "Beaglebone is gonna shutdown"
 shutdown -h now
