@@ -10,15 +10,15 @@ The admin can initialize the mainRoutine and shutdown the BeagleBone.
 # Paho-mqtt and mosquitto
 The communication between the ProBots (beaglebone) and the server, are made through the [paho-mqtt.](http://www.eclipse.org/paho/) To install paho-mqtt on the server, you need to type:
 	
-	pip install paho-mqtt
+	sudo pip install paho-mqtt
 
 The mqtt needs a message broker. For that, we are using [mosquitto.](https://mosquitto.org/) You can install mosquitto message broker by typing:
 	
-	apt-get install mosquitto
+	sudo apt-get install mosquitto
 	
 After the mosquitto installation, is necessary to change the mosquitto.conf file with:
 	
-	nano /etc/mosquitto/mosquitto.conf
+	sudo nano /etc/mosquitto/mosquitto.conf
 
 The mosquitto.conf file should look like this:
 	
