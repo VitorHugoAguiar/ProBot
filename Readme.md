@@ -24,4 +24,4 @@ Any person can build a ProBot by just following the instructions available on [i
 
 ProBot V1                  |  ProBot V2		       |  ProBot V3
 :-------------------------:|:-------------------------:|:-------------------------:
-![](probot1.png)  |  ![](probot2.png)  |  ![](probot3.png)
+![](probot1.png)  |  ![](probot2.png)  |  ![](probot3.jpg)
