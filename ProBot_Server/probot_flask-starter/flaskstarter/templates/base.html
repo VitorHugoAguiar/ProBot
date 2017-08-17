@@ -1,0 +1,99 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>{% block page_title %}ProBot Project{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{% endblock %}">
+  <meta name="author" content="{% block meta_author %}{% endblock %}">
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width">
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap-responsive.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+  {% block head %}{% endblock %}  
+  
+  {% block js %}{% endblock %}
+  
+  {% block css %}{% endblock %}
+
+  <style type="text/css">
+    body {
+        padding-top: 70px;
+    }
+
+    @media screen and (max-width: 979px) {
+        body {
+            padding-top: 0px;
+        }
+    }
+  </style>
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+
+{% block body %}
+
+{% include "nav.html" %}
+
+<header>{% block header %}{% endblock %}</header>
+
+<div class="{% block content_class %}container{% endblock content_class %}">
+
+  <div role="main">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="row">
+      <div class="span12">
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+          <a class="close" title="Close" href="#" data-dismiss="alert">&times;</a>
+         {{message}}
+        </div><!-- end .alert -->
+        {% endfor %}
+      </div><!-- end span -->
+    </div><!-- end row -->
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </div>
+
+</div><!-- end container -->
+
+
+{% block js_footer %}{% endblock %}
+
+{% include "footer.html" %}
+<!-- JavaScript at the bottom for fast page loading -->
+
+<script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+
+<!-- end scripts -->
+<!-- Google Analytics snippet. Change UA-XXXXXX-X to your site's ID -->
+<script>
+	$('.dropdown-toggle').click(function(e) {
+		e.preventDefault();
+		setTimeout($.proxy(function() {
+		    if ('ontouchstart' in document.documentElement) {
+		        $(this).siblings('.dropdown-backdrop').off().remove();
+		    }
+		}, this), 0);
+	});
+	
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+{% endblock %}
+</body>
+</html>

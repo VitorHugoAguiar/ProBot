@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <script type="text/javascript" src="{{ url_for('static', filename='bootstrap/jquery/jquery-3.2.1.min.js') }}"></script>
+	<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{{ url_for('static', filename='gallery/simplelightbox.css' )}}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='gallery/demo.css' )}}">
+	<script type="text/javascript" src="{{ url_for('static', filename='gallery/simple-lightbox.js' )}}" ></script>
+{% endblock %}
+
+{% block css %}
+<style type="text/css">  
+video {  
+  float: left;
+  width: 50%;
+  height: auto;
+  border: 2px solid #fff;
+  position: relative;
+    
+}
+
+#vertical {  
+  float: left;
+  width: 25%;
+  height: auto;
+  border: 2px solid #fff;
+  position: relative;
+    
+}
+ </style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="gallery">
+
+        <h1 class="align-center">ProBot3 - Tests</h1>
+        <br>
+        <a href="../static/gallery/imagesGallery/image33.jpg"><img src="../static/gallery/imagesGallery/image33.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image34.jpg"><img src="../static/gallery/imagesGallery/image34.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image35.jpg"><img src="../static/gallery/imagesGallery/image35.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image36.jpg"><img src="../static/gallery/imagesGallery/image36.jpg" alt="" /></a>
+        <div class="clear"></div>
+        <br><br>
+        <h1 class="align-center">Videos</h1>
+        <br>
+        <video controls preload="none" poster="../static/gallery/videosGallery/poster_horizontal.png"><source src="../static/gallery/videosGallery/V_20170331_133741.MP4" type="video/mp4"></video>
+        <video controls preload="none" poster="../static/gallery/videosGallery/poster_horizontal.png"><source src="../static/gallery/videosGallery/V_20170331_133943.MP4" type="video/mp4"></video>
+        <div class="clear"></div>
+
+        <video id="vertical" controls preload="none" poster="../static/gallery/videosGallery/poster_vertical.png"><source src="../static/gallery/videosGallery/V_20170331_133838.MP4" type="video/mp4"></video>
+        <video id="vertical" controls preload="none" poster="../static/gallery/videosGallery/poster_vertical.png"><source src="../static/gallery/v/V_20170331_133901.MP4" type="video/mp4"></video>
+        <video id="vertical" controls preload="none" poster="../static/gallery/videosGallery/poster_vertical.png"><source src="../static/gallery/videosGallery/V_20170331_135704.MP4" type="video/mp4"></video>
+        <video id="vertical" controls preload="none" poster="../static/gallery/videosGallery/poster_vertical.png"><source src="../static/gallery/videosGallery/V_20170331_135743.MP4" type="video/mp4"></video>
+        <div class="clear"></div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js_footer %}
+<script>
+	$(function(){
+		var $gallery = $('.gallery a').simpleLightbox();
+
+		$gallery.on('show.simplelightbox', function(){
+			console.log('Requested for showing');
+		})
+		.on('shown.simplelightbox', function(){
+			console.log('Shown');
+		})
+		.on('close.simplelightbox', function(){
+			console.log('Requested for closing');
+		})
+		.on('closed.simplelightbox', function(){
+			console.log('Closed');
+		})
+		.on('change.simplelightbox', function(){
+			console.log('Requested for change');
+		})
+		.on('next.simplelightbox', function(){
+			console.log('Requested for next');
+		})
+		.on('prev.simplelightbox', function(){
+			console.log('Requested for prev');
+		})
+		.on('nextImageLoaded.simplelightbox', function(){
+			console.log('Next image loaded');
+		})
+		.on('prevImageLoaded.simplelightbox', function(){
+			console.log('Prev image loaded');
+		})
+		.on('changed.simplelightbox', function(){
+			console.log('Image changed');
+		})
+		.on('nextDone.simplelightbox', function(){
+			console.log('Image changed to next');
+		})
+		.on('prevDone.simplelightbox', function(){
+			console.log('Image changed to prev');
+		})
+		.on('error.simplelightbox', function(e){
+			console.log('No image found, go to the next/prev');
+			console.log(e);
+		});
+	});
+</script>
+{% endblock %}
+

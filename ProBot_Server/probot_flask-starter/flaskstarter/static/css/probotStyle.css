@@ -1,0 +1,148 @@
+* {
+	box-sizing: border-box;
+}
+
+.slider {
+	width: 100%;
+    margin: 100px auto;
+}
+
+.slick-slide {
+	margin: 0px 20px;
+}
+
+.slick-slide img {
+	width: 100%;
+}
+    
+.slick-prev:before,
+.slick-next:before {
+	color: black;
+}
+
+.slider_hover img:hover {
+	border-color:black;
+	border: 5px solid black;	
+}
+
+responsive_title {
+ 	color: black;
+}
+
+.img-available{
+	vertical-align:middle;
+	margin:auto;
+}
+
+.img-online{
+	vertical-align:middle;
+	margin:auto;
+}
+
+.img-executing{
+	vertical-align:middle;
+	margin:auto;
+}
+
+.img-battery{
+	vertical-align:middle;
+	margin:auto;
+}
+
+.input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+input[type=radio]:label>img {
+  border: 1px solid black;
+  box-shadow: 0 0 3px 3px black;
+}
+
+
+/* Smartphones (horizontal) ----------- */
+@media only screen and (min-device-width : 320px)  and (orientation:landscape) {
+   .slider_position {
+    position:relative;
+    top: -70px;
+    margin-bottom: -200px;
+ }
+responsive_title {
+ 	font-size: 15px;
+}
+.slider {
+	width: 70%;
+    margin: 100px auto;
+}
+
+}
+
+/* Smartphones (vertical) ----------- */
+@media only screen and (min-device-width : 320px)  and (orientation:portrait){
+   .slider_position {
+    position:relative;
+    top: -70px;
+    margin-bottom: -200px;
+ }
+responsive_title {
+ 	font-size: 15px;
+}
+.slider {
+	width: 100%;
+    margin: 100px auto;
+}
+
+}
+
+/* tablets (horizontal) ----------- */
+@media only screen and (min-device-width: 768px) and (orientation : landscape) {
+   .slider_position {
+    position:relative;
+    top: -70px;
+    margin-bottom: -185px;
+ }
+
+responsive_title {
+ 	font-size: 15px;
+}
+.slider {
+	width: 70%;
+    margin: 100px auto;
+}
+
+}
+
+/* tablets (vertical) ----------- */
+@media only screen and (min-device-width: 768px) and (orientation : portrait) {
+   .slider_position {
+    position:relative;
+    top: -50px;
+    margin-bottom: -150px;
+ }
+
+responsive_title {
+ 	font-size: 15px;
+}
+.slider {
+	width: 100%;
+    margin: 100px auto;
+}
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+   .slider_position {
+    position:relative;
+    top: -30px;
+    margin-bottom: -150px;
+ }
+responsive_title {
+ 	font-size: 20px;
+}
+.slider {
+	width: 100%;
+    margin: 100px auto;
+}
+
+}
+

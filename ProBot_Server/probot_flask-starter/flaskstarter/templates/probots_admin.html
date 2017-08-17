@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+<script src="{{ url_for('static', filename='bootstrap/jquery/jquery-3.2.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/mqttws31.js' )}}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='slider/slick/slick.css' )}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='slider/slick/slick-theme.css' )}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/probotStyle.css' )}}">
+<script type="text/javascript" enable=1 $SCRIPT_ROOT = {{ request.script_root|tojson|safe }} src="{{ url_for('static', filename='js/mqtt-client.js' )}}"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+{% endblock %}
+
+{% block js %}
+<script>
+function check_login() {
+    if (enable_login == 0) {
+        window.location = "{{ url_for('index') }}";
+    }
+    setTimeout(check_login, 1000);
+}
+
+setTimeout(check_login, 500);
+</script>
+{% endblock %}
+
+{% block css %}
+  <style type="text/css">
+th img {
+    height: auto !important;
+}
+  </style>
+{% endblock %}
+
+
+{% block content %}
+<div align="center">
+    <responsive_title style="font-weight: bold;"> Please choose a ProBot by clicking on the respectively image:</responsive_title>
+</div>
+
+{% if (current_user.email=='admin' and current_user.username=='admin_password')%}
+<script>
+    enable_login = 1;
+</script>
+{% else %}
+<script>
+    enable_login = 0;
+</script>
+{% endif %}
+ 
+<div class="slider_position">
+    <form name="formName" action="{{ url_for('probots_user') }}" method="POST">
+        <div class="regular slider">
+            <div>
+                <div class="slider_hover" align="center" style="font-weight: bold;">
+                    <responsive_title>ProBot 1</responsive_title>
+                    <p></p>
+                    <input type="radio" id="probot1" value="1" name="options" class="input-hidden" onclick="checkform(this.value);" />
+                    <label for="probot1"><img src="../static/images/probot1.jpg" /></label></div>
+                <table>
+                    <tr>
+                        <th><img class="img-online" src="../static/images/offline.png" id="online_offline1" style="height: 60%; width: 60%;" /></th>
+                        <th><img class="img-available" src="../static/images/not_available.png" id="available1" style="height: 60%; width: 60%;" /></th>
+                        <th><img class="img-battery" src="../static/images/not_connected.png" id="battery1" style="height: 60%; width: 60%;" /></th>
+                        <th><img class="img-executing" src="../static/images/not_executing.png" id="executing1" style="height: 60%; width: 60%;" /></th>
+                        <th><input type="radio" value="1" id="shutdown1" class="input-hidden" onclick="shutdownProBot(this.value);"/><label for="shutdown1"><img src="../static/images/shutdown.png" onmouseover="this.src='../static/images/shutdown_hover.png';" onmouseout="this.src='../static/images/shutdown.png'" style="height: 60%; width: 60%;"/></label></th>
+                    </tr>
+                </table>
+
+            </div>
+            <div>
+                <div class="slider_hover" align="center" style="font-weight: bold;">
+                    <responsive_title>ProBot 2</responsive_title>
+                    <p></p>
+                    <input type="radio" id="probot2" value="2" name="options" class="input-hidden" onclick="checkform(this.value);" />
+                    <label for="probot2"><img src="../static/images/probot2.jpg" /></label></div>
+                <table>
+                    <tr>
+                        <th><img class="img-online" src="../static/images/offline.png" id="online_offline2" style="height: 60%; width: 60%;" /></th>
+                        <th><img class="img-available" src="../static/images/not_available.png" id="available2" style="height: 60%; width: 60%;" /></th>
+                        <th><img class="img-battery" src="../static/images/not_connected.png" id="battery2" style="height: 60%; width: 60%;" /></th>
+                        <th><img class="img-executing" src="../static/images/not_executing.png" id="executing2" style="height: 60%; width: 60%;" /></th>
+                        <th><input type="radio" value="2" id="shutdown2" class="input-hidden" onclick="shutdownProBot(this.value);"/><label for="shutdown2"><img src="../static/images/shutdown.png" onmouseover="this.src='../static/images/shutdown_hover.png';" onmouseout="this.src='../static/images/shutdown.png'" style="height: 60%; width: 60%;"/></label></th>
+                    </tr>
+                </table>
+
+            </div>
+            <div>
+                <div class="slider_hover" align="center" style="font-weight: bold;">
+                    <responsive_title>ProBot 3</responsive_title>
+                    <p></p>
+                    <input type="radio" id="probot3" value="3" name="options" class="input-hidden" onclick="checkform(this.value);" />
+                    <label for="probot3"><img src="../static/images/probot3.jpg" /></label></div>
+                <table>
+                    <tr>
+                        <th><img class="img-online" src="../static/images/offline.png" id="online_offline3" style="height: 60%; width: 60%;" /></th>
+                        <th><img class="img-available" src="../static/images/not_available.png" id="available3" style="height: 60%; width: 60%;" /></th>
+                        <th><img class="img-battery" src="../static/images/not_connected.png" id="battery3" style="height: 60%; width: 60%;" /></th>
+                        <th><img class="img-executing" src="../static/images/not_executing.png" id="executing3" style="height: 60%; width: 60%;" /></th>
+                        <th><input type="radio" value="3" id="shutdown3" class="input-hidden" onclick="shutdownProBot(this.value);"/><label for="shutdown3"><img src="../static/images/shutdown.png" onmouseover="this.src='../static/images/shutdown_hover.png';" onmouseout="this.src='../static/images/shutdown.png'" style="height: 60%; width: 60%;"/></label></th>                        
+                    </tr>
+                </table>
+
+            </div>
+            <div>
+                <div class="slider_hover" align="center" style="font-weight: bold;">
+                    <responsive_title>ProBot 4</responsive_title>
+                    <p></p>
+                    <input type="radio" id="probot4" value="4" name="options" class="input-hidden" onclick="checkform(this.value);" />
+                    <label for="probot4"><img src="../static/images/under_construction.jpg" /></label></div>
+                <table>
+                    <tr>
+                        <th><img class="img-online" src="../static/images/offline.png" id="online_offline4" style="height: 60%; width: 60%;" /></th>
+                        <th><img class="img-available" src="../static/images/not_available.png" id="available4" style="height: 60%; width: 60%;" /></th>
+                        <th><img class="img-battery" src="../static/images/not_connected.png" id="battery4" style="height: 60%; width: 60%;" /></th>
+                        <th><img class="img-executing" src="../static/images/not_executing.png" id="executing4" style="height: 60%; width: 60%;" /></th>
+                        <th><input type="radio" value="4" id="shutdown4" class="input-hidden" onclick="shutdownProBot(this.value);"/><label for="shutdown4"><img src="../static/images/shutdown.png" onmouseover="this.src='../static/images/shutdown_hover.png';" onmouseout="this.src='../static/images/shutdown.png'" style="height: 60%; width: 60%;"/></label></th>                        
+                    </tr>
+                </table>
+
+            </div>
+            <div>
+                <div class="slider_hover" align="center" style="font-weight: bold;">
+                    <responsive_title>ProBot 5</responsive_title>
+                    <p></p>
+                    <input type="radio" id="probot5" value="5" name="options" class="input-hidden" onclick="checkform(this.value);" />
+                    <label for="probot5"><img src="../static/images/under_construction.jpg" /></label></div>
+                <table>
+                    <tr>
+                        <th><img class="img-online" src="../static/images/offline.png" id="online_offline5" style="height: 60%; width: 60%;" /></th>
+                        <th><img class="img-available" src="../static/images/not_available.png" id="available5" style="height: 60%; width: 60%;" /></th>
+                        <th><img class="img-battery" src="../static/images/not_connected.png" id="battery5" style="height: 60%; width: 60%;" /></th>
+                        <th><img class="img-executing" src="../static/images/not_executing.png" id="executing5" style="height: 60%; width: 60%;" /></th>
+                        <th><input type="radio" value="5" id="shutdown5" class="input-hidden" onclick="shutdownProBot(this.value);"/><label for="shutdown5"><img src="../static/images/shutdown.png" onmouseover="this.src='../static/images/shutdown_hover.png';" onmouseout="this.src='../static/images/shutdown.png'" style="height: 60%; width: 60%;"/></label></th>
+                    </tr>
+                </table>
+
+            </div>
+            <div>
+                <div class="slider_hover" align="center" style="font-weight: bold;">
+                    <responsive_title>ProBot 6</responsive_title>
+                    <p></p>
+                    <input type="radio" id="probot6" value="6" name="options" class="input-hidden" onclick="checkform(this.value);" />
+                    <label for="probot6"><img src="../static/images/under_construction.jpg" /></label></div>
+                <table>
+                    <tr>
+                        <th><img class="img-online" src="../static/images/offline.png" id="online_offline6" style="height: 60%; width: 60%;" /></th>
+                        <th><img class="img-available" src="../static/images/not_available.png" id="available6" style="height: 60%; width: 60%;" /></th>
+                        <th><img class="img-battery" src="../static/images/not_connected.png" id="battery6" style="height: 60%; width: 60%;" /></th>
+                        <th><img class="img-executing" src="../static/images/not_executing.png" id="executing6" style="height: 60%; width: 60%;" /></th>
+                        <th><input type="radio" value="6" id="shutdown6" class="input-hidden" onclick="shutdownProBot(this.value);"/><label for="shutdown6"><img src="../static/images/shutdown.png" onmouseover="this.src='../static/images/shutdown_hover.png';" onmouseout="this.src='../static/images/shutdown.png'" style="height: 60%; width: 60%;"/></label></th>                        
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="{{ url_for('static', filename='slider/slick/slick.min.js') }}"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+{% endblock %}
+
+{% block js_footer %}
+
+<script>
+$(".regular").slick({
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 3
+    
+});
+
+</script>
+
+{% endblock %}
+
+
+
+                
+
+                
+ 
+
+

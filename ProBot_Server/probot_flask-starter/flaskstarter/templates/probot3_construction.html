@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block head %}
+<script type="text/javascript" src="{{ url_for('static', filename='bootstrap/jquery/jquery-3.2.1.min.js') }}"></script>
+<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='gallery/simplelightbox.css' )}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='gallery/demo.css' )}}">
+<script type="text/javascript" src="{{ url_for('static', filename='gallery/simple-lightbox.js' )}}" ></script>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="gallery">
+        <h1 class="align-center">ProBot3 - Construction</h1>
+        <br>
+        <a href="../static/gallery/imagesGallery/image1.jpg"><img src="../static/gallery/imagesGallery/image1.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image2.jpg"><img src="../static/gallery/imagesGallery/image2.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image3.jpg"><img src="../static/gallery/imagesGallery/image3.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image4.jpg"><img src="../static/gallery/imagesGallery/image4.jpg" alt="" /></a>
+        <div class="clear"></div>
+
+        <a href="../static/gallery/imagesGallery/image5.jpg"><img src="../static/gallery/imagesGallery/image5.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image6.jpg"><img src="../static/gallery/imagesGallery/image6.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image7.jpg"><img src="../static/gallery/imagesGallery/image7.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image8.jpg"><img src="../static/gallery/imagesGallery/image8.jpg" alt="" /></a>
+        <div class="clear"></div>
+
+        <a href="../static/gallery/imagesGallery/image9.jpg"><img src="../static/gallery/imagesGallery/image9.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image10.jpg"><img src="../static/gallery/imagesGallery/image10.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image11.jpg"><img src="../static/gallery/imagesGallery/image11.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image12.jpg"><img src="../static/gallery/imagesGallery/image12.jpg" alt="" /></a>
+
+        <a href="../static/gallery/imagesGallery/image13.jpg"><img src="../static/gallery/imagesGallery/image13.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image14.jpg"><img src="../static/gallery/imagesGallery/image14.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image15.jpg"><img src="../static/gallery/imagesGallery/image15.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image16.jpg"><img src="../static/gallery/imagesGallery/image16.jpg" alt="" /></a>
+        <div class="clear"></div>
+
+        <a href="../static/gallery/imagesGallery/image17.jpg"><img src="../static/gallery/imagesGallery/image17.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image18.jpg"><img src="../static/gallery/imagesGallery/image18.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image19.jpg"><img src="../static/gallery/imagesGallery/image19.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image20.jpg"><img src="../static/gallery/imagesGallery/image20.jpg" alt="" /></a>
+        <div class="clear"></div>
+
+        <a href="../static/gallery/imagesGallery/image21.jpg"><img src="../static/gallery/imagesGallery/image21.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image22.jpg"><img src="../static/gallery/imagesGallery/image22.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image23.jpg"><img src="../static/gallery/imagesGallery/image23.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image24.jpg"><img src="../static/gallery/imagesGallery/image24.jpg" alt="" /></a>
+        <div class="clear"></div>
+
+        <a href="../static/gallery/imagesGallery/image25.jpg"><img src="../static/gallery/imagesGallery/image25.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image26.jpg"><img src="../static/gallery/imagesGallery/image26.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image27.jpg"><img src="../static/gallery/imagesGallery/image27.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image28.jpg"><img src="../static/gallery/imagesGallery/image28.jpg" alt="" /></a>
+        <div class="clear"></div>
+
+        <a href="../static/gallery/imagesGallery/image29.jpg"><img src="../static/gallery/imagesGallery/image29.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image30.jpg"><img src="../static/gallery/imagesGallery/image30.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image31.jpg"><img src="../static/gallery/imagesGallery/image31.jpg" alt="" /></a>
+        <a href="../static/gallery/imagesGallery/image32.jpg"><img src="../static/gallery/imagesGallery/image32.jpg" alt="" /></a>
+        <div class="clear"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js_footer %}
+<script>
+	$(function(){
+		var $gallery = $('.gallery a').simpleLightbox();
+
+		$gallery.on('show.simplelightbox', function(){
+			console.log('Requested for showing');
+		})
+		.on('shown.simplelightbox', function(){
+			console.log('Shown');
+		})
+		.on('close.simplelightbox', function(){
+			console.log('Requested for closing');
+		})
+		.on('closed.simplelightbox', function(){
+			console.log('Closed');
+		})
+		.on('change.simplelightbox', function(){
+			console.log('Requested for change');
+		})
+		.on('next.simplelightbox', function(){
+			console.log('Requested for next');
+		})
+		.on('prev.simplelightbox', function(){
+			console.log('Requested for prev');
+		})
+		.on('nextImageLoaded.simplelightbox', function(){
+			console.log('Next image loaded');
+		})
+		.on('prevImageLoaded.simplelightbox', function(){
+			console.log('Prev image loaded');
+		})
+		.on('changed.simplelightbox', function(){
+			console.log('Image changed');
+		})
+		.on('nextDone.simplelightbox', function(){
+			console.log('Image changed to next');
+		})
+		.on('prevDone.simplelightbox', function(){
+			console.log('Image changed to prev');
+		})
+		.on('error.simplelightbox', function(e){
+			console.log('No image found, go to the next/prev');
+			console.log(e);
+		});
+	});
+</script>
+{% endblock %}
+
