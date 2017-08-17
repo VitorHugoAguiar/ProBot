@@ -7,6 +7,8 @@ With this interface, both admin and user can see the ProBots that are available 
 
 The admin can initialize the mainRoutine and shutdown the BeagleBone.
 
+![](slider_interface.png) 
+
 # Paho-mqtt and mosquitto
 The communication between the ProBots (beaglebone) and the server, are made through the [paho-mqtt.](http://www.eclipse.org/paho/) To install paho-mqtt on the server, you need to type:
 	
