@@ -139,12 +139,10 @@ def WebpageToServer():
     chosen_probot_id = list(json.dumps(request.form['chosen_probot_id']))
     chosen_probot_id = [e for e in chosen_probot_id if e not in (',', '"', '"')]
 
-    for i in range (len(chosen_probot_id)): 	   	
-    	if (chosen_probot_id[i]==str(i+1)):
-    		busyProbots[int(i+1)]=str(i+1)
-    		StartUsingProbot[int(i+1)]=time.time()
-    	if (chosen_probot_id[i]=='0'):
-    		busyProbots[int(i+1)]='0'    		    		
+    for i in range (1, len(chosen_probot_id)): 	   	
+    	if (chosen_probot_id[i]==str(i)):
+    		busyProbots[int(i)]=str(i)
+    		StartUsingProbot[int(i)]=time.time()   		    		
     return b"0"
 
 # publish the keys controls values to the right topic (probot)
