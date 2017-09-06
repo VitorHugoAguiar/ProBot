@@ -15,7 +15,7 @@ This robot is 1,60m (5’/3’’) tall that self-balances in 2 wheels, controll
 	
 A shield was created to organize the components. The system is power-up by a 24V battery.
 	
-The megaphone is a DH-12, that has a siren and a microphone, that we hacked and placed a wire to connect to a sound jack output, enabling us to connect the megaphone to almost any device (ex: cellphone, MP3 player, laptop, you name it).
+The megaphone is a DH-12, that has a siren and a microphone, that we hacked and placed a wire to connect to a sound jack output, enabling us to connect the megaphone to almost any device (ex: smartphone, MP3 player, laptop, you name it).
 	
 The system can be controlled remotely through wifi, using a smartphone hotspot connected to 3G or 4G network. A web page was created with the possibility of viewing the status of the probot, where if available can be controlled. Each ProBot can be controled with a touch device (a smartphone or a tablet), with a gamepad or even with the keyboard.
 
