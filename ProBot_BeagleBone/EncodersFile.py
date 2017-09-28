@@ -33,18 +33,4 @@ class EncodersClass():
 	self.LastwheelPosition1 = wheelPosition1_m   
 	self.LastwheelPosition2 = wheelPosition2_m
 
- 
-        factor = ((60/0.01)/10000)  # 1min /delay between encoders update/counts_per_rev
-        rpm1 = (wheelTicks1 - self.old_wheelTicks1)*factor
-        rpm2 = (wheelTicks2 - self.old_wheelTicks2)*factor
-	
-        self.old_wheelTicks1 = wheelTicks1
-        self.old_wheelTicks2 = wheelTicks2
-
-	acel1=wheelVelocity1/0.01
-	acel2=wheelVelocity2/0.01
-
-	#publisher=Pub_Sub.publisher(acel1, acel2)
-
-
 	return [wheelVelocity1, wheelVelocity2]
