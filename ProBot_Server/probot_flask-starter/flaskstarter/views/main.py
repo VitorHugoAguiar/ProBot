@@ -7,6 +7,13 @@ from apscheduler.scheduler import Scheduler
 from ..forms.forms import ContactForm
 from flask.ext.mail import Message, Mail
 from ..email import send_email
+
+#from plotly.offline import plot
+#from plotly.graph_objs import Scatter
+#import matplotlib.pyplot as plt, mpld3
+from random import randint
+
+from flask import Markup
 import flask.ext.login
 import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
@@ -14,6 +21,7 @@ import json
 import time
 import atexit
 import os
+#import Localino_Processor_v03b
 
 main = Blueprint('main', __name__)
 
@@ -28,16 +36,23 @@ port = 1883
 client = 0
 cron = Scheduler(daemon=True)
 
+incomingMsgLocalino=0
+probotTagID=[0]*(numberProbots+1)
+
 # paho-mqtt
 def on_connect(client, userdata, rc):
     print("Connected with result code " + str(rc))
     client.subscribe('telemetry', qos=0)
     client.subscribe('ClientStatus', qos=0)
-
+    client.subscribe('coordinates', qos=0)
+    client.subscribe('LocalinoStatus', qos=0)    
+    
 def on_message(client, userdata, msg):
     global incomingMsg
     global OnlineProbots
-
+    global incomingMsgLocalino
+    global probotTagID
+    
     if msg.topic=="telemetry":
     	incomingMsg=msg.payload.split(",")
     	OnlineProbots[int(incomingMsg[0])]=incomingMsg
@@ -45,6 +60,14 @@ def on_message(client, userdata, msg):
     if msg.topic=="ClientStatus":
     	incomingMsg=msg.payload.split("/")
     	OnlineProbots[int(incomingMsg[0])]=incomingMsg
+    	
+    if msg.topic=="coordinates":
+    	incomingMsgLocalino=msg.payload.split(",")
+    	#probotTagID[int(incomingMsgLocalino[0])]=incomingMsgLocalino
+
+    if msg.topic=="LocalinoStatus":
+    	incomingMsgLocalino=msg.payload.split("/")
+    	#probotTagID[int(incomingMsgLocalino[0])]=incomingMsgLocalino    	
     			
 def on_disconnect(client, userdata, rc):
     global OnlineProbots
@@ -68,6 +91,8 @@ def initialize():
 # check which probot is being use
 @cron.interval_schedule(seconds=0.5)
 def job_function():
+
+	#print ("busyProbotsUPDATE", busyProbots)	
 	for i in range (1,len(StartUsingProbot)):
 		checkUsingProbot=time.time()
 		delta=checkUsingProbot-StartUsingProbot[i]		
@@ -79,7 +104,8 @@ def job_function():
 def index():
 	"""Index."""
 	return render_template('index.html')
-	
+
+
 @app.route('/probots_admin', methods=['GET', 'POST'])
 def probots_admin():
 	return render_template('probots_admin.html')
@@ -111,38 +137,39 @@ def probot3_carnival():
 	
 @app.route('/probots_user', methods=['GET', 'POST'])
 def probots_user():
-		global busyProbots
-		global StartUsingProbot		
-		if request.method == 'POST':			# ALL went good		
-			chosen_probot_id = request.form['options']	# Get chosen probot id from the form
-			if request.user_agent.platform == ('android' or 'iphone' or 'ipad'): # check which platform we are
-				if busyProbots[int(chosen_probot_id)]=='0': # checks if the chosen probot is available
+	global busyProbots
+	global StartUsingProbot		
+	if request.method == 'POST':			# ALL went good		
+		chosen_probot_id = request.form['options']	# Get chosen probot id from the form
+		if request.user_agent.platform == ('android' or 'iphone' or 'ipad'): # check which platform we are
+			if busyProbots[int(chosen_probot_id)]=='0': # checks if the chosen probot is available
+				busyProbots[int(chosen_probot_id)]=str(chosen_probot_id)
+				StartUsingProbot[int(chosen_probot_id)]=time.time()					
+				return render_template('probot_control_mobile.html', chosen_probot_id=chosen_probot_id)
+			else:
+				return render_template('probots_user.html', not_available=1)
+			
+		else:				
+				if busyProbots[int(chosen_probot_id)]=='0':
 					busyProbots[int(chosen_probot_id)]=str(chosen_probot_id)
 					StartUsingProbot[int(chosen_probot_id)]=time.time()					
-					return render_template('probot_control_mobile.html', chosen_probot_id=chosen_probot_id)
+					return render_template('probot_control_desk.html', chosen_probot_id=chosen_probot_id) 
 				else:
 					return render_template('probots_user.html', not_available=1)
-				
-			else:				
-					if busyProbots[int(chosen_probot_id)]=='0':
-						busyProbots[int(chosen_probot_id)]=str(chosen_probot_id)
-						StartUsingProbot[int(chosen_probot_id)]=time.time()					
-						return render_template('probot_control_desk.html', chosen_probot_id=chosen_probot_id) 
-					else:
-						return render_template('probots_user.html', not_available=1)
-						
-		return render_template('probots_user.html', not_available=0)
+					
+	return render_template('probots_user.html', not_available=0)
 
 # get info from the web page, which probot is in use and when is available again    
 @app.route('/WebpageToServer', methods=['GET', 'POST'])
 def WebpageToServer():
     chosen_probot_id = list(json.dumps(request.form['chosen_probot_id']))
     chosen_probot_id = [e for e in chosen_probot_id if e not in (',', '"', '"')]
-
+    print ("chosen_probot_id", chosen_probot_id)
     for i in range (1, len(chosen_probot_id)): 	   	
     	if (chosen_probot_id[i]==str(i)):
     		busyProbots[int(i)]=str(i)
-    		StartUsingProbot[int(i)]=time.time()   		    		
+    		StartUsingProbot[int(i)]=time.time()    		    		
+    print ("busyProbots", busyProbots)
     return b"0"
 
 # publish the keys controls values to the right topic (probot)
@@ -185,7 +212,7 @@ def shutdownProBot():
 
 # send tho the web page which probots is available    
 @app.route('/ServerToWebpage', methods=['GET'])
-def ServerToWebpage():
+def ServerToWebpage():	
     return jsonify(busyProbots=busyProbots, OnlineProbots=OnlineProbots)
 
 @app.route('/contact', methods=['GET', 'POST'])

@@ -12,10 +12,12 @@ var keysMsg;
 var INC = 0.080;
 var MAX = 0.750;
 var repGP;
+var enableOneDevice=0;
 
 function keyboardHandler() {
-	
+	enableOneDevice=1;
 	window.clearInterval(repGP);
+	
 	
     function incDirValue(dir) {
         dir = dir + INC;
@@ -118,7 +120,7 @@ function keyboardHandler() {
 ////
 
 function gamepadHandler() {
-
+	enableOneDevice=2;
 	document.onkeydown = null;
 	document.onkeyup = null;
 
@@ -127,7 +129,7 @@ function gamepadHandler() {
 
     function reportOnGamepad() {
         var gp = navigator.getGamepads()[0];
-
+		if (enableOneDevice==2) {
         for (var i = 0; i < gp.axes.length; i += 2) {
 
 
@@ -172,22 +174,24 @@ function gamepadHandler() {
         }
 
         
-    }
-
+    }}
+			
             $("UserDevice").text("To use your gamepad, connect it and press any key!");
 
             $(window).on("gamepadconnected", function() {
+            	if (enableOneDevice==2){
                 hasGP = true;
                 $("UserDevice").text("Gamepad connected!");
                 console.log("Gamepad connected!");
-                repGP = window.setInterval(reportOnGamepad, 200);
+                repGP = window.setInterval(reportOnGamepad, 200);}
 
             });
 
             $(window).on("gamepaddisconnected", function() {
+				if (enableOneDevice==2){
                 console.log("Gamepad disconnected!");
                 $("UserDevice").text("Gamepad disconnected!");
-                window.clearInterval(repGP);
+                window.clearInterval(repGP);}
 
             });
 

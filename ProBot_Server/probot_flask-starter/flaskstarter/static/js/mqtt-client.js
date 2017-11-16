@@ -5,6 +5,14 @@ window.keyLeft = 0;
 window.keyRight = 0;
 window.MainRoutine = [];
 window.availability = [];
+probotTagID = [];
+
+window.x1axis=0;
+window.y1axis=0;
+window.x2axis=0;
+window.y2axis=0;
+window.x3axis=0;
+window.y3axis=0;
 
 var battery = [];
 var angle = [];
@@ -259,7 +267,7 @@ function update_values() {
             busyProbots = data.busyProbots;
             $("#OnlineProbots").text(data.OnlineProbots);
             OnlineProbots = data.OnlineProbots;
-			
+
             for (i = 1; i < OnlineProbots.length; i++) {
                 if (OnlineProbots[i] != 0) {
                     probotID = OnlineProbots[i][0];

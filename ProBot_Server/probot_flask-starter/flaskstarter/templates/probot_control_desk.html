@@ -8,6 +8,7 @@
 <script type="text/javascript" probot_id="{{ chosen_probot_id }}"  src="{{ url_for('static', filename='js/keyjoy_mqtt.js' )}}"></script>
 <script type="text/javascript" enable=3 $SCRIPT_ROOT = {{ request.script_root|tojson|safe }} src="{{ url_for('static', filename='js/mqtt-client.js' )}}"></script>
 <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['gauge']}]}"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 {% endblock %}
 
 {% block content %}	
@@ -21,6 +22,7 @@
     <responsive_title style="text-align:center; position:relative; color:red;"><span style="display:none;" id="too_much_time{{ chosen_probot_id }}">No activity detected. Returning to the main page in 10 seconds. </span></responsive_title>
     <responsive_title style="text-align:center; position:relative; color:red;"><span style="display:none;" id="lost_connection{{ chosen_probot_id }}">Lost connection. Returning to the main page in 10 seconds.</span></responsive_title>
     <chart style="position:absolute; top:0%; left:1.5%;" id="chart_div{{ chosen_probot_id }}"></chart>
+    <!--<div  id="LocalinoGraph" style="position:absolute; top:50%; left:75%;width: 300px; height: 300px;"></div> -->
 </div>
 
 <div style="text-align:center; position:relative; color:black;">
@@ -40,6 +42,13 @@
 
 {% block js_footer %}
 <script>
+window.x1axis=0
+window.y1axis=0
+window.x2axis=0
+window.y2axis=0
+window.x3axis=0
+window.y3axis=0
+
 var chosen_probot_id = new Array(6).fill(0)
 
 function refresh() {
@@ -51,5 +60,78 @@ function refresh() {
     }
 
 setTimeout(refresh, 1000);
+
+/*function updateAxis() {
+       var probot1 = {
+            x: window.x1axis, 
+            y: window.y1axis,
+            mode: 'markers',
+            type: 'scatter',
+            hoverinfo:'none',
+            name: 'ProBot1',
+            marker: {
+				size: '15'
+      		}
+        };
+        var probot2 = {
+            x: window.x2axis, 
+            y: window.y2axis,
+            mode: 'markers', 
+            type: 'scatter',
+            hoverinfo:'none',
+            name: 'ProBot2',
+            marker: {
+				size: '15'
+      		}
+        };
+       var probot3 = {
+            x: window.x3axis, 
+            y: window.y3axis,
+            mode: 'markers', 
+            type: 'scatter',
+            hoverinfo:'none',
+            name: 'ProBot3',
+            marker: {
+				size: '15'
+      		}
+        };
+        
+var localization = [probot1, probot2, probot3];                
+        var layout = {
+  			legend:{
+  				font:{color: '#fff'},
+  			},
+  			xaxis: {
+  	//autorange: true,
+    //showgrid: false,
+    zeroline: false,
+    showline: false,
+    autotick: true,
+    ticks: '',
+    showticklabels: false,
+    			range: [ -10, 10 ]
+  				},
+  			yaxis: {
+	//showgrid: false,
+    zeroline: false,
+    showline: false,
+    autotick: true,
+    ticks: '',
+    showticklabels: false,
+    			range: [-10, 10]
+  				},
+  			paper_bgcolor:'rgba(0,0,0,0)',
+    		plot_bgcolor:'rgba(0,0,0,0)',
+    			
+  		//	title:'Localino'
+  			showlegend:true
+};
+
+        
+ Plotly.newPlot('LocalinoGraph', localization, layout, {displayModeBar: false});
+ //console.log("PLOT")   
+ }
+ 
+setInterval(updateAxis, 100);*/
 </script>
 {% endblock %}
