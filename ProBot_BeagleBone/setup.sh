@@ -1,110 +1,90 @@
 #!/usr/bin/env bash
 
+CheckInternet(){
+case "$(curl -s --max-time 2 -I http://google.com | sed 's/^[^ ]*  *\([0-9]\).*/\1/; 1q')" in
+  [23]) echo "";;
+  5) echo "The web proxy won't let us through"
+  exit 1;;
+  *) echo "The network is down or very slow"
+  exit 1;;
+esac
+}
+
 ServerIPconfiguration() {
 echo ""
-read -p "--> Please enter the ProBot Server ip: " server_ip
+read -p "--> Please enter the ProBot Server ip address: " broker
 while true; do
     read -p "    Confirm (Y/N)? " yn
     case $yn in
-        [Yy]* ) echo "    OK"; sed -i "s/server_ip/${server_ip}/g" WebClient.py; break;;
+        [Yy]* ) echo "    OK"; sed -i "/self.broker/c \       \ self.broker='${broker}'" ProBotConstantsFile.py; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
 done
-
-(crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_StartAndStop.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_StartAndStop2.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot python $(pwd -P)/forward_ZMQ_WebPage.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot sh $(pwd -P)/EnableEncoders.sh") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot echo "0" >/home/machinekit/ProBot/ProBot_BeagleBone/StartAndStop.txt") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot echo "0" >/home/machinekit/ProBot/ProBot_BeagleBone/userChoice.tmp") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/mqtt.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot sleep 25 && python $(pwd -P)/ProBot.py 2") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-
 }
+
 
 ProBot_ID() {
 echo ""
-read -p "--> Please enter the ProBot ID: " probot_id
+read -p "--> Please enter the ProBot ID: " probotID
 while true; do
     read -p "    Confirm (Y/N)? " yn
     case $yn in
-        [Yy]* ) echo "    OK"; sed -i "s/probot_id/${probot_id}/g" WebClient.py; break;;
+        [Yy]* ) echo "    OK"; sed -i "/self.probotID/c \       \ self.probotID='${probotID}'" ProBotConstantsFile.py; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
-done	
-}	
+done    
+
+(crontab -l ; echo "@reboot sh $(pwd -P)/enableEQEP.sh") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+(crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/mqtt.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+(crontab -l ; echo "@reboot sleep 30 && python $(pwd -P)/ProBot.py 2") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+}
+
+
+RealTimeKernel(){
+echo ""
+echo "--> Installing Real Time Kernel"
+apt-get update -qq > /dev/null
+apt-get upgrade -qq -y > /dev/null
+apt-get install -qq -y linux-image-4.9.49-ti-xenomai-r58 > /dev/null
+apt-get install -qq -y linux-headers-4.9.49-ti-xenomai-r58 > /dev/null
+echo "    OK"
+}
+
 
 NetworkManager(){
 echo ""
-echo "--> Installing Network-Manager"
-apt-get update -qq > /dev/null
-apt-get -qq -y install network-manager firmware-ralink
-echo "    Done"
-}	
-	
-Machinekit(){
-echo ""
-echo "--> Installing Machinekit"
-apt-get update -qq > /dev/null
-
-sh -c \
-"echo 'Package: *
-Pin: release a=stable
-Pin-Priority: 900
-Package: *
-Pin: release o=Debian
-Pin-Priority: -10' > \
-/etc/apt/preferences.d/sid;"
-
-grep -q -F 'deb http://ftp.nl.debian.org/debian/ jessie main' /etc/apt/sources.list || echo 'deb http://ftp.nl.debian.org/debian/ jessie main' >> /etc/apt/sources.list
-grep -q -F 'deb-src http://ftp.nl.debian.org/debian/ jessie main' /etc/apt/sources.list || echo 'deb-src http://ftp.nl.debian.org/debian/ jessie main' >> /etc/apt/sources.list
-grep -q -F 'deb http://ftp.nl.debian.org/debian/ sid main' /etc/apt/sources.list || echo 'deb http://ftp.nl.debian.org/debian/ sid main' >> /etc/apt/sources.list
-grep -q -F 'deb-src http://ftp.nl.debian.org/debian/ sid main' /etc/apt/sources.list || echo 'deb-src http://ftp.nl.debian.org/debian/ sid main' >> /etc/apt/sources.list
-
-rm -rf /etc/apt/apt.conf.d/02compress-indexes
-apt-get update -qq > /dev/null
-apt-get install -qq -y -t sid libczmq-dev
-apt-get install -qq -y apt-show-versions
-
-apt-key adv --keyserver keyserver.ubuntu.com --recv 43DDF224
-sh -c \
-  "echo 'deb http://deb.machinekit.io/debian jessie main' > \
-  /etc/apt/sources.list.d/machinekit.list"
-
-apt-get update
-apt-get install -qq -y  xauth linux-image-3.8.13-xenomai-r78 linux-headers-3.8.13-xenomai-r78 machinekit-xenomai machinekit-dev
-
-echo "--> Done"	
+while true; do
+    read -p "--> Do you want to install Network-Manager? (Y/N)? " yn
+    case $yn in
+        [Yy]* ) apt-get install -qq -y network-manager firmware-ralink > /dev/null; echo "    OK"; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
 }
 
-Encoders(){
+OtherStuff(){
 echo ""
-echo "--> Installing Encoders"
-cp bone_eqep0-00A0.dtbo /lib/firmware
-cp bone_eqep1-00A0.dtbo /lib/firmware
-cp bone_eqep2-00A0.dtbo /lib/firmware
-cp bone_eqep2b-00A0.dtbo /lib/firmware
-echo "    Done"	
-}	
-
-pahoMqtt(){
-echo ""
-echo "--> Installing paho-Mqtt"
-pip install paho-mqtt
-echo "    Done"	
+echo "--> Installing dependencies"
+apt-get install -qq -y build-essential python-dev python-pip python-smbus python-serial python-memcache > /dev/null
+pip install paho-mqtt==1.2.3 > /dev/null
+git clone -q git://github.com/adafruit/adafruit-beaglebone-io-python.git 
+cd adafruit-beaglebone-io-python
+python setup.py install > /dev/null 2>&1
+cd ..
+rm -rf adafruit-beaglebone-io-python
+echo "    OK";
 }
 
 main() {
+CheckInternet
 ServerIPconfiguration
 ProBot_ID
 NetworkManager
-Machinekit
-Encoders
-pahoMqtt
-echo "Installation finished"
-echo "Beaglebone is gonna shutdown"
-shutdown -h now
+RealTimeKernel
+OtherStuff
+echo "Please reboot the BeagleBone..."
 }
 main "$@"

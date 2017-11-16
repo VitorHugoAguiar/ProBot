@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-
 # Python Standard Library Imports
 import math
 
@@ -12,25 +11,23 @@ Pconst = ProBotConstantsFile.Constants()
 
 
 class EncodersClass():
-    def __init__(self, LastwheelPosition1=0, LastwheelPosition2=0, old_wheelTicks1=0, old_wheelTicks2=0):
+    def __init__(self, LastwheelPosition1=0, LastwheelPosition2=0):
         self.LastwheelPosition1 = LastwheelPosition1
 	self.LastwheelPosition2 = LastwheelPosition2
-        self.old_wheelTicks1 = old_wheelTicks1
-        self.old_wheelTicks2 = old_wheelTicks2
 
 
     def EncodersValues(self):
 
-        wheelTicks1 = -Pconst.encoder1.get_position()		# Get position from the first encoder
-        wheelTicks2 = -Pconst.encoder2.get_position()		# Get position from the second encoder
-					
-        wheelPosition1_m = (float(wheelTicks1)) / Pconst.ticks * math.pi * Pconst.wheelDiameter	# First wheel distance travelled 
-        wheelPosition2_m = (float(wheelTicks2)) / Pconst.ticks * math.pi * Pconst.wheelDiameter	# Second wheel distance travelled
+        wheelTicks1 = -Pconst.encoder1.get_position()		# Get position from the first encoder (left wheel)
+        wheelTicks2 = -Pconst.encoder2.get_position()		# Get position from the second encoder (right wheel)
 
-        wheelVelocity1 = float(wheelPosition1_m - self.LastwheelPosition1)			# Wheel velocity
-	wheelVelocity2 = float(wheelPosition2_m - self.LastwheelPosition2)   		
+	wheelPosition1_m = (float(wheelTicks1)) / Pconst.ticks * math.pi * Pconst.wheelDiameter	# Left wheel distance travelled
+        wheelPosition2_m = (float(wheelTicks2)) / Pconst.ticks * math.pi * Pconst.wheelDiameter	# Right wheel distance travelled
 
-	self.LastwheelPosition1 = wheelPosition1_m   
+        wheelVelocity1 = float(wheelPosition1_m - self.LastwheelPosition1)	# Left wheel velocity
+	wheelVelocity2 = float(wheelPosition2_m - self.LastwheelPosition2)	# Right wheel velocity
+
+	self.LastwheelPosition1 = wheelPosition1_m
 	self.LastwheelPosition2 = wheelPosition2_m
 
 	return [wheelVelocity1, wheelVelocity2]

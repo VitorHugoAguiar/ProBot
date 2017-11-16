@@ -1,8 +1,7 @@
-# API for the TI eQEP hardware driver I wrote
+#!/usr/bin/python
 
-# We need OS operations for this
+# Python Standart Library Imports
 import os, select
-
 
 class eQEP(object):
     # Modes
@@ -10,9 +9,9 @@ class eQEP(object):
     MODE_RELATIVE = 1
     
     # eQEP Controller Locations
-    eQEP0 = "/sys/devices/ocp.3/48300000.epwmss/48300180.eqep"
-    eQEP1 = "/sys/devices/ocp.3/48302000.epwmss/48302180.eqep"
-    eQEP2 = "/sys/devices/ocp.3/48304000.epwmss/48304180.eqep"
+    eQEP0 = "/sys/devices/platform/ocp/48300000.epwmss/48300180.eqep"
+    eQEP1 = "/sys/devices/platform/ocp/48302000.epwmss/48302180.eqep"
+    eQEP2 = "/sys/devices/platform/ocp/48304000.epwmss/48304180.eqep"
 
     # Set the mode of the eQEP hardware
     def set_mode(self, mode):

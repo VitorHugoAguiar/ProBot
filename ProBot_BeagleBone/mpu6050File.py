@@ -7,18 +7,15 @@ import sys
 import time
 import Adafruit_BBIO.GPIO as GPIO
 import os
+import memcache
 
 # Local files
 import ProBotConstantsFile
-import StartFile
-import SocketStartAndStop
-import SocketStartAndStop2
+
+shared = memcache.Client([('localhost', 15)], debug=0)
 
 # Initialization of classes from local files
 Pconst = ProBotConstantsFile.Constants()
-InitProgram=StartFile.StartFileClass()
-Pub_SubStart = SocketStartAndStop.SocketClass()
-Pub_SubStart2=SocketStartAndStop2.SocketClass()
 
 # Configuration the type of GPIO's
 GPIO.setup(Pconst.RedLED, GPIO.OUT)
@@ -29,7 +26,7 @@ class mpu6050Class():
 	# Power management registers
 	power_mgmt_1 = 0x6b
 	power_mgmt_2 = 0x6c
-	bus = smbus.SMBus(1) # or bus = smbus.SMBus(1) for Revision 2 boards	
+	bus = smbus.SMBus(2) # or bus = smbus.SMBus(1) for Revision 2 boards	
 	
 	# Scale Modifiers
     	ACCEL_SCALE_MODIFIER_2G = 16384.0
@@ -48,9 +45,12 @@ class mpu6050Class():
     	def __init__(self, address=0x68, lastAccelerometerAngle=0):
 		self.lastAccelerometerAngle=lastAccelerometerAngle
 		self.address = address
+
+		self.bus.write_byte_data(self.address, 0x1A, 0x80)
+
 		# Now wake up the MPU6050 as it starts in sleep mode
-                self.bus.write_byte_data(self.address, self.power_mgmt_1, 0x80)
-		self.bus.write_byte_data(self.address, self.power_mgmt_1, 0)
+                self.bus.write_byte_data(self.address, self.power_mgmt_1, 0x00)
+		self.bus.write_byte_data(self.address,0xA5,0x5A)
 		time.sleep(1)
 				
     	
@@ -93,24 +93,22 @@ class mpu6050Class():
 		
 		while True:
        
-                	if Pub_SubStart.subscriber()=='"stop"':
-				StartAndStopFile = open(os.getcwd()+"/StartAndStop.txt","wb")
-                                StartAndStopFile.write("0");
-                                StartAndStopFile.close()
-				Pub_SubStart2.publisher("stopped")
-                                RestartProgram.RestartProgramRoutine()
+                	if shared.get('MainRoutine')=='"stop"':
+				shared.set('StartAndStop', "0")
+				shared.set('MainRoutineStatus', "stopped")
+				RestartProgram.RestartProgramRoutine()
 				
-			Roll, gyro_xout_scaled=self.RollPitch()
+			Pitch, gyro_xout_scaled=self.RollPitch()
 						
-			if Roll>-0.5 and Roll<0.5:
+			if Pitch>-0.5 and Pitch<0.5:
 				break
 
 		print ("\nBe carefull! The mainRoutine is going to START!")                	                	
 		
 		GPIO.output(Pconst.BlueLED, GPIO.LOW)
 	    	GPIO.output(Pconst.GreenLED, GPIO.HIGH)
-		Pub_SubStart2.publisher("started")
-		return Roll
+		shared.set('MainRoutineStatus', "started")
+		return Pitch
 
 	def RollPitch(self):
 		
@@ -129,20 +127,21 @@ class mpu6050Class():
                 accel_xout_scaled = accel_xout /self.accel_scale_modifier
                 accel_yout_scaled = accel_yout /self.accel_scale_modifier 
                 accel_zout_scaled = accel_zout /self.accel_scale_modifier
-
-                Roll = self.get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)	
-		Roll+=Pconst.Angle_offset
+		
+                Pitch = self.get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)	
+		
+		Pitch+=Pconst.Angle_offset
 		gyro_xout_scaled+=Pconst.GYR_offset
 				
-		return [Roll, gyro_xout_scaled]
+		return [Pitch, gyro_yout_scaled]
 	
 	
 	def Complementary_filter(self, LoopTimeRatioSeg):
 		
-		Roll, gyro_xout_scaled=self.RollPitch()
+		Pitch, gyro_yout_scaled=self.RollPitch()
 
 		# Complementary filter
-    		ComplementaryAngle = float (0.98 * (self.lastAccelerometerAngle+LoopTimeRatioSeg*gyro_xout_scaled) + (1 - 0.98) * Roll)
+    		ComplementaryAngle = float (0.98 * (self.lastAccelerometerAngle+LoopTimeRatioSeg*gyro_yout_scaled) + (1 - 0.98) * Pitch)
     		self.lastAccelerometerAngle=ComplementaryAngle
 		
 		return ComplementaryAngle

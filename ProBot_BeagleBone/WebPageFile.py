@@ -2,16 +2,17 @@
 
 # Python Standart Library Imports
 import decimal
+import memcache
 
 # Local files
 import LowPassFilter
 import ProBotConstantsFile
-import SocketWebPageFile
+
+shared = memcache.Client([('127.0.0.1', 15)], debug=0)
 
 # Initialization of classes from local files
 LPF = LowPassFilter.LowPassFilter()
 Pconst = ProBotConstantsFile.Constants()
-Pub_Sub = SocketWebPageFile.SocketClass()
 
 class WebPageClass():
 
@@ -26,35 +27,29 @@ class WebPageClass():
 	self.count=count
 
     def WebPage_Values(self):
-	subscriber = Pub_Sub.subscriber()
-		
+	keysValues = shared.get('keys')
+
 	if self.count>=100:
         	self.PositionRef=0
        	        self.TurnMotorRight=0
                 self.TurnMotorLeft=0
 		self.count=100
-                
- 	if subscriber is None:
-		subscriber=0
-		self.count+=1	
+
+ 	if keysValues is None:
+		keysValues=0
+		self.count+=1
         else:
-		
 	    	self.count=0
-		incomingMsg=subscriber.split(" ")    
-		self.up = incomingMsg[0]
-	    	self.down = incomingMsg[1]
-	    	self.left = incomingMsg[2]
-	    	self.right = incomingMsg[3]    	    		
+		self.up, self.down, self.left, self.right = keysValues.split(" ")
+		
 	    	Forward = float(decimal.Decimal(self.up))
 	    	Reverse = -float(decimal.Decimal(self.down))
 	    	Left = float(decimal.Decimal(self.left))
 	    	Right = -float(decimal.Decimal(self.right))
-	    	ForwardReverse=Forward+Reverse
-	    	LeftRight=Left+Right
-	    	ForwardReverse=LPF.lowPassFilterFR(ForwardReverse)
-	    	LeftRight=LPF.lowPassFilterLR(LeftRight)
+	    	ForwardReverse=LPF.lowPassFilterFR(Forward+Reverse)
+	    	LeftRight=LPF.lowPassFilterLR(Left+Right)
 	    	self.PositionRef = -float(ForwardReverse*Pconst.ajustFR)
 	    	self.TurnMotorRight = float(LeftRight*Pconst.ajustLR)
 	    	self.TurnMotorLeft = -float(LeftRight*Pconst.ajustLR)
-								
+
         return  [round(self.PositionRef, 5), round (self.TurnMotorRight, 5), round(self.TurnMotorLeft, 5)]

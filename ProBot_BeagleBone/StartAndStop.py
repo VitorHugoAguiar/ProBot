@@ -3,23 +3,19 @@
 # Python Standart Library Imports
 import subprocess
 import os
+import memcache
 
-# Local files
-import SocketStartAndStop
-
-# Initialization of classes from local files
-Pub_Sub = SocketStartAndStop.SocketClass()
+shared = memcache.Client([('localhost', 15)], debug=0)
 
 class StartAndStopClass():
-			
-    def StartAndStopToWeb(self):			
-	with open(os.getcwd()+"/pidProBot.tmp","r") as f: 
-               scriptA_pid = f.read()
-        chk_sA = subprocess.Popen(['kill -0 '+str(scriptA_pid)+' > /dev/null 2>&1; echo $?'],stdout=subprocess.PIPE,shell=True)
+
+    def StartAndStopToWeb(self):
+	if shared.get('MainRoutinePID')==None:
+		return 0
+	chk_sA = subprocess.Popen(['kill -0 '+shared.get('MainRoutinePID')+' > /dev/null 2>&1; echo $?'],stdout=subprocess.PIPE,shell=True)
         chk_sA.wait()
         sA_status = chk_sA.stdout.read()
-			
-       	if int(sA_status) != 0:	
+
+       	if int(sA_status) != 0:
 		return 0
-			
-	
+
