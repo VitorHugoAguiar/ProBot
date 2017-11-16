@@ -12,7 +12,7 @@ Step 2 - The HDMI port causes interference on the functioning of the USB port an
 
 and change
     
-    	cape_disable=bone_capemgr.disable_partno=
+	cape_disable=bone_capemgr.disable_partno=
 to
 
 	cape_disable=bone_capemgr.disable_partno=BB-BONELT-HDMI,BB-BONELT-HDMIN
