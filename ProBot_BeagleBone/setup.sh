@@ -67,7 +67,7 @@ echo "    OK"
 OtherStuff(){
 echo ""
 echo "--> Installing dependencies"
-apt-get install -qq -y build-essential python-dev python-pip python-smbus python-serial python-memcache memcached > /dev/null
+apt-get install -qq -y build-essential python-dev python-pip python-smbus python-serial python-memcache memcached subversion> /dev/null
 pip install paho-mqtt==1.2.3 > /dev/null
 git clone -q git://github.com/adafruit/adafruit-beaglebone-io-python.git 
 cd adafruit-beaglebone-io-python
