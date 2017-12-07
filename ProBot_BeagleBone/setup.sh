@@ -42,6 +42,18 @@ done
 }
 
 
+NetworkManager(){
+echo ""
+while true; do
+    read -p "--> Do you want to install Network-Manager? (Y/N)? " yn
+    case $yn in
+        [Yy]* ) apt-get update -qq > /dev/null && apt-get upgrade -qq -y > /dev/null && apt-get install -qq -y network-manager firmware-ralink > /dev/null; echo "    OK"; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+}
+
 RealTimeKernel(){
 echo ""
 echo "--> Installing Real Time Kernel"
@@ -52,23 +64,10 @@ apt-get install -qq -y linux-headers-4.9.49-ti-xenomai-r58 > /dev/null
 echo "    OK"
 }
 
-
-NetworkManager(){
-echo ""
-while true; do
-    read -p "--> Do you want to install Network-Manager? (Y/N)? " yn
-    case $yn in
-        [Yy]* ) apt-get install -qq -y network-manager firmware-ralink > /dev/null; echo "    OK"; break;;
-        [Nn]* ) break;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
-}
-
 OtherStuff(){
 echo ""
 echo "--> Installing dependencies"
-apt-get install -qq -y build-essential python-dev python-pip python-smbus python-serial python-memcache > /dev/null
+apt-get install -qq -y build-essential python-dev python-pip python-smbus python-serial python-memcache memcached > /dev/null
 pip install paho-mqtt==1.2.3 > /dev/null
 git clone -q git://github.com/adafruit/adafruit-beaglebone-io-python.git 
 cd adafruit-beaglebone-io-python
