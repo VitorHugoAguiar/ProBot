@@ -33,28 +33,32 @@ to
 	cape_enable=bone_capemgr.enable_partno=cape_universala
 	
 
-Step 3 - Use git clone to download all files
+Step 3 - Use git clone to download all files:
 	
 	git clone https://github.com/VitorHugoAguiar/ProBot.git
 
-or
+or install subversion
+	
+	sudo apt-get install subversion
+
+and do
 	
 	svn export https://github.com/VitorHugoAguiar/ProBot.git/trunk/ProBot_BeagleBone
 
-to download only the BeagleBone files 
+to download only the BeagleBone files. 
 
 	
-Step 4  - Go to ProBot_BeagleBone with::
+Step 4  - Go to ProBot_BeagleBone with:
 	
 	cd ProBot/ProBot_BeagleBone or cd ProBot_BeagleBone
-and:
+and
 
 Step 4.1 - To install everything that it's required to run ProBot's program, for debian images (jessie), just type:
 
 	sudo ./setup.sh
 
 
-Step 5 - To configure the networks and the BeagleBone's ip with network-manager, type.
+Step 5 - To configure the networks and the BeagleBone's ip with network-manager, type:
 
 	sudo nmtui	
 
