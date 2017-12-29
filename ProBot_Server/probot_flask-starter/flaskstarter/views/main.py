@@ -8,9 +8,6 @@ from ..forms.forms import ContactForm
 from flask.ext.mail import Message, Mail
 from ..email import send_email
 
-#from plotly.offline import plot
-#from plotly.graph_objs import Scatter
-#import matplotlib.pyplot as plt, mpld3
 from random import randint
 
 from flask import Markup
@@ -21,7 +18,6 @@ import json
 import time
 import atexit
 import os
-#import Localino_Processor_v03b
 
 main = Blueprint('main', __name__)
 
@@ -92,7 +88,6 @@ def initialize():
 @cron.interval_schedule(seconds=0.5)
 def job_function():
 
-	#print ("busyProbotsUPDATE", busyProbots)	
 	for i in range (1,len(StartUsingProbot)):
 		checkUsingProbot=time.time()
 		delta=checkUsingProbot-StartUsingProbot[i]		
@@ -197,7 +192,6 @@ def MainRoutine():
     client.publish(topic, MainRoutineStatus, qos=0)
          		    		
     return b"0"    
-
 
 # publish the shutdownProBot value to the right topic (probot)
 @app.route('/shutdownProBot', methods=['GET', 'POST'])

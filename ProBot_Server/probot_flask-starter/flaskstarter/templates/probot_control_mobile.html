@@ -12,11 +12,11 @@
 
 {% block content %}	
 <div id="wrapper">
-
-<div class="col-md-6"><responsive_title style="font-weight: bold;">Connection to the ProBot{{ chosen_probot_id }}:</responsive_title>
-    <responsive_title id="statusBBB{{ chosen_probot_id }}">Not connected!</responsive_title></div>
-<img class="img-battery" src="../static/images/not_connected.png" id="battery{{ chosen_probot_id }}" style="left:95%; position:relative; height: 3%; width: 3%;" />
-
+    <div class="col-md-6">
+        <responsive_title style="font-weight: bold;">Connection to the ProBot{{ chosen_probot_id }}:</responsive_title>
+        <responsive_title id="statusBBB{{ chosen_probot_id }}">Not connected!</responsive_title>
+    </div>
+    <img class="img-battery" src="../static/images/not_connected.png" id="battery{{ chosen_probot_id }}" style="left:95%; position:relative; height: 3%; width: 3%;" />
 
     <div class="video-container" style="padding-bottom:37%;"><iframe src="https://www.gruveo.com/embed/?code=probot{{ chosen_probot_id }}&language=en" frameborder="0" allowfullscreen></iframe>
         <responsive_title style="text-align:center; position:relative; color:red;"><span style="display:none;" id="mainRoutineLabel{{ chosen_probot_id }}">ProBot{{ chosen_probot_id }} is NOT balancing!.Returning to the main page in 10 seconds. </span></responsive_title>
@@ -32,7 +32,6 @@
 <div id="warning-message" style="text-align: center; position:relative; top:50%;color:black;">
     <strong> For a better experience, please put your smartphone/tablet on landscape mode.</strong>
 </div>
-
 {% endblock %}
 
 {% block js_footer %}

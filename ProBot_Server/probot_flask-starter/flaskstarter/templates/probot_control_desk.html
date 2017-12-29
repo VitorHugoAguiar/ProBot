@@ -12,17 +12,17 @@
 {% endblock %}
 
 {% block content %}	
-<div class="col-md-6"><responsive_title style="font-weight: bold;">Connection to the ProBot{{ chosen_probot_id }}:</responsive_title>
-    <responsive_title id="statusBBB{{ chosen_probot_id }}">Not connected!</responsive_title></div>
+<div class="col-md-6">
+    <responsive_title style="font-weight: bold;">Connection to the ProBot{{ chosen_probot_id }}:</responsive_title>
+    <responsive_title id="statusBBB{{ chosen_probot_id }}">Not connected!</responsive_title>
+</div>
 <img class="img-battery" src="../static/images/not_connected.png" id="battery{{ chosen_probot_id }}" style="left:95%; position:relative; height: 3%; width: 3%;" />
-
 
 <div class="video-container"><iframe src="https://www.gruveo.com/embed/?code=probot{{ chosen_probot_id }}&language=en" frameborder="0" allowfullscreen></iframe>
     <responsive_title style="text-align:center; position:relative; color:red;"><span style="display:none;" id="mainRoutineLabel{{ chosen_probot_id }}">ProBot{{ chosen_probot_id }} is NOT balancing!.Returning to the main page in 10 seconds. </span></responsive_title>
     <responsive_title style="text-align:center; position:relative; color:red;"><span style="display:none;" id="too_much_time{{ chosen_probot_id }}">No activity detected. Returning to the main page in 10 seconds. </span></responsive_title>
     <responsive_title style="text-align:center; position:relative; color:red;"><span style="display:none;" id="lost_connection{{ chosen_probot_id }}">Lost connection. Returning to the main page in 10 seconds.</span></responsive_title>
     <chart style="position:absolute; top:0%; left:1.5%;" id="chart_div{{ chosen_probot_id }}"></chart>
-    <!--<div  id="LocalinoGraph" style="position:absolute; top:50%; left:75%;width: 300px; height: 300px;"></div> -->
 </div>
 
 <div style="text-align:center; position:relative; color:black;">
@@ -37,7 +37,6 @@
         <UserDevice style="color:black;font-weight: bold;"> </ UserDevice>
     </responsive_title>
 </div>
-
 {% endblock %}
 
 {% block js_footer %}
@@ -60,78 +59,5 @@ function refresh() {
     }
 
 setTimeout(refresh, 1000);
-
-/*function updateAxis() {
-       var probot1 = {
-            x: window.x1axis, 
-            y: window.y1axis,
-            mode: 'markers',
-            type: 'scatter',
-            hoverinfo:'none',
-            name: 'ProBot1',
-            marker: {
-				size: '15'
-      		}
-        };
-        var probot2 = {
-            x: window.x2axis, 
-            y: window.y2axis,
-            mode: 'markers', 
-            type: 'scatter',
-            hoverinfo:'none',
-            name: 'ProBot2',
-            marker: {
-				size: '15'
-      		}
-        };
-       var probot3 = {
-            x: window.x3axis, 
-            y: window.y3axis,
-            mode: 'markers', 
-            type: 'scatter',
-            hoverinfo:'none',
-            name: 'ProBot3',
-            marker: {
-				size: '15'
-      		}
-        };
-        
-var localization = [probot1, probot2, probot3];                
-        var layout = {
-  			legend:{
-  				font:{color: '#fff'},
-  			},
-  			xaxis: {
-  	//autorange: true,
-    //showgrid: false,
-    zeroline: false,
-    showline: false,
-    autotick: true,
-    ticks: '',
-    showticklabels: false,
-    			range: [ -10, 10 ]
-  				},
-  			yaxis: {
-	//showgrid: false,
-    zeroline: false,
-    showline: false,
-    autotick: true,
-    ticks: '',
-    showticklabels: false,
-    			range: [-10, 10]
-  				},
-  			paper_bgcolor:'rgba(0,0,0,0)',
-    		plot_bgcolor:'rgba(0,0,0,0)',
-    			
-  		//	title:'Localino'
-  			showlegend:true
-};
-
-        
- Plotly.newPlot('LocalinoGraph', localization, layout, {displayModeBar: false});
- //console.log("PLOT")   
- }
- 
-setInterval(updateAxis, 100);*/
 </script>
 {% endblock %}

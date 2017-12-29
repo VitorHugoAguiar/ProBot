@@ -10,41 +10,52 @@
 
 {% block css %}
 <style type="text/css">  
-video {  
-  float: left;
-  width: 50%;
-  height: auto;
-  border: 2px solid #fff;
-  position: relative;
+.video-responsive{
+    max-width:1170px;
+    width: 50%;
+
+    overflow:hidden;
+    padding-bottom:28.5%;
+    position:relative;
+    float: left;
     
+}
+.video-responsive iframe{
+    height:100%;
+    width:100%;
+    position:absolute;
+    padding: 2px;
 }
 
-#vertical {  
-  float: left;
-  width: 25%;
-  height: auto;
-  border: 2px solid #fff;
-  position: relative;
-    
+p.small {
+    line-height: 70%;
 }
+
  </style>
 {% endblock %}
 
 {% block content %}
 <div class="container">
     <div class="gallery">
+        <h1 style="margin-bottom: 20px;" class="align-center">ProBot3 - Tests</h1>
 
-        <h1 class="align-center">ProBot3 - Tests</h1>
-        <br>
         <a href="../static/gallery/imagesGallery/image33.jpg"><img src="../static/gallery/imagesGallery/image33.jpg" alt="" /></a>
         <a href="../static/gallery/imagesGallery/image34.jpg"><img src="../static/gallery/imagesGallery/image34.jpg" alt="" /></a>
         <a href="../static/gallery/imagesGallery/image35.jpg"><img src="../static/gallery/imagesGallery/image35.jpg" alt="" /></a>
         <a href="../static/gallery/imagesGallery/image36.jpg"><img src="../static/gallery/imagesGallery/image36.jpg" alt="" /></a>
         <div class="clear"></div>
-
     </div>
 </div>
 
+<br>
+<h1 style="margin-bottom: 20px;" class="align-center">Videos</h1>
+
+<div class="video-responsive">
+    <iframe src="https://www.youtube.com/embed/lrYh6OeWECY?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="video-responsive">
+    <iframe src="https://www.youtube.com/embed/lbJmqsjfFyA?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+</div>
 {% endblock %}
 
 {% block js_footer %}

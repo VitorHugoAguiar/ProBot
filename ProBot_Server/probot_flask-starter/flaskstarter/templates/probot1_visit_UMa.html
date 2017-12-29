@@ -9,22 +9,21 @@
 
 {% block css %}
 <style type="text/css">  
-video {  
-  float: left;
-  width: 50%;
-  height: auto;
-  border: 2px solid #fff;
-  position: relative;
-}
+.video-responsive{
+    max-width:1170px;
+    width: 50%;
 
-
-#vertical {  
-  float: left;
-  width: 25%;
-  height: auto;
-  border: 2px solid #fff;
-  position: relative;
+    overflow:hidden;
+    padding-bottom:28.5%;
+    position:relative;
+    float: left;
     
+}
+.video-responsive iframe{
+    height:100%;
+    width:100%;
+    position:absolute;
+    padding: 2px;
 }
  </style>
 {% endblock %}
@@ -32,9 +31,8 @@ video {
 {% block content %}
 <div class="container">
     <div class="gallery">
-
-        <h1 class="align-center">ProBot1 - Visit to the University of Madeira</h1>
-        <br>
+        <h1 style="margin-bottom: 20px;" class="align-center">ProBot1 - Visit to the University of Madeira</h1>
+        
         <a href="../static/gallery/imagesGallery/image37.jpg"><img src="../static/gallery/imagesGallery/image37.jpg" alt="" /></a>
         <a href="../static/gallery/imagesGallery/image38.jpg"><img src="../static/gallery/imagesGallery/image38.jpg" alt="" /></a>
         <a href="../static/gallery/imagesGallery/image39.jpg"><img src="../static/gallery/imagesGallery/image39.jpg" alt="" /></a>
@@ -106,10 +104,18 @@ video {
         <a href="../static/gallery/imagesGallery/image83.jpg"><img src="../static/gallery/imagesGallery/image83.jpg" alt="" /></a>
         <a href="../static/gallery/imagesGallery/image84.jpg"><img src="../static/gallery/imagesGallery/image84.jpg" alt="" /></a>
         <div class="clear"></div>
-
-
     </div>
 </div>
+
+	<br>
+		<h1 style="margin-bottom: 20px;" class="align-center">Videos</h1>
+			<div class="video-responsive" >
+				<iframe src="https://www.youtube.com/embed/xtOeIWHM9Fg?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+			</div>
+			<div class="video-responsive">
+				<iframe src="https://www.youtube.com/embed/hN3Mt2dPUZc?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+			</div> 
+
 {% endblock %}
 
 {% block js_footer %}
