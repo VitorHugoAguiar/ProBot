@@ -17,7 +17,12 @@
 th img {
     height: auto !important;
 }
-  </style>
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+</style>
 {% endblock %}
 
 {% block content %}
@@ -60,7 +65,7 @@ enable_login=0;
                 <responsive_title>ProBot 3</responsive_title>
                 <p></p>
                 <input type="radio" id="probot3" value="3" name="options" class="input-hidden" onclick="checkform(this.value);" />
-                <label for="probot3"><img src="../static/images/probot3.jpg" /></label></div>
+                <label for="probot3"><img src="../static/images/under_construction.jpg" /></label></div>
 				<img class="img-available" src="../static/images/not_available.png" id="available3" style="height: 15%; width: 15%;" />
 
         </div>
