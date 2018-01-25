@@ -59,10 +59,10 @@ echo ""
 echo "--> Installing Real Time Kernel"
 apt-get update -qq > /dev/null
 kernel_release_versions="$(apt-cache search linux-image-*)"
-kernel_release_versions_xenomai="$(grep xenomai <<< "$kernel_release_versions")"
+kernel_release_versions_xenomai="$(grep xenomai <<< "${kernel_release_versions}")"
 newest_kernel_of_release="$(echo "${kernel_release_versions_xenomai}" | tail -n1 | cut -d' ' -f1 )"
-apt-get install $newest_kernel_of_release -qq > /dev/null
-echo "The following kernal has been installed: ${newest_kernel_of_release}"
+apt-get install ${newest_kernel_of_release} -qq > /dev/null
+echo "    The following kernel has been installed: ${newest_kernel_of_release}"
 }
 
 OtherStuff(){
