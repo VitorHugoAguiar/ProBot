@@ -58,10 +58,11 @@ RealTimeKernel(){
 echo ""
 echo "--> Installing Real Time Kernel"
 apt-get update -qq > /dev/null
-apt-get upgrade -qq -y > /dev/null
-apt-get install -qq -y linux-image-4.9.49-ti-xenomai-r58 > /dev/null
-apt-get install -qq -y linux-headers-4.9.49-ti-xenomai-r58 > /dev/null
-echo "    OK"
+kernel_release_versions="$(apt-cache search linux-image-*)"
+kernel_release_versions_xenomai="$(grep xenomai <<< "$kernel_release_versions")"
+newest_kernel_of_release="$(echo "${kernel_release_versions_xenomai}" | tail -n1 | cut -d' ' -f1 )"
+apt-get install $newest_kernel_of_release -qq > /dev/null
+echo "The following kernal has been installed: ${newest_kernel_of_release}"
 }
 
 OtherStuff(){
