@@ -17,7 +17,7 @@ while true; do
     read -p "    Confirm (Y/N)? " yn
     case $yn in
         [Yy]* ) echo "    OK"; sed -i "/self.broker/c \       \ self.broker='${broker}'" ProBotConstantsFile.py; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) ServerIPconfiguration;;
         * ) echo "Please answer yes or no.";;
     esac
 done
@@ -31,7 +31,7 @@ while true; do
     read -p "    Confirm (Y/N)? " yn
     case $yn in
         [Yy]* ) echo "    OK"; sed -i "/self.probotID/c \       \ self.probotID='${probotID}'" ProBotConstantsFile.py; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) ProBot_ID;;
         * ) echo "Please answer yes or no.";;
     esac
 done    
