@@ -132,16 +132,22 @@ class mpu6050Class():
 		
 		Pitch+=Pconst.Angle_offset
 		gyro_xout_scaled+=Pconst.GYR_offset
-		#print Pitch, gyro_xout_scaled				
+				
 		return [Pitch, gyro_yout_scaled]
 	
 	
 	def Complementary_filter(self, LoopTimeRatioSeg):
-		
-		Pitch, gyro_yout_scaled=self.RollPitch()
+		while True:		
+			Pitch, gyro_yout_scaled=self.RollPitch()
 
-		# Complementary filter
-    		ComplementaryAngle = float (0.98 * (self.lastAccelerometerAngle+LoopTimeRatioSeg*gyro_yout_scaled) + (1 - 0.98) * Pitch)
-    		self.lastAccelerometerAngle=ComplementaryAngle
-		#print ComplementaryAngle		
-		return ComplementaryAngle
+			# Complementary filter
+    			ComplementaryAngle = float (0.98 * (self.lastAccelerometerAngle+LoopTimeRatioSeg*gyro_yout_scaled) + (1 - 0.98) * Pitch)
+    			self.lastAccelerometerAngle=ComplementaryAngle
+			print ComplementaryAngle
+			shared.set('ComplementaryAngle', ComplementaryAngle)
+			#return ComplementaryAngle
+
+if __name__ == "__main__":
+	mpu6050 = mpu6050Class()
+	mpu6050.Complementary_filter(0.02)
+	

@@ -17,7 +17,7 @@ while true; do
     read -p "    Confirm (Y/N)? " yn
     case $yn in
         [Yy]* ) echo "    OK"; sed -i "/self.broker/c \       \ self.broker='${broker}'" ProBotConstantsFile.py; break;;
-        [Nn]* ) ServerIPconfiguration;break;;
+        [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
 done
@@ -31,7 +31,7 @@ while true; do
     read -p "    Confirm (Y/N)? " yn
     case $yn in
         [Yy]* ) echo "    OK"; sed -i "/self.probotID/c \       \ self.probotID='${probotID}'" ProBotConstantsFile.py; break;;
-        [Nn]* ) ProBot_ID;break;;
+        [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
 done    
@@ -42,33 +42,33 @@ done
 }
 
 
+RealTimeKernel(){
+echo ""
+echo "--> Installing Real Time Kernel"
+apt-get update -qq > /dev/null
+apt-get upgrade -qq -y > /dev/null
+apt-get install -qq -y linux-image-4.9.49-ti-xenomai-r58 > /dev/null
+apt-get install -qq -y linux-headers-4.9.49-ti-xenomai-r58 > /dev/null
+echo "    OK"
+}
+
+
 NetworkManager(){
 echo ""
 while true; do
     read -p "--> Do you want to install Network-Manager? (Y/N)? " yn
     case $yn in
-        [Yy]* ) apt-get update -qq > /dev/null && apt-get upgrade -qq -y > /dev/null && apt-get install -qq -y network-manager firmware-ralink > /dev/null; echo "    OK"; break;;
+        [Yy]* ) apt-get install -qq -y network-manager firmware-ralink > /dev/null; echo "    OK"; break;;
         [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
 }
 
-RealTimeKernel(){
-echo ""
-echo "--> Installing Real Time Kernel"
-apt-get update -qq > /dev/null
-kernel_release_versions="$(apt-cache search linux-image-*)"
-kernel_release_versions_xenomai="$(grep xenomai <<< "${kernel_release_versions}")"
-newest_kernel_of_release="$(echo "${kernel_release_versions_xenomai}" | tail -n1 | cut -d' ' -f1 )"
-apt-get install ${newest_kernel_of_release} -qq > /dev/null
-echo "    The following kernel has been installed: ${newest_kernel_of_release}"
-}
-
 OtherStuff(){
 echo ""
 echo "--> Installing dependencies"
-apt-get install -qq -y build-essential python-dev python-pip python-smbus python-serial python-memcache memcached subversion> /dev/null
+apt-get install -qq -y build-essential python-dev python-pip python-smbus python-serial python-memcache > /dev/null
 pip install paho-mqtt==1.2.3 > /dev/null
 git clone -q git://github.com/adafruit/adafruit-beaglebone-io-python.git 
 cd adafruit-beaglebone-io-python
