@@ -132,7 +132,7 @@ class mpu6050Class():
 		
 		Pitch+=Pconst.Angle_offset
 		gyro_xout_scaled+=Pconst.GYR_offset
-		#print Pitch, gyro_xout_scaled				
+				
 		return [Pitch, gyro_yout_scaled]
 	
 	
@@ -143,5 +143,5 @@ class mpu6050Class():
 		# Complementary filter
     		ComplementaryAngle = float (0.98 * (self.lastAccelerometerAngle+LoopTimeRatioSeg*gyro_yout_scaled) + (1 - 0.98) * Pitch)
     		self.lastAccelerometerAngle=ComplementaryAngle
-		#print ComplementaryAngle		
+		
 		return ComplementaryAngle

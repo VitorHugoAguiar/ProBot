@@ -14,7 +14,7 @@ import memcache
 # Local files
 import StartAndStop
 import ProBotConstantsFile
-import mpu6050File
+#import mpu6050File
 
 ADC.setup()
 shared = memcache.Client([('localhost', 15)], debug=0)
@@ -22,7 +22,7 @@ shared = memcache.Client([('localhost', 15)], debug=0)
 # Initialization of classes from local files
 Pconst = ProBotConstantsFile.Constants()
 StartAndStop = StartAndStop.StartAndStopClass()
-mpu6050=mpu6050File.mpu6050Class()
+#mpu6050=mpu6050File.mpu6050Class()
 
 # mqtt variables
 port = 1883
@@ -78,12 +78,8 @@ while True:
     	topic = 'telemetry'
 
     	bat_value= round((1.8 * ADC.read(Pconst.AnalogPinLiPo) * (100 + 7.620)/7.620) + 0.2, 2)
-    	angle_value, gyro_yout_scaled = mpu6050.RollPitch()
-	#if shared.get('ComplementaryAngle')==None:
-	#	angle_value=0
-	#else:
-	#	angle_value = shared.get('ComplementaryAngle')
-	
+    	#angle_value, gyro_yout_scaled = mpu6050.RollPitch()
+
 	MainRoutineStatus = shared.get('MainRoutineStatus')
     	mainRoutineStatus=MainRoutineStatus
 
@@ -91,7 +87,7 @@ while True:
         if not_executing==0:
         	mainRoutineStatus=0
 
-    	message = Pconst.probotID + ',' + str(bat_value) + ',' + str(angle_value) + ',' + str(mainRoutineStatus)
+    	message = Pconst.probotID + ',' + str(bat_value) + ',' + str(0) + ',' + str(mainRoutineStatus)
     	client.publish(topic, message, qos=0)
     	time.sleep(timerS)
 	

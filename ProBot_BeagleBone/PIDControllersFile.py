@@ -18,7 +18,7 @@ class PIDControllersClass():
         self.error = error
 	
     def standardPID(self, reference, measured, type, userChoice):
-	self.error = float(reference - measured)
+        self.error = float(reference - measured)
 	
 	# Load the right values for the controllers,  depending on if we are using Sabertooth of PWM controller
 	if userChoice=='1':	
@@ -36,7 +36,7 @@ class PIDControllersClass():
 		KpA=Pconst.PWM_KpA
 		KiA=Pconst.PWM_KiA
 		KdA=Pconst.PWM_KdA
-	
+
 	# Loading the variables for the controllers
         typeController = { 
 	  'Velocity1': [KpV, KiV, KdV, Pconst.limitV, Pconst.integrated_error_V1, Pconst.last_error_V1],
@@ -63,12 +63,10 @@ class PIDControllersClass():
         if(type is 'Velocity1'):
             Pconst.integrated_error_V1 = controllerVar[4]
             Pconst.last_error_V1= controllerVar[5] 
-	    PID_result = max(-3, min(PID_result, 3))
 
         if(type is 'Velocity2'):
             Pconst.integrated_error_V2 = controllerVar[4]
  	    Pconst.last_error_V2= controllerVar[5]           
-	    PID_result = max(-3, min(PID_result, 3))
 	     
 	if(type is 'Angle1'):
             Pconst.integrated_error_A1 = controllerVar[4]
