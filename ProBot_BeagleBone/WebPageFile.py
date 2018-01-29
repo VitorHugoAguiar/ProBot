@@ -54,18 +54,15 @@ class WebPageClass():
                 Left = max(0, min(Left, self.limit))
                 Right = max(-self.limit, min(Right, 0))
 		
-		#ForwardReverse=LPF.lowPassFilterFR(Forward+Reverse)
 	    	LeftRight=LPF.lowPassFilterLR(Left+Right)
-	    	#self.PositionRef = -float(ForwardReverse*Pconst.ajustFR)
 		self.PositionRef = -float(Forward+Reverse)* Pconst.ajustFR
 
         	if (self.PositionRef > 0):
-          		#self.PositionRef = (self.PositionRef * self.PositionRef + 0.4 * self.PositionRef) * Pconst.ajustFR
 			self.PositionRef = math.sqrt((self.radius*self.radius)+(self.PositionRef*self.PositionRef))-self.radius	
 
         	else:
 			self.PositionRef = -math.sqrt((self.radius*self.radius)+(self.PositionRef*self.PositionRef))+self.radius		
-		#print self.PositionRef
+
 	    	self.TurnMotorRight = float(LeftRight*Pconst.ajustLR)
 	    	self.TurnMotorLeft = -float(LeftRight*Pconst.ajustLR)
 		
