@@ -35,20 +35,17 @@ class PWMClass ():
 	    # Sending the values to the PWM controller that is connected to the motors
 	    percentageR=abs(rightMotor)
 	    percentageL=abs(leftMotor)
-	    #timeSleep = 0.05
-	    #percentageR=LPF.lowPassFilterR(percentageR)
-	    #percentageL=LPF.lowPassFilterL(percentageL)	    	    
+	    	    
 	    if rightMotor>0:
 		PWM.set_duty_cycle(Pconst.PWM_R_DIR, 100)
 		PWM.set_duty_cycle(Pconst.PWM_R_PWM, percentageR)
-		#time.sleep(timeSleep)
+
     	    elif rightMotor<0:
                 PWM.set_duty_cycle(Pconst.PWM_R_DIR, 0)
 		PWM.set_duty_cycle(Pconst.PWM_R_PWM, percentageR)
-		#time.sleep(timeSleep)
+
 	    elif rightMotor==0:
                 PWM.set_duty_cycle(Pconst.PWM_R_PWM, 0)
-		#time.sleep(timeSleep)
 
     	    if leftMotor>0:
                 PWM.set_duty_cycle(Pconst.PWM_L_DIR, 0)
@@ -57,10 +54,9 @@ class PWMClass ():
 	    elif leftMotor<0:
                 PWM.set_duty_cycle(Pconst.PWM_L_DIR, 100)
       	    	PWM.set_duty_cycle(Pconst.PWM_L_PWM, percentageL)
-		#time.sleep(timeSleep)
+
     	    elif leftMotor==0:
 		PWM.set_duty_cycle(Pconst.PWM_L_PWM, 0)
-		#time.sleep(timeSleep)
 					
 	def PWMStop(self):
 	    	PWM.stop(Pconst.PWM_R_PWM)
