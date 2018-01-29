@@ -2,7 +2,7 @@
 
 CheckInternet(){
 case "$(curl -s --max-time 2 -I http://google.com | sed 's/^[^ ]*  *\([0-9]\).*/\1/; 1q')" in
-  [23]) echo "";;
+  [23]) echo "";apt-get update -qq > /dev/null && apt-get upgrade -qq -y > /dev/null;
   5) echo "The web proxy won't let us through"
   exit 1;;
   *) echo "The network is down or very slow"
@@ -17,7 +17,7 @@ while true; do
     read -p "    Confirm (Y/N)? " yn
     case $yn in
         [Yy]* ) echo "    OK"; sed -i "/self.broker/c \       \ self.broker='${broker}'" ProBotConstantsFile.py; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) ServerIPconfiguration;break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
@@ -31,7 +31,7 @@ while true; do
     read -p "    Confirm (Y/N)? " yn
     case $yn in
         [Yy]* ) echo "    OK"; sed -i "/self.probotID/c \       \ self.probotID='${probotID}'" ProBotConstantsFile.py; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) ProBot_ID;break;;
         * ) echo "Please answer yes or no.";;
     esac
 done    
@@ -39,17 +39,6 @@ done
 (crontab -l ; echo "@reboot sh $(pwd -P)/enableEQEP.sh") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/mqtt.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (crontab -l ; echo "@reboot sleep 30 && python $(pwd -P)/ProBot.py 2") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-}
-
-
-RealTimeKernel(){
-echo ""
-echo "--> Installing Real Time Kernel"
-apt-get update -qq > /dev/null
-apt-get upgrade -qq -y > /dev/null
-apt-get install -qq -y linux-image-4.9.49-ti-xenomai-r58 > /dev/null
-apt-get install -qq -y linux-headers-4.9.49-ti-xenomai-r58 > /dev/null
-echo "    OK"
 }
 
 
@@ -63,6 +52,17 @@ while true; do
         * ) echo "Please answer yes or no.";;
     esac
 done
+}
+
+RealTimeKernel(){
+echo ""
+echo "--> Installing Real Time Kernel"
+#apt-get update -qq > /dev/null
+kernel_release_versions="$(apt-cache search linux-image-*)"
+kernel_release_versions_xenomai="$(grep xenomai <<< "${kernel_release_versions}")"
+newest_kernel_of_release="$(echo "${kernel_release_versions_xenomai}" | tail -n1 | cut -d' ' -f1 )"
+apt-get install ${newest_kernel_of_release} -qq > /dev/null
+echo "    The following kernel has been installed: ${newest_kernel_of_release}"
 }
 
 OtherStuff(){
