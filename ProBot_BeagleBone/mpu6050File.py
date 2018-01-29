@@ -53,11 +53,9 @@ class mpu6050Class():
 		self.bus.write_byte_data(self.address,0xA5,0x5A)
 		time.sleep(1)
 				
-    	
 	def read_byte(self, adr):
 		return self.bus.read_byte_data(self.address, adr)
 		
-
 	def read_word(self,adr):
     		high = self.bus.read_byte_data(self.address, adr)
     		low = self.bus.read_byte_data(self.address, adr+1)
@@ -98,7 +96,7 @@ class mpu6050Class():
 				shared.set('MainRoutineStatus', "stopped")
 				RestartProgram.RestartProgramRoutine()
 				
-			Pitch, gyro_xout_scaled=self.RollPitch()
+			Pitch, gyro_yout_scaled=self.RollPitch()
 						
 			if Pitch>-0.5 and Pitch<0.5:
 				break
@@ -131,8 +129,8 @@ class mpu6050Class():
                 Pitch = self.get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)	
 		
 		Pitch+=Pconst.Angle_offset
-		gyro_xout_scaled+=Pconst.GYR_offset
-		#print Pitch, gyro_xout_scaled				
+		gyro_yout_scaled+=Pconst.GYR_offset
+					
 		return [Pitch, gyro_yout_scaled]
 	
 	
@@ -143,5 +141,5 @@ class mpu6050Class():
 		# Complementary filter
     		ComplementaryAngle = float (0.98 * (self.lastAccelerometerAngle+LoopTimeRatioSeg*gyro_yout_scaled) + (1 - 0.98) * Pitch)
     		self.lastAccelerometerAngle=ComplementaryAngle
-		#print ComplementaryAngle		
+		
 		return ComplementaryAngle
