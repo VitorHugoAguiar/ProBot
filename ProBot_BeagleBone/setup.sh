@@ -57,7 +57,7 @@ done
 RealTimeKernel(){
 echo ""
 echo "--> Installing Real Time Kernel"
-#apt-get update -qq > /dev/null
+apt-get update -qq > /dev/null
 kernel_release_versions="$(apt-cache search linux-image-*)"
 kernel_release_versions_xenomai="$(grep xenomai <<< "${kernel_release_versions}")"
 newest_kernel_of_release="$(echo "${kernel_release_versions_xenomai}" | tail -n1 | cut -d' ' -f1 )"
