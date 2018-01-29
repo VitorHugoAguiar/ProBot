@@ -79,10 +79,6 @@ while True:
 
     	bat_value= round((1.8 * ADC.read(Pconst.AnalogPinLiPo) * (100 + 7.620)/7.620) + 0.2, 2)
     	angle_value, gyro_yout_scaled = mpu6050.RollPitch()
-	#if shared.get('ComplementaryAngle')==None:
-	#	angle_value=0
-	#else:
-	#	angle_value = shared.get('ComplementaryAngle')
 	
 	MainRoutineStatus = shared.get('MainRoutineStatus')
     	mainRoutineStatus=MainRoutineStatus
