@@ -28,10 +28,10 @@ class Constants:
         self.SaberTooth_KiA = 2.2
         self.SaberTooth_KdA = -2
         self.PWM_KpV = 75 
-        self.PWM_KiV = 0.6 
-        self.PWM_KdV = 200 
+        self.PWM_KiV = 0.4 
+        self.PWM_KdV = 20 
         self.PWM_KpA = 6 
-        self.PWM_KiA = 1.7 
+        self.PWM_KiA = 1.4 
         self.PWM_KdA = -0.001
 	self.limitV = 800
         self.limitA = 1000 
@@ -45,7 +45,7 @@ class Constants:
         self.last_error_A2 = 0
         self.MinRedLiPo = 20
         self.AnalogPinLiPo = "P9_40"
-        self.ajustFR = 0.018 #0.02 #0.015
+        self.ajustFR = 0.019 #0.02 #0.015
         self.ajustLR = 0.007
 	self.encoder1 = eqep.eQEP("/sys/devices/platform/ocp/48302000.epwmss/48302180.eqep", eqep.eQEP.MODE_ABSOLUTE)
 	self.encoder2 = eqep.eQEP("/sys/devices/platform/ocp/48304000.epwmss/48304180.eqep", eqep.eQEP.MODE_ABSOLUTE)

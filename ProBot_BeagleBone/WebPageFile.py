@@ -17,7 +17,7 @@ Pconst = ProBotConstantsFile.Constants()
 
 class WebPageClass():
 
-    def __init__(self, PositionRef=0, TurnMotorRight=0, TurnMotorLeft=0, down=0, up=0, left=0, right=0, count=0, limit=0.56, radius=0.0008):
+    def __init__(self, PositionRef=0, TurnMotorRight=0, TurnMotorLeft=0, down=0, up=0, left=0, right=0, count=0, limit=0.56, radius=0.000001):
         self.PositionRef = PositionRef
         self.TurnMotorRight = TurnMotorRight
         self.TurnMotorLeft = TurnMotorLeft
