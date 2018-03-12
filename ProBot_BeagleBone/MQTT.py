@@ -3,9 +3,6 @@
 # Python Standart Library Imports
 import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
-import time
-import socket
-import random
 import os
 import sys
 import Adafruit_BBIO.ADC as ADC
@@ -14,15 +11,13 @@ import memcache
 # Local files
 import StartAndStop
 import ProBotConstantsFile
-import mpu6050File
-
-ADC.setup()
-shared = memcache.Client([('localhost', 15)], debug=0)
 
 # Initialization of classes from local files
 Pconst = ProBotConstantsFile.Constants()
 StartAndStop = StartAndStop.StartAndStopClass()
-mpu6050=mpu6050File.mpu6050Class()
+
+ADC.setup()
+shared = memcache.Client([('localhost', 15)], debug=0)
 
 # mqtt variables
 port = 1883
@@ -30,8 +25,7 @@ telemetry = ['battery', 'angle', 'mainRoutine']
 bat_value = 0
 angle_value = 0
 mainRoutineStatus = 'stopped'
-timerS=0.2
-
+	
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, rc):
     print("\nConnected to the server!")
@@ -56,7 +50,8 @@ def on_message(client, userdata, msg):
 
 def on_disconnect(client, userdata, rc):
     print("Disconnected!")
-    shared.set('keysValues', "0 0 0 0")
+    shared.set('keys', "0 0 0 0")
+
 
 client = mqtt.Client(protocol=mqtt.MQTTv311)
 client.will_set('ClientStatus', Pconst.probotID + '/OFF-LINE', qos=0)
@@ -72,27 +67,30 @@ client.on_disconnect=on_disconnect
 # manual interface.
 client.loop_start()
 
-while True:
-    try:
+def main():
+	while True:
+    		try:
 	
-    	topic = 'telemetry'
+    			topic = 'telemetry'
 
-    	bat_value= round((1.8 * ADC.read(Pconst.AnalogPinLiPo) * (100 + 7.620)/7.620) + 0.2, 2)
-    	angle_value, gyro_yout_scaled = mpu6050.RollPitch()
+    			bat_value= round((1.8 * ADC.read(Pconst.AnalogPinLiPo) * (100 + 7.620)/7.620) + 0.2, 2)
+    			angle_value = shared.get('ComplementaryAngle')
 	
-	MainRoutineStatus = shared.get('MainRoutineStatus')
-    	mainRoutineStatus=MainRoutineStatus
+			MainRoutineStatus = shared.get('MainRoutineStatus')
+    			mainRoutineStatus=MainRoutineStatus
 
-	not_executing = StartAndStop.StartAndStopToWeb()
-        if not_executing==0:
-        	mainRoutineStatus=0
+			not_executing = StartAndStop.StartAndStopToWeb()
+        		if not_executing==0:
+        			mainRoutineStatus=0
 
-    	message = Pconst.probotID + ',' + str(bat_value) + ',' + str(angle_value) + ',' + str(mainRoutineStatus)
-    	client.publish(topic, message, qos=0)
-    	time.sleep(timerS)
-	
+    			message = Pconst.probotID + ',' + str(bat_value) + ',' + str(angle_value) + ',' + str(mainRoutineStatus)
+    			client.publish(topic, message, qos=0)
+    
+    		except KeyboardInterrupt:
+			shared.set('keys', "0 0 0 0")
+        		sys.exit('\n\nPROGRAM STOPPED!!!\n')
+        		raise
 
-    except KeyboardInterrupt:
-        sys.exit('\n\nPROGRAM STOPPED!!!\n')
-        raise
+if __name__ == '__main__':
+	main()
 

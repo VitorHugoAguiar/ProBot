@@ -5,57 +5,44 @@ import smbus
 import math
 import sys
 import time
-import Adafruit_BBIO.GPIO as GPIO
 import os
 import memcache
 
 # Local files
 import ProBotConstantsFile
 
-shared = memcache.Client([('localhost', 15)], debug=0)
-
 # Initialization of classes from local files
 Pconst = ProBotConstantsFile.Constants()
 
-# Configuration the type of GPIO's
-GPIO.setup(Pconst.RedLED, GPIO.OUT)
-GPIO.setup(Pconst.GreenLED, GPIO.OUT)
-GPIO.setup(Pconst.BlueLED, GPIO.OUT)
+shared = memcache.Client([('localhost', 15)], debug=0)
 
 class mpu6050Class():
-	# Power management registers
-	power_mgmt_1 = 0x6b
-	power_mgmt_2 = 0x6c
-	bus = smbus.SMBus(2) # or bus = smbus.SMBus(1) for Revision 2 boards	
 	
-	# Scale Modifiers
-    	ACCEL_SCALE_MODIFIER_2G = 16384.0
-    	ACCEL_SCALE_MODIFIER_4G = 8192.0
-    	ACCEL_SCALE_MODIFIER_8G = 4096.0
-    	ACCEL_SCALE_MODIFIER_16G = 2048.0
+	def __init__(self):
+		self.Angle_offset = 2
+        	self.GYR_offset = 4.5
 
-    	GYRO_SCALE_MODIFIER_250DEG = 131.0
-    	GYRO_SCALE_MODIFIER_500DEG = 65.5
-    	GYRO_SCALE_MODIFIER_1000DEG = 32.8
-    	GYRO_SCALE_MODIFIER_2000DEG = 16.4
-	
-	accel_scale_modifier=ACCEL_SCALE_MODIFIER_2G
-	gyro_scale_modifier=GYRO_SCALE_MODIFIER_250DEG
+		# Power management registers
+		self.power_mgmt_1 = 0x6b
+		self.bus = smbus.SMBus(2) # or bus = smbus.SMBus(1) for Revision 2 boards	
+		self.accel_scale_modifier = 16384.0 
+		self.gyro_scale_modifier = 131.0 
 
-    	def __init__(self, address=0x68, lastAccelerometerAngle=0):
-		self.lastAccelerometerAngle=lastAccelerometerAngle
-		self.address = address
+		self.lastAccelerometerAngle = 0
+		self.address = 0x68
 
 		self.bus.write_byte_data(self.address, 0x1A, 0x80)
 
 		# Now wake up the MPU6050 as it starts in sleep mode
                 self.bus.write_byte_data(self.address, self.power_mgmt_1, 0x00)
-		self.bus.write_byte_data(self.address,0xA5,0x5A)
+		self.bus.write_byte_data(self.address, 0xA5, 0x5A)
 		time.sleep(1)
 				
+    	
 	def read_byte(self, adr):
 		return self.bus.read_byte_data(self.address, adr)
 		
+
 	def read_word(self,adr):
     		high = self.bus.read_byte_data(self.address, adr)
     		low = self.bus.read_byte_data(self.address, adr+1)
@@ -86,29 +73,25 @@ class mpu6050Class():
 		RestartProgram = RestartProgramFile.RestartProgramClass()
 
 		print "\nProBot must be at 90 degrees!!!"
-		GPIO.output(Pconst.RedLED, GPIO.LOW)
-		GPIO.output(Pconst.BlueLED, GPIO.HIGH)
-		
+				
 		while True:
+       
                 	if shared.get('MainRoutine')=='"stop"':
 				shared.set('StartAndStop', "0")
 				shared.set('MainRoutineStatus', "stopped")
 				RestartProgram.RestartProgramRoutine()
 				
-			Pitch, gyro_yout_scaled=self.RollPitch()
+			Pitch, gyro_xout_scaled=self.RollPitch()
 						
 			if Pitch>-0.5 and Pitch<0.5:
 				break
 
 		print ("\nBe carefull! The mainRoutine is going to START!")                	                	
 		
-		GPIO.output(Pconst.BlueLED, GPIO.LOW)
-	    	GPIO.output(Pconst.GreenLED, GPIO.HIGH)
 		shared.set('MainRoutineStatus', "started")
 		return Pitch
 
-	def RollPitch(self):
-		
+	def RollPitch(self):	
                 gyro_xout = self.read_word_2c(0x43)
 		gyro_yout = self.read_word_2c(0x45)
                 gyro_zout = self.read_word_2c(0x47)
@@ -127,18 +110,17 @@ class mpu6050Class():
 		
                 Pitch = self.get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)	
 		
-		Pitch+=Pconst.Angle_offset
-		gyro_yout_scaled+=Pconst.GYR_offset
-					
+		Pitch += self.Angle_offset
+		gyro_xout_scaled += self.GYR_offset
+						
 		return [Pitch, gyro_yout_scaled]
 	
 	
 	def Complementary_filter(self, LoopTimeRatioSeg):
-		
 		Pitch, gyro_yout_scaled=self.RollPitch()
 
 		# Complementary filter
-    		ComplementaryAngle = float (0.98 * (self.lastAccelerometerAngle+LoopTimeRatioSeg*gyro_yout_scaled) + (1 - 0.98) * Pitch)
-    		self.lastAccelerometerAngle=ComplementaryAngle
-		
+    		ComplementaryAngle = float (0.98 * (self.lastAccelerometerAngle + LoopTimeRatioSeg*gyro_yout_scaled) + (1 - 0.98) * Pitch)
+    		self.lastAccelerometerAngle = ComplementaryAngle
+				
 		return ComplementaryAngle

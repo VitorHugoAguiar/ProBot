@@ -18,7 +18,6 @@ Sabertooth = SabertoothFile.SabertoothClass()
 # Configuration the type of GPIO's
 GPIO.setup(Pconst.RedLED, GPIO.OUT)
 
-
 class RestartProgramClass():
 
     def RestartProgramRoutine(self):

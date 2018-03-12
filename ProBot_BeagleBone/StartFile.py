@@ -11,18 +11,17 @@ import ProBotConstantsFile
 import PWMFile
 import SabertoothFile
 
-shared = memcache.Client([('localhost', 15)], debug=0)
-
 # Initialization of classes from local files
 Sabertooth = SabertoothFile.SabertoothClass()
 PWM = PWMFile.PWMClass()
 Pconst = ProBotConstantsFile.Constants()
 
+shared = memcache.Client([('localhost', 15)], debug=0)
+
 # Configuration the type of GPIO's
 GPIO.setup(Pconst.RedLED, GPIO.OUT)
 GPIO.setup(Pconst.GreenLED, GPIO.OUT)
 GPIO.setup(Pconst.BlueLED, GPIO.OUT)
-
 
 class StartFileClass():
 

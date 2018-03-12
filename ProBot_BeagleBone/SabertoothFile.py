@@ -16,26 +16,25 @@ Pconst = ProBotConstantsFile.Constants()
 
 # Configuration the type of GPIO's
 GPIO.setup(Pconst.RedLED, GPIO.OUT)
-GPIO.setup(Pconst.GreenLED, GPIO.OUT)
-GPIO.setup(Pconst.BlueLED, GPIO.OUT)
 
 # Start the UART1
 UART.setup("UART1")
 
-
 # Packetized serial mode in the Sabertooth
 class SabertoothClass():
-    # Configuration of the parameters for the communication with Sabertooth 
-    commands = {'motor1fwd': 0, 'motor1bwd': 1, 'vmin': 2, 'vmax': 3, 'motor2fwd': 4, 'motor2bwd': 5, 'motor1drive': 6, 'motor2drive': 7, 'timeout': 14, 'baud': 15}
-    baudcodes = {2400: 1, 9600: 2, 19200: 3, 38400: 4}
+    
+    def __init__(self):
+    	# Configuration of the parameters for the communication with Sabertooth 
+    	self.commands = {'motor1fwd': 0, 'motor1bwd': 1, 'vmin': 2, 'vmax': 3, 'motor2fwd': 4, 'motor2bwd': 5, 'motor1drive': 6, 'motor2drive': 7, 'timeout': 14, 'baud': 15}
+    	self.baudcodes = {2400: 1, 9600: 2, 19200: 3, 38400: 4}
 
-    # Define serial connection
-    ser = serial.Serial('/dev/ttyO1', Pconst.baud, timeout=0.5)
+    	# Define serial connection
+    	self.ser = serial.Serial('/dev/ttyO1', Pconst.baud, timeout=0.5)
 
-    # Initialization of the sabertooth connection
-    ser.flush()
-    ser.write(chr(0xAA))
-    ser.flush()
+    	# Initialization of the sabertooth connection
+    	self.ser.flush()
+    	self.ser.write(chr(0xAA))
+    	self.ser.flush()
 
     def set_baud(self, address, baudrate):
         self.packet = self.make_packet(address, self.commands['baud'], self.baudcodes[baudrate])		# Packet format

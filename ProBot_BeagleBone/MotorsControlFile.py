@@ -10,7 +10,6 @@ Sabertooth = SabertoothFile.SabertoothClass()
 PWM = PWMFile.PWMClass()
 Pconst = ProBotConstantsFile.Constants()
 
-
 class MotorsControlClass():
     
     def MotorsControl(self,rightMotor, leftMotor, userChoice):

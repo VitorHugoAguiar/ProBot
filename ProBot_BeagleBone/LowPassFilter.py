@@ -1,24 +1,27 @@
 #!/usr/bin/python
 
-# Low Pass Filter used to obtain a smooth response from the joysticks potenciomenters, the keyboard's arrows and the touch joysticks
-filteredDataFR=[0,0]
-filteredDataLR=[0,0]
-LPFgainFR = 1
-LPFgainLR = 0.8
-
-# We use two filters, one to Forward/Reverse situation and one for the Turn situation
+# Low Pass Filter used to obtain a smooth response from the joysticks potenciomenters, the keyboard's arrows, the touch joysticks and encoders
 class LowPassFilter():
 
-	def lowPassFilterFR(self, directionForwardReverse):
+	def __init__(self):
+		self.filteredDataFR = [0,0]
+		self.filteredDataLR = [0,0]
+		self.filteredDataER = [0,0]
+		self.filteredDataEL = [0,0]
+		self.LPFgainFR = 0.035
+		self.LPFgainLR = 0.8
+		self.LPFgainEncoders = 0.3
 
-		filteredDataFR[0]=directionForwardReverse*LPFgainFR+filteredDataFR[1]*(1-LPFgainFR)
-		filteredDataFR[1]=filteredDataFR[0]
-		return filteredDataFR[0]
+	def lowPassFilter(self, value, type):
+		typeFilter = { 
+          		'directionFR': [self.filteredDataFR, self.LPFgainFR],
+          		'directionLR': [self.filteredDataLR, self.LPFgainLR],
+          		'EncoderR': [self.filteredDataER, self.LPFgainEncoders],
+          		'EncoderL': [self.filteredDataEL, self.LPFgainEncoders]}
 
-
-	def lowPassFilterLR(self, directionLeftRight):
-
-		filteredDataLR[0]=directionLeftRight*LPFgainLR+filteredDataLR[1]*(1-LPFgainLR)
-		filteredDataLR[1]=filteredDataLR[0]
-		return filteredDataLR[0]
+        	variables = typeFilter[type]
+		variables[0][0] = value * variables[1] + variables[0][1] * (1-variables[1])
+                variables[0][1] = variables[0][0]
+		
+                return variables[0][0]
 
