@@ -37,7 +37,7 @@ while true; do
 done    
 
 (crontab -l ; echo "@reboot sh $(pwd -P)/enableEQEP.sh") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/mqtt.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+(crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/MQTT.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (crontab -l ; echo "@reboot sleep 30 && python $(pwd -P)/ProBot.py 2") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 }
 
