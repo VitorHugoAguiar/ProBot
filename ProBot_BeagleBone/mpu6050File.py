@@ -90,7 +90,6 @@ class mpu6050Class():
 		GPIO.output(Pconst.BlueLED, GPIO.HIGH)
 		
 		while True:
-       
                 	if shared.get('MainRoutine')=='"stop"':
 				shared.set('StartAndStop', "0")
 				shared.set('MainRoutineStatus', "stopped")
