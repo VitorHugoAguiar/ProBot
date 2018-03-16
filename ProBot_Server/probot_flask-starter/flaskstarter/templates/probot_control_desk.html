@@ -7,8 +7,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <script type="text/javascript" probot_id="{{ chosen_probot_id }}"  src="{{ url_for('static', filename='js/keyjoy_mqtt.js' )}}"></script>
 <script type="text/javascript" enable=3 $SCRIPT_ROOT = {{ request.script_root|tojson|safe }} src="{{ url_for('static', filename='js/mqtt-client.js' )}}"></script>
+
 <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['gauge']}]}"></script>
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/offline.min.js' )}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/ifvisible.js' )}}"></script>
+
 {% endblock %}
 
 {% block content %}	
@@ -19,7 +23,7 @@
 <img class="img-battery" src="../static/images/not_connected.png" id="battery{{ chosen_probot_id }}" style="left:95%; position:relative; height: 3%; width: 3%;" />
 
 <div class="video-container"><iframe src="https://www.gruveo.com/embed/?code=probot{{ chosen_probot_id }}&language=en" frameborder="0" allowfullscreen></iframe>
-    <responsive_title style="text-align:center; position:relative; color:red;"><span style="display:none;" id="mainRoutineLabel{{ chosen_probot_id }}">ProBot{{ chosen_probot_id }} is NOT balancing!.Returning to the main page in 10 seconds. </span></responsive_title>
+    <responsive_title style="text-align:center; position:relative; color:red;"><span style="display:none;" id="mainRoutineLabel{{ chosen_probot_id }}">ProBot{{ chosen_probot_id }} is NOT balancing!Returning to the main page in 10 seconds. </span></responsive_title>
     <responsive_title style="text-align:center; position:relative; color:red;"><span style="display:none;" id="too_much_time{{ chosen_probot_id }}">No activity detected. Returning to the main page in 10 seconds. </span></responsive_title>
     <responsive_title style="text-align:center; position:relative; color:red;"><span style="display:none;" id="lost_connection{{ chosen_probot_id }}">Lost connection. Returning to the main page in 10 seconds.</span></responsive_title>
     <chart style="position:absolute; top:0%; left:1.5%;" id="chart_div{{ chosen_probot_id }}"></chart>
@@ -40,24 +44,81 @@
 {% endblock %}
 
 {% block js_footer %}
+
 <script>
-window.x1axis=0
-window.y1axis=0
-window.x2axis=0
-window.y2axis=0
-window.x3axis=0
-window.y3axis=0
+var chosen_probot_id = new Array(7).fill(0)
+var myVar;
+var disable_active=0;
 
-var chosen_probot_id = new Array(6).fill(0)
+window.onload = function(){
+	ifvisible.focus(); // Will trigger wakeup event as well
+	ifvisible.wakeup();
+	SendDataServer({{ chosen_probot_id }});
+	}
 
-function refresh() {
-		chosen_probot_id [{{ chosen_probot_id }}]= {{ chosen_probot_id }};	
-        $.post("/WebpageToServer", {
-            chosen_probot_id: String(chosen_probot_id)
-        });
-        setTimeout(refresh, 1000);
-    }
+ifvisible.setIdleDuration(1800);
+ifvisible.on('statusChanged', function(e){
 
-setTimeout(refresh, 1000);
+
+if (e.status == "idle"){
+	SendDataServer(0);
+	disable_active = 1;
+	alert("Too much time without activity!");
+	window.location = window.location;
+}
+
+if (e.status == "hidden"){
+	disable_active = 1;  
+	myVar = setTimeout(function(){
+	SendDataServer(0);
+	
+	alert("You minimized or changed tab for too much time!"); 
+	window.location = window.location;	
+	}, 120000);
+}
+
+if (e.status == "active"){
+	if (disable_active==0) {
+	SendDataServer({{ chosen_probot_id }});
+	clearTimeout(myVar);}
+}
+});
+
+
+var run = function(){
+ if (Offline.state === 'up'){
+ 	Offline.check();
+ 	if (disable_active==0) {
+	SendDataServer({{ chosen_probot_id }});
+	clearTimeout(myVar);}
+ 	}
+ else {
+ 	alert('You are disconnected from internet!');
+ 	window.location = window.location;
+
+ }
+ }
+ setInterval(run, 2000);
+ 
+
+history.pushState(null, null, document.URL);
+window.addEventListener('popstate', function () {
+    history.pushState(null, null, document.URL);
+});
+
+
+
+window.onbeforeunload = window.onunload = function () {
+SendDataServer(0);
+};
+
+function SendDataServer (id) {
+	chosen_probot_id [{{ chosen_probot_id }}] = id;
+ 	$.post("/WebpageToServer", {
+ 	chosen_probot_id: String(chosen_probot_id)
+  	});
+	return undefined;
+	
+}
 </script>
 {% endblock %}

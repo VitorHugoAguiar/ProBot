@@ -1,26 +1,17 @@
-window.stopAlerts = 0;
+//global variables
 window.keyUp = 0;
 window.keyDown = 0;
 window.keyLeft = 0;
 window.keyRight = 0;
 window.MainRoutine = [];
 window.availability = [];
-probotTagID = [];
 
-window.x1axis=0;
-window.y1axis=0;
-window.x2axis=0;
-window.y2axis=0;
-window.x3axis=0;
-window.y3axis=0;
-
+//local variables
 var battery = [];
 var angle = [];
 var mainRoutineStatus = [];
 var probotID = 0;
-var temp;
 var battery_timeout = [];
-var locker = [];
 var OnlineProbots = [];
 var numberProbots = 6;
 var busyProbots = [];
@@ -31,8 +22,6 @@ var this_js_script = $('script[src*=mqtt-client]');
 var enable = this_js_script.attr('enable');
 var mobile = this_js_script.attr('mobile');
 var $SCRIPT_ROOT = this_js_script.attr('$SCRIPT_ROOT');
-
-window.time = new Date().getTime();
 
 function drawChart() {
 
@@ -119,15 +108,35 @@ function shutdownProBot(probot) {
     }
 }
 
-function checkform(value) {
-    if (enable_login == 0) {
-        if (enable == 1) {
+function noLogin() {
+	    if (enable == 1) {
             alert("To start a ProBot, you need to login as an admin!");
         }
         if (enable == 2) {
             alert("To control a ProBot, you need to login first!");
         }
-    } else {
+}
+
+function LoginStart() {
+	window.onload = function(){
+	ifvisible.focus(); // Will trigger wakeup event as well
+	ifvisible.wakeup();
+
+	}
+
+	ifvisible.setIdleDuration(3600);
+	ifvisible.on('statusChanged', function(e){
+
+
+	if (e.status == "idle"){
+		document.getElementById('link').click();
+		}
+
+	});
+
+}
+
+function checkform(value) {
         if (enable == 1) {
             if (window.mainRoutineStatus[value] == "stopped") {
                 if (confirm("Do you really want to START the main routine?") == true) {
@@ -155,6 +164,7 @@ function checkform(value) {
             if (document.getElementById("available" + value).getAttribute('src') == "../static/images/available.png") {
                 if (confirm("Are you sure?") == true) {
                     document.formName.submit();
+                    document.formName.reset();
                 } else {
                     return false;
                 }
@@ -165,102 +175,12 @@ function checkform(value) {
             }
 
         }
-    }
 
-}
-
-if (enable == 3) {
-    function TooMuchTimeInactivity() {
-
-        if (new Date().getTime() - window.time >= 600000) {
-            if (window.stopAlerts != 1) {
-                window.stopAlerts = 1;
-                disableLabels=1;
-                document.getElementById("battery" + window.probot_ID).src = "../static/images/not_connected.png";
-                document.getElementById('too_much_time' + window.probot_ID).style.display = "block";
-                AngleChart = NaN;
-                drawChart();
-                google.setOnLoadCallback(drawChart);
-    			setTimeout(function() {
-                	window.location = window.location;
-
-    			}, 10000);
-            }
-
-        } else {
-            setTimeout(TooMuchTimeInactivity, 2000);
-        }
-
-    }
-
-    setTimeout(TooMuchTimeInactivity, 1000);
-}
-
-
-$(document.body).bind("mousemove keypress", function(e) {
-    window.time = new Date().getTime();
-});
-
-$(document).bind('touchstart', function(e) {
-    window.time = new Date().getTime();
-});
-
-$(document).bind('touchend', function(e) {
-    window.time = new Date().getTime();
-});
-
-if (mobile == 1) {
-    var isChromium = window.chrome,
-        winNav = window.navigator,
-        vendorName = winNav.vendor,
-        isOpera = winNav.userAgent.indexOf("OPR") > -1,
-        isIEedge = winNav.userAgent.indexOf("Edge") > -1,
-        isIOSChrome = winNav.userAgent.match("CriOS");
-
-    if (isIOSChrome) {
-        console.log("is Google Chrome on IOS");
-    } else if (isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false && isIEedge == false) {
-        console.log("is Google Chrome");
-    } else {
-        (function() {
-            var timestamp = new Date().getTime();
-
-            function checkResume() {
-                var current = new Date().getTime();
-                if (current - timestamp > 3000) {
-                    var event = document.createEvent("Events");
-                    event.initEvent("resume", true, true);
-                    document.dispatchEvent(event);
-                }
-                timestamp = current;
-            }
-
-            window.setInterval(checkResume, 500);
-        })();
-
-        addEventListener("resume", function() {
-            if (window.stopAlerts != 1) {
-                window.stopAlerts = 1;
-                chosen_probot_id[window.probot_ID] = 0;
-                $.post("/WebpageToServer", {
-                    javascript_data: String(chosen_probot_id)
-                });
-                disableLabels = 1;
-                document.getElementById("battery" + window.probot_ID).src = "../static/images/not_connected.png";
-                document.getElementById('too_much_time' + window.probot_ID).style.display = "block";
-                AngleChart = NaN;
-                drawChart();
-                google.setOnLoadCallback(drawChart);
-                alert('The screen of your smartphone/tablet was turn off');
-                window.location = window.location;
-
-            }
-        });
-    }
 }
 
 /////
 function update_values() {
+	
     $.getJSON($SCRIPT_ROOT + "/ServerToWebpage",
         function(data) {
             $("#busyProbots").text(data.busyProbots);
@@ -367,8 +287,6 @@ function update_values() {
                                 document.getElementById('mainRoutineLabel' + probotID).style.display = "none";
                             }
 
-
-
                                 AngleChart = parseFloat(angle[probotID]) + 90;
                                 drawChart();
                                 google.setOnLoadCallback(drawChart);
@@ -411,3 +329,4 @@ function update_values() {
 }
 
 setInterval(update_values, 500)
+

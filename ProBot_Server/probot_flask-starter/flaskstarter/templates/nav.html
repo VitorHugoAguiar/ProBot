@@ -10,7 +10,7 @@
       <div class="nav-collapse collapse">
         <ul class="nav">         
           {% if g.user.is_authenticated %}
-          {% if (current_user.email=='admin' and current_user.username=='admin_password')%}
+          {% if g.user.urole %}
 		  <li><a href="{{ url_for('probots_admin') }}">ProBots Admin</a></li>
 		  {% endif %}
           <li><a href="{{ url_for('probots_user') }}">ProBots User</a></li>
@@ -43,7 +43,7 @@
           {% endif %}
           
         </ul>
-      </div><!--/.nav-collapse -->
+      </div>
     </div>
   </div>
 </header>

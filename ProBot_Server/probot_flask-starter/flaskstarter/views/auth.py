@@ -337,7 +337,7 @@ def logout():
         'user logout. user: {0}'.format(current_user)
     )
     logout_user()
-    return redirect(url_for('auth.login'))
+    return render_template('index.html')
     
 @auth.route('/about')
 def about():

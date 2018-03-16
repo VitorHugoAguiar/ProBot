@@ -35,13 +35,6 @@ window.probot_ID = probot_id;
     var left = 0;
     var right = 0;
 
-    function TooMuchTimeInactivity() {
-        if (up != 0 || down != 0 || left != 0 || right != 0) {
-            window.time = new Date().getTime();
-        }
-        setTimeout(TooMuchTimeInactivity, 2000);
-    }
-    setTimeout(TooMuchTimeInactivity, 2000);
     // Constants
     var isTouch = !!('ontouchstart' in window);
     var isPointer = window.PointerEvent ? true : false;

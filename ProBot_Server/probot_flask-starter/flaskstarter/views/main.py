@@ -1,29 +1,22 @@
 # imports
 from flask import Blueprint, render_template, request, jsonify, session, flash
 from .. import app
-from ..models import Probot
-from datetime import timedelta
 from apscheduler.scheduler import Scheduler
 from ..forms.forms import ContactForm
 from flask.ext.mail import Message, Mail
 from ..email import send_email
 
-from random import randint
-
-from flask import Markup
-import flask.ext.login
 import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
 import json
 import time
-import atexit
 import os
 
 main = Blueprint('main', __name__)
 
 # variables
 numberProbots = 6
-busyProbots=[0]*(numberProbots+1)
+busyProbots=['0']*(numberProbots+1)
 OnlineProbots=[0]*(numberProbots+1)
 StartUsingProbot=[0]*(numberProbots+1)
 incomingMsg=0
@@ -32,22 +25,15 @@ port = 1883
 client = 0
 cron = Scheduler(daemon=True)
 
-incomingMsgLocalino=0
-probotTagID=[0]*(numberProbots+1)
-
 # paho-mqtt
 def on_connect(client, userdata, rc):
     print("Connected with result code " + str(rc))
     client.subscribe('telemetry', qos=0)
-    client.subscribe('ClientStatus', qos=0)
-    client.subscribe('coordinates', qos=0)
-    client.subscribe('LocalinoStatus', qos=0)    
+    client.subscribe('ClientStatus', qos=0)   
     
 def on_message(client, userdata, msg):
     global incomingMsg
     global OnlineProbots
-    global incomingMsgLocalino
-    global probotTagID
     
     if msg.topic=="telemetry":
     	incomingMsg=msg.payload.split(",")
@@ -57,14 +43,6 @@ def on_message(client, userdata, msg):
     	incomingMsg=msg.payload.split("/")
     	OnlineProbots[int(incomingMsg[0])]=incomingMsg
     	
-    if msg.topic=="coordinates":
-    	incomingMsgLocalino=msg.payload.split(",")
-    	#probotTagID[int(incomingMsgLocalino[0])]=incomingMsgLocalino
-
-    if msg.topic=="LocalinoStatus":
-    	incomingMsgLocalino=msg.payload.split("/")
-    	#probotTagID[int(incomingMsgLocalino[0])]=incomingMsgLocalino    	
-    			
 def on_disconnect(client, userdata, rc):
     global OnlineProbots
     	
@@ -87,13 +65,16 @@ def initialize():
 # check which probot is being use
 @cron.interval_schedule(seconds=0.5)
 def job_function():
-
-	for i in range (1,len(StartUsingProbot)):
+	for i in range (1,len(StartUsingProbot)):  		
 		checkUsingProbot=time.time()
-		delta=checkUsingProbot-StartUsingProbot[i]		
+		delta=checkUsingProbot-StartUsingProbot[i]	
 		if delta>=3:
-			busyProbots[i]='0'
-		
+			busyProbots[i] = '0'
+			StartUsingProbot[i] = 0
+			keys = str(0) + " " + str(0) + " " + str(0) + " " + str(0)           
+			topic = 'keys/' + str(i)
+			client.publish(topic, keys, qos=0)
+				
 # render the web pages
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -159,12 +140,13 @@ def probots_user():
 def WebpageToServer():
     chosen_probot_id = list(json.dumps(request.form['chosen_probot_id']))
     chosen_probot_id = [e for e in chosen_probot_id if e not in (',', '"', '"')]
-    print ("chosen_probot_id", chosen_probot_id)
-    for i in range (1, len(chosen_probot_id)): 	   	
+    for i in range (1, len(chosen_probot_id)):
+    	if (chosen_probot_id[i]== str(0)):
+    		busyProbots[int(i)]='0'    	
+    
     	if (chosen_probot_id[i]==str(i)):
     		busyProbots[int(i)]=str(i)
     		StartUsingProbot[int(i)]=time.time()    		    		
-    print ("busyProbots", busyProbots)
     return b"0"
 
 # publish the keys controls values to the right topic (probot)

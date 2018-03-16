@@ -13,7 +13,8 @@ class User(db.Model):
     email = db.Column(db.String(50), unique=True, index=True)
     registered_on = db.Column(db.DateTime, default=datetime.datetime.utcnow())
     confirmed = db.Column(db.Boolean, nullable=False, default=False)
-
+    urole = db.Column(db.Boolean, nullable=False, default=False)
+    
     def hash_password(self, password):
         """Model method."""
         self.password_hash = pwd_context.encrypt(password)
@@ -38,16 +39,7 @@ class User(db.Model):
         """Model method."""
         return unicode(self.id)
         
-
-class Probot(db.Model):
-	"""Probot model."""
-	
-	__tablename__ = "probot"	
-	id = db.Column(db.Integer, primary_key=True)
-	botname = db.Column(db.String(20), unique=True, index=True)
-	#is_available = db.Column(db.Boolean, nullable=False, default=True)
-	is_available = db.Column(db.Integer, nullable=False, default=1)
-	battery = db.Column(db.Integer)
-	registered_on = db.Column(db.DateTime, default=datetime.datetime.utcnow())
+    def get_urole(self):
+        return self.urole
 		
 		

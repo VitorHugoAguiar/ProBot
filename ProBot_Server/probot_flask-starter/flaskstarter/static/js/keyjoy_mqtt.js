@@ -74,10 +74,6 @@ function keyboardHandler() {
             right = incDirValue(right);
         }
 
-        if (up != 0 || down != 0 || left != 0 || right != 0) {
-            window.time = new Date().getTime();
-        }
-
 			window.keyUp = up.toFixed(3);
 			window.keyDown = down.toFixed(3);
 			window.keyLeft = left.toFixed(3);
@@ -162,11 +158,7 @@ function gamepadHandler() {
                 right = gp.axes[2] * MAX;
                 left = 0;
             }
-
-            if (up != 0 || down != 0 || left != 0 || right != 0) {
-                window.time = new Date().getTime();
-            }
-			
+            
 			window.keyUp = up.toFixed(3);
 			window.keyDown = down.toFixed(3);
 			window.keyLeft = left.toFixed(3);
