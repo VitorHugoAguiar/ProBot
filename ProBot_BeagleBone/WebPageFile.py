@@ -42,29 +42,29 @@ class WebPageClass():
 		
         else:
 		self.up, self.down, self.left, self.right = keysValues.split(" ")
-				
-		Forward = float(decimal.Decimal(self.up))
-		Reverse = -float(decimal.Decimal(self.down))
-		Left = float(decimal.Decimal(self.left))
-		Right = -float(decimal.Decimal(self.right))
+					
+	Forward = float(decimal.Decimal(self.up))
+	Reverse = -float(decimal.Decimal(self.down))
+	Left = float(decimal.Decimal(self.left))
+	Right = -float(decimal.Decimal(self.right))
 	    	
-        	Forward = max(0, min(Forward, self.limit))
-        	Reverse = max(-self.limit, min(Reverse, 0))
-        	Left = max(0, min(Left, self.limit))
-        	Right = max(-self.limit, min(Right, 0))
+        Forward = max(0, min(Forward, self.limit))
+        Reverse = max(-self.limit, min(Reverse, 0))
+        Left = max(0, min(Left, self.limit))
+        Right = max(-self.limit, min(Right, 0))
 		
-		self.PositionRef = -float(Forward+Reverse)* self.ajustFR
+	self.PositionRef = -float(Forward+Reverse)* self.ajustFR
 
-        	if (self.PositionRef > 0):
-          		self.PositionRef = math.sqrt((self.radius*self.radius) + (self.PositionRef*self.PositionRef)) - self.radius	
+        if (self.PositionRef > 0):
+          	self.PositionRef = math.sqrt((self.radius*self.radius) + (self.PositionRef*self.PositionRef)) - self.radius	
 
-        	else:
-			self.PositionRef = -math.sqrt((self.radius*self.radius) + (self.PositionRef*self.PositionRef)) + self.radius		
+        else:
+		self.PositionRef = -math.sqrt((self.radius*self.radius) + (self.PositionRef*self.PositionRef)) + self.radius		
 		
-		LeftRight=LPF.lowPassFilter(Left+Right, 'directionLR')
-		self.PositionRef = LPF.lowPassFilter(self.PositionRef, 'directionFR')
+	LeftRight=LPF.lowPassFilter(Left+Right, 'directionLR')
+	self.PositionRef = LPF.lowPassFilter(self.PositionRef, 'directionFR')
 	
-		self.TurnMotorRight = float(LeftRight*self.ajustLR)
-		self.TurnMotorLeft = -float(LeftRight*self.ajustLR)
+	self.TurnMotorRight = float(LeftRight*self.ajustLR)
+	self.TurnMotorLeft = -float(LeftRight*self.ajustLR)
 		
         return  [round(self.PositionRef, 5), round (self.TurnMotorRight, 5), round(self.TurnMotorLeft, 5)]
