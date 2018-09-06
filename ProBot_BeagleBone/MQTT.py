@@ -5,56 +5,52 @@ import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
 import os
 import sys
-import Adafruit_BBIO.ADC as ADC
 import memcache
 
+
 # Local files
-import StartAndStop
 import ProBotConstantsFile
 
 # Initialization of classes from local files
 Pconst = ProBotConstantsFile.Constants()
-StartAndStop = StartAndStop.StartAndStopClass()
 
-ADC.setup()
 shared = memcache.Client([('localhost', 15)], debug=0)
 
 # mqtt variables
 port = 1883
-telemetry = ['battery', 'angle', 'mainRoutine']
-bat_value = 0
-angle_value = 0
-mainRoutineStatus = 'stopped'
 	
+
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, rc):
     print("\nConnected to the server!")
     # Subscribing in on_connect() means that if we lose the connection and
     # reconnect then subscriptions will be renewed.
-    client.subscribe('keys/' + Pconst.probotID, qos=0)
-    client.subscribe('MainRoutine/' + Pconst.probotID, qos=0)
-    client.subscribe('shutdownProBot/' + Pconst.probotID, qos=0)
+    client.subscribe('keys/' + 'ProBot' + Pconst.probotID, qos=0)
+    client.subscribe('MainRoutine/' + 'ProBot' + Pconst.probotID, qos=0)
+    client.subscribe('shutdownProBot/' + 'ProBot' + Pconst.probotID, qos=0)
     
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-    if (msg.topic=='MainRoutine/' + Pconst.probotID):	
+    
+    if (msg.topic=='MainRoutine/' + 'ProBot' + Pconst.probotID):	
 	shared.set('MainRoutine', msg.payload)
 	
-    if (msg.topic=='keys/' + Pconst.probotID):
+    if (msg.topic=='keys/' + 'ProBot'+ Pconst.probotID):
+	#print msg.payload
 	shared.set('keys', msg.payload)
 
-    if (msg.topic=='shutdownProBot/' + Pconst.probotID):
+    if (msg.topic=='shutdownProBot/' + 'ProBot' + Pconst.probotID):
 	if msg.payload=='"shutdown"':
 		os.system("sudo shutdown -h now")
 
 def on_disconnect(client, userdata, rc):
     print("Disconnected!")
-    shared.set('keys', "0 0 0 0")
+    shared.set('keys', '0 0 0 0')
 
 
 client = mqtt.Client(protocol=mqtt.MQTTv311)
-client.will_set('ClientStatus', Pconst.probotID + '/OFF-LINE', qos=0)
+client.will_set('ClientStatus', 'ProBot' + str(Pconst.probotID) + '/Offline', qos=0)
 client.connect_async(Pconst.broker, port, keepalive=5)
 
 client.on_connect = on_connect
@@ -70,22 +66,12 @@ client.loop_start()
 def main():
 	while True:
     		try:
-	
-    			topic = 'telemetry'
-
-    			bat_value= round((1.8 * ADC.read(Pconst.AnalogPinLiPo) * (100 + 7.620)/7.620) + 0.2, 2)
-    			angle_value = shared.get('ComplementaryAngle')
-	
-			MainRoutineStatus = shared.get('MainRoutineStatus')
-    			mainRoutineStatus=MainRoutineStatus
-
-			not_executing = StartAndStop.StartAndStopToWeb()
-        		if not_executing==0:
-        			mainRoutineStatus=0
-
-    			message = Pconst.probotID + ',' + str(bat_value) + ',' + str(angle_value) + ',' + str(mainRoutineStatus)
-    			client.publish(topic, message, qos=0)
-    
+			topic = 'telemetry'			
+    			message = shared.get(topic)
+			if message:
+				#print message
+				client.publish(topic,message , qos=0)
+			
     		except KeyboardInterrupt:
 			shared.set('keys', "0 0 0 0")
         		sys.exit('\n\nPROGRAM STOPPED!!!\n')

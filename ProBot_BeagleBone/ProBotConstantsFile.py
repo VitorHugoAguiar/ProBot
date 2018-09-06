@@ -3,8 +3,8 @@
 # Global Constants
 class Constants:
     def __init__(self):
-	self.probotID = '1'
-	self.broker = '89.109.64.175'
+	self.probotID = <ProBotID>
+	self.broker = <Server IPAddress>
 	self.baud = 38400
 	self.addr = 128
 	self.PWM_Freq = 20000

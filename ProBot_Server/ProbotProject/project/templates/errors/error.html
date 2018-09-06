@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block css_header %}
+<style type="text/css">  
+ footer.footer {
+display:none;
+ }
+</style>
+{% endblock %}
+
+{% block body_content %}
+<!-- Notice -->
+<div id="errorModal" class="login-modal modal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-login">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="avatar rounded-circle text-center">
+                    <i class="fas fa-exclamation-triangle fa-3x"></i>
+                </div>
+                <h4 class="modal-title">Notice
+                    <hr class="colored">
+                </h4>
+            </div>
+            <div class="modal-body">
+                <p align="justify">Something's wrong! Maybe you need to login to access this page!</p>
+                <a href="{{ url_for('main.home') }}" class="btn btn-secondary btn-lg btn-block login-btn">Ok</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

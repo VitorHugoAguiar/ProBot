@@ -1,0 +1,128 @@
+{% extends "base.html" %} {%block body_content%}
+<!-- Navigation -->
+<!-- USER -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-shrink" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img class="img-fluid" src="../static/resources/images/logo.png"> ProBot Project
+        </a>
+        <button class="navbar-toggler navbar-toggler-right navbar-shrink " type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav row ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li> 
+                {% if current_user.admin %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('user.admin') }}">Admin</a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url_for('user.user') }}">ProBots</a>
+                </li>              
+                <li class="nav-item dropdown">
+                    {% if current_user.is_authenticated() %}
+                    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" id="dropdownMenu">
+                        <i class="fas fa-user-circle fa-lg"></i>
+                    </a>
+
+                    <div id="dropdown-menu" class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
+                        <a class="dropdown-item" href="#changePasswordModal" data-toggle="modal">Change Password</a>
+                        <form class="form-login" role="form" method="post" action="/login">
+                            <input class="dropdown-item" type="submit" value="Logout" name="FormType" />
+                        </form>
+                    </div>
+                    {% endif %} 
+
+                    {% if MsgOutsideModal == True%} 
+                    {% with messages = get_flashed_messages(with_categories=true) %} 
+                    {% if messages%}
+                    {% for category, message in messages %}
+                    <div id="dropdown-alert" class="dropdown-menu dropdown-menu-right alert-{{ category }}">
+                        <div class="dropdown-item text-center">
+                            {{message}}
+                        </div>
+                    </div>
+                    {% endfor %} 
+                    {% endif %} 
+                    {% endwith %} 
+                    {% endif %}
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Notice -->
+<div id="noticeModal" class="login-modal modal">
+    <div class="modal-dialog modal-login">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="avatar rounded-circle text-center">
+                    <i class="fas fa-exclamation-triangle fa-3x"></i>
+                </div>
+                <h4 class="modal-title">Notice
+                    <hr class="colored">
+                </h4>
+            </div>
+            <div class="modal-body">
+                <p align="justify">This page requires a browser that supports the Page Visibility API, such as Google Chrome or Firefox.</p>
+                <a data-dismiss="modal" type="button" class="btn btn-secondary btn-lg btn-block login-btn">Ok</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- WithoutPermission -->
+<div id="WithoutPermission" class="login-modal modal">
+    <div class="modal-dialog modal-login">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="avatar rounded-circle text-center">
+                    <i class="fas fa-exclamation-triangle fa-3x"></i>
+                </div>
+                <h4 class="modal-title">Notice
+                    <hr class="colored">
+                </h4>
+            </div>
+            <div class="modal-body">
+                <p align="justify">You don't have permission to control a ProBot!</p>
+                <a data-dismiss="modal" type="button" class="btn btn-secondary btn-lg btn-block login-btn">Ok</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+    <section class="page-section" id="probots">
+        <div class="container text-center">
+            <h2>ProBots</h2>
+            <p class="mb-0">Choose a ProBot by clicking on the respectively image</p>
+            <hr class="colored">
+            <div class="probot-loading loading text-center">
+                <i class="fas fa-spinner fa-2x fa-spin" color="black"></i>
+                <p class="font-weight-bold text-uppercase">Loading ProBots</p>
+            </div>
+            <div class="team-carousel owl-carousel owl-theme probots mt-4" >
+            </div>
+            <div class="probot-status float-right text-left">
+                <div>
+                    <i class="fas fa-robot fa-1x"></i>
+                    <p class="probots"></p>
+                </div>
+                <div>
+                    <i class="fas fa-power-off fa-1x"></i>
+                    <p class="online"></p>
+                </div>
+                <div>
+                    <i class="fas fa-check-circle fa-1x"></i>
+                    <p class="available"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {%endblock%}

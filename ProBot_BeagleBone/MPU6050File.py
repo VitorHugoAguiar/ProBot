@@ -19,8 +19,8 @@ shared = memcache.Client([('localhost', 15)], debug=0)
 class mpu6050Class():
 	
 	def __init__(self):
-		self.Angle_offset = 2
-        	self.GYR_offset = 4.5
+		self.Angle_offset = 3.3 #-0.7
+        	self.GYR_offset = 0.1 #0.67
 
 		# Power management registers
 		self.power_mgmt_1 = 0x6b
@@ -111,7 +111,7 @@ class mpu6050Class():
                 Pitch = self.get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)	
 		
 		Pitch += self.Angle_offset
-		gyro_xout_scaled += self.GYR_offset
+		gyro_yout_scaled += self.GYR_offset
 						
 		return [Pitch, gyro_yout_scaled]
 	
@@ -122,5 +122,5 @@ class mpu6050Class():
 		# Complementary filter
     		ComplementaryAngle = float (0.98 * (self.lastAccelerometerAngle + LoopTimeRatioSeg*gyro_yout_scaled) + (1 - 0.98) * Pitch)
     		self.lastAccelerometerAngle = ComplementaryAngle
-				
+						
 		return ComplementaryAngle

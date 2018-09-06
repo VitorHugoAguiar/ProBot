@@ -38,7 +38,8 @@ done
 
 (crontab -l ; echo "@reboot sh $(pwd -P)/enableEQEP.sh") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 (crontab -l ; echo "@reboot sleep 20 && python $(pwd -P)/MQTT.py") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
-(crontab -l ; echo "@reboot sleep 30 && python $(pwd -P)/ProBot.py 2") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+(crontab -l ; echo "@reboot sleep 25 && python $(pwd -P)/ProBot.py 2") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
+(crontab -l ; echo "@reboot sleep 30 && python $(pwd -P)/Telemetry.py 2") 2>&1 | grep -v "no crontab" | sort | uniq | crontab -
 }
 
 
@@ -68,7 +69,7 @@ echo "    The following kernel has been installed: ${newest_kernel_of_release}"
 OtherStuff(){
 echo ""
 echo "--> Installing dependencies"
-apt-get install -qq -y build-essential python-dev python-pip python-smbus python-serial python-memcache memcached> /dev/null
+apt-get install -qq -y build-essential python-dev python-pip python-smbus python-serial python-memcache memcached fping> /dev/null
 pip install paho-mqtt==1.2.3 > /dev/null
 git clone -q git://github.com/adafruit/adafruit-beaglebone-io-python.git 
 cd adafruit-beaglebone-io-python

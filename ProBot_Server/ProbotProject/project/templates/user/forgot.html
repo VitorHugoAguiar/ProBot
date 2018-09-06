@@ -1,0 +1,56 @@
+{% extends "base.html" %} {% block content %}
+
+{% with messages = get_flashed_messages(with_categories=true) %} {% if messages%}
+<div class="row">
+  <div class="col-md-12" align = "center">
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">
+      <a class="close" title="Close" href="#" data-dismiss="alert">&times;</a>
+      {{message}}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %} {% endwith %} {% if error %}
+<p class="error">
+  <strong>Error:</strong> {{ error }}</p>
+{% endif %}
+</div>
+
+<div class="modal-dialog modal-login">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="avatar rounded-circle text-center">
+        <i class="fas fa-user fa-3x"></i>
+      </div>
+      <h4 class="modal-title">Reset Password
+        <hr class="colored">
+      </h4>
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form class="form-login" role="form" method="post" action="">
+        {{ form.csrf_token }}
+        <div class="form-group">
+          {{ form.email(class="form-control", placeholder="email") }}
+          <span class="error">
+            {% if form.email.errors %} {% for error in form.email.errors %} {{ error }} {% endfor %} {% endif %}
+          </span>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-secondary btn-lg btn-block login-btn">Reset your password</button>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer row text-center">
+      <div class="col-md">
+        <a href="{{ url_for('user.login') }}">Login</a>
+      </div>
+      <div class="w-100"></div>
+      <div class="col-md">
+        <a href="{{ url_for('user.register') }}">Register</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

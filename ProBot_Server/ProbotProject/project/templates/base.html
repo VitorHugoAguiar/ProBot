@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	{% block head %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="{{ url_for('static', filename = 'resources/images/logo.png') }}">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'resources/bootstrap/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'resources/font-awesome/css/font-awesome.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'resources/owl-carousel/owl.carousel.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'resources/owl-carousel/owl.theme.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'resources/owl-carousel/owl.transitions.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'resources/animate.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'resources/styles.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'resources/fonts.css') }}">
+	<meta id="current_user_probot_control" data-playlist="{{ current_user.probot_control }}">
+	<title>ProBot Project</title>
+
+	{% endblock %}
+</head>
+
+{% block js_header %}{% endblock %} {% block css_header %}{% endblock %}
+
+<body id="page-top">
+	<section id="login">
+		<!-- Login -->
+		<div id="loginModal" class="login-modal modal">
+			<div class="modal-dialog modal-login">
+				<div class="modal-content">
+					<div class="modal-header">
+						<div class="avatar rounded-circle text-center">
+							<i class="fas fa-user fa-3x"></i>
+						</div>
+						<h4 class="modal-title">Login
+							<hr class="colored">
+						</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						{% if LoginForm %}
+						<form class="form-login" role="form" method="post" action="/login">
+							{{ LoginForm.csrf_token }}
+							<div class="form-group">
+								{{ LoginForm.email(class="form-control", placeholder="Email") }}
+								<span id="WTFLoginErrorsEmail" class="error">
+									{% if LoginForm.email.errors %} {% for error in LoginForm.email.errors %} {{ error }} {% endfor %} {% endif %}
+								</span>
+							</div>
+							<div class="form-group">
+								{{ LoginForm.password(class="form-control", placeholder="Password") }}
+								<span id="WTFLoginErrorsPassword" class="error">
+									{% if LoginForm.password.errors %} {% for error in LoginForm.password.errors %} {{ error }} {% endfor %} {% endif %}
+								</span>
+							</div>
+							<div class="form-group">
+								<input value="Login" name="FormType" type="submit" class="btn btn-secondary btn-lg btn-block login-btn" />
+							</div>
+						</form>
+						{% endif %} {% if MsgOutsideModal == False %} {% if modal == 'loginModal' %} {% with messages = get_flashed_messages(with_categories=true)%}
+						{% if messages%} {% for category, message in messages %}
+						<div id="loginMsgs" class=" form-control alert-{{ category }}">
+							<div class=" text-center">
+								{{message}}
+							</div>
+						</div>
+						{% endfor %} {% endif %} {% endwith %} {% endif %} {% endif %}
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Register -->
+		<div id="registerModal" class="login-modal modal">
+			<div class="modal-dialog modal-login">
+				<div class="modal-content">
+					<div class="modal-header">
+						<div class="avatar rounded-circle text-center">
+							<i class="fas fa-user-plus fa-3x"></i>
+						</div>
+						<h4 class="modal-title">Register
+							<hr class="colored">
+						</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						{% if RegisterForm %}
+						<form class="form-login" role="form" method="post" action="/login">
+							{{ RegisterForm.csrf_token }}
+							<div class="form-group">
+								{{ RegisterForm.email(class="form-control", placeholder="Email") }}
+							</div>
+							<div class="form-group">
+								{{ RegisterForm.password(class="form-control", placeholder="Password") }}
+								<span id="WTFRegisterErrorsPassword" class="error">
+									{% if RegisterForm.password.errors %} {% for error in RegisterForm.password.errors %} {{ error }} {% endfor %} {% endif %}
+								</span>
+							</div>
+							<div class="form-group">
+								{{ RegisterForm.confirm(class="form-control", placeholder="Repeat Password") }}
+								<span id="WTFRegisterErrorsConfirm" class="error">
+									{% if RegisterForm.confirm.errors %} {% for error in RegisterForm.confirm.errors %} {{ error }} {% endfor %} {% endif %}
+								</span>
+							</div>
+							<div class="form-group">
+								<input value="Register" name="FormType" type="submit" class="btn btn-secondary btn-lg btn-block login-btn" />
+							</div>
+						</form>
+						{% endif %} {% if MsgOutsideModal == False %} {% if modal == 'registerModal' %} {% with messages = get_flashed_messages(with_categories=true)%}
+						{% if messages%} {% for category, message in messages %}
+						<div id="registerMsgs" class=" form-control alert-{{ category }}">
+							<div class=" text-center">
+								{{message}}
+							</div>
+						</div>
+						{% endfor %} {% endif %} {% endwith %} {% endif %} {% endif %}
+
+					</div>
+					<div class="modal-footer">
+						<a href="#loginModal" data-toggle="modal">Login</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="unconfirmedModal" class="login-modal modal">
+			<div class="modal-dialog modal-login">
+				<div class="modal-content">
+					<div class="modal-header">
+						<div class="avatar rounded-circle text-center">
+							<i class="fas fa-key fa-3x"></i>
+						</div>
+						<h4 class="modal-title">Unconfirmed
+							<hr class="colored">
+						</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<p align="justify">You have not confirmed your account. Please check your inbox (and your spam folder) - you should have received an email
+							with a confirmation link.</p>
+						<p align="justify">Didn't get the email?</p>
+						<form class="form-login" role="form" method="post" action="/login">
+							<input value="Resend Email" name="FormType" type="submit" class="btn btn-secondary btn-lg btn-block login-btn" />
+
+						</form>
+
+						{% if MsgOutsideModal == False %} {% if modal == 'unconfirmedModal' %} {% with messages = get_flashed_messages(with_categories=true)%}
+						{% if messages%} {% for category, message in messages %}
+						<div id="unconfirmedMsgs" class=" form-control alert-{{ category }}">
+							<div class=" text-center">
+								{{message}}
+							</div>
+						</div>
+						{% endfor %} {% endif %} {% endwith %} {% endif %} {% endif %}
+
+					</div>
+					<div class="modal-footer row text-center">
+						<div class="col-md">
+							<a href="{{ url_for('main.home') }}">Home</a>
+						</div>
+						<div class="w-100"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Recovery -->
+		<div id="recoverModal" class="login-modal modal">
+			<div class="modal-dialog modal-login">
+				<div class="modal-content">
+					<div class="modal-header">
+						<div class="avatar rounded-circle text-center">
+							<i class="fas fa-at fa-3x"></i>
+						</div>
+						<h4 class="modal-title">Password Recover
+							<hr class="colored">
+						</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						{% if ForgotForm %}
+						<form class="form-login" role="form" method="post" action="/login">
+							{{ ForgotForm.csrf_token }}
+							<div class="form-group">
+								{{ ForgotForm.email(class="form-control", placeholder="Email") }}
+							</div>
+							<div class="form-group">
+								<input value="Recover" name="FormType" type="submit" class="btn btn-secondary btn-lg btn-block login-btn" />
+							</div>
+						</form>
+
+						{% if MsgOutsideModal == False %} {% if modal == 'recoverModal' %} {% with messages = get_flashed_messages(with_categories=true)%}
+						{% if messages%} {% for category, message in messages %}
+						<div id="recoverMsgs" class=" form-control alert-{{ category }}">
+							<div class=" text-center">
+								{{message}}
+							</div>
+						</div>
+						{% endfor %} {% endif %} {% endwith %} {% endif %} {% endif %} {% endif %}
+					</div>
+					<div class="modal-footer">
+						<a href="#loginModal" data-toggle="modal">Login</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Change Password -->
+		<div id="changePasswordModal" class="login-modal modal">
+			<div class="modal-dialog modal-login">
+				<div class="modal-content">
+					<div class="modal-header">
+						<div class="avatar rounded-circle text-center">
+							<i class="fas fa-unlock fa-3x"></i>
+						</div>
+						<h4 class="modal-title">Change Password
+							<hr class="colored">
+						</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						{% if ChangePasswordForm %}
+						<form class="form-login" role="form" method="post" action="/login">
+							{{ ChangePasswordForm.csrf_token }}
+							<div class="form-group">
+								{{ ChangePasswordForm.password(class="form-control", placeholder="Password") }}
+								<span id="WTFRegisterErrorsPassword" class="error">
+									{% if ChangePasswordForm.password.errors %} {% for error in ChangePasswordForm.password.errors %} {{ error }} {% endfor %}
+									{% endif %}
+								</span>
+							</div>
+							<div class="form-group">
+								{{ ChangePasswordForm.confirm(class="form-control", placeholder="Repeat Password") }}
+								<span id="WTFRegisterErrorsConfirm" class="error">
+									{% if ChangePasswordForm.confirm.errors %} {% for error in ChangePasswordForm.confirm.errors %} {{ error }} {% endfor %}
+									{% endif %}
+								</span>
+							</div>
+							<div class="form-group">
+								{{ ChangePasswordForm.userConfirmPassword(value=userConfirmPassword) }}
+							</div>
+							<div class="form-group">
+								<input value="Change Password" name="FormType" type="submit" class="btn btn-secondary btn-lg btn-block login-btn" />
+							</div>
+						</form>
+						{% endif %} {% if MsgOutsideModal == False %} {% if modal == 'changePasswordModal' %} {% with messages = get_flashed_messages(with_categories=true)%}
+						{% if messages %} {% for category, message in messages %}
+						<div id="changePasswordMsgs" class=" form-control alert-{{ category }}">
+							<div class=" text-center">
+								{{message}}
+							</div>
+						</div>
+						{% endfor %} {% endif %} {% endwith %} {% endif %} {% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{%block body_content%}{%endblock%}
+
+	</div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<ul class="list-inline text-center">
+				<li class="list-inline-item">
+					<a href="https://www.facebook.com/Critical-Technical-Practice-Laboratory-1857933401192672/" target="_blank">
+						<i class="fab fa-facebook fa-fw fa-2x"></i>
+					</a>
+				</li>
+				<li class="list-inline-item">
+					<a href="https://github.com/VitorHugoAguiar/ProBot" target="_blank">
+						<i class="fab fa-github-square fa-fw fa-2x"></i>
+					</a>
+				</li>
+				<li class="list-inline-item">
+					<a href="https://www.youtube.com/channel/UCOEB1EWXnRTgCRfHOEnlzrQ" target="_blank">
+						<i class="fab fa-youtube-square fa-fw fa-2x"></i>
+					</a>
+				</li>
+				<li class="list-inline-item">
+					<a href="https://shop.ctp.m-iti.org/" target="_blank">
+						<i class="fas fa-external-link-square-alt fa-fw fa-2x"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+
+	{% block js_footer %}
+	<!-- Optional JavaScript -->
+	<!-- Plugins JS -->
+	<script src="{{ url_for('static', filename = 'resources/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'resources/bootstrap/bootstrap.bundle.min.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'resources/jquery.easing.min.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'resources/owl-carousel/owl.carousel.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'resources/charts.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'resources/mixitup.min.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'resources/jquery.mobile.min.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'resources/nipple.min.js') }}"></script>
+	<script modal="{{ modal }}" ChosenProBot="{{ ChosenProBot }}" ControlPage="{{ ControlPage }}" src="{{ url_for('static', filename = 'resources/page.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'resources/wow.min.js') }}"></script>
+	 {% endblock %}
+
+</body>
+
+</html>

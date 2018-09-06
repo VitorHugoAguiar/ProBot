@@ -1,0 +1,355 @@
+{% extends "base.html" %} 
+
+{%block body_content%}
+<!-- Navigation -->
+<nav class="navbar index navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <img class="img-fluid" src="../static/resources/images/logo.png"> ProBot Project
+        </a>
+        <button class="navbar-toggler navbar-toggler-right js-menu-trigger" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav row ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+                </li>
+                {% if current_user.admin %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('user.admin') }}">Admin</a>
+                </li>
+                {% endif %}
+                {% if current_user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('user.user') }}">ProBots</a>
+                </li>
+                {% endif %}
+                {% if not current_user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="#loginModal" data-toggle="modal">Login</a>
+                </li>
+                {% endif %}
+                <li class="nav-item dropdown">
+                    {% if current_user.is_authenticated %}
+                    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" id="dropdownMenu">
+                        <i class="fas fa-user-circle fa-lg"></i>
+                    </a>
+
+                    <div id="dropdown-menu" class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
+                        <a class="dropdown-item" href="#changePasswordModal" data-toggle="modal">Change Password</a>
+                        <form class="form-login" role="form" method="post" action="/login">
+                            <input class="dropdown-item" type="submit" value="Logout" name="FormType" />
+                        </form>
+                    </div>
+                    {% endif %} 
+                    
+                    {% if MsgOutsideModal == True%} 
+                    {% with messages = get_flashed_messages(with_categories=true) %} 
+                    {% if messages%}
+                    {% for category, message in messages %}
+                    <div id="dropdown-alert" class="dropdown-menu dropdown-menu-right alert-{{ category }}">
+                        <div class="dropdown-item text-center">
+                            {{message}}
+                        </div>
+                    </div>
+                    {% endfor %} 
+                    {% endif %} 
+                    {% endwith %} 
+                    {% endif %}
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="wrapper">
+    <!-- Masthead -->
+    <header class="masthead video">
+        <video id="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="../static/resources/videos/intro.mp4" type="video/mp4">
+        </video>
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 my-auto text-center text-white">
+                    <img class="masthead-img img-fluid mb-3" src="../static/resources/images/probot.png">
+                    <div class="masthead-title">Let's Protest!</div>
+                    <hr class="colored">
+                    <a href="#portfolioModal" data-toggle="modal" class="btn btn-primary">
+                        <span>Read More</span>
+                        <i class="fa fa-long-arrow-right fa-fw"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <a class="btn js-scroll-trigger" href="#about">
+                <i class="fa fa-angle-down fa-fw"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- About Modal -->
+    <div class="portfolio-modal modal fade" id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true" style="background-image: url('../static/resources/images/bg-aboutModal.png')">
+        <div class="modal-dialog">
+            <div class="modal-content container">
+                <div class="row">
+                    <div class="col-md-12 mx-auto">
+                        <h2>ProBot Project</h2>
+                        <hr class="colored">
+                        <div class="alignment">
+                            <p>Probots is an experimental platform, a “dissident witness” to the act of protest and a tele-operated
+                                self-balancing robot with the goal of reduce personal involvement in protests to a clinical
+                                and measurable eﬀect. Much like military drone technology, it protects the “operator” from
+                                angry police or drunk Trump supporters, while at the same time preserving the impact of an
+                                embodied, human sized protestor that can carry a sign and produce loud chants and cheers.
+                                Built from shipping pallets, hoodies, and bullhorns, running on an RTOS Debian/Machine Kit
+                                single board computer, using surplus motors and a cheap android phone, the self-balancing
+                                robots can be sent on protest missions for a full day, controlled via low-latency websockets
+                                and WebRTC for two-way audio and video participation. We will deploy them at a variety of
+                                demonstrations in Southern Europe and beyond, controlled by well-known and protestors from
+                                a variety of movements including labor, anti-globalization, and anti-fascist. Te experience
+                                of these seasoned protestors will be analyzed with both qualitative and quantitative methods,
+                                in an attempt to better understand and eﬀect dissent.
+                            </p>
+                            <p>Any protester can control the robot while sitting at the Café, at their gardens or anywhere at
+                                work by simply using our webpage to control it, but also watch, hear and speak through it.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mx-auto">
+                        <ul class="list-inline item-details">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Objectives -->
+    <section class="page-section" id="about">
+        <div class="container">
+            <div class="wow fadeIn text-center">
+                <h1>What can you do?</h1>
+            </div>
+            <hr class="colored">
+            <div class="row text-center">
+                <div class="col-lg-3 col-md-6">
+                    <div class="wow fadeIn px-4 pb-4 pb-lg-0 h-100" data-wow-delay=".2s">
+                        <i class="fas fa-gamepad fa-4x"></i>
+                        <h3>
+                            <div class="row">
+                                <div class="col-md-12">Easy to</div>
+                                <div class="w100"></div>
+                                <div class="col-md">Use</div>
+                            </div>
+                        </h3>
+                        <p class="mb-0">Unleash the power and flexibility of gamepads, and if you don't have one don't worry, we have keyboard
+                            compatibility.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="wow fadeIn px-4 pb-4 pb-lg-0 h-100" data-wow-delay=".4s">
+                        <i class="fas fa-bullhorn fa-4x"></i>
+                        <h3>
+                            <div class="row">
+                                <div class="col-md-12">Easy way to</div>
+                                <div class="w100"></div>
+                                <div class="col-md">Protest</div>
+                            </div>
+                        </h3>
+                        <p class="mb-0">With our incorporated megaphone you can yell and protest higher than others without losing your voice
+                            in the process.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="wow fadeIn px-4 pb-4 pb-lg-0 h-100" data-wow-delay=".6s">
+                        <i class="fas fa-images fa-4x"></i>
+                        <h3>
+                            <div class="row">
+                                <div class="col-md-12">Photo</div>
+                                <div class="w100"></div>
+                                <div class="col-md">Gallery</div>
+                            </div>
+                        </h3>
+                        <p class="mb-0">You're not really sure how everything works? Just click on the link and visit our
+                            <a class="js-scroll-trigger" href="#gallery">Gallery</a> because what's better than photos and videos?</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="wow fadeIn px-4 h-100" data-wow-delay=".8s">
+                        <i class="fas fa-cog fa-4x"></i>
+                        <h3>
+                            <div class="row">
+                                <div class="col-md-12">Fast</div>
+                                <div class="w100"></div>
+                                <div class="col-md">Management</div>
+                            </div>
+                        </h3>
+                        <p class="mb-0">Want to see cool information about the ProBot you're using? Or even change some settings? That's
+                            easy with our web-interface.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="page-section bg-light" id="gallery">
+        <div class="container text-center wow fadeIn">
+            <h2>Gallery</h2>
+            <hr class="colored">
+            <div class="controls mt-3">
+                <button type="button" class="control btn btn-secondary btn-sm mx-2 mb-4" data-mixitup-control="data-mixitup-control" data-filter="all">All</button>
+                <button type="button" class="control btn btn-secondary btn-sm mx-2 mb-4" data-mixitup-control="data-mixitup-control" data-filter=".demonstrations">Demonstrations</button>
+                <button type="button" class="control btn btn-secondary btn-sm mx-2 mb-4" data-mixitup-control="data-mixitup-control" data-filter=".versions">Versions</button>
+            </div>
+            <div class="portfolio-grid row" id="portfolioList">
+                <div class="mix demonstrations js-modal-trigger" href="#galleryModal" data-toggle="modal">
+                    <div class="portfolio-wrapper" style="background-image: url('../static/gallery/ProBot1 - University of Madeira/image37.jpg')">
+                        <div class="caption">
+                            <div class="caption-text">
+                                <span class="text-title">ProBot1 - University of Madeira</span>
+                                <span class="text-category">Demonstrations</span>
+                            </div>
+                            <div class="caption-bg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mix versions js-modal-trigger" href="#galleryModal" data-toggle="modal">
+                    <div class="portfolio-wrapper" style="background-image: url('../static/gallery/ProBot1 vs ProBot2 - Photo Session/image87.jpg')">
+                        <div class="caption">
+                            <div class="caption-text">
+                                <span class="text-title">ProBot1 vs ProBot2 - Photo Session</span>
+                                <span class="text-category">Versions</span>
+                            </div>
+                            <div class="caption-bg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mix versions js-modal-trigger" href="#galleryModal" data-toggle="modal">
+                    <div class="portfolio-wrapper" style="background-image: url('../static/gallery/ProBot3 - Construction/image1.jpg')">
+                        <div class="caption">
+                            <div class="caption-text">
+                                <span class="text-title">ProBot3 - Construction</span>
+                                <span class="text-category">Versions</span>
+                            </div>
+                            <div class="caption-bg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mix demonstrations js-modal-trigger" href="#galleryModal" data-toggle="modal">
+                    <div class="portfolio-wrapper" style="background-image: url('../static/gallery/ProBot3 - First Tests/image33.jpg')">
+                        <div class="caption">
+                            <div class="caption-text">
+                                <span class="text-title">ProBot3 - First Tests</span>
+                                <span class="text-category">Demonstrations</span>
+                            </div>
+                            <div class="caption-bg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mix demonstrations js-modal-trigger" href="#galleryModal" data-toggle="modal">
+                    <div class="portfolio-wrapper" style="background-image: url('../static/gallery/ProBot3 - Carnival 2017/image100.jpg')">
+                        <div class="caption">
+                            <div class="caption-text">
+                                <span class="text-title">ProBot3 - Carnival 2017</span>
+                                <span class="text-category">Demonstrations</span>
+                            </div>
+                            <div class="caption-bg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="gallery-modal modal fade justify-content-center" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <div id="carousel" class="carousel slide" data-interval="false" data-ride="carousel">
+                        <div class="carousel-inner">
+                        </div>
+                        <div class="carousel-possition">
+                        </div>
+                        <a class="carousel-control-prev owl-prev" href="#carousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next owl-next" href="#carousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <section class="page-section" id="team">
+        <div class="container text-center wow fadeIn">
+            <h2>Our Team</h2>
+            <hr class="colored">
+
+            <div class="team-carousel owl-carousel owl-theme mt-4">
+
+                <!-- Team Carousel Item 1 -->
+                <div class="item" style="background-image: url('../static/resources/images/team/chris_csk.jpg')">
+                    <div class="team-caption">
+                        <h3>Chris Csík</h3>
+                        <hr class="colored">
+                        <p>ERA Chair & Scientific Director</p>
+                    </div>
+                </div>
+
+                <!-- Team Carousel Item 2 -->
+                <div class="item" style="background-image: url('../static/resources/images/team/vitor_aguiar.jpg')">
+                    <div class="team-caption">
+                        <h3>Vitor Aguiar</h3>
+                        <hr class="colored">
+                        <p>Research Assistant</p>
+                    </div>
+                </div>
+
+                <!-- Team Carousel Item 3 -->
+                <div class="item" style="background-image: url('../static/resources/images/team/victor_azevedo.jpg')">
+                    <div class="team-caption">
+                        <h3>Victor Azevedo</h3>
+                        <hr class="colored">
+                        <p>Research Assistant</p>
+                    </div>
+                </div>
+
+                <!-- Team Carousel Item 4 -->
+                <div class="item" style="background-image: url('../static/resources/images/team/sara_tranquada.jpg')">
+                    <div class="team-caption">
+                        <h3>Sara Tranquada</h3>
+                        <hr class="colored">
+                        <p>PhD Candidate</p>
+                    </div>
+                </div>
+
+                <!-- Team Carousel Item 5 -->
+                <div class="item" style="background-image: url('static/resources/images/team/luis_jesus.jpg')">
+                    <div class="team-caption">
+                        <h3>Luís Jesus</h3>
+                        <hr class="colored">
+                        <p>Research Assistant</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    {%endblock%}

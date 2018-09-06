@@ -1,0 +1,93 @@
+{% extends "base.html" %} {%block body_content%}
+<!-- Navigation -->
+<!-- USER -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-shrink" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img class="img-fluid" src="../static/resources/images/logo.png"> ProBot Project
+        </a>
+        <button class="navbar-toggler navbar-toggler-right navbar-shrink " type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav row ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                {% if current_user.admin %}
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url_for('user.admin') }}">Admin</a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('user.user') }}">ProBots</a>
+                </li>
+                {% if not current_user.is_authenticated() %}
+                <li class="nav-item">
+                    <a class="nav-link" href="#loginModal" data-toggle="modal">Login</a>
+                </li>
+                {% endif %}
+                <li class="nav-item dropdown">
+                    {% if current_user.is_authenticated() %}
+                    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" id="dropdownMenu">
+                        <i class="fas fa-user-circle fa-lg"></i>
+                    </a>
+
+                    <div id="dropdown-menu" class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
+                        <a class="dropdown-item" href="#changePasswordModal" data-toggle="modal">Change Password</a>
+                        <form class="form-login" role="form" method="post" action="/login">
+                            <input class="dropdown-item" type="submit" value="Logout" name="FormType" />
+                        </form>
+                    </div>
+                    {% endif %} {% if MsgOutsideModal == True%} {% with messages = get_flashed_messages(with_categories=true) %} {% if messages%}
+                    {% for category, message in messages %}
+                    <div id="dropdown-alert" class="dropdown-menu dropdown-menu-right alert-{{ category }}">
+                        <div class="dropdown-item text-center">
+                            {{message}}
+                        </div>
+                    </div>
+                    {% endfor %} {% endif %} {% endwith %} {% endif %}
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="wrapper">
+    <section class="page-section" id="admin">
+        <div class="container">
+            <table class="table-fill" id = "myTable">
+                <thead>
+                    <tr>
+                        <th class="text-center">ProBots</th>
+                        <th class="text-center">Telemetry</th>
+                        <th class="text-center">User Ip Address/Country</th>
+                        <th class="text-center">ProBot Ip Address</th>
+                        <th class="text-center">ProBot Control </th>
+                        
+                    </tr>
+                </thead>
+                <tbody class=" tprobots">
+                    <tr>
+
+                    </tr>
+                </tbody>
+                
+            </table>
+            <span class="battery">*Changes may not be instantaneous.</span>
+
+            
+
+
+      
+      
+      
+      
+      
+
+        </div>
+    </section>
+
+    {%endblock%}

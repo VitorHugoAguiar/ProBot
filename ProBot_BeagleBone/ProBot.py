@@ -60,7 +60,7 @@ class ProBot():
 	self.MPUThread = 0
 
     def EncodersTimer(self):
-	if Encoders!=None:
+	if Encoders:
 		self.wheelVelocity1, self.wheelVelocity2  = Encoders.EncodersValues()	
 		self.EncodersThread = threading.Timer(self.EncodersTimeout, ProBot.EncodersTimer)
 		self.EncodersThread.daemon=True
@@ -68,7 +68,7 @@ class ProBot():
 		self.clearTimer=1
 
     def MPUTimer(self):
-        if MPU6050!=None:
+        if MPU6050:
 		shared.set('ComplementaryAngle', self.ComplementaryAngle)
                 self.MPUThread = threading.Timer(self.MPUTimeout, ProBot.MPUTimer)
                 self.MPUThread.daemon=True
@@ -132,7 +132,7 @@ class ProBot():
 												
 			# Reading the MPU6050 values and use the complementary filter to get better values
 		    	self.ComplementaryAngle = MPU6050.Complementary_filter(self.LoopTimeResult)
-
+			
 			# Checking if the angle is out of range
 		    	if self.ComplementaryAngle<-20 or self.ComplementaryAngle>20:
 				RestartProgram.RestartProgramRoutine()

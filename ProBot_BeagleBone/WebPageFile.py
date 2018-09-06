@@ -42,17 +42,18 @@ class WebPageClass():
 		
         else:
 		self.up, self.down, self.left, self.right = keysValues.split(" ")
-					
-	Forward = float(decimal.Decimal(self.up))
-	Reverse = -float(decimal.Decimal(self.down))
-	Left = float(decimal.Decimal(self.left))
-	Right = -float(decimal.Decimal(self.right))
+
+						
+	Forward = round(float(decimal.Decimal(self.up)),2)
+	Reverse = round(-float(decimal.Decimal(self.down)),2)
+	Left = round(float(decimal.Decimal(self.left)),2)
+	Right = round(-float(decimal.Decimal(self.right)),2)
 	    	
         Forward = max(0, min(Forward, self.limit))
         Reverse = max(-self.limit, min(Reverse, 0))
         Left = max(0, min(Left, self.limit))
         Right = max(-self.limit, min(Right, 0))
-		
+	#print Forward, Reverse, Left, Right	
 	self.PositionRef = -float(Forward+Reverse)* self.ajustFR
 
         if (self.PositionRef > 0):

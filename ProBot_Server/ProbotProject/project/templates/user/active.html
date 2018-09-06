@@ -1,0 +1,220 @@
+{% extends "base.html" %} 
+
+{% block css_header %}
+<style type="text/css">  
+html, body {margin: 0; height: 100%; overflow: hidden}
+</style>
+{% endblock %}
+
+{%block body_content%}
+<!-- Navigation -->
+<!-- ACTIVE -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-shrink" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img class="img-fluid" src="../static/resources/images/logo.png"> ProBot Project
+        </a>
+        <button class="navbar-toggler navbar-toggler-right navbar-shrink " type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav row ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                {% if current_user.admin %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('user.admin') }}">Admin</a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url_for('user.user') }}">ProBots</a>
+                </li>
+                <li class="nav-item dropdown">
+                    {% if current_user.is_authenticated() %}
+                    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" id="dropdownMenu">
+                        <i class="fas fa-user-circle fa-lg"></i>
+                    </a>
+
+                    <div id="dropdown-menu" class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
+                        <a class="dropdown-item" href="#changePasswordModal" data-toggle="modal">Change Password</a>
+                        <form class="form-login" role="form" method="post" action="/login">
+                            <input class="dropdown-item" type="submit" value="Logout" name="FormType" />
+                        </form>
+                    </div>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Controllers -->
+<div id="controllerModal" class="login-modal modal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-login">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="avatar rounded-circle text-center">
+                    <i class="fas fa-cogs fa-3x"></i>
+                </div>
+                <h4 class="modal-title">Configurations
+                    <hr class="colored">
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body text-center">
+                <span>Select the controller you will use:</span>
+                <div class="form-group text-center">
+                    <button class="btn btn-secondary btn-modal" type="button">
+                        <i class="fas fa-gamepad fa-4x"></i>
+                    </button>
+                    <button class="btn btn-secondary btn-modal" type="button">
+                        <i class="fas fa-keyboard fa-4x"></i>
+                    </button>
+                </div>
+                <div class="form-group">
+                    <button type="button" data-dismiss="modal" class="btn btn-secondary btn-lg btn-block login-btn js-save-trigger disabled"
+                        disabled="">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Notice -->
+<div id="noticeModal" class="login-modal modal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-login">
+        <div class="modal-content">
+            <div class="status position-absolute text-right">
+                <span class="fa-stack text-right">
+                    <i class="fa fa-signal me" aria-hidden="true"></i>
+                    <div class="signal signal-5 def">
+                        <i class="fa fa-signal" aria-hidden="true"></i>
+                    </div>
+                </span>
+                <span class="fa-stack text-right battery">
+                    100%
+                </span>
+                <span class="fa-stack text-center">
+                    <i class="fa fa-battery-full fa-lg battery-icon def"></i>
+                </span>
+            </div>
+            <div class="modal-header">
+                <div class="avatar rounded-circle text-center">
+                    <i class="fas fa-exclamation-triangle fa-3x"></i>
+                </div>
+                <h4 class="modal-title">Notice
+                    <hr class="colored">
+                </h4>
+            </div>
+            <div class="modal-body">
+                <p align="justify">We've detected some problems while establishing connection and to prevent further problems we're redirecting
+                    you to the previous page.</p>
+                <a href="{{ url_for('user.user') }}" class="btn btn-secondary btn-lg btn-block login-btn">Ok</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Notice -->
+<div id="redirectModal" class="login-modal modal" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="avatar rounded-circle text-center">
+                        <i class="fas fa-exclamation-triangle fa-3x"></i>
+                    </div>
+                    <h4 class="modal-title">Notice
+                        <hr class="colored">
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <p align="justify">You've minimized/changed tab or been away for to long for we're redirecting
+                            you to the previous page.</p>
+                    <a href="{{ url_for('user.user') }}" class="btn btn-secondary btn-lg btn-block login-btn">Ok</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Info -->
+
+<div id="infoModal" class="login-modal modal">
+    <div class="modal-dialog modal-login">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="avatar rounded-circle text-center">
+                    <i class="fas fa-info fa-3x"></i>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Information
+                    <hr class="colored">
+                </h4>
+            </div>
+            <div class="modal-body text-center">
+                <div class="form-group text-center">
+                        <img class="img-fluid" src="../static/resources/images/joystick.svg" style="height:80px;">
+                        <p align="middle">Green joystick: Forward/Backward</p>
+                        <p align="middle">Red joystick: Left/Right</p>
+
+                </div>
+                <div class="form-group">
+                    <button type="button" data-dismiss="modal" class="btn btn-secondary btn-sm btn-block login-btn">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper" >
+    <section class="page-section" id="active" >
+        <div class="container text-center" >
+            <div class="position-relative title">
+                <h2 id="probot" class="mobile">{{ ChosenProBot }}</h2>
+                <div class="status position-absolute text-right">
+                    <span class="battery title float-left">
+                        {{ ChosenProBot }}
+                    </span>
+                    <span class="text-center">
+                        <i class="fas fa-male fa-rotate-90 male fa-lg" style="color:red" title="ProBot Balancing"></i>    
+                    </span>
+                    <span class="fa-stack text-left gamepad d-none" style="color:red" title="Type of Control">
+                        <i class="fas fa-gamepad fa-lg"></i>
+                    </span>
+                    <span class="fa-stack text-left keyboard d-none" style="color:red" title="Type of Control">
+                        <i class="fas fa-keyboard fa-lg"></i>
+                    </span>
+                    <span class="fa-stack text-right" title="Communication Delay">
+                        <i class="fa fa-signal me" aria-hidden="true"></i>
+                        <div class="signal signal-5 def">
+                            <i class="fa fa-signal" aria-hidden="true"></i>
+                        </div>
+                    </span>
+                    <span class="fa-stack text-right battery" title="Battery Percentage">
+                        NaN
+                    </span>
+                    <span class="fa-stack text-center" title="Battery Capacity">
+                        <i class="fa fa-battery-full fa-lg battery-icon def"></i>
+                    </span>
+                    <span class="fa-stack text-left settings btn-information icon-btn">
+                        <i class="fa fa-info-circle fa-md" href="#infoModal" data-toggle="modal"></i>
+                    </span>
+                    <span class="fa-stack text-left settings icon-btn" title="Settings">
+                        <i class="fas fa-cog" href="#controllerModal" data-toggle="modal"></i>
+                    </span>
+                    <span class="fa-stack text-left settings btn-fullscreen icon-btn">
+                        <i class="fa fa-arrows-alt fa-md"></i>
+                    </span>
+                </div>
+                <hr class="colored mobile">
+
+            </div>
+            <iframe src="https://www.gruveo.com/embed/?code={{ ChosenProBot }}&amp;language=en" allow="microphone; camera" allowfullscreen frameborder="0"></iframe>
+
+            <div id="left"></div>
+            <div id="right"></div>
+        </div>
+        
+    </section>
+    {%endblock%}

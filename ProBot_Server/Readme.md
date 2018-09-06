@@ -1,18 +1,16 @@
 # ProBot Server
 
 # Flask
-To control the Probots we are using a web page built with [Flask](http://flask.pocoo.org/). This code is based on [Flask-Starter](https://github.com/samgclarke/flask-starter).
+To control the Probots we are using a web page built with [Flask](http://flask.pocoo.org/).
 
-With this interface, both admin and user can see the ProBots that are available to control. After choosing one ProBot, the user can see all the information related to that ProBot, like the angle or the battery percentage.
+With this interface, both admin and user can see the ProBots that are available to control. After choosing one ProBot, the user can see all the information related to that ProBot, like the battery percentage and the latency between the ProBot and the Server.
 
-The admin can initialize the mainRoutine and shutdown the BeagleBone.
+The admin can see the information from all the ProBots and do somme operations like control when to shutdown the ProBot.
 
 ![](slider_interface1.png) 
 
 # Paho-mqtt and mosquitto
-The communication between the ProBots (beaglebone) and the server, are made through the [paho-mqtt.](http://www.eclipse.org/paho/) To install paho-mqtt on the server, you need to type:
-	
-	sudo pip install paho-mqtt
+The communication between the ProBots (beaglebone) and the server, are made through the [paho-mqtt.](http://www.eclipse.org/paho/) 
 
 The mqtt needs a message broker. For that, we are using [mosquitto.](https://mosquitto.org/) You can install mosquitto message broker by typing:
 	

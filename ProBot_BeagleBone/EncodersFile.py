@@ -15,16 +15,16 @@ class EncodersClass():
     def __init__(self):
         self.LastwheelPosition1 = 0
 	self.LastwheelPosition2 = 0
-	self.ticks = 10000
-        self.wheelDiameter = 0.25
+	self.ticks = 10000		# Motor Ticks per revolution
+        self.wheelDiameter = 0.25	# Wheel Diameter
 	self.encoder1 = eqep.eQEP("/sys/devices/platform/ocp/48302000.epwmss/48302180.eqep", eqep.eQEP.MODE_ABSOLUTE)
 	self.encoder2 = eqep.eQEP("/sys/devices/platform/ocp/48304000.epwmss/48304180.eqep", eqep.eQEP.MODE_ABSOLUTE)
 
     def EncodersValues(self):
         wheelTicks1 = -self.encoder1.get_position()		# Get position from the first encoder (left wheel)
         wheelTicks2 = -self.encoder2.get_position()		# Get position from the second encoder (right wheel)
-	wheelTicks1 = LPF.lowPassFilter(wheelTicks1, 'EncoderL')
-	wheelTicks2 = LPF.lowPassFilter(wheelTicks2, 'EncoderR')
+	wheelTicks1 = LPF.lowPassFilter(wheelTicks1, 'EncoderL')	# Smooth encoders values 
+	wheelTicks2 = LPF.lowPassFilter(wheelTicks2, 'EncoderR')	# Smooth encoders values
 	wheelPosition1_m = (float(wheelTicks1)) / self.ticks * math.pi * self.wheelDiameter	# Left wheel distance travelled
         wheelPosition2_m = (float(wheelTicks2)) / self.ticks * math.pi * self.wheelDiameter	# Right wheel distance travelled
 
