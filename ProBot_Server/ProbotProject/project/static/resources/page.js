@@ -2,6 +2,7 @@
 var modal = $('script[src*=page]').attr('modal');
 var ChosenProBot = $('script[src*=page]').attr('ChosenProBot');
 var ControlPage = $('script[src*=page]').attr('ControlPage');
+var AdminPage = $('script[src*=page]').attr('AdminPage');
 var page = location.pathname.split("/").pop();
 var isPhoneDevice = "ontouchstart" in document.documentElement;
 var available = 0; var online = 0; var total = 0;
@@ -10,6 +11,25 @@ var afking = 0;
 var INC = 0.080;
 var MAX = 0.750;
 
+function AdminPageType(){
+if (AdminPage == 'databaseInfo'){
+  showAdminDatabase();
+}
+if (AdminPage == 'ProBotInfo'){
+  showAdminProBotInfo();
+}
+}
+
+function showAdminDatabase() {
+  document.getElementById("databaseInfo").style.display="block";
+  document.getElementById("ProBotInfo").style.display="none";
+  
+}
+
+function showAdminProBotInfo (){
+  document.getElementById("databaseInfo").style.display="none";
+  document.getElementById("ProBotInfo").style.display="block";
+}
 
 function incDirValue(dir) {
   dir = dir + INC;
@@ -21,12 +41,18 @@ function incDirValue(dir) {
 
 $(document).ready(function () {
   mainjs();
+
+  if (!isNaN(page) && (function(x) { return (x | 0) === x; })(parseFloat(page))){
+    page="admin";
+  }
+
   switch (page) {
     case "":
       index()
       break;
     case "admin":
       admin()
+      AdminPageType()
       break;
     case "user":
       if (ControlPage != "active") { user(); }
@@ -672,6 +698,7 @@ function active() {
 // dev
 function admin() {
   var probots; var newProbots; var temp;
+  
 
   // table hover
   $("tr").hover(function () {

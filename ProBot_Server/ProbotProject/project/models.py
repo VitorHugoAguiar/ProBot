@@ -1,9 +1,15 @@
 # project/models.py
 
 
-import datetime
-from project import db, bcrypt
 
+import datetime
+from project import db, bcrypt, app
+
+
+#from flask_admin import Admin
+#from flask_admin.contrib.sqla import ModelView
+
+#admin = Admin(app)
 
 class User(db.Model):
 
@@ -48,6 +54,7 @@ class User(db.Model):
         return '<email {}'.format(self.email)
 
 
+#admin.add_view(ModelView(User, db.session))
 
 
 

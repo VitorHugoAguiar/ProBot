@@ -1214,7 +1214,9 @@
 }
 
 @media not screen and (min-width : 1224px) {
+@media not screen and (min-device-width: 768px) and (orientation : landscape) {
 @media only screen and (min-device-width : 320px) and (orientation:landscape) {
+
   #admin .container {
     max-width: none;
   }
@@ -1373,7 +1375,7 @@ font-size : 80%;
     }
 
   }
-}}
+}}}
 
 
 @media screen and (max-width: 600px) {
@@ -1409,4 +1411,13 @@ font-size : 80%;
   }
 }
 
+
+/* #databaseModal .modal-dialog.modal-login{
+
+  width:100%; 
+  
+} */
+.withoutDots{
+  list-style-type: none;
+}
 

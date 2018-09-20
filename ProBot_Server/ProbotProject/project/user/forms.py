@@ -2,7 +2,7 @@
 
 
 from flask_wtf import FlaskForm
-from wtforms import TextField, PasswordField, HiddenField
+from wtforms import TextField, PasswordField, HiddenField, RadioField
 from wtforms.validators import DataRequired, Email, Length, EqualTo
 
 from project.models import User
@@ -69,3 +69,11 @@ class ChangePasswordForm(FlaskForm):
         ]
     )
     userConfirmPassword = HiddenField()
+
+class DatabaseForm(FlaskForm):
+    Email = TextField('Email')
+    AdminRole = RadioField('AdminRole', choices=[('True','True'),('False','False')])
+    ConfirmedEmail = RadioField('ConfirmedEmail', choices=[('True','True'),('False','False')])
+    ControlProBot = RadioField('ControlProBot', choices=[('True','True'),('False','False')])
+
+    

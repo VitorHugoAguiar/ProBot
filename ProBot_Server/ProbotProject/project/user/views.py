@@ -15,22 +15,26 @@ from apscheduler.scheduler import Scheduler
 from atexit import register
 from glob import glob
 from datetime import timedelta
+from natsort import natsorted, ns
 import logging
 logging.getLogger('apscheduler').setLevel(logging.CRITICAL)
 
 from werkzeug.contrib.cache import SimpleCache
 from flask import render_template, Blueprint, url_for, redirect, flash, request, jsonify, Flask, session
 from flask_login import login_user, logout_user, login_required, current_user
+
 from project.models import User
 from project.email import send_email
 from project.token import generate_confirmation_token, confirm_token
 from project.decorators import check_confirmed, required_roles
+from project.table import Results
 
 from project import db, bcrypt, app
-from .forms import LoginForm, RegisterForm, ChangePasswordForm, ForgotForm
+from .forms import LoginForm, RegisterForm, ChangePasswordForm, ForgotForm, DatabaseForm
 
 import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
+
 
 
 ################
@@ -50,7 +54,6 @@ clientPymemcache.set('ProBotInUseDictTimeOut', {})
 clientPymemcache.set('ProBotTelemetryDictTimeOut', {})
 clientPymemcache.set('ProBotInUseDictTimeOutLocal', {})
 clientPymemcache.set('ProBotNotInUse', {})
-#clientPymemcache.set('AllProBotsTelemetryList', "[['ProBot1', '50', '90', 'started', '20', '10.2.2.222'], ['ProBot2', '100', '70', 'started', '20', '20.2.3.1'], ['ProBot3', 'NotWorking'], ['ProBot4', 'NotWorking'], ['ProBot5', 'NotWorking'], ['ProBot6', 'NotWorking']]")
 clientPymemcache.set('AllProBotsTelemetryList', "[['ProBot1', 'Offline'], ['ProBot2', 'Offline'], ['ProBot3', 'NotWorking'], ['ProBot4', 'NotWorking'], ['ProBot5', 'NotWorking'], ['ProBot6', 'NotWorking']]")
 clientPymemcache.set('ProBotChosen', "[['ProBot1', 'Available'], ['ProBot2', 'Available'], ['ProBot3', 'Available'], ['ProBot4', 'Available'], ['ProBot5', 'Available'], ['ProBot6', 'Available']]")
 
@@ -121,7 +124,7 @@ def AlbunsPhotosPath ():
     listOfFiles = []
     directoryPath  = os.getcwd() + "/project/static/gallery/*" 
     albunsPath = glob(directoryPath)
-    fileExtensions = [ "/*.jpg"]
+    fileExtensions = [ "/*.jpg", "/*.JPG"]
 
     for i in range(0, len(albunsPath)):
         images = ""
@@ -130,12 +133,15 @@ def AlbunsPhotosPath ():
             for j in range(0 , len(glob(photoPath))):
                 if j == len(glob(photoPath))-1:
                     images += glob(photoPath)[j].split("/")[-1]
+                    ImagesOrdered = ','.join(map(str,natsorted(images.split(','), key=lambda y: y.lower()))) 
                 else:
                     images += glob(photoPath)[j].split("/")[-1] + ","
-                
+
+                        
         listOfFiles.append([])
+
         listOfFiles[i].append(albunsPath[i].split("/")[-1])
-        listOfFiles[i].append(images)
+        listOfFiles[i].append(ImagesOrdered)
 
     clientPymemcache.set('listOfFiles', listOfFiles)
 
@@ -325,16 +331,67 @@ def forgot_new(token):
 @required_roles
 def admin():
 	loginForm, registerForm, changePasswordForm, forgotForm = forms()
+	databaseForm = DatabaseForm(request.form)
+	results = User.query.all()
+	table = Results(results)
+
 	if request.method == 'POST':
-	    print request.form
 	    if 'ProBotToShutdown' in request.form:        
 	        ProBotToShutdown = request.form['ProBotToShutdown']
-	        print 'shutdown', ProBotToShutdown
 	        topic = 'shutdownProBot/' +  ProBotToShutdown
 	        client.publish(topic, 'shutdown', qos=0)
-            
-	return render_template('user/admin.html', LoginForm=loginForm, RegisterForm=registerForm, ChangePasswordForm=changePasswordForm, ForgotForm=forgotForm)
+	        return render_template('user/admin.html', LoginForm=loginForm, RegisterForm=registerForm, ChangePasswordForm=changePasswordForm, ForgotForm=forgotForm, table=table, AdminPage='ProBotInfo')
 
+	    if 'ChangeUserDatabase' in request.form:
+	        if databaseForm.validate_on_submit():
+	            user = User.query.filter_by(email=databaseForm.Email.data).first()
+	            
+	            if not user:
+	                OldEmail = clientPymemcache.get('databaseForm.Email.data')
+	                user = User.query.filter_by(email=OldEmail).first()
+
+	            user.email = databaseForm.Email.data
+	            user.admin = ast.literal_eval(databaseForm.AdminRole.data)
+	            user.confirmed = ast.literal_eval(databaseForm.ConfirmedEmail.data)
+	            user.probot_control = ast.literal_eval(databaseForm.ControlProBot.data)              
+	            db.session.commit()
+	        return render_template('user/admin.html', LoginForm=loginForm, RegisterForm=registerForm, ChangePasswordForm=changePasswordForm, ForgotForm=forgotForm, table=table, AdminPage='databaseInfo')	        
+            
+	return render_template('user/admin.html', LoginForm=loginForm, RegisterForm=registerForm, ChangePasswordForm=changePasswordForm, ForgotForm=forgotForm, table=table, AdminPage='ProBotInfo')
+
+@app.route('/admin/<int:id>', methods=['GET', 'POST'])
+@login_required
+@required_roles
+def edit(id):
+    loginForm, registerForm, changePasswordForm, forgotForm = forms()
+    databaseForm = DatabaseForm(request.form)
+
+    results = User.query.all()
+    table = Results(results)
+
+    DatabaseUser = User.query.filter_by(id=id).first()
+    if (DatabaseUser.admin==True):
+        databaseForm.AdminRole.default = 'True'
+    else:
+        databaseForm.AdminRole.default = 'False'
+
+    if (DatabaseUser.confirmed==True):
+        databaseForm.ConfirmedEmail.default = 'True'
+    else:
+        databaseForm.ConfirmedEmail.default = 'False'
+
+    if (DatabaseUser.probot_control==True):
+        databaseForm.ControlProBot.default = 'True'
+    else:
+        databaseForm.ControlProBot.default = 'False'
+     
+    databaseForm.process()
+
+    databaseForm.Email.data = DatabaseUser.email
+    clientPymemcache.set('databaseForm.Email.data', databaseForm.Email.data)
+
+    if DatabaseUser:
+        return render_template('user/admin.html', LoginForm=loginForm, RegisterForm=registerForm, ChangePasswordForm=changePasswordForm, ForgotForm=forgotForm, DatabaseForm=databaseForm, modal = 'databaseModal',  table=table, AdminPage='databaseInfo')
 
 @user_blueprint.route('/user', methods=['GET', 'POST'])
 @login_required
@@ -534,7 +591,7 @@ def ProBotTelemetryAdmin():
                 if ProBotNotInUse:
                     for key, value in ProBotNotInUse.iteritems():
                         if key == 'ProBot' + str(i):
-                            print key, ProBotNotInUse[key]
+                            #print key, ProBotNotInUse[key]
                             if (ProBotNotInUse[key] == "NotAvailable") or (ProBotChosenDict[key][1] == "NotAvailable"):
                                 Status = 'NotAvailable'
                                 UserIpAddress = clientPymemcache.get('UserIpAddress')

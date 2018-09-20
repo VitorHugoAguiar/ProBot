@@ -8,7 +8,7 @@
 import os
 import ConfigParser as configparser
 
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
 from flask_mail import Mail
@@ -116,5 +116,18 @@ def load_user(user_id):
 
 @app.errorhandler(Exception)
 def exception_handler(error):
-    return render_template("errors/error.html", modal = 'errorModal')
+    return redirect(url_for('main.home'))
  
+@app.errorhandler(403)
+def forbidden_page(error):
+    return redirect(url_for('main.home'))
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return redirect(url_for('main.home'))
+
+
+@app.errorhandler(500)
+def server_error_page(error):
+    return redirect(url_for('main.home'))
