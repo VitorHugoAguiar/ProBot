@@ -18,7 +18,7 @@ shared = memcache.Client([('localhost', 15)], debug=0)
 
 # mqtt variables
 port = 1883
-	
+        
 
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, rc):
@@ -32,17 +32,17 @@ def on_connect(client, userdata, rc):
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-    
-    if (msg.topic=='MainRoutine/' + 'ProBot' + Pconst.probotID):	
-	shared.set('MainRoutine', msg.payload)
-	
+        
+    if (msg.topic=='MainRoutine/' + 'ProBot' + Pconst.probotID):        
+        shared.set('MainRoutine', msg.payload)
+        
     if (msg.topic=='keys/' + 'ProBot'+ Pconst.probotID):
-	#print msg.payload
-	shared.set('keys', msg.payload)
+        #print msg.payload
+        shared.set('keys', msg.payload)
 
     if (msg.topic=='shutdownProBot/' + 'ProBot' + Pconst.probotID):
-	if msg.payload=='"shutdown"':
-		os.system("sudo shutdown -h now")
+        if msg.payload=='shutdown':
+                os.system("sudo shutdown -h now")
 
 def on_disconnect(client, userdata, rc):
     print("Disconnected!")
@@ -64,19 +64,28 @@ client.on_disconnect=on_disconnect
 client.loop_start()
 
 def main():
-	while True:
-    		try:
-			topic = 'telemetry'			
-    			message = shared.get(topic)
-			if message:
-				#print message
-				client.publish(topic,message , qos=0)
-			
-    		except KeyboardInterrupt:
-			shared.set('keys', "0 0 0 0")
-        		sys.exit('\n\nPROGRAM STOPPED!!!\n')
-        		raise
+        while True:
+                    try:
+
+                        processname = 'Telemetry.py'
+                        tmp = os.popen("ps -Af").read()
+                        proccount = tmp.count(processname)
+
+                        topic = 'telemetry'                        
+                        message = shared.get(topic)
+                        
+                        if message:
+                                if proccount < 0 or proccount == 0:
+                                        topic = 'ClientStatus'
+                                        message = 'ProBot' + str(Pconst.probotID) + '/Offline'
+                                        #print message
+                                client.publish(topic, message , qos=0)
+                        
+                    except KeyboardInterrupt:
+                        shared.set('keys', "0 0 0 0")
+                        sys.exit('\n\nPROGRAM STOPPED!!!\n')
+                        raise
 
 if __name__ == '__main__':
-	main()
+        main()
 
