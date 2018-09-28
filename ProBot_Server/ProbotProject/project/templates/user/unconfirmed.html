@@ -1,5 +1,8 @@
-{% extends "base.html" %} {% block content %} {% with messages = get_flashed_messages(with_categories=true) %} {% if messages%}
+{% extends "base.html" %} 
+{% block content %} 
 
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages%}
 <div class="row">
   <div class="col-md-12" align="center">
     {% for category, message in messages %}
@@ -10,7 +13,9 @@
     {% endfor %}
   </div>
 </div>
-{% endif %} {% endwith %} {% if error %}
+{% endif %} 
+{% endwith %} 
+{% if error %}
 <p class="error">
   <strong>Error:</strong> {{ error }}</p>
 {% endif %}

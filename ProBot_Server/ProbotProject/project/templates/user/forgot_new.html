@@ -1,8 +1,9 @@
-{% extends "base.html" %} {% block body_content %}
-
-{% with messages = get_flashed_messages(with_categories=true) %} {% if messages%}
+{% extends "base.html" %} 
+{% block body_content %} 
+{% with messages = get_flashed_messages(with_categories=true) %} 
+{% if messages%}
 <div class="row">
-  <div class="col-md-12" align = "center">
+  <div class="col-md-12" align="center">
     {% for category, message in messages %}
     <div class="alert alert-{{ category }}">
       <a class="close" title="Close" href="#" data-dismiss="alert">&times;</a>
@@ -11,7 +12,9 @@
     {% endfor %}
   </div>
 </div>
-{% endif %} {% endwith %} {% if error %}
+{% endif %} 
+{% endwith %} 
+{% if error %}
 <p class="error">
   <strong>Error:</strong> {{ error }}</p>
 {% endif %}
@@ -34,13 +37,21 @@
         <div class="form-group">
           {{ form.password(class="form-control", placeholder="password") }}
           <span class="error">
-            {% if form.password.errors %} {% for error in form.password.errors %} {{ error }} {% endfor %} {% endif %}
+            {% if form.password.errors %} 
+            {% for error in form.password.errors %} 
+            {{ error }} 
+            {% endfor %} 
+            {% endif %}
           </span>
         </div>
         <div class="form-group">
           {{ form.confirm(class="form-control", placeholder="retype password") }}
           <span class="error">
-            {% if form.confirm.errors %} {% for error in form.confirm.errors %} {{ error }} {% endfor %} {% endif %}
+            {% if form.confirm.errors %} 
+            {% for error in form.confirm.errors %} 
+            {{ error }} 
+            {% endfor %} 
+            {% endif %}
           </span>
         </div>
         <div class="form-group">

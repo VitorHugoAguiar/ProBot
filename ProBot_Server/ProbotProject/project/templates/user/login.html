@@ -1,4 +1,5 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% block content %}
 
 <div class="modal-dialog modal-login">
   <div class="modal-content">
@@ -17,35 +18,41 @@
         <div class="form-group">
           {{ form.email(class="form-control", placeholder="email") }}
           <span class="error">
-            {% if form.email.errors %} {% for error in form.email.errors %} {{ error }} {% endfor %} {% endif %}
+            {% if form.email.errors %} 
+            {% for error in form.email.errors %} 
+            {{ error }} 
+            {% endfor %} 
+            {% endif %}
           </span>
         </div>
         <div class="form-group">
           {{ form.password(class="form-control", placeholder="password") }}
           <span class="error">
-            {% if form.password.errors %} {% for error in form.password.errors %} {{ error }} {% endfor %} {% endif %}
+            {% if form.password.errors %} 
+            {% for error in form.password.errors %} 
+            {{ error }} 
+            {% endfor %} 
+            {% endif %}
           </span>
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-secondary btn-lg btn-block login-btn">Login</button>
         </div>
       </form>
-    
 
-    {% with messages = get_flashed_messages(with_categories=true) %} 
-    {% if messages%}
-    <div class="row">
-      <div class="col-md-12" align = "center">
-        {% for category, message in messages %}
-        <div class="alert alert-{{ category }}">
-          {{message}}
+
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if messages%}
+      <div class="row">
+        <div class="col-md-12" align="center">
+          {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">
+            {{message}}
+          </div>
+          {% endfor %}
         </div>
-        {% endfor %}
       </div>
+      {% endif %} {% endwith %}
     </div>
-    {% endif %} 
-    {% endwith %} 
-  </div>
     <div class="modal-footer row text-center">
       <div class="col-md">
         <a href="{{ url_for('user.forgot') }}">Forgot Password?</a>

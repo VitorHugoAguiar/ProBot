@@ -1,5 +1,5 @@
-{% extends "base.html" %} {% block content %}
-
+{% extends "base.html" %} 
+{% block content %}
 
 <div class="wrapper"></div>
 <div class="modal-dialog modal-login">
@@ -19,19 +19,31 @@
         <div class="form-group">
           {{ form.email(class="form-control", placeholder="email") }}
           <span class="error">
-            {% if form.email.errors %} {% for error in form.email.errors %} {{ error }} {% endfor %} {% endif %}
+            {% if form.email.errors %} 
+            {% for error in form.email.errors %} 
+            {{ error }} 
+            {% endfor %} 
+            {% endif %}
           </span>
         </div>
         <div class="form-group">
           {{ form.password(class="form-control", placeholder="password") }}
           <span class="error">
-            {% if form.password.errors %} {% for error in form.password.errors %} {{ error }} {% endfor %} {% endif %}
+            {% if form.password.errors %} 
+            {% for error in form.password.errors %} 
+            {{ error }} 
+            {% endfor %} 
+            {% endif %}
           </span>
         </div>
         <div class="form-group">
           {{ form.confirm(class="form-control", placeholder="retype password") }}
           <span class="error">
-            {% if form.confirm.errors %} {% for error in form.confirm.errors %} {{ error }} {% endfor %} {% endif %}
+            {% if form.confirm.errors %} 
+            {% for error in form.confirm.errors %} 
+            {{ error }} 
+            {% endfor %} 
+            {% endif %}
           </span>
         </div>
         <div class="form-group">

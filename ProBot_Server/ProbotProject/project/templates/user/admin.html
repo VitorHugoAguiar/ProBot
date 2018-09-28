@@ -1,4 +1,5 @@
-{% extends "base.html" %} {%block body_content%}
+{% extends "base.html" %} 
+{%block body_content%}
 <!-- Navigation -->
 <!-- USER -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-shrink" id="mainNav">
@@ -16,14 +17,14 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 {% if current_user.admin %}
-                <li class="nav-item dropdown" >
-                    <a class="nav-link active dropdown-toggle"  role="button" data-toggle="dropdown" id="dropdownMenu" >Admin</a>
-                
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" role="button" data-toggle="dropdown" id="dropdownMenu">Admin</a>
+
                     <div id="dropdown-menu" class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
-                            <a  class="dropdown-item" onclick="showAdminProBotInfo();" data-toggle="modal">ProBot Info</a>
-                            <a  class="dropdown-item" onclick="showAdminDatabase();" data-toggle="modal">Database Info</a>
-                        </div>
-                
+                        <a class="dropdown-item" onclick="showAdminProBotInfo();" data-toggle="modal">ProBot Info</a>
+                        <a class="dropdown-item" onclick="showAdminDatabase();" data-toggle="modal">Database Info</a>
+                    </div>
+
                 </li>
                 {% endif %}
                 <li class="nav-item">
@@ -46,14 +47,21 @@
                             <input class="dropdown-item" type="submit" value="Logout" name="FormType" />
                         </form>
                     </div>
-                    {% endif %} {% if MsgOutsideModal == True%} {% with messages = get_flashed_messages(with_categories=true) %} {% if messages%}
+                    {% endif %} 
+
+                    {% if MsgOutsideModal == True%} 
+                    {% with messages = get_flashed_messages(with_categories=true) %} 
+                    {% if messages%}
                     {% for category, message in messages %}
                     <div id="dropdown-alert" class="dropdown-menu dropdown-menu-right alert-{{ category }}">
                         <div class="dropdown-item text-center">
                             {{message}}
                         </div>
                     </div>
-                    {% endfor %} {% endif %} {% endwith %} {% endif %}
+                    {% endfor %} 
+                    {% endif %} 
+                    {% endwith %} 
+                    {% endif %}
 
                 </li>
             </ul>
@@ -65,7 +73,7 @@
     <div class="modal-dialog modal-login">
         <div class="modal-content">
             <div class="modal-header">
-                  <!--  <div class="avatar rounded-circle text-center">
+                <!--  <div class="avatar rounded-circle text-center">
                             <i class="fas fa-user fa-3x"></i>
                         </div>
                         <h4 class="modal-title">User Info
@@ -73,7 +81,7 @@
                         </h4>-->
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
-            <div class="modal-body" >
+            <div class="modal-body">
                 {% if DatabaseForm %}
                 <form class="form-login" role="form" method="post" action="/admin">
                     {{ DatabaseForm.csrf_token }}
@@ -81,7 +89,7 @@
                         <label>Email</label>
                         {{ DatabaseForm.Email(class="form-control", placeholder="Email") }}
                     </div>
-                   <div class="form-group" >
+                    <div class="form-group">
                         <!--<label >Admin Role</label>-->
                         {{ DatabaseForm.AdminRole(hidden=True, class="withoutDots") }}
                     </div>
@@ -96,7 +104,7 @@
                     <div class="form-group">
                         <input value="Confirm" name="ChangeUserDatabase" type="submit" class="btn btn-secondary btn-lg btn-block login-btn" />
                     </div>
-                    
+
                 </form>
                 {% endif %}
 
@@ -108,33 +116,33 @@
 
 <div class="wrapper">
     <section class="page-section" id="admin">
-        <div class="container text-center" >
+        <div class="container text-center">
             <div id="databaseInfo">
                 <h3>Database info</h3>
                 {{ table }}
-                </div>
-            <div id="ProBotInfo">   
+            </div>
+            <div id="ProBotInfo">
                 <h3>ProBot info</h3>
-            <table class="table-fill" id="myTable">
-                <thead>
-                    <tr>
-                        <th class="text-center">ProBots</th>
-                        <th class="text-center">Telemetry</th>
-                        <th class="text-center">User Ip Address/Country</th>
-                        <th class="text-center">ProBot Ip Address</th>
-                        <th class="text-center">ProBot Control </th>
+                <table class="table-fill" id="myTable">
+                    <thead>
+                        <tr>
+                            <th class="text-center">ProBots</th>
+                            <th class="text-center">Telemetry</th>
+                            <th class="text-center">User Ip Address/Country</th>
+                            <th class="text-center">ProBot Ip Address</th>
+                            <th class="text-center">ProBot Control </th>
 
-                    </tr>
-                </thead>
-                <tbody class="tprobots">
-                    <tr>
+                        </tr>
+                    </thead>
+                    <tbody class="tprobots">
+                        <tr>
 
-                    </tr>
-                </tbody>
+                        </tr>
+                    </tbody>
 
-            </table>
-            <span class="battery">*Changes may not be instantaneous.</span>
-        </div>
+                </table>
+                <span class="battery">*Changes may not be instantaneous.</span>
+            </div>
         </div>
     </section>
 

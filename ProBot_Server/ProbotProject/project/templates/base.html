@@ -22,7 +22,8 @@
 	{% endblock %}
 </head>
 
-{% block js_header %}{% endblock %} {% block css_header %}{% endblock %}
+{% block js_header %}{% endblock %} 
+{% block css_header %}{% endblock %}
 
 <body id="page-top">
 	<section id="login">
@@ -59,14 +60,22 @@
 								<input value="Login" name="FormType" type="submit" class="btn btn-secondary btn-lg btn-block login-btn" />
 							</div>
 						</form>
-						{% endif %} {% if MsgOutsideModal == False %} {% if modal == 'loginModal' %} {% with messages = get_flashed_messages(with_categories=true)%}
-						{% if messages%} {% for category, message in messages %}
+						{% endif %} 
+						{% if MsgOutsideModal == False %} 
+						{% if modal == 'loginModal' %} 
+						{% with messages = get_flashed_messages(with_categories=true)%}
+						{% if messages%} 
+						{% for category, message in messages %}
 						<div id="loginMsgs" class=" form-control alert-{{ category }}">
 							<div class=" text-center">
 								{{message}}
 							</div>
 						</div>
-						{% endfor %} {% endif %} {% endwith %} {% endif %} {% endif %}
+						{% endfor %} 
+						{% endif %} 
+						{% endwith %}
+						{% endif %} 
+						{% endif %}
 					</div>
 					<div class="modal-footer row text-center">
 						<div class="col-md">
@@ -119,8 +128,12 @@
 								<input value="Register" name="FormType" type="submit" class="btn btn-secondary btn-lg btn-block login-btn" />
 							</div>
 						</form>
-						{% endif %} {% if MsgOutsideModal == False %} {% if modal == 'registerModal' %} {% with messages = get_flashed_messages(with_categories=true)%}
-						{% if messages%} {% for category, message in messages %}
+						{% endif %} 
+						{% if MsgOutsideModal == False %} 
+						{% if modal == 'registerModal' %} 
+						{% with messages = get_flashed_messages(with_categories=true)%}
+						{% if messages%} 
+						{% for category, message in messages %}
 						<div id="registerMsgs" class=" form-control alert-{{ category }}">
 							<div class=" text-center">
 								{{message}}
@@ -157,14 +170,21 @@
 
 						</form>
 
-						{% if MsgOutsideModal == False %} {% if modal == 'unconfirmedModal' %} {% with messages = get_flashed_messages(with_categories=true)%}
-						{% if messages%} {% for category, message in messages %}
+						{% if MsgOutsideModal == False %} 
+						{% if modal == 'unconfirmedModal' %} 
+						{% with messages = get_flashed_messages(with_categories=true)%}
+						{% if messages%} 
+						{% for category, message in messages %}
 						<div id="unconfirmedMsgs" class=" form-control alert-{{ category }}">
 							<div class=" text-center">
 								{{message}}
 							</div>
 						</div>
-						{% endfor %} {% endif %} {% endwith %} {% endif %} {% endif %}
+						{% endfor %} 
+						{% endif %} 
+						{% endwith %} 
+						{% endif %} 
+						{% endif %}
 
 					</div>
 					<div class="modal-footer row text-center">
@@ -202,14 +222,22 @@
 							</div>
 						</form>
 
-						{% if MsgOutsideModal == False %} {% if modal == 'recoverModal' %} {% with messages = get_flashed_messages(with_categories=true)%}
-						{% if messages%} {% for category, message in messages %}
+						{% if MsgOutsideModal == False %} 
+						{% if modal == 'recoverModal' %} 
+						{% with messages = get_flashed_messages(with_categories=true)%}
+						{% if messages%} 
+						{% for category, message in messages %}
 						<div id="recoverMsgs" class=" form-control alert-{{ category }}">
 							<div class=" text-center">
 								{{message}}
 							</div>
 						</div>
-						{% endfor %} {% endif %} {% endwith %} {% endif %} {% endif %} {% endif %}
+						{% endfor %} 
+						{% endif %} 
+						{% endwith %} 
+						{% endif %} 
+						{% endif %} 
+						{% endif %}
 					</div>
 					<div class="modal-footer">
 						<a href="#loginModal" data-toggle="modal">Login</a>
@@ -238,14 +266,20 @@
 							<div class="form-group">
 								{{ ChangePasswordForm.password(class="form-control", placeholder="Password") }}
 								<span id="WTFRegisterErrorsPassword" class="error">
-									{% if ChangePasswordForm.password.errors %} {% for error in ChangePasswordForm.password.errors %} {{ error }} {% endfor %}
+									{% if ChangePasswordForm.password.errors %} 
+									{% for error in ChangePasswordForm.password.errors %} 
+									{{ error }} 
+									{% endfor %}
 									{% endif %}
 								</span>
 							</div>
 							<div class="form-group">
 								{{ ChangePasswordForm.confirm(class="form-control", placeholder="Repeat Password") }}
 								<span id="WTFRegisterErrorsConfirm" class="error">
-									{% if ChangePasswordForm.confirm.errors %} {% for error in ChangePasswordForm.confirm.errors %} {{ error }} {% endfor %}
+									{% if ChangePasswordForm.confirm.errors %} 
+									{% for error in ChangePasswordForm.confirm.errors %}
+									{{ error }} 
+									{% endfor %}
 									{% endif %}
 								</span>
 							</div>
@@ -256,8 +290,12 @@
 								<input value="Change Password" name="FormType" type="submit" class="btn btn-secondary btn-lg btn-block login-btn" />
 							</div>
 						</form>
-						{% endif %} {% if MsgOutsideModal == False %} {% if modal == 'changePasswordModal' %} {% with messages = get_flashed_messages(with_categories=true)%}
-						{% if messages %} {% for category, message in messages %}
+						{% endif %} 
+						{% if MsgOutsideModal == False %} 
+						{% if modal == 'changePasswordModal' %} 
+						{% with messages = get_flashed_messages(with_categories=true)%}
+						{% if messages %} 
+						{% for category, message in messages %}
 						<div id="changePasswordMsgs" class=" form-control alert-{{ category }}">
 							<div class=" text-center">
 								{{message}}
