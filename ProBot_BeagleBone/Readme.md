@@ -6,7 +6,7 @@ Step 1 - Install the lastest debian image [from here](https://beagleboard.org/la
 
 Note: The Probot Project is working on a BeagleBone Black with debian 9.2 (jessie) and kernel 4.9.49-ti-xenomai-r58. 
 
-Step 2 - The HDMI port causes interference on the functioning of the USB port and some Encoders GPIO's. To disable it, add the following line on the top of the /boot/uEnv.txt:
+Step 2 - The HDMI port causes interference on the functioning of the USB port and some Encoders GPIO's. To disable it, comment the following line on the /boot/uEnv.txt:
 
 	disable_uboot_overlay_video=1
 
@@ -48,22 +48,17 @@ and do
 to download only the BeagleBone files. 
 
 	
-Step 4  - Go to ProBot_BeagleBone with:
+Step 4  - To install everything that it's required to run ProBot's program, for debian images (jessie), just type:
 	
-	cd ProBot/ProBot_BeagleBone or cd ProBot_BeagleBone
-and
-
-Step 4.1 - To install everything that it's required to run ProBot's program, for debian images (jessie), just type:
-
 	sudo ./setup.sh
 
 
 Step 5 - To configure the networks and the BeagleBone's ip with network-manager, type:
 
 	sudo nmtui	
+	
 
 Step 6 - Go again to ProBot/ProBot_BeagleBone and run ProBot.py to initialize the program:
 
-	cd ProBot/ProBot_BeagleBone or cd ProBot_BeagleBone
 	sudo python ProBot.py
 
