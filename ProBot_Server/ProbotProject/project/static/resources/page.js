@@ -389,7 +389,7 @@ function active() {
           if (values[0] == ChosenProBot) {
             values.forEach(element => {
               // Battery
-              if (isNaN(values[1])) { $(".fa-stack.battery").text("0%"); }
+              if (isNaN(values[1]) || (values[1]< 0)) { $(".fa-stack.battery").text("0%"); }
               else { $(".fa-stack.battery").text(values[1] + "%"); }
 
               $(".battery-icon").removeClass("fa-battery-full").removeClass("fa-battery-half").removeClass("fa-battery-quarter").removeClass("def");
@@ -399,18 +399,21 @@ function active() {
 
               // Degrees
               $(".male").removeClass("fa-male").removeClass("fa-rotate-90").removeAttr( 'style' );
-              if ((values[2] >= 70) && (values[2] <= 120))  { 
+              if (values[3] == 'started')  { 
                 $(".male").addClass("fa-male")
                 $(".male").css("color", "green");
-                
+              }
+              else {
+                $(".male").addClass("fa-male fa-rotate-90");
+                $(".male").css("color","red");
               }
 
               // Latency
               $(".signal").removeClass("signal-5").removeClass("signal-4").removeClass("signal-3").removeClass("signal-2").removeClass("signal-1").removeClass("def");
-              if (values[4] < 50) { $(".signal").addClass("signal-5"); }
-              else if (values[4] < 100) { $(".signal").addClass("signal-4"); }
-              else if (values[4] < 150) { $(".signal").addClass("signal-3"); }
-              else if (values[4] < 200) { $(".signal").addClass("signal-2"); }
+              if (values[4] < 200) { $(".signal").addClass("signal-5"); }
+              else if (values[4] < 300) { $(".signal").addClass("signal-4"); }
+              else if (values[4] < 500) { $(".signal").addClass("signal-3"); }
+              else if (values[4] < 1000) { $(".signal").addClass("signal-2"); }
               else {
                 $(".signal").addClass("signal-1");
                 $("#noticeModal").modal("show");
@@ -728,7 +731,7 @@ var probots = [];
   function addProBot(robot) {
     robot = robot.toString().split(",");
 
-    if (isNaN(robot[1]) || robot[1] == 'Offline') {
+    if (isNaN(robot[1]) || robot[1] == 'Offline' ) {
       // ProBot Offline
       if(window.innerHeight > window.innerWidth){
       column1 = "<span class='fa-stack '><i class='fas fa-power-off fa-1x offline'></i></span><span class='fa-stack battery power-state'>Offline</span>";
@@ -769,7 +772,9 @@ var probots = [];
     if (robot[1] > 75) { var battery = "full"; }
     else if (robot[1] > 25 && robot[1] <= 75) { var battery = "half"; }
     else { var battery = "quarter"; }
-
+    if (robot[1] < 0){
+      robot[1] = 0;
+    }
     // Latency
     if (robot[4] < 200) { var lantency = "5"; }
     else if (robot[4] < 300) { var lantency = "4"; }
@@ -785,7 +790,6 @@ var probots = [];
     column2 += '<span title="User IP Adress, Country and City">'+ robot[7] + '</span>'
     column3 += '<span title="ProBot IP Adress">'+  robot[5] + '</span>'
     column4 += '<form method="post" action="/admin"><input type="hidden" name="ProBotToShutdown" value=' + robot[0] + '><span onclick="' + onClick + '" class="fa-stack bigger text-center icon-btn "><i class="fa fa-power-off fa-1x" data-toggle="tooltip" title="Power Off"></i></span></form>'
-
 
 
     $(".tprobots tr:last").after('<tr> \
@@ -843,7 +847,9 @@ function updateProbots() {
         if (robot[1] > 75) { var battery = "full"; }
         else if (robot[1] > 25 && robot[1] <= 75) { var battery = "half"; }
         else { var battery = "quarter"; }
-  
+        if (robot[1] < 0){
+          robot[1] = 0;}
+        
         // Latency
         if (robot[4] < 200) { var lantency = "5"; }
         else if (robot[4] < 300) { var lantency = "4"; }
