@@ -28,7 +28,7 @@ pycparser==2.18
 python-dateutil==2.7.3
 python-editor==1.0.3
 pytz==2018.5
-requests==2.6.2
+requests==2.20.0
 six==1.11.0
 SQLAlchemy==0.9.8
 typing==3.6.4
