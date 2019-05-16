@@ -19,7 +19,7 @@ The megaphone is a DH-12, that has a siren and a microphone, that we hacked and 
 	
 The system can be controlled remotely through wifi, using a smartphone hotspot connected to 3G or 4G network. A web page was created with the possibility of viewing the status of the probot, where if available can be controlled. Each ProBot can be controled with a touch device (a smartphone or a tablet), with a gamepad or even with the keyboard.
 
-Any person can build a ProBot by just following the instructions available on [instructubles](http://www.instructables.com/id/ProBot-the-Protesting-Robot/).
+Any person can build a ProBot by just following the instructions available on [instructubles](http://www.instructables.com/id/ProBot-the-Protesting-Robot/). Thanks to Julio Fernandez Ostolaza, and la fabrica de las cosas bonitas for the inspiration.
 
 
 ![](probot1.png) 
